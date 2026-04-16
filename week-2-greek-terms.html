@@ -1117,24 +1117,49 @@ function speakGreek(greekText, button) {
     return;
   }
   
-  const utterance = new SpeechSynthesisUtterance(greekText);
+  // Map Greek words to phonetic pronunciations for better speech synthesis
+  const greekPronunciations = {
+    'σάρξ': 'sarks',
+    'ἐπίσκοπος': 'eh-PIS-ko-pos', 
+    'Θεοφόρος': 'theh-oh-FOR-os',
+    'ἕνωσις': 'HEN-oh-sis',
+    'μαρτυρία': 'mar-too-REE-ah',
+    'φάρμακον ἀθανασίας': 'FAR-ma-kon ah-than-ah-SEE-as',
+    'παράδοσις': 'pa-RA-do-sis',
+    'ὁμολογία': 'ho-mo-lo-GEE-ah',
+    'πίστις': 'PIS-tis',
+    'ἐκκλησία': 'ek-klay-SEE-ah',
+    'πρεσβύτερος': 'pres-BOO-teh-ros',
+    'διάκονος': 'dee-AH-ko-nos',
+    'εὐχαριστία': 'eu-kha-ris-TEE-ah',
+    'ἀγάπη': 'ah-GAH-pay',
+    'δόξα': 'DOHK-sa',
+    'ἀλήθεια': 'ah-LAY-thay-ah',
+    'ψυχή': 'psoo-KHAY',
+    'κοινωνία': 'koy-no-NEE-ah',
+    'ὑπομονή': 'hoo-po-mo-NAY',
+    'βασιλεία': 'bah-see-LAY-ah'
+  };
   
-  // Try to use Greek voice if available, otherwise use default with slow rate
+  // Use phonetic pronunciation if available, otherwise use the Greek text
+  const textToSpeak = greekPronunciations[greekText] || greekText;
+  
+  const utterance = new SpeechSynthesisUtterance(textToSpeak);
+  
+  // Use English voice with slow rate for phonetic pronunciation
   const voices = speechSynthesis.getVoices();
-  const greekVoice = voices.find(voice => 
-    voice.lang.includes('el') || 
-    voice.name.includes('Greek') ||
-    voice.name.includes('Helena')
+  const englishVoice = voices.find(voice => 
+    voice.lang.includes('en') && 
+    (voice.name.includes('Google') || voice.name.includes('Microsoft') || voice.name.includes('Alex'))
   );
   
-  if (greekVoice) {
-    utterance.voice = greekVoice;
-    utterance.rate = 0.7;
-  } else {
-    // Use default voice with very slow rate for better Greek pronunciation
-    utterance.rate = 0.5;
-    utterance.pitch = 1;
+  if (englishVoice) {
+    utterance.voice = englishVoice;
   }
+  
+  // Slower rate for clear pronunciation
+  utterance.rate = 0.7;
+  utterance.pitch = 1;
   
   // Visual feedback
   markButtonAsPlaying(button);
