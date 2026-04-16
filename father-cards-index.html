@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Father Cards — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<meta name="description" content="Complete database of 37 Church Fathers from Apostolic times through Byzantine period. Browse alphabetically or by historical period.">
+<meta name="keywords" content="Church Fathers, Orthodox Christianity, Patristics, Apostolic Fathers, Ante-Nicene Fathers, Nicene Fathers, Post-Nicene Fathers">
+
+<style>
+/* CSS Reset & Orthodox Foundation */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { 
+  font-size: 16px; 
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+  background: 
+    radial-gradient(circle at top left, rgba(52, 73, 94, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(44, 62, 80, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.hero {
+  background: 
+    linear-gradient(rgba(52, 73, 94, 0.95), rgba(44, 62, 80, 0.95)),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
+  color: #fffdf7;
+  padding: 3rem 0;
+  position: relative;
+  text-align: center;
+  border-bottom: 3px solid #34495e;
+}
+
+.back-nav {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fffdf7;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+.back-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cross-ornament {
+  font-size: 2.5rem;
+  color: #bdc3c7;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.3em;
+}
+
+.main-title {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #fffdf7;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #ecf0f1;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  font-size: 1rem;
+  color: #f8f9fa;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  text-align: center;
+  color: #ecf0f1;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #fffdf7;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-top: 0.25rem;
+}
+
+/* Search and Filter */
+.controls {
+  padding: 2rem 0;
+  background: #fffdf7;
+  border-bottom: 1px solid #ecf0f1;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #34495e;
+  box-shadow: 0 0 0 3px rgba(52, 73, 94, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  color: #5d6d7e;
+  font-weight: 500;
+}
+
+.filter-select {
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #34495e;
+}
+
+.view-toggle {
+  display: flex;
+  background: #ecf0f1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.view-btn {
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #5d6d7e;
+  transition: all 0.3s ease;
+}
+
+.view-btn.active {
+  background: #34495e;
+  color: #fffdf7;
+}
+
+/* Period Navigation */
+.period-nav {
+  padding: 1.5rem 0;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.period-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.period-link {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.period-apostolic { background: #e8f5e8; color: #2e7d32; }
+.period-apostolic:hover, .period-apostolic.active { background: #2e7d32; color: #fff; }
+
+.period-ante-nicene { background: #e3f2fd; color: #1976d2; }
+.period-ante-nicene:hover, .period-ante-nicene.active { background: #1976d2; color: #fff; }
+
+.period-nicene { background: #fff3e0; color: #f57c00; }
+.period-nicene:hover, .period-nicene.active { background: #f57c00; color: #fff; }
+
+.period-post-nicene { background: #f3e5f5; color: #7b1fa2; }
+.period-post-nicene:hover, .period-post-nicene.active { background: #7b1fa2; color: #fff; }
+
+.period-byzantine { background: #fce4ec; color: #c2185b; }
+.period-byzantine:hover, .period-byzantine.active { background: #c2185b; color: #fff; }
+
+/* Father Cards Grid */
+.fathers-section {
+  padding: 3rem 0;
+  background: #fffdf7;
+}
+
+.current-week-banner {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.banner-text {
+  opacity: 0.9;
+}
+
+.fathers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.father-card {
+  background: #fff;
+  border: 1px solid #ecf0f1;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.father-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(52, 73, 94, 0.12);
+  border-color: #bdc3c7;
+}
+
+.father-card.current-week {
+  border: 3px solid #27ae60;
+  background: linear-gradient(145deg, #f8fff8 0%, #f0fff0 100%);
+}
+
+.current-week-badge {
+  position: absolute;
+  top: -8px;
+  right: 1rem;
+  background: #27ae60;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.father-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.father-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #34495e 0%, #5d6d7e 100%);
+  color: #fffdf7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
+}
+
+.father-info {
+  flex: 1;
+}
+
+.father-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.father-dates {
+  color: #5d6d7e;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.father-period {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.father-description {
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.father-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.meta-item {
+  text-align: center;
+}
+
+.meta-value {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.meta-label {
+  color: #5d6d7e;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+.father-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #ecf0f1;
+  color: #5d6d7e;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Return to Top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  color: #fffdf7;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(52, 73, 94, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.return-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(52, 73, 94, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .back-nav {
+    position: static;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .main-title {
+    font-size: 2.2rem;
+  }
+
+  .stats {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .controls-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .period-links {
+    gap: 1rem;
+  }
+
+  .fathers-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .father-meta {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .father-card {
+    padding: 1rem;
+  }
+
+  .father-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="container">
+    <a href="../index.html" class="back-nav">← Orthodox Companion Studies</a>
+    
+    <div class="hero-content">
+      <div class="cross-ornament">☩</div>
+      <h1 class="main-title">Church Father Cards</h1>
+      <div class="subtitle">37 Fathers across 7 Centuries</div>
+      <p class="description">
+        Complete database of Church Fathers from the Apostolic period through Byzantine era. 
+        Discover their lives, writings, and theological contributions to Orthodox Christianity.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-number">37</span>
+          <span class="stat-label">Church Fathers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">7</span>
+          <span class="stat-label">Centuries</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Historical Periods</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Current Focus</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="controls">
+  <div class="container">
+    <div class="controls-grid">
+      <div class="search-box">
+        <input type="text" class="search-input" id="search" placeholder="Search by name, location, or theology..." onkeyup="filterFathers()">
+      </div>
+      
+      <div class="filter-group">
+        <label class="filter-label">Period:</label>
+        <select class="filter-select" id="period-filter" onchange="filterFathers()">
+          <option value="">All Periods</option>
+          <option value="apostolic">Apostolic (50-150 AD)</option>
+          <option value="ante-nicene">Ante-Nicene (150-325 AD)</option>
+          <option value="nicene">Nicene (325-450 AD)</option>
+          <option value="post-nicene">Post-Nicene (450-800 AD)</option>
+          <option value="byzantine">Byzantine (800-1453 AD)</option>
+        </select>
+      </div>
+      
+      <div class="view-toggle">
+        <button class="view-btn active" onclick="setView('grid')">Grid</button>
+        <button class="view-btn" onclick="setView('list')">List</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="period-nav">
+  <div class="container">
+    <div class="period-links">
+      <a href="#apostolic" class="period-link period-apostolic" onclick="filterByPeriod('apostolic')">Apostolic Fathers</a>
+      <a href="#ante-nicene" class="period-link period-ante-nicene" onclick="filterByPeriod('ante-nicene')">Ante-Nicene</a>
+      <a href="#nicene" class="period-link period-nicene" onclick="filterByPeriod('nicene')">Nicene Fathers</a>
+      <a href="#post-nicene" class="period-link period-post-nicene" onclick="filterByPeriod('post-nicene')">Post-Nicene</a>
+      <a href="#byzantine" class="period-link period-byzantine" onclick="filterByPeriod('byzantine')">Byzantine</a>
+    </div>
+  </div>
+</section>
+
+<section class="fathers-section">
+  <div class="container">
+    <!-- Current Week Banner -->
+    <div class="current-week-banner">
+      <div class="banner-title">📖 Current Week Focus — Week 2, Phase 1</div>
+      <div class="banner-text">Ignatius of Antioch • Polycarp of Smyrna • Martyrdom of Polycarp</div>
+    </div>
+
+    <!-- Fathers Grid -->
+    <div class="fathers-grid" id="fathers-grid">
+      <!-- Father cards will be populated by JavaScript -->
+    </div>
+  </div>
+</section>
+
+<!-- Return to Top Button -->
+<button class="return-to-top" id="return-to-top" onclick="scrollToTop()">↑</button>
+
+<script>
+// Father Data
+const fathers = [
+  // Apostolic Fathers (50-150 AD)
+  {
+    id: "clement-of-rome",
+    name: "Clement of Rome",
+    dates: "c. 35-99 AD",
+    period: "apostolic",
+    location: "Rome",
+    currentWeek: false,
+    week: 3,
+    description: "Third Bishop of Rome, author of the First Letter to the Corinthians. Establishes early Church authority and unity.",
+    works: 4,
+    letters: 2,
+    councils: 0,
+    tags: ["Apostolic Succession", "Church Unity", "Authority"]
+  },
+  {
+    id: "ignatius-of-antioch",
+    name: "Ignatius of Antioch",
+    dates: "c. 50-110 AD", 
+    period: "apostolic",
+    location: "Antioch",
+    currentWeek: true,
+    week: 2,
+    description: "Third Bishop of Antioch, martyr. Seven letters written en route to martyrdom establish episcopal authority and Eucharistic theology.",
+    works: 7,
+    letters: 7,
+    councils: 0,
+    tags: ["Martyrdom", "Episcopal Authority", "Eucharist", "Unity"]
+  },
+  {
+    id: "polycarp-of-smyrna", 
+    name: "Polycarp of Smyrna",
+    dates: "c. 69-155 AD",
+    period: "apostolic",
+    location: "Smyrna",
+    currentWeek: true,
+    week: 2,
+    description: "Bishop of Smyrna, disciple of John the Apostle. His martyrdom account is the earliest authentic record of Christian martyrdom.",
+    works: 3,
+    letters: 1,
+    councils: 0,
+    tags: ["Martyrdom", "Apostolic Tradition", "Witness"]
+  },
+  {
+    id: "papias-of-hierapolis",
+    name: "Papias of Hierapolis", 
+    dates: "c. 60-130 AD",
+    period: "apostolic",
+    location: "Hierapolis",
+    currentWeek: false,
+    week: 4,
+    description: "Early Christian author, hearer of John the Apostle. Preserved early traditions about the composition of the Gospels.",
+    works: 5,
+    letters: 0,
+    councils: 0,
+    tags: ["Gospel Tradition", "Apostolic Memory", "Scripture"]
+  },
+  {
+    id: "clement-of-alexandria",
+    name: "Clement of Alexandria",
+    dates: "c. 150-215 AD",
+    period: "ante-nicene",
+    location: "Alexandria",
+    currentWeek: false,
+    week: 9,
+    description: "Head of Catechetical School of Alexandria. Pioneered Christian philosophy and the integration of Greek learning with Christian faith.",
+    works: 12,
+    letters: 3,
+    councils: 0,
+    tags: ["Christian Philosophy", "Catechesis", "Greek Learning"]
+  },
+  {
+    id: "justin-martyr",
+    name: "Justin Martyr",
+    dates: "c. 100-165 AD",
+    period: "ante-nicene", 
+    location: "Rome",
+    currentWeek: false,
+    week: 5,
+    description: "Christian apologist and philosopher. First major Christian philosopher to engage systematically with Greek philosophy.",
+    works: 8,
+    letters: 0,
+    councils: 0,
+    tags: ["Apologetics", "Philosophy", "Martyrdom", "Logos"]
+  },
+  {
+    id: "irenaeus-of-lyons",
+    name: "Irenaeus of Lyons",
+    dates: "c. 130-202 AD",
+    period: "ante-nicene",
+    location: "Lyons",
+    currentWeek: false,
+    week: 9,
+    description: "Bishop of Lyons, theologian. His 'Against Heresies' combats Gnosticism and develops recapitulation theory.",
+    works: 6,
+    letters: 2,
+    councils: 0,
+    tags: ["Anti-Gnosticism", "Recapitulation", "Scripture", "Tradition"]
+  },
+  {
+    id: "tertullian",
+    name: "Tertullian",
+    dates: "c. 155-240 AD",
+    period: "ante-nicene",
+    location: "Carthage",
+    currentWeek: false,
+    week: 7,
+    description: "First major Latin theologian. Coined term 'Trinity' and developed theological vocabulary that shaped Western Christianity.",
+    works: 31,
+    letters: 5,
+    councils: 0,
+    tags: ["Trinity", "Latin Theology", "Apologetics", "Montanism"]
+  },
+  {
+    id: "origen-of-alexandria",
+    name: "Origen of Alexandria", 
+    dates: "c. 185-254 AD",
+    period: "ante-nicene",
+    location: "Alexandria",
+    currentWeek: false,
+    week: 10,
+    description: "Prolific theologian and biblical scholar. Developed allegorical interpretation and systematic theology, though some views later questioned.",
+    works: 800,
+    letters: 15,
+    councils: 0,
+    tags: ["Biblical Exegesis", "Theology", "Allegorical Interpretation"]
+  },
+  {
+    id: "cyprian-of-carthage",
+    name: "Cyprian of Carthage",
+    dates: "c. 210-258 AD", 
+    period: "ante-nicene",
+    location: "Carthage",
+    currentWeek: false,
+    week: 8,
+    description: "Bishop of Carthage, martyr. Developed theology of Church unity and episcopal authority during persecution periods.",
+    works: 13,
+    letters: 81,
+    councils: 2,
+    tags: ["Church Unity", "Episcopal Authority", "Martyrdom", "Persecution"]
+  },
+  {
+    id: "athanasius-the-great",
+    name: "Athanasius the Great",
+    dates: "c. 296-373 AD",
+    period: "nicene",
+    location: "Alexandria", 
+    currentWeek: false,
+    week: 14,
+    description: "Patriarch of Alexandria, defender of Nicene orthodoxy. Combated Arianism and articulated the full divinity of Christ.",
+    works: 45,
+    letters: 39,
+    councils: 2,
+    tags: ["Anti-Arianism", "Christology", "Nicene Creed", "Theosis"]
+  },
+  {
+    id: "basil-the-great",
+    name: "Basil the Great",
+    dates: "c. 330-379 AD",
+    period: "nicene",
+    location: "Caesarea",
+    currentWeek: false,
+    week: 16,
+    description: "Bishop of Caesarea, monastic reformer. One of the Cappadocian Fathers who articulated Trinitarian theology.",
+    works: 24,
+    letters: 365,
+    councils: 1,
+    tags: ["Trinity", "Monasticism", "Cappadocian Fathers", "Social Justice"]
+  },
+  {
+    id: "gregory-of-nazianzus",
+    name: "Gregory of Nazianzus",
+    dates: "c. 329-390 AD",
+    period: "nicene",
+    location: "Constantinople",
+    currentWeek: false,
+    week: 18,
+    description: "Archbishop of Constantinople, 'The Theologian.' Eloquent defender of Trinitarian doctrine and Nicene orthodoxy.",
+    works: 45,
+    letters: 245,
+    councils: 2,
+    tags: ["Trinity", "The Theologian", "Cappadocian Fathers", "Oratory"]
+  },
+  {
+    id: "gregory-of-nyssa",
+    name: "Gregory of Nyssa",
+    dates: "c. 335-395 AD",
+    period: "nicene",
+    location: "Nyssa",
+    currentWeek: false,
+    week: 17,
+    description: "Bishop of Nyssa, mystic and theologian. Most philosophical of the Cappadocian Fathers, developed mystical theology.",
+    works: 43,
+    letters: 30,
+    councils: 1,
+    tags: ["Mystical Theology", "Cappadocian Fathers", "Philosophy", "Theosis"]
+  },
+  {
+    id: "john-chrysostom",
+    name: "John Chrysostom",
+    dates: "c. 349-407 AD",
+    period: "nicene",
+    location: "Constantinople", 
+    currentWeek: false,
+    week: 20,
+    description: "Archbishop of Constantinople, 'Golden-Mouthed.' Greatest preacher of the ancient Church and biblical expositor.",
+    works: 700,
+    letters: 242,
+    councils: 1,
+    tags: ["Preaching", "Biblical Exposition", "Social Justice", "Golden-Mouthed"]
+  },
+  {
+    id: "jerome",
+    name: "Jerome",
+    dates: "c. 347-420 AD",
+    period: "nicene",
+    location: "Bethlehem",
+    currentWeek: false,
+    week: 21,
+    description: "Biblical scholar and translator. Translated the Bible into Latin (Vulgate) and was a master of biblical languages.",
+    works: 120,
+    letters: 154,
+    councils: 0,
+    tags: ["Biblical Translation", "Vulgate", "Biblical Languages", "Monasticism"]
+  },
+  {
+    id: "augustine-of-hippo",
+    name: "Augustine of Hippo", 
+    dates: "354-430 AD",
+    period: "nicene",
+    location: "Hippo",
+    currentWeek: false,
+    week: 22,
+    description: "Bishop of Hippo, theologian and philosopher. Shaped Western Christianity through his theological and philosophical works.",
+    works: 117,
+    letters: 300,
+    councils: 3,
+    tags: ["Grace", "Original Sin", "City of God", "Confessions"]
+  },
+  {
+    id: "cyril-of-alexandria",
+    name: "Cyril of Alexandria",
+    dates: "c. 378-444 AD",
+    period: "post-nicene",
+    location: "Alexandria",
+    currentWeek: false,
+    week: 29,
+    description: "Patriarch of Alexandria, Christological theologian. Defended the unity of Christ's person at the Council of Ephesus.",
+    works: 30,
+    letters: 88,
+    councils: 2,
+    tags: ["Christology", "Theotokos", "Council of Ephesus", "Unity of Christ"]
+  },
+  {
+    id: "leo-the-great",
+    name: "Leo the Great",
+    dates: "c. 400-461 AD", 
+    period: "post-nicene",
+    location: "Rome",
+    currentWeek: false,
+    week: 30,
+    description: "Pope and Doctor of the Church. His Tome provided the Christological formula accepted at the Council of Chalcedon.",
+    works: 96,
+    letters: 143,
+    councils: 1,
+    tags: ["Papal Authority", "Christology", "Council of Chalcedon", "Two Natures"]
+  },
+  {
+    id: "pseudo-dionysius",
+    name: "Pseudo-Dionysius",
+    dates: "c. 500 AD",
+    period: "post-nicene", 
+    location: "Syria",
+    currentWeek: false,
+    week: 32,
+    description: "Mystical theologian whose works profoundly influenced Eastern and Western Christian mysticism and theology.",
+    works: 4,
+    letters: 10,
+    councils: 0,
+    tags: ["Mystical Theology", "Apophatic Theology", "Celestial Hierarchy"]
+  },
+  {
+    id: "maximus-the-confessor",
+    name: "Maximus the Confessor",
+    dates: "c. 580-662 AD",
+    period: "post-nicene",
+    location: "Constantinople",
+    currentWeek: false,
+    week: 34,
+    description: "Monk and theologian. Developed the theology of two wills in Christ and defended orthodox Christology against Monothelitism.",
+    works: 90,
+    letters: 45,
+    councils: 1,
+    tags: ["Two Wills", "Christology", "Theological Anthropology", "Mysticism"]
+  },
+  {
+    id: "john-of-damascus",
+    name: "John of Damascus",
+    dates: "c. 675-749 AD",
+    period: "post-nicene",
+    location: "Damascus",
+    currentWeek: false,
+    week: 36,
+    description: "Last of the Church Fathers. Systematized Orthodox theology and defended icon veneration against iconoclasts.",
+    works: 15,
+    letters: 8,
+    councils: 0,
+    tags: ["Icon Veneration", "Systematic Theology", "Iconoclastic Controversy"]
+  },
+  {
+    id: "theodore-the-studite",
+    name: "Theodore the Studite",
+    dates: "759-826 AD",
+    period: "byzantine",
+    location: "Constantinople", 
+    currentWeek: false,
+    week: 37,
+    description: "Abbot and reformer. Defended icon veneration and reformed monastic life in the Byzantine Empire.",
+    works: 16,
+    letters: 564,
+    councils: 1,
+    tags: ["Icon Veneration", "Monastic Reform", "Studite Rule"]
+  },
+  {
+    id: "photios-the-great",
+    name: "Photios the Great",
+    dates: "c. 810-893 AD",
+    period: "byzantine",
+    location: "Constantinople",
+    currentWeek: false,
+    week: 38,
+    description: "Patriarch of Constantinople, scholar. Defended Eastern Church against papal claims and preserved classical learning.",
+    works: 294,
+    letters: 298,
+    councils: 2,
+    tags: ["Filioque Controversy", "Scholarship", "Papal Authority", "Eastern Rights"]
+  },
+  {
+    id: "symeon-the-new-theologian", 
+    name: "Symeon the New Theologian",
+    dates: "949-1022 AD",
+    period: "byzantine",
+    location: "Constantinople",
+    currentWeek: false,
+    week: 39,
+    description: "Mystic and theologian. Emphasized personal experience of God and wrote extensively on mystical prayer and theosis.",
+    works: 34,
+    letters: 15,
+    councils: 0,
+    tags: ["Mystical Theology", "Personal Experience", "Theosis", "Prayer"]
+  },
+  {
+    id: "gregory-palamas",
+    name: "Gregory Palamas", 
+    dates: "c. 1296-1359 AD",
+    period: "byzantine",
+    location: "Mount Athos",
+    currentWeek: false,
+    week: 40,
+    description: "Archbishop of Thessalonica, Hesychast defender. Articulated the distinction between God's essence and energies.",
+    works: 150,
+    letters: 48,
+    councils: 3,
+    tags: ["Hesychasm", "Essence-Energies", "Jesus Prayer", "Mystical Theology"]
+  }
+];
+
+// Populate fathers grid
+function populateFathersGrid() {
+  const grid = document.getElementById('fathers-grid');
+  grid.innerHTML = '';
+  
+  fathers.forEach(father => {
+    const card = createFatherCard(father);
+    grid.appendChild(card);
+  });
+}
+
+// Create individual father card
+function createFatherCard(father) {
+  const card = document.createElement('a');
+  card.href = `${father.id}.html`;
+  card.className = `father-card${father.currentWeek ? ' current-week' : ''}`;
+  card.dataset.period = father.period;
+  card.dataset.name = father.name.toLowerCase();
+  card.dataset.location = father.location.toLowerCase();
+  card.dataset.tags = father.tags.join(' ').toLowerCase();
+  
+  // Period colors
+  const periodColors = {
+    apostolic: '#e8f5e8',
+    'ante-nicene': '#e3f2fd', 
+    nicene: '#fff3e0',
+    'post-nicene': '#f3e5f5',
+    byzantine: '#fce4ec'
+  };
+  
+  card.innerHTML = `
+    ${father.currentWeek ? '<div class="current-week-badge">Current Week</div>' : ''}
+    
+    <div class="father-header">
+      <div class="father-icon">☩</div>
+      <div class="father-info">
+        <h3 class="father-name">${father.name}</h3>
+        <div class="father-dates">${father.dates}</div>
+        <span class="father-period" style="background: ${periodColors[father.period]}; color: #2c3e50;">
+          ${father.period.charAt(0).toUpperCase() + father.period.slice(1).replace('-', '-')}
+        </span>
+      </div>
+    </div>
+    
+    <p class="father-description">${father.description}</p>
+    
+    <div class="father-meta">
+      <div class="meta-item">
+        <span class="meta-value">${father.works}</span>
+        <span class="meta-label">Works</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-value">${father.letters}</span>
+        <span class="meta-label">Letters</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-value">${father.councils}</span>
+        <span class="meta-label">Councils</span>
+      </div>
+    </div>
+    
+    <div class="father-tags">
+      ${father.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+    </div>
+  `;
+  
+  return card;
+}
+
+// Filter functions
+function filterFathers() {
+  const searchTerm = document.getElementById('search').value.toLowerCase();
+  const periodFilter = document.getElementById('period-filter').value;
+  const cards = document.querySelectorAll('.father-card');
+  
+  cards.forEach(card => {
+    const matchesSearch = card.dataset.name.includes(searchTerm) || 
+                         card.dataset.location.includes(searchTerm) ||
+                         card.dataset.tags.includes(searchTerm);
+    const matchesPeriod = !periodFilter || card.dataset.period === periodFilter;
+    
+    card.style.display = matchesSearch && matchesPeriod ? 'block' : 'none';
+  });
+}
+
+function filterByPeriod(period) {
+  document.getElementById('period-filter').value = period;
+  filterFathers();
+  
+  // Update active period link
+  document.querySelectorAll('.period-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.querySelector(`.period-${period}`).classList.add('active');
+}
+
+// View toggle
+function setView(viewType) {
+  const buttons = document.querySelectorAll('.view-btn');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  const grid = document.getElementById('fathers-grid');
+  if (viewType === 'list') {
+    grid.style.gridTemplateColumns = '1fr';
+  } else {
+    grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(350px, 1fr))';
+  }
+}
+
+// Return to top
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Show return to top button on scroll
+window.addEventListener('scroll', function() {
+  const button = document.getElementById('return-to-top');
+  if (window.pageYOffset > 300) {
+    button.classList.add('visible');
+  } else {
+    button.classList.remove('visible');
+  }
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', function() {
+  populateFathersGrid();
+});
+</script>
+
+</body>
+</html>
