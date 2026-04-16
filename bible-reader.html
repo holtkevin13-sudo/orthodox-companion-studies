@@ -582,10 +582,7 @@ body{background:var(--bg-page);color:var(--text);}
         <button class="reader-search-btn" id="verseSearchBtn" title="Go to passage">&#9166;</button>
       </div>
 
-      <!-- Tool buttons -->
-      <button class="tool-btn" id="bookmarksBtn" title="Bookmarks">&#9646; <span>Bookmarks</span></button>
-      <button class="tool-btn" id="notesBtn" title="Notes">&#9998; <span>Notes</span></button>
-      <button class="tool-btn" id="journalBtn" title="Journal">&#9997; <span>Journal</span></button>
+      <!-- Tool buttons removed for simplicity -->
     </div>
 
     <!-- LXX NOTE -->
@@ -771,14 +768,21 @@ async function loadBooks() {
     allBooks.ot   = OT_BOOKS.map(id => ({ id, name: LXX_NAMES[id] || id }));
     allBooks.deut = DEUT_BOOKS.map(id => ({ id, name: LXX_NAMES[id] || id }));
 
-    // NT from API.Bible (NKJV)
-    const ntBooks = await apiFetch(`/bibles/${BIBLE_CONFIG.nt}/books`);
-    const ntMap = {};
-    ntBooks.forEach(b => { ntMap[b.id] = b; });
-    allBooks.nt = NT_BOOKS.map(id => ntMap[id]).filter(Boolean);
+    // NT - use local names for now (API independent)
+    const NT_NAMES = {
+      MAT:'Matthew',MRK:'Mark',LUK:'Luke',JHN:'John',ACT:'Acts',
+      ROM:'Romans','1CO':'1 Corinthians','2CO':'2 Corinthians',GAL:'Galatians',
+      EPH:'Ephesians',PHP:'Philippians',COL:'Colossians',
+      '1TH':'1 Thessalonians','2TH':'2 Thessalonians',
+      '1TI':'1 Timothy','2TI':'2 Timothy',TIT:'Titus',PHM:'Philemon',
+      HEB:'Hebrews',JAS:'James','1PE':'1 Peter','2PE':'2 Peter',
+      '1JO':'1 John','2JO':'2 John','3JO':'3 John',JUD:'Jude',REV:'Revelation'
+    };
+    allBooks.nt = NT_BOOKS.map(id => ({ id, name: NT_NAMES[id] || id }));
 
     renderBookList(allBooks);
   } catch(e) {
+    console.error('Book loading error:', e);
     document.getElementById('sidebarBody').innerHTML =
       '<div class="reader-state" style="height:auto;padding:20px;"><div class="reader-state-sub">Could not load books.<br/>Check your connection.</div></div>';
   }
@@ -1105,61 +1109,19 @@ function applyHighlightsToDOM() {
 
 // ── Notes ─────────────────────────────────────────────────────
 function openNoteForVerse(e) {
+  // Note modal removed for simplified interface
   e.stopPropagation();
-  const verse = e.target.closest('.verse');
-  if (!verse) return;
-  const vId = verse.dataset.vid;
-  const vNum = verse.dataset.vnum;
-  const ref = `${currentBook.name} ${currentChapters[currentChapterIdx].number}:${vNum}`;
-
-  pendingNoteVerseId = vId;
-  document.getElementById('noteModalRef').textContent = ref;
-  document.getElementById('noteModalTextarea').value = notes[vId] ? notes[vId].text : '';
-  document.getElementById('note-modal').classList.add('open');
+  return;
 }
 
 async function saveNoteFromModal() {
-  const text = document.getElementById('noteModalTextarea').value.trim();
-  if (!text || !pendingNoteVerseId) { closeNoteModal(); return; }
-
-  notes[pendingNoteVerseId] = { text };
-
-  // Add note dot to verse
-  const verse = document.querySelector(`.verse[data-vid="${pendingNoteVerseId}"]`);
-  if (verse && !verse.querySelector('.verse-note-dot')) {
-    const actions = verse.querySelector('.verse-actions');
-    const nd = document.createElement('span');
-    nd.className = 'verse-note-dot';
-    nd.title = 'Has note';
-    if (actions) verse.insertBefore(nd, actions);
-  }
-
-  if (supabaseUser && sb) {
-    try {
-      const vId = pendingNoteVerseId;
-      const existing = notes[vId] && notes[vId].id;
-      if (existing) {
-        await sb.from('bible_notes').update({ note_text: text, updated_at: new Date().toISOString() })
-          .eq('id', existing);
-      } else {
-        const { data } = await sb.from('bible_notes').insert([{
-          user_id: supabaseUser.id,
-          book_id: currentBook.id,
-          chapter: currentChapters[currentChapterIdx].number,
-          verse_id: vId,
-          note_text: text,
-        }]).select().single();
-        if (data) notes[vId].id = data.id;
-      }
-    } catch(e2) { console.warn('Note save failed:', e2); }
-  }
-  closeNoteModal();
-  refreshNotesPanel();
+  // Note modal removed for simplified interface
+  return;
 }
 
 function closeNoteModal() {
-  document.getElementById('note-modal').classList.remove('open');
-  pendingNoteVerseId = null;
+  // Note modal removed for simplified interface
+  return;
 }
 
 // ── Bookmarks ─────────────────────────────────────────────────
@@ -1194,7 +1156,7 @@ async function bookmarkChapter(e) {
   }
 
   bookmarks.unshift(bm);
-  refreshBookmarksPanel();
+  // Bookmark panel refresh removed for simplicity
 
   // Visual feedback
   const verse = e.target.closest('.verse');
@@ -1213,7 +1175,7 @@ async function deleteBookmark(id) {
       .filter(b => b.id !== id);
     localStorage.setItem('oc_bible_bookmarks', JSON.stringify(stored));
   }
-  refreshBookmarksPanel();
+  // Bookmark panel refresh removed for simplicity
 }
 
 // ── Panels ────────────────────────────────────────────────────
@@ -1230,165 +1192,21 @@ function closePanel(id) {
   if (!anyOpen) document.getElementById('panelOverlay').classList.remove('open');
 }
 function closeAllPanels(closeOverlay = true) {
-  ['notesPanel','bookmarksPanel','journalPanel'].forEach(p =>
-    document.getElementById(p).classList.remove('open')
-  );
-  if (closeOverlay) document.getElementById('panelOverlay').classList.remove('open');
+  // Simplified - main panels removed for cleaner interface
+  const overlay = document.getElementById('panelOverlay');
+  if (closeOverlay && overlay) overlay.classList.remove('open');
 }
 
-function openNotesPanel() {
-  refreshNotesPanel();
-  openPanel('notesPanel');
+// Panel functions removed for simplified interface
+
+function openPanel(id) {
+  // Simplified panel system - main panels removed
 }
 
-function refreshNotesPanel() {
-  const body = document.getElementById('notesList');
-  const gate = document.getElementById('notesAuthGate');
-
-  if (!supabaseUser) {
-    gate.innerHTML = authGateHTML('Sign in to save notes and study annotations.');
-    body.innerHTML = '';
-    return;
-  }
-  gate.innerHTML = '';
-
-  const chapterNotes = Object.entries(notes).filter(([vid]) =>
-    currentBook && vid.startsWith(currentBook.id + '.')
-  );
-
-  if (!chapterNotes.length) {
-    body.innerHTML = '<div class="panel-empty">No notes yet.<br/>Click a verse and tap ✎ Note to begin.</div>';
-    return;
-  }
-
-  body.innerHTML = chapterNotes.map(([vid, note]) => {
-    const parts = vid.split('.');
-    const vRef = parts.length >= 3 ? `${currentBook.name} ${parts[1]}:${parts[2]}` : vid;
-    return `<div class="note-item">
-      <div class="note-item-ref">${vRef}</div>
-      <div class="note-item-text">${escapeHtml(note.text)}</div>
-      <div class="note-item-actions">
-        <button class="note-action-btn" onclick="editNote('${vid}')">Edit</button>
-        <button class="note-action-btn" onclick="deleteNote('${vid}')">Delete</button>
-      </div>
-    </div>`;
-  }).join('');
+function closePanel(id) {
+  // Simplified panel system - main panels removed
 }
-
-async function deleteNote(vId) {
-  if (!confirm('Delete this note?')) return;
-  if (notes[vId] && notes[vId].id && sb) {
-    try { await sb.from('bible_notes').delete().eq('id', notes[vId].id); } catch(e) {}
-  }
-  delete notes[vId];
-  // Remove dot from verse
-  const verse = document.querySelector(`.verse[data-vid="${vId}"]`);
-  if (verse) { const dot = verse.querySelector('.verse-note-dot'); if (dot) dot.remove(); }
-  refreshNotesPanel();
-}
-
-function editNote(vId) {
-  pendingNoteVerseId = vId;
-  const parts = vId.split('.');
-  const ref = parts.length >= 3 ? `${currentBook.name} ${parts[1]}:${parts[2]}` : vId;
-  document.getElementById('noteModalRef').textContent = ref;
-  document.getElementById('noteModalTextarea').value = notes[vId] ? notes[vId].text : '';
-  document.getElementById('note-modal').classList.add('open');
-}
-
-function openBookmarksPanel() {
-  refreshBookmarksPanel();
-  openPanel('bookmarksPanel');
-}
-
-function refreshBookmarksPanel() {
-  const body = document.getElementById('bookmarksList');
-  const gate = document.getElementById('bookmarksAuthGate');
-
-  // Load localStorage bookmarks if not signed in
-  if (!supabaseUser) {
-    const stored = JSON.parse(localStorage.getItem('oc_bible_bookmarks') || '[]');
-    bookmarks = stored;
-  }
-
-  gate.innerHTML = supabaseUser ? '' : `<div style="margin-bottom:12px;font-size:0.8rem;color:var(--text-muted);font-style:italic;line-height:1.7;">Sign in to sync bookmarks across devices.</div>`;
-
-  if (!bookmarks.length) {
-    body.innerHTML = '<div class="panel-empty">No bookmarks yet.<br/>Click a verse and tap ⊟ Save to bookmark a chapter.</div>';
-    return;
-  }
-
-  body.innerHTML = bookmarks.map(bm =>
-    `<div class="bookmark-item" onclick="goToBookmark('${bm.book_id}','${bm.chapter}')">
-      <span class="bookmark-icon">&#9646;</span>
-      <div>
-        <div class="bookmark-ref">${escapeHtml(bm.reference)}</div>
-        ${bm.label ? `<div class="bookmark-label">${escapeHtml(bm.label)}</div>` : ''}
-      </div>
-      <button class="bookmark-delete" onclick="event.stopPropagation();deleteBookmark('${bm.id}')" title="Remove">&#x2715;</button>
-    </div>`
-  ).join('');
-}
-
-async function goToBookmark(bookId, chapterNum) {
-  closeAllPanels();
-  // Find and select book in sidebar
-  const bookItem = document.querySelector(`.book-item[onclick*="'${bookId}'"]`);
-  if (bookItem) {
-    await selectBook(bookId, bookItem.textContent.trim(), bookItem);
-    // Wait for chapters to load then navigate
-    setTimeout(() => {
-      const idx = currentChapters.findIndex(c => c.number === chapterNum);
-      if (idx >= 0) loadChapter(idx);
-    }, 800);
-  }
-}
-
-function openJournalPanel() {
-  refreshJournalPanel();
-  openPanel('journalPanel');
-}
-
-function refreshJournalPanel() {
-  const entries = JSON.parse(localStorage.getItem('oc_journal') || '[]');
-  const list = document.getElementById('journalList');
-  if (!entries.length) {
-    list.innerHTML = '<div class="panel-empty">No journal entries yet.</div>';
-    return;
-  }
-  list.innerHTML = [...entries].reverse().slice(0, 20).map(e =>
-    `<div class="journal-entry">
-      <div class="journal-entry-date">${formatDate(e.date)}</div>
-      ${e.category ? `<span class="journal-entry-cat">${escapeHtml(e.category)}</span>` : ''}
-      <div class="journal-entry-text">${escapeHtml(e.text)}</div>
-    </div>`
-  ).join('');
-}
-
-function openNewJournalEntry() {
-  document.getElementById('journalNewForm').style.display = '';
-  document.getElementById('journalTextarea').focus();
-}
-function closeJournalForm() {
-  document.getElementById('journalNewForm').style.display = 'none';
-  document.getElementById('journalTextarea').value = '';
-}
-function saveJournalEntry() {
-  const text = document.getElementById('journalTextarea').value.trim();
-  if (!text) return;
-  const entries = JSON.parse(localStorage.getItem('oc_journal') || '[]');
-  const ref = currentBook && currentChapters[currentChapterIdx]
-    ? `${currentBook.name} ${currentChapters[currentChapterIdx].number}` : '';
-  entries.push({
-    id: Date.now().toString(),
-    date: new Date().toISOString(),
-    text: ref ? `[${ref}] ${text}` : text,
-    category: 'Scripture',
-  });
-  localStorage.setItem('oc_journal', JSON.stringify(entries));
-  closeJournalForm();
-  refreshJournalPanel();
-}
+// Journal functions removed for simplified interface
 
 // ── Search ────────────────────────────────────────────────────
 function handleVerseSearch() {
@@ -1525,9 +1343,7 @@ document.getElementById('bookSearch').addEventListener('input', function() {
 document.getElementById('sidebarToggle').addEventListener('click', toggleSidebar);
 document.getElementById('prevChBtn').addEventListener('click', prevChapter);
 document.getElementById('nextChBtn').addEventListener('click', nextChapter);
-document.getElementById('notesBtn').addEventListener('click', openNotesPanel);
-document.getElementById('bookmarksBtn').addEventListener('click', openBookmarksPanel);
-document.getElementById('journalBtn').addEventListener('click', openJournalPanel);
+// Panel event listeners removed - panels have been simplified
 document.getElementById('verseSearchBtn').addEventListener('click', handleVerseSearch);
 document.getElementById('verseSearch').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') handleVerseSearch();
@@ -1544,15 +1360,12 @@ if (localStorage.getItem('oc_lxx_note_dismissed')) {
 
 // ── Keyboard shortcuts ────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closeNoteModal(); closeAllPanels(); }
+  if (e.key === 'Escape') { closeAllPanels(); }
   if (e.key === 'ArrowRight' && e.altKey) nextChapter();
   if (e.key === 'ArrowLeft'  && e.altKey) prevChapter();
 });
 
-// Close note modal on outside click
-document.getElementById('note-modal').addEventListener('click', function(e) {
-  if (e.target === this) closeNoteModal();
-});
+// Note modal removed for simplified interface
 
 // ── Back to top ───────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
