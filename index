@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>☦ Orthodox Companion Studies — Φρόνημα τῶν Πατέρων</title>
+<meta name="description" content="Systematic formation in Orthodox theology through the Church Fathers, combining Greek vocabulary mastery, biblical study, and primary source reading across multiple study tracks">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☦</text></svg>">
+<style>
+  /* CSS Reset & Orthodox Foundation */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { 
+    font-size: 16px; 
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+    background: 
+      radial-gradient(circle at top left, rgba(52, 73, 94, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at bottom right, rgba(44, 62, 80, 0.03) 0%, transparent 50%),
+      linear-gradient(135deg, #faf8f4 0%, #f5f1e8 25%, #ebe3d3 75%, #e0d6c1 100%);
+    color: #2c1e10;
+    line-height: 1.65;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Sacred Typography */
+  .greek-text {
+    font-family: "SBL BibLit", "Cardo", "Palatino Linotype", "Times New Roman", serif;
+    font-feature-settings: "liga" 1, "dlig" 1;
+  }
+
+  /* Layout Foundation */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Sacred Header - Orthodox Companion Branding */
+  header {
+    background: 
+      linear-gradient(rgba(52, 73, 94, 0.95), rgba(44, 62, 80, 0.95)),
+      url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
+    color: #fffdf7;
+    padding: 3rem 0;
+    position: relative;
+    text-align: center;
+    border-bottom: 3px solid #34495e;
+  }
+  
+  .cross-ornament {
+    font-size: 2.5rem;
+    color: #bdc3c7;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.3em;
+  }
+  
+  .organization-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ecf0f1;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .main-title {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #fffdf7;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: -0.02em;
+  }
+  
+  .greek-subtitle {
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .mission-statement {
+    font-size: 1rem;
+    font-style: italic;
+    color: #f8f9fa;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+  
+  .course-details {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1.5rem;
+  }
+  
+  .course-stat {
+    text-align: center;
+    color: #ecf0f1;
+  }
+  
+  .stat-number {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #fffdf7;
+    line-height: 1.1;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 0.25rem;
+    font-weight: 400;
+  }
+
+  /* Navigation Tabs - App-Ready Design */
+  .main-nav {
+    background: #fffdf7;
+    border-bottom: 2px solid #34495e;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(52, 73, 94, 0.1);
+  }
+  
+  .nav-tabs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+  
+  .nav-tab {
+    border-right: 1px solid #ecf0f1;
+  }
+  
+  .nav-tab:last-child {
+    border-right: none;
+  }
+  
+  .nav-tab button {
+    background: none;
+    border: none;
+    padding: 1rem 0.5rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #5d6d7e;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-tab button:hover {
+    background: #f8f9fa;
+    color: #34495e;
+  }
+  
+  .nav-tab.active button {
+    color: #2c3e50;
+    border-bottom-color: #34495e;
+    background: #f8f9fa;
+    font-weight: 600;
+  }
+
+  /* Tab Content */
+  .tab-content {
+    display: none;
+    padding: 3rem 0;
+  }
+  
+  .tab-content.active {
+    display: block;
+  }
+
+  /* Current Studies Section */
+  .current-focus {
+    background: #fffdf7;
+    position: relative;
+  }
+  
+  .focus-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  .focus-title {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  
+  .focus-subtitle {
+    color: #5d6d7e;
+    font-style: italic;
+    font-size: 1rem;
+  }
+  
+  /* Week Card */
+  .week-card {
+    background: 
+      linear-gradient(145deg, #fffdf7 0%, #f8f5f0 100%);
+    border: 2px solid #bdc3c7;
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 0 auto;
+    max-width: 750px;
+    box-shadow: 
+      0 8px 25px rgba(52, 73, 94, 0.08),
+      0 3px 10px rgba(52, 73, 94, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .week-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #34495e, #5d6d7e, #34495e);
+    z-index: -1;
+    border-radius: 18px;
+  }
+  
+  .week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .week-badge {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: #fffdf7;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 2px 8px rgba(52, 73, 94, 0.3);
+  }
+  
+  .week-progress {
+    font-size: 0.9rem;
+    color: #5d6d7e;
+    font-weight: 500;
+  }
+  
+  .week-info {
+    margin-bottom: 2rem;
+  }
+  
+  .phase-title {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .fathers-list {
+    color: #5d6d7e;
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+  
+  .week-description {
+    color: #2c3e50;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .greek-focus {
+    background: #ecf0f1;
+    border-left: 4px solid #34495e;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .greek-focus-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #5d6d7e;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .greek-terms {
+    font-family: "Times New Roman", serif;
+    font-size: 1.1rem;
+    color: #2c3e50;
+  }
+  
+  .weekly-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .week-action {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: #fffdf7;
+    text-decoration: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 3px 10px rgba(52, 73, 94, 0.2);
+  }
+  
+  .week-action:hover {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 73, 94, 0.3);
+  }
+  
+  .week-action.secondary {
+    background: linear-gradient(135deg, #5d6d7e 0%, #34495e 100%);
+  }
+
+  /* Study Tools Section */
+  .study-tools {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  }
+  
+  .tools-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .tools-title {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 400;
+  }
+  
+  .tools-description {
+    font-size: 1.1rem;
+    color: #5d6d7e;
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+  
+  .tool-card {
+    background: #fffdf7;
+    border: 2px solid #bdc3c7;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 6px 20px rgba(52, 73, 94, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tool-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(52, 73, 94, 0.12);
+    border-color: #34495e;
+  }
+  
+  .tool-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #34495e 0%, #5d6d7e 100%);
+    color: #fffdf7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
+  }
+  
+  .tool-title {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .tool-description {
+    color: #2c3e50;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .tool-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #ecf0f1;
+  }
+  
+  .tool-stat {
+    text-align: center;
+  }
+  
+  .tool-stat-number {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+  
+  .tool-stat-label {
+    color: #5d6d7e;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+  }
+  
+  .tool-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .tool-btn {
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .tool-btn.primary {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: #fffdf7;
+    box-shadow: 0 3px 10px rgba(52, 73, 94, 0.2);
+  }
+  
+  .tool-btn.primary:hover {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(52, 73, 94, 0.3);
+  }
+  
+  .tool-btn.secondary {
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+  }
+  
+  .tool-btn.secondary:hover {
+    background: #ecf0f1;
+    border-color: #34495e;
+  }
+
+  /* Embedded Content Sections */
+  .embedded-content {
+    background: #fffdf7;
+    border: 1px solid #ecf0f1;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .embedded-header {
+    border-bottom: 2px solid #f8f9fa;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .embedded-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .embedded-subtitle {
+    color: #5d6d7e;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  footer {
+    background: #2c3e50;
+    color: #bdc3c7;
+    padding: 2.5rem 0 1.5rem;
+    text-align: center;
+    border-top: 2px solid #34495e;
+  }
+  
+  .footer-ornament {
+    font-size: 1.5rem;
+    color: #5d6d7e;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-title {
+    color: #ecf0f1;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-subtitle {
+    color: #bdc3c7;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #f8f9fa;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .main-title { font-size: 2.2rem; }
+    .greek-subtitle { font-size: 1.1rem; }
+    .course-details {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .nav-tabs {
+      grid-template-columns: repeat(3, 1fr);
+      font-size: 0.8rem;
+    }
+    .nav-tab button {
+      padding: 0.8rem 0.3rem;
+      font-size: 0.8rem;
+    }
+    .week-card {
+      padding: 2rem;
+    }
+    .week-header {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .weekly-actions {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+    .week-action {
+      justify-content: center;
+    }
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+    .tool-actions {
+      flex-direction: column;
+    }
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 0 16px; }
+    header { padding: 2rem 0; }
+    .main-title { font-size: 1.8rem; }
+    .course-details {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .nav-tabs {
+      grid-template-columns: repeat(2, 1fr);
+      font-size: 0.75rem;
+    }
+    .nav-tab button { 
+      padding: 0.7rem 0.2rem; 
+      font-size: 0.75rem;
+      line-height: 1.2;
+    }
+    .tools-title { font-size: 1.8rem; }
+    .tool-card { padding: 2rem; }
+    .tool-stats { grid-template-columns: 1fr; }
+    .weekly-actions {
+      grid-template-columns: 1fr;
+    }
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="cross-ornament">☦</div>
+    <div class="organization-title">Orthodox Companion Studies</div>
+    <h1 class="main-title">Orthodox Theological Formation</h1>
+    <div class="greek-subtitle">Multiple Study Programs for Orthodox Learning</div>
+    <p class="mission-statement">
+      Comprehensive theological education through the Church Fathers, Biblical studies, liturgical formation, 
+      and systematic theology. Choose from multiple study tracks designed for Orthodox formation at every level.
+    </p>
+    <div class="course-details">
+      <div class="course-stat">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Study Programs</span>
+      </div>
+      <div class="course-stat">
+        <span class="stat-number">37</span>
+        <span class="stat-label">Church Fathers</span>
+      </div>
+      <div class="course-stat">
+        <span class="stat-number">1000+</span>
+        <span class="stat-label">Resources</span>
+      </div>
+      <div class="course-stat">
+        <span class="stat-number">7</span>
+        <span class="stat-label">Centuries</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="container">
+    <ul class="nav-tabs">
+      <li class="nav-tab active" data-tab="programs"><button>Study Programs</button></li>
+      <li class="nav-tab" data-tab="patristics"><button>Patristic Formation</button></li>
+      <li class="nav-tab" data-tab="biblical"><button>Biblical Studies</button></li>
+      <li class="nav-tab" data-tab="progress"><button>My Progress</button></li>
+      <li class="nav-tab" data-tab="resources"><button>Study Resources</button></li>
+      <li class="nav-tab" data-tab="workspace"><button>Notion Workspace</button></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Tab 1: Study Programs Overview -->
+<div id="tab-programs" class="tab-content active">
+  <section class="study-tools">
+    <div class="container">
+      <div class="tools-header">
+        <h2 class="tools-title">Orthodox Study Programs</h2>
+        <p class="tools-description">
+          Comprehensive theological formation through multiple integrated study tracks
+        </p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card" style="border: 3px solid #27ae60; background: linear-gradient(145deg, #fffdf7 0%, #f8f9fa 100%);">
+          <div class="tool-icon" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);">☩</div>
+          <h3 class="tool-title">Φρόνημα τῶν Πατέρων</h3>
+          <div style="background: #27ae60; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Currently Active</div>
+          <p class="tool-description">
+            Systematic formation through 37 Church Fathers across 7 centuries. Three tracks available: 
+            40-week intensive, 1-year comprehensive, or 2-year contemplative study.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">37</span>
+              <span class="tool-stat-label">Church Fathers</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">3</span>
+              <span class="tool-stat-label">Study Tracks</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">800+</span>
+              <span class="tool-stat-label">Greek Terms</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button onclick="switchTab('patristics')" class="tool-btn primary">Enter Program</button>
+            <a href="#" onclick="openNotion('main')" class="tool-btn secondary">Notion Workspace</a>
+          </div>
+        </div>
+
+        <div class="tool-card" style="opacity: 0.7;">
+          <div class="tool-icon" style="background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);">📖</div>
+          <h3 class="tool-title">Biblical Studies Foundation</h3>
+          <div style="background: #95a5a6; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+          <p class="tool-description">
+            Hebrew and Greek language acquisition, biblical theology, and exegetical method. 
+            Coordinate with patristic study for complete scriptural-traditional integration.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">2</span>
+              <span class="tool-stat-label">Languages</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">76</span>
+              <span class="tool-stat-label">Biblical Books</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">3</span>
+              <span class="tool-stat-label">Study Levels</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2026</button>
+            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
+          </div>
+        </div>
+
+        <div class="tool-card" style="opacity: 0.7;">
+          <div class="tool-icon" style="background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);">⛪</div>
+          <h3 class="tool-title">Church History</h3>
+          <div style="background: #95a5a6; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+          <p class="tool-description">
+            Comprehensive Orthodox Church history from apostolic times through modern era. 
+            Councils, controversies, saints, and institutional development across cultures and centuries.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">7</span>
+              <span class="tool-stat-label">Councils</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">20</span>
+              <span class="tool-stat-label">Centuries</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">15</span>
+              <span class="tool-stat-label">Traditions</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2026</button>
+            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
+          </div>
+        </div>
+
+        <div class="tool-card" style="opacity: 0.7;">
+          <div class="tool-icon" style="background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);">🕊️</div>
+          <h3 class="tool-title">Sacramental Theology</h3>
+          <div style="background: #95a5a6; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+          <p class="tool-description">
+            Deep formation in Orthodox sacramental life and theology. 
+            Seven sacraments, liturgical cycles, pastoral practice, and mystical theology of worship.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">7</span>
+              <span class="tool-stat-label">Sacraments</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">4</span>
+              <span class="tool-stat-label">Liturgical Cycles</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">12</span>
+              <span class="tool-stat-label">Major Feasts</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2026</button>
+            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
+          </div>
+        </div>
+
+        <div class="tool-card" style="opacity: 0.7;">
+          <div class="tool-icon" style="background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);">🏛️</div>
+          <h3 class="tool-title">Orthodox Spirituality</h3>
+          <div style="background: #95a5a6; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+          <p class="tool-description">
+            Contemplative tradition, prayer methods, ascetical theology, and spiritual direction. 
+            Desert Fathers through modern elders, theosis, and practical mystical theology.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">50+</span>
+              <span class="tool-stat-label">Spiritual Masters</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">10</span>
+              <span class="tool-stat-label">Prayer Traditions</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">3</span>
+              <span class="tool-stat-label">Formation Levels</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2027</button>
+            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
+          </div>
+        </div>
+
+        <div class="tool-card" style="opacity: 0.7;">
+          <div class="tool-icon" style="background: linear-gradient(135deg, #95a5a6 0%, #bdc3c7 100%);">⚖️</div>
+          <h3 class="tool-title">Systematic Theology</h3>
+          <div style="background: #95a5a6; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+          <p class="tool-description">
+            Orthodox dogmatic theology, ethics, and apologetics. 
+            Complete systematic overview coordinated with patristic and biblical foundations.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">7</span>
+              <span class="tool-stat-label">Councils</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">12</span>
+              <span class="tool-stat-label">Doctrines</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">4</span>
+              <span class="tool-stat-label">Levels</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2027</button>
+            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #ecf0f1; border-radius: 12px;">
+        <h3 style="color: #2c3e50; margin-bottom: 1rem;">Your Current Studies</h3>
+        <p style="color: #5d6d7e; margin-bottom: 1.5rem;">You're currently enrolled in <strong>Φρόνημα τῶν Πατέρων (Patristic Formation)</strong> - Week 2 of 40</p>
+        <div style="display: inline-flex; gap: 1rem;">
+          <button onclick="switchTab('patristics')" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Continue Studies →</button>
+          <a href="#" onclick="openNotion('main')" style="background: #f8f9fa; color: #2c3e50; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #bdc3c7; transition: all 0.3s ease;" onmouseover="this.style.background='#ecf0f1'" onmouseout="this.style.background='#f8f9fa'">Open Notion Workspace</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Tab 2: Patristic Formation Program -->
+<div id="tab-patristics" class="tab-content">
+  <section class="current-focus">
+    <div class="container">
+      <div class="focus-header">
+        <h2 class="focus-title">Φρόνημα τῶν Πατέρων</h2>
+        <p class="focus-subtitle">Week 2 of 40 — 40-Week Intensive Track</p>
+      </div>
+      
+      <div class="week-card">
+        <div class="week-header">
+          <div class="week-badge">Week 2</div>
+          <div class="week-progress">5% Complete • Phase 1: Apostolic Fathers</div>
+        </div>
+        
+        <div class="week-info">
+          <h3 class="phase-title">Apostolic Fathers</h3>
+          <p class="fathers-list">Ignatius of Antioch • Polycarp of Smyrna • Martyrdom of Polycarp</p>
+          <p class="week-description">
+            Completing Ignatius's seven letters and transitioning to Polycarp's <em>Epistle to the Philippians</em> 
+            and the <em>Martyrdom of Polycarp</em>. Focus on episcopal authority, flesh-spirit unity, and the 
+            theology of martyrdom as witness (<em>μαρτυρία</em>).
+          </p>
+          
+          <div class="greek-focus">
+            <div class="greek-focus-title">Greek Focus This Week</div>
+            <div class="greek-terms greek-text">σάρξ (flesh) • ἕνωσις (unity) • ἐπίσκοπος (bishop) • μαρτυρία (witness/martyrdom)</div>
+            <div style="margin-top: 0.5rem;">
+              <a href="#" onclick="openNotion('lexicon')" style="color: #5d6d7e; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted #5d6d7e;">View in Greek Lexicon →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="weekly-actions">
+          <a href="#" onclick="openNotion('main')" class="week-action">
+            Daily Patristic Notes
+          </a>
+          <a href="#" onclick="openNotion('fatherCards')" class="week-action secondary">
+            Father Cards: Ignatius & Polycarp
+          </a>
+          <a href="#" onclick="openNotion('lexicon')" class="week-action secondary">
+            Greek Vocabulary
+          </a>
+          <a href="#" onclick="openNotion('biblical')" class="week-action secondary">
+            Biblical Companion
+          </a>
+        </div>
+      </div>
+      
+      <div style="margin-top: 3rem;">
+        <div class="embedded-content">
+          <div class="embedded-header">
+            <h2 class="embedded-title">Study Track Options</h2>
+            <p class="embedded-subtitle">Choose your Orthodox patristic formation path</p>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            <!-- 40-Week Intensive -->
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #27ae60; position: relative;">
+              <div style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; position: absolute; top: 1rem; right: 1rem;">Active</div>
+              <h3 style="color: #2c3e50; margin-bottom: 1rem; font-size: 1.3rem;">40-Week Intensive Track</h3>
+              <p style="color: #5d6d7e; margin-bottom: 1.5rem; line-height: 1.6;">Systematic deep dive through 22 key Church Fathers following the Nicene Arc.</p>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                <div><strong style="color: #2c3e50;">Daily Study:</strong><br><span style="color: #5d6d7e;">60-90 minutes</span></div>
+                <div><strong style="color: #2c3e50;">Fathers:</strong><br><span style="color: #5d6d7e;">22 systematic</span></div>
+                <div><strong style="color: #2c3e50;">Greek Terms:</strong><br><span style="color: #5d6d7e;">800+ words</span></div>
+                <div><strong style="color: #2c3e50;">Biblical:</strong><br><span style="color: #5d6d7e;">NT once, Psalms 4x</span></div>
+              </div>
+              <div style="background: #27ae60; color: white; padding: 0.8rem; border-radius: 6px; text-align: center; font-size: 0.9rem; font-weight: 500;">Currently Active Track</div>
+            </div>
+
+            <!-- 1-Year Comprehensive -->
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #95a5a6;">
+              <h3 style="color: #2c3e50; margin-bottom: 1rem; font-size: 1.3rem;">1-Year Comprehensive</h3>
+              <p style="color: #5d6d7e; margin-bottom: 1.5rem; line-height: 1.6;">Complete coverage of all 37 Fathers including Desert Fathers and Byzantine theologians.</p>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                <div><strong style="color: #2c3e50;">Daily Study:</strong><br><span style="color: #5d6d7e;">45-60 minutes</span></div>
+                <div><strong style="color: #2c3e50;">Fathers:</strong><br><span style="color: #5d6d7e;">All 37 complete</span></div>
+                <div><strong style="color: #2c3e50;">Greek Terms:</strong><br><span style="color: #5d6d7e;">1000+ words</span></div>
+                <div><strong style="color: #2c3e50;">Biblical:</strong><br><span style="color: #5d6d7e;">Complete survey</span></div>
+              </div>
+              <div style="background: #95a5a6; color: white; padding: 0.8rem; border-radius: 6px; text-align: center; font-size: 0.9rem; font-weight: 500; cursor: pointer;" onclick="alert('Track switching coming soon!')">Switch to This Track</div>
+            </div>
+
+            <!-- 2-Year Contemplative -->
+            <div style="background: #f8f9fa; padding: 2rem; border-radius: 12px; border-left: 4px solid #95a5a6;">
+              <h3 style="color: #2c3e50; margin-bottom: 1rem; font-size: 1.3rem;">2-Year Contemplative</h3>
+              <p style="color: #5d6d7e; margin-bottom: 1.5rem; line-height: 1.6;">Same content as 1-year track but with enhanced reflection and spiritual formation.</p>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                <div><strong style="color: #2c3e50;">Daily Study:</strong><br><span style="color: #5d6d7e;">30-45 minutes</span></div>
+                <div><strong style="color: #2c3e50;">Fathers:</strong><br><span style="color: #5d6d7e;">All 37 contemplative</span></div>
+                <div><strong style="color: #2c3e50;">Integration:</strong><br><span style="color: #5d6d7e;">Prayer & liturgy</span></div>
+                <div><strong style="color: #2c3e50;">Formation:</strong><br><span style="color: #5d6d7e;">Spiritual emphasis</span></div>
+              </div>
+              <div style="background: #95a5a6; color: white; padding: 0.8rem; border-radius: 6px; text-align: center; font-size: 0.9rem; font-weight: 500; cursor: pointer;" onclick="alert('Track switching coming soon!')">Switch to This Track</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Tab 3: Biblical Studies -->
+<div id="tab-biblical" class="tab-content">
+  <section class="current-focus">
+    <div class="container">
+      <div class="embedded-content">
+        <div class="embedded-header">
+          <h2 class="embedded-title">Biblical Studies Foundation</h2>
+          <p class="embedded-subtitle">Coming 2026 — Comprehensive Biblical Formation</p>
+        </div>
+        
+        <div style="text-align: center; padding: 3rem; color: #5d6d7e;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">📖</div>
+          <h3 style="color: #2c3e50; margin-bottom: 1rem;">Biblical Studies Program</h3>
+          <p style="max-width: 600px; margin: 0 auto 2rem; line-height: 1.7;">
+            Hebrew and Greek language acquisition, biblical theology, and exegetical method. 
+            Designed to coordinate with patristic study for complete scriptural-traditional integration.
+          </p>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; max-width: 800px; margin: 2rem auto;">
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+              <h4 style="color: #2c3e50; margin-bottom: 1rem;">Hebrew Language Track</h4>
+              <p style="font-size: 0.9rem;">Biblical Hebrew grammar, vocabulary, and reading fluency</p>
+            </div>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+              <h4 style="color: #2c3e50; margin-bottom: 1rem;">Greek Language Track</h4>
+              <p style="font-size: 0.9rem;">Koine Greek mastery for NT and LXX study</p>
+            </div>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+              <h4 style="color: #2c3e50; margin-bottom: 1rem;">Biblical Theology</h4>
+              <p style="font-size: 0.9rem;">Systematic theology from Scripture within Orthodox tradition</p>
+            </div>
+          </div>
+          
+          <button style="background: #bdc3c7; color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 500; cursor: not-allowed; opacity: 0.7;" disabled>
+            Notify Me When Available
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Tab 4: Progress Tracker -->
+<div id="tab-progress" class="tab-content">
+  <section class="current-focus">
+    <div class="container">
+      <div class="embedded-content">
+        <div class="embedded-header">
+          <h2 class="embedded-title">Progress Tracker</h2>
+          <p class="embedded-subtitle">Real-time progress across all study dimensions</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Overall Progress</h4>
+            <div style="font-size: 2rem; color: #34495e; font-weight: 600; margin-bottom: 0.5rem;">5%</div>
+            <div style="color: #5d6d7e; font-size: 0.9rem;">Week 2 of 40 • Phase 1 of 14</div>
+          </div>
+
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Greek Vocabulary</h4>
+            <div style="font-size: 2rem; color: #34495e; font-weight: 600; margin-bottom: 0.5rem;" id="greek-progress">40</div>
+            <div style="color: #5d6d7e; font-size: 0.9rem;">terms encountered • 760+ remaining</div>
+          </div>
+
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Biblical Reading</h4>
+            <div style="font-size: 2rem; color: #34495e; font-weight: 600; margin-bottom: 0.5rem;">20%</div>
+            <div style="color: #5d6d7e; font-size: 0.9rem;">Psalm 42 of 150 • Pass 1</div>
+          </div>
+
+          <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Church Fathers</h4>
+            <div style="font-size: 2rem; color: #34495e; font-weight: 600; margin-bottom: 0.5rem;">3</div>
+            <div style="color: #5d6d7e; font-size: 0.9rem;">of 37 Fathers encountered</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Tab 5: Study Tools -->
+<div id="tab-tools" class="tab-content">
+  <section class="study-tools">
+    <div class="container">
+      <div class="tools-header">
+        <h2 class="tools-title">Study Tools</h2>
+        <p class="tools-description">
+          Comprehensive resources for Orthodox patristic formation across all study tracks
+        </p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-icon">Ω</div>
+          <h3 class="tool-title">Greek Companion</h3>
+          <p class="tool-description">
+            Master 800+ essential Greek words from the patristic corpus. Each term includes etymology, 
+            parsing, authentic examples from the Fathers, and liturgical pronunciation guides.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number" id="words-mastered">0</span>
+              <span class="tool-stat-label">Mastered</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number" id="words-learning">40</span>
+              <span class="tool-stat-label">Learning</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">760+</span>
+              <span class="tool-stat-label">Remaining</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <a href="greek/index.html" class="tool-btn primary">Study Greek</a>
+            <a href="#" onclick="openNotion('lexicon')" class="tool-btn secondary">Full Lexicon</a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">⊕</div>
+          <h3 class="tool-title">Biblical Companion</h3>
+          <p class="tool-description">
+            Daily biblical readings coordinated with patristic study. Septuagint for OT, Eastern Orthodox Bible 
+            for NT. Psalms as continuous thread plus strategic books aligned with Fathers' theology.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">27</span>
+              <span class="tool-stat-label">NT Books</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number" id="nt-books-read">2</span>
+              <span class="tool-stat-label">Completed</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">4+</span>
+              <span class="tool-stat-label">Psalm Passes</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <a href="biblical/index.html" class="tool-btn primary">Today's Reading</a>
+            <a href="biblical/tracker.html" class="tool-btn secondary">Progress</a>
+          </div>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-icon">☦</div>
+          <h3 class="tool-title">Father Cards</h3>
+          <p class="tool-description">
+            Complete database of 37 Church Fathers with biographical details, key quotes, theological 
+            contributions, and study context. Browse all Fathers or focus on your current week's study.
+          </p>
+          <div class="tool-stats">
+            <div class="tool-stat">
+              <span class="tool-stat-number">37</span>
+              <span class="tool-stat-label">Complete Cards</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">3</span>
+              <span class="tool-stat-label">Current Focus</span>
+            </div>
+            <div class="tool-stat">
+              <span class="tool-stat-number">800+</span>
+              <span class="tool-stat-label">Years Covered</span>
+            </div>
+          </div>
+          <div class="tool-actions">
+            <a href="#" onclick="openNotion('fatherCards')" class="tool-btn primary">Browse All Fathers</a>
+            <a href="#" onclick="openNotion('fatherCards')" class="tool-btn secondary">Current Week</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Tab 6: Notion Integration -->
+<div id="tab-notion" class="tab-content">
+  <section class="current-focus">
+    <div class="container">
+      <div class="embedded-content">
+        <div class="embedded-header">
+          <h2 class="embedded-title">Notion Integration</h2>
+          <p class="embedded-subtitle">Seamless connection to your study workspace</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; border: 1px solid #ecf0f1;">
+            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Primary Workspace</h4>
+            <a href="#" onclick="openNotion('main')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Main Patristics Dashboard</a>
+            <a href="#" onclick="openNotion('notes')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Daily Patristic Notes</a>
+            <a href="#" onclick="openNotion('reviews')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Weekly Reviews</a>
+            <a href="#" onclick="openNotion('doctrinal')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0;">Doctrinal Index</a>
+          </div>
+
+          <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; border: 1px solid #ecf0f1;">
+            <h4 style="color: #2c3e50; margin-bottom: 1rem;">Study Resources</h4>
+            <a href="#" onclick="openNotion('fatherCards')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Father Cards Database</a>
+            <a href="#" onclick="openNotion('lexicon')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Greek Lexicon (800+ Terms)</a>
+            <a href="#" onclick="openNotion('biblical')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Biblical Companion Track</a>
+            <a href="#" onclick="openNotion('analysis')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Course Analysis</a>
+            <a href="#" onclick="openNotion('seminary')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0;">Seminary Studies Roadmap</a>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1.5rem; background: #ecf0f1; border-radius: 8px; text-align: center;">
+          <p style="color: #5d6d7e; margin-bottom: 1rem;">Your Notion workspace contains the complete study system: 37 Father Cards, 800+ Greek terms, and integrated progress tracking.</p>
+          <div style="display: inline-flex; gap: 1rem;">
+            <a href="#" onclick="openNotion('main')" style="background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Open Main Dashboard</a>
+            <a href="#" onclick="openNotion('fatherCards')" style="background: linear-gradient(135deg, #5d6d7e 0%, #34495e 100%); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Browse Father Cards</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-ornament">☦</div>
+    <div class="footer-title">Orthodox Companion Studies</div>
+    <p class="footer-subtitle">Orthodox Theological Formation • Multiple Study Programs</p>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="orthodox-companion.html">Orthodox Companion</a>
+      <a href="contact.html">Contact</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Tab Navigation System
+  document.addEventListener('DOMContentLoaded', function() {
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    navTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const targetTab = this.getAttribute('data-tab');
+        switchTab(targetTab);
+      });
+    });
+    
+    // Initialize progress tracking
+    updateProgress();
+  });
+
+  // Switch tab function for programmatic navigation
+  function switchTab(targetTab) {
+    const navTabs = document.querySelectorAll('.nav-tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Remove active class from all tabs and content
+    navTabs.forEach(t => t.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Add active class to target tab and corresponding content
+    document.querySelector(`[data-tab="${targetTab}"]`).classList.add('active');
+    document.getElementById(`tab-${targetTab}`).classList.add('active');
+  }
+
+  // Notion Integration - Real URLs from your workspace
+  const notionUrls = {
+    main: 'https://www.notion.so/331e377ccd2480f1b8aaeefd5352ebb5',
+    biblical: 'https://www.notion.so/333e377ccd248135a37cecab6843ce99',
+    analysis: 'https://www.notion.so/333e377ccd2481b8b5ddea711115e9d3',
+    seminary: 'https://www.notion.so/333e377ccd248100a172ce0492d55318',
+    notes: 'https://www.notion.so/331e377ccd2480558152c7df59ade330',
+    reviews: 'https://www.notion.so/331e377ccd2480a990d8f71f886ae18c',
+    doctrinal: 'https://www.notion.so/331e377ccd24801e9469e7e8cb667d4e',
+    fatherCards: 'https://www.notion.so/344e377ccd24819dbf48d25d2905f691',
+    lexicon: 'https://www.notion.so/344e377ccd24814ebb6cff8f8a85c99f'
+  };
+
+  function openNotion(page) {
+    if (notionUrls[page]) {
+      window.open(notionUrls[page], '_blank', 'noopener,noreferrer');
+    }
+  }
+
+  // Progress Tracking
+  function updateProgress() {
+    try {
+      const greekProgress = JSON.parse(localStorage.getItem('greekProgress') || '{}');
+      const mastered = Object.values(greekProgress).filter(status => status === 'mastered').length;
+      const learning = Object.values(greekProgress).filter(status => status === 'learning').length;
+      
+      document.getElementById('words-mastered').textContent = mastered;
+      document.getElementById('words-learning').textContent = learning || 40;
+      document.getElementById('greek-progress').textContent = learning || 40;
+      document.getElementById('nt-books-read').textContent = '2'; // John ✅, 1 Peter ✅
+      
+    } catch (e) {
+      console.log('Progress data not yet available');
+    }
+  }
+
+  // Export for other pages
+  window.OrthodoxCompanionStudies = {
+    updateProgress,
+    notionUrls
+  };
+</script>
+
+</body>
+</html>
