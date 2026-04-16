@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){var t=localStorage.getItem('oc_theme')||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);})();</script>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bible Reader — Orthodox Companion Studies</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0A1628"/>
+<meta name="description" content="Read the Holy Scriptures in the Orthodox tradition — Septuagint (LXX) for the Old Testament, Eastern Orthodox Bible for the New Testament."/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+/* ── Orthodox Companion Studies Integration ─────────────── */
+.back-to-hub {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: rgba(52, 73, 94, 0.9);
+  color: #fffdf7;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+.back-to-hub:hover {
+  background: rgba(52, 73, 94, 1);
+  transform: translateY(-2px);
+}
+
+/* ── Account dropdown ─────────────────────────────────── */
+.nav-account-wrap{position:relative;}
+.nav-user-btn{font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--gold-light);background:transparent;border:1px solid var(--gold-dim);border-radius:2px;padding:6px 13px;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all 0.2s;white-space:nowrap;}
+.nav-user-btn:hover{background:rgba(201,168,76,0.1);}
+.nav-user-arrow{font-size:0.55rem;opacity:0.7;transition:transform 0.2s;}
+.nav-user-btn.open .nav-user-arrow{transform:rotate(180deg);}
+.nav-user-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:200px;background:var(--dark);border:1px solid var(--border-dim);border-top:2px solid var(--gold-dim);border-radius:0 0 4px 4px;z-index:601;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity 0.18s,transform 0.18s;padding:6px 0;box-shadow:0 16px 48px rgba(0,0,0,0.7);}
+.nav-user-dropdown.open{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-user-dropdown a{display:flex;align-items:center;gap:10px;font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-dim);text-decoration:none;padding:9px 18px;transition:color 0.15s,background 0.15s;}
+.nav-user-dropdown a:hover{color:var(--gold-light);background:rgba(201,168,76,0.07);}
+
+/* ── Reset & Root ─────────────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --gold:#C9A84C;--gold-light:#E8CB7A;--gold-dim:#8A6A28;
+  --deep:#0A1628;--dark:#0F2035;--panel:#1B3A6B;
+  --border:#2A5A9C;--border-dim:#1A3A5C;
+  --text:#F0E6CC;--text-dim:#B8C8DC;--text-muted:#4A7AB8;
+  --bg-page:#0A1628;--bg-card:rgba(15,32,53,0.55);
+  --nav-h:68px;
+  --sidebar-w:270px;
+}
+body{font-family:'EB Garamond',Georgia,serif;background:var(--bg-page);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+/* ── Theme ────────────────────────────────────────────── */
+[data-theme="light"]{
+  --gold:#8A5A00;--gold-light:#6A4200;--gold-dim:#A07020;
+  --deep:#F5EDD8;--dark:#EDE0C4;--panel:#E8D9BC;
+  --border:#C4A882;--border-dim:#D4BC96;
+  --text:#1A0F00;--text-dim:#3A2800;--text-muted:#6B4C1A;
+  --bg-page:#F5EDD8;--bg-card:rgba(232,217,188,0.8);
+}
+
+/* ── Nav ──────────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:600;background:rgba(52, 73, 94, 0.97);border-bottom:1px solid rgba(255, 255, 255, 0.1);backdrop-filter:blur(12px);height:var(--nav-h);display:flex;align-items:center;padding:0 20px;gap:0;box-shadow:0 2px 30px rgba(0,0,0,0.5);}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;margin-right:8px;}
+.nav-cross{font-size:26px;color:#bdc3c7;font-family:"Segoe UI Symbol","Apple Symbols",serif;font-style:normal;line-height:1;}
+.nav-title{font-family:'Cinzel',serif;font-size:0.95rem;font-weight:700;color:#fffdf7;letter-spacing:0.07em;line-height:1;}
+.nav-subtitle{font-size:0.6rem;color:#bdc3c7;font-style:italic;margin-top:2px;}
+.nav-links{display:flex;align-items:stretch;gap:0;margin-left:4px;list-style:none;height:var(--nav-h);}
+.nav-item{position:relative;display:flex;align-items:center;}
+.nav-link{font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:#bdc3c7;text-decoration:none;padding:0 10px;height:100%;display:flex;align-items:center;gap:4px;cursor:pointer;transition:color 0.2s;white-space:nowrap;border-bottom:2px solid transparent;}
+.nav-link:hover,.nav-link.active{color:#fffdf7;border-bottom-color:#3498db;}
+.nav-link.has-drop::after{content:'▾';font-size:0.45rem;opacity:0.55;margin-left:1px;}
+.nav-item:hover>.nav-dropdown{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown{position:absolute;top:calc(var(--nav-h) + 1px);left:0;min-width:210px;background:linear-gradient(160deg,#34495e,#2c3e50);border:1px solid rgba(255, 255, 255, 0.1);border-top:2px solid #3498db;border-radius:0 0 4px 4px;z-index:601;opacity:0;pointer-events:none;transform:translateY(-6px);transition:opacity 0.18s ease,transform 0.18s ease;padding:6px 0;box-shadow:0 16px 48px rgba(0,0,0,0.7);}
+.nav-dropdown a{display:flex;align-items:center;gap:10px;font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:#bdc3c7;text-decoration:none;padding:9px 18px;transition:color 0.15s,background 0.15s;white-space:nowrap;}
+.nav-dropdown a:hover{color:#fffdf7;background:rgba(255,255,255,0.1);}
+.nav-dropdown a .dd-icon{font-size:0.8rem;width:14px;text-align:center;flex-shrink:0;font-style:normal;}
+.nav-dropdown-divider{border:none;border-top:1px solid rgba(255,255,255,0.1);margin:4px 0;}
+.nav-right{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0;}
+.nav-ai-btn{font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:#3498db;border:1px solid #3498db;border-radius:2px;padding:6px 13px;background:rgba(52,152,219,0.08);text-decoration:none;transition:all 0.2s;white-space:nowrap;flex-shrink:0;}
+.nav-ai-btn:hover{background:rgba(52,152,219,0.2);}
+.nav-signin-btn{font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:#bdc3c7;text-decoration:none;padding:6px 10px;transition:color 0.2s;white-space:nowrap;flex-shrink:0;}
+.nav-signin-btn:hover{color:#fffdf7;}
+.nav-hamburger{display:none;background:transparent;border:none;color:#bdc3c7;cursor:pointer;padding:8px;flex-direction:column;gap:5px;margin-left:8px;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:currentColor;border-radius:1px;transition:all 0.25s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-drawer{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:#34495e;border-bottom:1px solid rgba(255, 255, 255, 0.1);z-index:599;padding:8px 0 20px;box-shadow:0 8px 30px rgba(0,0,0,0.6);transform:translateY(-8px);opacity:0;transition:transform 0.25s ease,opacity 0.25s ease;pointer-events:none;}
+.nav-drawer.open{transform:translateY(0);opacity:1;pointer-events:all;}
+.nav-drawer-section{font-family:'Cinzel',serif;font-size:0.55rem;text-transform:uppercase;letter-spacing:0.16em;color:#95a5a6;padding:12px 24px 4px;margin-top:4px;}
+.nav-drawer a{display:block;font-family:'Cinzel',serif;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.09em;color:#bdc3c7;text-decoration:none;padding:10px 24px 10px 32px;border-bottom:1px solid rgba(255, 255, 255, 0.05);transition:color 0.2s,padding-left 0.2s;}
+.nav-drawer a:hover{color:#fffdf7;padding-left:38px;}
+.nav-drawer-footer{padding:14px 24px 0;display:flex;gap:8px;}
+@media(max-width:860px){.nav-links{display:none;}.nav-hamburger{display:flex;}.nav-right .nav-signin-btn{display:none;}}
+
+/* ── Page Layout ──────────────────────────────────────── */
+.reader-shell{
+  display:flex;
+  height:calc(100vh - var(--nav-h));
+  margin-top:var(--nav-h);
+  overflow:hidden;
+}
+
+/* ── Sidebar ──────────────────────────────────────────── */
+.sidebar{
+  width:var(--sidebar-w);
+  flex-shrink:0;
+  background:#0B1B33;
+  border-right:1px solid var(--border-dim);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  transition:width 0.28s ease, opacity 0.28s ease;
+  position:relative;
+}
+.sidebar.collapsed{width:0;opacity:0;}
+.sidebar-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 20px 14px;
+  border-bottom:1px solid var(--border-dim);
+  background:var(--panel);
+}
+.sidebar-header h3{
+  font-family:'Cinzel',serif;
+  font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;
+  color:var(--text);font-weight:600;margin:0;
+}
+.sidebar-toggle{
+  background:transparent;border:none;color:var(--text-muted);
+  cursor:pointer;padding:4px;border-radius:2px;
+  transition:color 0.2s;font-size:0.7rem;
+}
+.sidebar-toggle:hover{color:var(--text);}
+.sidebar-content{flex:1;overflow-y:auto;padding:16px 0;}
+.book-section{margin-bottom:24px;}
+.section-title{
+  font-family:'Cinzel',serif;font-size:0.6rem;
+  text-transform:uppercase;letter-spacing:0.14em;
+  color:var(--gold);padding:0 20px 8px;
+  font-weight:600;border-bottom:1px solid rgba(201,168,76,0.15);
+  margin-bottom:12px;
+}
+.book-list{list-style:none;padding:0;}
+.book-item{margin:1px 0;}
+.book-link{
+  display:block;padding:7px 20px;
+  color:var(--text-dim);text-decoration:none;
+  font-size:0.75rem;transition:all 0.15s;
+  border-left:3px solid transparent;
+}
+.book-link:hover{color:var(--text);background:rgba(201,168,76,0.05);}
+.book-link.active{
+  color:var(--gold-light);background:rgba(201,168,76,0.08);
+  border-left-color:var(--gold);font-weight:500;
+}
+.book-chapter-count{
+  color:var(--text-muted);font-size:0.65rem;
+  margin-left:6px;font-weight:400;
+}
+
+/* ── Main Content ─────────────────────────────────────── */
+.main-content{
+  flex:1;
+  background:var(--bg-page);
+  overflow-y:auto;
+  position:relative;
+}
+.content-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,22,40,0.95);
+  border-bottom:1px solid var(--border-dim);
+  backdrop-filter:blur(8px);
+  padding:18px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.content-title{
+  font-family:'Cinzel',serif;font-size:1.1rem;
+  color:var(--text);font-weight:600;margin:0;
+}
+.content-meta{
+  color:var(--text-muted);font-size:0.8rem;
+  font-style:italic;
+}
+.content-controls{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.control-group{display:flex;align-items:center;gap:6px;}
+.control-label{
+  font-family:'Cinzel',serif;font-size:0.6rem;
+  text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--text-muted);
+}
+.control-select{
+  background:var(--panel);border:1px solid var(--border-dim);
+  color:var(--text);padding:4px 8px;border-radius:3px;
+  font-size:0.75rem;cursor:pointer;
+}
+.control-select:focus{outline:none;border-color:var(--gold-dim);}
+.theme-toggle{
+  background:var(--panel);border:1px solid var(--border-dim);
+  color:var(--text-muted);padding:6px 10px;border-radius:3px;
+  cursor:pointer;font-size:0.65rem;transition:all 0.2s;
+}
+.theme-toggle:hover{color:var(--text);border-color:var(--border);}
+
+/* ── Scripture Content ────────────────────────────────── */
+.scripture-wrapper{
+  padding:32px;
+  max-width:900px;
+  margin:0 auto;
+  line-height:1.8;
+}
+.scripture-text{
+  font-size:1.1rem;
+  color:var(--text);
+  line-height:1.8;
+}
+.verse{
+  margin:8px 0;
+  display:block;
+}
+.verse-number{
+  font-family:'Cinzel',serif;
+  font-size:0.7rem;
+  color:var(--gold-dim);
+  font-weight:600;
+  margin-right:8px;
+  vertical-align:top;
+  min-width:20px;
+  display:inline-block;
+}
+.verse-text{
+  display:inline;
+}
+.chapter-title{
+  font-family:'Cinzel',serif;
+  font-size:1.6rem;
+  color:var(--gold);
+  text-align:center;
+  margin:40px 0 32px;
+  font-weight:600;
+  letter-spacing:0.05em;
+}
+.loading{
+  text-align:center;
+  padding:60px 20px;
+  color:var(--text-muted);
+  font-style:italic;
+}
+.error{
+  text-align:center;
+  padding:60px 20px;
+  color:#e74c3c;
+}
+
+/* ── Navigation Arrows ────────────────────────────────── */
+.nav-arrows{
+  position:fixed;
+  bottom:24px;right:24px;
+  display:flex;gap:8px;z-index:500;
+}
+.nav-arrow{
+  background:rgba(201,168,76,0.9);
+  color:var(--deep);
+  border:none;border-radius:50%;
+  width:44px;height:44px;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;font-weight:600;
+  transition:all 0.25s ease;
+  box-shadow:0 4px 16px rgba(0,0,0,0.3);
+}
+.nav-arrow:hover{
+  background:var(--gold-light);
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(0,0,0,0.4);
+}
+.nav-arrow:disabled{
+  background:rgba(201,168,76,0.3);
+  cursor:not-allowed;
+  transform:none;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ── Mobile Responsive ────────────────────────────────── */
+@media(max-width:768px){
+  .sidebar{width:100%;height:auto;position:fixed;top:var(--nav-h);
+    left:0;right:0;bottom:0;z-index:500;
+    transform:translateX(-100%);
+  }
+  .sidebar.open{transform:translateX(0);}
+  .main-content{width:100%;}
+  .content-header{padding:14px 20px;flex-direction:column;align-items:stretch;}
+  .content-controls{justify-content:space-between;}
+  .scripture-wrapper{padding:20px 16px;}
+  .nav-arrows{bottom:16px;right:16px;}
+  .nav-arrow{width:40px;height:40px;font-size:0.9rem;}
+}
+@media(max-width:480px){
+  .content-header{padding:12px 16px;}
+  .scripture-wrapper{padding:16px 12px;}
+  .scripture-text{font-size:1rem;}
+  .chapter-title{font-size:1.4rem;margin:24px 0 20px;}
+}
+</style>
+</head>
+
+<body>
+<!-- Back to Hub Navigation -->
+<a href="index.html" class="back-to-hub">← Orthodox Companion Studies</a>
+
+<!-- Navigation -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <div class="nav-cross">☩</div>
+    <div>
+      <div class="nav-title">Orthodox Companion Studies</div>
+      <div class="nav-subtitle">Bible Reader</div>
+    </div>
+  </a>
+  
+  <ul class="nav-links">
+    <li class="nav-item">
+      <a href="index.html" class="nav-link">Study Hub</a>
+    </li>
+    <li class="nav-item">
+      <a href="father-cards/index.html" class="nav-link">Father Cards</a>
+    </li>
+    <li class="nav-item">
+      <a href="greek-lexicon/index.html" class="nav-link">Greek Lexicon</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link active">Bible Reader</a>
+    </li>
+  </ul>
+
+  <!-- Mobile Menu -->
+  <button class="nav-hamburger" onclick="toggleMobileNav()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <div class="nav-right">
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+  </div>
+</nav>
+
+<!-- Mobile Nav Drawer -->
+<div class="nav-drawer" id="nav-drawer">
+  <div class="nav-drawer-section">Study Platform</div>
+  <a href="index.html">Study Hub</a>
+  <a href="father-cards/index.html">Father Cards</a>
+  <a href="greek-lexicon/index.html">Greek Lexicon</a>
+  <a href="#" class="active">Bible Reader</a>
+</div>
+
+<div class="reader-shell">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h3>Holy Scripture</h3>
+      <button class="sidebar-toggle" onclick="toggleSidebar()">✕</button>
+    </div>
+    
+    <div class="sidebar-content">
+      <!-- Old Testament (Septuagint) -->
+      <div class="book-section">
+        <div class="section-title">Old Testament (LXX)</div>
+        <ul class="book-list" id="ot-books"></ul>
+      </div>
+      
+      <!-- New Testament -->
+      <div class="book-section">
+        <div class="section-title">New Testament</div>
+        <ul class="book-list" id="nt-books"></ul>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" id="main-content">
+    <div class="content-header">
+      <div>
+        <h1 class="content-title" id="book-title">Select a Book</h1>
+        <div class="content-meta" id="book-meta">Choose from the Old Testament (Septuagint) or New Testament</div>
+      </div>
+      
+      <div class="content-controls">
+        <div class="control-group">
+          <label class="control-label">Chapter</label>
+          <select class="control-select" id="chapter-select" onchange="loadChapter()">
+            <option value="">Select Chapter</option>
+          </select>
+        </div>
+        
+        <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">🌙</button>
+      </div>
+    </div>
+    
+    <div class="scripture-wrapper">
+      <div class="scripture-text" id="scripture-content">
+        <div class="loading">Select a book from the sidebar to begin reading</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Navigation Arrows -->
+<div class="nav-arrows">
+  <button class="nav-arrow" id="prev-chapter" onclick="previousChapter()" disabled>←</button>
+  <button class="nav-arrow" id="next-chapter" onclick="nextChapter()" disabled>→</button>
+</div>
+
+<script>
+// ── Global State ──────────────────────────────────────
+let currentBook = null;
+let currentChapter = 1;
+let currentBookData = null;
+let booksData = {};
+
+// ── Book Metadata ─────────────────────────────────────
+const books = {
+  // Old Testament (Septuagint)
+  ot: [
+    {id: "1CH", name: "1 Chronicles", chapters: 29},
+    {id: "1ES", name: "1 Esdras", chapters: 9},
+    {id: "1KI", name: "1 Kings", chapters: 22},
+    {id: "1MA", name: "1 Maccabees", chapters: 16},
+    {id: "1SA", name: "1 Samuel", chapters: 31},
+    {id: "2CH", name: "2 Chronicles", chapters: 36},
+    {id: "2KI", name: "2 Kings", chapters: 25},
+    {id: "2MA", name: "2 Maccabees", chapters: 15},
+    {id: "2SA", name: "2 Samuel", chapters: 24},
+    {id: "3MA", name: "3 Maccabees", chapters: 7},
+    {id: "4MA", name: "4 Maccabees", chapters: 18},
+    {id: "AMO", name: "Amos", chapters: 9},
+    {id: "BAR", name: "Baruch", chapters: 6},
+    {id: "BEL", name: "Bel and the Dragon", chapters: 1},
+    {id: "DAN", name: "Daniel", chapters: 12},
+    {id: "DEU", name: "Deuteronomy", chapters: 34},
+    {id: "ECC", name: "Ecclesiastes", chapters: 12},
+    {id: "EST", name: "Esther", chapters: 10},
+    {id: "EXO", name: "Exodus", chapters: 40},
+    {id: "EZE", name: "Ezekiel", chapters: 48},
+    {id: "EZR", name: "Ezra", chapters: 10},
+    {id: "GEN", name: "Genesis", chapters: 50},
+    {id: "HAB", name: "Habakkuk", chapters: 3},
+    {id: "HAG", name: "Haggai", chapters: 2},
+    {id: "HOS", name: "Hosea", chapters: 14},
+    {id: "ISA", name: "Isaiah", chapters: 66},
+    {id: "JDG", name: "Judges", chapters: 21},
+    {id: "JDT", name: "Judith", chapters: 16},
+    {id: "JER", name: "Jeremiah", chapters: 52},
+    {id: "JOB", name: "Job", chapters: 42},
+    {id: "JOE", name: "Joel", chapters: 3},
+    {id: "JON", name: "Jonah", chapters: 4},
+    {id: "JOS", name: "Joshua", chapters: 24},
+    {id: "LAM", name: "Lamentations", chapters: 5},
+    {id: "LEV", name: "Leviticus", chapters: 27},
+    {id: "MAL", name: "Malachi", chapters: 4},
+    {id: "MIC", name: "Micah", chapters: 7},
+    {id: "NAH", name: "Nahum", chapters: 3},
+    {id: "NEH", name: "Nehemiah", chapters: 13},
+    {id: "NUM", name: "Numbers", chapters: 36},
+    {id: "OBA", name: "Obadiah", chapters: 1},
+    {id: "PRO", name: "Proverbs", chapters: 31},
+    {id: "PSA", name: "Psalms", chapters: 150},
+    {id: "RUT", name: "Ruth", chapters: 4},
+    {id: "SIR", name: "Sirach", chapters: 51},
+    {id: "SNG", name: "Song of Solomon", chapters: 8},
+    {id: "SUS", name: "Susanna", chapters: 1},
+    {id: "TOB", name: "Tobit", chapters: 14},
+    {id: "WIS", name: "Wisdom", chapters: 19},
+    {id: "ZEC", name: "Zechariah", chapters: 14},
+    {id: "ZEP", name: "Zephaniah", chapters: 3}
+  ],
+  // New Testament
+  nt: [
+    {id: "MAT", name: "Matthew", chapters: 28},
+    {id: "MRK", name: "Mark", chapters: 16},
+    {id: "LUK", name: "Luke", chapters: 24},
+    {id: "JHN", name: "John", chapters: 21},
+    {id: "ACT", name: "Acts", chapters: 28},
+    {id: "ROM", name: "Romans", chapters: 16},
+    {id: "1CO", name: "1 Corinthians", chapters: 16},
+    {id: "2CO", name: "2 Corinthians", chapters: 13},
+    {id: "GAL", name: "Galatians", chapters: 6},
+    {id: "EPH", name: "Ephesians", chapters: 6},
+    {id: "PHP", name: "Philippians", chapters: 4},
+    {id: "COL", name: "Colossians", chapters: 4},
+    {id: "1TH", name: "1 Thessalonians", chapters: 5},
+    {id: "2TH", name: "2 Thessalonians", chapters: 3},
+    {id: "1TI", name: "1 Timothy", chapters: 6},
+    {id: "2TI", name: "2 Timothy", chapters: 4},
+    {id: "TIT", name: "Titus", chapters: 3},
+    {id: "PHM", name: "Philemon", chapters: 1},
+    {id: "HEB", name: "Hebrews", chapters: 13},
+    {id: "JAS", name: "James", chapters: 5},
+    {id: "1PE", name: "1 Peter", chapters: 5},
+    {id: "2PE", name: "2 Peter", chapters: 3},
+    {id: "1JN", name: "1 John", chapters: 5},
+    {id: "2JN", name: "2 John", chapters: 1},
+    {id: "3JN", name: "3 John", chapters: 1},
+    {id: "JUD", name: "Jude", chapters: 1},
+    {id: "REV", name: "Revelation", chapters: 22}
+  ]
+};
+
+// ── Initialize App ────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  populateSidebar();
+  updateThemeIcon();
+});
+
+// ── Populate Sidebar ──────────────────────────────────
+function populateSidebar() {
+  const otList = document.getElementById('ot-books');
+  const ntList = document.getElementById('nt-books');
+  
+  // Populate OT books
+  books.ot.forEach(book => {
+    const li = document.createElement('li');
+    li.className = 'book-item';
+    li.innerHTML = `
+      <a href="#" class="book-link" data-book="${book.id}" onclick="selectBook('${book.id}')">
+        ${book.name}
+        <span class="book-chapter-count">${book.chapters} ch</span>
+      </a>
+    `;
+    otList.appendChild(li);
+  });
+  
+  // Populate NT books
+  books.nt.forEach(book => {
+    const li = document.createElement('li');
+    li.className = 'book-item';
+    li.innerHTML = `
+      <a href="#" class="book-link" data-book="${book.id}" onclick="selectBook('${book.id}')">
+        ${book.name}
+        <span class="book-chapter-count">${book.chapters} ch</span>
+      </a>
+    `;
+    ntList.appendChild(li);
+  });
+}
+
+// ── Book Selection ────────────────────────────────────
+async function selectBook(bookId) {
+  // Update active state
+  document.querySelectorAll('.book-link').forEach(link => {
+    link.classList.remove('active');
+  });
+  document.querySelector(`[data-book="${bookId}"]`).classList.add('active');
+  
+  currentBook = bookId;
+  currentChapter = 1;
+  
+  // Find book info
+  const bookInfo = [...books.ot, ...books.nt].find(book => book.id === bookId);
+  
+  // Update header
+  document.getElementById('book-title').textContent = bookInfo.name;
+  document.getElementById('book-meta').textContent = `${bookInfo.chapters} chapters`;
+  
+  // Populate chapter dropdown
+  populateChapterSelect(bookInfo.chapters);
+  
+  // Load first chapter
+  await loadBookData(bookId);
+  loadChapter();
+}
+
+// ── Chapter Selection ─────────────────────────────────
+function populateChapterSelect(chapterCount) {
+  const select = document.getElementById('chapter-select');
+  select.innerHTML = '';
+  
+  for (let i = 1; i <= chapterCount; i++) {
+    const option = document.createElement('option');
+    option.value = i;
+    option.textContent = i;
+    select.appendChild(option);
+  }
+  
+  select.value = 1;
+}
+
+// ── Load Book Data ────────────────────────────────────
+async function loadBookData(bookId) {
+  if (booksData[bookId]) {
+    currentBookData = booksData[bookId];
+    return;
+  }
+  
+  try {
+    document.getElementById('scripture-content').innerHTML = '<div class="loading">Loading...</div>';
+    
+    const response = await fetch(`./data/${bookId}.json`);
+    if (!response.ok) throw new Error(`Failed to load ${bookId}`);
+    
+    const data = await response.json();
+    booksData[bookId] = data;
+    currentBookData = data;
+    
+  } catch (error) {
+    console.error('Error loading book:', error);
+    document.getElementById('scripture-content').innerHTML = 
+      '<div class="error">Error loading book. Please try again.</div>';
+  }
+}
+
+// ── Load Chapter ──────────────────────────────────────
+function loadChapter() {
+  const selectedChapter = document.getElementById('chapter-select').value;
+  if (!selectedChapter || !currentBookData) return;
+  
+  currentChapter = parseInt(selectedChapter);
+  
+  // Find chapter data
+  const chapterData = currentBookData.chapters.find(ch => ch.chapter === currentChapter);
+  if (!chapterData) {
+    document.getElementById('scripture-content').innerHTML = 
+      '<div class="error">Chapter not found</div>';
+    return;
+  }
+  
+  // Render verses
+  let html = `<h2 class="chapter-title">${currentBookData.book} ${currentChapter}</h2>`;
+  
+  chapterData.verses.forEach(verse => {
+    html += `
+      <div class="verse">
+        <span class="verse-number">${verse.verse}</span>
+        <span class="verse-text">${verse.text}</span>
+      </div>
+    `;
+  });
+  
+  document.getElementById('scripture-content').innerHTML = html;
+  
+  // Update navigation buttons
+  updateNavigationButtons();
+  
+  // Scroll to top
+  document.getElementById('main-content').scrollTop = 0;
+}
+
+// ── Navigation ────────────────────────────────────────
+function previousChapter() {
+  if (currentChapter > 1) {
+    currentChapter--;
+    document.getElementById('chapter-select').value = currentChapter;
+    loadChapter();
+  }
+}
+
+function nextChapter() {
+  const bookInfo = [...books.ot, ...books.nt].find(book => book.id === currentBook);
+  if (currentChapter < bookInfo.chapters) {
+    currentChapter++;
+    document.getElementById('chapter-select').value = currentChapter;
+    loadChapter();
+  }
+}
+
+function updateNavigationButtons() {
+  const bookInfo = [...books.ot, ...books.nt].find(book => book.id === currentBook);
+  
+  document.getElementById('prev-chapter').disabled = currentChapter <= 1;
+  document.getElementById('next-chapter').disabled = !bookInfo || currentChapter >= bookInfo.chapters;
+}
+
+// ── UI Controls ───────────────────────────────────────
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('collapsed');
+}
+
+function toggleMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const drawer = document.getElementById('nav-drawer');
+  
+  hamburger.classList.toggle('open');
+  drawer.classList.toggle('open');
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('oc_theme', newTheme);
+  updateThemeIcon();
+}
+
+function updateThemeIcon() {
+  const theme = document.documentElement.getAttribute('data-theme');
+  const btn = document.getElementById('theme-btn');
+  if (btn) {
+    btn.textContent = theme === 'light' ? '🌙' : '☀️';
+  }
+}
+
+// ── Keyboard Shortcuts ────────────────────────────────
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey || e.metaKey) return;
+  
+  switch(e.key) {
+    case 'ArrowLeft':
+      e.preventDefault();
+      previousChapter();
+      break;
+    case 'ArrowRight':
+      e.preventDefault();
+      nextChapter();
+      break;
+    case 'Escape':
+      toggleSidebar();
+      break;
+  }
+});
+</script>
+
+</body>
+</html>
