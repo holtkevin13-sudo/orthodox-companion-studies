@@ -66,12 +66,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:600;background:rgba(10,22,40,0.9
 .nav-ai-btn:hover{background:rgba(201,168,76,0.2);}
 .nav-signin-btn{font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.09em;color:var(--text-muted);text-decoration:none;padding:6px 10px;transition:color 0.2s;white-space:nowrap;flex-shrink:0;}
 .nav-signin-btn:hover{color:var(--text-dim);}
-.theme-toggle{
-  background:var(--panel);border:1px solid var(--border-dim);
-  color:var(--text-muted);padding:6px 10px;border-radius:3px;
-  cursor:pointer;font-size:0.65rem;transition:all 0.2s;
-}
-.theme-toggle:hover{color:var(--text);border-color:var(--border);}
 .nav-hamburger{display:none;background:transparent;border:none;color:var(--text-dim);cursor:pointer;padding:8px;flex-direction:column;gap:5px;margin-left:8px;flex-shrink:0;}
 .nav-hamburger span{display:block;width:22px;height:2px;background:currentColor;border-radius:1px;transition:all 0.25s;}
 .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
@@ -325,7 +319,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:600;background:rgba(10,22,40,0.9
   display:block;margin-bottom:2px;
   padding:5px 8px 5px 32px;
   border-radius:3px;position:relative;
-  line-height:1.95;font-size:1.08rem;
+  line-height:1.95;font-size:1.25rem;
   cursor:pointer;transition:background 0.15s;
 }
 .verse:hover{background:rgba(201,168,76,0.04);}
@@ -532,7 +526,6 @@ body{background:var(--bg-page);color:var(--text);}
     <li class="nav-item"><a href="#" class="nav-link active">Bible Reader</a></li>
   </ul>
   <div class="nav-right">
-    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
   </div>
   <button class="nav-hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -626,73 +619,13 @@ body{background:var(--bg-page);color:var(--text);}
 <!-- PANEL OVERLAY -->
 <div class="panel-overlay" id="panelOverlay" onclick="closeAllPanels()"></div>
 
-<!-- NOTES PANEL -->
-<div class="side-panel" id="notesPanel">
-  <div class="panel-header">
-    <span class="panel-title">&#9998; Notes</span>
-    <button class="panel-close" onclick="closePanel('notesPanel')">&#x2715;</button>
-  </div>
-  <div class="panel-body" id="notesPanelBody">
-    <div id="notesAuthGate"></div>
-    <div id="notesNewForm" style="display:none;">
-      <div style="font-family:'Cinzel',serif;font-size:0.6rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold-dim);margin-bottom:8px;" id="noteFormRef"></div>
-      <textarea class="note-textarea" id="noteTextarea" placeholder="Write your note…"></textarea>
-      <div style="display:flex;gap:8px;margin-top:10px;">
-        <button class="panel-btn" onclick="saveNote()">Save Note</button>
-        <button class="panel-btn secondary" onclick="cancelNote()">Cancel</button>
-      </div>
-    </div>
-    <div id="notesList"></div>
-  </div>
-</div>
+<!-- NOTES PANEL REMOVED FOR SIMPLICITY -->
 
-<!-- BOOKMARKS PANEL -->
-<div class="side-panel" id="bookmarksPanel">
-  <div class="panel-header">
-    <span class="panel-title">&#9646; Bookmarks</span>
-    <button class="panel-close" onclick="closePanel('bookmarksPanel')">&#x2715;</button>
-  </div>
-  <div class="panel-body" id="bookmarksPanelBody">
-    <div id="bookmarksAuthGate"></div>
-    <div id="bookmarksList"></div>
-  </div>
-</div>
+<!-- BOOKMARKS PANEL REMOVED FOR SIMPLICITY -->
 
-<!-- JOURNAL PANEL -->
-<div class="side-panel" id="journalPanel">
-  <div class="panel-header">
-    <span class="panel-title">&#9997; Journal</span>
-    <button class="panel-close" onclick="closePanel('journalPanel')">&#x2715;</button>
-  </div>
-  <div class="panel-body" id="journalPanelBody">
-    <button class="journal-new-btn" onclick="openNewJournalEntry()">+ New Journal Entry</button>
-    <div id="journalNewForm" style="display:none;margin-bottom:16px;">
-      <textarea class="note-textarea" id="journalTextarea" placeholder="Write your reflection…" style="min-height:120px;"></textarea>
-      <div style="display:flex;gap:8px;margin-top:10px;">
-        <button class="panel-btn" onclick="saveJournalEntry()">Save Entry</button>
-        <button class="panel-btn secondary" onclick="closeJournalForm()">Cancel</button>
-      </div>
-    </div>
-    <div id="journalList"></div>
-  </div>
-</div>
+<!-- JOURNAL PANEL REMOVED FOR SIMPLICITY -->
 
-<!-- NOTE MODAL -->
-<div id="note-modal">
-  <div class="note-modal-box">
-    <div class="note-modal-header">
-      <span class="note-modal-ref" id="noteModalRef"></span>
-      <button class="panel-close" onclick="closeNoteModal()">&#x2715;</button>
-    </div>
-    <div class="note-modal-body">
-      <textarea class="note-textarea" id="noteModalTextarea" placeholder="Write your note…" style="min-height:120px;width:100%;"></textarea>
-    </div>
-    <div class="note-modal-footer">
-      <button class="panel-btn secondary" onclick="closeNoteModal()">Cancel</button>
-      <button class="panel-btn" onclick="saveNoteFromModal()">Save Note</button>
-    </div>
-  </div>
-</div>
+<!-- NOTE MODAL REMOVED FOR SIMPLICITY -->
 
 <button id="backToTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
 
@@ -1095,7 +1028,7 @@ function renderChapter(data, ref) {
 
   // Fallback: render raw text content
   const rawText = doc.body ? doc.body.innerHTML : (data.content || '');
-  html += `<div style="line-height:2;font-size:1.05rem;color:var(--text-dim);">${rawText || '<em>No content available.</em>'}</div>`;
+  html += `<div style="line-height:2;font-size:1.25rem;color:var(--text-dim);">${rawText || '<em>No content available.</em>'}</div>`;
   content.innerHTML = html;
   content.scrollTop = 0;
 }
