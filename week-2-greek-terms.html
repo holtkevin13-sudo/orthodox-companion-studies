@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 2 Greek Terms — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Week 2 Greek Terms — Orthodox Companion Studies">
+<meta property="og:description" content="Master 20 essential Greek theological terms from Ignatius of Antioch and Polycarp of Smyrna with pronunciation guides and Father connections.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Master 20 essential Greek theological terms from Week 2 of Patristic Formation. Includes pronunciation guides, etymology, and usage by Ignatius and Polycarp.">
+<meta name="keywords" content="Greek Vocabulary, Ignatius, Polycarp, Orthodox Theology, Patristics, Church Fathers">
+<meta name="author" content="Orthodox Companion Studies">
+
+<style>
+/* CSS Reset & Orthodox Foundation */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { 
+  font-size: 16px; 
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+  background: 
+    radial-gradient(circle at top left, rgba(21, 68, 183, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(15, 52, 96, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back Navigation */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #5d6d7e;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 1rem 0 2rem 0;
+  transition: color 0.3s ease;
+}
+
+.back-nav:hover {
+  color: #1544B7;
+}
+
+/* Header */
+.hero {
+  background: 
+    linear-gradient(135deg, rgba(21, 68, 183, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
+  color: #fffdf7;
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 3px solid #34495e;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #fffdf7;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #ecf0f1;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.week-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.2);
+  color: #D4AF37;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ecf0f1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Progress Bar */
+.progress-section {
+  background: #ffffff;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.progress-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.progress-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1544B7;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%);
+  width: 2.5%;
+  transition: width 0.3s ease;
+}
+
+/* Filter Section */
+.filter-section {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+
+.filter-group label {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.filter-select, .search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background: #ffffff;
+}
+
+.search-input {
+  font-family: inherit;
+}
+
+/* Terms Grid */
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.term-card {
+  background: #ffffff;
+  border: 1px solid #ecf0f1;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.term-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%);
+}
+
+.term-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(21, 68, 183, 0.15);
+}
+
+.greek-text {
+  font-size: 2.2rem;
+  color: #1544B7;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Times New Roman", serif;
+}
+
+.transliteration {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.pronunciation {
+  font-size: 0.9rem;
+  color: #95a5a6;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  background: #f8f9fa;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.english-meaning {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.definition {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5d6d7e;
+  margin-bottom: 1.5rem;
+}
+
+.father-usage {
+  border-top: 1px solid #ecf0f1;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.usage-title {
+  font-size: 0.9rem;
+  color: #1544B7;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.usage-text {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.father-tag {
+  display: inline-block;
+  background: #1544B7;
+  color: #ffffff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.father-tag.polycarp {
+  background: #D4AF37;
+  color: #2c3e50;
+}
+
+/* Priority Terms Section */
+.priority-terms {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+  border: 2px solid #D4AF37;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.priority-title {
+  font-size: 1.8rem;
+  color: #1544B7;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.priority-description {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .progress-stats {
+    gap: 2rem;
+  }
+  
+  .terms-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .term-card {
+    padding: 1.5rem;
+  }
+  
+  .greek-text {
+    font-size: 1.8rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="index.html" class="back-nav">← Orthodox Companion Studies</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <div class="week-badge">Week 2 • Apostolic Fathers</div>
+    <h1>Greek Theological Terms</h1>
+    <div class="hero-subtitle">Ἑλληνικοὶ Θεολογικοὶ Ὅροι</div>
+    <p class="hero-description">
+      Master the essential Greek vocabulary from Ignatius of Antioch and Polycarp of Smyrna. 
+      These 20 terms form the theological foundation for understanding apostolic authority, 
+      episcopal leadership, martyrdom, and early Christian witness.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Progress Section -->
+  <section class="progress-section">
+    <div class="progress-header">
+      <h2 class="progress-title">Your Greek Vocabulary Progress</h2>
+      <div class="progress-stats">
+        <div class="stat-item">
+          <span class="stat-number">20</span>
+          <span class="stat-label">Week 2 Terms</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Church Fathers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">780</span>
+          <span class="stat-label">Remaining</span>
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Priority Terms -->
+  <section class="priority-terms">
+    <h2 class="priority-title">Week 2 Priority Terms</h2>
+    <p class="priority-description">
+      These four terms are central to this week's study of Ignatius and Polycarp. 
+      Master these first, then explore the complete vocabulary below.
+    </p>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <div class="filter-grid">
+      <div class="filter-group">
+        <label for="fatherFilter">Filter by Father</label>
+        <select id="fatherFilter" class="filter-select">
+          <option value="all">All Fathers</option>
+          <option value="ignatius">Ignatius of Antioch</option>
+          <option value="polycarp">Polycarp of Smyrna</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="categoryFilter">Filter by Category</label>
+        <select id="categoryFilter" class="filter-select">
+          <option value="all">All Categories</option>
+          <option value="authority">Episcopal Authority</option>
+          <option value="christology">Christology</option>
+          <option value="martyrdom">Martyrdom & Witness</option>
+          <option value="ecclesiology">Ecclesiology</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="searchTerms">Search Terms</label>
+        <input type="text" id="searchTerms" class="search-input" placeholder="Search Greek or English...">
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms Grid -->
+  <section class="terms-grid">
+
+    <!-- Priority Term 1: σάρξ -->
+    <div class="term-card" data-father="ignatius" data-category="christology">
+      <div class="greek-text">σάρξ</div>
+      <div class="transliteration">sarx</div>
+      <div class="pronunciation">/sarks/</div>
+      <div class="english-meaning">Flesh</div>
+      <div class="definition">
+        The physical, material nature of humanity and of the incarnate Christ. In Ignatius's anti-Docetic 
+        theology, this term is crucial for affirming the reality of Christ's human nature against those 
+        who denied his true bodily existence.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Ignatian Usage</div>
+        <div class="usage-text">
+          "He is truly of the race of David according to the flesh (κατὰ σάρκα), but Son of God by divine will and power" 
+          - Ignatius emphasizes Christ's genuine humanity against Docetic denials.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Priority Term 2: ἕνωσις -->
+    <div class="term-card" data-father="ignatius" data-category="ecclesiology">
+      <div class="greek-text">ἕνωσις</div>
+      <div class="transliteration">henosis</div>
+      <div class="pronunciation">/HEN-oh-sis/</div>
+      <div class="english-meaning">Unity / Union</div>
+      <div class="definition">
+        The fundamental unity that characterizes authentic Christianity - unity between God and humanity in Christ, 
+        unity within the Church under episcopal authority, and unity of faith and practice among believers.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Ignatian Usage</div>
+        <div class="usage-text">
+          Ignatius sees unity (ἕνωσις) as the essential mark of the true Church, achieved through submission to 
+          the bishop as God's representative and through the Eucharist as the medicine of immortality.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Priority Term 3: ἐπίσκοπος -->
+    <div class="term-card" data-father="ignatius" data-category="authority">
+      <div class="greek-text">ἐπίσκοπος</div>
+      <div class="transliteration">episkopos</div>
+      <div class="pronunciation">/eh-PIS-ko-pos/</div>
+      <div class="english-meaning">Bishop / Overseer</div>
+      <div class="definition">
+        The chief pastor and teacher of a local church, appointed by God to represent Christ's authority. 
+        Ignatius develops the theological foundation for the monarchical episcopate as God's will for Church order.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Ignatian Usage</div>
+        <div class="usage-text">
+          "Follow the bishop (ἐπίσκοπος) as Jesus Christ follows the Father" - Ignatius establishes the 
+          theological principle that episcopal authority reflects divine hierarchy.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Priority Term 4: μαρτυρία -->
+    <div class="term-card" data-father="polycarp" data-category="martyrdom">
+      <div class="greek-text">μαρτυρία</div>
+      <div class="transliteration">martyria</div>
+      <div class="pronunciation">/mar-too-REE-ah/</div>
+      <div class="english-meaning">Witness / Martyrdom</div>
+      <div class="definition">
+        The supreme testimony to Christ's truth, encompassing both verbal witness and the ultimate witness 
+        of death for the faith. Polycarp's martyrdom establishes the theological framework for understanding 
+        Christian suffering as witness.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Polycarp's Legacy</div>
+        <div class="usage-text">
+          Polycarp's martyrdom transforms μαρτυρία from simple testimony into the supreme form of Christian 
+          witness, demonstrating that faithfulness unto death confirms the truth of the Gospel.
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Additional Term 5: Θεοφόρος -->
+    <div class="term-card" data-father="ignatius" data-category="christology">
+      <div class="greek-text">Θεοφόρος</div>
+      <div class="transliteration">Theophoros</div>
+      <div class="pronunciation">/theh-oh-FOR-os/</div>
+      <div class="english-meaning">God-Bearer</div>
+      <div class="definition">
+        Ignatius's distinctive self-designation, meaning "one who bears/carries God." This term expresses 
+        the intimate relationship between the Christian and the divine, suggesting that believers become 
+        vessels of God's presence in the world.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Ignatian Identity</div>
+        <div class="usage-text">
+          "Ignatius, who is also called Theophoros (Θεοφόρος)" - This title becomes central to Ignatian 
+          spirituality, expressing both mystical union with God and apostolic authority.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 6: φάρμακον ἀθανασίας -->
+    <div class="term-card" data-father="ignatius" data-category="christology">
+      <div class="greek-text">φάρμακον ἀθανασίας</div>
+      <div class="transliteration">pharmakon athanasias</div>
+      <div class="pronunciation">/FAR-ma-kon ah-than-ah-SEE-as/</div>
+      <div class="english-meaning">Medicine of Immortality</div>
+      <div class="definition">
+        Ignatius's distinctive description of the Eucharist as the remedy against death and the guarantee 
+        of eternal life. This phrase establishes the soteriological significance of the Eucharist in 
+        early Christian theology.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Ignatian Sacramental Theology</div>
+        <div class="usage-text">
+          The Eucharist is "the medicine of immortality (φάρμακον ἀθανασίας), the antidote against death, 
+          enabling us to live forever in Jesus Christ."
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 7: παράδοσις -->
+    <div class="term-card" data-father="polycarp" data-category="authority">
+      <div class="greek-text">παράδοσις</div>
+      <div class="transliteration">paradosis</div>
+      <div class="pronunciation">/par-ah-DOH-sis/</div>
+      <div class="english-meaning">Tradition / Transmission</div>
+      <div class="definition">
+        The faithful transmission of apostolic teaching and practice from one generation to the next. 
+        Polycarp embodies this concept as a direct link between the Apostolic Age and the post-apostolic Church.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Apostolic Continuity</div>
+        <div class="usage-text">
+          As a student of the Apostle John, Polycarp represents living tradition (παράδοσις), ensuring 
+          that apostolic teaching continues unchanged through episcopal succession.
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Term 8: ὁμολογία -->
+    <div class="term-card" data-father="polycarp" data-category="martyrdom">
+      <div class="greek-text">ὁμολογία</div>
+      <div class="transliteration">homologia</div>
+      <div class="pronunciation">/hoh-moh-loh-GEE-ah/</div>
+      <div class="english-meaning">Confession / Agreement</div>
+      <div class="definition">
+        The public declaration of faith, especially under persecution. Polycarp's final confession before 
+        the Roman authorities becomes the paradigm for Christian faithfulness in the face of death.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Polycarp's Final Confession</div>
+        <div class="usage-text">
+          Polycarp's confession (ὁμολογία) before the proconsul demonstrates that authentic faith must be 
+          publicly declared regardless of consequences: "Eighty-six years I have served Christ."
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Term 9: πίστις -->
+    <div class="term-card" data-father="polycarp" data-category="christology">
+      <div class="greek-text">πίστις</div>
+      <div class="transliteration">pistis</div>
+      <div class="pronunciation">/PIS-tis/</div>
+      <div class="english-meaning">Faith / Faithfulness</div>
+      <div class="definition">
+        Both the act of believing and the quality of faithfulness over time. Polycarp's 86-year Christian 
+        life exemplifies πίστις as enduring commitment to Christ through every trial and circumstance.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Lifelong Faithfulness</div>
+        <div class="usage-text">
+          Polycarp's faith (πίστις) spans nearly nine decades, demonstrating that authentic Christian 
+          commitment grows stronger with age and testing rather than weakening.
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Term 10: ἐκκλησία -->
+    <div class="term-card" data-father="ignatius" data-category="ecclesiology">
+      <div class="greek-text">ἐκκλησία</div>
+      <div class="transliteration">ekklesia</div>
+      <div class="pronunciation">/eh-klee-SEE-ah/</div>
+      <div class="english-meaning">Church / Assembly</div>
+      <div class="definition">
+        The called-out assembly of believers united under episcopal authority. Ignatius develops the 
+        theological understanding of the Church as a hierarchical community centered on the bishop, 
+        presbyters, and deacons.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Ignatian Ecclesiology</div>
+        <div class="usage-text">
+          The Church (ἐκκλησία) exists wherever the bishop is present, as Christ is present wherever 
+          the Father is. This establishes the episcopate as essential to Church identity.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 11: πρεσβύτερος -->
+    <div class="term-card" data-father="ignatius" data-category="authority">
+      <div class="greek-text">πρεσβύτερος</div>
+      <div class="transliteration">presbyteros</div>
+      <div class="pronunciation">/pres-BOO-ter-os/</div>
+      <div class="english-meaning">Elder / Presbyter</div>
+      <div class="definition">
+        The second order of clergy in the Ignatian hierarchy, serving as counselors to the bishop. 
+        Ignatius establishes the presbyters as essential to church order, representing divine wisdom 
+        and apostolic council.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Hierarchical Order</div>
+        <div class="usage-text">
+          The presbyters (πρεσβύτεροι) form the council of the bishop, just as the apostles formed 
+          the council of Christ. This creates the theological foundation for collegiate governance.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 12: διάκονος -->
+    <div class="term-card" data-father="ignatius" data-category="authority">
+      <div class="greek-text">διάκονος</div>
+      <div class="transliteration">diakonos</div>
+      <div class="pronunciation">/dee-AH-ko-nos/</div>
+      <div class="english-meaning">Deacon / Servant</div>
+      <div class="definition">
+        The third order of clergy in the Ignatian system, representing service and ministry. Ignatius 
+        establishes deacons as essential to church order, embodying Christ's ministry of service to humanity.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Ministerial Service</div>
+        <div class="usage-text">
+          The deacons (διάκονοι) represent the ministry of Jesus Christ, who came not to be served but 
+          to serve. They complete the threefold structure of church order.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 13: εὐχαριστία -->
+    <div class="term-card" data-father="ignatius" data-category="christology">
+      <div class="greek-text">εὐχαριστία</div>
+      <div class="transliteration">eucharistia</div>
+      <div class="pronunciation">/ev-kha-ris-TEE-ah/</div>
+      <div class="english-meaning">Thanksgiving / Eucharist</div>
+      <div class="definition">
+        The central sacramental act of Christian worship, understood by Ignatius as the source and 
+        summit of church unity. The Eucharist makes Christ truly present and binds the community 
+        together under episcopal authority.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Sacramental Unity</div>
+        <div class="usage-text">
+          One Eucharist (εὐχαριστία), one cup, one altar, one bishop - Ignatius sees the Eucharist 
+          as the guarantee of church unity and the antidote to schism.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 14: ἀγάπη -->
+    <div class="term-card" data-father="ignatius,polycarp" data-category="christology">
+      <div class="greek-text">ἀγάπη</div>
+      <div class="transliteration">agape</div>
+      <div class="pronunciation">/ah-GAH-pay/</div>
+      <div class="english-meaning">Divine Love</div>
+      <div class="definition">
+        The self-sacrificial love that characterizes God's nature and should characterize Christian relationships. 
+        Both Ignatius and Polycarp demonstrate agape through their willingness to die for Christ and their 
+        pastoral care for their communities.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Martyrological Love</div>
+        <div class="usage-text">
+          True love (ἀγάπη) is demonstrated not in words but in the willingness to lay down one's life. 
+          Both fathers show that martyrdom is the supreme expression of divine love.
+        </div>
+        <span class="father-tag">ignatius</span>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Term 15: δόξα -->
+    <div class="term-card" data-father="polycarp" data-category="christology">
+      <div class="greek-text">δόξα</div>
+      <div class="transliteration">doxa</div>
+      <div class="pronunciation">/DOHK-sah/</div>
+      <div class="english-meaning">Glory / Honor</div>
+      <div class="definition">
+        The radiant manifestation of God's presence and majesty. Polycarp's martyrdom becomes a doxology, 
+        glorifying God through faithful witness and transforming death into worship and praise.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Martyrological Glory</div>
+        <div class="usage-text">
+          Polycarp's final prayer transforms his execution into an act of glory (δόξα) to God, 
+          demonstrating that martyrdom is the supreme form of divine worship.
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Term 16: ἀλήθεια -->
+    <div class="term-card" data-father="ignatius" data-category="christology">
+      <div class="greek-text">ἀλήθεια</div>
+      <div class="transliteration">aletheia</div>
+      <div class="pronunciation">/ah-LAY-thay-ah/</div>
+      <div class="english-meaning">Truth</div>
+      <div class="definition">
+        Ultimate reality as revealed in Christ and preserved in the apostolic tradition. Ignatius 
+        contrasts divine truth with false teaching, particularly Docetism, emphasizing that truth 
+        must be embodied, not merely proclaimed.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Embodied Truth</div>
+        <div class="usage-text">
+          Truth (ἀλήθεια) is not merely doctrinal correctness but the reality of Christ's incarnation 
+          and the authenticity of Christian life lived in submission to divine authority.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 17: ψυχή -->
+    <div class="term-card" data-father="polycarp" data-category="martyrdom">
+      <div class="greek-text">ψυχή</div>
+      <div class="transliteration">psyche</div>
+      <div class="pronunciation">/psy-KHAY/</div>
+      <div class="english-meaning">Soul / Life</div>
+      <div class="definition">
+        The spiritual essence of human existence that survives bodily death. Polycarp's willingness 
+        to surrender his soul demonstrates that physical death cannot touch the true life that comes 
+        from God.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Eternal Perspective</div>
+        <div class="usage-text">
+          Polycarp's calm acceptance of death shows his understanding that the soul (ψυχή) belongs 
+          to God and cannot be harmed by human persecution.
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Term 18: κοινωνία -->
+    <div class="term-card" data-father="ignatius" data-category="ecclesiology">
+      <div class="greek-text">κοινωνία</div>
+      <div class="transliteration">koinonia</div>
+      <div class="pronunciation">/koy-no-NEE-ah/</div>
+      <div class="english-meaning">Fellowship / Communion</div>
+      <div class="definition">
+        The deep spiritual fellowship that unites Christians with God and with each other. Ignatius 
+        sees this communion as dependent on unity with the bishop and participation in the Eucharist.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Sacramental Fellowship</div>
+        <div class="usage-text">
+          True fellowship (κοινωνία) exists only where there is one bishop, one Eucharist, and one 
+          faith. Division destroys communion with God and neighbor.
+        </div>
+        <span class="father-tag">ignatius</span>
+      </div>
+    </div>
+
+    <!-- Term 19: ὑπομονή -->
+    <div class="term-card" data-father="polycarp" data-category="martyrdom">
+      <div class="greek-text">ὑπομονή</div>
+      <div class="transliteration">hypomone</div>
+      <div class="pronunciation">/hoo-po-mo-NAY/</div>
+      <div class="english-meaning">Endurance / Patience</div>
+      <div class="definition">
+        The steadfast endurance that enables Christians to remain faithful through trials and persecution. 
+        Polycarp's 86-year Christian life exemplifies this patient endurance that trusts in God's timing.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Faithful Endurance</div>
+        <div class="usage-text">
+          Polycarp's endurance (ὑπομονή) through decades of Christian service and final martyrdom 
+          demonstrates the patient faithfulness that characterizes mature discipleship.
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+    <!-- Term 20: βασιλεία -->
+    <div class="term-card" data-father="polycarp" data-category="christology">
+      <div class="greek-text">βασιλεία</div>
+      <div class="transliteration">basileia</div>
+      <div class="pronunciation">/bah-see-LAY-ah/</div>
+      <div class="english-meaning">Kingdom / Reign</div>
+      <div class="definition">
+        The sovereign rule of God established through Christ and extended through the Church. Polycarp's 
+        final words acknowledge Christ as his King, demonstrating that divine kingdom transcends earthly authority.
+      </div>
+      <div class="father-usage">
+        <div class="usage-title">Divine Sovereignty</div>
+        <div class="usage-text">
+          "How can I blaspheme my King who saved me?" - Polycarp's confession acknowledges Christ's 
+          kingdom (βασιλεία) as the ultimate authority that supersedes Roman power.
+        </div>
+        <span class="father-tag polycarp">polycarp</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Navigation Back to Studies -->
+  <div style="text-align: center; margin: 3rem 0;">
+    <a href="index.html" style="display: inline-block; background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%); color: #ffffff; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      Return to Study Hub →
+    </a>
+  </div>
+
+</main>
+
+<script>
+// Simple filtering functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const fatherFilter = document.getElementById('fatherFilter');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const searchInput = document.getElementById('searchTerms');
+  const termCards = document.querySelectorAll('.term-card');
+
+  function filterTerms() {
+    const fatherValue = fatherFilter.value;
+    const categoryValue = categoryFilter.value;
+    const searchValue = searchInput.value.toLowerCase();
+
+    termCards.forEach(card => {
+      const father = card.dataset.father || '';
+      const category = card.dataset.category || '';
+      const greekText = card.querySelector('.greek-text').textContent.toLowerCase();
+      const englishText = card.querySelector('.english-meaning').textContent.toLowerCase();
+      
+      const matchesFather = fatherValue === 'all' || father.includes(fatherValue);
+      const matchesCategory = categoryValue === 'all' || category === categoryValue;
+      const matchesSearch = searchValue === '' || 
+                           greekText.includes(searchValue) || 
+                           englishText.includes(searchValue);
+
+      if (matchesFather && matchesCategory && matchesSearch) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  fatherFilter.addEventListener('change', filterTerms);
+  categoryFilter.addEventListener('change', filterTerms);
+  searchInput.addEventListener('input', filterTerms);
+});
+</script>
+
+</body>
+</html>

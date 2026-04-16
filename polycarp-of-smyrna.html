@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polycarp of Smyrna — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Polycarp of Smyrna — Orthodox Companion Studies">
+<meta property="og:description" content="Explore the life, martyrdom, and theological significance of Saint Polycarp, Bishop of Smyrna and student of the Apostle John.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Polycarp of Smyrna — Orthodox Companion Studies">
+<meta name="twitter:description" content="Explore the life, martyrdom, and theological significance of Saint Polycarp, Bishop of Smyrna and student of the Apostle John.">
+<meta name="twitter:image" content="og-image.png">
+
+<meta name="description" content="Explore the life, martyrdom, and theological significance of Saint Polycarp, Bishop of Smyrna and student of the Apostle John. Part of Week 2 in the 40-week Patristic Formation program.">
+<meta name="keywords" content="Polycarp, Smyrna, Apostolic Fathers, Martyrdom, Orthodox Christianity, Church Fathers, Patristics">
+<meta name="author" content="Orthodox Companion Studies">
+
+<style>
+/* CSS Reset & Orthodox Foundation */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { 
+  font-size: 16px; 
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+  background: 
+    radial-gradient(circle at top left, rgba(21, 68, 183, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(15, 52, 96, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back Navigation */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #5d6d7e;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 1rem 0 2rem 0;
+  transition: color 0.3s ease;
+}
+
+.back-nav:hover {
+  color: #1544B7;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  background: linear-gradient(135deg, #1544B7 0%, #0F3460 100%);
+  color: #fffdf7;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(21, 68, 183, 0.2);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #fffdf7;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.nav-cross {
+  font-size: 1.5rem;
+  color: #D4AF37;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #fffdf7;
+}
+
+.nav-links a.active {
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+  background: 
+    linear-gradient(135deg, rgba(21, 68, 183, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
+  color: #fffdf7;
+  padding: 4rem 0;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.week-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.2);
+  color: #D4AF37;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.father-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #fffdf7;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
+}
+
+.father-subtitle {
+  font-size: 1.4rem;
+  color: #ecf0f1;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.father-dates {
+  font-size: 1rem;
+  color: #bdc3c7;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.father-overview {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ecf0f1;
+  max-width: 800px;
+}
+
+/* Main Content */
+.main-content {
+  padding: 0 0 4rem 0;
+}
+
+.content-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%);
+}
+
+/* Martyrdom Account */
+.martyrdom-account {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-left: 4px solid #1544B7;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+
+.martyrdom-title {
+  font-size: 1.5rem;
+  color: #1544B7;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.martyrdom-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #2c3e50;
+  font-style: italic;
+}
+
+/* Works Grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.work-card {
+  background: #ffffff;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%);
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(21, 68, 183, 0.15);
+}
+
+.work-title {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.work-greek {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.work-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5d6d7e;
+}
+
+/* Theological Pillars */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.pillar-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: 1px solid #ecf0f1;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(21, 68, 183, 0.15);
+}
+
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(135deg, #1544B7, #D4AF37);
+  border-radius: 12px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pillar-card:hover::before {
+  opacity: 1;
+}
+
+.greek-term {
+  font-size: 1.8rem;
+  color: #1544B7;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "Times New Roman", serif;
+}
+
+.transliteration {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.english-meaning {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.pillar-explanation {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #5d6d7e;
+}
+
+/* Famous Quote */
+.famous-quote {
+  background: linear-gradient(135deg, #1544B7 0%, #0F3460 100%);
+  color: #fffdf7;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.famous-quote::before {
+  content: '"';
+  font-size: 4rem;
+  color: rgba(212, 175, 55, 0.3);
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-family: serif;
+}
+
+.quote-text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.quote-citation {
+  font-size: 1rem;
+  color: #D4AF37;
+  font-weight: 500;
+}
+
+/* Related Resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.related-link {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.related-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(21, 68, 183, 0.15);
+  border-color: #1544B7;
+}
+
+.related-icon {
+  font-size: 1.5rem;
+  color: #1544B7;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.related-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.related-description {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .father-title {
+    font-size: 2.5rem;
+  }
+  
+  .father-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hero {
+    padding: 2.5rem 0;
+  }
+  
+  .works-grid, .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .father-title {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .work-card, .pillar-card {
+    padding: 1.5rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="index.html" class="back-nav">← Orthodox Companion Studies</a>
+</div>
+
+<nav class="nav-bar">
+  <div class="container">
+    <div class="nav-content">
+      <a href="index.html" class="nav-brand">
+        <span class="nav-cross">☩</span>
+        Orthodox Companion Studies
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Study Hub</a></li>
+        <li><a href="father-cards-index.html">Father Cards</a></li>
+        <li><a href="greek-lexicon-index.html">Greek Lexicon</a></li>
+        <li><a href="bible-reader.html">Bible Reader</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="week-badge">Week 2 • Current Focus</div>
+      <h1 class="father-title">Polycarp of Smyrna</h1>
+      <div class="father-subtitle">Martyr Bishop and Student of the Apostle John</div>
+      <div class="father-dates">c. 69 – c. 155 AD</div>
+      <p class="father-overview">
+        Saint Polycarp, Bishop of Smyrna, stands as the bridge between the Apostolic Age and the early Church. 
+        A direct disciple of the Apostle John, he witnessed the supreme test of Christian faith through martyrdom 
+        at age 86, leaving behind a model of episcopal authority, doctrinal fidelity, and Christ-like witness 
+        that echoes through the ages.
+      </p>
+    </div>
+  </div>
+</section>
+
+<main class="main-content">
+  <div class="container">
+
+    <!-- Martyrdom Account -->
+    <section class="content-section">
+      <h2 class="section-title">The Martyrdom of Polycarp</h2>
+      <div class="martyrdom-account">
+        <h3 class="martyrdom-title">The Crown of Martyrdom (c. 155 AD)</h3>
+        <p class="martyrdom-text">
+          "Eighty-six years I have served Christ, and He has done me no wrong. How can I blaspheme my King who saved me?" 
+          These immortal words, spoken before the Roman proconsul at Smyrna, crystallize the faith of one who knew the 
+          Apostle John personally and carried the apostolic torch to its ultimate conclusion. The Martyrdom of Polycarp, 
+          the earliest detailed martyrdom account outside the New Testament, reveals a bishop who faced death with such 
+          serenity that even his executioners were moved, and whose final prayer transformed the arena into a place of worship.
+        </p>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="content-section">
+      <h2 class="section-title">Written Legacy</h2>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Epistle to the Philippians</h3>
+          <div class="work-greek">Πρὸς Φιλιππησίους ἐπιστολή</div>
+          <p class="work-description">
+            Polycarp's sole surviving letter, written to encourage the Philippian church in faith and virtue. 
+            Rich with New Testament citations and practical Christian wisdom, it reveals his pastoral heart 
+            and apostolic authority received directly from John.
+          </p>
+        </div>
+
+        <div class="work-card">
+          <h3 class="work-title">The Martyrdom of Polycarp</h3>
+          <div class="work-greek">Μαρτύριον τοῦ ἁγίου Πολυκάρπου</div>
+          <p class="work-description">
+            While not written by Polycarp himself, this contemporary account of his martyrdom (c. 155 AD) 
+            provides the earliest detailed martyrdom narrative outside the New Testament, establishing 
+            the theological framework for understanding Christian witness unto death.
+          </p>
+        </div>
+
+        <div class="work-card">
+          <h3 class="work-title">Lost Writings</h3>
+          <div class="work-greek">Ἀπολωλότα συγγράμματα</div>
+          <p class="work-description">
+            Jerome and other early sources reference additional letters by Polycarp to various churches, 
+            demonstrating his widespread influence as a pillar of orthodox faith throughout Asia Minor 
+            during the critical transition from the Apostolic Age.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="content-section">
+      <h2 class="section-title">Theological Contributions</h2>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="greek-term">μαρτυρία</div>
+          <div class="transliteration">martyria</div>
+          <div class="english-meaning">Witness / Martyrdom</div>
+          <p class="pillar-explanation">
+            Polycarp transforms martyrdom from mere death into supreme witness (μαρτυρία). His calm acceptance 
+            of death demonstrates that martyrdom is not punishment but the ultimate testimony to Christ's reality. 
+            This theological framework becomes foundational for understanding Christian suffering.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="greek-term">παράδοσις</div>
+          <div class="transliteration">paradosis</div>
+          <div class="english-meaning">Apostolic Tradition</div>
+          <p class="pillar-explanation">
+            As a direct student of the Apostle John, Polycarp embodies living apostolic tradition (παράδοσις). 
+            His authority comes not from innovation but from faithful transmission of what he received directly 
+            from apostolic hands, establishing the principle of episcopal succession.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="greek-term">ὁμολογία</div>
+          <div class="transliteration">homologia</div>
+          <div class="english-meaning">Confession / Agreement</div>
+          <p class="pillar-explanation">
+            Polycarp's final confession (ὁμολογία) before the Roman authorities reveals true faith as public 
+            declaration. His refusal to deny Christ demonstrates that authentic Christianity cannot remain private 
+            but must be openly confessed even unto death.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="greek-term">πίστις</div>
+          <div class="transliteration">pistis</div>
+          <div class="english-meaning">Faith / Faithfulness</div>
+          <p class="pillar-explanation">
+            Polycarp's 86-year service to Christ exemplifies πίστις as both faith and faithfulness. His 
+            consistency across nearly nine decades of Christian life demonstrates that authentic faith 
+            endures through every trial and grows stronger with age.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Famous Quote -->
+    <div class="famous-quote">
+      <p class="quote-text">
+        Eighty-six years I have served Christ, and He has done me no wrong. 
+        How can I blaspheme my King who saved me?
+      </p>
+      <div class="quote-citation">Martyrdom of Polycarp 9.3</div>
+    </div>
+
+    <!-- Related Resources -->
+    <section class="content-section">
+      <h2 class="section-title">Explore Further</h2>
+      <div class="related-grid">
+        <a href="ignatius-of-antioch.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Ignatius of Antioch</div>
+          <div class="related-description">Polycarp's contemporary and fellow apostolic father, equally committed to episcopal authority and martyrdom.</div>
+        </a>
+
+        <a href="greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Ω</span>
+          <div class="related-title">Week 2 Greek Terms</div>
+          <div class="related-description">Study the theological vocabulary that emerges from Polycarp's witness and martyrdom.</div>
+        </a>
+
+        <a href="bible-reader.html" class="related-link">
+          <span class="related-icon">📖</span>
+          <div class="related-title">Biblical Companion</div>
+          <div class="related-description">Read the scriptural passages that shaped Polycarp's theology and final testimony.</div>
+        </a>
+
+        <a href="index.html#progress" class="related-link">
+          <span class="related-icon">📊</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-description">Return to your Week 2 progress and continue the Apostolic Fathers journey.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>

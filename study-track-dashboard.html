@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Φρόνημα τῶν Πατέρων — Study Track Dashboard</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Φρόνημα τῶν Πατέρων — Study Track Dashboard">
+<meta property="og:description" content="Complete 40-week Orthodox Patristic Formation program dashboard. Track daily progress, weekly plans, and your journey through the Church Fathers.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Your complete dashboard for the 40-week Orthodox Patristic Formation program. Daily guidance, weekly plans, and systematic progress through the Church Fathers.">
+<meta name="keywords" content="Orthodox Formation, Patristics, Church Fathers, Study Program, Orthodox Education">
+<meta name="author" content="Orthodox Companion Studies">
+
+<style>
+/* CSS Reset & Orthodox Foundation */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { 
+  font-size: 16px; 
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+  background: 
+    radial-gradient(circle at top left, rgba(21, 68, 183, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(15, 52, 96, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back Navigation */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #5d6d7e;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 1rem 0 2rem 0;
+  transition: color 0.3s ease;
+}
+
+.back-nav:hover {
+  color: #1544B7;
+}
+
+/* Header */
+.hero {
+  background: 
+    linear-gradient(135deg, rgba(21, 68, 183, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
+  color: #fffdf7;
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 3px solid #34495e;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: #fffdf7;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #ecf0f1;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ecf0f1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Current Status Dashboard */
+.status-dashboard {
+  background: #ffffff;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 1px solid #ecf0f1;
+}
+
+.status-header {
+  background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%);
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.status-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.current-week {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.progress-bars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.progress-item {
+  text-align: center;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.status-content {
+  padding: 2rem;
+}
+
+/* Today's Focus */
+.today-focus {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+  border: 2px solid #D4AF37;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.focus-title {
+  font-size: 1.8rem;
+  color: #1544B7;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.focus-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.focus-section {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ecf0f1;
+}
+
+.focus-section h3 {
+  color: #1544B7;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.focus-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.focus-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.focus-section li:last-child {
+  border-bottom: none;
+}
+
+.reading-time {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.action-button {
+  display: inline-block;
+  background: #1544B7;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  background: #0F3460;
+  transform: translateY(-2px);
+}
+
+/* Week Overview */
+.week-overview {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.week-header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.week-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.week-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.week-content {
+  padding: 2rem;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.day-card {
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.day-card.completed {
+  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%);
+  border-color: #27ae60;
+}
+
+.day-card.current {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+  border-color: #D4AF37;
+  border-width: 2px;
+}
+
+.day-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.day-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.day-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.day-status.completed {
+  background: #27ae60;
+  color: #ffffff;
+}
+
+.day-status.current {
+  background: #D4AF37;
+  color: #2c3e50;
+}
+
+.day-status.upcoming {
+  background: #ecf0f1;
+  color: #7f8c8d;
+}
+
+.day-readings {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #5d6d7e;
+}
+
+.day-readings strong {
+  color: #2c3e50;
+}
+
+/* Phase Timeline */
+.phase-timeline {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.timeline-header {
+  background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.timeline-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  padding: 2rem;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.phase-card {
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.phase-card.current {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+  border-color: #D4AF37;
+  border-width: 2px;
+}
+
+.phase-card.completed {
+  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%);
+  border-color: #27ae60;
+}
+
+.phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.phase-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1544B7;
+}
+
+.phase-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.phase-title {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.phase-period {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+}
+
+.phase-fathers {
+  font-size: 0.95rem;
+  color: #5d6d7e;
+  line-height: 1.6;
+}
+
+/* Biblical Companion Section */
+.biblical-companion {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.companion-header {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.companion-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.companion-content {
+  padding: 2rem;
+}
+
+.companion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.companion-section {
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.companion-section h3 {
+  color: #27ae60;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Big Picture Overview */
+.big-picture {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.big-picture h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.big-picture-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.big-stat {
+  text-align: center;
+}
+
+.big-number {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #D4AF37;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.big-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .progress-bars {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .focus-content, .days-grid, .phases-grid, .companion-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .big-picture-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .status-header, .week-content, .timeline-content, .companion-content {
+    padding: 1.5rem;
+  }
+  
+  .big-picture {
+    padding: 2rem 1.5rem;
+  }
+  
+  .big-number {
+    font-size: 2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="index.html" class="back-nav">← Orthodox Companion Studies</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <h1>Φρόνημα τῶν Πατέρων</h1>
+    <div class="hero-subtitle">Entering the Mind of the Fathers</div>
+    <p class="hero-description">
+      Your complete dashboard for the 40-week Orthodox Patristic Formation program. 
+      Track your daily progress, plan your weekly studies, and navigate your systematic 
+      journey through 37 Church Fathers across 7 centuries of Orthodox tradition.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Current Status Dashboard -->
+  <section class="status-dashboard">
+    <div class="status-header">
+      <div class="status-title">Current Status</div>
+      <div class="current-week">Week 2 of 40 • Phase 1: Apostolic Fathers</div>
+      <div class="progress-bars">
+        <div class="progress-item">
+          <div class="progress-label">Overall Progress</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 5%"></div>
+          </div>
+          <div class="progress-text">5% Complete</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">Phase 1 Progress</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 25%"></div>
+          </div>
+          <div class="progress-text">Week 2 of 8</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">Greek Vocabulary</div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 2.5%"></div>
+          </div>
+          <div class="progress-text">20 of 800 terms</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Today's Focus -->
+  <section class="today-focus">
+    <h2 class="focus-title">📅 Today's Study Focus</h2>
+    <div class="focus-content">
+      <div class="focus-section">
+        <h3>📖 Patristic Reading</h3>
+        <ul>
+          <li>
+            <span>Polycarp: Letter to Philippians 1-7</span>
+            <span class="reading-time">25 min</span>
+          </li>
+          <li>
+            <span>Review: Ignatius's Letters recap</span>
+            <span class="reading-time">10 min</span>
+          </li>
+        </ul>
+        <a href="polycarp-of-smyrna.html" class="action-button">Read Polycarp Card →</a>
+      </div>
+      
+      <div class="focus-section">
+        <h3>📜 Biblical Reading</h3>
+        <ul>
+          <li>
+            <span>Psalms 15-21 (LXX)</span>
+            <span class="reading-time">15 min</span>
+          </li>
+          <li>
+            <span>John 3:1-21 (The Nicodemus passage)</span>
+            <span class="reading-time">8 min</span>
+          </li>
+        </ul>
+        <a href="bible-reader.html" class="action-button">Open Bible Reader →</a>
+      </div>
+      
+      <div class="focus-section">
+        <h3>🇬🇷 Greek Study</h3>
+        <ul>
+          <li>
+            <span>Review: σάρξ, ἕνωσις, ἐπίσκοπος, μαρτυρία</span>
+            <span class="reading-time">10 min</span>
+          </li>
+          <li>
+            <span>New: παράδοσις, ὁμολογία, πίστις</span>
+            <span class="reading-time">15 min</span>
+          </li>
+        </ul>
+        <a href="week-2-greek-terms.html" class="action-button">Study Greek Terms →</a>
+      </div>
+      
+      <div class="focus-section">
+        <h3>📝 Secondary Reading</h3>
+        <ul>
+          <li>
+            <span>Pelikan Vol. 1, Ch. 1: pp. 15-20</span>
+            <span class="reading-time">15 min</span>
+          </li>
+          <li>
+            <span>"The Emergence of Catholicism"</span>
+            <span class="reading-time">Timed reading</span>
+          </li>
+        </ul>
+        <a href="#" onclick="openNotion()" class="action-button">Notion Notes →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Week Overview -->
+  <section class="week-overview">
+    <div class="week-header">
+      <div class="week-title">Week 2: Ignatius & Polycarp</div>
+      <div class="week-subtitle">February 19-25, 2026 • Days 8-14 of 280</div>
+    </div>
+    <div class="week-content">
+      <div class="days-grid">
+        <div class="day-card current">
+          <div class="day-header">
+            <div class="day-title">Day 8 • Tuesday</div>
+            <div class="day-status current">Current</div>
+          </div>
+          <div class="day-readings">
+            <strong>Primary:</strong> Polycarp to Philippians 1-7<br>
+            <strong>Biblical:</strong> Psalms 15-21, John 3:1-21<br>
+            <strong>Greek:</strong> παράδοσις, ὁμολογία, πίστις<br>
+            <strong>Secondary:</strong> Pelikan Ch. 1, pp. 15-20
+          </div>
+        </div>
+
+        <div class="day-card upcoming">
+          <div class="day-header">
+            <div class="day-title">Day 9 • Wednesday</div>
+            <div class="day-status upcoming">Upcoming</div>
+          </div>
+          <div class="day-readings">
+            <strong>Primary:</strong> Polycarp to Philippians 8-14<br>
+            <strong>Biblical:</strong> Psalms 22-28, John 3:22-36<br>
+            <strong>Greek:</strong> ἐκκλησία, πρεσβύτερος, διάκονος<br>
+            <strong>Secondary:</strong> Pelikan Ch. 1, pp. 20-25
+          </div>
+        </div>
+
+        <div class="day-card upcoming">
+          <div class="day-header">
+            <div class="day-title">Day 10 • Thursday</div>
+            <div class="day-status upcoming">Upcoming</div>
+          </div>
+          <div class="day-readings">
+            <strong>Primary:</strong> Martyrdom of Polycarp 1-11<br>
+            <strong>Biblical:</strong> Psalms 29-35, John 4:1-26<br>
+            <strong>Greek:</strong> εὐχαριστία, ἀγάπη, δόξα<br>
+            <strong>Secondary:</strong> Pelikan Ch. 1, pp. 25-30
+          </div>
+        </div>
+
+        <div class="day-card upcoming">
+          <div class="day-header">
+            <div class="day-title">Day 11 • Friday</div>
+            <div class="day-status upcoming">Upcoming</div>
+          </div>
+          <div class="day-readings">
+            <strong>Primary:</strong> Martyrdom of Polycarp 12-22<br>
+            <strong>Biblical:</strong> Psalms 36-42, John 4:27-54<br>
+            <strong>Greek:</strong> ἀλήθεια, ψυχή, κοινωνία<br>
+            <strong>Secondary:</strong> Pelikan Ch. 1, pp. 30-35
+          </div>
+        </div>
+
+        <div class="day-card upcoming">
+          <div class="day-header">
+            <div class="day-title">Day 12 • Saturday</div>
+            <div class="day-status upcoming">Upcoming</div>
+          </div>
+          <div class="day-readings">
+            <strong>Primary:</strong> Ignatius-Polycarp synthesis<br>
+            <strong>Biblical:</strong> Psalms 43-49, John 5:1-24<br>
+            <strong>Greek:</strong> ὑπομονή, βασιλεία (review all 20)<br>
+            <strong>Secondary:</strong> Pelikan Ch. 1, pp. 35-40
+          </div>
+        </div>
+
+        <div class="day-card upcoming">
+          <div class="day-header">
+            <div class="day-title">Day 13 • Sunday</div>
+            <div class="day-status upcoming">Rest Day</div>
+          </div>
+          <div class="day-readings">
+            <strong>Rest & Reflection:</strong> No new material<br>
+            <strong>Optional:</strong> Review Week 2 highlights<br>
+            <strong>Liturgy:</strong> Connect readings to Divine Liturgy<br>
+            <strong>Preparation:</strong> Preview Week 3 (Clement of Rome)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase Timeline -->
+  <section class="phase-timeline">
+    <div class="timeline-header">
+      <div class="timeline-title">14 Phases • 40 Weeks • 37 Church Fathers</div>
+    </div>
+    <div class="timeline-content">
+      <div class="phases-grid">
+        <div class="phase-card current">
+          <div class="phase-header">
+            <div class="phase-number">1</div>
+            <div class="phase-status current">Current</div>
+          </div>
+          <div class="phase-title">Apostolic Fathers</div>
+          <div class="phase-period">Weeks 1-8 • 50-155 AD</div>
+          <div class="phase-fathers">
+            <strong>Completed:</strong> Clement of Rome, Ignatius of Antioch<br>
+            <strong>Current:</strong> Polycarp of Smyrna<br>
+            <strong>Upcoming:</strong> Papias, Epistle to Diognetus, Didache, Shepherd of Hermas, Epistle of Barnabas
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">2</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Early Apologists</div>
+          <div class="phase-period">Weeks 9-12 • 100-165 AD</div>
+          <div class="phase-fathers">
+            Justin Martyr (Apologies, Dialogue with Trypho), Tatian, Athenagoras, Theophilus of Antioch
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">3</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Against the Heresies</div>
+          <div class="phase-period">Weeks 13-16 • 130-220 AD</div>
+          <div class="phase-fathers">
+            Irenaeus (Against Heresies), Tertullian (Against Marcion, Against Praxeas), Hippolytus (Against Noetus)
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">4</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Alexandrian School</div>
+          <div class="phase-period">Weeks 17-20 • 150-254 AD</div>
+          <div class="phase-fathers">
+            Clement of Alexandria (Stromata), Origen (First Principles, Against Celsus), Dionysius of Alexandria
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">5</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Persecution & Martyrdom</div>
+          <div class="phase-period">Weeks 21-22 • 200-260 AD</div>
+          <div class="phase-fathers">
+            Cyprian (Unity of the Church, Letters), Methodius of Olympus
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">6</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Arian Crisis</div>
+          <div class="phase-period">Week 23 • 250-373 AD</div>
+          <div class="phase-fathers">
+            Athanasius (Against the Arians, Life of Anthony)
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">7</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Cappadocian Fathers</div>
+          <div class="phase-period">Weeks 24-26 • 329-390 AD</div>
+          <div class="phase-fathers">
+            Basil the Great, Gregory of Nazianzus (Five Theological Orations), Gregory of Nyssa
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">8</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Golden-Mouthed Preacher</div>
+          <div class="phase-period">Week 27 • 344-407 AD</div>
+          <div class="phase-fathers">
+            John Chrysostom (On the Priesthood, Homilies)
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">9</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Latin Synthesis</div>
+          <div class="phase-period">Week 28 • 340-430 AD</div>
+          <div class="phase-fathers">
+            Jerome (Vulgate), Augustine (Confessions, City of God) [Orthodox perspective]
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">10</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Christological Precision</div>
+          <div class="phase-period">Weeks 29-32 • 375-444 AD</div>
+          <div class="phase-fathers">
+            Cyril of Alexandria (Against Nestorius, On the Unity of Christ)
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">11</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Papal Authority</div>
+          <div class="phase-period">Weeks 33-34 • 390-461 AD</div>
+          <div class="phase-fathers">
+            Leo the Great (Tome of Leo, Sermons on Christology)
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">12</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Mystical Theology</div>
+          <div class="phase-period">Weeks 35-36 • 5th-6th century AD</div>
+          <div class="phase-fathers">
+            Pseudo-Dionysius (Mystical Theology, Divine Names)
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">13</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Cosmic Christology</div>
+          <div class="phase-period">Weeks 37-38 • 580-662 AD</div>
+          <div class="phase-fathers">
+            Maximus the Confessor (Ambigua, Two Hundred Chapters on Theology)
+          </div>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-header">
+            <div class="phase-number">14</div>
+            <div class="phase-status upcoming">Upcoming</div>
+          </div>
+          <div class="phase-title">Orthodox Synthesis</div>
+          <div class="phase-period">Weeks 39-40 • 675-749 AD</div>
+          <div class="phase-fathers">
+            John of Damascus (Orthodox Faith, Against the Iconoclasts)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Biblical Companion -->
+  <section class="biblical-companion">
+    <div class="companion-header">
+      <div class="companion-title">Biblical Companion Reading</div>
+    </div>
+    <div class="companion-content">
+      <div class="companion-grid">
+        <div class="companion-section">
+          <h3>📖 Psalms Thread</h3>
+          <p><strong>Continuous:</strong> One complete pass through Psalms every 40 weeks</p>
+          <p><strong>Current:</strong> Psalms 15-21 (Week 2, Days 8-13)</p>
+          <p><strong>Purpose:</strong> Foundation of Orthodox liturgical prayer</p>
+          <p><strong>Connection:</strong> Polycarp's martyrdom prayer echoes Psalm 22</p>
+          <a href="bible-reader.html" class="action-button">Read Psalms →</a>
+        </div>
+
+        <div class="companion-section">
+          <h3>📜 Strategic NT Books</h3>
+          <p><strong>Week 1-8:</strong> Gospel of John (Apostolic Fathers era)</p>
+          <p><strong>Current:</strong> John 3:1-5:24 (Week 2)</p>
+          <p><strong>Purpose:</strong> Understand apostolic theology through apostolic gospel</p>
+          <p><strong>Connection:</strong> John's influence on Ignatius & Polycarp</p>
+          <a href="bible-reader.html" class="action-button">Read John →</a>
+        </div>
+
+        <div class="companion-section">
+          <h3>📚 LXX Foundation</h3>
+          <p><strong>Integration:</strong> LXX readings coordinated with Father themes</p>
+          <p><strong>Week 2 Focus:</strong> Isaiah passages on suffering servant</p>
+          <p><strong>Purpose:</strong> Scripture that shaped patristic thought</p>
+          <p><strong>Connection:</strong> Martyrdom texts in LXX tradition</p>
+          <a href="bible-reader.html" class="action-button">Explore LXX →</a>
+        </div>
+
+        <div class="companion-section">
+          <h3>🔗 Scripture-Tradition Links</h3>
+          <p><strong>Method:</strong> See how Fathers interpret specific passages</p>
+          <p><strong>Week 2:</strong> John 6 (Eucharist) in Ignatius's thought</p>
+          <p><strong>Tool:</strong> Cross-references in Father Cards</p>
+          <p><strong>Goal:</strong> Understand Orthodox hermeneutics</p>
+          <a href="polycarp-of-smyrna.html" class="action-button">See Examples →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Big Picture Overview -->
+  <section class="big-picture">
+    <h2>The Complete Journey</h2>
+    <p>
+      This 40-week program traces the Nicene Arc through 37 Church Fathers across 7 centuries, 
+      following Orthodox theological development from apostolic witness to doctrinal synthesis.
+    </p>
+    <div class="big-picture-stats">
+      <div class="big-stat">
+        <span class="big-number">280</span>
+        <span class="big-label">Total Study Days</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">37</span>
+        <span class="big-label">Church Fathers</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">800+</span>
+        <span class="big-label">Greek Terms</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">7</span>
+        <span class="big-label">Centuries</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">14</span>
+        <span class="big-label">Phases</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">150</span>
+        <span class="big-label">Primary Texts</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Actions -->
+  <div style="text-align: center; margin: 3rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+    <a href="polycarp-of-smyrna.html" style="display: block; background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      📖 Today's Father Card
+    </a>
+    <a href="week-2-greek-terms.html" style="display: block; background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      🇬🇷 Greek Vocabulary
+    </a>
+    <a href="bible-reader.html" style="display: block; background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      📜 Bible Reader
+    </a>
+    <a href="index.html#progress" style="display: block; background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+      📊 Study Hub
+    </a>
+  </div>
+
+</main>
+
+<script>
+function openNotion() {
+  window.open('https://www.notion.so/331e377ccd2480f1b8aaeefd5352ebb5', '_blank', 'noopener,noreferrer');
+}
+
+// Add click-to-complete functionality for day cards
+document.addEventListener('DOMContentLoaded', function() {
+  const dayCards = document.querySelectorAll('.day-card');
+  
+  dayCards.forEach(card => {
+    card.addEventListener('click', function() {
+      if (this.classList.contains('current')) {
+        this.classList.remove('current');
+        this.classList.add('completed');
+        const status = this.querySelector('.day-status');
+        status.textContent = 'Completed';
+        status.className = 'day-status completed';
+        
+        // Find next upcoming day and make it current
+        const nextCard = this.nextElementSibling;
+        if (nextCard && nextCard.classList.contains('day-card') && nextCard.classList.contains('upcoming')) {
+          nextCard.classList.remove('upcoming');
+          nextCard.classList.add('current');
+          const nextStatus = nextCard.querySelector('.day-status');
+          nextStatus.textContent = 'Current';
+          nextStatus.className = 'day-status current';
+        }
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
