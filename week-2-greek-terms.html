@@ -329,6 +329,84 @@ body {
   color: #2c3e50;
 }
 
+/* Audio Controls */
+.audio-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.audio-btn {
+  background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+}
+
+.audio-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px rgba(21, 68, 183, 0.3);
+}
+
+.audio-btn:active {
+  transform: translateY(0);
+}
+
+.audio-btn.playing {
+  background: linear-gradient(135deg, #D4AF37 0%, #1544B7 100%);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.audio-btn.secondary {
+  background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%);
+}
+
+.audio-btn.secondary:hover {
+  box-shadow: 0 3px 12px rgba(127, 140, 141, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.audio-icon {
+  font-size: 1rem;
+}
+
+.pronunciation-guide {
+  background: rgba(21, 68, 183, 0.05);
+  border-left: 3px solid #1544B7;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.ipa-pronunciation {
+  font-family: 'Doulos SIL', 'Charis SIL', serif;
+  color: #1544B7;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.pronunciation-tips {
+  font-size: 0.9rem;
+  color: #5d6d7e;
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
 /* Priority Terms Section */
 .priority-terms {
   background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
@@ -484,6 +562,26 @@ body {
       <div class="transliteration">sarx</div>
       <div class="pronunciation">/sarks/</div>
       <div class="english-meaning">Flesh</div>
+      
+      <!-- Audio Controls -->
+      <div class="audio-controls">
+        <button class="audio-btn" onclick="speakGreek('σάρξ', this)">
+          <span class="audio-icon">🔊</span> Greek Word
+        </button>
+        <button class="audio-btn secondary" onclick="speakText('The physical, material nature of humanity', this)">
+          <span class="audio-icon">📖</span> Definition
+        </button>
+        <button class="audio-btn secondary" onclick="speakText('Flesh - central to Ignatius anti-Docetic theology affirming Christs real human nature', this)">
+          <span class="audio-icon">🎯</span> Context
+        </button>
+      </div>
+      
+      <!-- Enhanced Pronunciation Guide -->
+      <div class="pronunciation-guide">
+        <div class="ipa-pronunciation">[sarks]</div>
+        <div class="pronunciation-tips">Pronounced "sarks" - short 'a' sound, rolled 'r', crisp 's' ending</div>
+      </div>
+      
       <div class="definition">
         The physical, material nature of humanity and of the incarnate Christ. In Ignatius's anti-Docetic 
         theology, this term is crucial for affirming the reality of Christ's human nature against those 
@@ -496,6 +594,13 @@ body {
           - Ignatius emphasizes Christ's genuine humanity against Docetic denials.
         </div>
         <span class="father-tag">ignatius</span>
+        
+        <!-- Audio for usage example -->
+        <div class="audio-controls" style="margin-top: 0.75rem;">
+          <button class="audio-btn secondary" onclick="speakText('He is truly of the race of David according to the flesh, but Son of God by divine will and power. Ignatius emphasizes Christ genuine humanity against Docetic denials', this)">
+            <span class="audio-icon">📜</span> Hear Example
+          </button>
+        </div>
       </div>
     </div>
 
@@ -525,6 +630,26 @@ body {
       <div class="transliteration">episkopos</div>
       <div class="pronunciation">/eh-PIS-ko-pos/</div>
       <div class="english-meaning">Bishop / Overseer</div>
+      
+      <!-- Audio Controls -->
+      <div class="audio-controls">
+        <button class="audio-btn" onclick="speakGreek('ἐπίσκοπος', this)">
+          <span class="audio-icon">🔊</span> Greek Word
+        </button>
+        <button class="audio-btn secondary" onclick="speakText('Bishop or overseer - the chief pastor representing Christs authority in the local church', this)">
+          <span class="audio-icon">📖</span> Definition
+        </button>
+        <button class="audio-btn secondary" onclick="speakText('Ignatius develops monarchical episcopate - bishop as center of church unity and divine authority', this)">
+          <span class="audio-icon">🎯</span> Context
+        </button>
+      </div>
+      
+      <!-- Enhanced Pronunciation Guide -->
+      <div class="pronunciation-guide">
+        <div class="ipa-pronunciation">[e.ˈpi.sko.pos]</div>
+        <div class="pronunciation-tips">Pronounced "eh-PIS-ko-pos" - emphasis on second syllable, clear 'p' sounds</div>
+      </div>
+      
       <div class="definition">
         The chief pastor and teacher of a local church, appointed by God to represent Christ's authority. 
         Ignatius develops the theological foundation for the monarchical episcopate as God's will for Church order.
@@ -536,6 +661,13 @@ body {
           theological principle that episcopal authority reflects divine hierarchy.
         </div>
         <span class="father-tag">ignatius</span>
+        
+        <!-- Audio for usage example -->
+        <div class="audio-controls" style="margin-top: 0.75rem;">
+          <button class="audio-btn secondary" onclick="speakText('Follow the bishop as Jesus Christ follows the Father. Ignatius establishes that episcopal authority reflects divine hierarchy', this)">
+            <span class="audio-icon">📜</span> Hear Example
+          </button>
+        </div>
       </div>
     </div>
 
@@ -566,6 +698,26 @@ body {
       <div class="transliteration">Theophoros</div>
       <div class="pronunciation">/theh-oh-FOR-os/</div>
       <div class="english-meaning">God-Bearer</div>
+      
+      <!-- Audio Controls -->
+      <div class="audio-controls">
+        <button class="audio-btn" onclick="speakGreek('Θεοφόρος', this)">
+          <span class="audio-icon">🔊</span> Greek Word
+        </button>
+        <button class="audio-btn secondary" onclick="speakText('God-Bearer - Ignatius distinctive title meaning one who carries God within themselves', this)">
+          <span class="audio-icon">📖</span> Definition
+        </button>
+        <button class="audio-btn secondary" onclick="speakText('Expresses mystical union with God and apostolic authority - central to Ignatian spirituality', this)">
+          <span class="audio-icon">🎯</span> Context
+        </button>
+      </div>
+      
+      <!-- Enhanced Pronunciation Guide -->
+      <div class="pronunciation-guide">
+        <div class="ipa-pronunciation">[the.o.ˈfo.ros]</div>
+        <div class="pronunciation-tips">Pronounced "theh-oh-FOR-os" - soft 'th' start, emphasis on third syllable</div>
+      </div>
+      
       <div class="definition">
         Ignatius's distinctive self-designation, meaning "one who bears/carries God." This term expresses 
         the intimate relationship between the Christian and the divine, suggesting that believers become 
@@ -578,6 +730,13 @@ body {
           spirituality, expressing both mystical union with God and apostolic authority.
         </div>
         <span class="father-tag">ignatius</span>
+        
+        <!-- Audio for usage example -->
+        <div class="audio-controls" style="margin-top: 0.75rem;">
+          <button class="audio-btn secondary" onclick="speakText('Ignatius, who is also called Theophoros. This title becomes central to Ignatian spirituality, expressing both mystical union with God and apostolic authority', this)">
+            <span class="audio-icon">📜</span> Hear Example
+          </button>
+        </div>
       </div>
     </div>
 
@@ -936,6 +1095,149 @@ document.addEventListener('DOMContentLoaded', function() {
   fatherFilter.addEventListener('change', filterTerms);
   categoryFilter.addEventListener('change', filterTerms);
   searchInput.addEventListener('input', filterTerms);
+});
+
+// Audio Functionality for Greek Terms
+let currentSpeaking = null;
+
+// Check if speech synthesis is supported
+if ('speechSynthesis' in window) {
+  console.log('Speech synthesis supported');
+} else {
+  console.log('Speech synthesis not supported');
+}
+
+// Function to speak Greek text with improved pronunciation
+function speakGreek(greekText, button) {
+  // Stop any current speech
+  stopCurrentSpeech();
+  
+  if (!('speechSynthesis' in window)) {
+    alert('Audio playback not supported in your browser');
+    return;
+  }
+  
+  const utterance = new SpeechSynthesisUtterance(greekText);
+  
+  // Try to use Greek voice if available, otherwise use default with slow rate
+  const voices = speechSynthesis.getVoices();
+  const greekVoice = voices.find(voice => 
+    voice.lang.includes('el') || 
+    voice.name.includes('Greek') ||
+    voice.name.includes('Helena')
+  );
+  
+  if (greekVoice) {
+    utterance.voice = greekVoice;
+    utterance.rate = 0.7;
+  } else {
+    // Use default voice with very slow rate for better Greek pronunciation
+    utterance.rate = 0.5;
+    utterance.pitch = 1;
+  }
+  
+  // Visual feedback
+  markButtonAsPlaying(button);
+  currentSpeaking = utterance;
+  
+  utterance.onend = () => {
+    unmarkButtonAsPlaying(button);
+    currentSpeaking = null;
+  };
+  
+  utterance.onerror = () => {
+    unmarkButtonAsPlaying(button);
+    currentSpeaking = null;
+    console.log('Speech error');
+  };
+  
+  speechSynthesis.speak(utterance);
+}
+
+// Function to speak English text
+function speakText(text, button) {
+  // Stop any current speech
+  stopCurrentSpeech();
+  
+  if (!('speechSynthesis' in window)) {
+    alert('Audio playback not supported in your browser');
+    return;
+  }
+  
+  const utterance = new SpeechSynthesisUtterance(text);
+  
+  // Use clear English voice
+  const voices = speechSynthesis.getVoices();
+  const englishVoice = voices.find(voice => 
+    voice.lang.includes('en') && 
+    (voice.name.includes('Google') || voice.name.includes('Microsoft'))
+  );
+  
+  if (englishVoice) {
+    utterance.voice = englishVoice;
+  }
+  
+  utterance.rate = 0.9;
+  utterance.pitch = 1;
+  
+  // Visual feedback
+  markButtonAsPlaying(button);
+  currentSpeaking = utterance;
+  
+  utterance.onend = () => {
+    unmarkButtonAsPlaying(button);
+    currentSpeaking = null;
+  };
+  
+  utterance.onerror = () => {
+    unmarkButtonAsPlaying(button);
+    currentSpeaking = null;
+    console.log('Speech error');
+  };
+  
+  speechSynthesis.speak(utterance);
+}
+
+// Stop current speech
+function stopCurrentSpeech() {
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
+  
+  // Remove playing class from all buttons
+  document.querySelectorAll('.audio-btn.playing').forEach(btn => {
+    btn.classList.remove('playing');
+  });
+  
+  currentSpeaking = null;
+}
+
+// Visual feedback for playing state
+function markButtonAsPlaying(button) {
+  // Remove playing class from other buttons
+  document.querySelectorAll('.audio-btn.playing').forEach(btn => {
+    btn.classList.remove('playing');
+  });
+  
+  // Add playing class to current button
+  button.classList.add('playing');
+}
+
+function unmarkButtonAsPlaying(button) {
+  button.classList.remove('playing');
+}
+
+// Load voices when available (some browsers load them asynchronously)
+speechSynthesis.onvoiceschanged = () => {
+  console.log('Voices loaded:', speechSynthesis.getVoices().length);
+};
+
+// Keyboard shortcuts for accessibility
+document.addEventListener('keydown', function(e) {
+  // Escape key stops speech
+  if (e.key === 'Escape' && speechSynthesis.speaking) {
+    stopCurrentSpeech();
+  }
 });
 </script>
 
