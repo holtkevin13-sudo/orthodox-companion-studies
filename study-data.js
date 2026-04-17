@@ -1564,6 +1564,69 @@ const LEXICON_ENTRIES = {
     definition: 'Like-mindedness, concord. Essential virtue for Church unity and peace in community.',
     etymology: 'From ὁμο- (same) + νοῦς (mind)',
     phase: 1, fathers: ['Clement of Rome'], connection: 'Church Peace & Order', letter: 'Ο'
+  },
+  // --- Ignatius cluster (Phase 1) ---
+  'μαρτύριον': {
+    transliteration: 'martyrion', english: 'Martyrdom, Testimony',
+    definition: 'The act or fact of martyrdom — related to μαρτυρία (witness) but specifically denotes the suffering itself. Ignatius and Polycarp both use μαρτύριον to name the crown of faithful discipleship: death itself becoming an act of witness.',
+    etymology: 'From μάρτυς (witness) + -τήριον (place/instrument suffix)',
+    phase: 1, fathers: ['Ignatius of Antioch', 'Polycarp of Smyrna'], connection: 'Martyrdom as Christoform Discipleship', letter: 'Μ'
+  },
+  'εὐχαριστία': {
+    transliteration: 'eucharistia', english: 'Eucharist, Thanksgiving',
+    definition: 'Thanksgiving. By Ignatius\'s time already the technical term for the Lord\'s Supper. In his letters the εὐχαριστία gathered "around the bishop" is the sign and instrument of Church unity — inseparable from his φάρμακον ἀθανασίας.',
+    etymology: 'From εὖ (well) + χάρις (grace)',
+    phase: 1, fathers: ['Ignatius of Antioch', 'Didache'], connection: 'Sacramental Theology & Ecclesial Unity', letter: 'Ε'
+  },
+  'πρεσβύτερος': {
+    transliteration: 'presbyteros', english: 'Presbyter, Elder',
+    definition: 'Elder. With bishop (ἐπίσκοπος) and deacon (διάκονος), the three offices comprising the threefold ministry Ignatius names as constitutive of a true local Church.',
+    etymology: 'Comparative of πρέσβυς (old man)',
+    phase: 1, fathers: ['Ignatius of Antioch', 'Clement of Rome'], connection: 'Threefold Apostolic Ministry', letter: 'Π'
+  },
+  'διάκονος': {
+    transliteration: 'diakonos', english: 'Deacon, Servant',
+    definition: 'Servant, minister. The third of the three orders (bishop, presbyter, deacon) in Ignatius\'s ecclesiology. Ignatius describes deacons as "entrusted with the ministry of Jesus Christ."',
+    etymology: 'Likely from διά (through) + κονεῖν (to hasten/attend)',
+    phase: 1, fathers: ['Ignatius of Antioch', 'Clement of Rome'], connection: 'Threefold Apostolic Ministry', letter: 'Δ'
+  },
+  'καθολική': {
+    transliteration: 'katholike', english: 'Universal, Catholic',
+    definition: 'Pertaining to the whole. Ignatius\'s Letter to the Smyrnaeans (8.2) contains the first known use of "catholic Church" (ἡ καθολικὴ ἐκκλησία) — marking the universal Church as present wherever Christ is.',
+    etymology: 'From κατά (according to) + ὅλος (whole)',
+    phase: 1, fathers: ['Ignatius of Antioch'], connection: 'Church as Universal Body of Christ', letter: 'Κ'
+  },
+  // --- Polycarp cluster (Phase 1) ---
+  'παράδοσις': {
+    transliteration: 'paradosis', english: 'Tradition, Handing-down',
+    definition: 'That which is handed down. The living transmission of apostolic teaching from the Apostles through bishops. Polycarp, having learned directly from the Apostle John, embodies παράδοσις as received authority — not personal innovation.',
+    etymology: 'From παρά (alongside) + δίδωμι (to give)',
+    phase: 1, fathers: ['Polycarp of Smyrna'], connection: 'Living Apostolic Tradition', letter: 'Π'
+  },
+  'ὁμολογία': {
+    transliteration: 'homologia', english: 'Confession, Profession',
+    definition: 'Public confession, open profession of faith. Polycarp\'s final ὁμολογία before Roman authorities — refusing to deny Christ — demonstrates that authentic faith cannot remain private but must be openly confessed, even unto death.',
+    etymology: 'From ὁμός (same) + λόγος (word/saying)',
+    phase: 1, fathers: ['Polycarp of Smyrna'], connection: 'Faith as Public Profession', letter: 'Ο'
+  },
+  'πίστις': {
+    transliteration: 'pistis', english: 'Faith, Faithfulness',
+    definition: 'Faith, trust, faithfulness. In the Apostolic Fathers, πίστις is both theological virtue and sustained fidelity — Polycarp\'s 86 years of service exemplify both senses inseparably.',
+    etymology: 'From πείθω (to persuade)',
+    phase: 1, fathers: ['Polycarp of Smyrna', 'Clement of Rome'], connection: 'Faith as Sustained Fidelity', letter: 'Π'
+  },
+  // --- Didache cluster (Phase 1) ---
+  'δύο ὁδοί': {
+    transliteration: 'dyo hodoi', english: 'Two Ways',
+    definition: 'The "Two Ways" — the structural image opening the Didache: a way of life and a way of death. An ancient catechetical pattern rooted in Jewish moral tradition (cf. Jer 21:8) and carried into Christian baptismal instruction.',
+    etymology: 'From δύο (two) + ὁδός (way, road)',
+    phase: 1, fathers: ['Didache'], connection: 'Catechetical Framework', letter: 'Δ'
+  },
+  'διδαχή': {
+    transliteration: 'didache', english: 'Teaching',
+    definition: 'Teaching, doctrine. The title word of the earliest Christian manual outside the New Testament (c. 50–120 AD), covering moral instruction, liturgical practice (Baptism, Eucharist), and church order.',
+    etymology: 'From διδάσκω (to teach)',
+    phase: 1, fathers: ['Didache'], connection: 'Earliest Church Catechesis', letter: 'Δ'
   }
 };
 
