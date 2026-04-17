@@ -632,7 +632,6 @@
       <li class="nav-tab active" data-tab="programs"><button>Study Programs</button></li>
       <li class="nav-tab" data-tab="resources"><button>Study Resources</button></li>
       <li class="nav-tab" data-tab="progress"><button>My Progress</button></li>
-      <li class="nav-tab" data-tab="notion"><button>Notion Workspace</button></li>
     </ul>
   </div>
 </nav>
@@ -673,7 +672,7 @@
           </div>
           <div class="tool-actions">
             <button onclick="showCurrentStudies()" class="tool-btn primary">Enter Program</button>
-            <a href="#" onclick="openNotion('main')" class="tool-btn secondary">Notion Workspace</a>
+            <a href="study-track-dashboard.html" class="tool-btn secondary">Study Dashboard</a>
           </div>
         </div>
 
@@ -824,7 +823,7 @@
         <p style="color: #5d6d7e; margin-bottom: 1.5rem;">You're currently enrolled in <strong>Φρόνημα τῶν Πατέρων (Patristic Formation)</strong> - Week 2 of 40</p>
         <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap;">
           <button onclick="showCurrentStudies()" style="background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Continue Studies →</button>
-          <a href="#" onclick="openNotion('main')" style="background: #f8f9fa; color: #2c3e50; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #bdc3c7; transition: all 0.3s ease;" onmouseover="this.style.background='#ecf0f1'" onmouseout="this.style.background='#f8f9fa'">Open Notion Workspace</a>
+          <a href="study-track-dashboard.html" style="background: #f8f9fa; color: #2c3e50; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #bdc3c7; transition: all 0.3s ease;" onmouseover="this.style.background='#ecf0f1'" onmouseout="this.style.background='#f8f9fa'">Open Study Dashboard</a>
         </div>
       </div>
     </div>
@@ -920,7 +919,6 @@
           </div>
           <div class="tool-actions">
             <a href="bible-reader.html" class="tool-btn primary">Bible Reader</a>
-            <a href="#" onclick="openNotion('biblical')" class="tool-btn secondary">Progress</a>
           </div>
         </div>
       </div>
@@ -964,9 +962,6 @@
           </div>
           
           <div class="weekly-actions">
-            <a href="#" onclick="openNotion('main')" class="week-action">
-              🔗 Daily Patristic Notes · Biblical Companion · Doctrinal Index
-            </a>
             <a href="study-track-dashboard.html" class="week-action">
               📊 Study Track Dashboard
             </a>
@@ -1027,44 +1022,7 @@
   </section>
 </div>
 
-<!-- Tab 4: Notion Workspace -->
-<div id="tab-notion" class="tab-content">
-  <section class="current-focus">
-    <div class="container">
-      <div class="tools-header">
-        <h2 class="tools-title">Notion Workspace</h2>
-        <p class="tools-description">Complete study management system</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; border: 1px solid #ecf0f1;">
-          <h4 style="color: #2c3e50; margin-bottom: 1rem;">Primary Workspace</h4>
-          <a href="#" onclick="openNotion('main')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Main Patristics Dashboard</a>
-          <a href="#" onclick="openNotion('notes')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Daily Patristic Notes</a>
-          <a href="#" onclick="openNotion('reviews')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Weekly Reviews</a>
-          <a href="#" onclick="openNotion('doctrinal')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0;">Doctrinal Index</a>
-        </div>
-
-        <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; border: 1px solid #ecf0f1;">
-          <h4 style="color: #2c3e50; margin-bottom: 1rem;">Study Resources</h4>
-          <a href="#" onclick="openNotion('fatherCards')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Father Cards Database</a>
-          <a href="#" onclick="openNotion('lexicon')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Greek Lexicon (800+ Terms)</a>
-          <a href="#" onclick="openNotion('biblical')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Biblical Companion Track</a>
-          <a href="#" onclick="openNotion('analysis')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid #ecf0f1;">Course Analysis</a>
-          <a href="#" onclick="openNotion('seminary')" style="display: block; color: #34495e; text-decoration: none; padding: 0.5rem 0;">Seminary Studies Roadmap</a>
-        </div>
-      </div>
-
-      <div style="margin-top: 2rem; padding: 1.5rem; background: #ecf0f1; border-radius: 8px; text-align: center;">
-        <p style="color: #5d6d7e; margin-bottom: 1rem;">Your Notion workspace contains the complete study system: 37 Father Cards, 800+ Greek terms, and integrated progress tracking.</p>
-        <div style="display: inline-flex; gap: 1rem;">
-          <a href="#" onclick="openNotion('main')" style="background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Open Main Dashboard</a>
-          <a href="#" onclick="openNotion('fatherCards')" style="background: linear-gradient(135deg, #5d6d7e 0%, #34495e 100%); color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 500; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Browse Father Cards</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+<!-- Tab 4 (Notion Workspace) removed — study app no longer references Notion -->
 
 <footer>
   <div class="container">
@@ -1118,25 +1076,6 @@
     document.getElementById('current-studies-detail').style.display = 'block';
   }
 
-  // Notion Integration - Real URLs from your workspace
-  const notionUrls = {
-    main: 'https://www.notion.so/331e377ccd2480f1b8aaeefd5352ebb5',
-    biblical: 'https://www.notion.so/333e377ccd248135a37cecab6843ce99',
-    analysis: 'https://www.notion.so/333e377ccd2481b8b5ddea711115e9d3',
-    seminary: 'https://www.notion.so/333e377ccd248100a172ce0492d55318',
-    notes: 'https://www.notion.so/331e377ccd2480558152c7df59ade330',
-    reviews: 'https://www.notion.so/331e377ccd2480a990d8f71f886ae18c',
-    doctrinal: 'https://www.notion.so/331e377ccd24801e9469e7e8cb667d4e',
-    fatherCards: 'https://www.notion.so/344e377ccd24819dbf48d25d2905f691',
-    lexicon: 'https://www.notion.so/344e377ccd24814ebb6cff8f8a85c99f'
-  };
-
-  function openNotion(page) {
-    if (notionUrls[page]) {
-      window.open(notionUrls[page], '_blank', 'noopener,noreferrer');
-    }
-  }
-
   // Progress Tracking
   function updateProgress() {
     try {
@@ -1157,7 +1096,6 @@
   // Export for other pages
   window.OrthodoxCompanionStudies = {
     updateProgress,
-    notionUrls,
     showCurrentStudies
   };
 </script>
