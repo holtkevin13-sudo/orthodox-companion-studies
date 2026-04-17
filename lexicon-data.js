@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T22:00:00Z
+// build: 2026-04-17T22:30:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -1100,6 +1100,139 @@ const LEXICON_ENTRIES = {
     definition: 'Reading — specifically, the reading of Scripture. Chrysostom famously urges ἀνάγνωσις on every Christian, pressing back against the assumption that Scripture is the preserve of monks and clergy: "the Scriptures were written not only for monks but also for you, a layperson with wife and children" (Hom. in Matt. 2.5). Daily reading at home is theologically required — a lay participation in the Church\'s whole teaching office.',
     etymology: 'From ἀνά (up, again) + γιγνώσκω (to know)',
     phase: 7, fathers: ['John Chrysostom'], connection: 'Lay Reading of Scripture', letter: 'Α'
+  },
+  // --- Cyril of Alexandria cluster (Phase 9) ---
+  'Θεοτόκος': {
+    transliteration: 'Theotokos', english: 'God-Bearer, Mother of God',
+    definition: '"God-bearer" — the ancient Marian title that becomes the doctrinal flashpoint of the fifth century. Cyril defends Θεοτόκος against Nestorius, who preferred Χριστοτόκος: Mary did not bear a mere human Jesus later joined to the divine Word, but the incarnate Word himself. The title safeguards the unity of Christ\'s person. The Council of Ephesus (431) vindicates Cyril; Θεοτόκος is received as the Church\'s confession, touching Christology before Mariology.',
+    etymology: 'From θεός (God) + τίκτω (to bear, give birth to)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Ephesus 431: Unity of Christ in His Mother', letter: 'Θ'
+  },
+  'ἕνωσις καθ\' ὑπόστασιν': {
+    transliteration: 'henosis kath hypostasin', english: 'Hypostatic Union',
+    definition: '"Union according to hypostasis" — the real, substantial union of divinity and humanity in the single person of the incarnate Word. Cyril\'s signature Christological formula (Second Letter to Nestorius; Third Letter to Nestorius): the divine and human are not merely conjoined (συνάφεια) or co-indwelling (ἐνοίκησις) but united at the level of ὑπόστασις. The one Christ is one hypostasis in two natures — the grammar Chalcedon will ratify.',
+    etymology: 'From ἕνωσις (union) + κατά (according to) + ὑπόστασις (Phase 5)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Substantial Union of Divinity and Humanity', letter: 'Ε'
+  },
+  'ἀντίδοσις': {
+    transliteration: 'antidosis', english: 'Communication of Attributes',
+    definition: 'Exchange, reciprocal giving — specifically ἀντίδοσις τῶν ἰδιωμάτων, the "communication of properties." Because divine and human natures are united in one person, what is proper to each nature can be predicated of the one Christ: the Son of God truly hungered; the Son of Mary truly created. The predicate does not migrate between natures but is said of the one person in whom both subsist. Latin tradition renders this as communicatio idiomatum.',
+    etymology: 'From ἀντί (in exchange) + δίδωμι (to give)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Exchange of Properties in the One Christ', letter: 'Α'
+  },
+  'μία φύσις τοῦ Λόγου σεσαρκωμένη': {
+    transliteration: 'mia physis tou Logou sesarkomene', english: 'One Incarnate Nature of the Word',
+    definition: '"One incarnate nature of the divine Logos" — Cyril\'s most-contested formula (drawn, he believed, from Athanasius; actually from the Apollinarian corpus circulated under Athanasius\'s name). Cyril\'s intent is entirely orthodox: to insist on the unity of Christ\'s single subject. But the language would later be weaponized by Monophysites, requiring Chalcedon (451) to re-express the same concern through the two-natures formula without abandoning Cyril\'s substance.',
+    etymology: 'From μία (one) + φύσις (nature) + τοῦ Λόγου (of the Word) + σεσαρκωμένη (made-flesh, perfect participle of σαρκόω)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Cyril\'s One-Incarnate-Nature Formula', letter: 'Μ'
+  },
+  'Χριστοτόκος': {
+    transliteration: 'Christotokos', english: 'Christ-Bearer',
+    definition: '"Christ-bearer" — Nestorius\'s proposed alternative to Θεοτόκος (or his proposed compromise: Mary as mother of both God-and-man, styled Χριστοτόκος). For Cyril, the substitution is fatal: it implies Mary bore the human element of Christ separately, as though the Word only later attached to a complete human person. Against this, Cyril insists that the incarnate Word has a single subject from the moment of conception; Mary bears the one Christ who is God.',
+    etymology: 'From Χριστός (Christ, Anointed) + τίκτω (to bear)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Nestorius\'s Rejected Alternative to Theotokos', letter: 'Χ'
+  },
+  'Λόγος ἔνσαρκος': {
+    transliteration: 'Logos ensarkos', english: 'The Enfleshed Word',
+    definition: 'The enfleshed Word. Cyril\'s paired distinction — Λόγος ἔνσαρκος and Λόγος ἄσαρκος — names the same eternal Word now in the condition of Incarnation: one and the same Son, pre-incarnately without flesh and now clothed in flesh. The pair guards against two errors at once: against denying real Incarnation, and against positing two sons.',
+    etymology: 'From Λόγος (Word) + ἔν (in) + σάρξ (flesh)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'The Eternal Word Now Incarnate', letter: 'Λ'
+  },
+  'Λόγος ἄσαρκος': {
+    transliteration: 'Logos asarkos', english: 'The Fleshless Word',
+    definition: 'The pre-incarnate Word — the same eternal Son before the assumption of flesh. Cyril distinguishes Λόγος ἄσαρκος from Λόγος ἔνσαρκος not to posit two Words, but to name two conditions of the one Word: his eternal existence before all time, and his temporal existence from the Incarnation onward. The distinction is central to any coherent account of the Son who "became flesh."',
+    etymology: 'From Λόγος (Word) + ἀ- (not) + σάρξ (flesh)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'The Pre-Incarnate Eternal Word', letter: 'Λ'
+  },
+  'ἰδιοποίησις': {
+    transliteration: 'idiopoiesis', english: 'Appropriation',
+    definition: 'The Word\'s making human experiences his own. Cyril\'s doctrine of ἰδιοποίησις: the divine Son takes to himself — as genuinely his — the hunger, weariness, ignorance, and death of the human nature he has assumed (Scholia on the Incarnation; Third Letter to Nestorius). What happens to Christ\'s humanity happens to him — not to a separate human person with whom he is associated. Appropriation is the hypostatic union\'s existential edge.',
+    etymology: 'From ἴδιος (one\'s own) + ποιέω (to make)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Word\'s Appropriation of Human Experience', letter: 'Ι'
+  },
+  'ἕνωσις φυσική': {
+    transliteration: 'henosis physike', english: 'Natural Union',
+    definition: '"Natural union" — Cyril\'s alternative formula for the real union of divinity and humanity in Christ (Twelve Anathemas 3). Cyril uses φυσική to mean "real, substantial" (as in Pauline usage), not "of the same nature." Later Miaphysite readers will press φυσική toward the stronger sense; Cyril\'s orthodox intent is captured equally in ἕνωσις καθ\' ὑπόστασιν, which the tradition prefers going forward.',
+    etymology: 'From ἕνωσις (union) + φυσική (natural, from φύσις)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Cyrillian Alternative Formula for Christ\'s Unity', letter: 'Ε'
+  },
+  'σύνθεσις': {
+    transliteration: 'synthesis', english: 'Composition, Putting-Together',
+    definition: 'Composition. Cyril describes the incarnate Christ as one ὑπόστασις σύνθετος — a composite hypostasis from divinity and humanity — preserving both the unity of person and the integrity of each nature. The language is taken up and refined by Leontius of Byzantium and John of Damascus (Phase 13), becoming standard post-Chalcedonian Christological vocabulary.',
+    etymology: 'From σύν (with) + τίθημι (to place)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Composite Hypostasis of Christ', letter: 'Σ'
+  },
+  'συνάφεια': {
+    transliteration: 'synapheia', english: 'Conjunction, Mere Touching',
+    definition: 'Conjunction, a mere juxtaposition or touching. Nestorius\'s preferred term for the relationship of divinity and humanity in Christ: the Word συνήφθη — was conjoined — to the man Jesus. Cyril rejects συνάφεια as fatally weak: conjunction implies two who come together, and so two subjects. Only a substantial union (ἕνωσις καθ\' ὑπόστασιν) accomplishes the one Christ.',
+    etymology: 'From σύν (with) + ἅπτω (to fasten, touch)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Nestorian Concept Rejected by Cyril', letter: 'Σ'
+  },
+  'ἐνοίκησις': {
+    transliteration: 'enoikesis', english: 'Indwelling, Inhabitation',
+    definition: 'Indwelling. Another Antiochene-Nestorian term for the Word\'s relationship to the humanity of Christ: the divine Word dwelt in the man Jesus as in a temple. Cyril rejects ἐνοίκησις as inadequate: God indwells every saint by grace, but Christ is not a saint-by-indwelling. The union is at the level of being, not mere inhabitation — else the saint and the Christ would differ only by degree.',
+    etymology: 'From ἐν (in) + οἰκέω (to dwell, from οἶκος, house)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Nestorian Term Rejected for Weakness', letter: 'Ε'
+  },
+  'θεοπάσχιτος': {
+    transliteration: 'theopaschitos', english: 'God-Suffering, Theopaschite',
+    definition: '"God suffered." Cyril\'s Theopaschite formula (Twelve Anathemas 12; Third Letter to Nestorius): "One of the holy Trinity suffered in the flesh." If the crucified one is truly God, then we may say (with the requisite care) that God suffered — not in the divine nature, which is ἀπαθής (Phase 4), but in the flesh he had made his own. The formula is vindicated at the Second Council of Constantinople (553).',
+    etymology: 'From θεός (God) + πάσχω (to suffer)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'God Suffered in the Flesh', letter: 'Θ'
+  },
+  'σωματικῶς': {
+    transliteration: 'somatikos', english: 'Bodily, in the Body',
+    definition: 'Bodily. Against docetic or merely-associational readings of the Incarnation, Cyril insists that the Word dwells σωματικῶς — really, in a body (Colossians 2:9: "in him dwells all the fullness of the Godhead σωματικῶς"). The adverb locks Cyril\'s Christology to the physical particularity of Jesus: no abstracted divinity hovering over a human person, but God incarnate in a body that can be seen, touched, suffered, and raised.',
+    etymology: 'From σῶμα (body)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Real Bodily Incarnation', letter: 'Σ'
+  },
+  'Ἀναθέματα': {
+    transliteration: 'Anathemata', english: 'The Anathemas',
+    definition: 'The "Anathemas" — specifically, the Twelve Anathemas (or "Chapters") appended to Cyril\'s Third Letter to Nestorius (430 AD), each defining a Christological error and solemnly condemning it. The anathemas are received at the Council of Ephesus (431) and become the rule against which Cyril\'s orthodoxy is measured. The Second Council of Constantinople (553) canonizes them as binding doctrine.',
+    etymology: 'From ἀνάθεμα (something set up, devoted); in Christian usage, a solemn curse of doctrinal error',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Cyril\'s Twelve Christological Anathemas', letter: 'Α'
+  },
+  'δύο γεννήσεις': {
+    transliteration: 'dyo genneseis', english: 'Two Births',
+    definition: '"Two births" — Cyril\'s formula for the single Son\'s two births: eternally from the Father (before all ages) and in time from the Virgin Mary (at the Incarnation). One Son, two γεννήσεις — the same subject born in two modes. The pattern anchors the confession of Θεοτόκος: because the same Son is eternally from the Father and temporally from Mary, she truly bears God.',
+    etymology: 'From δύο (two) + γέννησις (generation, birth)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'One Son, Two Births — Eternal and Temporal', letter: 'Δ'
+  },
+  'ἀσυγχύτως': {
+    transliteration: 'asynchytos', english: 'Without Confusion',
+    definition: '"Without confusion" — the first of the four Chalcedonian adverbs (451) defining the two natures in Christ. Built directly on Cyril\'s insistence that the union preserves the distinct integrity of divinity and humanity: neither nature is absorbed or blurred by the other. The full Chalcedonian formula: ἀσυγχύτως, ἀτρέπτως, ἀδιαιρέτως, ἀχωρίστως — "without confusion, without change, without division, without separation."',
+    etymology: 'From ἀ- (not) + συγχέω (to pour together, confuse)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Confused', letter: 'Α'
+  },
+  'ἀτρέπτως': {
+    transliteration: 'atreptos', english: 'Without Change',
+    definition: '"Without change" — the second Chalcedonian adverb. Neither nature of the incarnate Christ is altered by the union: divinity remains fully divine (without loss), humanity remains fully human (without transformation into something else). The adverb guards Cyril\'s legacy against both Eutychian absorption and docetic dissolution. Together with ἀσυγχύτως it preserves the integrity of each nature.',
+    etymology: 'From ἀ- (not) + τρέπω (to turn, change)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Changed', letter: 'Α'
+  },
+  'ἀδιαιρέτως': {
+    transliteration: 'adiairetos', english: 'Without Division',
+    definition: '"Without division" — the third Chalcedonian adverb. Over against every Nestorian-style partitioning of Christ into two Sons or two subjects, the union is ἀδιαιρέτως: one Christ, one person, one subject. Paired with ἀχωρίστως, the adverb insists the two natures cannot be separated or distributed between rival agents.',
+    etymology: 'From ἀ- (not) + διαιρέω (to divide)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Divided', letter: 'Α'
+  },
+  'ἀχωρίστως': {
+    transliteration: 'achoristos', english: 'Without Separation',
+    definition: '"Without separation" — the fourth Chalcedonian adverb. The two natures of Christ are never separable from one another after the Incarnation: even in Christ\'s death, the union persists. The adverb fixes Cyril\'s insistence on the singular, enduring identity of the incarnate Son against every temporal or circumstantial parting of divine and human.',
+    etymology: 'From ἀ- (not) + χωρίζω (to separate, place apart)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Separated', letter: 'Α'
+  },
+  'ἀληθὴς Θεός καὶ ἀληθὴς ἄνθρωπος': {
+    transliteration: 'alethes Theos kai alethes anthropos', english: 'Truly God and Truly Man',
+    definition: '"Truly God and truly man" — the Chalcedonian Definition\'s core confession (451). Cyril\'s insistence that the incarnate Word is fully God (against Nestorian reduction) and fully human (against any docetic attenuation) converges here with Leo\'s Latin Tome (Phase 10). The adverb ἀληθῶς blocks every implicit qualification: not partly God, not apparent-man; truly both.',
+    etymology: 'From ἀληθής (true) + Θεός (God) + ἄνθρωπος (human being)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Fullness of Both Natures', letter: 'Α'
+  },
+  'ἀπαθῶς': {
+    transliteration: 'apathos', english: 'Impassibly',
+    definition: 'Impassibly — the paradoxical adverb that preserves both horns of the Theopaschite formula. Cyril writes that the Word "suffered impassibly" (ἔπαθεν ἀπαθῶς, Scholia on the Incarnation): truly suffered in the flesh, yet without subjection of the divine nature to suffering. The paradox guards both the reality of Christ\'s passion and the impassibility of his divinity (cf. ἀπάθεια, Phase 4).',
+    etymology: 'From ἀ- (not) + πάσχω (to suffer)',
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Cyrillian Paradox: Suffered Impassibly', letter: 'Α'
   }
 };
 
