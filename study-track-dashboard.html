@@ -384,7 +384,7 @@ em, i { font-style: italic; }
 .day-card.day-complete {
   background: linear-gradient(135deg, #dce8c9 0%, #ffffff 100%);
   border: 2px solid #556b3d;
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+  box-shadow: 0 4px 12px rgba(85, 107, 61, 0.2);
 }
 
 .day-card.current {
@@ -734,11 +734,11 @@ em, i { font-style: italic; }
 .day-card.day-complete {
   background: #dce8c9 !important;
   border: 3px solid #556b3d !important;
-  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(85, 107, 61, 0.4) !important;
 }
 
 .day-card.day-complete .day-header {
-  background: rgba(39, 174, 96, 0.1) !important;
+  background: rgba(85, 107, 61, 0.1) !important;
   border-radius: 6px !important;
   padding: 0.5rem !important;
   margin-bottom: 1rem !important;
@@ -969,7 +969,7 @@ em, i { font-style: italic; }
 /* Readings summary style for completed days (collapsed view) */
 .day-readings-summary {
   padding: 1rem 1.25rem;
-  background: rgba(39, 174, 96, 0.05);
+  background: rgba(85, 107, 61, 0.05);
   border-radius: 4px;
   font-size: 0.9rem;
   line-height: 1.7;
@@ -1145,20 +1145,20 @@ function getDayStatus(dayIdx) {
   const todayIdx = computeTodayDayIdx();
   const card = document.getElementById(`day-${dayIdx}`);
   let allChecked = false;
-  let anyChecked = false;
   if (card) {
     const cbs = card.querySelectorAll('.task-checkbox');
     if (cbs.length > 0) {
       const checked = Array.from(cbs).filter(c => c.checked).length;
       allChecked = (checked === cbs.length);
-      anyChecked = checked > 0;
     }
   }
+  // Completion takes precedence for today and past days.
+  // Future days with tasks checked early still show as 'upcoming' — we
+  // don't award "completed" status for days the user hasn't lived yet.
+  if (allChecked && dayIdx <= todayIdx) return 'completed';
   if (dayIdx === todayIdx) return 'current';
   if (dayIdx > todayIdx) return 'upcoming';
-  // Past day
-  if (allChecked) return 'completed';
-  return 'missed';
+  return 'missed';  // past, not all checked
 }
 
 function computeWeekFraction() {
