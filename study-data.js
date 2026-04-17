@@ -1658,17 +1658,18 @@ const TRACKS = {
         { category: 'primary', title: 'The Apostolic Fathers', author: 'Holmes (ed.)', edition: 'Baker Academic, 3rd ed.', phase: 'Weeks 1–4', essential: true },
         { category: 'primary', title: 'Ante-Nicene Fathers, Vols. 1, 3, 5', details: 'Justin · Tertullian · Cyprian · Irenaeus', phase: 'Weeks 5–13', essential: true },
         { category: 'primary', title: 'Against Heresies', author: 'Irenaeus of Lyons', details: 'Standalone edition or ANF Vol. 1', phase: 'Weeks 9–13', essential: true },
-        { category: 'primary', title: 'Nicene & Post-Nicene Fathers, Series I & II', details: 'Athanasius · Cappadocians · Chrysostom · Leo · John of Damascus', phase: 'Weeks 14–38', essential: true },
+        { category: 'primary', title: 'Nicene & Post-Nicene Fathers, Series I & II', details: 'Athanasius · Cappadocians · Chrysostom · Leo (NPNF 1.12) · John of Damascus (NPNF 2.9)', phase: 'Weeks 14–38', essential: true },
         { category: 'primary', title: 'On the Priesthood', author: 'John Chrysostom', details: 'In NPNF 1.9', phase: 'Weeks 20–21', essential: true },
-        { category: 'primary', title: 'On the Unity of Christ', author: 'Cyril of Alexandria', edition: 'SVS Press · ~$20', phase: 'Weeks 29–30', essential: true, toPurchase: true },
-        { category: 'primary', title: 'Pseudo-Dionysius: The Complete Works', edition: 'Paulist Press · ~$25', phase: 'Weeks 32–33', essential: true, toPurchase: true },
+        { category: 'primary', title: 'On the Unity of Christ', author: 'Cyril of Alexandria', edition: 'SVS Press · ~$20 · trans. McGuckin', phase: 'Weeks 29–30', essential: true, toPurchase: true },
+        { category: 'primary', title: 'Pseudo-Dionysius: The Complete Works', edition: 'Paulist Press · ~$25 · trans. Luibheid', phase: 'Weeks 32–33', essential: true, toPurchase: true },
         { category: 'primary', title: 'Two Hundred Chapters on Theology', author: 'Maximus the Confessor', edition: 'SVS Press · ~$20', phase: 'Weeks 34–36', essential: true, toPurchase: true },
+        { category: 'primary', title: 'On the Cosmic Mystery of Jesus Christ', author: 'Maximus the Confessor', edition: 'Paulist Press · ~$25 · optional but recommended', phase: 'Week 36', essential: false, toPurchase: true },
 
         // Biblical Texts — Scripture track
         { category: 'biblical', title: 'Eastern Orthodox Bible', details: 'New Testament', phase: 'All weeks', essential: true },
         { category: 'biblical', title: 'Lexham English Septuagint', details: 'Old Testament + Psalms', phase: 'All weeks', essential: true },
 
-        // Secondary Reading — scholarly companions, scheduled per phase
+        // Secondary Reading — scholarly companions, scheduled per phase (Part I)
         { category: 'secondary', title: 'The Christian Tradition, Vol. 1', author: 'Jaroslav Pelikan', details: 'Ch. 1–5', phase: 'Weeks 1–6', essential: true },
         { category: 'secondary', title: 'The Trinitarian Faith', author: 'T. F. Torrance', details: 'Intro + Ch. 1', phase: 'Week 4', essential: false },
         { category: 'secondary', title: 'Justin Martyr', author: 'Eric Osborn', phase: 'Weeks 5–6', essential: false },
@@ -1679,18 +1680,27 @@ const TRACKS = {
         { category: 'secondary', title: 'Athanasius: A Theological Introduction', author: 'Thomas Weinandy', phase: 'Week 14', essential: false },
         { category: 'secondary', title: 'Athanasius: The Coherence of His Thought', author: 'Khaled Anatolios', phase: 'Week 15', essential: false },
         { category: 'secondary', title: 'The Nicene Faith, Vol. 2', author: 'John Behr', phase: 'Week 16', essential: false },
-        { category: 'secondary', title: 'Origins of the Christian Mystical Tradition', author: 'Andrew Louth', phase: 'Week 17', essential: false },
+        { category: 'secondary', title: 'Origins of the Christian Mystical Tradition', author: 'Andrew Louth', details: 'Ch. 4–5 (Week 17) · Ch. 6 (Week 33)', phase: 'Weeks 17, 33', essential: false },
         { category: 'secondary', title: 'Gregory of Nazianzus', author: 'Brian Daley', phase: 'Week 18', essential: false },
         { category: 'secondary', title: 'Faith Gives Fullness to Reasoning', author: 'Frederick Norris', details: 'Commentary on Orations 29–31', phase: 'Week 19', essential: false },
-        { category: 'secondary', title: 'Golden Mouth: The Story of John Chrysostom', author: 'J. N. D. Kelly', phase: 'Weeks 20–25', essential: false }
+        { category: 'secondary', title: 'Golden Mouth: The Story of John Chrysostom', author: 'J. N. D. Kelly', phase: 'Weeks 20–25', essential: false },
+
+        // Secondary Reading — Part II scholarly companions
+        { category: 'secondary', title: 'Saint Cyril of Alexandria and the Christological Controversy', author: 'John McGuckin', phase: 'Weeks 29–30', essential: false },
+        { category: 'secondary', title: 'Leo the Great', author: 'Bronwen Neil', phase: 'Week 31', essential: false },
+        { category: 'secondary', title: 'The Council of Chalcedon', author: 'R. V. Sellers', phase: 'Week 31', essential: false },
+        { category: 'secondary', title: 'Denys the Areopagite', author: 'Andrew Louth', phase: 'Weeks 32–33', essential: false },
+        { category: 'secondary', title: 'Maximus the Confessor', author: 'Andrew Louth', phase: 'Weeks 34–35', essential: false },
+        { category: 'secondary', title: 'Man and the Cosmos: The Vision of St. Maximus the Confessor', author: 'Lars Thunberg', phase: 'Week 36', essential: false },
+        { category: 'secondary', title: 'St John Damascene: Tradition and Originality in Byzantine Theology', author: 'Andrew Louth', phase: 'Weeks 37–38', essential: false }
       ],
       recommendedSecondary: [
         'Behr — The Nicene Faith (full 2-volume set)',
         'Anatolios — Retrieving Nicaea',
-        'McGuckin — Cyril of Alexandria and the Christological Controversy',
-        'Louth — Maximus the Confessor',
-        'Thunberg — Microcosm and Mediator',
-        'Kelly — Early Christian Doctrines'
+        'Thunberg — Microcosm and Mediator (deeper Maximus companion)',
+        'Kelly — Early Christian Doctrines',
+        'Florovsky — The Eastern Fathers of the Fourth Century',
+        'NPNF 2.14 — The Seven Ecumenical Councils (review in Week 39–40)'
       ]
     },
     '1-year': {
