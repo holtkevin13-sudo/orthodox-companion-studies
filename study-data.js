@@ -1658,6 +1658,46 @@ function getPhaseTerms(phase) {
   return Array.from(byGreek.values());
 }
 
+// ==================================================================
+// Lexicon anchor helpers — single source of truth for deep-linking
+// Greek terms from anywhere in the app (dashboard pills, Father card
+// theological pillars, future daily-reading notes) into the main
+// lexicon page. Each term's anchor is `#term-<slug>`, where the slug
+// is a URL-safe version of the transliteration. Callers use
+// `lexiconAnchorFor('ἐπίσκοπος')` and get back
+// 'greek-lexicon-index.html#term-episkopos'.
+// ==================================================================
+
+// Convert a term's transliteration into a URL-safe anchor slug.
+// "Pharmakon Athanasias" → "pharmakon-athanasias"
+// "dyo hodoi" → "dyo-hodoi"
+function slugifyTerm(greekOrEntry) {
+  if (!greekOrEntry) return '';
+  const entry = typeof greekOrEntry === 'object'
+    ? greekOrEntry
+    : (typeof LEXICON_ENTRIES !== 'undefined' ? LEXICON_ENTRIES[greekOrEntry] : null);
+  if (!entry || !entry.transliteration) return '';
+  return entry.transliteration
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')  // strip combining accents
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+// Return the URL to a Greek term's entry in the lexicon index.
+// Falls back to the phase-level anchor if we don't have a full lexicon
+// entry yet. Accepts either a Greek string key or a full term object.
+function lexiconAnchorFor(greekOrEntry) {
+  const slug = slugifyTerm(greekOrEntry);
+  if (slug) return `greek-lexicon-index.html#term-${slug}`;
+  // Fallback — if term exists but has no transliteration, or isn't
+  // in LEXICON_ENTRIES at all, send them to the lexicon index.
+  return 'greek-lexicon-index.html';
+}
+
 // Look up a Father-page URL by short name as used in PHASE_DATA[n].fathers
 // (e.g., "Ignatius", "Polycarp", "Clement of Rome"). Returns URL or null.
 // Complements fatherPageForReading(), which searches inside a reading string.
