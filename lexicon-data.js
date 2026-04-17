@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-18T00:00:00Z
+// build: 2026-04-18T00:30:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -1645,6 +1645,139 @@ const LEXICON_ENTRIES = {
     definition: 'Mystagogy — the title of Maximus\'s commentary on the Divine Liturgy and, more generally, the Christian tradition of interpretation that reads the sacramental rites as initiation into the mysteries they enact. Maximus\'s Mystagogia reads the whole Liturgy as a single synthesis: each movement of the rite images some aspect of salvation history, creation\'s return to God, and the inner ascent of the soul. The work shapes all later Byzantine liturgical theology.',
     etymology: 'From μύστης (initiate) + ἀγωγή (leading)',
     phase: 12, fathers: ['Maximus the Confessor'], connection: 'Liturgical Theology as Initiation into Mystery', letter: 'Μ'
+  },
+  // --- John of Damascus cluster (Phase 13) ---
+  'ἐνυπόστατος': {
+    transliteration: 'enhypostatos', english: 'Enhypostatic, Subsisting in Another Hypostasis',
+    definition: 'Enhypostatic — having real existence not in itself but in another hypostasis. Damascene\'s key technical term for Christ\'s human nature (Expositio 3.9): it is not ἀνυπόστατος (without hypostasis) nor a separate hypostasis of its own, but subsists in the divine hypostasis of the Word. The term, refined from Leontius of Byzantium, resolves the Christological puzzle left by Chalcedon — how can the human nature be real without being a second subject? — by locating its reality precisely in the one divine subject.',
+    etymology: 'From ἐν (in) + ὑπόστατος (substantial, from ὑπόστασις, Phase 5)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Christ\'s Human Nature Subsisting in the Divine Person', letter: 'Ε'
+  },
+  'ἀνυπόστατος': {
+    transliteration: 'anhypostatos', english: 'Anhypostatic, Without Hypostasis',
+    definition: 'Anhypostatic — without hypostasis, without independent existence. Paired with ἐνυπόστατος in Damascene\'s Christology: Christ\'s human nature is ἀνυπόστατος in the sense that it has no hypostasis of its own — no independent person-Jesus over against the Word. But it is not ἀνυπόστατος in the sense of being unreal; it is ἐνυπόστατος in the Word. The negation clears the field for the positive statement.',
+    etymology: 'From ἀ- (not) + ὑπόστατος (having hypostasis)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'No Independent Human Person Alongside the Word', letter: 'Α'
+  },
+  'σύνθετος ὑπόστασις': {
+    transliteration: 'synthetos hypostasis', english: 'Composite Hypostasis',
+    definition: 'Composite hypostasis. Damascene inherits the concept from Cyril (cf. σύνθεσις, Phase 9) and Leontius of Byzantium, and fixes it as the standard post-Chalcedonian Christological vocabulary (Expositio 3.7): the one Christ is a hypostasis "composed" of divinity and humanity — not as a third nature alongside the two, but as the single acting subject in whom both natures subsist without confusion. The σύνθετος ὑπόστασις is Damascene\'s mature synthesis of the whole Greek Christological tradition.',
+    etymology: 'From σύνθετος (composed, from σύν + τίθημι) + ὑπόστασις (Phase 5)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Post-Chalcedonian Christological Synthesis', letter: 'Σ'
+  },
+  'προσκύνησις': {
+    transliteration: 'proskynesis', english: 'Veneration, Reverential Bowing',
+    definition: 'Veneration, reverential bowing. Damascene\'s Three Treatises on the Divine Images (c. 730, during the first wave of Iconoclasm) distinguish two kinds of προσκύνησις: προσκύνησις τῆς λατρείας (worship-veneration, rendered to God alone) and προσκύνησις τῆς τιμῆς (honor-veneration, rendered to creatures bearing God\'s likeness — icons, saints, the Cross, the Gospel Book). The icon receives not worship but honor, and the honor passes through to the prototype (Basil\'s dictum, quoted by Damascene).',
+    etymology: 'From πρός (toward) + κυνέω (to kiss, make obeisance)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Reverential Bowing Distinguished from Worship', letter: 'Π'
+  },
+  'λατρεία': {
+    transliteration: 'latreia', english: 'Worship, Adoration',
+    definition: 'Worship in its strict and absolute sense, due to God alone. Damascene sharpens the word against the Iconoclast charge of idolatry: icons are not offered λατρεία, which would be idolatry, but προσκύνησις (veneration), which belongs to the created order. The distinction travels into the Latin tradition as latria (to God) vs dulia (to saints) vs hyperdulia (to the Theotokos).',
+    etymology: 'From λατρεύω (to serve, worship) — in the Septuagint, specifically divine service',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Worship Strictly Reserved to God', letter: 'Λ'
+  },
+  'δουλεία': {
+    transliteration: 'douleia', english: 'Service, Relative Veneration',
+    definition: 'Service — in Damascene\'s technical usage, the reverential service due to honored creatures, distinguished from λατρεία (due only to God). In the later Latin reception (via Aquinas) δουλεία becomes dulia, the standard term for the veneration of saints. Damascene\'s triple distinction — λατρεία, προσκύνησις, δουλεία — becomes the classical grammar for ordering worship and veneration across the Christian tradition.',
+    etymology: 'From δοῦλος (servant, slave)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Reverential Service Due to Honored Creatures', letter: 'Δ'
+  },
+  'ἁγία εἰκών': {
+    transliteration: 'hagia eikon', english: 'Holy Icon',
+    definition: '"Holy icon." Damascene\'s defense of the ἁγία εἰκών (Three Treatises on the Divine Images, c. 730) develops the full Orthodox theology of the image: because the invisible God has become visible in the Incarnation, he can and must be depicted; because matter has been sanctified by the Word\'s assumption of it, material images can be proper vehicles of grace; because honor passes to the prototype (πρωτότυπον), veneration of icons is veneration of Christ and the saints.',
+    etymology: 'From ἅγιος (holy) + εἰκών (image, Phase 3)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'The Holy Icon in Orthodox Worship', letter: 'Α'
+  },
+  'πρωτότυπον': {
+    transliteration: 'prototypon', english: 'Prototype, Archetype',
+    definition: 'Prototype, archetype — that which an image images. Damascene\'s key argument for icon veneration rests on a patristic principle (Basil, On the Holy Spirit 18.45): "the honor rendered to the image passes to the prototype." The icon and its prototype share a relation, not an identity; the veneration offered to the icon rises through it to Christ, or to the saint whose likeness is depicted. The doctrine safeguards both the reality of the image and its subordination.',
+    etymology: 'From πρῶτος (first) + τύπος (Phase 2)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Honor of Image Passing to Its Archetype', letter: 'Π'
+  },
+  'χαρακτήρ': {
+    transliteration: 'charakter', english: 'Character, Imprint, Stamp',
+    definition: 'Character, imprint — as on a coin. Christ himself is called the χαρακτήρ of the Father\'s hypostasis in Hebrews 1:3, and Damascene extends the image to icon theology: an icon is a χαρακτήρ of its prototype, bearing its likeness without being its substance. The term gives the theology of image a biblical anchor and a non-reductive grammar: the icon really is related to the one imaged, yet is not the one imaged.',
+    etymology: 'From χαράσσω (to engrave, inscribe)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Icon as Imprint of Its Prototype', letter: 'Χ'
+  },
+  'εἰκονομαχία': {
+    transliteration: 'eikonomachia', english: 'Iconoclasm',
+    definition: '"Icon-fighting" — the Iconoclast controversy (c. 726–787; 814–843) that disrupted Byzantine Christianity for more than a century. Damascene\'s Three Treatises on the Divine Images (c. 730) are the first sustained patristic defense of icons; they circulate from his monastery at Mar Saba, outside Umayyad jurisdiction, while the iconoclast emperors cannot reach him. The controversy is finally resolved at the Triumph of Orthodoxy (843), still celebrated as the first Sunday of Lent.',
+    etymology: 'From εἰκών (image) + μάχη (battle, fight)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'The Iconoclast Controversy', letter: 'Ε'
+  },
+  'τιμή': {
+    transliteration: 'time', english: 'Honor, Reverence',
+    definition: 'Honor. Damascene\'s fundamental principle for ordering veneration: τιμή is the due reverence given to what bears God\'s likeness. God receives λατρεία (worship); saints receive τιμή; matter that has borne holiness — icons, relics, the Cross, the Gospel Book — receives τιμή in its proper mode. The gradations of τιμή express, not dilute, the unity of worship: one God, glorified in his saints.',
+    etymology: 'From τίω (to honor, value)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Ordered Gradations of Reverence', letter: 'Τ'
+  },
+  'δόξα': {
+    transliteration: 'doxa', english: 'Glory',
+    definition: 'Glory. Damascene\'s δόξα is the radiant divine presence that belongs to God alone and is communicated to creatures by grace: the saints share δόξα by participation; icons and relics bear δόξα by derivation. The term runs through the whole patristic tradition (Origen, the Cappadocians, Chrysostom), and Damascene gathers its threads into the distinctively Byzantine theology of divine-light and transfiguration.',
+    etymology: 'From δοκέω (to seem, to think)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Divine Glory Communicated to Creatures', letter: 'Δ'
+  },
+  'ὕλη': {
+    transliteration: 'hyle', english: 'Matter',
+    definition: 'Matter. Damascene\'s most famous single line in the icon controversy: "I will not cease from venerating matter, through which my salvation was accomplished" (On the Divine Images 1.16). The Iconoclast position rests on a suspicion of matter as incapable of bearing the sacred; Damascene\'s response is fully incarnational — the Word became flesh, therefore flesh and by extension every material medium can be the vehicle of grace. Wood, pigment, water, bread, oil are all sanctified ὕλη.',
+    etymology: 'Greek: originally "wood, timber," then "matter, stuff"',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Defense of Matter in Christian Worship', letter: 'Υ'
+  },
+  'αὐτεξούσιον': {
+    transliteration: 'autexousion', english: 'Self-Determination, Free Will',
+    definition: 'Self-determination — the human person\'s real freedom to will. Damascene\'s Expositio 2.25–27 gives the classical patristic treatment of αὐτεξούσιον: human freedom is neither absolute autonomy (which would be no creaturely mode) nor mere appearance (which would empty moral life), but a genuine creaturely self-determination ordered toward communion with God. The term becomes the Greek counterpart to the Latin liberum arbitrium.',
+    etymology: 'From αὐτός (self) + ἐξουσία (authority, power)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Human Freedom as Creaturely Self-Determination', letter: 'Α'
+  },
+  'ἀειπάρθενος': {
+    transliteration: 'aeiparthenos', english: 'Ever-Virgin',
+    definition: '"Ever-virgin" — the Marian title affirming Mary\'s virginity before, during, and after the birth of Christ. Damascene gives the title its settled dogmatic articulation (Expositio 4.14), defending against Helvidius and later rationalist objections. The title is formally received at the Fifth Ecumenical Council (Constantinople II, 553) and becomes standard in the Byzantine and (eventually) Latin liturgical tradition.',
+    etymology: 'From ἀεί (always, ever) + παρθένος (virgin)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Marian Title of Perpetual Virginity', letter: 'Α'
+  },
+  'μεταστοιχείωσις': {
+    transliteration: 'metastoicheiosis', english: 'Transelementation',
+    definition: 'Transelementation. Damascene\'s term for the Eucharistic change (Expositio 4.13): the bread and wine are "trans-elemented" into the body and blood of Christ by the power of the Holy Spirit. The term anticipates the later Latin transubstantiatio (first used c. 12th century) without the Aristotelian substance/accident framework: for Damascene the change is real and complete, and the Eucharistic elements are truly Christ\'s body and blood, but the philosophical apparatus is distinctively Greek.',
+    etymology: 'From μετά (change) + στοιχεῖον (element)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Eucharistic Change of the Elements', letter: 'Μ'
+  },
+  'ἀντίτυπον': {
+    transliteration: 'antitypon', english: 'Antitype, Corresponding Figure',
+    definition: 'Antitype — that which corresponds to a τύπος (Phase 2, Justin). For Damascene, Christ is the ἀντίτυπον of the Old Testament types; the Eucharistic elements, pre-consecration, are ἀντίτυπα of the body and blood in the Liturgy of St. Basil (a usage that Trent will later interpret more cautiously); icons are ἀντίτυπα of their prototypes, bearing likeness through correspondence. The term links typological, sacramental, and iconographic theology into a single theology of sign.',
+    etymology: 'From ἀντί (corresponding to) + τύπος (type)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Theology of Corresponding Sign', letter: 'Α'
+  },
+  'τροπάριον': {
+    transliteration: 'troparion', english: 'Troparion, Hymn-Stanza',
+    definition: 'Troparion — a short hymn-stanza, the basic unit of Byzantine liturgical poetry. Damascene is among the greatest hymnographers of the Eastern Church: the Paschal Canon ("The day of resurrection! Let us be illumined, O ye peoples!") is his, as are many octoechos hymns and much of the Oktoichos itself. The τροπάριον serves as the building block of the larger forms — the κανών (hymn of nine odes) and the ἀκάθιστος (the standing-hymn).',
+    etymology: 'Diminutive of τρόπος (mode, manner) — originally a short verse inserted between psalm verses',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Basic Unit of Byzantine Hymnography', letter: 'Τ'
+  },
+  'εἱρμός': {
+    transliteration: 'heirmos', english: 'Heirmos, Model-Stanza',
+    definition: 'Heirmos — the model stanza that sets the melody and meter for an ode in a liturgical canon (κανών). Each of a canon\'s nine odes opens with its εἱρμός, thematically linking the ode to one of the nine biblical canticles. Damascene\'s hymn-writing, preserved and transmitted through the Sabaite monastic tradition, gives the εἱρμός-driven canon its classical shape; the form becomes central to the whole subsequent Byzantine musical-liturgical tradition.',
+    etymology: 'From εἴρω (to string together, connect)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Model-Stanza of the Liturgical Canon', letter: 'Ε'
+  },
+  'Πηγὴ Γνώσεως': {
+    transliteration: 'Pege Gnoseos', english: 'Fount of Knowledge',
+    definition: '"Fount of Knowledge" — the title of Damascene\'s great theological summa in three parts: the Philosophical Chapters (Dialectica), On Heresies, and the Exact Exposition of the Orthodox Faith (Expositio). The work transmits, organizes, and synthesizes the whole prior Greek patristic tradition, becoming the standard Orthodox dogmatic textbook for a millennium. Its translation into Latin (12th century) deeply shapes scholastic theology; Aquinas cites it extensively.',
+    etymology: 'From πηγή (spring, fountain) + γνῶσις (knowledge)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'Damascene\'s Theological Summa', letter: 'Π'
+  },
+  'Ἔκδοσις ἀκριβής': {
+    transliteration: 'Ekdosis akribes', english: 'Exact Exposition',
+    definition: '"Exact Exposition of the Orthodox Faith" — the third part of Damascene\'s Fount of Knowledge, usually cited simply as the Expositio or De Fide Orthodoxa (in its Latin form). Organized in 100 chapters across four books (sometimes three in the Greek), it treats God, creation, Incarnation, and the Christian life in systematic order. The Expositio is the closest thing Byzantine theology has to an organized dogmatic manual, and shapes Orthodox theological instruction into the modern era.',
+    etymology: 'From ἔκδοσις (setting forth, exposition) + ἀκριβής (exact, precise)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'The Systematic Orthodox Dogmatic Manual', letter: 'Ε'
+  },
+  'Δαμασκηνός': {
+    transliteration: 'Damaskenos', english: 'The Damascene',
+    definition: '"The Damascene" — the epithet by which John (c. 675–749) is universally known in the Christian tradition. Born into a wealthy Arab-Christian family at Damascus (his father served the Umayyad caliphs in administration), John follows his father briefly in civil service before entering the monastery of Mar Saba near Jerusalem, where he spends the rest of his life in writing, hymnography, and prayer. The Umayyad jurisdiction paradoxically protects him from Byzantine iconoclast persecution; his pen proves decisive for Orthodoxy\'s victory.',
+    etymology: 'From Δαμασκός (Damascus)',
+    phase: 13, fathers: ['John of Damascus'], connection: 'John of Damascus and His Setting', letter: 'Δ'
   }
 };
 
