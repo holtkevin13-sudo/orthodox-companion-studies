@@ -1338,10 +1338,12 @@ class StudyTaskManager {
     const checkbox = e.target;
     const dayId = this.getDayFromTaskId(checkbox.id);
     
+    console.log(`Task ${checkbox.id} changed to ${checkbox.checked} for day ${dayId}`);
+    
     // Save progress
     this.saveProgress();
     
-    // Update day progress
+    // Update day progress immediately
     this.updateDayProgress(dayId);
     
     // Check for week completion
@@ -1365,10 +1367,22 @@ class StudyTaskManager {
     const progressDiv = document.getElementById(`${dayId}-progress`);
     const statusDiv = document.getElementById(`${dayId}-status`);
     
-    if (!dayCheckboxes.length || !progressDiv) return;
+    console.log(`Updating progress for ${dayId}:`, {
+      dayCard: !!dayCard,
+      checkboxCount: dayCheckboxes.length,
+      progressDiv: !!progressDiv,
+      statusDiv: !!statusDiv
+    });
+    
+    if (!dayCheckboxes.length || !progressDiv) {
+      console.log(`Missing elements for ${dayId} - skipping update`);
+      return;
+    }
 
     const totalTasks = dayCheckboxes.length;
     const completedTasks = Array.from(dayCheckboxes).filter(cb => cb.checked).length;
+    
+    console.log(`${dayId}: ${completedTasks}/${totalTasks} complete`);
     
     // Update progress text
     progressDiv.textContent = `${completedTasks} of ${totalTasks} tasks complete`;
@@ -1381,12 +1395,16 @@ class StudyTaskManager {
       statusDiv.className = 'day-status completed';
       progressDiv.textContent = '✅ Day Complete!';
       
+      console.log(`Day ${dayId} marked complete!`);
       this.celebrateDayCompletion(dayCard);
     } else {
       dayCard.classList.remove('day-complete');
       if (dayCard.classList.contains('current')) {
         statusDiv.textContent = 'Current';
         statusDiv.className = 'day-status current';
+      } else if (dayCard.classList.contains('upcoming')) {
+        statusDiv.textContent = 'Upcoming';
+        statusDiv.className = 'day-status upcoming';
       }
     }
   }
