@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T23:00:00Z
+// build: 2026-04-17T23:30:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -1379,6 +1379,139 @@ const LEXICON_ENTRIES = {
     definition: 'Face, person. The Greek term that the Chalcedonian Definition (451) pairs with ὑπόστασις (Phase 5) on the side of Christ\'s unity — one πρόσωπον and one ὑπόστασις, in two natures. πρόσωπον is the Greek equivalent of Leo\'s Latin persona (Phase 2.5): where persona carried the Roman theatrical resonance of "mask," πρόσωπον carried similar weight in Greek — a difficulty the Cappadocians (Phase 5) had already helped to resolve by treating πρόσωπον as the concrete "who" that answers to a specific hypostasis.',
     etymology: 'From πρός (toward) + ὤψ (face, eye) — "that which is turned toward, one\'s face"',
     phase: 10, fathers: ['Leo the Great'], connection: 'Greek Equivalent of Persona at Chalcedon', letter: 'Π'
+  },
+  // --- Pseudo-Dionysius the Areopagite cluster (Phase 11) ---
+  'ἀποφατική': {
+    transliteration: 'apophatike', english: 'Apophatic, Negative Theology',
+    definition: 'Apophatic — the way of negation, of "unsaying." Dionysius\'s Mystical Theology (chapters 3–5) presents apophatic theology as the higher of two complementary paths: having affirmed every name of God (καταφατική), the soul must then deny each name in turn, passing beyond even the most exalted affirmations to meet God in the darkness above all human speech. The method draws on Gregory of Nyssa\'s γνόφος (Phase 5) and shapes the whole later Christian mystical tradition.',
+    etymology: 'From ἀπόφημι (to deny, say off)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Theology by Negation', letter: 'Α'
+  },
+  'καταφατική': {
+    transliteration: 'kataphatike', english: 'Cataphatic, Affirmative Theology',
+    definition: 'Cataphatic — the way of affirmation. In Dionysius\'s two-part method, καταφατική precedes ἀποφατική: we first gather up every scriptural and creaturely name of God — Good, Being, Life, Light, Love — and affirm them all. Only then do we pass through them by negation. Cataphasis and apophasis are not rivals but sequential movements; Dionysius\'s Divine Names is the sustained cataphatic work, his Mystical Theology the sustained apophatic one.',
+    etymology: 'From κατάφημι (to affirm, say in accordance)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Theology by Affirmation', letter: 'Κ'
+  },
+  'ὑπεράγνωστος': {
+    transliteration: 'hyperagnostos', english: 'Beyond Knowing, Super-Unknowable',
+    definition: 'Beyond knowing — not merely unknown, but more-than-unknown. Dionysius\'s characteristic use of ὑπερ- ("beyond, above") marks the distinction between ignorance (a deficiency) and divine unknowability (an excess): God is unknown not because he is too little to know but because he is too much. The soul that has exhausted affirmation and negation meets God in this ὑπεράγνωσια, a luminous darkness that surpasses every intellectual grasp.',
+    etymology: 'From ὑπέρ (above, beyond) + ἄγνωστος (unknown, from γιγνώσκω)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Divine Unknowability as Excess, Not Deficit', letter: 'Υ'
+  },
+  'ἱεραρχία': {
+    transliteration: 'hierarchia', english: 'Hierarchy, Sacred Order',
+    definition: 'Hierarchy — literally "sacred ordering." Dionysius coins the term to name the ordered structure by which the one divine light is communicated to all things: each rank receives from those above and ministers to those below, in a mediated economy of illumination. The two treatises Celestial Hierarchy (the nine angelic ranks) and Ecclesiastical Hierarchy (the sacraments and orders of the Church) apply the principle across the whole created and redeemed order.',
+    etymology: 'From ἱερός (sacred) + ἀρχή (principle, rule)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Sacred Ordered Communication of the Divine', letter: 'Ι'
+  },
+  'μυστικὴ θεολογία': {
+    transliteration: 'mystike theologia', english: 'Mystical Theology',
+    definition: 'Mystical theology — the title of Dionysius\'s shortest and most influential treatise (Περὶ μυστικῆς θεολογίας), and the name he gives to the apophatic ascent itself. Moses on Sinai is the guiding figure (MT 1.3): having been purified, he enters the cloud and meets God "in the darkness of unknowing." The treatise passes into the West through John Scotus Eriugena\'s ninth-century Latin translation and becomes one of the formative texts of Christian mysticism East and West.',
+    etymology: 'From μυστικός (mystical, from μυέω, to initiate) + θεολογία (Phase 6)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Apophatic Ascent into Divine Darkness', letter: 'Μ'
+  },
+  'θεία ὀνόματα': {
+    transliteration: 'theia onomata', english: 'Divine Names',
+    definition: '"Divine names" — the title and theme of Dionysius\'s longest treatise (Περὶ θείων ὀνομάτων). The work takes up each name Scripture gives to God — Good, Being, Life, Wisdom, Power, Peace, and above all Beauty and Love — and shows how each is said of the one who exceeds every name. Ch. 4 on the Good and on divine ἔρως (cf. Phase 5, θεῖος ἔρως) becomes a central patristic source for the theology of God as Love.',
+    etymology: 'From θεῖος (divine) + ὀνόματα (names, plural of ὄνομα)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Cataphatic Naming of God', letter: 'Θ'
+  },
+  'ὑπερούσιος': {
+    transliteration: 'hyperousios', english: 'Super-Essential, Beyond Being',
+    definition: 'Super-essential, beyond-being. Dionysius\'s most characteristic epithet for God: the divine reality is not one being among beings, not even the highest being, but ὑπερούσιος — beyond οὐσία (Phase 5) itself. The prefix ὑπερ- does the work of apophasis in advance: to say "super-essential" is already to deny that God is a being alongside others. The concept — indebted to Neoplatonism but christened by Dionysius — passes through Maximus into Aquinas.',
+    etymology: 'From ὑπέρ (above, beyond) + οὐσία (being, essence)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'God Beyond Being Itself', letter: 'Υ'
+  },
+  'ὑπεράγαθος': {
+    transliteration: 'hyperagathos', english: 'Super-Good, Beyond Good',
+    definition: 'Super-good — Dionysius\'s name for God as the source of all good, himself beyond the category of good-among-goods. The ὑπερ- prefix proliferates across his vocabulary (ὑπέρφως, ὑπερθεός, ὑπερένθεος, ὑπεραγνωσία) as a whole grammar of transcendence, picking up Gregory Nazianzen\'s ὑπεροχή (Phase 6) and systematizing it into apophatic method.',
+    etymology: 'From ὑπέρ (above, beyond) + ἀγαθός (good)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'God as the Source Beyond Every Good', letter: 'Υ'
+  },
+  'θεαρχία': {
+    transliteration: 'thearchia', english: 'Divine Principle, Godhead',
+    definition: 'The "divine principle" or "Godhead" — Dionysius\'s term for God as source (ἀρχή) of all divinity. The θεαρχία is the supreme divine unity from which the one God reaches into all things through the hierarchies. The term becomes a staple of Byzantine theology and is translated into Latin by Eriugena as deitas — a word then central to Aquinas\'s treatment of divine simplicity.',
+    etymology: 'From θεός (God) + ἀρχή (principle, source)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'God as Source and Principle of All Divinity', letter: 'Θ'
+  },
+  'πρόοδος': {
+    transliteration: 'proodos', english: 'Procession, Going-Forth',
+    definition: 'Procession — God\'s self-giving movement outward toward creation. The second term of the Dionysian triad μονή / πρόοδος / ἐπιστροφή: God remains eternally himself (μονή), goes forth into creation (πρόοδος), and draws all things back to himself (ἐπιστροφή). Procession names the outflow of the divine goodness in which the ὑπερούσιος communicates being, life, wisdom, and love to every creature according to its capacity.',
+    etymology: 'From πρό (forth) + ὁδός (way, path)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Divine Outflow Into Creation', letter: 'Π'
+  },
+  'ἐπιστροφή': {
+    transliteration: 'epistrophe', english: 'Return, Turning-Back',
+    definition: 'Return — the third term of the Dionysian triad: every creature\'s movement back toward the God from whom it came. Having gone forth (πρόοδος) from the divine source, creation turns back (ἐπιστροφή) in longing, drawn upward by divine love through the hierarchies. The whole Christian life is a participation in this great turning — the soul\'s ascent toward union with the One.',
+    etymology: 'From ἐπί (upon, back) + στρέφω (to turn)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Creation\'s Return to God', letter: 'Ε'
+  },
+  'μονή': {
+    transliteration: 'mone', english: 'Remaining, Abiding',
+    definition: 'Remaining, abiding — the first term of the Dionysian triad μονή / πρόοδος / ἐπιστροφή. Even as the divine goodness pours forth into all things (πρόοδος) and draws all things back (ἐπιστροφή), God remains undiminished, undivided, and unchanged in himself. μονή guards the inviolability of the divine nature against any metaphysical cost of creation or Incarnation: God gives without loss.',
+    etymology: 'From μένω (to remain)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Divine Inviolability in All Self-Giving', letter: 'Μ'
+  },
+  'ἀγνωσία': {
+    transliteration: 'agnosia', english: 'Unknowing, Not-Knowing',
+    definition: 'Unknowing — the mode of approach to the God who is ὑπεράγνωστος. Dionysius insists that the soul\'s highest reach toward God is not knowledge but an educated ἀγνωσία: a knowing that knows itself to know nothing, a loving darkness that has left all concepts behind. The tradition of "learned ignorance" (docta ignorantia) in Nicholas of Cusa descends directly from Dionysius\'s ἀγνωσία.',
+    etymology: 'From ἀ- (not) + γνῶσις (knowledge)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Learned Unknowing as Highest Knowing', letter: 'Α'
+  },
+  'ἔκστασις': {
+    transliteration: 'ekstasis', english: 'Ecstasy, Standing-Outside',
+    definition: 'Ecstasy — literally "standing outside" oneself. For Dionysius, divine love (θεῖος ἔρως, Phase 5) is ecstatic in God first: God steps out of himself toward creation in his love (DN 4.13). The creature\'s return is correspondingly ecstatic — the soul steps out of itself, past intellect and self, into God. ἔκστασις is not emotional transport but the soul\'s self-transcending response to a prior divine self-giving.',
+    etymology: 'From ἐκ (out) + ἵστημι (to stand)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Reciprocal Ecstasy of Divine and Human Love', letter: 'Ε'
+  },
+  'τελείωσις': {
+    transliteration: 'teleiosis', english: 'Perfection, Completion',
+    definition: 'Perfection, completion — the third stage of the Dionysian spiritual triad κάθαρσις (Phase 6) / ἔλλαμψις (Phase 6) / τελείωσις. After purification and illumination comes perfection: the soul, having received divine light, is united to what it receives. The pattern structures the Ecclesiastical Hierarchy — each sacramental rite accomplishes one of the three — and becomes the standard grammar of Christian spiritual progress.',
+    etymology: 'From τέλος (end, completion, goal)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Third Stage of Spiritual Ascent', letter: 'Τ'
+  },
+  'τάξις': {
+    transliteration: 'taxis', english: 'Order, Rank',
+    definition: 'Order, rank. Each level of the Dionysian hierarchies is a τάξις: the nine angelic τάξεις of the Celestial Hierarchy (seraphim, cherubim, thrones; dominions, virtues, powers; principalities, archangels, angels) and the corresponding τάξεις of the Ecclesiastical Hierarchy (bishops, priests, deacons; monks, laity, catechumens). Each τάξις receives from above and mediates to those below.',
+    etymology: 'From τάσσω (to arrange, order)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Ordered Ranks in the Hierarchies', letter: 'Τ'
+  },
+  'θεουργία': {
+    transliteration: 'theourgia', english: 'Divine Work, Theurgy',
+    definition: 'Divine work — God\'s own activity in and through sacramental and liturgical rites. Dionysius borrows θεουργία from late-Neoplatonist ritual vocabulary but radically re-centers it: where pagan theurgy invoked divine power through ritual technique, Dionysian θεουργία is God\'s own act in the sacramental action of the Church (EH 3). The Incarnation is the supreme θεουργία; the Eucharist continues it; every valid rite participates in it.',
+    etymology: 'From θεός (God) + ἔργον (work)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'God\'s Own Action in Sacramental Rite', letter: 'Θ'
+  },
+  'σύμβολον': {
+    transliteration: 'symbolon', english: 'Symbol, Token',
+    definition: 'Symbol. For Dionysius, every creaturely reality — every name, every liturgical sign, every material element in the sacraments — is a σύμβολον: a veil that both conceals and reveals the divine. Symbols are not arbitrary pointers but genuine participations in what they signify. The theology of symbol shapes the Byzantine theology of icon and of the Divine Liturgy, and becomes a pillar of the medieval Latin theology of sacramental sign.',
+    etymology: 'From σύν (together) + βάλλω (to throw) — "thrown-together," a token that fits its match',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Participatory Theology of Sign', letter: 'Σ'
+  },
+  'οὐράνιος ἱεραρχία': {
+    transliteration: 'ourania hierarchia', english: 'Celestial Hierarchy',
+    definition: 'Celestial Hierarchy — the title of Dionysius\'s treatise on the angelic orders (Περὶ τῆς οὐρανίου ἱεραρχίας). Drawing on scattered scriptural passages (Isaiah 6, Ezekiel 1, Ephesians 1, Colossians 1), Dionysius organizes the angelic ranks into three triads of three — nine τάξεις in descending order. The scheme becomes the standard angelology of both East and West; Dante structures the Paradiso by it.',
+    etymology: 'From οὐράνιος (heavenly) + ἱεραρχία (sacred order)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Nine Angelic Orders', letter: 'Ο'
+  },
+  'ἐκκλησιαστικὴ ἱεραρχία': {
+    transliteration: 'ekklesiastike hierarchia', english: 'Ecclesiastical Hierarchy',
+    definition: 'Ecclesiastical Hierarchy — the title of Dionysius\'s treatise on the sacramental and ministerial order of the Church (Περὶ τῆς ἐκκλησιαστικῆς ἱεραρχίας). The sacraments (Baptism, Eucharist, Chrismation, Ordination, Monastic Tonsure, Burial) and the three-fold orders of clergy and laity are presented as earthly participations in the celestial hierarchy. The treatise is the earliest patristic systematic theology of the sacraments.',
+    etymology: 'From ἐκκλησιαστικός (of the church) + ἱεραρχία (sacred order)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'Earthly Sacramental Order as Image of Heavenly', letter: 'Ε'
+  },
+  'Ἓν': {
+    transliteration: 'Hen', english: 'The One',
+    definition: 'The One. Among the divine names, Dionysius gives a culminating place (DN 13) to Ἓν — the unity from which all multiplicity flows and to which all return. Borrowed from Plotinian Neoplatonism but governed by Christian Trinitarian confession, the divine Ἓν is not a numerical one alongside others but the super-unity that exceeds every category, including unity itself. The Ἓν is ὑπερούσιος even as it gives being to all.',
+    etymology: 'Greek Ἕν / Ἓν (neuter of εἷς, one)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Super-Unity Beyond All Unities', letter: 'Ε'
+  },
+  'Διονύσιος Ἀρεοπαγίτης': {
+    transliteration: 'Dionysios Areopagites', english: 'Dionysius the Areopagite',
+    definition: 'Dionysius the Areopagite — the pseudonymous author of the Corpus Areopagiticum (c. 500 AD, probably Syrian). The corpus presents itself as the work of the Athenian convert of Paul (Acts 17:34), but on linguistic and doctrinal grounds is now dated to the late fifth or early sixth century. The pseudonymity was only questioned seriously from the fifteenth century onward. The writings were received by the Church East and West as quasi-apostolic authority and shaped the whole later mystical tradition — Maximus (Phase 12), John of Damascus (Phase 13), Eriugena, Aquinas, Bonaventure, Nicholas of Cusa.',
+    etymology: 'From Διονύσιος (Dionysius, a Greek theophoric name) + Ἀρεοπαγίτης (from the Areopagus, Athens)',
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Pseudonymous Author and His Reception', letter: 'Δ'
   }
 };
 
