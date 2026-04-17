@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T21:30:00Z
+// build: 2026-04-17T22:00:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -967,6 +967,139 @@ const LEXICON_ENTRIES = {
     definition: 'Distinction, division. Gregory\'s Trinitarian pattern holds in tension two adverbs: the three hypostases are distinguishable without being divisible — διαιρετῶς yet ἀδιαιρέτως (Or. 31.14). Real distinction (διαίρεσις) protects against modalism; real unity (ἕνωσις, Phase 1) protects against tritheism. The pair holds the Orthodox confession in equilibrium.',
     etymology: 'From διά (through, apart) + αἱρέω (to take)',
     phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Trinitarian Distinction Without Division', letter: 'Δ'
+  },
+  // --- John Chrysostom cluster (Phase 7) ---
+  'μετάνοια': {
+    transliteration: 'metanoia', english: 'Repentance, Change of Mind',
+    definition: 'Repentance — not regretful feeling but a fundamental change of mind that reorients the whole person toward God. Chrysostom returns to μετάνοια with an insistence almost unmatched in the patristic corpus, treating it as the continuous disposition of Christian life rather than an occasional crisis. His Homilies on Repentance and innumerable passages in the Homilies on Matthew and on the Statues frame μετάνοια as God\'s perpetual, hopeful offer — "even if you have fallen a thousand times, a thousand times come back."',
+    etymology: 'From μετά (after, change) + νοῦς (mind)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Continuous Repentance as Christian Life', letter: 'Μ'
+  },
+  'ἐλεημοσύνη': {
+    transliteration: 'eleemosyne', english: 'Almsgiving, Merciful Deed',
+    definition: 'Almsgiving — the merciful giving that answers God\'s own mercy toward us. For Chrysostom, ἐλεημοσύνη is the "queen of virtues" (Hom. in Heb. 32.6): the practical sacrament by which the rich meet Christ in the poor (Matthew 25). His Homilies on Matthew, on Lazarus and the Rich Man, and on 1 Corinthians press the demand with unflinching force. Almsgiving is not philanthropy but liturgy continued outside the church doors.',
+    etymology: 'From ἔλεος (mercy)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Almsgiving as Liturgy of Mercy', letter: 'Ε'
+  },
+  'δικαιοσύνη': {
+    transliteration: 'dikaiosyne', english: 'Righteousness, Justice',
+    definition: 'Righteousness, justice. For Chrysostom — the most sustained Pauline commentator of the patristic era — δικαιοσύνη in Romans and Galatians names God\'s gift in Christ, not an autonomous human achievement. Yet Chrysostom insists that genuine δικαιοσύνη before God cannot be separated from δικαιοσύνη toward the poor: the same righteousness that receives also gives. The homilies on Romans and on Matthew hold the forensic and ethical senses together.',
+    etymology: 'From δίκη (custom, right, judgment)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Integrated Righteousness Before God and Neighbor', letter: 'Δ'
+  },
+  'συγκατάβασις': {
+    transliteration: 'synkatabasis', english: 'Condescension, Divine Accommodation',
+    definition: 'Coming-down-with, divine accommodation. Chrysostom\'s signature hermeneutical and Christological concept: God stoops to human weakness — in Scripture\'s human speech, in the Incarnation, in the sacraments — in order to meet us where we are. συγκατάβασις names not a lowering of divinity but a loving economy of adaptation, the shape of all God\'s self-communication (Hom. in Gen. 3.1; Hom. in Matt. passim).',
+    etymology: 'From σύν (with) + κατά (down) + βαίνω (to go)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'God\'s Accommodation to Human Weakness', letter: 'Σ'
+  },
+  'φιλοπτωχία': {
+    transliteration: 'philoptochia', english: 'Love of the Poor',
+    definition: 'Love of the poor. Chrysostom\'s signature virtue and demand: the Christian is defined by concrete, practical love of the πτωχοί — the destitute, whom Christ himself names as his brothers and sisters (Matthew 25). The word appears in his Homilies on 2 Corinthians and Hebrews; the reality animates his preaching from Antioch to Constantinople. When Chrysostom speaks of the altar, he insists there is another altar also: the poor in the street.',
+    etymology: 'From φίλος (loving) + πτωχός (beggar, destitute)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'The Poor as the Other Altar', letter: 'Φ'
+  },
+  'ἀκατάληπτος': {
+    transliteration: 'akataleptos', english: 'Incomprehensible, Unseizable',
+    definition: 'Incomprehensible — the one who cannot be grasped. Chrysostom\'s Homilies On the Incomprehensible Nature of God (Antioch, 386–387) confront the Anomoeans (Phase 4, ἀνόμοιος), who claimed the divine essence could be exactly known. Chrysostom argues: even the angels veil their faces before God; the Son alone knows the Father. Apophatic theology here is pastoral preaching, not philosophical exercise.',
+    etymology: 'From ἀ- (not) + καταλαμβάνω (to seize, comprehend)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Divine Incomprehensibility Against Anomoean Rationalism', letter: 'Α'
+  },
+  'ἀκρίβεια': {
+    transliteration: 'akribeia', english: 'Exactness, Precision',
+    definition: 'Exactness, precise accuracy. Chrysostom\'s exegetical ideal: to weigh each word and phrase of Scripture in its full precision, neither allegorizing it away nor flattening it into abstraction. The Antiochene school\'s ἀκρίβεια stands in productive tension with the Alexandrian emphasis on ἀναγωγή (Phase 6). For Chrysostom, ἀκρίβεια and pastoral συγκατάβασις work together — precision in the service of souls.',
+    etymology: 'From ἀκριβής (exact, accurate)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Antiochene Exegetical Precision', letter: 'Α'
+  },
+  'ψυχαγωγία': {
+    transliteration: 'psychagogia', english: 'Soul-Guidance, Leading of Souls',
+    definition: 'Leading of souls. For Chrysostom, preaching is ψυχαγωγία before it is instruction: the preacher\'s office is to lead souls by holy persuasion toward virtue and toward God (Hom. in Acta 1; On the Priesthood 4–5). The term, originally applied to the orator\'s art, is baptized into pastoral theology: every homily is a small soul-leading, a patient drawing of the hearer upward.',
+    etymology: 'From ψυχή (soul) + ἀγωγή (leading, from ἄγω)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Preaching as Pastoral Soul-Leading', letter: 'Ψ'
+  },
+  'διόρθωσις': {
+    transliteration: 'diorthosis', english: 'Correction, Setting Right',
+    definition: 'Correction, straightening. Chrysostom\'s pastoral aim in preaching: not to condemn but to set right — to διορθόω — the lives and consciences of his hearers. The Homilies on the Statues (after the 387 riot at Antioch) are a sustained exercise in pastoral διόρθωσις: a terrified city led back toward God through preaching that exposes sin with one hand and offers mercy with the other.',
+    etymology: 'From διά (through) + ὀρθόω (to make straight)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Preaching as Pastoral Correction', letter: 'Δ'
+  },
+  'ὁμιλία': {
+    transliteration: 'homilia', english: 'Homily, Discourse',
+    definition: 'Discourse, homily — originally the "company" or conversation of speakers. Chrysostom is the homily\'s supreme patristic master: more than seven hundred of his ὁμιλίαι survive, including complete consecutive series on the Gospels of Matthew and John and every Pauline letter. The term — and with it the genre of the Christian sermon as extended, exegetical, pastoral address — is fixed by his example.',
+    etymology: 'From ὁμός (together, common) + εἴλη (assembly)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Homily as Patristic Genre', letter: 'Ο'
+  },
+  'κενοδοξία': {
+    transliteration: 'kenodoxia', english: 'Vainglory',
+    definition: 'Empty glory — the hunger for recognition and praise from others. Chrysostom\'s Address on Vainglory and the Right Way for Parents to Bring Up Their Children (c. 390) diagnoses κενοδοξία as the defining spiritual disease of his Christianized imperial culture: success, display, and public honor masking an empty interior. The work is one of the earliest sustained patristic treatises on Christian education.',
+    etymology: 'From κενός (empty) + δόξα (glory, opinion)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Spiritual Disease of Christian Imperial Culture', letter: 'Κ'
+  },
+  'πρόνοια': {
+    transliteration: 'pronoia', english: 'Providence, Foresight',
+    definition: 'Providence — divine foresight and governance. Written from exile (404–407), Chrysostom\'s On the Providence of God insists that no adversity, no injustice, no apparent defeat of the just falls outside God\'s wise ordering. The treatise is a pastoral-theological working-out of his own condition: confidence in πρόνοια steadies the suffering soul because God\'s governance, though often hidden, is never absent.',
+    etymology: 'From πρό (before) + νοέω (to perceive, understand)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Divine Providence in Suffering', letter: 'Π'
+  },
+  'ὑπομονή': {
+    transliteration: 'hypomone', english: 'Endurance, Patient Bearing',
+    definition: 'Endurance, patient bearing-up. Chrysostom both preaches and embodies ὑπομονή: his final years in exile (404–407), culminating in a forced march that ended in his death, are the proving ground for the virtue he had preached for decades. The term in Hebrews 12:1 frames the Christian life as a running with ὑπομονή; Chrysostom\'s exile letters develop the image into a full ascetic theology of suffering.',
+    etymology: 'From ὑπό (under) + μένω (to remain)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Patient Endurance Under Suffering', letter: 'Υ'
+  },
+  'ταπεινοφροσύνη': {
+    transliteration: 'tapeinophrosyne', english: 'Humility, Lowly-Mindedness',
+    definition: 'Humble-mindedness. Chrysostom returns to ταπεινοφροσύνη repeatedly as the presupposition of every other virtue: without it, almsgiving hardens into pride and prayer into performance (Hom. in Phil. 7 on Phil 2:3). The virtue is distinctively Christian in its patristic contour — pagan antiquity saw humility as a vice of the slave; the gospel reframes it as the shape of Christ.',
+    etymology: 'From ταπεινός (low, humble) + φρόνησις (mindedness)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Humility as Ground of All Virtue', letter: 'Τ'
+  },
+  'θεία Λειτουργία': {
+    transliteration: 'theia Leitourgia', english: 'Divine Liturgy',
+    definition: 'The Divine Liturgy. The shorter of the two principal Byzantine Eucharistic rites bears Chrysostom\'s name — the Θεία Λειτουργία τοῦ ἁγίου πατρὸς ἡμῶν Ἰωάννου τοῦ Χρυσοστόμου — and is used in Orthodox churches the world over for most Sundays and weekdays of the year. The attribution is ancient though complex (the text evolved across centuries); the shape and many of the prayers trace to Chrysostom\'s Antiochene-Constantinopolitan context.',
+    etymology: 'From θεῖος (divine) + λειτουργία (public work, service, from λαός + ἔργον)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Liturgy of St. John Chrysostom', letter: 'Θ'
+  },
+  'θυσία': {
+    transliteration: 'thysia', english: 'Sacrifice, Offering',
+    definition: 'Sacrifice. Chrysostom\'s Eucharistic theology (esp. Hom. in Heb. 17; On the Priesthood 3) emphasizes that the Eucharist is a true θυσία — not a new sacrifice of Christ but the one sacrifice of Calvary made present in every generation on every altar. The one θυσία, eternally accepted, is offered here and now for the remission of sins and the life of the world.',
+    etymology: 'From θύω (to sacrifice, offer)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Eucharist as the One Sacrifice Made Present', letter: 'Θ'
+  },
+  'προσφορά': {
+    transliteration: 'prosphora', english: 'Offering, Oblation',
+    definition: 'Offering. The προσφορά is both the act of offering in the Liturgy and the loaf of eucharistic bread itself — brought forward from the faithful, stamped with the seal of the Church, and offered at the altar. Chrysostom underscores the προσφορά as the people\'s participation in the priestly act: the faithful are not spectators but concelebrants, offering their own gifts to be transformed by the Spirit into Christ\'s body (Hom. in 2 Cor. 18.3).',
+    etymology: 'From πρός (to) + φέρω (to bring, bear)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Eucharistic Offering of the Faithful', letter: 'Π'
+  },
+  'ἁγιασμός': {
+    transliteration: 'hagiasmos', english: 'Sanctification, Holiness',
+    definition: 'Sanctification, the becoming-holy. Chrysostom frames the Christian life as progressive ἁγιασμός worked by the Holy Spirit on the foundation of Baptism: sanctification is the whole concrete shape of Christian growth, not a moment but a trajectory (Hom. in Rom. 12 on Rom 6:19). The term anchors Chrysostom\'s characteristic refusal to split justification from sanctification: both name the one saving work of God in us.',
+    etymology: 'From ἅγιος (holy)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Progressive Sanctification in the Christian Life', letter: 'Α'
+  },
+  'διακονία': {
+    transliteration: 'diakonia', english: 'Ministry, Service',
+    definition: 'Ministry, service. For Chrysostom, διακονία names both the specific office of the deacon (cf. διάκονος, Phase 1) and the whole Christian ethic of service — the shape of every Christian life lived in imitation of the Son who "came not to be served but to serve" (Mark 10:45). Chrysostom presses the word\'s root meaning continually: holiness is διακονία, and even the priesthood is a διακονία before it is a dignity.',
+    etymology: 'From διάκονος (servant)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Christian Life as Service', letter: 'Δ'
+  },
+  'συντέλεια': {
+    transliteration: 'synteleia', english: 'Consummation, End of the Age',
+    definition: 'Consummation, the end of the age. Chrysostom draws on the Matthean phrase "the consummation of the age" (ἡ συντέλεια τοῦ αἰῶνος, Matt 28:20) to frame Christian history eschatologically: all of time flows toward its completion in Christ. The term grounds his pastoral insistence that present conduct is measured against the approaching συντέλεια — neither panicked nor complacent.',
+    etymology: 'From σύν (together) + τέλος (end, completion)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Eschatological Horizon of Christian Life', letter: 'Σ'
+  },
+  'πλοῦτος': {
+    transliteration: 'ploutos', english: 'Wealth, Riches',
+    definition: 'Wealth. Chrysostom\'s treatment of πλοῦτος is among the most searing in Christian history. In the Homilies on Lazarus and the Rich Man, on 1 Corinthians, and on Matthew, he argues that hoarded wealth in a city of beggars is theft — not because God requires poverty, but because excess possessed alongside a starving neighbor constitutes an inward robbery of that neighbor. The preacher presses the hearer toward ἐλεημοσύνη as the only honest response.',
+    etymology: 'Pre-Greek; perhaps related to πίμπλημι (to fill)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Theology of Wealth and Its Redistribution', letter: 'Π'
+  },
+  'ἀνάγνωσις': {
+    transliteration: 'anagnosis', english: 'Reading, Scripture Reading',
+    definition: 'Reading — specifically, the reading of Scripture. Chrysostom famously urges ἀνάγνωσις on every Christian, pressing back against the assumption that Scripture is the preserve of monks and clergy: "the Scriptures were written not only for monks but also for you, a layperson with wife and children" (Hom. in Matt. 2.5). Daily reading at home is theologically required — a lay participation in the Church\'s whole teaching office.',
+    etymology: 'From ἀνά (up, again) + γιγνώσκω (to know)',
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Lay Reading of Scripture', letter: 'Α'
   }
 };
 
