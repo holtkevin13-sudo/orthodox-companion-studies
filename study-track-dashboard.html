@@ -1038,7 +1038,7 @@ body {
 
   <!-- Today's Focus — populated by renderTodaysFocus() -->
   <section class="today-focus">
-    <h2 class="focus-title">📅 Today's Study Focus</h2>
+    <h2 class="focus-title">Today's Study Focus</h2>
     <div class="focus-content" id="todays-focus-content">
       <!-- Populated dynamically from current week data -->
     </div>
@@ -1219,7 +1219,7 @@ WEEK_DATA[4] = {
     { biblical: "1 Corinthians 14",
       patristic: "Shepherd of Hermas — Similitudes",
       secondary: "Re-read Torrance key sections" },
-    { biblical: "1 Corinthians 15 (Resurrection — read slowly)",
+    { biblical: "1 Corinthians 15–16 (Resurrection — read slowly)",
       patristic: "Epistle to Diognetus + Papias (fragments)",
       secondary: "Note — Rule of Faith emerging across the corpus" }
   ],
@@ -1933,11 +1933,11 @@ WEEK_DATA[28] = {
       secondary: "Reference: Weinandy, Anatolios" },
     { biblical: "Re-read key doctrinal passages across the arc",
       patristic: "Write sections 4–5: The Cappadocians + Chrysostom's pastoral integration",
-      secondary: "Finalize 7–10 page paper — Part I complete ✅" }
+      secondary: "Finalize 7–10 page paper — Part I complete" }
   ],
   reviewPrompt: "You have completed Part I — the Nicene Arc. Take Sunday to rest deeply and read the paper aloud before Part II begins.",
   celebrationStats: [
-    "🎓 Part I complete — 28 weeks, 18 Fathers",
+    "Part I complete — 28 weeks, 18 Fathers",
     "7–10 page synthesis paper drafted",
     "Nicene Arc fully traced"
   ]
@@ -2292,12 +2292,12 @@ WEEK_DATA[40] = {
       patristic: "Write sections 4–5: Scripture in the Fathers + How the Fathers read the Bible",
       secondary: "Finalize synthesis + reference list" },
     { biblical: "Final read-through — the Bible as the Fathers received it",
-      patristic: "Finalize 7–10 page synthesis paper — COURSE COMPLETE 🎓",
+      patristic: "Finalize 7–10 page synthesis paper — COURSE COMPLETE",
       secondary: "Re-read the paper aloud — does it hold?" }
   ],
   reviewPrompt: "You have entered the mind of the Fathers. Read Psalm 150 today. Offer the 40 weeks back as thanksgiving.",
   celebrationStats: [
-    "🎓 COURSE COMPLETE — 40 weeks finished",
+    "COURSE COMPLETE — 40 weeks finished",
     "23 Church Fathers read; 700 years of theology traced",
     "Final synthesis paper delivered"
   ]
@@ -2524,7 +2524,7 @@ function phaseGreekHTML(phase) {
   return `
     <div class="focus-greek">
       <div class="focus-greek-header">
-        <h3>🇬🇷 Phase Greek Focus — ${phaseLabel}</h3>
+        <h3>Phase Greek Focus — ${phaseLabel}</h3>
         <a href="greek-lexicon-index.html" class="focus-greek-link">View Lexicon →</a>
       </div>
       <div class="focus-greek-terms">
@@ -2550,7 +2550,7 @@ function renderTodaysFocus() {
     container.innerHTML = `
       <div class="focus-grid">
         <div class="focus-section">
-          <h3>🕊️ Today: Rest & Reflection</h3>
+          <h3>Today: Rest &amp; Reflection</h3>
           <p>Sunday is a rest day. Attend Divine Liturgy if possible. Allow this week's readings to settle into prayer.</p>
         </div>
       </div>
@@ -2563,12 +2563,12 @@ function renderTodaysFocus() {
     container.innerHTML = `
       <div class="focus-grid">
         <div class="focus-section">
-          <h3>📕 Today: Psalms</h3>
+          <h3>Today: Psalms</h3>
           <ul><li><span>${psalmRange(week, 5)}</span><span class="reading-time">15 min</span></li></ul>
           <a href="bible-reader.html" class="action-button">Read Psalms →</a>
         </div>
         <div class="focus-section">
-          <h3>📝 Today: Review & Synthesis</h3>
+          <h3>Today: Review &amp; Synthesis</h3>
           <p>${wd.reviewPrompt || 'Revisit this week\'s readings. Write a synthesis note on the doctrinal threads you observed.'}</p>
         </div>
       </div>
@@ -2586,21 +2586,21 @@ function renderTodaysFocus() {
   container.innerHTML = `
     <div class="focus-grid">
       <div class="focus-section">
-        <h3>📕 Psalms</h3>
+        <h3>Psalms</h3>
         <ul><li><span>${psalmRange(week, todayIdx)}</span><span class="reading-time">15 min</span></li></ul>
         <a href="bible-reader.html" class="action-button">Read Psalms →</a>
       </div>
       <div class="focus-section">
-        <h3>📗 Biblical Reading</h3>
+        <h3>Biblical Reading</h3>
         <ul><li><span>${day.biblical}</span><span class="reading-time">15 min</span></li></ul>
         <a href="bible-reader.html" class="action-button">Open Bible Reader →</a>
       </div>
       <div class="focus-section">
-        <h3>📖 Patristic Reading</h3>
+        <h3>Patristic Reading</h3>
         <ul><li><span>${day.patristic}</span><span class="reading-time">15 min</span></li></ul>
       </div>
       <div class="focus-section">
-        <h3>📙 Secondary Reading</h3>
+        <h3>Secondary Reading</h3>
         <ul><li><span>${day.secondary}</span><span class="reading-time">15 min</span></li></ul>
       </div>
     </div>
@@ -2783,13 +2783,12 @@ function renderPhaseTimeline() {
 // An NT book counts as complete only when:
 //   (1) Its final chapter appears in a week's readings, AND
 //   (2) localStorage has `week{N}Complete` set (user actually finished the week)
-// Total = 26 books across the syllabus. 1 Corinthians ch. 16 is not in the current
-// syllabus (Week 4 ends at 1 Cor 15), so 1 Cor does not count as complete.
-// If Week 4 D5 is updated to "1 Corinthians 15–16" in the future, add '1 Corinthians' below.
+// Total = 27 books across the syllabus. Every NT book is covered.
 // ==================================================================
 const BOOKS_COMPLETED_BY_WEEK = {
   2:  ['John'],
   3:  ['1 John', '2 John', '3 John'],
+  4:  ['1 Corinthians'],
   5:  ['Mark'],
   7:  ['Acts'],
   8:  ['Galatians', 'James'],
@@ -2950,7 +2949,7 @@ class StudyTaskManager {
     const total = cbs.length;
     const done = Array.from(cbs).filter(cb => cb.checked).length;
     if (progress) {
-      progress.textContent = (done === total && total > 0) ? '✅ Day Complete!' : `${done} of ${total} tasks complete`;
+      progress.textContent = (done === total && total > 0) ? 'Day complete' : `${done} of ${total} tasks complete`;
     }
 
     // Remove all state classes, then reapply based on current state
@@ -3016,7 +3015,7 @@ class StudyTaskManager {
       </p>
       <div class="advance-actions">
         <button class="btn-advance" id="btn-advance-week">
-          ${week < 40 ? `➡️ Advance to Week ${week + 1}` : '🎓 Complete the Course'}
+          ${week < 40 ? `Advance to Week ${week + 1} →` : 'Complete the Course'}
         </button>
       </div>
     `;
@@ -3083,7 +3082,7 @@ class StudyTaskManager {
   advanceToNextWeek() {
     const week = STUDY_STATE.currentWeek;
     if (week >= 40) {
-      alert('🎓 You have completed the full 40-week course. Congratulations!');
+      alert('You have completed the full 40-week course. Congratulations!');
       return;
     }
     STUDY_STATE.currentWeek = week + 1;
