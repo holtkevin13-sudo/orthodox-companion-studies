@@ -1492,3 +1492,105 @@ function isFatherInPhase(fatherName, phase) {
     return nameL.startsWith(token) || nameL.includes(token);
   });
 }
+
+// ==================================================================
+// LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
+// Extends PHASE_DATA[N].greek (which is the short "focus terms" list
+// shown in the dashboard's Phase Greek panel). LEXICON_ENTRIES is the
+// full scholarly lexicon — each entry tagged with its phase.
+//
+// Add terms here as Kevin expands the lexicon toward its 800+ target.
+// Each entry appears automatically in its phase section in
+// greek-lexicon-index.html and enriches the focus-term display where
+// it matches a term already listed in PHASE_DATA[N].greek.
+// ==================================================================
+const LEXICON_ENTRIES = {
+  'σάρξ': {
+    transliteration: 'sarx', english: 'Flesh',
+    definition: 'Physical flesh, human nature. Ignatius emphasized the reality of Christ\'s σάρξ against Docetic denials of the Incarnation.',
+    etymology: 'From root meaning "to strip, flay"',
+    phase: 1, fathers: ['Ignatius of Antioch'], connection: 'Anti-Docetic Christology', letter: 'Σ'
+  },
+  'ἕνωσις': {
+    transliteration: 'henosis', english: 'Unity',
+    definition: 'Unity, union. In Ignatius, the essential unity of the Church under the bishop, reflecting divine unity.',
+    etymology: 'From ἕν (one) + -ωσις (action suffix)',
+    phase: 1, fathers: ['Ignatius of Antioch'], connection: 'Ecclesial Unity under Episcopal Authority', letter: 'Ε'
+  },
+  'ἐπίσκοπος': {
+    transliteration: 'episkopos', english: 'Overseer, Bishop',
+    definition: 'Overseer, superintendent. Ignatius developed the theology of the bishop as center of Church unity and legitimate authority.',
+    etymology: 'From ἐπί (over) + σκοπός (watcher)',
+    phase: 1, fathers: ['Ignatius of Antioch'], connection: 'Foundational Episcopal Theology', letter: 'Ε'
+  },
+  'μαρτυρία': {
+    transliteration: 'martyria', english: 'Witness, Martyrdom',
+    definition: 'Witness, testimony. Evolved from simple witness to blood witness (martyrdom) as ultimate Christian testimony.',
+    etymology: 'From μάρτυς (witness)',
+    phase: 1, fathers: ['Polycarp of Smyrna'], connection: 'Martyrdom as Supreme Witness', letter: 'Μ'
+  },
+  'Θεοφόρος': {
+    transliteration: 'Theophoros', english: 'God-Bearer',
+    definition: 'God-bearer. Ignatius\'s self-designation, indicating one who carries God or is carried by God.',
+    etymology: 'From θεός (God) + φόρος (bearing)',
+    phase: 1, fathers: ['Ignatius of Antioch'], connection: 'Spiritual Identity in Christ', letter: 'Θ'
+  },
+  'φάρμακον ἀθανασίας': {
+    transliteration: 'pharmakon athanasias', english: 'Medicine of Immortality',
+    definition: 'Medicine of immortality. Ignatius\'s famous description of the Eucharist as the antidote to death.',
+    etymology: 'From φάρμακον (drug/medicine) + ἀθάνατος (deathless)',
+    phase: 1, fathers: ['Ignatius of Antioch'], connection: 'Eucharistic Theology', letter: 'Φ'
+  },
+  'ἐκκλησία': {
+    transliteration: 'ekklesia', english: 'Church, Assembly',
+    definition: 'Called-out assembly. The community of believers gathered in Christ\'s name.',
+    etymology: 'From ἐκ (out) + καλεῖν (to call)',
+    phase: 1, fathers: ['Clement of Rome'], connection: 'Early Church Organization', letter: 'Ε'
+  },
+  'ἀγάπη': {
+    transliteration: 'agape', english: 'Love',
+    definition: 'Divine love, self-sacrificing love. Distinguished from ἔρως (passionate love) and φιλία (friendship).',
+    etymology: 'Root uncertain, possibly from ἀγάπαω (to love)',
+    phase: 1, fathers: ['Clement of Rome'], connection: 'Christian Community Foundation', letter: 'Α'
+  },
+  'ἀπόστολος': {
+    transliteration: 'apostolos', english: 'Apostle, Sent One',
+    definition: 'One sent forth with authority. Originally applied to the Twelve, later extended to others like Paul.',
+    etymology: 'From ἀπό (from) + στέλλω (to send)',
+    phase: 1, fathers: ['Clement of Rome'], connection: 'Apostolic Authority & Succession', letter: 'Α'
+  },
+  'ὁμονοία': {
+    transliteration: 'homonoia', english: 'Concord, Harmony',
+    definition: 'Like-mindedness, concord. Essential virtue for Church unity and peace in community.',
+    etymology: 'From ὁμο- (same) + νοῦς (mind)',
+    phase: 1, fathers: ['Clement of Rome'], connection: 'Church Peace & Order', letter: 'Ο'
+  }
+};
+
+// Merge PHASE_DATA[phase].greek ("focus terms") with LEXICON_ENTRIES for
+// a given phase. Returns an array of {greek, english, transliteration?,
+// definition?, fathers?, connection?, isFocus} entries, deduplicated by
+// Greek script. Focus terms are flagged so the UI can render them
+// prominently. Terms without detailed entries still render as basic cards.
+function getPhaseTerms(phase) {
+  if (!phase) return [];
+  const byGreek = new Map();
+
+  // Focus terms from PHASE_DATA[phase].greek — format: "ἐπίσκοπος (bishop)"
+  (phase.greek || []).forEach(item => {
+    const match = item.match(/^([^\(]+)\s*\(([^\)]+)\)$/);
+    const greek = match ? match[1].trim() : item.trim();
+    const english = match ? match[2].trim() : '';
+    byGreek.set(greek, { greek, english, isFocus: true });
+  });
+
+  // Enrich with LEXICON_ENTRIES for this phase
+  for (const [greek, entry] of Object.entries(LEXICON_ENTRIES)) {
+    if (String(entry.phase) === String(phase.number)) {
+      const existing = byGreek.get(greek) || {};
+      byGreek.set(greek, { greek, ...entry, isFocus: existing.isFocus || false });
+    }
+  }
+
+  return Array.from(byGreek.values());
+}
