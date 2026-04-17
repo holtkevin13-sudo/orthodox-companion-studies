@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T20:30:00Z -->
+<!-- build: 2026-04-17T21:45:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,10 +7,10 @@
 <title>Patristic Lexicon — Orthodox Companion Studies</title>
 
 <!-- Orthodox Companion Branding -->
-<link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <meta name="description" content="A growing lexicon of patristic theological vocabulary — Greek and Latin terms organized by phase, tied to the Fathers who shaped them, with transliteration, definition, etymology, and doctrinal connection.">
 <meta name="keywords" content="Patristic Lexicon, Orthodox Christianity, Patristic Greek, Patristic Latin, Church Fathers, Byzantine Greek, Theological Terms">
@@ -680,6 +680,34 @@ em, i { font-style: italic; }
   line-height: 1.4;
 }
 
+/* Pastoral note / Orthodox Reception — optional editorial block on select entries.
+   Visually distinct from the main definition so readers read it as separate
+   curatorial guidance (Orthodox reception, doctrinal clarification, scholarly
+   attribution). Porphyry left-border matches the Part II / Polycarp-martyrdom
+   pattern used elsewhere in the app for Orthodox-context accents. */
+.term-pastoral-note {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  background: #fffdf4;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 0 4px 4px 0;
+}
+.term-pastoral-label {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6b1e2a;
+  margin-bottom: 0.3rem;
+}
+.term-pastoral-text {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #2a2620;
+  font-style: italic;
+  margin: 0;
+}
+
 /* Deep-link landing highlight — when someone arrives at #term-episkopos
    (from a dashboard pill or Father card), briefly pulse the card in
    gold so they see exactly where they landed. Also adds scroll-margin
@@ -817,6 +845,18 @@ function renderTermCard(term) {
   const etymology = term.etymology ? `<div class="term-etymology"><strong>Etymology:</strong> ${term.etymology}</div>` : '';
   const fathers = (term.fathers && term.fathers.length) ? `<div class="term-fathers"><strong>Father(s):</strong> ${term.fathers.join(', ')}</div>` : '';
   const connection = term.connection ? `<div class="term-connection">${term.connection}</div>` : '';
+  // Pastoral note — optional field on select entries (currently 10: χιλιασμός,
+  // πλοῦτος, θεουργία, Διονύσιος Ἀρεοπαγίτης, sermo, Christus totus, plus the
+  // four Chalcedonian adverbs). Provides Orthodox reception, doctrinal clarification,
+  // or scholarly attribution beyond what the core definition supplies. Rendered
+  // as a visually distinct block — porphyry left-border, small-caps label — so
+  // readers see it as separate editorial guidance from the primary definition.
+  const pastoralNote = term.pastoralNote ? `
+    <div class="term-pastoral-note">
+      <div class="term-pastoral-label">Orthodox Reception</div>
+      <p class="term-pastoral-text">${term.pastoralNote}</p>
+    </div>
+  ` : '';
   // Per-term anchor — slug comes from the transliteration so URLs stay stable
   // even if Greek/Latin spelling varies. Used by lexiconAnchorFor() everywhere
   // else in the app so dashboard pills and Father cards can deep-link directly.
@@ -844,6 +884,7 @@ function renderTermCard(term) {
       ${etymology}
       ${fathers}
       ${connection}
+      ${pastoralNote}
     </div>
   `;
 }
