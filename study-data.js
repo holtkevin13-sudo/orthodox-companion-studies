@@ -1654,20 +1654,43 @@ const TRACKS = {
         'Foundation for deeper theological or liturgical study'
       ],
       requiredResources: [
-        { title: 'The Apostolic Fathers: Greek Texts and English Translations', author: 'Michael W. Holmes', edition: 'Baker Academic, 3rd ed.', phase: 'Weeks 1–4', essential: true },
-        { title: 'Eastern Orthodox Bible', details: 'New Testament + Psalms', phase: 'All weeks', essential: true },
-        { title: 'The Christian Tradition, Vol. 1', author: 'Jaroslav Pelikan', phase: 'All weeks (~15 min/day)', essential: true },
-        { title: 'On the Unity of Christ', author: 'Cyril of Alexandria', edition: 'SVS Press', phase: 'Weeks 29–30', essential: true },
-        { title: 'Pseudo-Dionysius: The Complete Works', edition: 'Paulist Press', phase: 'Weeks 32–33', essential: true },
-        { title: 'Two Hundred Chapters on Theology', author: 'Maximus the Confessor', edition: 'SVS Press', phase: 'Weeks 34–36', essential: true }
+        // Primary Texts — patristic reading
+        { category: 'primary', title: 'The Apostolic Fathers', author: 'Holmes (ed.)', edition: 'Baker Academic, 3rd ed.', phase: 'Weeks 1–4', essential: true },
+        { category: 'primary', title: 'Ante-Nicene Fathers, Vols. 1, 3, 5', details: 'Justin · Tertullian · Cyprian · Irenaeus', phase: 'Weeks 5–13', essential: true },
+        { category: 'primary', title: 'Against Heresies', author: 'Irenaeus of Lyons', details: 'Standalone edition or ANF Vol. 1', phase: 'Weeks 9–13', essential: true },
+        { category: 'primary', title: 'Nicene & Post-Nicene Fathers, Series I & II', details: 'Athanasius · Cappadocians · Chrysostom · Leo · John of Damascus', phase: 'Weeks 14–38', essential: true },
+        { category: 'primary', title: 'On the Priesthood', author: 'John Chrysostom', details: 'In NPNF 1.9', phase: 'Weeks 20–21', essential: true },
+        { category: 'primary', title: 'On the Unity of Christ', author: 'Cyril of Alexandria', edition: 'SVS Press · ~$20', phase: 'Weeks 29–30', essential: true, toPurchase: true },
+        { category: 'primary', title: 'Pseudo-Dionysius: The Complete Works', edition: 'Paulist Press · ~$25', phase: 'Weeks 32–33', essential: true, toPurchase: true },
+        { category: 'primary', title: 'Two Hundred Chapters on Theology', author: 'Maximus the Confessor', edition: 'SVS Press · ~$20', phase: 'Weeks 34–36', essential: true, toPurchase: true },
+
+        // Biblical Texts — Scripture track
+        { category: 'biblical', title: 'Eastern Orthodox Bible', details: 'New Testament', phase: 'All weeks', essential: true },
+        { category: 'biblical', title: 'Lexham English Septuagint', details: 'Old Testament + Psalms', phase: 'All weeks', essential: true },
+
+        // Secondary Reading — scholarly companions, scheduled per phase
+        { category: 'secondary', title: 'The Christian Tradition, Vol. 1', author: 'Jaroslav Pelikan', details: 'Ch. 1–5', phase: 'Weeks 1–6', essential: true },
+        { category: 'secondary', title: 'The Trinitarian Faith', author: 'T. F. Torrance', details: 'Intro + Ch. 1', phase: 'Week 4', essential: false },
+        { category: 'secondary', title: 'Justin Martyr', author: 'Eric Osborn', phase: 'Weeks 5–6', essential: false },
+        { category: 'secondary', title: 'Tertullian', author: 'Geoffrey D. Dunn', phase: 'Week 7', essential: false },
+        { category: 'secondary', title: 'Cyprian and Roman Carthage', author: 'Allen Brent', phase: 'Week 8', essential: false },
+        { category: 'secondary', title: 'Irenaeus: An Introduction', author: 'Denis Minns', phase: 'Weeks 9–10', essential: false },
+        { category: 'secondary', title: 'Irenaeus of Lyons', author: 'John Behr', phase: 'Weeks 11–13', essential: false },
+        { category: 'secondary', title: 'Athanasius: A Theological Introduction', author: 'Thomas Weinandy', phase: 'Week 14', essential: false },
+        { category: 'secondary', title: 'Athanasius: The Coherence of His Thought', author: 'Khaled Anatolios', phase: 'Week 15', essential: false },
+        { category: 'secondary', title: 'The Nicene Faith, Vol. 2', author: 'John Behr', phase: 'Week 16', essential: false },
+        { category: 'secondary', title: 'Origins of the Christian Mystical Tradition', author: 'Andrew Louth', phase: 'Week 17', essential: false },
+        { category: 'secondary', title: 'Gregory of Nazianzus', author: 'Brian Daley', phase: 'Week 18', essential: false },
+        { category: 'secondary', title: 'Faith Gives Fullness to Reasoning', author: 'Frederick Norris', details: 'Commentary on Orations 29–31', phase: 'Week 19', essential: false },
+        { category: 'secondary', title: 'Golden Mouth: The Story of John Chrysostom', author: 'J. N. D. Kelly', phase: 'Weeks 20–25', essential: false }
       ],
       recommendedSecondary: [
-        'Behr — The Nicene Faith',
+        'Behr — The Nicene Faith (full 2-volume set)',
         'Anatolios — Retrieving Nicaea',
-        'Louth — Maximus the Confessor',
         'McGuckin — Cyril of Alexandria and the Christological Controversy',
-        'Kelly — Early Christian Doctrines',
-        'Thunberg — Microcosm and Mediator'
+        'Louth — Maximus the Confessor',
+        'Thunberg — Microcosm and Mediator',
+        'Kelly — Early Christian Doctrines'
       ]
     },
     '1-year': {
