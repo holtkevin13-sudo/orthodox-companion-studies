@@ -14,6 +14,7 @@
 //
 // Dependencies: none. Load this file BEFORE any page-specific scripts.
 // ==================================================================
+// build: 2026-04-17T18:00:00Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1627,6 +1628,139 @@ const LEXICON_ENTRIES = {
     definition: 'Teaching, doctrine. The title word of the earliest Christian manual outside the New Testament (c. 50–120 AD), covering moral instruction, liturgical practice (Baptism, Eucharist), and church order.',
     etymology: 'From διδάσκω (to teach)',
     phase: 1, fathers: ['Didache'], connection: 'Earliest Church Catechesis', letter: 'Δ'
+  },
+  // --- Justin cluster (Phase 2) ---
+  'λόγος': {
+    transliteration: 'logos', english: 'Word, Reason',
+    definition: 'Word, reason, rational principle. For Justin, Christ is the cosmic Λόγος — the divine Word who spoke through the prophets, became incarnate in Jesus, and illumines every rational being. Justin\'s First and Second Apologies develop Λόγος-Christology as the theological bridge between Christian revelation and Greek philosophy.',
+    etymology: 'From λέγω (to speak, gather, reckon)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Christ as Cosmic Logos', letter: 'Λ'
+  },
+  'ἀλήθεια': {
+    transliteration: 'aletheia', english: 'Truth',
+    definition: 'Truth, reality, non-concealment. Justin identifies Christianity as ἀλήθεια over against pagan mythology and philosophical speculation, and Christ himself as ἡ ἀλήθεια. Whatever is true in Greek philosophy, Justin argues, is true because it participates in the Λόγος who is Truth.',
+    etymology: 'From ἀ- (not) + λήθη (forgetfulness, concealment) — literally "un-concealment"',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Christianity as True Philosophy', letter: 'Α'
+  },
+  'σπερματικὸς λόγος': {
+    transliteration: 'spermatikos logos', english: 'Seed-Logos, Seminal Word',
+    definition: 'The "seminal Word" — Justin\'s signature theological move, adapted from Stoic cosmology and baptized. Every rational being possesses a σπέρμα of the Λόγος, so that pagan philosophers like Heraclitus and Socrates, acting rightly by the Logos, already belonged partially to Christ. The full Λόγος, however, is Christ incarnate (2 Apology 8, 10, 13).',
+    etymology: 'From σπερματικός (seminal, generative) + λόγος (Word)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Seeds of the Word Among the Nations', letter: 'Σ'
+  },
+  'σπέρμα τοῦ λόγου': {
+    transliteration: 'sperma tou logou', english: 'Seed of the Word',
+    definition: 'Seed of the Word. In the plural — σπέρματα τοῦ λόγου — Justin describes the partial participation in Christ available to every rational being before or apart from explicit Christian faith (2 Apology 8, 13). The cognate phrase to his σπερματικὸς λόγος, it makes his generous theology of Greek philosophy concrete.',
+    etymology: 'From σπείρω (to sow, scatter seed) + λόγος (Word)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Seeds of the Word in Human Reason', letter: 'Σ'
+  },
+  'ἀπομνημονεύματα': {
+    transliteration: 'apomnemoneumata', english: 'Memoirs, Recollections',
+    definition: 'Memoirs, recollections. Justin\'s technical term for the Gospels, which he calls "the memoirs of the Apostles" (ἀπομνημονεύματα τῶν ἀποστόλων, 1 Apology 66–67). The designation frames the Gospels as credible eyewitness testimony within the idiom of Greco-Roman historiography, echoing Xenophon\'s Memorabilia of Socrates.',
+    etymology: 'From ἀπό (from) + μνημονεύω (to remember)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Gospels as Apostolic Testimony', letter: 'Α'
+  },
+  'φιλοσοφία': {
+    transliteration: 'philosophia', english: 'Philosophy, Love of Wisdom',
+    definition: 'Love of wisdom. Justin, who wore the philosopher\'s cloak even after his conversion, presents Christianity as the only true and reliable φιλοσοφία — the one that actually fulfills what Greek philosophy was groping toward. His Dialogue with Trypho opens with an autobiographical account of his own philosophic quest culminating in Christ.',
+    etymology: 'From φίλος (loving) + σοφία (wisdom)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Christianity as the True Philosophy', letter: 'Φ'
+  },
+  'ἀπολογία': {
+    transliteration: 'apologia', english: 'Defense, Apology',
+    definition: 'Formal defense, especially in a judicial setting. Justin\'s First and Second Apologies are the earliest extended Christian examples of the genre — written appeals to the Roman emperors arguing that Christians are innocent of the charges laid against them and that Christianity is both morally and intellectually defensible.',
+    etymology: 'From ἀπό (from) + λόγος (speech, account)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Christian Apologetic Tradition', letter: 'Α'
+  },
+  'ἀνάμνησις': {
+    transliteration: 'anamnesis', english: 'Remembrance, Memorial',
+    definition: 'Remembrance — not bare recollection, but the liturgical making-present of what is remembered. Justin describes the Eucharist as the ἀνάμνησις of Christ\'s passion (1 Apology 66; Dialogue 41, 117), drawing on Christ\'s own command ("do this in remembrance of me") to cast the Lord\'s Supper as the Christian fulfillment of the pure offering prophesied in Malachi 1:10–12.',
+    etymology: 'From ἀνά (again) + μιμνήσκω (to remind, recall)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Eucharistic Memorial Theology', letter: 'Α'
+  },
+  'φωτισμός': {
+    transliteration: 'photismos', english: 'Illumination',
+    definition: 'Illumination, enlightenment — Justin\'s preferred name for Baptism (1 Apology 61), developing the language of Hebrews 6:4 and 10:32. Because the one baptized is "illumined in the understanding" and receives the knowledge of God in Christ, the sacrament is not only washing but revelation. The term becomes a permanent fixture of Greek liturgical vocabulary.',
+    etymology: 'From φῶς (light); φωτίζω (to illumine)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Baptism as Illumination', letter: 'Φ'
+  },
+  'λουτρόν': {
+    transliteration: 'loutron', english: 'Washing, Laver',
+    definition: 'Washing, bath. Justin uses λουτρόν as the primary descriptive term for Baptism (1 Apology 61–62), often paired with παλιγγενεσία in the biblical phrase "laver of regeneration" (Titus 3:5). It evokes ritual purification while being transformed, in Christian usage, into the rebirth of the whole person in Christ.',
+    etymology: 'From λούω (to wash, bathe)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Baptismal Sacramentology', letter: 'Λ'
+  },
+  'παλιγγενεσία': {
+    transliteration: 'palingenesia', english: 'Regeneration, Rebirth',
+    definition: 'Rebirth, regeneration. Justin draws on Titus 3:5 ("the washing of regeneration") and John 3 ("born again") to describe Baptism as the beginning of a new existence in Christ (1 Apology 61). The term later becomes a fixture of Orthodox baptismal and ascetical vocabulary for the remaking of the whole human person.',
+    etymology: 'From πάλιν (again) + γένεσις (birth, origin)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Baptismal Regeneration', letter: 'Π'
+  },
+  'προφητεία': {
+    transliteration: 'propheteia', english: 'Prophecy',
+    definition: 'Prophecy, prophetic utterance. For Justin, fulfilled Old Testament προφητεία is the decisive apologetic proof that Christ is the Messiah: the Hebrew prophets, speaking by the same Λόγος who became incarnate, foretold his life and passion with a specificity that exceeds coincidence (1 Apology 30–53; Dialogue with Trypho, passim).',
+    etymology: 'From πρό (before) + φημί (to speak)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Prophetic Argument from Fulfillment', letter: 'Π'
+  },
+  'τύπος': {
+    transliteration: 'typos', english: 'Type, Figure, Pattern',
+    definition: 'Impression, figure, pattern. Justin reads the Hebrew Scriptures typologically: Moses\'s outstretched arms at Rephidim are a τύπος of the Cross; Isaac bearing the wood, Jonah in the fish, and the bronze serpent each foreshadow Christ (Dialogue 40, 86, 90–91, 111). This hermeneutic hardens into a permanent Orthodox exegetical grammar.',
+    etymology: 'From τύπτω (to strike, impress)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Typological Exegesis of the Old Testament', letter: 'Τ'
+  },
+  'δαίμων': {
+    transliteration: 'daimon', english: 'Demon',
+    definition: 'Demon, malevolent spirit. Justin\'s demonology treats the pagan gods as fallen ἄγγελοι and their offspring — spiritual beings who invented mythology, instigate persecution of Christians, and counterfeit Christ\'s mysteries in pagan cult (1 Apology 5, 10, 14, 56, 66). This identification reframes the entire Greco-Roman religious world as a spiritual battleground.',
+    etymology: 'Pre-Homeric; traditionally related to δαίω (to divide, apportion). In pre-Christian Greek the word denoted any divine or semi-divine being',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Christian Demonology of Pagan Religion', letter: 'Δ'
+  },
+  'μονογενής': {
+    transliteration: 'monogenes', english: 'Only-Begotten, Unique',
+    definition: 'Only-begotten, unique of its kind. Justin inherits the term from Johannine usage (John 1:14, 18; 3:16) and deploys it of Christ to name the Son\'s unique origin from the Father (Dialogue 105). The word later becomes contested in the fourth-century Arian controversies and is fixed in the Nicene Creed as "the only-begotten Son of God."',
+    etymology: 'From μόνος (only) + γενής (born, begotten)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Unique Sonship of Christ', letter: 'Μ'
+  },
+  'χιλιασμός': {
+    transliteration: 'chiliasmos', english: 'Millennialism, Chiliasm',
+    definition: 'The doctrine of a thousand-year earthly reign of Christ before the final judgment. Justin professes chiliast eschatology in Dialogue with Trypho 80–81, while acknowledging that other orthodox Christians of his day disagreed. The view fell out of favor in later patristic tradition but testifies to the eschatological diversity of the second-century Church.',
+    etymology: 'From χίλιοι (thousand)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Second-Century Eschatology', letter: 'Χ'
+  },
+  'παρουσία': {
+    transliteration: 'parousia', english: 'Coming, Advent, Presence',
+    definition: 'Arrival, presence, royal visitation. Justin develops the crucial distinction between the two παρουσίαι of Christ: the first in humility, to suffer (cf. Isaiah 53), and the second in glory, to judge (Dialogue 14, 40, 49, 110). This two-fold schema explains how prophecies of a suffering Messiah and a glorified Messiah can both be true of the same Christ.',
+    etymology: 'From παρά (alongside) + οὐσία (being, presence)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Two Advents of Christ', letter: 'Π'
+  },
+  'σωτήρ': {
+    transliteration: 'soter', english: 'Savior',
+    definition: 'Savior, deliverer. Justin deploys σωτήρ of Christ as a deliberate answer to its pagan use for Greco-Roman rulers and deities: the true σωτήρ is not Caesar or Asclepius but the crucified and risen Jesus (1 Apology 33–34, 66). The title becomes a cornerstone of Christian confession, already present in the second-century acrostic ΙΧΘΥΣ — "Jesus Christ, Son of God, Savior."',
+    etymology: 'From σῴζω (to save, rescue)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Christ the Universal Savior', letter: 'Σ'
+  },
+  'σταυρός': {
+    transliteration: 'stauros', english: 'Cross',
+    definition: 'Cross, crucifixion stake. Justin\'s First Apology 55 offers an unusual reflection on the shape of the Cross as a cosmic signature: he discerns cruciform patterns in ship masts, ploughs, military standards, and the human body at prayer — arguing that the cosmos itself testifies to the Cross of Christ.',
+    etymology: 'From ἵστημι (to stand, set up)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Cosmic Significance of the Cross', letter: 'Σ'
+  },
+  'ἄγγελος': {
+    transliteration: 'angelos', english: 'Angel, Messenger',
+    definition: 'Messenger, angel. Justin\'s "Angel of the Lord" Christology identifies the Angel who appeared to Abraham, Moses, and Jacob in the Hebrew Scriptures with the pre-incarnate Son (Dialogue 56, 59–60, 126–128). This reading of Old Testament theophanies provides a scriptural foundation for the real distinction between Father and Son within one God.',
+    etymology: 'From ἀγγέλλω (to announce); cognate with Indo-European roots for "message"',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Pre-Incarnate Son in Theophany', letter: 'Α'
+  },
+  'διάλογος': {
+    transliteration: 'dialogos', english: 'Dialogue, Conversation',
+    definition: 'Dialogue, conversation. Justin\'s Dialogue with Trypho — the earliest extended Christian work in this form — uses Socratic conversation with a learned Jew to expound Christian interpretation of the Hebrew Scriptures. The genre enacts Justin\'s conviction that Christianity is defensible under any serious philosophic inquiry.',
+    etymology: 'From διά (through, between) + λόγος (speech)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Christian Philosophical Dialogue as Apologetic Genre', letter: 'Δ'
+  },
+  'εὐσέβεια': {
+    transliteration: 'eusebeia', english: 'Piety, True Worship',
+    definition: 'Reverence, right worship, godliness. Justin contrasts Christian εὐσέβεια with pagan superstition: true piety is not cultic fear of capricious gods but the rational and moral worship offered through the Λόγος. This term frames his entire apologetic — Christians, slandered as "atheists" for rejecting false gods, are in truth the only genuinely pious.',
+    etymology: 'From εὖ (well) + σέβομαι (to revere, worship)',
+    phase: 2, fathers: ['Justin Martyr'], connection: 'True Worship vs. Pagan Religion', letter: 'Ε'
   }
 };
 
