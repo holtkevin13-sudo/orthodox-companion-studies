@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T19:30:00Z
+// build: 2026-04-17T20:00:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -546,6 +546,139 @@ const LEXICON_ENTRIES = {
     definition: 'Soul. Against gnostic anthropologies that despised the body and elevated the soul (or the "spiritual" over both), Irenaeus defends a tripartite unity of ψυχή, σῶμα, and πνεῦμα: the complete human being is flesh and soul animated by the life-giving Spirit (Adversus Haereses 5.6.1; 5.9.1). Anti-dualist anthropology becomes a structural feature of Orthodox theology.',
     etymology: 'From ψύχω (to breathe, blow)',
     phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Anti-Dualist Tripartite Anthropology', letter: 'Ψ'
+  },
+  // --- Athanasius cluster (Phase 4) ---
+  'φθορά': {
+    transliteration: 'phthora', english: 'Corruption, Decay',
+    definition: 'Corruption — the decay into which humanity fell through sin, resulting in subjection to death and dissolution. The opening diagnosis of Athanasius\'s De Incarnatione (3–5): because human nature had its being "out of nothing" (ἐκ τοῦ μὴ ὄντος), sin set it on a return path toward non-being. Only the Word\'s entering that trajectory could reverse it.',
+    etymology: 'From φθείρω (to ruin, destroy, decay)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Human Condition After the Fall', letter: 'Φ'
+  },
+  'ἀφθαρσία': {
+    transliteration: 'aphtharsia', english: 'Incorruption, Imperishability',
+    definition: 'Incorruption — the freedom from decay that belongs properly to God and is gifted to humanity through the Incarnation. In De Incarnatione 9, Athanasius frames the whole saving work as the Word clothing mortal flesh with his own divine ἀφθαρσία, so that what was racing toward dissolution is anchored in the imperishable life of God. Already attested in Paul (1 Corinthians 15:53–54), the term receives its systematic Christological home here.',
+    etymology: 'From ἀ- (not) + φθορά (corruption)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Christ Clothing Humanity with Divine Incorruption', letter: 'Α'
+  },
+  'θέωσις': {
+    transliteration: 'theosis', english: 'Deification, Divinization',
+    definition: 'Deification — humanity\'s participation in the divine life. Athanasius\'s famous formula: "He became man that we might be made God" (De Incarnatione 54). Athanasius himself more often uses the verbal-noun form θεοποίησις; θέωσις becomes the standard term through the Cappadocians and Maximus. The concept anchors Orthodox soteriology: salvation is not merely forgiveness but the restoration of humanity to genuine communion with God.',
+    etymology: 'From θεόω (to make divine, from θεός)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Salvation as Participation in God', letter: 'Θ'
+  },
+  'θεοποίησις': {
+    transliteration: 'theopoiesis', english: 'Making-Divine, Deification',
+    definition: 'The making-divine of humanity — Athanasius\'s actual preferred term (with its verb θεοποιέω) for what later tradition calls θέωσις. The emphasis falls on divine action: God makes us divine; we do not ascend by our own power (Orations Against the Arians 1.38–39, 2.70; De Decretis 14). The pair θεοποίησις / θέωσις represents the same soteriological reality under slightly different accents.',
+    etymology: 'From θεός (God) + ποιέω (to make)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Divine Action in Deification', letter: 'Θ'
+  },
+  'ὁμοούσιος': {
+    transliteration: 'homoousios', english: 'Consubstantial, Of the Same Essence',
+    definition: '"Of the same essence" — the decisive term inserted into the Creed of Nicaea (325) to affirm that the Son is of the very same οὐσία as the Father, not a lesser or created being. Athanasius becomes ὁμοούσιος\'s most determined defender across four decades and five exiles, insisting the word guards the basic logic of salvation: only one who is God by nature (φύσει) can divinize creatures by grace (χάριτι).',
+    etymology: 'From ὁμός (same) + οὐσία (essence)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Nicene Confession of the Son\'s Deity', letter: 'Ο'
+  },
+  'ὁμοιούσιος': {
+    transliteration: 'homoiousios', english: 'Of Similar Essence',
+    definition: '"Of like essence" — the Semi-Arian compromise position of the mid-fourth century (Basil of Ancyra and others), asserting the Son\'s likeness to the Father without full sameness. Athanasius comes to regard most ὁμοιούσιοι as genuine allies under the skin (De Synodis 41–43), willing to work toward reconciliation on the ὁμοούσιος. The famous single-iota difference between the two terms masks a real theological gravity.',
+    etymology: 'From ὅμοιος (similar) + οὐσία (essence)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Semi-Arian Middle Position', letter: 'Ο'
+  },
+  'ἀνόμοιος': {
+    transliteration: 'anomoios', english: 'Unlike, Dissimilar',
+    definition: '"Unlike" — the radical Arian position (Aetius, Eunomius) that the Son is unlike the Father in essence. Athanasius treats the ἀνόμοιοι as Arian subordinationism laid bare: where moderate Arians had qualified their claims, the ἀνόμοιοι stated them plainly. Refuting them clarifies the full stakes of the Nicene confession.',
+    etymology: 'From ἀ- (not) + ὅμοιος (similar)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Radical Arian Denial', letter: 'Α'
+  },
+  'ἀγέννητος': {
+    transliteration: 'agennetos', english: 'Unbegotten',
+    definition: 'Unbegotten — the property proper to God the Father. Athanasius, followed by the Cappadocians, fixes ἀγέννητος as a hypostatic property distinguishing the Father from the Son, who is γεννητός (begotten). Against the Eunomian argument that ἀγέννητος IS the very definition of God (and so the Son, being γεννητός, cannot be God), Athanasius insists ἀγέννητος names the Father\'s unique mode of being, not the divine essence itself.',
+    etymology: 'From ἀ- (not) + γεννητός (begotten)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Father\'s Hypostatic Property', letter: 'Α'
+  },
+  'γεννητός': {
+    transliteration: 'gennetos', english: 'Begotten',
+    definition: 'Begotten — said of the Son in relation to the Father, asserting an eternal generation that is real relation but not temporal origin. The Nicene Creed\'s "begotten not made" (γεννηθέντα οὐ ποιηθέντα) fixes the distinction: γεννητός (double nu) marks the eternal Son; γενητός (single nu, "made, come-to-be") marks creatures. Athanasius polices the one-letter difference with unrelenting precision.',
+    etymology: 'From γεννάω (to beget, bear)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Eternal Generation of the Son', letter: 'Γ'
+  },
+  'κτίσμα': {
+    transliteration: 'ktisma', english: 'Creature, Created Thing',
+    definition: 'That which is created. Arius\'s central claim: the Son is κτίσμα — the highest creature, but a creature nonetheless. Athanasius\'s Orations Against the Arians is sustained demolition of this claim: if the Son were κτίσμα, he could not possess the divine life to communicate to humanity; deification (cf. θεοποίησις) would be impossible. The one who divinizes must himself be God.',
+    etymology: 'From κτίζω (to create, found)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Arian Claim That the Son Is Created', letter: 'Κ'
+  },
+  'ἐνανθρώπησις': {
+    transliteration: 'enanthropesis', english: 'Becoming-Human, Incarnation',
+    definition: 'The Word\'s becoming-human. Athanasius\'s preferred Greek term for the Incarnation (De Incarnatione; Orations Against the Arians 1.38), complementing the σάρκωσις of Irenaeus (Phase 3). The choice emphasizes that the Word assumed not just flesh but complete humanity (ἄνθρωπος) — body and rational soul — making the whole human being the subject of divine life.',
+    etymology: 'From ἐν (in) + ἄνθρωπος (human being)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Word\'s Assumption of Full Humanity', letter: 'Ε'
+  },
+  'ἐκ τοῦ μὴ ὄντος': {
+    transliteration: 'ek tou me ontos', english: 'Out of Non-Being',
+    definition: '"Out of non-being" — the condition of creatures, who exist only because God calls them from nothing. The anathemas appended to the Creed of Nicaea condemn those who say of the Son that he is ἐκ τοῦ μὴ ὄντος (that is, created like other creatures). Athanasius uses the phrase in De Incarnatione 3–4 to diagnose the human trajectory back toward non-being apart from the Word\'s intervention.',
+    etymology: 'From ἐκ (out of) + τοῦ μὴ ὄντος (the non-being)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Creaturely Contingency and Arian Christology', letter: 'Ε'
+  },
+  'αὐτοθεός': {
+    transliteration: 'autotheos', english: 'God-Himself, True God',
+    definition: '"God Himself" — Athanasius\'s term for the Son as true God by nature, not God-by-participation or God-by-name (Orations Against the Arians 1.9; 3.16). αὐτοθεός sharpens the Nicene claim: the Son is not divine as a gift received from another but as sharing the very being of the Father.',
+    etymology: 'From αὐτός (self, himself) + θεός (God)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Son as True God by Nature', letter: 'Α'
+  },
+  'υἱοθεσία': {
+    transliteration: 'huiothesia', english: 'Adoption as Sons',
+    definition: 'Adoption as sons and daughters. Athanasius\'s key distinction: the Son is υἱὸς φύσει (Son by nature); Christians become υἱοὶ χάριτι (sons by grace) through the Incarnation and the gift of the Spirit (Orations 1.37–39; 2.59). Our υἱοθεσία depends on the Son\'s natural sonship — which is why the Son\'s full deity is the ground of our own saving adoption.',
+    etymology: 'From υἱός (son) + θέσις (placing, positing); Pauline in Romans 8:15, 23',
+    phase: 4, fathers: ['Athanasius'], connection: 'Participatory Sonship by Grace', letter: 'Υ'
+  },
+  'ἐκ τῆς οὐσίας τοῦ Πατρός': {
+    transliteration: 'ek tes ousias tou patros', english: 'Of the Essence of the Father',
+    definition: '"From the essence of the Father" — a clause of the original 325 Nicene Creed asserting the Son\'s derivation not from the Father\'s will or creative act but from the Father\'s very οὐσία. Athanasius defends this clause vigorously in De Decretis. The Niceno-Constantinopolitan Creed of 381 drops it, retaining only "begotten of the Father before all worlds" — but the doctrinal force is carried forward by ὁμοούσιος.',
+    etymology: 'From ἐκ (out of) + τῆς οὐσίας (the essence) + τοῦ Πατρός (of the Father)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Nicene Derivation of the Son from the Father', letter: 'Ε'
+  },
+  'κανών': {
+    transliteration: 'kanon', english: 'Canon, Rule, Norm',
+    definition: 'Rule, measuring-stick, norm. Athanasius\'s Festal Letter 39 (367 AD) contains the first extant full list of the twenty-seven canonical books of the New Testament — exactly the ones the Church universal eventually received. The letter uses κανών in this technical scriptural sense, fixing the vocabulary by which later tradition distinguishes canonical books (βιβλία κανονιζόμενα) from other edifying writings.',
+    etymology: 'From κανών (reed, measuring-rod); cf. κανὼν τῆς ἀληθείας (Phase 3)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Fixing of the New Testament Canon', letter: 'Κ'
+  },
+  'ὄργανον': {
+    transliteration: 'organon', english: 'Instrument, Organ',
+    definition: 'Instrument. Athanasius describes the flesh that Christ assumed as the ὄργανον through which the Word acts for human salvation — miracles, healings, death, and resurrection all worked through this human instrument by its divine subject (De Incarnatione 8, 18, 43–44). The image guards both the reality of Christ\'s human acts and the ultimate agency of the Word who acts through them.',
+    etymology: 'From ἔργον (work) — literally "that with which work is done"',
+    phase: 4, fathers: ['Athanasius'], connection: 'Christ\'s Flesh as the Word\'s Instrument', letter: 'Ο'
+  },
+  'μοναχός': {
+    transliteration: 'monachos', english: 'Monk, Solitary',
+    definition: 'Monk — literally "solitary," "one who is alone." Athanasius\'s Vita Antonii (Life of Antony, c. 357) is the foundational document of monastic literature, circulating quickly through Greek and Latin Christendom and shaping monasticism East and West. Through the Vita, μοναχός becomes the technical name for the Christian ascetic devoted to withdrawal, prayer, and spiritual combat.',
+    etymology: 'From μόνος (alone, single)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Foundational Monastic Vocabulary', letter: 'Μ'
+  },
+  'ἀναχώρησις': {
+    transliteration: 'anachoresis', english: 'Withdrawal, Retreat',
+    definition: 'Withdrawal — the monk\'s physical and spiritual retreat from the world to seek God in solitude. Antony\'s ἀναχώρησις into the Egyptian desert, recounted by Athanasius in the Vita Antonii, becomes the paradigm for the whole anchoritic (ἀναχωρητικός) tradition — those who withdraw not to abandon humanity but to pray for it in concentrated solitude.',
+    etymology: 'From ἀνά (back) + χωρέω (to withdraw, make space)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Desert Anchoritic Tradition', letter: 'Α'
+  },
+  'ἄσκησις': {
+    transliteration: 'askesis', english: 'Ascesis, Training',
+    definition: 'Training, exercise. Originally the disciplined training of athletes; in Athanasius\'s Vita Antonii, the sustained spiritual exercise of the monk — fasting, vigils, prayer, and the guarding of the heart — by which the whole person is trained toward God. The term anchors a permanent patristic grammar: holiness is a discipline as well as a gift.',
+    etymology: 'From ἀσκέω (to train, practice)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Spiritual Discipline and Formation', letter: 'Α'
+  },
+  'ἡσυχία': {
+    transliteration: 'hesychia', english: 'Stillness, Silence',
+    definition: 'Stillness, inner silence — the cultivated quiet of heart and body that is both condition and fruit of contemplative prayer. Athanasius\'s portrait of Antony in the Vita describes this ἡσυχία as the fruit of ἄσκησις and ἀναχώρησις. The term becomes the seed of the later Orthodox hesychast tradition.',
+    etymology: 'Pre-Greek; traditionally related to ἧμαι (to sit, be still)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Contemplative Stillness', letter: 'Η'
+  },
+  'ἀπάθεια': {
+    transliteration: 'apatheia', english: 'Dispassion, Freedom from Passions',
+    definition: 'Freedom from passions — not the absence of feeling but the reordering of the affections so they are no longer ruled by disordered desires. Athanasius presents Antony as having attained ἀπάθεια through decades of ἄσκησις (Vita Antonii 14, 67). The term gathers up a strand of Stoic ethics, reshapes it in a Christian key, and hands it forward to Evagrius, Maximus, and the whole Orthodox ascetical tradition.',
+    etymology: 'From ἀ- (not) + πάθος (passion, suffering)',
+    phase: 4, fathers: ['Athanasius'], connection: 'Reordering of the Passions', letter: 'Α'
   }
 };
 
