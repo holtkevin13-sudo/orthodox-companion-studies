@@ -8,7 +8,7 @@
 // touches localStorage (via STUDY_STATE) but NEVER touches the DOM.
 //
 // Pages that include this file:
-//   - study-track-dashboard.html  — the 40-week progress dashboard
+//   - patristics-dashboard.html  — the 40-week progress dashboard
 //   - father-cards-index.html     — current-week highlight on Fathers
 //   - greek-lexicon-index.html    — phase-scoped Greek term view
 //
