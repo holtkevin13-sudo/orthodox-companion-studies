@@ -291,6 +291,57 @@
     margin: -0.7rem 0 1.1rem 0;
   }
   
+  /* Track listing — replaces generic stats on the patristic card */
+  .track-list {
+    background: #faf6ed;
+    border: 1px solid #e8ddc8;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  .track-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid #e8ddc8;
+    gap: 1rem;
+  }
+  .track-row:last-child { border-bottom: none; }
+  .track-row.available { background: rgba(85, 107, 61, 0.06); }
+  .track-main {
+    flex: 1;
+    min-width: 0;
+  }
+  .track-name {
+    font-weight: 500;
+    color: #2a2620;
+    font-size: 1.02rem;
+  }
+  .track-scope {
+    color: #6b5d4a;
+    font-size: 0.88rem;
+    font-style: italic;
+    margin-top: 0.1rem;
+  }
+  .track-status {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .track-status.available {
+    background: #556b3d;
+    color: #faf6ed;
+  }
+  .track-status.coming {
+    background: #e8ddc8;
+    color: #6b5d4a;
+  }
+  
   .tool-description {
     color: #2a2620;
     line-height: 1.7;
@@ -685,21 +736,31 @@
           <div class="tool-subtitle">The Mind of the Fathers · Patristic Formation</div>
           <div style="background: #556b3d; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Currently Active</div>
           <p class="tool-description">
-            Systematic formation through 37 Church Fathers across 7 centuries. Three tracks available: 
-            40-week intensive, 1-year comprehensive, or 2-year contemplative study.
+            Systematic formation in the mind of the Fathers, structured around the Nicene Arc and the 
+            Post-Nicene Christological Arc. Three tracks accommodate different rhythms and depths of study — 
+            each covering a distinct scope of Fathers and pace of reading.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">37</span>
-              <span class="tool-stat-label">Church Fathers</span>
+          <div class="track-list">
+            <div class="track-row available">
+              <div class="track-main">
+                <div class="track-name">40-Week Intensive</div>
+                <div class="track-scope">22 Fathers · 14 phases · 4 tracks daily</div>
+              </div>
+              <span class="track-status available">Available</span>
             </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">3</span>
-              <span class="tool-stat-label">Study Tracks</span>
+            <div class="track-row">
+              <div class="track-main">
+                <div class="track-name">1-Year Comprehensive</div>
+                <div class="track-scope">Broader patristic coverage, gentler cadence</div>
+              </div>
+              <span class="track-status coming">Coming Soon</span>
             </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">800+</span>
-              <span class="tool-stat-label">Greek Terms</span>
+            <div class="track-row">
+              <div class="track-main">
+                <div class="track-name">2-Year Contemplative</div>
+                <div class="track-scope">Deepest immersion, monastic reading rhythm</div>
+              </div>
+              <span class="track-status coming">Coming Soon</span>
             </div>
           </div>
           <div class="tool-actions">
