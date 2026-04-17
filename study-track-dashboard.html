@@ -23,22 +23,43 @@
 <meta name="author" content="Orthodox Companion Studies">
 
 <style>
+/* Typography — Cormorant Garamond (English) + Gentium Plus (Greek) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* CSS Reset & Orthodox Foundation */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { 
-  font-size: 16px; 
+  font-size: 17px; 
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
   background: 
-    radial-gradient(circle at top left, rgba(21, 68, 183, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at bottom right, rgba(15, 52, 96, 0.03) 0%, transparent 50%),
-    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
-  color: #2c3e50;
-  line-height: 1.6;
+    radial-gradient(circle at top left, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  color: #2a2620;
+  line-height: 1.7;
   min-height: 100vh;
 }
+
+/* Greek text — Gentium Plus, purpose-built for polytonic Greek */
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+/* Academic small-caps on major section headings */
+.section-title, .status-title, .focus-title, .phases-title, .week-title, 
+.progress-title, .stats-title, .focus-greek-header h3 {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* Inline emphasis — Cormorant at 600 is already strong enough; 700 looks heavy */
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
 
 .container {
   max-width: 1400px;
@@ -51,7 +72,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #5d6d7e;
+  color: #6b5d4a;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -60,18 +81,18 @@ body {
 }
 
 .back-nav:hover {
-  color: #1544B7;
+  color: #1a3a5c;
 }
 
 /* Header */
 .hero {
   background: 
-    linear-gradient(135deg, rgba(21, 68, 183, 0.95) 0%, rgba(15, 52, 96, 0.95) 100%),
+    linear-gradient(135deg, rgba(26, 58, 92, 0.95) 0%, rgba(26, 58, 92, 0.95) 100%),
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
   color: #fffdf7;
   padding: 3rem 0;
   text-align: center;
-  border-bottom: 3px solid #34495e;
+  border-bottom: 3px solid #3a3228;
 }
 
 .hero h1 {
@@ -85,7 +106,7 @@ body {
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: #ecf0f1;
+  color: #e8ddc8;
   font-weight: 300;
   font-style: italic;
   margin-bottom: 1rem;
@@ -95,7 +116,7 @@ body {
 .hero-description {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #ecf0f1;
+  color: #e8ddc8;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -107,11 +128,11 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   overflow: hidden;
-  border: 1px solid #ecf0f1;
+  border: 1px solid #e8ddc8;
 }
 
 .status-header {
-  background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%);
+  background: linear-gradient(135deg, #1a3a5c 0%, #D4AF37 100%);
   color: #ffffff;
   padding: 2rem;
   text-align: center;
@@ -180,7 +201,7 @@ body {
 
 .focus-title {
   font-size: 1.8rem;
-  color: #1544B7;
+  color: #1a3a5c;
   margin-bottom: 1rem;
   font-weight: 600;
   text-align: center;
@@ -202,11 +223,11 @@ body {
   background: #ffffff;
   padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid #ecf0f1;
+  border: 1px solid #e8ddc8;
 }
 
 .focus-section h3 {
-  color: #1544B7;
+  color: #1a3a5c;
   margin-bottom: 1rem;
   font-size: 1.2rem;
 }
@@ -218,7 +239,7 @@ body {
 
 .focus-section li {
   padding: 0.5rem 0;
-  border-bottom: 1px solid #f8f9fa;
+  border-bottom: 1px solid #faf6ed;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -294,13 +315,13 @@ body {
 
 .reading-time {
   font-size: 0.85rem;
-  color: #7f8c8d;
+  color: #6b5d4a;
   font-weight: 500;
 }
 
 .action-button {
   display: inline-block;
-  background: #1544B7;
+  background: #1a3a5c;
   color: #ffffff;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -311,7 +332,7 @@ body {
 }
 
 .action-button:hover {
-  background: #0F3460;
+  background: #1a3a5c;
   transform: translateY(-2px);
 }
 
@@ -325,7 +346,7 @@ body {
 }
 
 .week-header {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #2a2620 0%, #3a3228 100%);
   color: #ffffff;
   padding: 1.5rem 2rem;
   text-align: center;
@@ -352,7 +373,7 @@ body {
 }
 
 .day-card {
-  border: 1px solid #ecf0f1;
+  border: 1px solid #e8ddc8;
   border-radius: 8px;
   padding: 1.5rem;
   position: relative;
@@ -361,8 +382,8 @@ body {
 
 .day-card.completed,
 .day-card.day-complete {
-  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%);
-  border: 2px solid #27ae60;
+  background: linear-gradient(135deg, #dce8c9 0%, #ffffff 100%);
+  border: 2px solid #556b3d;
   box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
 }
 
@@ -387,7 +408,7 @@ body {
 .day-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #2a2620;
 }
 
 .day-status {
@@ -399,28 +420,28 @@ body {
 }
 
 .day-status.completed {
-  background: #27ae60;
+  background: #556b3d;
   color: #ffffff;
 }
 
 .day-status.current {
   background: #D4AF37;
-  color: #2c3e50;
+  color: #2a2620;
 }
 
 .day-status.upcoming {
-  background: #ecf0f1;
-  color: #7f8c8d;
+  background: #e8ddc8;
+  color: #6b5d4a;
 }
 
 .day-readings {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #5d6d7e;
+  color: #6b5d4a;
 }
 
 .day-readings strong {
-  color: #2c3e50;
+  color: #2a2620;
 }
 
 /* Phase Timeline — Byzantine palette */
@@ -433,7 +454,7 @@ body {
 }
 
 .timeline-header {
-  background: linear-gradient(135deg, #1a3a5c 0%, #2c3e50 100%);
+  background: linear-gradient(135deg, #1a3a5c 0%, #2a2620 100%);
   color: #ffffff;
   padding: 1.5rem 2rem;
   text-align: center;
@@ -461,7 +482,7 @@ body {
 }
 
 .phase-card {
-  border: 1px solid #ecf0f1;
+  border: 1px solid #e8ddc8;
   border-radius: 8px;
   padding: 1.5rem;
   position: relative;
@@ -508,7 +529,7 @@ body {
   right: 1rem;
   color: #D4AF37;
   font-size: 1.3rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .phase-header {
@@ -520,13 +541,13 @@ body {
 
 .phase-number {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
 }
 
 .phase-weeks {
   font-size: 0.75rem;
-  color: #7f8c8d;
+  color: #6b5d4a;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 600;
@@ -554,8 +575,8 @@ body {
   display: inline-block;
   min-width: 70px;
   font-size: 0.72rem;
-  font-weight: 700;
-  color: #95a5a6;
+  font-weight: 600;
+  color: #8a7d6a;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-right: 0.5rem;
@@ -563,12 +584,12 @@ body {
 }
 
 .phase-value {
-  color: #5d6d7e;
+  color: #6b5d4a;
 }
 
 /* Big Picture Overview */
 .big-picture {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #2a2620 0%, #3a3228 100%);
   color: #ffffff;
   border-radius: 12px;
   padding: 3rem 2rem;
@@ -674,7 +695,7 @@ body {
   width: 18px;
   height: 18px;
   cursor: pointer;
-  accent-color: #1544B7;
+  accent-color: #1a3a5c;
   flex-shrink: 0;
 }
 
@@ -686,7 +707,7 @@ body {
 
 .task-time {
   font-size: 0.8rem;
-  color: #7f8c8d;
+  color: #6b5d4a;
   font-weight: 500;
   flex-shrink: 0;
 }
@@ -695,13 +716,13 @@ body {
 .task-checkbox:checked + .task-text {
   text-decoration: line-through;
   opacity: 0.6;
-  color: #27ae60;
+  color: #556b3d;
 }
 
 .day-progress {
   margin-top: 1rem;
   padding: 0.5rem 0.75rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #faf6ed 0%, #e9ecef 100%);
   border-radius: 6px;
   text-align: center;
   font-size: 0.9rem;
@@ -711,8 +732,8 @@ body {
 
 /* Day completion states - FORCE GREEN STYLING */
 .day-card.day-complete {
-  background: #d5f4e6 !important;
-  border: 3px solid #27ae60 !important;
+  background: #dce8c9 !important;
+  border: 3px solid #556b3d !important;
   box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4) !important;
 }
 
@@ -724,24 +745,24 @@ body {
 }
 
 .day-card.day-complete .day-status {
-  background: #27ae60 !important;
+  background: #556b3d !important;
   color: #ffffff !important;
   border-radius: 4px !important;
   padding: 0.3rem 0.8rem !important;
 }
 
 .day-card.day-complete .day-progress {
-  background: #27ae60 !important;
+  background: #556b3d !important;
   color: #ffffff !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   border-radius: 6px !important;
   padding: 0.75rem !important;
 }
 
 /* Also keep existing completed styling */
 .day-card.completed {
-  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%) !important;
-  border: 2px solid #27ae60 !important;
+  background: linear-gradient(135deg, #dce8c9 0%, #ffffff 100%) !important;
+  border: 2px solid #556b3d !important;
 }
 
 /* Animation for task completion */
@@ -757,8 +778,8 @@ body {
 
 /* Week completion - Seminary-appropriate styling */
 .week-complete-banner {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: #ecf0f1;
+  background: linear-gradient(135deg, #2a2620 0%, #3a3228 100%);
+  color: #e8ddc8;
   padding: 2.5rem 2rem;
   border-radius: 8px;
   margin: 2rem 0;
@@ -819,17 +840,17 @@ body {
 
 /* "Missed" day — amber accent, not punitive */
 .day-card.day-missed {
-  border-left: 4px solid #d4a017;
+  border-left: 4px solid #D4AF37;
   background: linear-gradient(135deg, rgba(212, 160, 23, 0.06) 0%, rgba(212, 160, 23, 0.02) 100%);
 }
 .day-status.missed {
   background: rgba(212, 160, 23, 0.15);
-  color: #9a6f00;
+  color: #8a6d1f;
   border: 1px solid rgba(212, 160, 23, 0.4);
 }
 .day-status.rest {
   background: rgba(127, 140, 141, 0.15);
-  color: #7f8c8d;
+  color: #6b5d4a;
   border: 1px solid rgba(127, 140, 141, 0.4);
 }
 
@@ -843,7 +864,7 @@ body {
 }
 .btn-advance {
   background: #D4AF37;
-  color: #2c3e50;
+  color: #2a2620;
   padding: 0.875rem 2rem;
   border: none;
   border-radius: 6px;
@@ -858,7 +879,7 @@ body {
 }
 .btn-advance-secondary {
   background: transparent;
-  color: #ecf0f1;
+  color: #e8ddc8;
   border: 1px solid rgba(236, 240, 241, 0.4);
   padding: 0.875rem 2rem;
   border-radius: 6px;
@@ -887,7 +908,7 @@ body {
 }
 .reconcile-dialog {
   background: #ffffff;
-  color: #2c3e50;
+  color: #2a2620;
   border-radius: 8px;
   padding: 2rem;
   max-width: 520px;
@@ -897,7 +918,7 @@ body {
 }
 .reconcile-dialog h3 {
   margin: 0 0 1rem 0;
-  color: #2c3e50;
+  color: #2a2620;
   font-size: 1.3rem;
 }
 .reconcile-dialog p {
@@ -909,11 +930,11 @@ body {
   padding: 0.75rem 1rem 0.75rem 2rem;
   background: rgba(212, 160, 23, 0.08);
   border-radius: 4px;
-  border-left: 3px solid #d4a017;
+  border-left: 3px solid #D4AF37;
 }
 .reconcile-dialog ul.missed-list li {
   margin: 0.25rem 0;
-  color: #7a5700;
+  color: #8a6d1f;
 }
 .reconcile-actions {
   display: flex;
@@ -937,12 +958,12 @@ body {
 }
 .reconcile-actions .btn-catchup {
   background: #D4AF37;
-  color: #2c3e50;
+  color: #2a2620;
 }
 .reconcile-actions .btn-moveon {
   background: transparent;
-  color: #2c3e50;
-  border: 1px solid #34495e;
+  color: #2a2620;
+  border: 1px solid #3a3228;
 }
 
 /* Readings summary style for completed days (collapsed view) */
@@ -952,10 +973,10 @@ body {
   border-radius: 4px;
   font-size: 0.9rem;
   line-height: 1.7;
-  color: #2c3e50;
+  color: #2a2620;
 }
 .day-readings-summary strong {
-  color: #27ae60;
+  color: #556b3d;
   font-weight: 600;
   display: inline-block;
   min-width: 5.5rem;
@@ -967,20 +988,20 @@ body {
 }
 .day-rest-content {
   padding: 1rem 1.25rem;
-  color: #7f8c8d;
+  color: #6b5d4a;
   font-size: 0.9rem;
   line-height: 1.7;
   font-style: italic;
 }
 .day-rest-content strong {
-  color: #2c3e50;
+  color: #2a2620;
   font-style: normal;
 }
 
 /* Archive indicator for weeks already advanced past */
 .archive-notice {
   background: #f4ecd8;
-  color: #6b4423;
+  color: #8a6d1f;
   padding: 0.75rem 1rem;
   border-radius: 6px;
   border-left: 3px solid #D4AF37;
