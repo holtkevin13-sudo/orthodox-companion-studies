@@ -1,500 +1,398 @@
 <!DOCTYPE html>
+<!-- build: 2026-04-17T17:10:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ignatius of Antioch — Father Cards — Orthodox Companion Studies</title>
+<title>Ignatius of Antioch — Orthodox Companion Studies</title>
 
 <!-- Orthodox Companion Branding -->
-<link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<meta name="description" content="Ignatius of Antioch (c. 50-110 AD) - Third Bishop of Antioch, martyr whose seven letters establish episcopal authority and Eucharistic theology.">
+<!-- Open Graph -->
+<meta property="og:title" content="Ignatius of Antioch — Orthodox Companion Studies">
+<meta property="og:description" content="Third Bishop of Antioch, martyr whose seven letters established episcopal authority and Eucharistic theology.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Ignatius of Antioch (c. 50–110 AD) — Third Bishop of Antioch, martyr whose seven letters established episcopal authority and Eucharistic theology.">
 <meta name="keywords" content="Ignatius of Antioch, Church Fathers, Apostolic Fathers, Martyrdom, Episcopal Authority, Eucharist, Early Christianity">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
-/* CSS Reset & Orthodox Foundation */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { 
-  font-size: 16px; 
-  scroll-behavior: smooth;
-}
+html { font-size: 17px; scroll-behavior: smooth; }
 body {
-  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
-  background: 
-    radial-gradient(circle at top left, rgba(52, 73, 94, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at bottom right, rgba(44, 62, 80, 0.03) 0%, transparent 50%),
-    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
-  color: #2c3e50;
-  line-height: 1.6;
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Navigation */
-.nav-bar {
-  background: rgba(52, 73, 94, 0.95);
-  color: #fffdf7;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  border-bottom: 3px solid #34495e;
-  backdrop-filter: blur(10px);
-}
-
-.nav-content {
-  display: flex;
-  justify-content: space-between;
+/* Back nav */
+.back-nav {
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
   text-decoration: none;
-  color: inherit;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
 }
+.back-nav:hover { color: #1a3a5c; }
 
-.nav-cross {
-  font-size: 1.5rem;
-  color: #bdc3c7;
-}
-
-.nav-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.breadcrumbs {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: #bdc3c7;
-}
-
-.breadcrumbs a {
-  color: #bdc3c7;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.breadcrumbs a:hover {
-  color: #fffdf7;
-}
-
-.breadcrumb-separator {
-  color: #95a5a6;
-}
-
-/* Hero Section */
+/* Hero */
 .hero {
-  background: 
-    linear-gradient(rgba(21, 67, 131, 0.95), rgba(15, 52, 96, 0.95)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
-  color: #fffdf7;
-  padding: 3rem 0;
+  padding: 1rem 0 3rem;
   text-align: center;
-  border-bottom: 3px solid #1544B7;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
 }
 
-.current-week-badge {
-  display: inline-block;
-  background: #27ae60;
-  color: #fff;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
   font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
 }
 
-.hero-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #D4AF37 0%, #F4E4BC 100%);
-  color: #1544B7;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
 }
 
 .hero-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 400;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
 }
 
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: #f8f9fa;
-  margin-bottom: 0.5rem;
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
   font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
 }
 
-.hero-dates {
+.hero-meta {
   font-size: 1rem;
-  color: #ecf0f1;
+  font-style: italic;
+  color: #6b5d4a;
   margin-bottom: 1.5rem;
-  font-weight: 500;
 }
 
 .hero-description {
   font-size: 1.1rem;
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
+  color: #2a2620;
   line-height: 1.7;
-  color: #f8f9fa;
 }
 
-/* Content Sections */
-.content {
-  padding: 3rem 0;
-}
-
+/* Main sections */
 .section {
   margin-bottom: 3rem;
-  background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 15px rgba(52, 73, 94, 0.08);
-  border: 1px solid #ecf0f1;
 }
-
-.section-title {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-  border-bottom: 2px solid #ecf0f1;
-  padding-bottom: 0.5rem;
-}
-
 .section-text {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
 }
+.section-text:last-child { margin-bottom: 0; }
 
-/* Stats Grid */
+/* Stats grid */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
-
 .stat-card {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 8px;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
   text-align: center;
-  border: 1px solid #ecf0f1;
 }
-
 .stat-value {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #1544B7;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  color: #5d6d7e;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 2.2rem;
   font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
 }
 
-/* Letters Grid */
+/* Letters grid */
 .letters-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
-
 .letter-card {
-  background: #f8f9fa;
-  border: 1px solid #ecf0f1;
-  border-radius: 8px;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
   padding: 1.2rem;
-  transition: all 0.3s ease;
 }
-
-.letter-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(52, 73, 94, 0.12);
-  border-color: #bdc3c7;
-}
-
 .letter-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
 }
-
 .letter-recipient {
-  color: #5d6d7e;
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
-  font-style: italic;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
 }
-
 .letter-theme {
-  font-size: 0.95rem;
-  color: #2c3e50;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.55;
 }
 
-/* Theology Pillars */
+/* Theological pillars */
 .theology-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
-
 .theology-pillar {
-  background: linear-gradient(145deg, #f8f9fa 0%, #ecf0f1 100%);
-  border: 1px solid #ecf0f1;
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
 }
-
-.theology-pillar:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(52, 73, 94, 0.12);
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
 }
-
-.greek-term {
-  font-family: "Times New Roman", "Noto Serif", serif;
-  font-size: 1.4rem;
-  color: #D4AF37;
-  margin-bottom: 0.5rem;
+.theology-pillar .english-term {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
   font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
 }
-
-.english-term {
-  font-size: 1.1rem;
-  color: #2c3e50;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-}
-
-.term-explanation {
-  font-size: 0.95rem;
-  color: #5d6d7e;
+.theology-pillar .term-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
   line-height: 1.6;
 }
 
-/* Quote Section */
+/* Featured quote */
 .quote-section {
-  background: linear-gradient(135deg, #1544B7 0%, #0F3460 100%);
-  color: #fffdf7;
-  border-radius: 12px;
+  margin: 2.5rem 0;
   padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
   text-align: center;
-  margin: 2rem 0;
 }
-
 .quote-text {
   font-size: 1.3rem;
   font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
 }
-
 .quote-source {
-  font-size: 1rem;
-  color: #f8f9fa;
-  font-weight: 500;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
 }
 
-/* Related Links */
+/* Related resources */
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+  margin-top: 1rem;
 }
-
 .related-link {
-  background: #ecf0f1;
-  border: 1px solid #bdc3c7;
-  border-radius: 8px;
-  padding: 1rem;
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
   text-decoration: none;
-  color: #2c3e50;
-  transition: all 0.3s ease;
-  text-align: center;
+  color: inherit;
+  transition: all 0.2s ease;
 }
-
 .related-link:hover {
-  background: #34495e;
-  color: #fffdf7;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(52, 73, 94, 0.2);
+  border-color: #D4AF37;
+  transform: translateY(-1px);
 }
-
 .related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
   margin-bottom: 0.5rem;
+  line-height: 1;
 }
-
 .related-title {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
   margin-bottom: 0.3rem;
 }
-
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
 .related-desc {
-  font-size: 0.8rem;
-  opacity: 0.8;
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
 }
 
-/* Return to Top */
+/* Return to top */
 .return-to-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: linear-gradient(135deg, #1544B7 0%, #0F3460 100%);
-  color: #fffdf7;
-  border: none;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(21, 68, 183, 0.3);
-  transition: all 0.3s ease;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
 }
-
 .return-to-top.visible {
   opacity: 1;
-  pointer-events: all;
-  transform: translateY(0);
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
 }
 
-.return-to-top:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(21, 68, 183, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .section {
-    padding: 1.5rem;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .letters-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .theology-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 0.5rem;
-  }
-
-  .hero {
-    padding: 2rem 0;
-  }
-
-  .hero-title {
-    font-size: 1.8rem;
-  }
-
-  .section {
-    padding: 1rem;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Navigation -->
-<nav class="nav-bar">
-  <div class="container">
-    <div class="nav-content">
-      <a href="index.html" class="nav-brand">
-        <span class="nav-cross">☩</span>
-        <span class="nav-title">Orthodox Companion Studies</span>
-      </a>
-      
-      <div class="breadcrumbs">
-        <a href="index.html">Study Hub</a>
-        <span class="breadcrumb-separator">›</span>
-        <a href="father-cards-index.html">Father Cards</a>
-        <span class="breadcrumb-separator">›</span>
-        <span>Ignatius of Antioch</span>
-      </div>
-    </div>
-  </div>
-</nav>
+<div class="container">
+  <a href="father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
 
-<!-- Hero Section -->
 <header class="hero">
   <div class="container">
-    <div class="current-week-badge">📖 Current Week Focus — Week 2</div>
-    
-    <div class="hero-icon">☩</div>
-    
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 1 · Apostolic Fathers · Weeks 1–4
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
     <h1 class="hero-title">Ignatius of Antioch</h1>
-    <div class="hero-subtitle">The God-Bearer • Θεοφόρος</div>
-    <div class="hero-dates">c. 50-110 AD • Third Bishop of Antioch</div>
-    
+    <div class="hero-epithet">Θεοφόρος · the God-bearer</div>
+    <div class="hero-meta">c. 50–110 AD · Third Bishop of Antioch</div>
     <p class="hero-description">
       Martyr and bishop whose seven letters, written en route to execution in Rome, 
       established episcopal authority, Eucharistic theology, and the Church's unity 
@@ -503,26 +401,24 @@ body {
   </div>
 </header>
 
-<!-- Main Content -->
-<main class="content">
+<main>
   <div class="container">
-    
-    <!-- Overview & Statistics -->
+
+    <!-- Overview -->
     <section class="section">
       <h2 class="section-title">Who Was Ignatius?</h2>
-      
       <p class="section-text">
-        Ignatius of Antioch was the third bishop of Antioch (after Peter and Evodius) and one of the most significant 
-        Apostolic Fathers. Born around 50 AD, he likely knew the Apostle John personally. During the persecution 
-        under Emperor Trajan (c. 108-110 AD), Ignatius was arrested and condemned to death by wild beasts in Rome.
+        Ignatius of Antioch was the third bishop of Antioch (after Peter and Evodius) and one of the most 
+        significant Apostolic Fathers. Born around 50 AD, he likely knew the Apostle John personally. During 
+        the persecution under Emperor Trajan (c. 108–110 AD), Ignatius was arrested and condemned to death 
+        by wild beasts in Rome.
       </p>
-      
       <p class="section-text">
-        His journey from Antioch to Rome became legendary not for its destination, but for the seven letters he wrote 
-        along the way to churches and individuals. These letters are among the most important early Christian documents, 
-        providing crucial insight into early Church structure, theology, and the development of episcopal authority.
+        His journey from Antioch to Rome became legendary not for its destination, but for the seven letters 
+        he wrote along the way to churches and individuals. These letters are among the most important early 
+        Christian documents, providing crucial insight into early Church structure, theology, and the 
+        development of episcopal authority.
       </p>
-      
       <div class="stats-grid">
         <div class="stat-card">
           <div class="stat-value">7</div>
@@ -546,102 +442,89 @@ body {
     <!-- The Seven Letters -->
     <section class="section">
       <h2 class="section-title">The Seven Letters</h2>
-      
       <p class="section-text">
-        Written during his journey to martyrdom, Ignatius's letters reveal a pastor's heart concerned with Church 
-        unity, proper authority, and protection against heretical teachings. Each letter addresses specific concerns 
-        while developing consistent themes of episcopal authority and Eucharistic unity.
+        Written during his journey to martyrdom, Ignatius's letters reveal a pastor's heart concerned with 
+        Church unity, proper authority, and protection against heretical teachings. Each letter addresses 
+        specific concerns while developing consistent themes of episcopal authority and Eucharistic unity.
       </p>
-      
       <div class="letters-grid">
         <div class="letter-card">
           <h3 class="letter-title">To the Ephesians</h3>
-          <p class="letter-recipient">Church at Ephesus</p>
+          <div class="letter-recipient">Church at Ephesus</div>
           <p class="letter-theme">Unity under the bishop; warns against false teachers who deny Christ's true humanity.</p>
         </div>
-        
         <div class="letter-card">
           <h3 class="letter-title">To the Magnesians</h3>
-          <p class="letter-recipient">Church at Magnesia</p>
+          <div class="letter-recipient">Church at Magnesia</div>
           <p class="letter-theme">Submission to episcopal authority; rejection of Judaizing tendencies.</p>
         </div>
-        
         <div class="letter-card">
           <h3 class="letter-title">To the Trallians</h3>
-          <p class="letter-recipient">Church at Tralles</p>
+          <div class="letter-recipient">Church at Tralles</div>
           <p class="letter-theme">Warning against Docetism; Christ's true humanity and suffering.</p>
         </div>
-        
         <div class="letter-card">
           <h3 class="letter-title">To the Romans</h3>
-          <p class="letter-recipient">Church at Rome</p>
+          <div class="letter-recipient">Church at Rome</div>
           <p class="letter-theme">Passionate desire for martyrdom; asks them not to prevent his death.</p>
         </div>
-        
         <div class="letter-card">
           <h3 class="letter-title">To the Philadelphians</h3>
-          <p class="letter-recipient">Church at Philadelphia</p>
+          <div class="letter-recipient">Church at Philadelphia</div>
           <p class="letter-theme">Unity in the Eucharist; bishop as center of Church unity.</p>
         </div>
-        
         <div class="letter-card">
           <h3 class="letter-title">To the Smyrnaeans</h3>
-          <p class="letter-recipient">Church at Smyrna</p>
+          <div class="letter-recipient">Church at Smyrna</div>
           <p class="letter-theme">Strongest attack on Docetism; reality of Christ's flesh and suffering.</p>
         </div>
-        
         <div class="letter-card">
           <h3 class="letter-title">To Polycarp</h3>
-          <p class="letter-recipient">Bishop Polycarp of Smyrna</p>
+          <div class="letter-recipient">Bishop Polycarp of Smyrna</div>
           <p class="letter-theme">Pastoral advice; duties of a bishop; care for widows and slaves.</p>
         </div>
       </div>
     </section>
 
-    <!-- Key Theological Contributions -->
+    <!-- Theological Pillars -->
     <section class="section">
       <h2 class="section-title">Theological Pillars</h2>
-      
       <p class="section-text">
         Ignatius's theology centers on four key concepts that became foundational for Orthodox Christianity. 
-        His Greek terminology and theological insights shaped how the Church understood authority, 
-        sacraments, and the nature of Christian community.
+        His Greek terminology and theological insights shaped how the Church understood authority, sacraments, 
+        and the nature of Christian community.
       </p>
-      
       <div class="theology-grid">
         <div class="theology-pillar">
           <div class="greek-term">ἐπίσκοπος</div>
-          <div class="english-term">Episkopos</div>
+          <div class="english-term">Episkopos · Bishop</div>
           <p class="term-explanation">
-            Bishop as the center of Church unity. Ignatius emphasized that unity with the bishop 
-            ensures unity with Christ and the universal Church.
+            Bishop as the center of Church unity. Ignatius emphasized that unity with the bishop ensures 
+            unity with Christ and the universal Church.
           </p>
         </div>
-        
         <div class="theology-pillar">
           <div class="greek-term">φάρμακον ἀθανασίας</div>
           <div class="english-term">Pharmakon Athanasias</div>
           <p class="term-explanation">
-            "Medicine of immortality" — his famous description of the Eucharist as the 
-            antidote to death and guarantee of eternal life.
+            "Medicine of immortality" — his famous description of the Eucharist as the antidote to death 
+            and guarantee of eternal life.
           </p>
         </div>
-        
         <div class="theology-pillar">
           <div class="greek-term">σάρξ</div>
-          <div class="english-term">Sarx</div>
+          <div class="english-term">Sarx · Flesh</div>
           <p class="term-explanation">
-            Flesh — Ignatius strongly defended Christ's true humanity against Docetic 
-            teachings that denied the reality of the Incarnation.
+            Ignatius strongly defended Christ's true humanity against Docetic teachings that denied the 
+            reality of the Incarnation.
           </p>
         </div>
-        
         <div class="theology-pillar">
           <div class="greek-term">μαρτύριον</div>
-          <div class="english-term">Martyrion</div>
+          <div class="english-term">Martyrion · Witness</div>
           <p class="term-explanation">
-            Martyrdom as witness and imitation of Christ. Ignatius saw his coming death 
-            as the ultimate expression of discipleship.
+            Martyrdom as witness and imitation of Christ. Ignatius saw his coming death as the ultimate 
+            expression of discipleship.
           </p>
         </div>
       </div>
@@ -653,26 +536,24 @@ body {
         "I am the wheat of God, and am ground by the teeth of the wild beasts, 
         that I may be found to be the pure bread of Christ."
       </p>
-      <p class="quote-source">— Letter to the Romans, 4</p>
+      <div class="quote-source">— Letter to the Romans, 4</div>
     </div>
 
     <!-- Why Ignatius Matters -->
     <section class="section">
       <h2 class="section-title">Why Ignatius Matters Today</h2>
-      
       <p class="section-text">
-        Ignatius's letters provide our earliest clear picture of episcopal Church government and sacramental theology. 
-        His emphasis on unity under proper authority speaks directly to modern questions about Church governance, 
-        while his passionate devotion to martyrdom challenges contemporary understanding of discipleship.
+        Ignatius's letters provide our earliest clear picture of episcopal Church government and sacramental 
+        theology. His emphasis on unity under proper authority speaks directly to modern questions about 
+        Church governance, while his passionate devotion to martyrdom challenges contemporary understanding 
+        of discipleship.
       </p>
-      
       <p class="section-text">
         For Orthodox Christians, Ignatius represents the apostolic link between the age of the Apostles and 
         the developing institutional Church. His theology of the Eucharist as the "medicine of immortality" 
         remains central to Orthodox sacramental understanding, while his model of episcopal authority 
         continues to shape Orthodox ecclesiology.
       </p>
-      
       <p class="section-text">
         His letters also demonstrate early Christian approaches to combating heretical teachings, 
         particularly the Docetic denial of Christ's true humanity. His method of grounding theological 
@@ -684,42 +565,26 @@ body {
     <!-- Related Resources -->
     <section class="section">
       <h2 class="section-title">Explore Related Resources</h2>
-      
       <div class="related-grid">
-        <a href="../greek-lexicon/episkopos.html" class="related-link">
-          <div class="related-icon">Ω</div>
-          <div class="related-title">ἐπίσκοπος</div>
-          <div class="related-desc">Greek term study</div>
-        </a>
-        
         <a href="polycarp-of-smyrna.html" class="related-link">
-          <div class="related-icon">☩</div>
-          <div class="related-title">Polycarp</div>
-          <div class="related-desc">Recipient of letter</div>
+          <span class="related-icon">☩</span>
+          <div class="related-title">Polycarp of Smyrna</div>
+          <div class="related-desc">Recipient of Ignatius's seventh letter, fellow apostolic father.</div>
         </a>
-        
-        <a href="../greek-lexicon/sarx.html" class="related-link">
-          <div class="related-icon">Ω</div>
-          <div class="related-title">σάρξ</div>
-          <div class="related-desc">Flesh theology</div>
+        <a href="greek-lexicon-index.html#phase-1" class="related-link">
+          <span class="related-icon">Ω</span>
+          <div class="related-title greek">ἐπίσκοπος · σάρξ · μαρτυρία</div>
+          <div class="related-desc">Phase 1 Greek terms in the lexicon.</div>
         </a>
-        
-        <a href="../greek-lexicon/martyria.html" class="related-link">
-          <div class="related-icon">Ω</div>
-          <div class="related-title">μαρτυρία</div>
-          <div class="related-desc">Witness & martyrdom</div>
+        <a href="father-cards-index.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">All Church Fathers</div>
+          <div class="related-desc">Browse the full library of Father profiles.</div>
         </a>
-        
-        <a href="clement-of-rome.html" class="related-link">
-          <div class="related-icon">☩</div>
-          <div class="related-title">Clement of Rome</div>
-          <div class="related-desc">Previous week</div>
-        </a>
-        
-        <a href="index.html#progress" class="related-link">
-          <div class="related-icon">📖</div>
+        <a href="patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
           <div class="related-title">Current Studies</div>
-          <div class="related-desc">Back to Week 2</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
         </a>
       </div>
     </section>
@@ -727,34 +592,29 @@ body {
   </div>
 </main>
 
-<!-- Return to Top Button -->
-<button class="return-to-top" id="return-to-top" onclick="scrollToTop()">↑</button>
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
 
+<script src="study-data.js"></script>
 <script>
-// Return to top functionality
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Show/hide return to top button
-window.addEventListener('scroll', function() {
-  const button = document.getElementById('return-to-top');
-  if (window.pageYOffset > 300) {
-    button.classList.add('visible');
-  } else {
-    button.classList.remove('visible');
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Ignatius is Phase 1: Weeks 1–4.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 1 && wk <= 4) pill.style.display = 'inline-block';
   }
-});
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
 </script>
 
