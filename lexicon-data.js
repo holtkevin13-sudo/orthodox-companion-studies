@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T23:30:00Z
+// build: 2026-04-18T00:00:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -1512,6 +1512,139 @@ const LEXICON_ENTRIES = {
     definition: 'Dionysius the Areopagite — the pseudonymous author of the Corpus Areopagiticum (c. 500 AD, probably Syrian). The corpus presents itself as the work of the Athenian convert of Paul (Acts 17:34), but on linguistic and doctrinal grounds is now dated to the late fifth or early sixth century. The pseudonymity was only questioned seriously from the fifteenth century onward. The writings were received by the Church East and West as quasi-apostolic authority and shaped the whole later mystical tradition — Maximus (Phase 12), John of Damascus (Phase 13), Eriugena, Aquinas, Bonaventure, Nicholas of Cusa.',
     etymology: 'From Διονύσιος (Dionysius, a Greek theophoric name) + Ἀρεοπαγίτης (from the Areopagus, Athens)',
     phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Pseudonymous Author and His Reception', letter: 'Δ'
+  },
+  // --- Maximus the Confessor cluster (Phase 12) ---
+  'θέλημα': {
+    transliteration: 'thelema', english: 'Will',
+    definition: 'Will. Maximus\'s great Christological contribution: the one Christ, because he has two complete natures, has two natural wills — one divine, one human — operating in perfect harmony. Against the Monothelites, who taught a single will in Christ, Maximus argues (Opusculum 3; Disputation with Pyrrhus) that a nature without its natural faculty of willing is no nature at all. The doctrine is vindicated at the Sixth Ecumenical Council (Constantinople III, 680–681), twenty years after Maximus\'s death by torture and exile.',
+    etymology: 'From θέλω (to will, to wish)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Two Natural Wills in the One Christ', letter: 'Θ'
+  },
+  'ἐνέργεια': {
+    transliteration: 'energeia', english: 'Energy, Operation',
+    definition: 'Energy — the natural activity or operation proper to a being. Paired with θέλημα in Maximus\'s Christology: the one Christ has two natural energies as he has two natural wills, divine and human, each operating according to its own nature while belonging to the single acting person. The same grammar is taken up in the later Byzantine theology of divine energies (Palamas, fourteenth century), drawing explicitly on Maximus as foundation.',
+    etymology: 'From ἐν (in) + ἔργον (work)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Two Natural Energies in the One Christ', letter: 'Ε'
+  },
+  'λόγοι': {
+    transliteration: 'logoi', english: 'Logoi, Divine Reasons',
+    definition: 'The λόγοι — the divine "reasons" or principles according to which each created thing exists and is ordered toward God. Maximus\'s signature cosmology: every creature has its own λόγος, eternally held in the mind of the divine Λόγος (Ambigua 7). Creation is the speaking-forth of the one Λόγος into many λόγοι; salvation is the return of the many λόγοι into the one. The doctrine recapitulates Stoic, Philonic, and Dionysian lineages into a distinctively Christian cosmological synthesis.',
+    etymology: 'Plural of λόγος (Phase 2) — "words, reasons, principles"',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Logoi of Creatures Rooted in the Divine Logos', letter: 'Λ'
+  },
+  'σκοπός': {
+    transliteration: 'skopos', english: 'Aim, Goal, Purpose',
+    definition: 'Aim, goal. Each λόγος of a creature points toward its σκοπός — the end for which it was made and in which it finds its fulfillment. The σκοπός of every creature is communion with God (θέωσις, Phase 4); the σκοπός of the divine economy (οἰκονομία, Phase 6) is the drawing of all creation into that communion through the Incarnation. The concept anchors Maximus\'s teleological cosmology to his soteriology.',
+    etymology: 'From σκοπέω (to look at, consider)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Teleological End of Each Creature', letter: 'Σ'
+  },
+  'τρόπος': {
+    transliteration: 'tropos', english: 'Mode, Manner',
+    definition: 'Mode — the manner in which a thing exists or acts. Maximus\'s signature analytic distinction: λόγος names what a thing is (its essential definition); τρόπος names how it is (the concrete mode of its existing and acting). The Son\'s λόγος is unchanging in Incarnation, but his τρόπος is now new — the same divine Word now in the mode of flesh. The distinction becomes essential tooling for later Orthodox Christology and for the Maximian reading of Chalcedon.',
+    etymology: 'From τρέπω (to turn)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'What a Thing Is vs How It Exists', letter: 'Τ'
+  },
+  'δύο θελήματα': {
+    transliteration: 'dyo thelemata', english: 'Two Wills',
+    definition: '"Two wills" — Maximus\'s Christological formula in its compound form: two wills (divine and human) belonging to the one incarnate Son. The fuller confession of Constantinople III (681): two natural wills and two natural energies, united without confusion in one persona, neither contradicting the other but harmonized in perfect communion. Christ\'s human will freely consents to the Father\'s will even in Gethsemane: "not my will but yours" spoken by the human will itself, in union with the divine.',
+    etymology: 'From δύο (two) + θελήματα (wills, plural of θέλημα)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Dyothelite Christology', letter: 'Δ'
+  },
+  'γνωμικὸν θέλημα': {
+    transliteration: 'gnomikon thelema', english: 'Gnomic Will',
+    definition: 'Gnomic will — the mode of human willing in which the person deliberates between alternatives, often against the better known good. Maximus distinguishes γνωμικὸν θέλημα (willing with hesitation, γνώμη) from φυσικὸν θέλημα (the natural willing proper to human nature as such). Christ has the natural human will but not the gnomic will: there is no deliberation in him between good and evil, no inward division, because his human willing is perfectly united to his divine.',
+    etymology: 'From γνώμη (inclination, judgment) + θέλημα (will)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Deliberative Will Absent in Christ', letter: 'Γ'
+  },
+  'γνώμη': {
+    transliteration: 'gnome', english: 'Inclination, Disposition',
+    definition: 'Inclination, settled disposition — the characteristic tilt of a person\'s will. γνώμη names the fallen condition of human willing: the inner hesitation, the weighing of alternatives, the gap between knowing the good and willing it. Maximus\'s doctrine of γνώμη grounds his whole theology of human freedom and its healing: Christ, the perfect human, reveals what willing becomes when freed from its gnomic fracture (Opusculum 3).',
+    etymology: 'From γιγνώσκω (to know) — "settled mind"',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Fallen Hesitation of Human Willing', letter: 'Γ'
+  },
+  'προαίρεσις': {
+    transliteration: 'proairesis', english: 'Choice, Deliberative Choice',
+    definition: 'Choice — the Aristotelian term for the settled choice that follows deliberation. Maximus accepts προαίρεσις as a feature of fallen human willing (the outcome of γνωμικὸν θέλημα) but locates it outside Christ\'s mode of willing: Christ\'s human will is not choosing among alternatives but freely willing what the Father wills, without the interval of deliberation. The analysis retools Aristotle\'s ethics into a Christological anthropology.',
+    etymology: 'From πρό (before) + αἱρέω (to take, choose)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Deliberative Choice in Fallen Willing', letter: 'Π'
+  },
+  'περιχώρησις': {
+    transliteration: 'perichoresis', english: 'Perichoresis, Mutual Indwelling',
+    definition: 'Perichoresis — "interpenetration," "mutual coinherence." Maximus is the first Christian theologian to use περιχώρησις substantively, applying it to the two natures of Christ: divinity and humanity interpenetrate without confusion in the single Christ (Ambigua 5; Disputation with Pyrrhus). John of Damascus (Phase 13) will extend the term to the Trinity: the three persons mutually indwell one another. The concept becomes a central category of Orthodox Triadology and Christology.',
+    etymology: 'From περί (around) + χωρέω (to go, make room)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Mutual Interpenetration of Christ\'s Natures', letter: 'Π'
+  },
+  'ὁμολογητής': {
+    transliteration: 'homologetes', english: 'Confessor',
+    definition: '"Confessor" — the title given in Orthodox tradition to one who has suffered for the faith without martyrdom strictly understood. Maximus bore the title because of his final years: condemned for Dyothelite orthodoxy by the imperial Monothelite court, tortured (his right hand severed, his tongue cut out to silence his confession), and exiled to Lazica, where he died in 662. His teaching is vindicated nineteen years later at Constantinople III.',
+    etymology: 'From ὁμολογέω (to confess, from ὁμός + λόγος)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Title of One Who Suffers for Orthodoxy', letter: 'Ο'
+  },
+  'φιλαυτία': {
+    transliteration: 'philautia', english: 'Self-Love, Disordered Love',
+    definition: 'Self-love — for Maximus, the root passion from which every other disordered passion grows (Chapters on Love 2.8; 3.56). φιλαυτία is not legitimate self-regard but inverted love: the turning of the will in upon itself rather than outward toward God and neighbor. The cure is not self-hatred but the reordering of love toward its proper object, which restores love of self in its rightful place.',
+    etymology: 'From φίλος (loving) + αὐτός (self)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Self-Love as Root of All Passions', letter: 'Φ'
+  },
+  'πρᾶξις': {
+    transliteration: 'praxis', english: 'Praxis, Active Life',
+    definition: 'Praxis — the active, ascetical life of virtue. Maximus systematizes the three-stage spiritual ascent inherited from Evagrius and the Cappadocians: πρακτική (ascetical purification), φυσικὴ θεωρία (contemplation of God in creation through the λόγοι), and θεολογική or μυστικὴ θεολογία (direct mystical knowledge of God). The three are distinguishable but not separable; each prepares and contains the next.',
+    etymology: 'From πράσσω (to do, act)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'First Stage of the Spiritual Ascent', letter: 'Π'
+  },
+  'φυσικὴ θεωρία': {
+    transliteration: 'physike theoria', english: 'Natural Contemplation',
+    definition: 'Natural contemplation — the second stage of the Maximian spiritual ascent. Having been purified by πρᾶξις, the soul contemplates God in and through created things by reading their λόγοι. Creation becomes transparent to its Maker; the physical world is neither denied nor divinized but seen in its real dignity as the icon of the Logos. Natural contemplation disciplines the mind for the third stage, direct theology (μυστικὴ θεολογία, Phase 11).',
+    etymology: 'From φυσική (natural, from φύσις) + θεωρία (Phase 5)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Second Stage: Contemplation of God in Creation', letter: 'Φ'
+  },
+  'διάκρισις': {
+    transliteration: 'diakrisis', english: 'Discernment',
+    definition: 'Discernment — the soul\'s Spirit-given capacity to distinguish the origin and quality of its thoughts, impulses, and loves. For Maximus as for the desert fathers before him, διάκρισις is the master virtue of the spiritual life: without it, ascetical effort misfires, contemplation slides into illusion, and charity loses its object. The whole apparatus of Chapters on Love is an education in discernment.',
+    etymology: 'From διά (through, apart) + κρίνω (to judge)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Master Virtue of Spiritual Life', letter: 'Δ'
+  },
+  'συνεργία': {
+    transliteration: 'synergia', english: 'Synergy, Cooperation',
+    definition: 'Synergy — the cooperative working-together of divine grace and human will. For Maximus, salvation is God\'s work "in us but not without us": grace is primary, but it addresses a free creature whose free assent is part of the shape grace takes. συνεργία becomes the Orthodox grammar for what the Latin West will later discuss under the more legally-inflected categories of grace and free will.',
+    etymology: 'From σύν (with) + ἔργον (work)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Grace and Human Freedom Working Together', letter: 'Σ'
+  },
+  'ἔφεσις': {
+    transliteration: 'ephesis', english: 'Desire, Natural Longing',
+    definition: 'Natural desire — the built-in reaching of every creature toward the God who made it. Maximus\'s doctrine of ἔφεσις undergirds his teleological cosmology: every creature\'s being comes with a native longing for its own fulfillment in God (Ambigua 7). The concept connects to Gregory of Nyssa\'s ἐπέκτασις (Phase 5): ἔφεσις is the appetitive ground, ἐπέκτασις the perpetual enacted movement of the saved soul.',
+    etymology: 'From ἐφίημι (to aim at, long for)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Natural Longing of Creature for God', letter: 'Ε'
+  },
+  'γνῶσις': {
+    transliteration: 'gnosis', english: 'Knowledge, Gnosis',
+    definition: 'Knowledge. Maximus distinguishes (following Evagrius and the Cappadocians) two kinds of γνῶσις: a lower knowledge of God through his works in creation, gained in φυσικὴ θεωρία, and a higher direct γνῶσις of God himself, reached in μυστικὴ θεολογία. The term is carefully reclaimed from its Gnostic misuse: for Maximus, γνῶσις is inseparable from ἀγάπη (Phase 1) and from practical ascetic life.',
+    etymology: 'From γιγνώσκω (to know)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Knowledge of God Through Creation and Directly', letter: 'Γ'
+  },
+  'ἀναλογία': {
+    transliteration: 'analogia', english: 'Analogy, Proportion',
+    definition: 'Proportion, analogy. For Maximus, the created order stands to its Creator in relations of ἀναλογία: not bare equivalence, but proportioned likeness in which each creature reflects God according to its capacity. ἀναλογία grounds Maximus\'s doctrine of the λόγοι and his theology of the sacraments, where material signs bear spiritual realities through a divinely established proportion.',
+    etymology: 'From ἀνά (according to) + λόγος (ratio, proportion)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Proportioned Likeness of Creature to Creator', letter: 'Α'
+  },
+  'ἡδονή': {
+    transliteration: 'hedone', english: 'Pleasure',
+    definition: 'Pleasure. Maximus\'s most penetrating anthropological analysis (Ad Thalassium 61) traces human bondage to a closed cycle of ἡδονή and ὀδύνη (pleasure and pain): sin seeks pleasure, pleasure breeds pain, pain drives the search for new pleasure, and so the cycle revolves. The Incarnation shatters the cycle by accepting unmerited pain (the Passion) without the prior pursuit of pleasure — redeeming human desire at its root.',
+    etymology: 'From ἥδομαι (to be pleased, delight)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Pleasure-Pain Cycle Broken by Incarnation', letter: 'Η'
+  },
+  'ἁπλῶσις': {
+    transliteration: 'haplosis', english: 'Simplification, Unification',
+    definition: 'Simplification — the drawing-together of the soul\'s scattered movements into single-hearted attention to God. Maximus uses ἁπλῶσις for the fruit of spiritual ascent: as the soul rises through πρᾶξις and θεωρία, its divided desires are simplified into one desire; its many thoughts into one knowing; its whole life into one love. Simplification is not loss of complexity but its recovery in unity.',
+    etymology: 'From ἁπλοῦς (simple, single)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Unification of the Soul\'s Desires', letter: 'Α'
+  },
+  'Μυσταγωγία': {
+    transliteration: 'Mystagogia', english: 'Mystagogy',
+    definition: 'Mystagogy — the title of Maximus\'s commentary on the Divine Liturgy and, more generally, the Christian tradition of interpretation that reads the sacramental rites as initiation into the mysteries they enact. Maximus\'s Mystagogia reads the whole Liturgy as a single synthesis: each movement of the rite images some aspect of salvation history, creation\'s return to God, and the inner ascent of the soul. The work shapes all later Byzantine liturgical theology.',
+    etymology: 'From μύστης (initiate) + ἀγωγή (leading)',
+    phase: 12, fathers: ['Maximus the Confessor'], connection: 'Liturgical Theology as Initiation into Mystery', letter: 'Μ'
   }
 };
 
