@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T20:00:00Z
+// build: 2026-04-17T20:30:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -288,90 +288,105 @@ const LEXICON_ENTRIES = {
   },
   // --- Tertullian cluster (Phase 2.5) — Latin theological vocabulary ---
   'trinitas': {
+    language: 'latin',
     transliteration: 'trinitas', english: 'Trinity',
     definition: 'Tertullian\'s coinage (Adversus Praxean 2, 12) — the first technical theological term for the Triune God in any language. He insists the Father, Son, and Spirit are "one substance in three persons" (una substantia, tres personae). This Latin grammar of the Trinity precedes its Greek equivalents by more than a century and sets the vocabulary the West will use permanently.',
     etymology: 'Latin: from tri- (three) + -nitas (condition of)',
     phase: 2.5, fathers: ['Tertullian'], connection: 'First Technical Term for the Trinity', letter: 'T'
   },
   'substantia': {
+    language: 'latin',
     transliteration: 'substantia', english: 'Substance, Essence',
     definition: 'Substance, underlying essence. In Tertullian, una substantia names the single divine reality shared by Father, Son, and Spirit — corresponding to what the later Greek Fathers would call οὐσία. His formula una substantia, tres personae becomes the permanent Latin template for Trinitarian confession.',
     etymology: 'Latin: from sub- (under) + stare (to stand) — "that which stands under"',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Divine Substance in Trinitarian Theology', letter: 'S'
   },
   'persona': {
+    language: 'latin',
     transliteration: 'persona', english: 'Person',
     definition: 'Person. Originally the "mask" worn by an actor in Roman theatre, and by extension the role or legal standing a person bore. Tertullian transforms persona into the Latin term for the three distinct subsistents within the one God (Adversus Praxean). The word proves controversial when later Latins translate it to Greek, since πρόσωπον carried the lingering connotation of mere "mask."',
     etymology: 'Latin persona — originally a theatrical mask (possibly from Etruscan phersu)',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Trinitarian Personhood', letter: 'P'
   },
   'unitas': {
+    language: 'latin',
     transliteration: 'unitas', english: 'Unity, Oneness',
     definition: 'Unity, oneness. Tertullian uses unitas for the indivisible substance of the Triune God (Adversus Praxean); Cyprian takes up the term for the unity of the Church, most famously in his De Unitate Ecclesiae, where ecclesial unitas grounded in the one episcopate mirrors the divine unitas of the Trinity.',
     etymology: 'Latin: from unus (one)',
     phase: 2.5, fathers: ['Tertullian', 'Cyprian of Carthage'], connection: 'Trinitarian and Ecclesial Unity', letter: 'U'
   },
   'oeconomia': {
+    language: 'latin',
     transliteration: 'oeconomia', english: 'Economy, Dispensation',
     definition: 'The "economy" or ordered dispensation of God in salvation history. Tertullian uses oeconomia (a Latinized Greek loanword) for the distinction-within-unity of the Triune God (Adversus Praxean 2–4): the one divine substance unfolds itself in the ordered mission of Father, Son, and Spirit across creation and redemption.',
     etymology: 'Latinized Greek οἰκονομία, from οἶκος (household) + νόμος (law, management)',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Trinitarian Economy of Salvation', letter: 'O'
   },
   'sermo': {
+    language: 'latin',
     transliteration: 'sermo', english: 'Word, Discourse',
     definition: 'Word, speech, discourse. Tertullian consistently uses sermo, not verbum, to translate the Johannine Λόγος — arguing that sermo better captures the Word as living discourse rather than a detached utterance (Adversus Praxean 5). The West later standardizes on verbum (as in the Vulgate\'s "In principio erat Verbum"), but Tertullian\'s choice reflects his sensitivity to the Logos as eternal divine speaking.',
     etymology: 'Latin: from serere (to join, weave together) — literally "a weaving of words"',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Latin Christology of the Word', letter: 'S'
   },
   'sacramentum': {
+    language: 'latin',
     transliteration: 'sacramentum', english: 'Sacrament, Sacred Oath',
     definition: 'Originally the Roman soldier\'s oath of allegiance to the emperor, and by extension any solemn binding pledge. Tertullian adopts sacramentum as the Latin rendering of the Greek μυστήριον and applies it above all to Baptism: the Christian sacramentum is the soldier\'s oath sworn to Christ the King (Ad Martyras; De Baptismo). The martial resonance shapes Latin sacramental theology for centuries.',
     etymology: 'Latin: from sacrare (to consecrate) — "that by which one is bound to the sacred"',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Latin Sacramental Theology', letter: 'S'
   },
   'regula fidei': {
+    language: 'latin',
     transliteration: 'regula fidei', english: 'Rule of Faith',
     definition: 'The "Rule of Faith" — a fixed summary of the core apostolic teaching handed down from the Apostles through the bishops and normative for Christian doctrine. Tertullian invokes the regula fidei throughout his polemical works (Adversus Praxean 2; De Praescriptione 13) as the criterion against which heretical novelty is measured.',
     etymology: 'Latin regula (ruler, measuring-stick) + fidei (of faith)',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Apostolic Rule of Faith', letter: 'R'
   },
   'disciplina': {
+    language: 'latin',
     transliteration: 'disciplina', english: 'Discipline, Training',
     definition: 'Discipline, instructed way of life. For Tertullian, disciplina names both the Church\'s moral and ascetical practice and the ordered transmission of Christian teaching. The term marks an early instance of the Latin church\'s characteristic attention to binding moral order alongside doctrinal confession.',
     etymology: 'Latin: from discere (to learn)',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Christian Moral Formation', letter: 'D'
   },
   'caro': {
+    language: 'latin',
     transliteration: 'caro', english: 'Flesh',
     definition: 'Flesh, physical nature. Tertullian\'s De Carne Christi defends the real, human fleshliness of Christ against Docetic and Gnostic denials, and his De Resurrectione Carnis insists on the bodily resurrection of believers. The Latin caro corresponds to the Greek σάρξ (Phase 1) and anchors the Latin tradition\'s incarnational realism.',
     etymology: 'Latin: from Proto-Italic *karō (flesh, body)',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Incarnational and Bodily Realism', letter: 'C'
   },
   'natura': {
+    language: 'latin',
     transliteration: 'natura', english: 'Nature',
     definition: 'Nature, innate character. Tertullian argues that in Christ duae substantiae — "two substances," divine and human — are conjoined in one persona without confusion (Adversus Praxean 27), anticipating the two-natures Christology fixed at Chalcedon more than two centuries later. natura and substantia overlap in his usage and become settled Latin Christological vocabulary.',
     etymology: 'Latin: from nasci (to be born) — "that with which one is born"',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Two-Natures Christology (Proto-Chalcedonian)', letter: 'N'
   },
   'praescriptio': {
+    language: 'latin',
     transliteration: 'praescriptio', english: 'Prescription, Prior Claim',
     definition: 'A Roman legal term: a prior claim or procedural objection that defeats an opponent\'s case before it can be heard. Tertullian\'s De Praescriptione Haereticorum argues that Scripture belongs to the Church — that heretics have no standing to appeal to the Scriptures because the apostolic tradition pre-dates and circumscribes any heretical reading.',
     etymology: 'Latin: from prae- (before) + scribere (to write) — "prior writing, prior claim"',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Church\'s Prior Claim to Scripture', letter: 'P'
   },
   'anima': {
+    language: 'latin',
     transliteration: 'anima', english: 'Soul',
     definition: 'Soul, animating principle. Tertullian\'s De Anima is the first full Christian treatise on the soul, defending its substantial reality (against Platonic spiritualization), a refined sense of its corporeality, and its transmission through natural generation (traducianism). The work shapes Western anthropology\'s attention to the soul as created, inherited, and bodily.',
     etymology: 'Latin: from Proto-Indo-European *h₂enh₁- (to breathe); cognate with Greek ἄνεμος',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Latin Christian Anthropology', letter: 'A'
   },
   'satisfactio': {
+    language: 'latin',
     transliteration: 'satisfactio', english: 'Satisfaction, Amends',
     definition: 'Satisfaction — the restitution due for an offense. Tertullian introduces satisfactio into Christian penitential vocabulary (De Paenitentia): the penitent makes satisfactio to God through tears, fasting, and works of mercy. This juridical vocabulary becomes foundational for later Western theologies of repentance and, eventually, of atonement.',
     etymology: 'Latin: from satis (enough) + facere (to make) — "to make enough"',
     phase: 2.5, fathers: ['Tertullian'], connection: 'Penitential and Atonement Vocabulary', letter: 'S'
   },
   'apologeticum': {
+    language: 'latin',
     transliteration: 'apologeticum', english: 'Apologetic Work, Defense',
     definition: 'A written defense. Tertullian\'s Apologeticum (197 AD), addressed to Roman magistrates, is the masterpiece of early Latin apologetics — rebutting charges against Christians with juridical precision and open wit. The term, a Latinized Greek neuter, becomes the generic Latin name for the Christian apologetic genre.',
     etymology: 'Latinized Greek ἀπολογητικός, from ἀπολογέομαι (to speak in defense)',
@@ -379,42 +394,49 @@ const LEXICON_ENTRIES = {
   },
   // --- Cyprian cluster (Phase 2.5) ---
   'episcopus': {
+    language: 'latin',
     transliteration: 'episcopus', english: 'Bishop, Overseer',
     definition: 'Bishop — the Latin rendering of the Greek ἐπίσκοπος (Phase 1). For Cyprian, the episcopus is the center of ecclesial unity: each local bishop holds the office in its fullness, and collectively the bishops constitute the one episcopate (episcopatus unus est) — the visible sign and instrument of the Church\'s oneness (De Unitate Ecclesiae 5).',
     etymology: 'Latinized Greek ἐπίσκοπος, from ἐπί (over) + σκοπός (watcher)',
     phase: 2.5, fathers: ['Cyprian of Carthage'], connection: 'Episcopal Collegiality and Ecclesial Unity', letter: 'E'
   },
   'cathedra Petri': {
+    language: 'latin',
     transliteration: 'cathedra Petri', english: 'Chair of Peter',
     definition: 'The "chair of Peter" — the apostolic seat from which Peter governed the Church, and the figure of an episcopate grounded on a single rock. Cyprian appeals to the cathedra Petri in De Unitate Ecclesiae 4 as the image of ecclesial oneness; the phrase\'s ecclesiological weight grows steadily through later Latin tradition.',
     etymology: 'Latin cathedra (seat, chair) + Petri (of Peter)',
     phase: 2.5, fathers: ['Cyprian of Carthage'], connection: 'Petrine Foundation of Episcopal Unity', letter: 'C'
   },
   'schisma': {
+    language: 'latin',
     transliteration: 'schisma', english: 'Schism, Tearing',
     definition: 'Schism — a tearing, a breach in the Church\'s unity. For Cyprian, schism is not a disagreement among co-belonging Christians but a severing from the one Body: the one who breaks from the bishop "has not the garment of Christ, whom he has torn and divided" (De Unitate Ecclesiae 7). schisma is thereby placed among the gravest spiritual disorders.',
     etymology: 'Latinized Greek σχίσμα, from σχίζω (to split, tear)',
     phase: 2.5, fathers: ['Cyprian of Carthage'], connection: 'Gravity of Ecclesial Division', letter: 'S'
   },
   'lapsi': {
+    language: 'latin',
     transliteration: 'lapsi', english: 'The Lapsed',
     definition: 'The "fallen" — those who denied the faith under persecution, especially during the Decian persecution of 250 AD. Cyprian\'s De Lapsis grapples pastorally with the crisis: can the lapsi be readmitted, and under what conditions? His answer — readmission through penitential discipline mediated by the bishop — establishes a durable Western pattern for post-baptismal reconciliation.',
     etymology: 'Latin: plural of lapsus, past participle of labi (to fall, slip)',
     phase: 2.5, fathers: ['Cyprian of Carthage'], connection: 'Post-Persecution Reconciliation', letter: 'L'
   },
   'communio': {
+    language: 'latin',
     transliteration: 'communio', english: 'Communion, Fellowship',
     definition: 'Communion, shared participation. In Cyprian, communio names both the bond uniting Christians to their bishop — and through him to the one Catholic Church — and the sacramental reality of the Eucharist itself. To be in communio with one\'s bishop and with the wider episcopate is to be in communio with Christ.',
     etymology: 'Latin: from communis (shared, common)',
     phase: 2.5, fathers: ['Cyprian of Carthage'], connection: 'Ecclesial and Sacramental Communion', letter: 'C'
   },
   'mater ecclesia': {
+    language: 'latin',
     transliteration: 'mater ecclesia', english: 'Mother Church',
     definition: 'The Church as Mother. Cyprian\'s image (De Unitate Ecclesiae 6): "he can no longer have God for his Father who does not have the Church for his Mother." The metaphor grounds the Church\'s maternal role in begetting Christians through Baptism and nourishing them through word and sacrament — a figure that becomes permanent in Latin ecclesiology.',
     etymology: 'Latin mater (mother) + ecclesia (church, from Greek ἐκκλησία)',
     phase: 2.5, fathers: ['Cyprian of Carthage'], connection: 'Maternal Ecclesiology', letter: 'M'
   },
   'extra ecclesiam nulla salus': {
+    language: 'latin',
     transliteration: 'extra ecclesiam nulla salus', english: 'No Salvation Outside the Church',
     definition: 'Literally, "outside the Church there is no salvation." Cyprian\'s dictum (Epistle 72.21, echoing De Unitate Ecclesiae 6), addressed originally to schismatics claiming saving grace apart from communion with the bishop. The formula shapes Western ecclesiology permanently and becomes a major point of later theological reception and nuance.',
     etymology: 'Latin: extra (outside) + ecclesiam (the Church) + nulla (no) + salus (salvation)',
