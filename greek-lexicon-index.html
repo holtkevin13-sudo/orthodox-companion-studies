@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- build: 2026-04-17T18:00:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,7 +12,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
-<meta name="description" content="Comprehensive Greek lexicon for Orthodox patristic studies. Learn 800+ theological terms with pronunciation, etymology, and Father connections.">
+<meta name="description" content="A growing Greek lexicon for Orthodox patristic studies — theological terms with transliteration, definition, etymology, and Father connections, organized by phase across the 40-week formation program.">
 <meta name="keywords" content="Greek Lexicon, Orthodox Christianity, Patristic Greek, Church Fathers, Byzantine Greek, Theological Terms">
 
 <style>
@@ -59,36 +60,29 @@ em, i { font-style: italic; }
   padding: 0 1rem;
 }
 
-/* Header */
+/* Header — canonical parchment hero matching Father cards + dashboard */
 .hero {
-  background: 
-    linear-gradient(rgba(41, 128, 185, 0.95), rgba(52, 152, 219, 0.95)),
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="alpha" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><text x="20" y="25" text-anchor="middle" font-size="16" fill="%23ffffff08">Ω</text></pattern></defs><rect width="200" height="100" fill="url(%23alpha)"/></svg>');
-  color: #fffdf7;
-  padding: 3rem 0;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  color: #2a2620;
+  padding: 2.5rem 0 3rem;
   position: relative;
   text-align: center;
-  border-bottom: 3px solid #2980b9;
+  border-bottom: 1px solid #e8ddc8;
 }
 
 .back-nav {
   position: absolute;
-  top: 2rem;
+  top: 1.5rem;
   left: 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fffdf7;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  color: #6b5d4a;
+  padding: 0.4rem 0.9rem;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  font-size: 0.92rem;
+  font-style: italic;
+  transition: color 0.2s ease;
 }
 .back-nav:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  color: #1a3a5c;
 }
 
 .hero-content {
@@ -96,73 +90,54 @@ em, i { font-style: italic; }
   z-index: 2;
 }
 
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
 .greek-ornament {
-  font-size: 2.5rem;
-  color: #e8ddc8;
-  margin-bottom: 1.2rem;
-  letter-spacing: 0.3em;
+  font-size: 2rem;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.4em;
   font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  opacity: 0.85;
 }
 
 .main-title {
   font-size: 2.8rem;
-  font-weight: 300;
-  color: #fffdf7;
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: #3a3228;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.01em;
 }
 
 .subtitle {
-  font-size: 1.3rem;
-  color: #e8ddc8;
-  font-weight: 300;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+  color: #8a6d1f;
+  font-weight: 400;
   font-style: italic;
   margin-bottom: 1rem;
-  letter-spacing: 0.05em;
 }
 
 .description {
-  font-size: 1rem;
-  color: #faf6ed;
-  max-width: 800px;
-  margin: 0 auto 2rem;
+  font-size: 1.05rem;
+  color: #2a2620;
+  max-width: 720px;
+  margin: 0 auto;
   line-height: 1.7;
-}
-
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-top: 1.5rem;
-}
-
-.stat {
-  text-align: center;
-  color: #e8ddc8;
-}
-
-.stat-number {
-  display: block;
-  font-size: 2.2rem;
-  font-weight: 500;
-  color: #fffdf7;
-  line-height: 1.1;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-top: 0.25rem;
 }
 
 /* Current Week Banner */
 .current-week-section {
-  background: linear-gradient(135deg, #556b3d 0%, #7a9154 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #556b3d 0%, #6b8250 100%);
+  color: #fffdf7;
   padding: 2rem 0;
-  border-bottom: 1px solid #229954;
+  border-bottom: 1px solid #3e4f2c;
 }
 
 .week-banner {
@@ -264,8 +239,8 @@ em, i { font-style: italic; }
 
 .search-input:focus {
   outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  border-color: #1a3a5c;
+  box-shadow: 0 0 0 3px rgba(26, 58, 92, 0.12);
 }
 
 .filter-group {
@@ -293,7 +268,7 @@ em, i { font-style: italic; }
 
 .filter-select:focus {
   outline: none;
-  border-color: #3498db;
+  border-color: #1a3a5c;
 }
 
 .alphabet-filter {
@@ -318,8 +293,8 @@ em, i { font-style: italic; }
 
 .alphabet-btn:hover,
 .alphabet-btn.active {
-  background: #3498db;
-  color: #fff;
+  background: #1a3a5c;
+  color: #fffdf7;
 }
 
 /* Terms Grid */
@@ -356,14 +331,14 @@ em, i { font-style: italic; }
 }
 
 .term-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.12);
-  border-color: #3498db;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+  border-color: #D4AF37;
 }
 
 .term-card.current-week {
   border: 2px solid #556b3d;
-  background: linear-gradient(145deg, #f0fff0 0%, #e8f8e8 100%);
+  background: linear-gradient(145deg, #f4f5ec 0%, #e8ede0 100%);
 }
 
 .current-week-badge {
@@ -442,8 +417,8 @@ em, i { font-style: italic; }
 }
 
 .father-connection {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #1a3a5c 0%, #2a4e74 100%);
+  color: #fffdf7;
   padding: 0.8rem;
   border-radius: 6px;
   text-align: center;
@@ -464,18 +439,18 @@ em, i { font-style: italic; }
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-  color: #fffdf7;
+  background: #1a3a5c;
+  color: #faf6ed;
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
   opacity: 0;
   pointer-events: none;
@@ -489,8 +464,8 @@ em, i { font-style: italic; }
 }
 
 .return-to-top:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 58, 92, 0.3);
 }
 
 /* Responsive Design */
@@ -550,7 +525,7 @@ em, i { font-style: italic; }
 /* ========== Phase-organized lexicon refactor ========== */
 
 .current-phase-section {
-  background: linear-gradient(135deg, #fffaec 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #fffdf7 0%, #ffffff 100%);
   border: 1px solid #e8d79a;
   border-left: 4px solid #D4AF37;
   border-radius: 12px;
@@ -645,7 +620,7 @@ em, i { font-style: italic; }
 }
 
 .phase-no-terms {
-  color: #8a7d6a;
+  color: #6b5d4a;
   font-style: italic;
   margin: 0;
 }
@@ -667,7 +642,7 @@ em, i { font-style: italic; }
 .term-card.focus-term {
   border-color: #D4AF37;
   border-width: 1px;
-  background: linear-gradient(135deg, #fffdf5 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #fffdf7 0%, #ffffff 100%);
 }
 
 .term-phase-tag {
@@ -688,6 +663,22 @@ em, i { font-style: italic; }
   line-height: 1.4;
 }
 
+/* Deep-link landing highlight — when someone arrives at #term-episkopos
+   (from a dashboard pill or Father card), briefly pulse the card in
+   gold so they see exactly where they landed. Also adds scroll-margin
+   so the highlighted card isn't crammed against the top of the viewport. */
+.term-card:target {
+  scroll-margin-top: 1.5rem;
+  animation: termLandingPulse 2.2s ease-out;
+  border-color: #D4AF37;
+}
+
+@keyframes termLandingPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.55); background: #fffdf0; }
+  40%  { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0.0); background: #fffbe8; }
+  100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); background: inherit; }
+}
+
 </style>
 </head>
 
@@ -695,34 +686,25 @@ em, i { font-style: italic; }
 
 <header class="hero">
   <div class="container">
-    <a href="index.html" class="back-nav">← Orthodox Companion Studies</a>
-    
+    <a href="index.html" class="back-nav">← Back to Studies</a>
+
     <div class="hero-content">
-      <div class="greek-ornament">Α Ω</div>
+      <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+        <g fill="#D4AF37">
+          <rect x="46" y="8" width="8" height="104"/>
+          <rect x="32" y="20" width="36" height="6"/>
+          <rect x="22" y="42" width="56" height="8"/>
+          <polygon points="28,88 72,78 72,86 28,96"/>
+        </g>
+      </svg>
+      <div class="greek-ornament">Α · Ω</div>
       <h1 class="main-title">Greek Lexicon</h1>
-      <div class="subtitle">800+ Patristic & Theological Terms</div>
+      <div class="subtitle">The theological vocabulary of the Fathers</div>
       <p class="description">
-        Comprehensive Greek lexicon spanning 40 weeks of Orthodox patristic studies. 
-        Master theological terminology with pronunciation guides, Father connections, and etymology.
+        A growing reference for the Greek terms that carry Orthodox theology — grouped by phase,
+        tied to the Fathers who shaped them, and cross-linked throughout your readings. Each
+        entry includes transliteration, definition, etymology, and doctrinal connection.
       </p>
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-number">800+</span>
-          <span class="stat-label">Greek Terms</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">40</span>
-          <span class="stat-label">Study Weeks</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">20</span>
-          <span class="stat-label">Terms per Week</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">37</span>
-          <span class="stat-label">Father Connections</span>
-        </div>
-      </div>
     </div>
   </div>
 </header>
@@ -817,8 +799,13 @@ function renderTermCard(term) {
   const etymology = term.etymology ? `<div class="term-etymology"><strong>Etymology:</strong> ${term.etymology}</div>` : '';
   const fathers = (term.fathers && term.fathers.length) ? `<div class="term-fathers"><strong>Father(s):</strong> ${term.fathers.join(', ')}</div>` : '';
   const connection = term.connection ? `<div class="term-connection">${term.connection}</div>` : '';
+  // Per-term anchor — slug comes from the transliteration so URLs stay stable
+  // even if Greek spelling varies. Used by lexiconAnchorFor() everywhere else
+  // in the app so dashboard pills and Father cards can deep-link directly.
+  const slug = (typeof slugifyTerm === 'function') ? slugifyTerm(term) : '';
+  const anchorAttr = slug ? ` id="term-${slug}"` : '';
   return `
-    <div class="term-card${term.isFocus ? ' focus-term' : ''}"
+    <div class="term-card${term.isFocus ? ' focus-term' : ''}"${anchorAttr}
          data-greek="${term.greek}"
          data-letter="${letter}"
          data-english="${(term.english || '').toLowerCase()}"
