@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T21:00:00Z
+// build: 2026-04-17T21:30:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -834,6 +834,139 @@ const LEXICON_ENTRIES = {
     definition: 'Love of humanity. A classical virtue that Basil translates into institutional practice: the Basileiad outside Caesarea (c. 370s) — a complex of hospitals, hospices, and shelters for the poor and the sick — is perhaps the first organized Christian charitable institution at scale, a visible φιλανθρωπία answering God\'s own love for humanity. The term anchors a patristic theology of social mercy that shapes later Byzantine charitable foundations.',
     etymology: 'From φίλος (loving) + ἄνθρωπος (human being)',
     phase: 5, fathers: ['Basil of Caesarea'], connection: 'Christian Charitable Institutions', letter: 'Φ'
+  },
+  // --- Gregory Nazianzen cluster (Phase 6) ---
+  'θεολογία': {
+    transliteration: 'theologia', english: 'Theology, Discourse on God',
+    definition: 'Theology — the discourse concerning God. Gregory Nazianzen so deeply shapes this word that he alone among the Fathers (with the Evangelist John and Symeon the New Theologian) bears the title ὁ Θεολόγος, "the Theologian." His Five Theological Orations (Or. 27–31), delivered at Constantinople in 380, fix the Orthodox pattern: theology is purified speech about God, approached with fear and doxological reserve, ordered to communion rather than curiosity.',
+    etymology: 'From θεός (God) + λόγος (word, discourse)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Theology as Purified Speech About God', letter: 'Θ'
+  },
+  'φύσις': {
+    transliteration: 'physis', english: 'Nature',
+    definition: 'Nature — that which makes a thing what it is. Gregory uses φύσις in pre-Chalcedonian Christology to name Christ\'s two realities, divine and human: the one Christ exists ἐν δυσὶ φύσεσιν, "in two natures" (Letter 101). φύσις overlaps in his usage with οὐσία (Phase 5); the precise distinction between the two terms will be fixed at Chalcedon (Phases 9–10). Gregory\'s framework prepares that later precision.',
+    etymology: 'From φύω (to grow, bring forth)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Two Natures in the One Christ', letter: 'Φ'
+  },
+  'σχέσις': {
+    transliteration: 'schesis', english: 'Relation, Relationship',
+    definition: 'Relation. Gregory Nazianzen argues that what distinguishes the three hypostases of the Trinity from one another is not their essence (one) or their activity (one) but their σχέσεις — their mutual relations: Father to Son, Son to Father, Spirit to Father (Or. 29.16; 31.9). The Father is Father only in relation to the Son; the Son, Son only in relation to the Father. Relational identity anchors Trinitarian distinction without dividing the divine essence.',
+    etymology: 'From ἔχω (to have, hold) — "a way of having oneself in relation to another"',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Trinitarian Relations of Origin', letter: 'Σ'
+  },
+  'Θεολόγος': {
+    transliteration: 'Theologos', english: 'The Theologian',
+    definition: '"The Theologian" — the epithet applied in Orthodox tradition to only three figures: John the Evangelist (for the prologue to his Gospel), Gregory of Nazianzus (for his Five Theological Orations), and Symeon the New Theologian (for his Mystical Hymns). That Gregory alone among the Fathers receives this title marks the degree to which his treatment of God\'s being in the Five Orations became the Orthodox grammar for speaking of God.',
+    etymology: 'From θεός (God) + λόγος (word) — "one who speaks of God"',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Gregory as the Theologian of the Trinity', letter: 'Θ'
+  },
+  'Μονάς': {
+    transliteration: 'Monas', english: 'Monad, Unity',
+    definition: 'Monad — unity, the divine oneness. Gregory articulates the Trinitarian mystery in doxological rhythm: "No sooner do I conceive of the One (Μονάς) than I am illumined by the splendor of the Three (Τριάς); no sooner do I distinguish the Three than I am carried back to the One" (Or. 40.41). The movement from Μονάς to Τριάς and back describes the living experience of Trinitarian prayer.',
+    etymology: 'From μόνος (alone, single)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Doxological Unity of God', letter: 'Μ'
+  },
+  'Τριάς': {
+    transliteration: 'Trias', english: 'Triad, Trinity',
+    definition: 'Triad — the threeness of God, shining through and from the Μονάς. For Gregory, the Τριάς is not an arithmetic three set alongside the one, but the one God known in three ἰδιότητες, three σχέσεις. The term pre-dates him (it goes back at least to Theophilus of Antioch in the second century), but Gregory\'s Theological Orations give it its classical Orthodox grammar.',
+    etymology: 'From τρεῖς (three)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Trinity as One God in Three', letter: 'Τ'
+  },
+  'ἀρχή': {
+    transliteration: 'arche', english: 'Beginning, Principle, Source',
+    definition: 'Beginning, principle, source. For Gregory, the Father is the μόνη ἀρχή — the single source of divinity within the Trinity, from whom the Son is eternally begotten and the Spirit eternally proceeds (Or. 42.15). The monarchy of the Father secures the unity of the Godhead without collapsing the three hypostases into one. This is the Eastern grammar of Trinitarian origin.',
+    etymology: 'From ἄρχω (to begin, to rule)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Monarchy of the Father', letter: 'Α'
+  },
+  'ἀπρόσληπτον': {
+    transliteration: 'aproslepton', english: 'Unassumed, Not Taken Up',
+    definition: '"Unassumed" — the technical term in Gregory\'s Letter 101 to Cledonius (c. 381–383) for anything of human nature that the Word did not take up in the Incarnation. Gregory refutes Apollinarius, who denied Christ a human rational soul: if the soul is ἀπρόσληπτον, it is ἀθεράπευτον — unhealed. The argument requires that Christ assumed a complete human nature, body and rational soul alike.',
+    etymology: 'From ἀ- (not) + προσλαμβάνω (to take to oneself)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Completeness of Christ\'s Human Nature', letter: 'Α'
+  },
+  'ὃ ἀπρόσληπτον ἀθεράπευτον': {
+    transliteration: 'ho aproslepton atherapeuton', english: 'What Is Not Assumed Is Not Healed',
+    definition: 'Gregory\'s famous Christological dictum from Letter 101.5 to Cledonius: τὸ γὰρ ἀπρόσληπτον, ἀθεράπευτον — "what is not assumed is not healed." The principle fixes soteriology to Christology: Christ\'s saving work reaches every dimension of human nature precisely because he assumed every dimension. Against Apollinarius (and in principle against every reduction of Christ\'s humanity), the dictum requires a whole Christ for a whole salvation.',
+    etymology: 'From ὅς (which, that which) + ἀπρόσληπτον (unassumed) + ἀθεράπευτον (unhealed)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Soteriological Ground of Full Incarnation', letter: 'Ο'
+  },
+  'κένωσις': {
+    transliteration: 'kenosis', english: 'Self-Emptying',
+    definition: 'Self-emptying — from Philippians 2:7, where Christ "emptied himself" (ἑαυτὸν ἐκένωσεν) in taking the form of a servant. Gregory develops κένωσις as the shape of the Son\'s condescension: not the loss of divinity but the free assumption of the creaturely condition (Or. 29.18–20; 37.2). The term becomes a permanent Greek patristic vocabulary for the logic of the Incarnation as humility and gift.',
+    etymology: 'From κενόω (to empty, from κενός, empty)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Incarnation as Divine Self-Emptying', letter: 'Κ'
+  },
+  'θεοφάνεια': {
+    transliteration: 'theophaneia', english: 'Theophany, Manifestation of God',
+    definition: 'God\'s manifestation, divine appearance. Gregory\'s Orations 38 (on the Nativity) and 39 (on the Baptism) frame both feasts as a single θεοφάνεια — the shining-forth of God in the flesh. Or. 38 opens with one of the great patristic Christmas sermons: "Christ is born, give glory! Christ from heaven, meet him!" The term gives the Eastern feast of Theophany / Epiphany its name.',
+    etymology: 'From θεός (God) + φαίνω (to appear, shine)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Incarnation as Divine Manifestation', letter: 'Θ'
+  },
+  'ἱερωσύνη': {
+    transliteration: 'hierosyne', english: 'Priesthood',
+    definition: 'Priesthood, the priestly office. Gregory\'s Oration 2, a self-defense for having fled the priesthood, is the foundational patristic treatise on the pastoral office — its weight, its perils, and its dignity. It is closely read and reworked by John Chrysostom in his own On the Priesthood (Phase 7), and passes on through Gregory the Great\'s Pastoral Rule into the Latin West.',
+    etymology: 'From ἱερεύς (priest)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Patristic Theology of the Pastoral Office', letter: 'Ι'
+  },
+  'ποιμήν': {
+    transliteration: 'poimen', english: 'Shepherd, Pastor',
+    definition: 'Shepherd. Gregory frames the pastoral office in terms of the Good Shepherd (John 10): the ποιμήν bears direct responsibility for the souls entrusted to him, and will answer for each before the Chief Shepherd (Or. 2). The biblical image shapes a millennium of patristic and medieval pastoral theology.',
+    etymology: 'From ποιμαίνω (to tend, pasture)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Pastoral Responsibility for Souls', letter: 'Π'
+  },
+  'φῶς': {
+    transliteration: 'phos', english: 'Light',
+    definition: 'Light. Gregory\'s theology is saturated with light imagery: God is Light, Christ is "Light from Light" (the Nicene Creed, which Gregory\'s generation consolidates), and the saints are illumined by participation. Oration 40, on Holy Baptism, weaves light into every turn of sacramental and moral exposition. Gregory\'s φῶς grounds the later Orthodox theology of divine light.',
+    etymology: 'From φάος / φῶς (light); cognate with φαίνω',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Theology of Divine Light', letter: 'Φ'
+  },
+  'τὰ τρία φῶτα': {
+    transliteration: 'ta tria phota', english: 'The Three Lights',
+    definition: '"The three lights" — Gregory\'s image for the Trinity as three unified illuminations of the one divine light (Or. 31.3; 40.5, 40.41). Because the three hypostases share one divine nature, they are three lights from one Light, each indivisibly carrying the whole. The figure anchors his doxological Trinitarianism: the Trinity is first experienced as encompassing radiance, then articulated as dogma.',
+    etymology: 'From τὰ τρία (the three) + φῶτα (lights, plural of φῶς)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Trinity as Three Unified Lights', letter: 'Τ'
+  },
+  'κάθαρσις': {
+    transliteration: 'katharsis', english: 'Purification, Cleansing',
+    definition: 'Purification, cleansing. For Gregory, κάθαρσις is the indispensable prerequisite for theology: one must be purified before speaking of God — and even then, one must speak with fear (Or. 27.3). Theological speech without purification corrupts both speaker and hearer. The principle grounds a long Orthodox tradition joining moral-ascetical discipline to theological competence.',
+    etymology: 'From καθαίρω (to cleanse, purify)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Purification as Prerequisite for Theology', letter: 'Κ'
+  },
+  'ἔλλαμψις': {
+    transliteration: 'ellampsis', english: 'Illumination, In-Shining',
+    definition: 'Illumination, in-shining. Gregory\'s preferred term for the divine light\'s effect on the soul — the Spirit\'s in-shining that follows κάθαρσις. Where Justin\'s φωτισμός (Phase 2) names Baptism itself, Gregory\'s ἔλλαμψις names the continuing effulgence of divine light in the purified soul. The term is taken up heavily in Pseudo-Dionysius (Phase 11).',
+    etymology: 'From ἐν (in) + λάμπω (to shine)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Divine Light In-Shining the Purified Soul', letter: 'Ε'
+  },
+  'ἀπόρρητον': {
+    transliteration: 'aporrheton', english: 'Ineffable, Unspeakable',
+    definition: 'Ineffable, not to be spoken. For Gregory, the inmost divine reality is ἀπόρρητον: not that we cannot say anything true of God, but that no human speech can exhaust or contain him. Apophatic reserve and doxological wonder — not skeptical silence — are the proper response (Or. 28). The term is a structural element of the Orthodox theology of divine incomprehensibility.',
+    etymology: 'From ἀπό (away) + ῥητός (spoken, from λέγω)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Ineffability of the Divine Essence', letter: 'Α'
+  },
+  'ὑπεροχή': {
+    transliteration: 'hyperoche', english: 'Transcendence, Preeminence',
+    definition: 'Transcendence, preeminence. Gregory applies ὑπεροχή to the divine being: God is beyond every category of created thought and speech (Or. 28). The prefix ὑπερ- ("above, beyond") becomes, in the hands of later apophatic theologians, a whole grammar of speech-beyond-speech — most systematically in Pseudo-Dionysius (Phase 11).',
+    etymology: 'From ὑπέρ (above, beyond) + ἔχω (to have, hold)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Divine Transcendence Beyond Categories', letter: 'Υ'
+  },
+  'ἀναγωγή': {
+    transliteration: 'anagoge', english: 'Anagogy, Upward Leading',
+    definition: 'Upward leading, anagogical ascent. Gregory uses ἀναγωγή for the soul\'s Spirit-led rising through Scripture and liturgy toward God, and for the preacher\'s work in drawing hearers with him in that ascent. The concept descends from Origen\'s exegesis and is taken up by the later Eastern mystical and exegetical tradition.',
+    etymology: 'From ἀνά (up) + ἄγω (to lead)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Anagogical Ascent Through Scripture and Liturgy', letter: 'Α'
+  },
+  'θεσπέσιος': {
+    transliteration: 'thespesios', english: 'Divinely Inspired, Wondrous',
+    definition: 'Divinely inspired, heavenly. Gregory reserves θεσπέσιος for persons or realities touched by unmistakable divine presence: the great saints, the mystery of the Trinity, the incarnate Christ. The word carries the high classical register of Homeric Greek, now pressed into the service of Christian wonder. Part of Gregory\'s signature stylistic contribution: a theology whose very register sounds like its subject.',
+    etymology: 'From θεός (God) + ἔπος (word, utterance); Homeric θεσπέσιος',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Register of Wonder in Theological Speech', letter: 'Θ'
+  },
+  'διαίρεσις': {
+    transliteration: 'diairesis', english: 'Distinction, Division',
+    definition: 'Distinction, division. Gregory\'s Trinitarian pattern holds in tension two adverbs: the three hypostases are distinguishable without being divisible — διαιρετῶς yet ἀδιαιρέτως (Or. 31.14). Real distinction (διαίρεσις) protects against modalism; real unity (ἕνωσις, Phase 1) protects against tritheism. The pair holds the Orthodox confession in equilibrium.',
+    etymology: 'From διά (through, apart) + αἱρέω (to take)',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Trinitarian Distinction Without Division', letter: 'Δ'
   }
 };
 
