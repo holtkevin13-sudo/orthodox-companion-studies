@@ -564,6 +564,145 @@ body {
   .big-number {
     font-size: 2rem;
   }
+
+/* Task System Styling */
+.day-tasks {
+  margin: 1rem 0;
+}
+
+.task-item {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #1544B7;
+  flex-shrink: 0;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.task-time {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Checked state styling */
+.task-checkbox:checked + .task-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: #27ae60;
+}
+
+.day-progress {
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Day completion states */
+.day-card.day-complete {
+  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%);
+  border-color: #27ae60;
+  border-width: 2px;
+}
+
+.day-card.day-complete .day-status {
+  background: #27ae60;
+  color: #ffffff;
+}
+
+.day-card.day-complete .day-progress {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: #ffffff;
+}
+
+/* Animation for task completion */
+@keyframes taskComplete {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.task-checkbox:checked {
+  animation: taskComplete 0.3s ease;
+}
+
+/* Week completion celebration */
+.week-complete-banner {
+  background: linear-gradient(135deg, #D4AF37 0%, #F4D03F 100%);
+  color: #2c3e50;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+  animation: celebrationPulse 2s ease-in-out infinite;
+}
+
+@keyframes celebrationPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3); }
+  50% { transform: scale(1.02); box-shadow: 0 12px 40px rgba(212, 175, 55, 0.5); }
+}
+
+.week-complete-banner h2 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+}
+
+.completion-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.completion-stats div {
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .task-label {
+    gap: 0.5rem;
+  }
+  
+  .task-text {
+    font-size: 0.9rem;
+  }
+  
+  .completion-stats {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 }
 </style>
 </head>
@@ -719,43 +858,125 @@ body {
           </div>
         </div>
 
-        <div class="day-card current">
+        <div class="day-card current" id="day-thu">
           <div class="day-header">
             <div class="day-title">Day 10 • Thursday</div>
-            <div class="day-status current">Current</div>
+            <div class="day-status current" id="thu-status">Current</div>
           </div>
-          <div class="day-readings">
-            <strong>Primary:</strong> Ignatius Smyrnaeans (remaining)<br>
-            <strong>Biblical:</strong> Psalms 34-36, 1 John 1-3<br>
-            <strong>Greek:</strong> σάρξ, ἕνωσις, ἐπίσκοπος<br>
-            <strong>Secondary:</strong> Pelikan Ch. 2, pp. 46-54
+          <div class="day-tasks">
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="thu-psalms" class="task-checkbox" checked>
+                <span class="task-text"><strong>Psalms:</strong> Psalms 31-33</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="thu-biblical" class="task-checkbox" checked>
+                <span class="task-text"><strong>Biblical:</strong> 2 Peter 3</span>
+                <span class="task-time">8 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="thu-patristic" class="task-checkbox">
+                <span class="task-text"><strong>Primary:</strong> Ignatius Smyrnaeans (remaining)</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="thu-secondary" class="task-checkbox">
+                <span class="task-text"><strong>Secondary:</strong> Pelikan Ch. 2, pp. 37-45</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
           </div>
+          <div class="day-progress" id="thu-progress">2 of 4 tasks complete</div>
         </div>
 
-        <div class="day-card upcoming">
+        <div class="day-card upcoming" id="day-fri">
           <div class="day-header">
             <div class="day-title">Day 11 • Friday</div>
-            <div class="day-status upcoming">Upcoming</div>
+            <div class="day-status upcoming" id="fri-status">Upcoming</div>
           </div>
-          <div class="day-readings">
-            <strong>Primary:</strong> Ignatius → Polycarp letter<br>
-            <strong>Biblical:</strong> Psalms 34-36, 1 John 1-3<br>
-            <strong>Greek:</strong> μαρτυρία, παράδοσις, πίστις<br>
-            <strong>Secondary:</strong> Pelikan Ch. 2, pp. 46-54
+          <div class="day-tasks">
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="fri-psalms" class="task-checkbox">
+                <span class="task-text"><strong>Psalms:</strong> Psalms 34-36</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="fri-biblical" class="task-checkbox">
+                <span class="task-text"><strong>Biblical:</strong> 1 John 1-3</span>
+                <span class="task-time">10 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="fri-patristic" class="task-checkbox">
+                <span class="task-text"><strong>Primary:</strong> Ignatius → Polycarp letter</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="fri-secondary" class="task-checkbox">
+                <span class="task-text"><strong>Secondary:</strong> Pelikan Ch. 2, pp. 46-54</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
           </div>
+          <div class="day-progress" id="fri-progress">0 of 4 tasks complete</div>
         </div>
 
-        <div class="day-card upcoming">
+        <div class="day-card upcoming" id="day-sat">
           <div class="day-header">
             <div class="day-title">Day 12 • Saturday</div>
-            <div class="day-status upcoming">Upcoming</div>
+            <div class="day-status upcoming" id="sat-status">Upcoming</div>
           </div>
-          <div class="day-readings">
-            <strong>Primary:</strong> Polycarp Philippians + Martyrdom of Polycarp<br>
-            <strong>Biblical:</strong> Psalms 37-39, 1 John 4-5 + 2 John + 3 John<br>
-            <strong>Greek:</strong> ὑπομονή, βασιλεία, εὐχαριστία<br>
-            <strong>Secondary:</strong> Pelikan Ch. 2, pp. 55-62
+          <div class="day-tasks">
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="sat-psalms" class="task-checkbox">
+                <span class="task-text"><strong>Psalms:</strong> Psalms 37-39</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="sat-biblical" class="task-checkbox">
+                <span class="task-text"><strong>Biblical:</strong> 1 John 4-5 + 2 John + 3 John</span>
+                <span class="task-time">12 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="sat-patristic1" class="task-checkbox">
+                <span class="task-text"><strong>Primary:</strong> Polycarp Philippians</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="sat-patristic2" class="task-checkbox">
+                <span class="task-text"><strong>Primary:</strong> Martyrdom of Polycarp</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
+            <div class="task-item">
+              <label class="task-label">
+                <input type="checkbox" id="sat-secondary" class="task-checkbox">
+                <span class="task-text"><strong>Secondary:</strong> Pelikan Ch. 2, pp. 55-62</span>
+                <span class="task-time">15 min</span>
+              </label>
+            </div>
           </div>
+          <div class="day-progress" id="sat-progress">0 of 5 tasks complete</div>
         </div>
 
         <div class="day-card upcoming">
@@ -1058,31 +1279,203 @@ function openNotion() {
   window.open('https://www.notion.so/331e377ccd2480f1b8aaeefd5352ebb5', '_blank', 'noopener,noreferrer');
 }
 
-// Add click-to-complete functionality for day cards
-document.addEventListener('DOMContentLoaded', function() {
-  const dayCards = document.querySelectorAll('.day-card');
-  
-  dayCards.forEach(card => {
-    card.addEventListener('click', function() {
-      if (this.classList.contains('current')) {
-        this.classList.remove('current');
-        this.classList.add('completed');
-        const status = this.querySelector('.day-status');
-        status.textContent = 'Completed';
-        status.className = 'day-status completed';
-        
-        // Find next upcoming day and make it current
-        const nextCard = this.nextElementSibling;
-        if (nextCard && nextCard.classList.contains('day-card') && nextCard.classList.contains('upcoming')) {
-          nextCard.classList.remove('upcoming');
-          nextCard.classList.add('current');
-          const nextStatus = nextCard.querySelector('.day-status');
-          nextStatus.textContent = 'Current';
-          nextStatus.className = 'day-status current';
-        }
-      }
+// Task Management System
+class StudyTaskManager {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    this.loadProgress();
+    this.attachEventListeners();
+    this.updateAllDayProgress();
+  }
+
+  // Save checkbox states to localStorage
+  saveProgress() {
+    const checkboxStates = {};
+    const checkboxes = document.querySelectorAll('.task-checkbox');
+    
+    checkboxes.forEach(cb => {
+      checkboxStates[cb.id] = cb.checked;
     });
-  });
+    
+    localStorage.setItem('studyProgress', JSON.stringify(checkboxStates));
+    localStorage.setItem('lastSaved', new Date().toISOString());
+  }
+
+  // Load checkbox states from localStorage
+  loadProgress() {
+    const saved = localStorage.getItem('studyProgress');
+    if (saved) {
+      try {
+        const states = JSON.parse(saved);
+        Object.keys(states).forEach(id => {
+          const checkbox = document.getElementById(id);
+          if (checkbox) {
+            checkbox.checked = states[id];
+          }
+        });
+      } catch (e) {
+        console.log('Error loading progress:', e);
+      }
+    }
+  }
+
+  // Attach event listeners to checkboxes
+  attachEventListeners() {
+    const checkboxes = document.querySelectorAll('.task-checkbox');
+    
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', (e) => {
+        this.handleTaskChange(e);
+      });
+    });
+  }
+
+  // Handle individual task completion
+  handleTaskChange(e) {
+    const checkbox = e.target;
+    const dayId = this.getDayFromTaskId(checkbox.id);
+    
+    // Save progress
+    this.saveProgress();
+    
+    // Update day progress
+    this.updateDayProgress(dayId);
+    
+    // Check for week completion
+    this.checkWeekCompletion();
+    
+    // Add visual feedback
+    if (checkbox.checked) {
+      this.celebrateTaskCompletion(checkbox);
+    }
+  }
+
+  // Extract day ID from task ID (e.g., 'thu-psalms' → 'thu')
+  getDayFromTaskId(taskId) {
+    return taskId.split('-')[0];
+  }
+
+  // Update progress for a specific day
+  updateDayProgress(dayId) {
+    const dayCard = document.getElementById(`day-${dayId}`);
+    const dayCheckboxes = document.querySelectorAll(`[id^="${dayId}-"].task-checkbox`);
+    const progressDiv = document.getElementById(`${dayId}-progress`);
+    const statusDiv = document.getElementById(`${dayId}-status`);
+    
+    if (!dayCheckboxes.length || !progressDiv) return;
+
+    const totalTasks = dayCheckboxes.length;
+    const completedTasks = Array.from(dayCheckboxes).filter(cb => cb.checked).length;
+    
+    // Update progress text
+    progressDiv.textContent = `${completedTasks} of ${totalTasks} tasks complete`;
+    
+    // Update day completion state
+    if (completedTasks === totalTasks) {
+      dayCard.classList.remove('current', 'upcoming');
+      dayCard.classList.add('day-complete');
+      statusDiv.textContent = 'Complete';
+      statusDiv.className = 'day-status completed';
+      progressDiv.textContent = '✅ Day Complete!';
+      
+      this.celebrateDayCompletion(dayCard);
+    } else {
+      dayCard.classList.remove('day-complete');
+      if (dayCard.classList.contains('current')) {
+        statusDiv.textContent = 'Current';
+        statusDiv.className = 'day-status current';
+      }
+    }
+  }
+
+  // Update all day progress on load
+  updateAllDayProgress() {
+    const days = ['thu', 'fri', 'sat'];
+    days.forEach(dayId => {
+      this.updateDayProgress(dayId);
+    });
+  }
+
+  // Check if the entire week is complete
+  checkWeekCompletion() {
+    const allCheckboxes = document.querySelectorAll('.task-checkbox');
+    const totalTasks = allCheckboxes.length;
+    const completedTasks = Array.from(allCheckboxes).filter(cb => cb.checked).length;
+    
+    if (completedTasks === totalTasks) {
+      this.showWeekCompleteCelebration();
+    }
+  }
+
+  // Show week completion celebration
+  showWeekCompleteCelebration() {
+    // Check if celebration already shown
+    if (document.querySelector('.week-complete-banner')) return;
+    
+    const weekSection = document.querySelector('.week-overview');
+    const celebration = document.createElement('div');
+    celebration.className = 'week-complete-banner';
+    celebration.innerHTML = `
+      <h2>🎉 Week 2 Complete! 🎉</h2>
+      <p>Ignatius & Polycarp • 5% of Course Complete</p>
+      <div class="completion-stats">
+        <div>✅ 13 readings completed</div>
+        <div>✅ 18 Psalms studied</div>
+        <div>✅ 20 Greek terms learned</div>
+      </div>
+    `;
+    
+    weekSection.parentNode.insertBefore(celebration, weekSection);
+    
+    // Scroll to celebration
+    celebration.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Store week completion
+    localStorage.setItem('week2Complete', 'true');
+    localStorage.setItem('weekCompleteDate', new Date().toISOString());
+  }
+
+  // Celebrate individual task completion
+  celebrateTaskCompletion(checkbox) {
+    checkbox.style.transform = 'scale(1.2)';
+    setTimeout(() => {
+      checkbox.style.transform = 'scale(1)';
+    }, 200);
+  }
+
+  // Celebrate day completion
+  celebrateDayCompletion(dayCard) {
+    dayCard.style.transform = 'scale(1.02)';
+    setTimeout(() => {
+      dayCard.style.transform = 'scale(1)';
+    }, 300);
+  }
+
+  // Reset all progress (for testing)
+  resetProgress() {
+    if (confirm('Reset all progress? This cannot be undone.')) {
+      localStorage.removeItem('studyProgress');
+      localStorage.removeItem('week2Complete');
+      localStorage.removeItem('weekCompleteDate');
+      location.reload();
+    }
+  }
+}
+
+// Initialize task manager when page loads
+document.addEventListener('DOMContentLoaded', function() {
+  const taskManager = new StudyTaskManager();
+  
+  // Make reset function available globally (for testing)
+  window.resetStudyProgress = () => taskManager.resetProgress();
+  
+  // Show week complete banner if already complete
+  if (localStorage.getItem('week2Complete')) {
+    taskManager.showWeekCompleteCelebration();
+  }
 });
 </script>
 
