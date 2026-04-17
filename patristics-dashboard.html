@@ -536,6 +536,19 @@ em, i { font-style: italic; }
   border-bottom: 1px solid #e8ddc8;
 }
 .required-group-title.upcoming { color: #8a6d1f; }
+.required-subcategory {
+  margin-top: 0.9rem;
+}
+.required-subcategory:first-child { margin-top: 0.4rem; }
+.required-subcategory-title {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #6b5d4a;
+  margin-bottom: 0.3rem;
+  padding-left: 0.1rem;
+}
 .required-list {
   list-style: none;
   padding: 0;
@@ -570,8 +583,14 @@ em, i { font-style: italic; }
   font-size: 0.88rem;
   margin-top: 0.2rem;
 }
-.required-item-phase {
+.required-item-tags {
   flex: 0 0 auto;
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.required-item-phase {
   display: inline-block;
   padding: 0.2rem 0.7rem;
   border-radius: 12px;
@@ -586,6 +605,21 @@ em, i { font-style: italic; }
 .required-item.upcoming .required-item-phase {
   background: rgba(212, 175, 55, 0.15);
   color: #8a6d1f;
+}
+.required-item-acquire {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  background: #6b1e2a;
+  color: #faf6ed;
+  white-space: nowrap;
+}
+.required-item.to-purchase .required-item-title {
+  color: #1a3a5c;
 }
 .secondary-toggle {
   margin-top: 1.25rem;
@@ -617,7 +651,7 @@ em, i { font-style: italic; }
   .required-reading-title { font-size: 1.05rem; }
   .required-reading-meta { display: none; }
   .required-item { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
-  .required-item-phase { margin-top: 0.1rem; }
+  .required-item-tags { margin-top: 0.1rem; }
 }
 
 /* Phase Timeline — Byzantine palette */
@@ -1720,16 +1754,17 @@ function parsePhaseToWeekRange(phase) {
   return null;
 }
 
-// Render the Required Reading collapsible panel. Splits resources by phase timing
-// relative to STUDY_STATE.currentWeek — active/past weeks go into "Currently Reading",
-// future weeks go into "Upcoming" so users can plan Part II book acquisitions ahead.
+// Render the Required Reading collapsible panel. Resources are classified against
+// STUDY_STATE.currentWeek into "Currently Reading" (active/past phase) vs "Upcoming —
+// Plan Ahead" (future phase). Within each group, items are subgrouped by category
+// (Primary / Biblical / Secondary) so 20+ items stay readable. Items flagged
+// toPurchase get a gold "Acquire" pill to call out acquisition needs.
 function renderRequiredReading() {
   const body = document.getElementById('required-reading-body');
   const metaEl = document.getElementById('required-reading-meta');
   if (!body) return;
 
-  // Resolve the user's active track. Fallback to '40-week' so the panel still
-  // renders usefully even if enrollment hasn't been set (e.g., during testing).
+  // Resolve active track. Fallback to '40-week' so the panel always renders usefully.
   const enrollment = (typeof getEnrollment === 'function') ? getEnrollment() : null;
   const trackKey = (enrollment && enrollment.topic === 'patristics' && enrollment.track)
     ? enrollment.track : '40-week';
@@ -1744,59 +1779,95 @@ function renderRequiredReading() {
   const upcoming = [];
   track.requiredResources.forEach(r => {
     const range = parsePhaseToWeekRange(r.phase);
-    // Classify: all-weeks OR already started (range.start <= currentWeek) goes to current.
-    // Only future ranges (range.start > currentWeek) go to upcoming.
     if (!range || range.isAll || range.start <= currentWeek) current.push(r);
     else upcoming.push(r);
   });
 
+  // Upcoming acquisition count — only books that need purchase, not already-owned
+  const acquireCount = upcoming.filter(r => r.toPurchase).length;
+
   if (metaEl) {
     const total = track.requiredResources.length;
-    metaEl.textContent = `${total} book${total === 1 ? '' : 's'} · ${upcoming.length} upcoming`;
+    metaEl.textContent = acquireCount > 0
+      ? `${total} resources · ${acquireCount} to acquire`
+      : `${total} resources · ${upcoming.length} upcoming`;
   }
 
+  const CATEGORY_LABELS = {
+    primary: 'Primary Texts',
+    biblical: 'Biblical Texts',
+    secondary: 'Secondary Reading'
+  };
+  const CATEGORY_ORDER = ['primary', 'biblical', 'secondary'];
+
   const renderItem = (r, isUpcoming) => `
-    <li class="required-item${isUpcoming ? ' upcoming' : ''}">
+    <li class="required-item${isUpcoming ? ' upcoming' : ''}${r.toPurchase ? ' to-purchase' : ''}">
       <div class="required-item-main">
         <div class="required-item-title">
           ${r.title}${r.author ? ` <span class="required-item-author">· ${r.author}</span>` : ''}
         </div>
         ${(r.edition || r.details) ? `<div class="required-item-meta">${[r.edition, r.details].filter(Boolean).join(' · ')}</div>` : ''}
       </div>
-      ${r.phase ? `<span class="required-item-phase">${r.phase}</span>` : ''}
+      <div class="required-item-tags">
+        ${r.toPurchase ? '<span class="required-item-acquire">To Acquire</span>' : ''}
+        ${r.phase ? `<span class="required-item-phase">${r.phase}</span>` : ''}
+      </div>
     </li>
   `;
+
+  // Bucket an item list by category, preserving syllabus order within each bucket
+  const bucketByCategory = (items) => {
+    const buckets = { primary: [], biblical: [], secondary: [] };
+    items.forEach(r => {
+      const cat = r.category || 'primary';
+      (buckets[cat] || buckets.primary).push(r);
+    });
+    return buckets;
+  };
+
+  const renderGroup = (items, isUpcoming) => {
+    if (!items.length) return '';
+    const buckets = bucketByCategory(items);
+    const body = CATEGORY_ORDER.map(cat => {
+      if (!buckets[cat] || !buckets[cat].length) return '';
+      return `
+        <div class="required-subcategory">
+          <div class="required-subcategory-title">${CATEGORY_LABELS[cat]}</div>
+          <ul class="required-list">
+            ${buckets[cat].map(r => renderItem(r, isUpcoming)).join('')}
+          </ul>
+        </div>
+      `;
+    }).join('');
+    return body;
+  };
 
   const currentHTML = current.length ? `
     <div class="required-group">
       <div class="required-group-title">Currently Reading</div>
-      <ul class="required-list">
-        ${current.map(r => renderItem(r, false)).join('')}
-      </ul>
+      ${renderGroup(current, false)}
     </div>
   ` : '';
 
   const upcomingHTML = upcoming.length ? `
     <div class="required-group">
       <div class="required-group-title upcoming">Upcoming — Plan Ahead</div>
-      <ul class="required-list">
-        ${upcoming.map(r => renderItem(r, true)).join('')}
-      </ul>
+      ${renderGroup(upcoming, true)}
     </div>
   ` : '';
 
   const secondaryHTML = (track.recommendedSecondary && track.recommendedSecondary.length) ? `
     <details class="secondary-toggle">
-      <summary>Recommended secondary reading (${track.recommendedSecondary.length})</summary>
+      <summary>Further recommended reading (${track.recommendedSecondary.length})</summary>
       <ul class="secondary-list">
         ${track.recommendedSecondary.map(s => `<li>${s}</li>`).join('')}
       </ul>
     </details>
   ` : '';
 
-  const intro = upcoming.length
-    ? `Books for your current track. Three volumes for Part II are flagged below — order these before Week 29 arrives.`
-    : `Books for your current track.`;
+  const intro = acquireCount > 0
+    ? `Books for your current track, grouped by type. ${acquireCount} volume${acquireCount === 1 ? '' : 's'} flagged <strong>To Acquire</strong> — order these before their phase arrives. Other listed works are standard already-owned collections (Holmes, ANF, NPNF) or scheduled secondary reading.`
+    : `Books for your current track, grouped by type. All remaining resources are already in your library.`;
 
   body.innerHTML = `
     <p class="required-reading-intro">${intro}</p>
