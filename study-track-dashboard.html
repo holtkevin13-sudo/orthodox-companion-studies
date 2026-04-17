@@ -1187,25 +1187,40 @@ em, i { font-style: italic; }
 <script>
 
 // Day status: 'upcoming' | 'current' | 'completed' | 'missed' | 'rest'
+// Is every task checkbox on this day card currently checked?
+// Returns false for rest day (idx 6) and for days with zero checkboxes.
+function isDayAllChecked(dayIdx) {
+  if (dayIdx === 6) return false;
+  const card = document.getElementById(`day-${dayIdx}`);
+  if (!card) return false;
+  const cbs = card.querySelectorAll('.task-checkbox');
+  if (cbs.length === 0) return false;
+  return Array.from(cbs).every(c => c.checked);
+}
+
+// The single "current" day — first uncompleted non-rest day at-or-after today.
+// When today is completed, this advances to tomorrow (or the next uncompleted day).
+// Returns null if every remaining day in the week is already completed.
+function firstCurrentDayIdx() {
+  const todayIdx = computeTodayDayIdx();
+  for (let i = todayIdx; i <= 5; i++) {
+    if (!isDayAllChecked(i)) return i;
+  }
+  return null;
+}
+
 function getDayStatus(dayIdx) {
   if (dayIdx === 6) return 'rest';
   const todayIdx = computeTodayDayIdx();
-  const card = document.getElementById(`day-${dayIdx}`);
-  let allChecked = false;
-  if (card) {
-    const cbs = card.querySelectorAll('.task-checkbox');
-    if (cbs.length > 0) {
-      const checked = Array.from(cbs).filter(c => c.checked).length;
-      allChecked = (checked === cbs.length);
-    }
-  }
-  // Completion takes precedence for today and past days.
-  // Future days with tasks checked early still show as 'upcoming' — we
-  // don't award "completed" status for days the user hasn't lived yet.
-  if (allChecked && dayIdx <= todayIdx) return 'completed';
-  if (dayIdx === todayIdx) return 'current';
-  if (dayIdx > todayIdx) return 'upcoming';
-  return 'missed';  // past, not all checked
+  // Completion wins regardless of calendar position — you can work ahead.
+  if (isDayAllChecked(dayIdx)) return 'completed';
+  // "Current" is the first uncompleted day at-or-after today;
+  // it shifts forward as each day gets completed.
+  if (dayIdx === firstCurrentDayIdx()) return 'current';
+  // Past, uncompleted — honest archive.
+  if (dayIdx < todayIdx) return 'missed';
+  // Future, uncompleted, not the "first current" — just upcoming.
+  return 'upcoming';
 }
 
 function computeWeekFraction() {
@@ -1610,10 +1625,9 @@ class StudyTaskManager {
 
   handleTaskChange(e) {
     const cb = e.target;
-    const dayIdx = parseInt(cb.dataset.day, 10);
     this.saveProgress();
-    this.updateDayState(dayIdx);
-    renderOverallProgress();
+    // Refresh all 7 days: completing today shifts what "current" means for tomorrow.
+    this.updateAllDayStates();
     this.checkWeekCompletion();
     if (cb.checked) {
       cb.style.transform = 'scale(1.2)';
