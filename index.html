@@ -88,41 +88,45 @@
   }
   
   .cross-ornament {
-    font-size: 2.5rem;
-    color: #bdc3c7;
-    margin-bottom: 1.2rem;
-    letter-spacing: 0.3em;
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.2rem;
+    /* Subtle gold glow around the cross icon — Byzantine sensibility */
+    filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
   }
   
   .organization-title {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #e8ddc8;
+    font-variant: small-caps;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    color: #c9bca0;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-style: italic;
+    margin-bottom: 0.8rem;
   }
   
   .main-title {
-    font-size: 2.8rem;
-    font-weight: 300;
+    font-size: 3rem;
+    font-weight: 400;
     color: #fffdf7;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.01em;
+    line-height: 1.15;
   }
   
   .greek-subtitle {
-    font-size: 1.3rem;
-    color: #e8ddc8;
-    font-weight: 300;
+    font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+    font-size: 1.35rem;
+    color: #D4AF37;
+    font-weight: 400;
     font-style: italic;
-    margin-bottom: 1rem;
-    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
   }
   
   .mission-statement {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-style: italic;
     color: #faf6ed;
     max-width: 800px;
@@ -687,32 +691,16 @@
 
 <header class="hero">
   <div class="container">
-    <div class="cross-ornament">☩</div>
+    <img class="cross-ornament" src="apple-touch-icon.png" alt="Orthodox cross" />
     <div class="organization-title">Orthodox Companion Studies</div>
-    <h1 class="main-title">Orthodox Theological Formation</h1>
-    <div class="greek-subtitle">Multiple Study Programs for Orthodox Learning</div>
+    <h1 class="main-title">The Living Tradition</h1>
+    <div class="greek-subtitle">ἡ παράδοσις ζῶσα</div>
     <p class="mission-statement">
-      A growing library of study programs spanning the Church Fathers, Biblical studies, liturgical formation, 
-      and systematic theology. Patristic Formation is available now; additional programs are in development.
+      Self-directed theological formation rooted in the Church Fathers, Scripture, 
+      and the liturgical life. Paths meeting inquirers, catechumens, the faithful, 
+      and those drawn to deeper theological study. Patristic Formation is available now; 
+      additional programs are in development.
     </p>
-    <div class="course-details">
-      <div class="course-stat">
-        <span class="stat-number">6</span>
-        <span class="stat-label">Programs Planned</span>
-      </div>
-      <div class="course-stat">
-        <span class="stat-number">1</span>
-        <span class="stat-label">Currently Active</span>
-      </div>
-      <div class="course-stat">
-        <span class="stat-number text">Multi-Year</span>
-        <span class="stat-label">Formation Scope</span>
-      </div>
-      <div class="course-stat">
-        <span class="stat-number text">Orthodox</span>
-        <span class="stat-label">Academic Tradition</span>
-      </div>
-    </div>
   </div>
 </header>
 
