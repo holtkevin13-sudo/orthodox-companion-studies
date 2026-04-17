@@ -15,22 +15,42 @@
 <meta name="keywords" content="Church Fathers, Orthodox Christianity, Patristics, Apostolic Fathers, Ante-Nicene Fathers, Nicene Fathers, Post-Nicene Fathers">
 
 <style>
+/* Typography — Cormorant Garamond (English) + Gentium Plus (Greek) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* CSS Reset & Orthodox Foundation */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { 
-  font-size: 16px; 
+  font-size: 17px; 
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
   background: 
-    radial-gradient(circle at top left, rgba(52, 73, 94, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at bottom right, rgba(44, 62, 80, 0.03) 0%, transparent 50%),
-    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
-  color: #2c3e50;
-  line-height: 1.6;
+    radial-gradient(circle at top left, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  color: #2a2620;
+  line-height: 1.7;
   min-height: 100vh;
 }
+
+/* Greek text — Gentium Plus, purpose-built for polytonic Greek */
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+/* Academic small-caps on major section headings */
+.main-title, .banner-title, .section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* Inline emphasis — Cormorant at 600 is already strong enough */
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
 
 .container {
   max-width: 1200px;
@@ -47,7 +67,7 @@ body {
   padding: 3rem 0;
   position: relative;
   text-align: center;
-  border-bottom: 3px solid #34495e;
+  border-bottom: 3px solid #3a3228;
 }
 
 .back-nav {
@@ -93,7 +113,7 @@ body {
 
 .subtitle {
   font-size: 1.3rem;
-  color: #ecf0f1;
+  color: #e8ddc8;
   font-weight: 300;
   font-style: italic;
   margin-bottom: 1rem;
@@ -102,7 +122,7 @@ body {
 
 .description {
   font-size: 1rem;
-  color: #f8f9fa;
+  color: #faf6ed;
   max-width: 800px;
   margin: 0 auto 2rem;
   line-height: 1.7;
@@ -117,7 +137,7 @@ body {
 
 .stat {
   text-align: center;
-  color: #ecf0f1;
+  color: #e8ddc8;
 }
 
 .stat-number {
@@ -139,7 +159,7 @@ body {
 .controls {
   padding: 2rem 0;
   background: #fffdf7;
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom: 1px solid #e8ddc8;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -159,7 +179,7 @@ body {
 .search-input {
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 2px solid #ecf0f1;
+  border: 2px solid #e8ddc8;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
@@ -169,7 +189,7 @@ body {
 
 .search-input:focus {
   outline: none;
-  border-color: #34495e;
+  border-color: #3a3228;
   box-shadow: 0 0 0 3px rgba(52, 73, 94, 0.1);
 }
 
@@ -181,13 +201,13 @@ body {
 
 .filter-label {
   font-size: 0.9rem;
-  color: #5d6d7e;
+  color: #6b5d4a;
   font-weight: 500;
 }
 
 .filter-select {
   padding: 0.6rem 0.8rem;
-  border: 2px solid #ecf0f1;
+  border: 2px solid #e8ddc8;
   border-radius: 6px;
   font-size: 0.9rem;
   font-family: inherit;
@@ -198,12 +218,12 @@ body {
 
 .filter-select:focus {
   outline: none;
-  border-color: #34495e;
+  border-color: #3a3228;
 }
 
 .view-toggle {
   display: flex;
-  background: #ecf0f1;
+  background: #e8ddc8;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -214,20 +234,20 @@ body {
   border: none;
   cursor: pointer;
   font-size: 0.9rem;
-  color: #5d6d7e;
+  color: #6b5d4a;
   transition: all 0.3s ease;
 }
 
 .view-btn.active {
-  background: #34495e;
+  background: #3a3228;
   color: #fffdf7;
 }
 
 /* Period Navigation */
 .period-nav {
   padding: 1.5rem 0;
-  background: #f8f9fa;
-  border-bottom: 1px solid #ecf0f1;
+  background: #faf6ed;
+  border-bottom: 1px solid #e8ddc8;
 }
 
 .period-links {
@@ -269,7 +289,7 @@ body {
 }
 
 .current-week-banner {
-  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  background: linear-gradient(135deg, #556b3d 0%, #2ecc71 100%);
   color: #fff;
   padding: 1rem 1.5rem;
   border-radius: 8px;
@@ -296,7 +316,7 @@ body {
 
 .father-card {
   background: #fff;
-  border: 1px solid #ecf0f1;
+  border: 1px solid #e8ddc8;
   border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -313,7 +333,7 @@ body {
 }
 
 .father-card.current-week {
-  border: 3px solid #27ae60;
+  border: 3px solid #556b3d;
   background: linear-gradient(145deg, #f8fff8 0%, #f0fff0 100%);
 }
 
@@ -321,7 +341,7 @@ body {
   position: absolute;
   top: -8px;
   right: 1rem;
-  background: #27ae60;
+  background: #556b3d;
   color: #fff;
   padding: 0.3rem 0.8rem;
   border-radius: 12px;
@@ -340,7 +360,7 @@ body {
 .father-icon {
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #34495e 0%, #5d6d7e 100%);
+  background: linear-gradient(135deg, #3a3228 0%, #6b5d4a 100%);
   color: #fffdf7;
   border-radius: 50%;
   display: flex;
@@ -358,12 +378,12 @@ body {
 .father-name {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #2a2620;
   margin-bottom: 0.25rem;
 }
 
 .father-dates {
-  color: #5d6d7e;
+  color: #6b5d4a;
   font-size: 0.9rem;
   margin-bottom: 0.25rem;
 }
@@ -378,7 +398,7 @@ body {
 }
 
 .father-description {
-  color: #2c3e50;
+  color: #2a2620;
   line-height: 1.6;
   margin-bottom: 1rem;
   font-size: 0.95rem;
@@ -390,7 +410,7 @@ body {
   gap: 0.8rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  background: #f8f9fa;
+  background: #faf6ed;
   border-radius: 6px;
 }
 
@@ -402,11 +422,11 @@ body {
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #2a2620;
 }
 
 .meta-label {
-  color: #5d6d7e;
+  color: #6b5d4a;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -420,8 +440,8 @@ body {
 }
 
 .tag {
-  background: #ecf0f1;
-  color: #5d6d7e;
+  background: #e8ddc8;
+  color: #6b5d4a;
   padding: 0.3rem 0.6rem;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -433,7 +453,7 @@ body {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  background: linear-gradient(135deg, #3a3228 0%, #2a2620 100%);
   color: #fffdf7;
   border: none;
   border-radius: 50%;
@@ -1030,7 +1050,7 @@ function createFatherCard(father) {
       <div class="father-info">
         <h3 class="father-name">${father.name}</h3>
         <div class="father-dates">${father.dates}</div>
-        <span class="father-period" style="background: ${periodColors[father.period]}; color: #2c3e50;">
+        <span class="father-period" style="background: ${periodColors[father.period]}; color: #2a2620;">
           ${father.period.charAt(0).toUpperCase() + father.period.slice(1).replace('-', '-')}
         </span>
       </div>
