@@ -1443,8 +1443,8 @@ function formatPsalmsDisplay(total) {
 // page is built and links appear automatically across all 40 weeks.
 // ==================================================================
 const FATHER_PAGES = {
-  'Ignatius of Antioch': 'ignatius-of-antioch.html'
-  // 'Polycarp of Smyrna': 'polycarp-of-smyrna.html',
+  'Ignatius of Antioch': 'ignatius-of-antioch.html',
+  'Polycarp of Smyrna': 'polycarp-of-smyrna.html'
   // 'Clement of Rome': 'clement-of-rome.html',
   // ...add as pages are built
 };
