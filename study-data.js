@@ -1242,7 +1242,7 @@ const PHASE_DATA = {
        biblicalTrack: 'Genesis 1–11 · Luke · Revelation · Isaiah 40–55',
        greek: ['ἀνακεφαλαίωσις (recapitulation)', 'εἰκών (image)'] },
   4: { number: 4, name: 'Athanasius', weeks: [14, 15],
-       fathers: 'Athanasius of Alexandria',
+       fathers: 'Athanasius the Great',
        primaryText: 'On the Incarnation',
        biblicalTrack: 'Hebrews · Colossians · Philippians · Ephesians',
        greek: ['φθορά (corruption)', 'ἀφθαρσία (incorruption)', 'θέωσις (deification)'] },
@@ -1252,7 +1252,7 @@ const PHASE_DATA = {
        biblicalTrack: 'Exodus 1–24 · 1–2 Peter',
        greek: ['οὐσία (essence)', 'ὑπόστασις (person)', 'πνεῦμα (Spirit)', 'ἐπέκτασις (perpetual striving)', 'γνόφος (divine darkness)'] },
   6: { number: 6, name: 'Gregory Nazianzen', weeks: [18, 19],
-       fathers: 'Gregory Nazianzen',
+       fathers: 'Gregory of Nazianzus',
        primaryText: 'Theological Orations (27–31)',
        biblicalTrack: '2 Corinthians · 1–2 Thessalonians · Pastorals',
        greek: ['θεολογία (theology)', 'φύσις (nature)', 'σχέσις (relation)'] },
@@ -1433,3 +1433,62 @@ function formatPsalmsDisplay(total) {
   };
 }
 
+
+// ==================================================================
+// FATHER_PAGES — graceful linking map
+// Maps a Father's display name to the URL of their detail page.
+// Entries are added ONLY when a real page exists. Where no entry exists,
+// `linkifyPatristic()` leaves the reading text as plain text (no
+// broken links, no placeholder content). Add a line here as each Father
+// page is built and links appear automatically across all 40 weeks.
+// ==================================================================
+const FATHER_PAGES = {
+  'Ignatius of Antioch': 'ignatius-of-antioch.html'
+  // 'Polycarp of Smyrna': 'polycarp-of-smyrna.html',
+  // 'Clement of Rome': 'clement-of-rome.html',
+  // ...add as pages are built
+};
+
+// Detect a matchable Father name inside a patristic reading string.
+// Returns the URL if a FATHER_PAGES match is found, or null.
+function fatherPageForReading(readingText) {
+  if (!readingText) return null;
+  for (const [fullName, url] of Object.entries(FATHER_PAGES)) {
+    // Match the first name (before "of") as a whole word.
+    // e.g. "Ignatius of Antioch" -> look for "Ignatius" in reading.
+    const firstName = fullName.split(/\s+of\s+/)[0];
+    const regex = new RegExp(`\\b${firstName}\\b`, 'i');
+    if (regex.test(readingText)) return url;
+  }
+  return null;
+}
+
+// Wrap the patristic reading text in an <a> tag if a Father page exists.
+// Used by the dashboard's renderers. Returns safe HTML (text is trusted).
+function linkifyPatristic(readingText) {
+  const url = fatherPageForReading(readingText);
+  if (!url) return readingText;
+  return `<a href="${url}" class="patristic-link">${readingText}</a>`;
+}
+
+// Check whether a given Father (by full display name) is covered in
+// the current phase's syllabus. Used by father-cards-index.html to
+// mark current-week Father cards. Matches against the `fathers` token
+// list in PHASE_DATA, split on ' · '. Handles both short tokens
+// ("Ignatius") matching full names ("Ignatius of Antioch") and full
+// tokens ("Clement of Rome") matching disambiguated names.
+function isFatherInPhase(fatherName, phase) {
+  if (!phase || !phase.fathers) return false;
+  const nameL = fatherName.toLowerCase();
+  const tokens = phase.fathers.split(' · ').map(t => t.trim().toLowerCase());
+  return tokens.some(token => {
+    if (!token) return false;
+    // If token is a single word, match it as a standalone first name.
+    // If token is multi-word ("Clement of Rome"), require exact prefix or substring.
+    if (!token.includes(' ')) {
+      const regex = new RegExp(`\\b${token}\\b`, 'i');
+      return regex.test(nameL);
+    }
+    return nameL.startsWith(token) || nameL.includes(token);
+  });
+}
