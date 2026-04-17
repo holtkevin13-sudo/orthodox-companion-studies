@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T22:30:00Z
+// build: 2026-04-17T23:00:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -968,6 +968,12 @@ const LEXICON_ENTRIES = {
     etymology: 'From διά (through, apart) + αἱρέω (to take)',
     phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Trinitarian Distinction Without Division', letter: 'Δ'
   },
+  'οἰκονομία': {
+    transliteration: 'oikonomia', english: 'Economy, Ordered Plan',
+    definition: 'Economy — God\'s ordered dispensation in history. Gregory programmatically distinguishes θεολογία (speech concerning the eternal triune God) from οἰκονομία (speech concerning God\'s saving acts in time): Or. 29.18 reads the Son\'s lowly sayings as spoken οἰκονομικῶς, in the mode of the economy, not as a diminishment of his eternal divinity. The θεολογία / οἰκονομία pair becomes the classic Greek patristic grammar for reading Christological paradox — and is systematized further by Maximus the Confessor (Phase 12).',
+    etymology: 'From οἶκος (house, household) + νόμος (law, management) — "household ordering"',
+    phase: 6, fathers: ['Gregory of Nazianzus'], connection: 'Theology vs Economy — The Cappadocian Distinction', letter: 'Ο'
+  },
   // --- John Chrysostom cluster (Phase 7) ---
   'μετάνοια': {
     transliteration: 'metanoia', english: 'Repentance, Change of Mind',
@@ -1233,6 +1239,146 @@ const LEXICON_ENTRIES = {
     definition: 'Impassibly — the paradoxical adverb that preserves both horns of the Theopaschite formula. Cyril writes that the Word "suffered impassibly" (ἔπαθεν ἀπαθῶς, Scholia on the Incarnation): truly suffered in the flesh, yet without subjection of the divine nature to suffering. The paradox guards both the reality of Christ\'s passion and the impassibility of his divinity (cf. ἀπάθεια, Phase 4).',
     etymology: 'From ἀ- (not) + πάσχω (to suffer)',
     phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Cyrillian Paradox: Suffered Impassibly', letter: 'Α'
+  },
+  // --- Leo the Great cluster (Phase 10) — Latin-primary ---
+  'duae naturae, una persona': {
+    language: 'latin',
+    transliteration: 'duae naturae una persona', english: 'Two Natures, One Person',
+    definition: 'The Chalcedonian formula in its Latin form: two natures, one person. Leo\'s Tome (Epistle 28 to Flavian, 449) articulates with Latin precision what Cyril had secured in Greek: the one Christ is a single persona in whom duae naturae — divine and human — are permanently united without being confused. When read aloud at the Council of Chalcedon in 451, the assembled bishops are reported to have cried "Peter has spoken through Leo."',
+    etymology: 'From duae (two) + naturae (natures) + una (one) + persona (person)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Chalcedonian Formula in Latin', letter: 'D'
+  },
+  'proprietas': {
+    language: 'latin',
+    transliteration: 'proprietas', english: 'Property, Distinctive Character',
+    definition: 'Property — that which is distinctive and proper to each thing. Leo\'s key Christological principle (Tome 3–4): in the one Christ, each nature retains its own proprietas unimpaired by the union. Divinity does not cease to be divine; humanity does not cease to be human. The proprietates of each nature persist in their integrity even as both belong to a single acting subject.',
+    etymology: 'From Latin proprius (one\'s own)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Integrity of Each Nature\'s Properties', letter: 'P'
+  },
+  'Tomus Leonis': {
+    language: 'latin',
+    transliteration: 'Tomus Leonis', english: 'The Tome of Leo',
+    definition: 'The Tome of Leo — Leo\'s Epistle 28 to Flavian of Constantinople (449), composed amid the Eutychian crisis. The letter defines the integrity of the two natures in the one Christ with lapidary Latin precision: "agit utraque forma cum alterius communione quod proprium est" ("each form does what is proper to it in communion with the other"). Read at Chalcedon in 451, the Tome is received as the Latin witness complementing Cyril\'s Greek in defining the faith.',
+    etymology: 'From Latin tomus (a cut, a volume) + Leonis (of Leo)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Leo\'s Dogmatic Letter to Flavian', letter: 'T'
+  },
+  'utraque forma': {
+    language: 'latin',
+    transliteration: 'utraque forma', english: 'Each Form, Both Forms',
+    definition: '"Each form" — Leo\'s preferred Christological shorthand. "Utraque forma agit cum alterius communione quod proprium est" (Tome 4): each form — divinity and humanity — does what is proper to it, in communion with the other. The verbum acts divinely; the caro acts humanly; but both are the acts of the one Christ. The formula preserves the integrity of each nature and the unity of the agent.',
+    etymology: 'From Latin uterque (each of two) + forma (form)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Each Nature Acts According to Its Own', letter: 'U'
+  },
+  'forma Dei': {
+    language: 'latin',
+    transliteration: 'forma Dei', english: 'Form of God',
+    definition: '"Form of God" — the divine condition in which the eternal Son subsists (Philippians 2:6). Leo uses the Pauline pair forma Dei / forma servi as his framework for Christological exegesis (Sermo 23; Tome 4): the one who is in the form of God takes upon himself the form of a servant, not by laying aside his divinity but by assuming humanity. The language gives Leo a biblical anchor for the two-natures doctrine.',
+    etymology: 'From Latin forma (form) + Dei (of God)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Pauline Framework for Divine Nature', letter: 'F'
+  },
+  'forma servi': {
+    language: 'latin',
+    transliteration: 'forma servi', english: 'Form of a Servant',
+    definition: '"Form of a servant" — the human condition assumed by the Son in the Incarnation (Philippians 2:7). Leo\'s pairing of forma Dei and forma servi names the two conditions of the one Christ: not two Christs but one, now in both forms. The servant-form is genuine humanity — born, hungry, suffering, dying — and it is taken up without loss of the divine form.',
+    etymology: 'From Latin forma (form) + servi (of a servant, slave)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Pauline Framework for Human Nature Assumed', letter: 'F'
+  },
+  'agere quod proprium est': {
+    language: 'latin',
+    transliteration: 'agere quod proprium est', english: 'To Act According to What Is Proper',
+    definition: 'Leo\'s signature operational formula (Tome 4): each nature in Christ "acts what is proper to it" in communion with the other. The divinity does divine acts (miracles, forgiveness, resurrection from within); the humanity does human acts (hungering, weeping, dying). Yet the acts are all the acts of the one Christ — the single subject whose two natures each contribute their proper operations. The principle grounds the communicatio idiomatum in concrete activity.',
+    etymology: 'From Latin agere (to do, act) + quod (what) + proprium (proper, one\'s own) + est (is)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Each Nature\'s Proper Activity', letter: 'A'
+  },
+  'communicatio idiomatum': {
+    language: 'latin',
+    transliteration: 'communicatio idiomatum', english: 'Communication of Properties',
+    definition: 'Communication of properties — the Latin counterpart to Cyril\'s ἀντίδοσις (Phase 9). Because divinity and humanity are united in the single persona of Christ, the properties of each nature can be predicated of the one person: the Son of God truly died; the Son of Mary truly created. The predicate is said of the person, not swapped between natures. Leo\'s Tome 4 gives the doctrine its enduring Latin grammar.',
+    etymology: 'From Latin communicatio (sharing) + idiomatum (of properties, from Greek ἰδίωμα)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Latin Grammar for the Exchange of Properties', letter: 'C'
+  },
+  'unitas personae': {
+    language: 'latin',
+    transliteration: 'unitas personae', english: 'Unity of Person',
+    definition: '"Unity of person" — Leo\'s settled formula for the singular subject of Christ. Against Nestorian division, unitas personae insists that there is one who acts, suffers, and saves: one Son of God, one Son of Mary, one Christ. The phrase fixes in Latin the grammatical concern that Cyril addressed in Greek with ἕνωσις καθ\' ὑπόστασιν (Phase 9).',
+    etymology: 'From Latin unitas (unity) + personae (of person)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Singular Subject of Christ', letter: 'U'
+  },
+  'assumptio': {
+    language: 'latin',
+    transliteration: 'assumptio', english: 'Assumption',
+    definition: 'Assumption — the Word\'s taking to himself of a complete human nature. Leo uses assumptio to name the free and gracious act by which the Son took flesh, without mixture, without loss, and without reservation (Tome 2–3). The assumptio hominis echoes Gregory Nazianzen\'s ὃ ἀπρόσληπτον ἀθεράπευτον (Phase 6) — what is not assumed is not healed — now worked out in Latin soteriology.',
+    etymology: 'From Latin assumere (to take to oneself)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'The Word\'s Taking of Human Nature', letter: 'A'
+  },
+  'mediator': {
+    language: 'latin',
+    transliteration: 'mediator', english: 'Mediator',
+    definition: 'Mediator — the single go-between who bridges God and humanity (1 Timothy 2:5, "unus mediator Dei et hominum, homo Christus Iesus"). Leo\'s Christology is mediatorial: precisely because Christ is fully God and fully man, he alone can mediate between them. The term becomes a central organizing category of Latin Christology from Leo through Augustine\'s successors and into Aquinas.',
+    etymology: 'From Latin medius (middle) — "one who stands in the middle"',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Christ as Single Bridge Between God and Humanity', letter: 'M'
+  },
+  'verus Deus et verus homo': {
+    language: 'latin',
+    transliteration: 'verus Deus et verus homo', english: 'True God and True Man',
+    definition: '"True God and true man" — the Latin confession of the Chalcedonian Definition, paralleling Cyril\'s Greek ἀληθὴς Θεός καὶ ἀληθὴς ἄνθρωπος (Phase 9). Leo\'s Tome insists on both halves without compromise: not a demoted God nor a deified man, but truly God and truly man in one persona. The adverb verus blocks every implicit qualification of either nature.',
+    etymology: 'From Latin verus (true) + Deus (God) + homo (man)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Chalcedonian Latin Confession', letter: 'V'
+  },
+  'sacramentum incarnationis': {
+    language: 'latin',
+    transliteration: 'sacramentum incarnationis', english: 'Mystery of the Incarnation',
+    definition: '"Mystery of the Incarnation" — Leo\'s favored phrase for the whole saving economy centered on the Word made flesh (Sermo 22 on the Nativity; Tome 2). Building on Tertullian\'s rendering of sacramentum as Latin for μυστήριον (Phase 2.5), Leo applies the term to the Incarnation itself: not simply a historical event but a mystery that continues to reach into the Church\'s liturgy and life through the sacraments that flow from it.',
+    etymology: 'From Latin sacramentum (sacred mystery, oath) + incarnationis (of the Incarnation)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Incarnation as the Central Mystery', letter: 'S'
+  },
+  'sedes Petri': {
+    language: 'latin',
+    transliteration: 'sedes Petri', english: 'See of Peter',
+    definition: '"Seat of Peter" — the Roman see understood as the abiding locus of Petrine ministry. Leo\'s Sermons on the Anniversary of his Elevation (Sermo 3, 4, 5) articulate an ancient Roman conviction with new doctrinal weight: the bishop of Rome exercises the office of Peter, and the authority of Peter continues through his successors. The phrase becomes a central term of Latin ecclesiology, complementing Cyprian\'s cathedra Petri (Phase 2.5).',
+    etymology: 'From Latin sedes (seat, see) + Petri (of Peter)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Roman See as Continuing Petrine Office', letter: 'S'
+  },
+  'auctoritas Petri': {
+    language: 'latin',
+    transliteration: 'auctoritas Petri', english: 'Authority of Peter',
+    definition: '"Authority of Peter" — the apostolic authority Christ entrusted to Peter and which, Leo argues, persists in the Roman see (Sermo 3.3: "in hac sede viva continue perseverat auctoritas"). For Leo, the pope does not add to Peter\'s authority but exercises it, as Peter himself speaks through his successor. The doctrine receives its clearest patristic articulation here.',
+    etymology: 'From Latin auctoritas (authority) + Petri (of Peter)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Petrine Authority Continuing in Rome', letter: 'A'
+  },
+  'Christus totus': {
+    language: 'latin',
+    transliteration: 'Christus totus', english: 'The Whole Christ',
+    definition: '"The whole Christ" — Christ understood as the inseparable unity of Head and Body, the incarnate Son together with the Church. The phrase is Augustinian in its fullest development, but Leo\'s sermons (esp. Sermo 63, 70) deploy it powerfully in liturgical-ecclesial register: the Church\'s life is Christ\'s continuing life, the sacraments are his own acts, and the suffering of members is the suffering of the Head.',
+    etymology: 'From Latin Christus (Christ) + totus (whole, entire)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Christ and the Church as One Body', letter: 'C'
+  },
+  'dignitas': {
+    language: 'latin',
+    transliteration: 'dignitas', english: 'Dignity',
+    definition: 'Dignity. Leo\'s Christmas sermons sound a distinctive note: because the Son of God has taken human nature, every human being bears an immeasurable dignitas — "Christian, recognize your dignity" (Sermo 21.3, "Agnosce, o Christiane, dignitatem tuam"). The Incarnation is not only the salvation of humanity but the permanent elevation of it; its recognition is the ground of Christian moral life.',
+    etymology: 'From Latin dignus (worthy)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Incarnational Dignity of the Human Person', letter: 'D'
+  },
+  'passio': {
+    language: 'latin',
+    transliteration: 'passio', english: 'Passion, Suffering',
+    definition: 'The Passion of Christ — both the event of his suffering and the whole theology of redemption it bears. Leo\'s Sermons on the Passion (Sermo 52–70) are among the most influential Latin meditations on Christ\'s Cross: the passio is the work of the whole Christ in his humanity, while the divinity accompanies and sustains without itself suffering. The Cross is the reconciliation of heaven and earth accomplished in flesh.',
+    etymology: 'From Latin pati (to suffer)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Christ\'s Passion as the Work of the Whole Christ', letter: 'P'
+  },
+  'pontifex': {
+    language: 'latin',
+    transliteration: 'pontifex', english: 'High Priest, Bridge-Builder',
+    definition: 'High priest — originally in Roman religion the "bridge-builder" between human and divine (pons + facere), and in Christian Latin the title applied both to Christ (following Hebrews) and to the bishop. Leo reads Christ\'s high priesthood through Hebrews and applies the pastoral weight of the title to the episcopal office: the pontifex continues, in a derived way, Christ\'s own mediatorial work.',
+    etymology: 'From Latin pons (bridge) + facere (to make)',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Christ and the Bishop as Bridge-Builders', letter: 'P'
+  },
+  'πρόσωπον': {
+    transliteration: 'prosopon', english: 'Face, Person',
+    definition: 'Face, person. The Greek term that the Chalcedonian Definition (451) pairs with ὑπόστασις (Phase 5) on the side of Christ\'s unity — one πρόσωπον and one ὑπόστασις, in two natures. πρόσωπον is the Greek equivalent of Leo\'s Latin persona (Phase 2.5): where persona carried the Roman theatrical resonance of "mask," πρόσωπον carried similar weight in Greek — a difficulty the Cappadocians (Phase 5) had already helped to resolve by treating πρόσωπον as the concrete "who" that answers to a specific hypostasis.',
+    etymology: 'From πρός (toward) + ὤψ (face, eye) — "that which is turned toward, one\'s face"',
+    phase: 10, fathers: ['Leo the Great'], connection: 'Greek Equivalent of Persona at Chalcedon', letter: 'Π'
   }
 };
 
