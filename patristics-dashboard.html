@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T17:25:00Z -->
+<!-- build: 2026-04-17T18:00:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -352,13 +352,15 @@ em, i { font-style: italic; }
   display: inline-flex;
   align-items: baseline;
   gap: 0.35rem;
-  cursor: default;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
 .greek-term:hover {
-  background: rgba(212, 175, 55, 0.18);
-  border-color: rgba(212, 175, 55, 0.6);
+  background: rgba(212, 175, 55, 0.22);
+  border-color: rgba(212, 175, 55, 0.7);
+  transform: translateY(-1px);
 }
 
 .greek-term-greek {
@@ -1519,6 +1521,9 @@ function phaseGreekHTML(phase) {
 
   // Each pill: Greek + English inline. Full definition appears as a
   // native tooltip on hover (desktop) for scholarly reinforcement.
+  // Pills are clickable — they deep-link to the term's entry in the
+  // main lexicon via `lexiconAnchorFor()`. Landing highlight CSS on
+  // the lexicon page shows the user exactly where they arrived.
   const termPills = terms.map(t => {
     const greek = t.greek || '';
     const english = t.english || t.transliteration || '';
@@ -1528,7 +1533,10 @@ function phaseGreekHTML(phase) {
     const englishHTML = english
       ? ` <span class="greek-term-sep">·</span> <span class="greek-term-english">${english}</span>`
       : '';
-    return `<span class="greek-term" title="${title}"><span class="greek-term-greek">${greek}</span>${englishHTML}</span>`;
+    const href = (typeof lexiconAnchorFor === 'function')
+      ? lexiconAnchorFor(t)
+      : 'greek-lexicon-index.html';
+    return `<a href="${href}" class="greek-term" title="${title}"><span class="greek-term-greek">${greek}</span>${englishHTML}</a>`;
   }).join('');
 
   return `
