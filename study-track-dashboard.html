@@ -228,6 +228,18 @@ body {
   border-bottom: none;
 }
 
+/* Patristic reading links — subtle scholarly underline, not button-styled */
+.patristic-link {
+  color: #1a3a5c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 58, 92, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.patristic-link:hover {
+  border-bottom-color: #1a3a5c;
+}
+
 /* Full-width Phase Greek Focus panel — Byzantine gold accent */
 .focus-greek {
   background: linear-gradient(135deg, #fffaec 0%, #ffffff 100%);
@@ -1240,7 +1252,7 @@ function renderTodaysFocus() {
       </div>
       <div class="focus-section">
         <h3>Patristic Reading</h3>
-        <ul><li><span>${day.patristic}</span><span class="reading-time">15 min</span></li></ul>
+        <ul><li><span>${linkifyPatristic(day.patristic)}</span><span class="reading-time">15 min</span></li></ul>
       </div>
       <div class="focus-section">
         <h3>Secondary Reading</h3>
@@ -1338,7 +1350,7 @@ function createDayCard(dayIdx, weekData) {
   const tasks = [
     { id: `w${wn}-d${dayIdx}-psalms`, track: 'Psalms', text: psalms, time: '15 min' },
     { id: `w${wn}-d${dayIdx}-biblical`, track: 'Biblical', text: day.biblical, time: '15 min' },
-    { id: `w${wn}-d${dayIdx}-patristic`, track: 'Primary', text: day.patristic, time: '15 min' },
+    { id: `w${wn}-d${dayIdx}-patristic`, track: 'Primary', text: linkifyPatristic(day.patristic), time: '15 min' },
     { id: `w${wn}-d${dayIdx}-secondary`, track: 'Secondary', text: day.secondary, time: '15 min' }
   ];
 
