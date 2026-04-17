@@ -602,10 +602,10 @@ body {
 
 <section class="fathers-section">
   <div class="container">
-    <!-- Current Week Banner -->
+    <!-- Current Week Banner — populated dynamically by updateCurrentWeekBanner() -->
     <div class="current-week-banner">
-      <div class="banner-title">📖 Current Week Focus — Week 2, Phase 1</div>
-      <div class="banner-text">Ignatius of Antioch • Polycarp of Smyrna • Martyrdom of Polycarp</div>
+      <div class="banner-title" id="banner-title">Current Week Focus</div>
+      <div class="banner-text" id="banner-text">Loading…</div>
     </div>
 
     <!-- Fathers Grid -->
@@ -617,6 +617,10 @@ body {
 
 <!-- Return to Top Button -->
 <button class="return-to-top" id="return-to-top" onclick="scrollToTop()">↑</button>
+
+<!-- Shared data layer — WEEK_DATA, PHASE_DATA, STUDY_STATE, FATHER_PAGES, helpers.
+     Must load before the inline script below. -->
+<script src="study-data.js"></script>
 
 <script>
 // Father Data
@@ -1113,8 +1117,41 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// ==================================================================
+// Dynamic current-week marking & banner
+// Overrides the hardcoded currentWeek flags using STUDY_STATE +
+// PHASE_DATA from study-data.js. Called before populateFathersGrid().
+// ==================================================================
+function markCurrentFathersByPhase() {
+  // Guard: if study-data.js failed to load, leave hardcoded values alone.
+  if (typeof STUDY_STATE === 'undefined' || typeof getPhaseForWeek !== 'function' || typeof isFatherInPhase !== 'function') {
+    return;
+  }
+  const phase = getPhaseForWeek(STUDY_STATE.currentWeek);
+  fathers.forEach(f => {
+    f.currentWeek = isFatherInPhase(f.name, phase);
+  });
+}
+
+function updateCurrentWeekBanner() {
+  if (typeof STUDY_STATE === 'undefined' || typeof getPhaseForWeek !== 'function') return;
+  const week = STUDY_STATE.currentWeek;
+  const phase = getPhaseForWeek(week);
+  const titleEl = document.getElementById('banner-title');
+  const textEl = document.getElementById('banner-text');
+  if (!phase) {
+    if (titleEl) titleEl.textContent = `Current Week Focus — Week ${week}`;
+    if (textEl) textEl.textContent = '';
+    return;
+  }
+  if (titleEl) titleEl.textContent = `Current Week Focus — Week ${week}, Phase ${phase.number}: ${phase.name}`;
+  if (textEl) textEl.textContent = phase.fathers || '';
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
+  markCurrentFathersByPhase();
+  updateCurrentWeekBanner();
   populateFathersGrid();
 });
 </script>
