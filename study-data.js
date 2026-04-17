@@ -1594,3 +1594,38 @@ function getPhaseTerms(phase) {
 
   return Array.from(byGreek.values());
 }
+
+// Look up a Father-page URL by short name as used in PHASE_DATA[n].fathers
+// (e.g., "Ignatius", "Polycarp", "Clement of Rome"). Returns URL or null.
+// Complements fatherPageForReading(), which searches inside a reading string.
+function fatherPageByShortName(shortName) {
+  if (!shortName) return null;
+  const trimmed = shortName.trim();
+  const lower = trimmed.toLowerCase();
+  for (const [fullName, url] of Object.entries(FATHER_PAGES)) {
+    const firstName = fullName.split(/\s+of\s+/)[0].toLowerCase();
+    if (!trimmed.includes(' ')) {
+      // Single-word token like "Ignatius" — match against first name only
+      if (firstName === lower) return url;
+    } else {
+      // Multi-word token like "Clement of Rome" — match exact or substring
+      const full = fullName.toLowerCase();
+      if (full === lower || full.includes(lower) || lower.includes(full)) return url;
+    }
+  }
+  return null;
+}
+
+// Take a phase fathers string ("Ignatius · Polycarp · Clement of Rome · ...")
+// and return HTML with each name linkified where a Father page exists.
+// Produces safe HTML: names from PHASE_DATA are trusted internal strings.
+function linkifyPhaseFathers(fathersString) {
+  if (!fathersString) return '';
+  return fathersString.split(' · ').map(raw => {
+    const name = raw.trim();
+    if (!name) return '';
+    const url = fatherPageByShortName(name);
+    if (url) return `<a href="${url}" class="patristic-link">${name}</a>`;
+    return name;
+  }).filter(Boolean).join(' · ');
+}
