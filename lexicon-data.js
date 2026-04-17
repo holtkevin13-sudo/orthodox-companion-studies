@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T20:30:00Z
+// build: 2026-04-17T21:00:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -701,6 +701,139 @@ const LEXICON_ENTRIES = {
     definition: 'Freedom from passions — not the absence of feeling but the reordering of the affections so they are no longer ruled by disordered desires. Athanasius presents Antony as having attained ἀπάθεια through decades of ἄσκησις (Vita Antonii 14, 67). The term gathers up a strand of Stoic ethics, reshapes it in a Christian key, and hands it forward to Evagrius, Maximus, and the whole Orthodox ascetical tradition.',
     etymology: 'From ἀ- (not) + πάθος (passion, suffering)',
     phase: 4, fathers: ['Athanasius'], connection: 'Reordering of the Passions', letter: 'Α'
+  },
+  // --- Basil + Gregory of Nyssa cluster (Phase 5, Cappadocian) ---
+  'οὐσία': {
+    transliteration: 'ousia', english: 'Essence, Substance',
+    definition: 'Essence, being, substance — what a thing is. In the Cappadocian Trinitarian grammar, οὐσία names the single divine reality shared by Father, Son, and Spirit (μία οὐσία), distinguished from ὑπόστασις (the three who share it). This precise terminological discipline, fixed by Basil in Against Eunomius and in Letter 38, gives Greek theology its durable vocabulary for confessing one God in three.',
+    etymology: 'From εἰμί (to be); present participle οὖσα (being)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Cappadocian Trinitarian Essence', letter: 'Ο'
+  },
+  'ὑπόστασις': {
+    transliteration: 'hypostasis', english: 'Hypostasis, Person, Subsistence',
+    definition: 'Subsistence, concrete individual reality — that which stands under. The Cappadocians fix ὑπόστασις as the technical name for each of the three divine persons — Father, Son, Spirit — who share one οὐσία. Earlier Greek usage (including Athanasius, Phase 4) had sometimes used οὐσία and ὑπόστασις interchangeably; the Cappadocian precision settles the difference and allows the West\'s persona and the East\'s ὑπόστασις to be read together without confusion.',
+    etymology: 'From ὑπό (under) + στάσις (standing, from ἵστημι)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Trinitarian Person', letter: 'Υ'
+  },
+  'ἰδιότης': {
+    transliteration: 'idiotes', english: 'Particularity, Individuating Property',
+    definition: 'Particularity — the distinctive property that marks out one ὑπόστασις from the others. For Basil (Letter 38; On the Holy Spirit), what distinguishes Father from Son from Spirit are their ἰδιώματα: the Father\'s unbegottenness, the Son\'s begottenness, the Spirit\'s procession. The ἰδιότης is hypostatic, not essential: it constitutes the person without dividing the essence.',
+    etymology: 'From ἴδιος (one\'s own, peculiar)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Hypostatic Properties in the Trinity', letter: 'Ι'
+  },
+  'τρόπος ὑπάρξεως': {
+    transliteration: 'tropos hyparxeos', english: 'Mode of Existence',
+    definition: 'Mode of existence — the Cappadocian formula for how the three hypostases of the one God differ. The Father exists unbegotten; the Son, begotten; the Spirit, by procession. These are not three essences but three modes of existing the one essence. The phrase stabilizes in Basil\'s letters and receives fuller development from the two Gregorys.',
+    etymology: 'From τρόπος (manner, way) + ὕπαρξις (existing, from ὑπάρχω)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Hypostatic Mode of Being', letter: 'Τ'
+  },
+  'ἀγεννησία': {
+    transliteration: 'agennesia', english: 'Unbegottenness',
+    definition: 'Unbegottenness — the noun form for the property proper to the Father (cf. ἀγέννητος, Phase 4). Against Eunomius, who argued that ἀγεννησία names the very divine essence (and so the Son, not being ἀγέννητος, cannot be God), the Cappadocians distinguish: ἀγεννησία is a hypostatic property, not the essence itself. Basil and both Gregorys build sustained polemic on this distinction.',
+    etymology: 'From ἀ- (not) + γεννάω (to beget)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Father\'s Hypostatic Property', letter: 'Α'
+  },
+  'πνεῦμα': {
+    transliteration: 'pneuma', english: 'Spirit, Breath, Wind',
+    definition: 'Breath, wind, spirit. Basil\'s De Spiritu Sancto (375) is the foundational defense of the full deity of the Holy Πνεῦμα against the Pneumatomachoi ("Spirit-fighters"), who allowed the Son his divinity but denied it to the Spirit. Basil\'s argument from the Spirit\'s worship and glorification anchors the fourth-century consolidation of full Trinitarian confession — sealed in the Niceno-Constantinopolitan Creed of 381.',
+    etymology: 'From πνέω (to blow, breathe)',
+    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Full Deity of the Holy Spirit', letter: 'Π'
+  },
+  'ὁμοτιμία': {
+    transliteration: 'homotimia', english: 'Equal Honor',
+    definition: 'Equal honor — Basil\'s decisive argument for the Spirit\'s deity (De Spiritu Sancto 10–27). The liturgical practice of worshipping the Spirit "together with" (συν-) Father and Son — a co-worship already fixed in the Church\'s doxology — logically requires the Spirit\'s equal divinity: only God receives the honor due to God. The argument translates doxological practice into dogmatic conclusion.',
+    etymology: 'From ὁμός (same) + τιμή (honor)',
+    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Liturgical Argument for the Spirit\'s Deity', letter: 'Ο'
+  },
+  'ἐκπόρευσις': {
+    transliteration: 'ekporeusis', english: 'Procession',
+    definition: 'Procession — specifically, the eternal procession of the Holy Spirit from the Father (John 15:26). The Cappadocians fix ἐκπόρευσις as the Spirit\'s distinctive mode of origin, parallel to the Son\'s γέννησις (begetting). It is this precise term that the Niceno-Constantinopolitan Creed uses of the Spirit, and it is the central vocabulary of the later Filioque controversy between East and West.',
+    etymology: 'From ἐκ (out of) + πορεύομαι (to go, journey)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Eternal Procession of the Holy Spirit', letter: 'Ε'
+  },
+  'κοινωνία': {
+    transliteration: 'koinonia', english: 'Communion, Fellowship',
+    definition: 'Communion, shared participation. For the Cappadocians, κοινωνία names both the intra-Trinitarian reality — the one essence held in common by Father, Son, and Spirit — and the ecclesial-sacramental fellowship through which creatures are drawn into that divine life. The term connects Trinitarian theology proper with liturgy and spiritual life.',
+    etymology: 'From κοινός (common, shared)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Trinitarian and Ecclesial Communion', letter: 'Κ'
+  },
+  'μέθεξις': {
+    transliteration: 'methexis', english: 'Participation',
+    definition: 'Participation, partaking. Borrowing Plato\'s metaphysics of μέθεξις (creatures participating in the Forms), Gregory of Nyssa and the Cappadocian tradition refigure it theologically: creatures have no divine nature in themselves but participate in the divine life by grace. μέθεξις grounds a careful account of how finite beings can genuinely share in an infinite God without becoming infinite themselves.',
+    etymology: 'From μετά (with) + ἔχω (to have, hold) — "to have with"',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Creaturely Participation in God', letter: 'Μ'
+  },
+  'θεωρία': {
+    transliteration: 'theoria', english: 'Contemplation, Vision',
+    definition: 'Contemplation, beholding. The higher of the two classical stages of the spiritual life (paired with πρᾶξις, active virtue): the direct, receptive contemplation of God by the purified intellect. Basil and the two Gregorys deepen a pattern that begins in Origen and Clement, and that Maximus will develop further (Phase 12). θεωρία is not abstract theorizing but the prayerful seeing of God\'s presence in Scripture and creation.',
+    etymology: 'From θεωρέω (to behold, contemplate, gaze upon)',
+    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Contemplative Stage of the Spiritual Life', letter: 'Θ'
+  },
+  'ἐπέκτασις': {
+    transliteration: 'epektasis', english: 'Perpetual Straining-Forward',
+    definition: 'Straining forward — from Philippians 3:13, where Paul "stretches forward" toward the prize. Gregory of Nyssa makes ἐπέκτασις the defining movement of the saved soul: because God is infinite (ἀπειρία), the soul never exhausts God and so never ceases its advance. Beatitude is thus dynamic — a perpetual receiving and reaching, never arrival. The concept reappears systematized in Maximus (Phase 12).',
+    etymology: 'From ἐπί (upon, toward) + ἔκτασις (stretching, from ἐκτείνω)',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Infinite Progress of the Saved Soul', letter: 'Ε'
+  },
+  'γνόφος': {
+    transliteration: 'gnophos', english: 'Darkness, Divine Gloom',
+    definition: 'Thick darkness — specifically the γνόφος into which Moses entered on Mount Sinai (Exodus 20:21) to meet God. In Gregory of Nyssa\'s Life of Moses, γνόφος names the apophatic summit of the spiritual ascent: past the affirmable attributes of God, the soul enters a luminous darkness in which God is known precisely as incomprehensible. The figure grounds the whole apophatic tradition and is foundational for Pseudo-Dionysius (Phase 11).',
+    etymology: 'From γνόφος / δνόφος (darkness, gloom); pre-Homeric',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Apophatic Summit of the Spiritual Ascent', letter: 'Γ'
+  },
+  'θεῖος ἔρως': {
+    transliteration: 'theios eros', english: 'Divine Love, Holy Desire',
+    definition: 'Divine love, holy desire. Drawing on Plato\'s Symposium and on Philo, Gregory of Nyssa baptizes ἔρως for Christian mystical theology, especially in his Homilies on the Song of Songs. Divine ἔρως is not grasping appetite but the soul\'s ardent drawing toward the infinite Beauty that has first loved it. The term feeds directly into Pseudo-Dionysius\'s Divine Names (Phase 11) and the whole later Orthodox tradition of bridal mysticism.',
+    etymology: 'From θεῖος (divine) + ἔρως (desiring love)',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Mystical Love of the Soul for God', letter: 'Θ'
+  },
+  'ἀπειρία': {
+    transliteration: 'apeiria', english: 'Infinity, Unboundedness',
+    definition: 'Infinity, unboundedness. Gregory of Nyssa makes divine ἀπειρία — not vast scale, but genuine non-finiteness — the structural ground of both theology proper and spiritual life: God is infinite, so God can never be circumscribed, comprehended, or exhausted. This grounds both apophatic knowledge of God (we cannot comprehend what has no limit) and perpetual ἐπέκτασις (the soul\'s advance into God never reaches a last step).',
+    etymology: 'From ἀ- (not) + πεῖραρ (limit, boundary)',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Divine Infinity as Ground of Apophatic Theology', letter: 'Α'
+  },
+  'διάστημα': {
+    transliteration: 'diastema', english: 'Interval, Extension',
+    definition: 'Interval — Gregory of Nyssa\'s key ontological category for the condition of all created being. Creatures exist in διάστημα: temporal succession, spatial extension, and the gap between one moment and the next. God, by contrast, is ἀδιάστατος — without interval, undivided, present wholly to himself. This distinction undergirds Gregory\'s apophatic theology and his account of creaturely progress in God.',
+    etymology: 'From διά (through) + ἵστημι (to stand) — "that which stands between"',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Ontological Gap Between Creator and Creature', letter: 'Δ'
+  },
+  'ἀκολουθία': {
+    transliteration: 'akolouthia', english: 'Sequence, Following',
+    definition: 'Sequence, proper order of following. For Gregory of Nyssa, ἀκολουθία names the internal logic of Scripture and of the spiritual life: each moment, each word, each virtue follows its predecessor in a cosmic choreography that the discerning reader or ascetic traces. The concept structures his Life of Moses and Homilies on the Song of Songs as continuous stages of ascent.',
+    etymology: 'From ἀκόλουθος (following), from ἀ- (together) + κέλευθος (path)',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Scriptural and Spiritual Sequence', letter: 'Α'
+  },
+  'παρρησία': {
+    transliteration: 'parrhesia', english: 'Boldness, Free Speech',
+    definition: 'Boldness, free and confident speech — the free standing of one who may speak without fear before a sovereign. In Gregory of Nyssa\'s theology, παρρησία is lost in the Fall and restored in Christ: the saved soul recovers its original παρρησία before God. The term carries its classical-political weight (the citizen\'s free speech in the Athenian assembly) baptized as the Christian\'s recovered standing with the Father.',
+    etymology: 'From πᾶν (all) + ῥῆσις (speech)',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Restored Freedom Before God', letter: 'Π'
+  },
+  'τελειότης': {
+    transliteration: 'teleiotes', english: 'Perfection, Completion',
+    definition: 'Perfection, completion. Gregory of Nyssa transforms the classical ideal of τελειότης: because God is infinite, "perfection" for the creature is not a fixed end-state but a perpetual movement into God (cf. ἐπέκτασις). Christian τελειότης is never static. The reframing grounds a dynamic anthropology of unending spiritual growth.',
+    etymology: 'From τέλος (end, goal, completion)',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Dynamic Perfection as Unending Growth', letter: 'Τ'
+  },
+  'κάλλος': {
+    transliteration: 'kallos', english: 'Beauty',
+    definition: 'Beauty. Gregory of Nyssa\'s deeply aesthetic theology: God is the archetypal κάλλος, and all created beauty is a participated reflection drawing the soul back to its Source (Homilies on the Song of Songs; On the Making of Man 12). Gregory\'s κάλλος is both metaphysical (Beauty as a divine attribute) and ascetical (the soul beautified by approximating its Archetype).',
+    etymology: 'Pre-Greek; cognate with καλός (beautiful, noble)',
+    phase: 5, fathers: ['Gregory of Nyssa'], connection: 'Beauty as Divine Attribute and Spiritual Goal', letter: 'Κ'
+  },
+  'κοινόβιον': {
+    transliteration: 'koinobion', english: 'Cenobitic Community',
+    definition: 'Community life — the shared monastic household. Basil\'s Asketikon (Long Rules and Short Rules) develops the κοινόβιον as the normative form of Christian asceticism, in contrast to the solitary anchoritic tradition of Antony (Phase 4). Basil argues that the gospel commandments of love cannot be practiced alone; communal monasticism is therefore theologically required, not merely pastorally prudent. The pattern becomes the foundation of Eastern monasticism.',
+    etymology: 'From κοινός (common) + βίος (life)',
+    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Cenobitic Monastic Life', letter: 'Κ'
+  },
+  'φιλανθρωπία': {
+    transliteration: 'philanthropia', english: 'Love of Humanity',
+    definition: 'Love of humanity. A classical virtue that Basil translates into institutional practice: the Basileiad outside Caesarea (c. 370s) — a complex of hospitals, hospices, and shelters for the poor and the sick — is perhaps the first organized Christian charitable institution at scale, a visible φιλανθρωπία answering God\'s own love for humanity. The term anchors a patristic theology of social mercy that shapes later Byzantine charitable foundations.',
+    etymology: 'From φίλος (loving) + ἄνθρωπος (human being)',
+    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Christian Charitable Institutions', letter: 'Φ'
   }
 };
 
