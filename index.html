@@ -53,6 +53,8 @@
   /* Greek text — Gentium Plus, purpose-built for polytonic Greek */
   .greek, .greek-term, .term-greek, .greek-focus-title {
     font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+    font-variant: normal;  /* Greek shouldn't be small-capped */
+    letter-spacing: 0;
   }
 
   /* Academic small-caps on major section headings */
@@ -279,6 +281,14 @@
     color: #2a2620;
     margin-bottom: 1rem;
     font-weight: 500;
+  }
+  
+  .tool-subtitle {
+    font-style: italic;
+    font-size: 1rem;
+    color: #6b5d4a;
+    letter-spacing: 0.04em;
+    margin: -0.7rem 0 1.1rem 0;
   }
   
   .tool-description {
@@ -671,7 +681,8 @@
       <div class="tools-grid">
         <div class="tool-card" style="border: 3px solid #556b3d; background: linear-gradient(145deg, #fffdf7 0%, #f8f5f0 100%);">
           <div class="tool-icon" style="background: linear-gradient(135deg, #556b3d 0%, #2ecc71 100%);">☩</div>
-          <h3 class="tool-title">Φρόνημα τῶν Πατέρων</h3>
+          <h3 class="tool-title"><span class="greek">Φρόνημα τῶν Πατέρων</span></h3>
+          <div class="tool-subtitle">The Mind of the Fathers · Patristic Formation</div>
           <div style="background: #556b3d; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Currently Active</div>
           <p class="tool-description">
             Systematic formation through 37 Church Fathers across 7 centuries. Three tracks available: 
@@ -841,7 +852,7 @@
       <!-- Current Studies Section on Homepage -->
       <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #e8ddc8; border-radius: 12px;">
         <h3 style="color: #2a2620; margin-bottom: 1rem;">Your Current Studies</h3>
-        <p style="color: #6b5d4a; margin-bottom: 1.5rem;">You're currently enrolled in <strong>Φρόνημα τῶν Πατέρων (Patristic Formation)</strong> - Week 2 of 40</p>
+        <p style="color: #6b5d4a; margin-bottom: 1.5rem;">You're currently enrolled in <strong><span class="greek">Φρόνημα τῶν Πατέρων</span> (Patristic Formation)</strong> - Week 2 of 40</p>
         <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap;">
           <button onclick="showCurrentStudies()" style="background: linear-gradient(135deg, #556b3d 0%, #2ecc71 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Continue Studies →</button>
           <a href="study-track-dashboard.html" style="background: #faf6ed; color: #2a2620; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #bdc3c7; transition: all 0.3s ease;" onmouseover="this.style.background='#e8ddc8'" onmouseout="this.style.background='#faf6ed'">Open Study Dashboard</a>
@@ -954,7 +965,7 @@
       <!-- Current Studies Detailed View -->
       <div id="current-studies-detail" style="display: none;">
         <div class="focus-header">
-          <h2 class="focus-title">Φρόνημα τῶν Πατέρων</h2>
+          <h2 class="focus-title"><span class="greek">Φρόνημα τῶν Πατέρων</span></h2>
           <p class="focus-subtitle">Week 2 of 40 — 40-Week Intensive Track</p>
         </div>
         
