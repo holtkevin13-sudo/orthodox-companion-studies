@@ -765,16 +765,16 @@ body {
         <div class="progress-item">
           <div class="progress-label">Overall Progress</div>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 5%"></div>
+            <div class="progress-fill" id="overall-progress-fill" style="width: 5%"></div>
           </div>
-          <div class="progress-text">5% Complete</div>
+          <div class="progress-text" id="overall-progress-text">5% Complete</div>
         </div>
         <div class="progress-item">
           <div class="progress-label">Phase 1 Progress</div>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 25%"></div>
+            <div class="progress-fill" id="phase-progress-fill" style="width: 25%"></div>
           </div>
-          <div class="progress-text">Week 2 of 8</div>
+          <div class="progress-text" id="phase-progress-text">Week 2 of 8</div>
         </div>
         <div class="progress-item">
           <div class="progress-label">Greek Vocabulary</div>
@@ -1375,6 +1375,9 @@ class StudyTaskManager {
     // Update day progress immediately
     this.updateDayProgress(dayId);
     
+    // Update top-level progress bars (Overall + Phase 1)
+    this.updateOverallProgress();
+    
     // Check for week completion
     this.checkWeekCompletion();
     
@@ -1459,6 +1462,69 @@ class StudyTaskManager {
     days.forEach(dayId => {
       this.updateDayProgress(dayId);
     });
+    // Also update top-level progress bars on load
+    this.updateOverallProgress();
+  }
+
+  // Compute current week's completion as a fraction 0.0 -> 1.0
+  // Fully-completed days (hardcoded class="completed") count as 1.0
+  // Checkbox-driven days count as (checked / total) of that day
+  computeWeekFraction() {
+    const allDays = document.querySelectorAll('.day-card');
+    if (!allDays.length) return 0;
+
+    let totalDays = 0;
+    let doneUnits = 0;
+
+    allDays.forEach(day => {
+      totalDays += 1;
+      const checkboxes = day.querySelectorAll('.task-checkbox');
+
+      if (checkboxes.length === 0) {
+        // Pre-completed day (Tue, Wed) — no checkboxes, always count as done
+        if (day.classList.contains('completed')) {
+          doneUnits += 1;
+        }
+      } else {
+        const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+        doneUnits += (checked / checkboxes.length);
+      }
+    });
+
+    return doneUnits / totalDays;
+  }
+
+  // Update top-level Overall + Phase 1 progress bars based on current week state
+  updateOverallProgress() {
+    const WEEK_NUM = 2;
+    const PHASE_WEEKS = 8;   // Phase 1: Apostolic Fathers
+    const PROGRAM_WEEKS = 40;
+
+    const weekFraction = this.computeWeekFraction();
+    // Units completed through the program: fully-finished prior weeks + current week fraction
+    const completedUnits = (WEEK_NUM - 1) + weekFraction;
+
+    const overallPct = (completedUnits / PROGRAM_WEEKS) * 100;
+    const phasePct = (completedUnits / PHASE_WEEKS) * 100;
+
+    // Overall Progress bar
+    const overallFill = document.getElementById('overall-progress-fill');
+    const overallText = document.getElementById('overall-progress-text');
+    if (overallFill) overallFill.style.width = `${overallPct.toFixed(1)}%`;
+    if (overallText) overallText.textContent = `${overallPct.toFixed(1)}% Complete`;
+
+    // Phase 1 Progress bar
+    const phaseFill = document.getElementById('phase-progress-fill');
+    const phaseText = document.getElementById('phase-progress-text');
+    if (phaseFill) phaseFill.style.width = `${phasePct.toFixed(1)}%`;
+    if (phaseText) {
+      // Show "Week 2 of 8" with completion marker when the week is fully done
+      phaseText.textContent = weekFraction >= 1
+        ? `Week ${WEEK_NUM} of ${PHASE_WEEKS} ✓`
+        : `Week ${WEEK_NUM} of ${PHASE_WEEKS}`;
+    }
+
+    console.log(`📊 Overall progress updated: week fraction = ${(weekFraction * 100).toFixed(1)}%, overall = ${overallPct.toFixed(1)}%, phase = ${phasePct.toFixed(1)}%`);
   }
 
   // Check if the entire week is complete
