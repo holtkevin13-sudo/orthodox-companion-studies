@@ -16,13 +16,21 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-18T00:30:00Z
+// build: 2026-04-17T21:30:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
 // Extends PHASE_DATA[N].greek (which is the short "focus terms" list
 // shown in the dashboard's Phase Greek panel). LEXICON_ENTRIES is the
 // full scholarly lexicon — each entry tagged with its phase.
+//
+// Entry schema:
+//   transliteration, english, definition, etymology, phase,
+//   fathers (array), connection, letter — all required.
+//   language: 'latin' — required on Latin entries only.
+//   pastoralNote — OPTIONAL. 1–3 sentences of Orthodox reception,
+//     scholarly contextualization, or pastoral framing beyond the
+//     core definition. Omit for entries that do not require it.
 //
 // Add terms here as Kevin expands the lexicon toward its 800+ target.
 // Each entry appears automatically in its phase section in
@@ -248,7 +256,8 @@ const LEXICON_ENTRIES = {
     transliteration: 'chiliasmos', english: 'Millennialism, Chiliasm',
     definition: 'The doctrine of a thousand-year earthly reign of Christ before the final judgment. Justin professes chiliast eschatology in Dialogue with Trypho 80–81, while acknowledging that other orthodox Christians of his day disagreed. The view fell out of favor in later patristic tradition but testifies to the eschatological diversity of the second-century Church.',
     etymology: 'From χίλιοι (thousand)',
-    phase: 2, fathers: ['Justin Martyr'], connection: 'Second-Century Eschatology', letter: 'Χ'
+    phase: 2, fathers: ['Justin Martyr'], connection: 'Second-Century Eschatology', letter: 'Χ',
+    pastoralNote: 'The later tradition did not follow Justin here. Literal millenarianism was progressively marginalized and excluded by the consensus that took doctrinal form at the Second Ecumenical Council (381), whose Creed confesses a kingdom that "shall have no end." Justin\'s chiliasm is one of the places where an early Father\'s position was corrected by the Church\'s subsequent discernment — a sign not of scandal but of the proper development of doctrine, in which individual patristic voices are weighed within the symphonic judgment of the councils and the fathers received as a whole.'
   },
   'παρουσία': {
     transliteration: 'parousia', english: 'Coming, Advent, Presence',
@@ -327,7 +336,8 @@ const LEXICON_ENTRIES = {
     transliteration: 'sermo', english: 'Word, Discourse',
     definition: 'Word, speech, discourse. Tertullian consistently uses sermo, not verbum, to translate the Johannine Λόγος — arguing that sermo better captures the Word as living discourse rather than a detached utterance (Adversus Praxean 5). The West later standardizes on verbum (as in the Vulgate\'s "In principio erat Verbum"), but Tertullian\'s choice reflects his sensitivity to the Logos as eternal divine speaking.',
     etymology: 'Latin: from serere (to join, weave together) — literally "a weaving of words"',
-    phase: 2.5, fathers: ['Tertullian'], connection: 'Latin Christology of the Word', letter: 'S'
+    phase: 2.5, fathers: ['Tertullian'], connection: 'Latin Christology of the Word', letter: 'S',
+    pastoralNote: 'Both sermo and verbum render the Greek λόγος, and each preserves a different facet of it: sermo the sense of living speech and discourse, verbum the sense of the settled utterance or word. Tertullian\'s choice did not prevail. The Vulgate standardized verbum at John 1:1 ("In principio erat Verbum"), and the whole subsequent Latin tradition — from Augustine through the scholastics — engages the Johannine prologue in those terms. Neither rendering is wrong, but Western medieval theology is built on verbum.'
   },
   'sacramentum': {
     language: 'latin',
@@ -1099,7 +1109,8 @@ const LEXICON_ENTRIES = {
     transliteration: 'ploutos', english: 'Wealth, Riches',
     definition: 'Wealth. Chrysostom\'s treatment of πλοῦτος is among the most searing in Christian history. In the Homilies on Lazarus and the Rich Man, on 1 Corinthians, and on Matthew, he argues that hoarded wealth in a city of beggars is theft — not because God requires poverty, but because excess possessed alongside a starving neighbor constitutes an inward robbery of that neighbor. The preacher presses the hearer toward ἐλεημοσύνη as the only honest response.',
     etymology: 'Pre-Greek; perhaps related to πίμπλημι (to fill)',
-    phase: 7, fathers: ['John Chrysostom'], connection: 'Theology of Wealth and Its Redistribution', letter: 'Π'
+    phase: 7, fathers: ['John Chrysostom'], connection: 'Theology of Wealth and Its Redistribution', letter: 'Π',
+    pastoralNote: 'Read across the full breadth of Chrysostom\'s corpus, the target of his sharpest language is not ownership as such but hoarding amid need and the insulation of wealth from mercy. The wider patristic consensus preserves a theology of stewardship and discernment for the lay vocation — possessions held under God and spent in love — while reserving absolute material renunciation for the monastic call. Chrysostom himself presupposes this distinction even where his rhetoric is most uncompromising.'
   },
   'ἀνάγνωσις': {
     transliteration: 'anagnosis', english: 'Reading, Scripture Reading',
@@ -1208,25 +1219,29 @@ const LEXICON_ENTRIES = {
     transliteration: 'asynchytos', english: 'Without Confusion',
     definition: '"Without confusion" — the first of the four Chalcedonian adverbs (451) defining the two natures in Christ. Built directly on Cyril\'s insistence that the union preserves the distinct integrity of divinity and humanity: neither nature is absorbed or blurred by the other. The full Chalcedonian formula: ἀσυγχύτως, ἀτρέπτως, ἀδιαιρέτως, ἀχωρίστως — "without confusion, without change, without division, without separation."',
     etymology: 'From ἀ- (not) + συγχέω (to pour together, confuse)',
-    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Confused', letter: 'Α'
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Confused', letter: 'Α',
+    pastoralNote: 'The formal adverb belongs to the Council of Chalcedon (451), which met seven years after Cyril\'s death. The continuity is nonetheless real: the Fathers of Chalcedon understood themselves as standing on Cyril\'s foundation, and his Second Letter to Nestorius and the Formula of Reunion (433) supply the underlying insistence on unity-without-confusion that the council crystallized in adverbial form.'
   },
   'ἀτρέπτως': {
     transliteration: 'atreptos', english: 'Without Change',
     definition: '"Without change" — the second Chalcedonian adverb. Neither nature of the incarnate Christ is altered by the union: divinity remains fully divine (without loss), humanity remains fully human (without transformation into something else). The adverb guards Cyril\'s legacy against both Eutychian absorption and docetic dissolution. Together with ἀσυγχύτως it preserves the integrity of each nature.',
     etymology: 'From ἀ- (not) + τρέπω (to turn, change)',
-    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Changed', letter: 'Α'
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Changed', letter: 'Α',
+    pastoralNote: 'As with the other three Chalcedonian adverbs, ἀτρέπτως is the formal work of the council in 451, not Cyril\'s own diction. But the theological concern it fixes — the unaltered integrity of each nature within the union — is fully Cyrillian; attribution to Cyril here marks doctrinal continuity rather than verbal authorship.'
   },
   'ἀδιαιρέτως': {
     transliteration: 'adiairetos', english: 'Without Division',
     definition: '"Without division" — the third Chalcedonian adverb. Over against every Nestorian-style partitioning of Christ into two Sons or two subjects, the union is ἀδιαιρέτως: one Christ, one person, one subject. Paired with ἀχωρίστως, the adverb insists the two natures cannot be separated or distributed between rival agents.',
     etymology: 'From ἀ- (not) + διαιρέω (to divide)',
-    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Divided', letter: 'Α'
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Divided', letter: 'Α',
+    pastoralNote: 'The precise adverb is Chalcedonian; the theological concern it fixes is fully Cyrillian. Against every Nestorian partition, Cyril\'s Third Letter to Nestorius insists on a single Christ with a single subject — the substance that Chalcedon (451) then crystallized in adverbial form.'
   },
   'ἀχωρίστως': {
     transliteration: 'achoristos', english: 'Without Separation',
     definition: '"Without separation" — the fourth Chalcedonian adverb. The two natures of Christ are never separable from one another after the Incarnation: even in Christ\'s death, the union persists. The adverb fixes Cyril\'s insistence on the singular, enduring identity of the incarnate Son against every temporal or circumstantial parting of divine and human.',
     etymology: 'From ἀ- (not) + χωρίζω (to separate, place apart)',
-    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Separated', letter: 'Α'
+    phase: 9, fathers: ['Cyril of Alexandria'], connection: 'Chalcedonian Adverb: Natures Not Separated', letter: 'Α',
+    pastoralNote: 'Like its three companion adverbs, ἀχωρίστως is the formal work of Chalcedon in 451 rather than Cyril\'s own idiom. The underlying concern, however — the indivisible persistence of the union through every condition, including Christ\'s death — is unmistakably Cyrillian, and the council self-consciously built on his Second and Third Letters to Nestorius in giving it adverbial form.'
   },
   'ἀληθὴς Θεός καὶ ἀληθὴς ἄνθρωπος': {
     transliteration: 'alethes Theos kai alethes anthropos', english: 'Truly God and Truly Man',
@@ -1351,7 +1366,8 @@ const LEXICON_ENTRIES = {
     transliteration: 'Christus totus', english: 'The Whole Christ',
     definition: '"The whole Christ" — Christ understood as the inseparable unity of Head and Body, the incarnate Son together with the Church. The phrase is Augustinian in its fullest development, but Leo\'s sermons (esp. Sermo 63, 70) deploy it powerfully in liturgical-ecclesial register: the Church\'s life is Christ\'s continuing life, the sacraments are his own acts, and the suffering of members is the suffering of the Head.',
     etymology: 'From Latin Christus (Christ) + totus (whole, entire)',
-    phase: 10, fathers: ['Leo the Great'], connection: 'Christ and the Church as One Body', letter: 'C'
+    phase: 10, fathers: ['Leo the Great'], connection: 'Christ and the Church as One Body', letter: 'C',
+    pastoralNote: 'The fuller theological development of the totus Christus theme belongs to Augustine, especially in his Enarrationes in Psalmos, where the Head-and-Body grammar structures whole treatises. Leo\'s contribution is the distinctively liturgical-homiletic register: the feast preached, the Church addressed, the members invited to recognize their participation in the Head. The Orthodox tradition receives the theme from both — Leo through the Tome\'s conciliar reception, Augustine through the broader Latin patristic inheritance.'
   },
   'dignitas': {
     language: 'latin',
@@ -1481,7 +1497,8 @@ const LEXICON_ENTRIES = {
     transliteration: 'theourgia', english: 'Divine Work, Theurgy',
     definition: 'Divine work — God\'s own activity in and through sacramental and liturgical rites. Dionysius borrows θεουργία from late-Neoplatonist ritual vocabulary but radically re-centers it: where pagan theurgy invoked divine power through ritual technique, Dionysian θεουργία is God\'s own act in the sacramental action of the Church (EH 3). The Incarnation is the supreme θεουργία; the Eucharist continues it; every valid rite participates in it.',
     etymology: 'From θεός (God) + ἔργον (work)',
-    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'God\'s Own Action in Sacramental Rite', letter: 'Θ'
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'God\'s Own Action in Sacramental Rite', letter: 'Θ',
+    pastoralNote: 'The transformation Dionysius works on this Neoplatonic vocabulary is substantive, not merely lexical: where Iamblichan theurgy understood ritual as a technique by which the divine could be drawn down or compelled, Dionysian θεουργία names the reverse movement — God\'s own freely-given action in the sacramental rite, received by the Church rather than produced by it. The Incarnation sets the grammar: the Church does not perform θεουργία upon God, but participates in what God is performing in and through her liturgy.'
   },
   'σύμβολον': {
     transliteration: 'symbolon', english: 'Symbol, Token',
@@ -1511,7 +1528,8 @@ const LEXICON_ENTRIES = {
     transliteration: 'Dionysios Areopagites', english: 'Dionysius the Areopagite',
     definition: 'Dionysius the Areopagite — the pseudonymous author of the Corpus Areopagiticum (c. 500 AD, probably Syrian). The corpus presents itself as the work of the Athenian convert of Paul (Acts 17:34), but on linguistic and doctrinal grounds is now dated to the late fifth or early sixth century. The pseudonymity was only questioned seriously from the fifteenth century onward. The writings were received by the Church East and West as quasi-apostolic authority and shaped the whole later mystical tradition — Maximus (Phase 12), John of Damascus (Phase 13), Eriugena, Aquinas, Bonaventure, Nicholas of Cusa.',
     etymology: 'From Διονύσιος (Dionysius, a Greek theophoric name) + Ἀρεοπαγίτης (from the Areopagus, Athens)',
-    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Pseudonymous Author and His Reception', letter: 'Δ'
+    phase: 11, fathers: ['Pseudo-Dionysius the Areopagite'], connection: 'The Pseudonymous Author and His Reception', letter: 'Δ',
+    pastoralNote: 'The question of authorship, settled on the scholarly side since the Renaissance, is distinct from the question of authority. The Orthodox tradition has received this corpus as a genuine patristic witness on its theological merits — integrated into the hymnography, drawn upon decisively at the Second Council of Nicaea (787) in its defense of the icons, and made the spine of the later Greek synthesis through Maximus the Confessor (Phase 12) and Gregory Palamas. Authorship has never been the measure of a text\'s weight in the Orthodox reception; that weight is discerned through the consent of the fathers and councils over time.'
   },
   // --- Maximus the Confessor cluster (Phase 12) ---
   'θέλημα': {
