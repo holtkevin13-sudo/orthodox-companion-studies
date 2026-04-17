@@ -1180,7 +1180,7 @@ function phaseGreekHTML(phase) {
     <div class="focus-greek">
       <div class="focus-greek-header">
         <h3>Phase Greek Focus — ${phaseLabel}</h3>
-        <a href="greek-lexicon-index.html" class="focus-greek-link">View Lexicon →</a>
+        <a href="greek-lexicon-index.html#phase-${phase.number}" class="focus-greek-link">View Lexicon →</a>
       </div>
       <div class="focus-greek-terms">
         ${phase.greek.map(g => `<span class="greek-term">${g}</span>`).join('')}
