@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T19:00:00Z -->
+<!-- build: 2026-04-17T20:30:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -365,6 +365,15 @@ em, i { font-style: italic; }
 
 .greek-term-greek {
   font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+/* Latin vocabulary pills (Phase 2.5 Tertullian/Cyprian, Phase 10 Leo the Great).
+   Italic Cormorant distinguishes Latin terms from Greek without adding a badge
+   at pill scale. Default (no data-language or data-language="greek") keeps the
+   upright Gentium styling above. */
+.greek-term[data-language="latin"] .greek-term-greek {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
 }
 
 .greek-term-sep {
@@ -1520,11 +1529,13 @@ function phaseGreekHTML(phase) {
     ? `Phase ${phase.number}: ${phase.name}`
     : phase.name;
 
-  // Each pill: Greek + English inline. Full definition appears as a
+  // Each pill: Greek/Latin + English inline. Full definition appears as a
   // native tooltip on hover (desktop) for scholarly reinforcement.
   // Pills are clickable — they deep-link to the term's entry in the
   // main lexicon via `lexiconAnchorFor()`. Landing highlight CSS on
   // the lexicon page shows the user exactly where they arrived.
+  // data-language drives font styling (upright Gentium for Greek,
+  // italic Cormorant for Latin) per the Part 3 amendment.
   const termPills = terms.map(t => {
     const greek = t.greek || '';
     const english = t.english || t.transliteration || '';
@@ -1537,13 +1548,14 @@ function phaseGreekHTML(phase) {
     const href = (typeof lexiconAnchorFor === 'function')
       ? lexiconAnchorFor(t)
       : 'greek-lexicon-index.html';
-    return `<a href="${href}" class="greek-term" title="${title}"><span class="greek-term-greek">${greek}</span>${englishHTML}</a>`;
+    const language = (t.language || 'greek').toLowerCase();
+    return `<a href="${href}" class="greek-term" data-language="${language}" title="${title}"><span class="greek-term-greek">${greek}</span>${englishHTML}</a>`;
   }).join('');
 
   return `
     <div class="focus-greek">
       <div class="focus-greek-header">
-        <h3>Phase Greek Focus — ${phaseLabel}</h3>
+        <h3>Phase Vocabulary — ${phaseLabel}</h3>
         <div class="focus-greek-meta">
           <span class="focus-greek-count">${terms.length} ${terms.length === 1 ? 'term' : 'terms'}</span>
           <a href="greek-lexicon-index.html#phase-${phase.number}" class="focus-greek-link">View Lexicon →</a>
