@@ -261,6 +261,28 @@ em, i { font-style: italic; }
   border-bottom-color: #1a3a5c;
 }
 
+/* Phase Fathers line — shown at top of Today's Focus, weekly-level context */
+.phase-fathers-line {
+  margin: 0 0 1.5rem 0;
+  padding: 0.75rem 1.1rem;
+  background: rgba(212, 175, 55, 0.05);
+  border-left: 3px solid rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+.phase-fathers-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-right: 0.7rem;
+}
+.phase-fathers-names {
+  color: #3a3228;
+  font-style: italic;
+}
+
 /* Full-width Phase Greek Focus panel — Byzantine gold accent */
 .focus-greek {
   background: linear-gradient(135deg, #fffaec 0%, #ffffff 100%);
@@ -780,43 +802,73 @@ em, i { font-style: italic; }
 .week-complete-banner {
   background: linear-gradient(135deg, #2a2620 0%, #3a3228 100%);
   color: #e8ddc8;
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 2.5rem;
   border-radius: 8px;
   margin: 2rem 0;
-  text-align: center;
   border-left: 4px solid #D4AF37;
-  box-shadow: 0 4px 20px rgba(44, 62, 80, 0.3);
+  box-shadow: 0 4px 20px rgba(42, 38, 32, 0.25);
 }
 
-.week-complete-banner h2 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.8rem;
-  font-weight: 600;
+.week-conclusion-label {
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
   color: #D4AF37;
-}
-
-.week-complete-banner p {
-  margin: 0 0 1.5rem 0;
-  font-size: 1.1rem;
-  opacity: 0.9;
-  font-style: italic;
-}
-
-.completion-stats {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-}
-
-.completion-stats div {
   font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.week-conclusion-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #faf6ed;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+}
+
+.week-conclusion-context {
+  font-style: italic;
+  color: #c9bca0;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.02rem;
+}
+
+.week-conclusion-reflection {
+  font-style: italic;
+  color: #e8ddc8;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+  border-left: 2px solid rgba(212, 175, 55, 0.4);
+  line-height: 1.7;
+}
+
+.week-conclusion-divider {
+  border: none;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  margin: 1.75rem 0;
+}
+
+.week-conclusion-next-label {
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  color: #D4AF37;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.week-conclusion-next-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #faf6ed;
+  margin-bottom: 0.25rem;
+}
+
+.week-conclusion-next-context {
+  font-style: italic;
+  color: #c9bca0;
   font-size: 0.95rem;
-  padding: 0.5rem 1rem;
-  background: rgba(236, 240, 241, 0.1);
-  border-radius: 4px;
-  border-left: 3px solid #D4AF37;
+  margin-bottom: 1.75rem;
 }
 
 @media (max-width: 480px) {
@@ -826,11 +878,6 @@ em, i { font-style: italic; }
   
   .task-text {
     font-size: 0.9rem;
-  }
-  
-  .completion-stats {
-    flex-direction: column;
-    gap: 0.5rem;
   }
 }
 
@@ -1210,6 +1257,19 @@ function phaseGreekHTML(phase) {
   `;
 }
 
+function phaseFathersHTML(phase) {
+  if (!phase || !phase.fathers) return '';
+  const label = phase.number !== undefined
+    ? `Phase ${phase.number} Fathers`
+    : 'Phase Fathers';
+  return `
+    <div class="phase-fathers-line">
+      <span class="phase-fathers-label">${label}</span>
+      <span class="phase-fathers-names">${linkifyPhaseFathers(phase.fathers)}</span>
+    </div>
+  `;
+}
+
 function renderTodaysFocus() {
   const week = STUDY_STATE.currentWeek;
   const wd = WEEK_DATA[week];
@@ -1224,6 +1284,7 @@ function renderTodaysFocus() {
 
   if (todayIdx === 6) {
     container.innerHTML = `
+      ${phaseFathersHTML(phase)}
       <div class="focus-grid">
         <div class="focus-section">
           <h3>Today: Rest &amp; Reflection</h3>
@@ -1237,6 +1298,7 @@ function renderTodaysFocus() {
 
   if (todayIdx === 5) {
     container.innerHTML = `
+      ${phaseFathersHTML(phase)}
       <div class="focus-grid">
         <div class="focus-section">
           <h3>Today: Psalms</h3>
@@ -1260,6 +1322,7 @@ function renderTodaysFocus() {
   }
 
   container.innerHTML = `
+    ${phaseFathersHTML(phase)}
     <div class="focus-grid">
       <div class="focus-section">
         <h3>Psalms</h3>
@@ -1621,21 +1684,45 @@ class StudyTaskManager {
     const weekSection = document.querySelector('.week-overview');
     if (!weekSection) return;
 
-    const overallPct = ((week / 40) * 100).toFixed(1);
+    const currentPhase = getPhaseForWeek(week);
+    const currentTitle = wd.subtitle || wd.title || '';
+    const currentPhaseLine = currentPhase
+      ? `Phase ${currentPhase.number}: ${currentPhase.name} · ${currentPhase.fathers}`
+      : '';
+
+    const isLast = week >= 40;
+    const nextWeek = isLast ? null : WEEK_DATA[week + 1];
+    const nextPhase = isLast ? null : getPhaseForWeek(week + 1);
+    const nextTitle = nextWeek ? (nextWeek.subtitle || nextWeek.title || `Week ${week + 1}`) : '';
+    const nextPhaseLine = nextPhase
+      ? `Phase ${nextPhase.number}: ${nextPhase.name} · ${nextPhase.fathers}`
+      : '';
+
+    // Optional reflection — use reviewPrompt if short enough to read as a pause, not a paragraph
+    const reflection = wd.reviewPrompt && wd.reviewPrompt.length < 260
+      ? `<p class="week-conclusion-reflection">${wd.reviewPrompt}</p>`
+      : '';
+
+    const nextBlock = isLast
+      ? `<div class="week-conclusion-next-label">The Course Is Complete</div>
+         <div class="week-conclusion-next-title">All 40 weeks archived</div>
+         <div class="week-conclusion-next-context">The work remains; the formation continues in parish life.</div>`
+      : `<div class="week-conclusion-next-label">Next</div>
+         <div class="week-conclusion-next-title">Week ${week + 1} · ${nextTitle}</div>
+         <div class="week-conclusion-next-context">${nextPhaseLine}</div>`;
+
     const celebration = document.createElement('div');
     celebration.className = 'week-complete-banner';
     celebration.innerHTML = `
-      <h2>Week ${week} Complete</h2>
-      <p>${wd.subtitle || wd.title}</p>
-      <div class="completion-stats">
-        ${(wd.celebrationStats || []).map(s => `<div>${s}</div>`).join('')}
-      </div>
-      <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.8;">
-        Course Progress: ${overallPct}% complete (${week} of 40 weeks)
-      </p>
+      <div class="week-conclusion-label">Week ${week} · Concluded</div>
+      <h2 class="week-conclusion-title">${currentTitle}</h2>
+      <div class="week-conclusion-context">${currentPhaseLine}</div>
+      ${reflection}
+      <hr class="week-conclusion-divider">
+      ${nextBlock}
       <div class="advance-actions">
         <button class="btn-advance" id="btn-advance-week">
-          ${week < 40 ? `Advance to Week ${week + 1} →` : 'Complete the Course'}
+          ${isLast ? 'Return to Course Overview' : `Begin Week ${week + 1}`}
         </button>
       </div>
     `;
@@ -1675,15 +1762,15 @@ class StudyTaskManager {
     overlay.className = 'reconcile-overlay';
     overlay.innerHTML = `
       <div class="reconcile-dialog">
-        <h3>Some tasks are still incomplete</h3>
-        <p>You have incomplete tasks from earlier this week:</p>
+        <h3>Some tasks remain unfinished</h3>
+        <p>The following days have tasks still outstanding:</p>
         <ul class="missed-list">
           ${missedDayIdxs.map(i => `<li>${getDayLabel(i)}</li>`).join('')}
         </ul>
-        <p>Would you like to catch up before moving on, or advance as-is? Missed tasks will be preserved in this week's archived record either way.</p>
+        <p>You may return to complete them, or advance as is. The week's record is preserved either way — honest archive, not judgment.</p>
         <div class="reconcile-actions">
-          <button class="btn-catchup">Let me catch up</button>
-          <button class="btn-moveon">Move on to next week</button>
+          <button class="btn-catchup">Return to this week</button>
+          <button class="btn-moveon">Advance as is</button>
         </div>
       </div>
     `;
@@ -1702,7 +1789,9 @@ class StudyTaskManager {
   advanceToNextWeek() {
     const week = STUDY_STATE.currentWeek;
     if (week >= 40) {
-      alert('You have completed the full 40-week course. Congratulations!');
+      // The 40 weeks are concluded. Return the student to the overview page
+      // where they can reflect on the completed formation rather than advancing.
+      window.location.href = 'index.html';
       return;
     }
     STUDY_STATE.currentWeek = week + 1;
