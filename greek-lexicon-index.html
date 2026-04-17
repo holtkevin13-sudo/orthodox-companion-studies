@@ -526,6 +526,147 @@ body {
     padding: 1rem;
   }
 }
+/* ========== Phase-organized lexicon refactor ========== */
+
+.current-phase-section {
+  background: linear-gradient(135deg, #fffaec 0%, #ffffff 100%);
+  border: 1px solid #e8d79a;
+  border-left: 4px solid #D4AF37;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.current-phase-banner {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  padding-bottom: 1rem;
+}
+
+.banner-title {
+  color: #1a3a5c;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+}
+
+.banner-subtitle {
+  color: #5d6d7e;
+  font-size: 0.95rem;
+}
+
+.current-phase-terms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.phase-sections {
+  margin: 2rem 0;
+}
+
+.phase-lexicon-section {
+  background: #ffffff;
+  border: 1px solid #ecf0f1;
+  border-left: 4px solid #1a3a5c;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  scroll-margin-top: 2rem;
+}
+
+.phase-lexicon-section[data-phase="9"],
+.phase-lexicon-section[data-phase="10"],
+.phase-lexicon-section[data-phase="11"],
+.phase-lexicon-section[data-phase="12"],
+.phase-lexicon-section[data-phase="13"],
+.phase-lexicon-section[data-phase="14"] {
+  border-left-color: #6b1e2a;
+}
+
+.phase-lexicon-section.phase-current {
+  border-left-color: #D4AF37;
+  border-left-width: 6px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+.phase-lexicon-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.phase-lexicon-title {
+  color: #1a3a5c;
+  font-size: 1.4rem;
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+}
+
+.phase-lexicon-section[data-phase="9"] .phase-lexicon-title,
+.phase-lexicon-section[data-phase="10"] .phase-lexicon-title,
+.phase-lexicon-section[data-phase="11"] .phase-lexicon-title,
+.phase-lexicon-section[data-phase="12"] .phase-lexicon-title,
+.phase-lexicon-section[data-phase="13"] .phase-lexicon-title,
+.phase-lexicon-section[data-phase="14"] .phase-lexicon-title {
+  color: #6b1e2a;
+}
+
+.phase-lexicon-meta {
+  color: #7f8c8d;
+  font-size: 0.88rem;
+}
+
+.phase-lexicon-terms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.phase-no-terms {
+  color: #95a5a6;
+  font-style: italic;
+  margin: 0;
+}
+
+.focus-badge {
+  display: inline-block;
+  background: rgba(212, 175, 55, 0.15);
+  color: #8a6d1f;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.term-card.focus-term {
+  border-color: #D4AF37;
+  border-width: 1px;
+  background: linear-gradient(135deg, #fffdf5 0%, #ffffff 100%);
+}
+
+.term-phase-tag {
+  display: inline-block;
+  background: #ecf0f1;
+  color: #5d6d7e;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.term-etymology,
+.term-fathers {
+  font-size: 0.82rem;
+  color: #5d6d7e;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
 </style>
 </head>
 
@@ -565,404 +706,207 @@ body {
   </div>
 </header>
 
-<!-- Current Week Focus -->
-<section class="current-week-section">
+<!-- Current Phase Focus — populated dynamically -->
+<section class="current-phase-section">
   <div class="container">
-    <div class="week-banner">
-      <h2 class="week-title">📖 Current Week Focus — Week 2, Phase 1</h2>
-      <div class="week-subtitle">Key Terms from Ignatius of Antioch & Polycarp of Smyrna</div>
+    <div class="current-phase-banner">
+      <h2 class="banner-title" id="banner-title">Current Phase Focus</h2>
+      <div class="banner-subtitle" id="banner-subtitle">Loading…</div>
     </div>
-
-    <div class="current-terms-grid">
-      <a href="sarx.html" class="current-term-card">
-        <div class="term-greek">σάρξ</div>
-        <div class="term-transliteration">sarx</div>
-        <div class="term-english">Flesh</div>
-        <div class="term-connection">Ignatius vs. Docetism</div>
-      </a>
-      
-      <a href="henosis.html" class="current-term-card">
-        <div class="term-greek">ἕνωσις</div>
-        <div class="term-transliteration">henosis</div>
-        <div class="term-english">Unity</div>
-        <div class="term-connection">Church Unity under Bishop</div>
-      </a>
-      
-      <a href="episkopos.html" class="current-term-card">
-        <div class="term-greek">ἐπίσκοπος</div>
-        <div class="term-transliteration">episkopos</div>
-        <div class="term-english">Overseer, Bishop</div>
-        <div class="term-connection">Episcopal Authority</div>
-      </a>
-      
-      <a href="martyria.html" class="current-term-card">
-        <div class="term-greek">μαρτυρία</div>
-        <div class="term-transliteration">martyria</div>
-        <div class="term-english">Witness, Martyrdom</div>
-        <div class="term-connection">Polycarp's Martyrdom</div>
-      </a>
-    </div>
-    
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="week-2-greek-terms.html" 
-         style="display: inline-block; 
-                background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%); 
-                color: #ffffff; 
-                padding: 1rem 2rem; 
-                text-decoration: none; 
-                border-radius: 8px; 
-                font-weight: 600; 
-                font-size: 1.1rem;
-                transition: transform 0.3s ease;" 
-         onmouseover="this.style.transform='translateY(-2px)'" 
-         onmouseout="this.style.transform='translateY(0)'">
-        📚 Study All 20 Week 2 Terms →
-      </a>
+    <div class="current-phase-terms" id="current-phase-terms">
+      <!-- Populated dynamically -->
     </div>
   </div>
 </section>
 
+<!-- Controls -->
 <section class="controls">
   <div class="container">
     <div class="controls-grid">
       <div class="search-box">
-        <input type="text" class="search-input" id="search" placeholder="Search Greek terms, meanings, or connections..." onkeyup="filterTerms()">
+        <input type="text" class="search-input" id="search" placeholder="Search Greek terms or English meanings…" onkeyup="filterTerms()">
       </div>
-      
       <div class="filter-group">
-        <label class="filter-label">Week:</label>
-        <select class="filter-select" id="week-filter" onchange="filterTerms()">
-          <option value="">All Weeks</option>
-          <option value="1">Week 1 - Apostolic Fathers</option>
-          <option value="2" selected>Week 2 - Ignatius & Polycarp</option>
-          <option value="3">Week 3 - Clement of Rome</option>
-          <option value="4">Week 4 - Papias & Didache</option>
-          <option value="5">Week 5 - Justin Martyr</option>
+        <label class="filter-label">Phase:</label>
+        <select class="filter-select" id="phase-filter" onchange="filterTerms()">
+          <option value="">All Phases</option>
+          <!-- Populated dynamically -->
         </select>
       </div>
-      
-      <div class="filter-group">
-        <label class="filter-label">Father:</label>
-        <select class="filter-select" id="father-filter" onchange="filterTerms()">
-          <option value="">All Fathers</option>
-          <option value="ignatius">Ignatius of Antioch</option>
-          <option value="polycarp">Polycarp of Smyrna</option>
-          <option value="clement-rome">Clement of Rome</option>
-          <option value="justin-martyr">Justin Martyr</option>
-        </select>
-      </div>
-      
       <div class="alphabet-filter">
-        <button class="alphabet-btn" onclick="filterByLetter('')">All</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Α')">Α</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Ε')">Ε</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Η')">Η</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Μ')">Μ</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Σ')">Σ</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Θ')">Θ</button>
+        <button class="alphabet-btn active" onclick="filterByLetter('', event)">All</button>
+        <button class="alphabet-btn" onclick="filterByLetter('Α', event)">Α</button>
+        <button class="alphabet-btn" onclick="filterByLetter('Ε', event)">Ε</button>
+        <button class="alphabet-btn" onclick="filterByLetter('Θ', event)">Θ</button>
+        <button class="alphabet-btn" onclick="filterByLetter('Μ', event)">Μ</button>
+        <button class="alphabet-btn" onclick="filterByLetter('Ο', event)">Ο</button>
+        <button class="alphabet-btn" onclick="filterByLetter('Σ', event)">Σ</button>
+        <button class="alphabet-btn" onclick="filterByLetter('Φ', event)">Φ</button>
       </div>
     </div>
   </div>
 </section>
 
-<section class="terms-section">
-  <div class="container">
-    <h2 class="section-title">Complete Greek Lexicon</h2>
-    
-    <div class="terms-grid" id="terms-grid">
-      <!-- Terms will be populated by JavaScript -->
-    </div>
-  </div>
+<!-- Phase sections — each with anchor id for deep linking -->
+<section class="phase-sections container" id="phase-sections">
+  <!-- Populated dynamically -->
 </section>
 
 <!-- Return to Top Button -->
 <button class="return-to-top" id="return-to-top" onclick="scrollToTop()">↑</button>
 
-<script>
-// Greek Terms Database
-const greekTerms = [
-  // Week 2 - Current Focus (Ignatius & Polycarp)
-  {
-    id: "sarx",
-    greek: "σάρξ",
-    transliteration: "sarx",
-    english: "Flesh",
-    definition: "Physical flesh, human nature. Ignatius emphasized the reality of Christ's σάρξ against Docetic denials of the Incarnation.",
-    week: 2,
-    father: "ignatius",
-    fatherName: "Ignatius of Antioch",
-    connectionText: "Anti-Docetic Christology",
-    currentWeek: true,
-    etymology: "From root meaning 'to strip, flay'",
-    letter: "Σ",
-    occurrences: 47
-  },
-  {
-    id: "henosis",
-    greek: "ἕνωσις",
-    transliteration: "henosis",
-    english: "Unity",
-    definition: "Unity, union. In Ignatius, the essential unity of the Church under the bishop, reflecting divine unity.",
-    week: 2,
-    father: "ignatius",
-    fatherName: "Ignatius of Antioch",
-    connectionText: "Ecclesial Unity under Episcopal Authority",
-    currentWeek: true,
-    etymology: "From ἕν (one) + -ωσις (action suffix)",
-    letter: "Ε",
-    occurrences: 23
-  },
-  {
-    id: "episkopos",
-    greek: "ἐπίσκοπος",
-    transliteration: "episkopos",
-    english: "Overseer, Bishop",
-    definition: "Overseer, superintendent. Ignatius developed the theology of the bishop as center of Church unity and legitimate authority.",
-    week: 2,
-    father: "ignatius",
-    fatherName: "Ignatius of Antioch",
-    connectionText: "Foundational Episcopal Theology",
-    currentWeek: true,
-    etymology: "From ἐπί (over) + σκοπός (watcher)",
-    letter: "Ε",
-    occurrences: 89
-  },
-  {
-    id: "martyria",
-    greek: "μαρτυρία",
-    transliteration: "martyria",
-    english: "Witness, Martyrdom",
-    definition: "Witness, testimony. Evolved from simple witness to blood witness (martyrdom) as ultimate Christian testimony.",
-    week: 2,
-    father: "polycarp",
-    fatherName: "Polycarp of Smyrna",
-    connectionText: "Martyrdom as Supreme Witness",
-    currentWeek: true,
-    etymology: "From μάρτυς (witness)",
-    letter: "Μ",
-    occurrences: 156
-  },
-  
-  // Sample terms from other weeks
-  {
-    id: "theophoros",
-    greek: "Θεοφόρος",
-    transliteration: "Theophoros",
-    english: "God-Bearer",
-    definition: "God-bearer. Ignatius's self-designation, indicating one who carries God or is carried by God.",
-    week: 2,
-    father: "ignatius",
-    fatherName: "Ignatius of Antioch",
-    connectionText: "Spiritual Identity in Christ",
-    currentWeek: true,
-    etymology: "From θεός (God) + φορος (bearing)",
-    letter: "Θ",
-    occurrences: 8
-  },
-  
-  {
-    id: "pharmakon-athanasias",
-    greek: "φάρμακον ἀθανασίας",
-    transliteration: "pharmakon athanasias",
-    english: "Medicine of Immortality",
-    definition: "Medicine of immortality. Ignatius's famous description of the Eucharist as the antidote to death.",
-    week: 2,
-    father: "ignatius",
-    fatherName: "Ignatius of Antioch",
-    connectionText: "Eucharistic Theology",
-    currentWeek: true,
-    etymology: "From φάρμακον (drug/medicine) + ἀθάνατος (deathless)",
-    letter: "Φ",
-    occurrences: 1
-  },
-  
-  // Week 1 Terms
-  {
-    id: "ekklesia",
-    greek: "ἐκκλησία",
-    transliteration: "ekklesia",
-    english: "Church, Assembly",
-    definition: "Called-out assembly. The community of believers gathered in Christ's name.",
-    week: 1,
-    father: "clement-rome",
-    fatherName: "Clement of Rome",
-    connectionText: "Early Church Organization",
-    currentWeek: false,
-    etymology: "From ἐκ (out) + καλεῖν (to call)",
-    letter: "Ε",
-    occurrences: 114
-  },
-  
-  {
-    id: "agape",
-    greek: "ἀγάπη",
-    transliteration: "agape",
-    english: "Love",
-    definition: "Divine love, self-sacrificing love. Distinguished from ἔρως (passionate love) and φιλία (friendship).",
-    week: 1,
-    father: "clement-rome",
-    fatherName: "Clement of Rome",
-    connectionText: "Christian Community Foundation",
-    currentWeek: false,
-    etymology: "Root uncertain, possibly from ἀγάπαω (to love)",
-    letter: "Α",
-    occurrences: 320
-  },
-  
-  // Week 3 Terms  
-  {
-    id: "apostolos",
-    greek: "ἀπόστολος",
-    transliteration: "apostolos",
-    english: "Apostle, Sent One",
-    definition: "One sent forth with authority. Originally applied to the Twelve, later extended to others like Paul.",
-    week: 3,
-    father: "clement-rome", 
-    fatherName: "Clement of Rome",
-    connectionText: "Apostolic Authority & Succession",
-    currentWeek: false,
-    etymology: "From ἀπό (from) + στέλλω (to send)",
-    letter: "Α",
-    occurrences: 79
-  },
-  
-  {
-    id: "homonia",
-    greek: "ὁμονοία",
-    transliteration: "homonia",
-    english: "Concord, Harmony",
-    definition: "Like-mindedness, concord. Essential virtue for Church unity and peace in community.",
-    week: 3,
-    father: "clement-rome",
-    fatherName: "Clement of Rome", 
-    connectionText: "Church Peace & Order",
-    currentWeek: false,
-    etymology: "From ὁμο- (same) + νοῦς (mind)",
-    letter: "Ο",
-    occurrences: 15
-  }
-];
+<!-- Shared data layer — WEEK_DATA, PHASE_DATA, STUDY_STATE, LEXICON_ENTRIES, helpers.
+     Must load before the inline script below. -->
+<script src="study-data.js"></script>
 
-// Populate terms grid
-function populateTermsGrid() {
-  const grid = document.getElementById('terms-grid');
-  grid.innerHTML = '';
-  
-  greekTerms.forEach(term => {
-    const card = createTermCard(term);
-    grid.appendChild(card);
-  });
+<script>
+// ==================================================================
+// Greek Lexicon — data-driven page
+// Reads from PHASE_DATA + LEXICON_ENTRIES in study-data.js
+// Deep-linkable by phase anchor: greek-lexicon-index.html#phase-N
+// ==================================================================
+
+function phaseKeysInOrder() {
+  return Object.keys(PHASE_DATA).sort((a, b) => PHASE_DATA[a].weeks[0] - PHASE_DATA[b].weeks[0]);
 }
 
-// Create individual term card
-function createTermCard(term) {
-  const card = document.createElement('a');
-  card.href = `${term.id}.html`;
-  card.className = `term-card${term.currentWeek ? ' current-week' : ''}`;
-  card.dataset.week = term.week;
-  card.dataset.father = term.father;
-  card.dataset.letter = term.letter;
-  card.dataset.greek = term.greek.toLowerCase();
-  card.dataset.english = term.english.toLowerCase();
-  card.dataset.definition = term.definition.toLowerCase();
-  
-  card.innerHTML = `
-    ${term.currentWeek ? '<div class="current-week-badge">Current Week</div>' : ''}
-    
-    <div class="term-header">
-      <div class="term-greek-main">${term.greek}</div>
-      <div class="term-pronunciation">${term.transliteration}</div>
-      <div class="term-english-main">${term.english}</div>
-    </div>
-    
-    <p class="term-definition">${term.definition}</p>
-    
-    <div class="father-connection">
-      <div class="connection-label">Church Father Connection</div>
-      <div>${term.fatherName}</div>
-      <div style="font-size: 0.8rem; margin-top: 0.2rem;">${term.connectionText}</div>
-    </div>
-    
-    <div class="term-meta">
-      <div class="meta-item">
-        <span class="meta-value">${term.week}</span>
-        <span class="meta-label">Week</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-value">${term.occurrences}</span>
-        <span class="meta-label">Uses</span>
-      </div>
-      <div class="meta-item">
-        <span class="meta-value">${term.letter}</span>
-        <span class="meta-label">Letter</span>
-      </div>
+function weekRangeLabel(phase) {
+  const weeks = phase.weeks;
+  return weeks.length === 1 ? `Week ${weeks[0]}` : `Weeks ${weeks[0]}\u2013${weeks[weeks.length-1]}`;
+}
+
+function populatePhaseDropdown() {
+  const select = document.getElementById('phase-filter');
+  if (!select) return;
+  for (const key of phaseKeysInOrder()) {
+    const p = PHASE_DATA[key];
+    const option = document.createElement('option');
+    option.value = String(p.number);
+    option.textContent = `Phase ${p.number}: ${p.name}`;
+    select.appendChild(option);
+  }
+}
+
+function renderTermCard(term) {
+  const letter = term.letter || (term.greek ? term.greek.charAt(0).toUpperCase() : '');
+  const focusBadge = term.isFocus ? '<div class="focus-badge">Focus Term</div>' : '';
+  const transliteration = term.transliteration ? `<div class="term-transliteration">${term.transliteration}</div>` : '';
+  const english = term.english ? `<div class="term-english">${term.english}</div>` : '';
+  const definition = term.definition ? `<p class="term-definition">${term.definition}</p>` : '';
+  const etymology = term.etymology ? `<div class="term-etymology"><strong>Etymology:</strong> ${term.etymology}</div>` : '';
+  const fathers = (term.fathers && term.fathers.length) ? `<div class="term-fathers"><strong>Father(s):</strong> ${term.fathers.join(', ')}</div>` : '';
+  const connection = term.connection ? `<div class="term-connection">${term.connection}</div>` : '';
+  return `
+    <div class="term-card${term.isFocus ? ' focus-term' : ''}"
+         data-greek="${term.greek}"
+         data-letter="${letter}"
+         data-english="${(term.english || '').toLowerCase()}"
+         data-phase="${term.phase || ''}">
+      ${focusBadge}
+      <div class="term-greek">${term.greek}</div>
+      ${transliteration}
+      ${english}
+      ${definition}
+      ${etymology}
+      ${fathers}
+      ${connection}
     </div>
   `;
-  
-  return card;
 }
 
-// Filter functions
+function populateCurrentPhaseFocus() {
+  const week = STUDY_STATE.currentWeek;
+  const phase = getPhaseForWeek(week);
+  const titleEl = document.getElementById('banner-title');
+  const subEl = document.getElementById('banner-subtitle');
+  const termsEl = document.getElementById('current-phase-terms');
+  if (!phase) return;
+  if (titleEl) titleEl.textContent = `Current Phase Focus — Phase ${phase.number}: ${phase.name}`;
+  if (subEl) subEl.textContent = `Week ${week} · ${weekRangeLabel(phase)} · ${phase.fathers}`;
+  if (termsEl) {
+    const terms = getPhaseTerms(phase);
+    termsEl.innerHTML = terms.map(t => renderTermCard(t)).join('');
+  }
+}
+
+function populatePhaseSections() {
+  const container = document.getElementById('phase-sections');
+  if (!container) return;
+  const currentPhase = getPhaseForWeek(STUDY_STATE.currentWeek);
+  const currentPhaseKey = currentPhase ? String(currentPhase.number) : null;
+
+  for (const key of phaseKeysInOrder()) {
+    const p = PHASE_DATA[key];
+    const terms = getPhaseTerms(p);
+    const isCurrent = String(p.number) === currentPhaseKey;
+
+    const section = document.createElement('section');
+    section.className = `phase-lexicon-section${isCurrent ? ' phase-current' : ''}`;
+    section.id = `phase-${p.number}`;
+    section.dataset.phase = String(p.number);
+
+    section.innerHTML = `
+      <div class="phase-lexicon-header">
+        <h2 class="phase-lexicon-title">Phase ${p.number}: ${p.name}</h2>
+        <div class="phase-lexicon-meta">${weekRangeLabel(p)} · ${p.fathers}</div>
+      </div>
+      <div class="phase-lexicon-terms">
+        ${terms.length === 0
+          ? '<p class="phase-no-terms">No Greek focus terms recorded for this phase yet.</p>'
+          : terms.map(t => renderTermCard(t)).join('')}
+      </div>
+    `;
+    container.appendChild(section);
+  }
+}
+
+let activeLetter = '';
 function filterTerms() {
-  const searchTerm = document.getElementById('search').value.toLowerCase();
-  const weekFilter = document.getElementById('week-filter').value;
-  const fatherFilter = document.getElementById('father-filter').value;
-  const cards = document.querySelectorAll('.term-card');
-  
-  cards.forEach(card => {
-    const matchesSearch = card.dataset.greek.includes(searchTerm) || 
-                         card.dataset.english.includes(searchTerm) ||
-                         card.dataset.definition.includes(searchTerm);
-    const matchesWeek = !weekFilter || card.dataset.week === weekFilter;
-    const matchesFather = !fatherFilter || card.dataset.father === fatherFilter;
-    
-    card.style.display = matchesSearch && matchesWeek && matchesFather ? 'block' : 'none';
+  const searchVal = (document.getElementById('search').value || '').toLowerCase();
+  const phaseFilter = document.getElementById('phase-filter').value;
+
+  document.querySelectorAll('.phase-lexicon-section').forEach(section => {
+    const sectionPhase = section.dataset.phase;
+    const phaseMatch = !phaseFilter || phaseFilter === sectionPhase;
+    let anyVisible = false;
+    section.querySelectorAll('.term-card').forEach(card => {
+      const greek = (card.dataset.greek || '').toLowerCase();
+      const english = card.dataset.english || '';
+      const letter = card.dataset.letter || '';
+      const searchMatch = !searchVal || greek.includes(searchVal) || english.includes(searchVal);
+      const letterMatch = !activeLetter || letter === activeLetter;
+      const visible = phaseMatch && searchMatch && letterMatch;
+      card.style.display = visible ? '' : 'none';
+      if (visible) anyVisible = true;
+    });
+    section.style.display = anyVisible ? '' : 'none';
   });
 }
 
-function filterByLetter(letter) {
-  const cards = document.querySelectorAll('.term-card');
-  
-  // Update active button
-  document.querySelectorAll('.alphabet-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  event.target.classList.add('active');
-  
-  cards.forEach(card => {
-    if (!letter || card.dataset.letter === letter) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-  
-  // Clear other filters
-  document.getElementById('search').value = '';
-  document.getElementById('week-filter').value = '';
-  document.getElementById('father-filter').value = '';
+function filterByLetter(letter, ev) {
+  activeLetter = letter;
+  document.querySelectorAll('.alphabet-btn').forEach(b => b.classList.remove('active'));
+  if (ev && ev.target) ev.target.classList.add('active');
+  filterTerms();
 }
 
-// Return to top
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-// Show return to top button on scroll
 window.addEventListener('scroll', function() {
-  const button = document.getElementById('return-to-top');
-  if (window.pageYOffset > 300) {
-    button.classList.add('visible');
-  } else {
-    button.classList.remove('visible');
-  }
+  const btn = document.getElementById('return-to-top');
+  if (!btn) return;
+  btn.style.display = window.scrollY > 400 ? 'block' : 'none';
 });
 
-// Initialize
 document.addEventListener('DOMContentLoaded', function() {
-  populateTermsGrid();
+  populateCurrentPhaseFocus();
+  populatePhaseDropdown();
+  populatePhaseSections();
+  // If URL has a #phase-N hash, browser auto-scrolls via scroll-margin-top CSS
 });
 </script>
+
 
 </body>
 </html>
