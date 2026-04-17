@@ -75,6 +75,93 @@
     padding: 0 1rem;
   }
 
+  /* Continue Studies banner — shown when user is enrolled in a track */
+  .continue-banner {
+    background: linear-gradient(135deg, #fffdf5 0%, #faf6ed 100%);
+    border-top: 3px solid #D4AF37;
+    border-bottom: 1px solid #e8ddc8;
+    padding: 1.1rem 0;
+  }
+  .continue-banner-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .continue-content {
+    flex: 1;
+    min-width: 220px;
+  }
+  .continue-label {
+    font-variant: small-caps;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #8a6d1f;
+    margin-bottom: 0.15rem;
+  }
+  .continue-title {
+    font-size: 1.05rem;
+    color: #2a2620;
+    line-height: 1.4;
+  }
+  .continue-title .greek {
+    font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+    font-style: italic;
+    color: #1a3a5c;
+  }
+  .continue-separator {
+    color: #c9bca0;
+    margin: 0 0.3rem;
+  }
+  .continue-track {
+    color: #6b5d4a;
+    font-style: italic;
+  }
+  .continue-btn {
+    background: #D4AF37;
+    color: #2a2620;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .continue-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+  }
+  @media (max-width: 600px) {
+    .continue-banner-inner { flex-direction: column; align-items: stretch; }
+    .continue-btn { justify-content: center; width: 100%; }
+  }
+
+  /* Simplified coming-soon card */
+  .tool-card.coming-soon {
+    opacity: 0.7;
+  }
+  .tool-card.coming-soon .tool-icon {
+    background: linear-gradient(135deg, #8a7d6a 0%, #bdc3c7 100%);
+  }
+  .tool-card.coming-soon .coming-badge {
+    background: #8a7d6a;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
   /* Header - Orthodox Companion Studies */
   .hero {
     background: 
@@ -720,10 +807,26 @@
     <ul class="nav-tabs">
       <li class="nav-tab active" data-tab="programs"><button>Study Programs</button></li>
       <li class="nav-tab" data-tab="resources"><button>Study Resources</button></li>
-      <li class="nav-tab" data-tab="progress"><button>My Progress</button></li>
     </ul>
   </div>
 </nav>
+
+<!-- Continue Studies banner — appears when enrolled; populated by JS -->
+<div id="continue-studies-banner" class="continue-banner" style="display: none;">
+  <div class="container continue-banner-inner">
+    <div class="continue-content">
+      <div class="continue-label">Continue Your Studies</div>
+      <div class="continue-title">
+        <span class="greek" id="continue-topic-title">Φρόνημα τῶν Πατέρων</span>
+        <span class="continue-separator">·</span>
+        <span class="continue-track" id="continue-track-name">40-Week Intensive</span>
+        <span class="continue-separator">·</span>
+        <span id="continue-week">Week 2</span>
+      </div>
+    </div>
+    <a href="patristics-dashboard.html" class="continue-btn">Continue →</a>
+  </div>
+</div>
 
 <!-- Tab 1: Study Programs Overview -->
 <div id="tab-programs" class="tab-content active">
@@ -737,193 +840,74 @@
       </div>
 
       <div class="tools-grid">
-        <div class="tool-card" style="border: 3px solid #556b3d; background: linear-gradient(145deg, #fffdf7 0%, #f8f5f0 100%);">
+        <div class="tool-card" id="patristics-card" style="border: 3px solid #556b3d; background: linear-gradient(145deg, #fffdf7 0%, #f8f5f0 100%);">
           <div class="tool-icon" style="background: linear-gradient(135deg, #556b3d 0%, #7a9154 100%);">☩</div>
           <h3 class="tool-title"><span class="greek">Φρόνημα τῶν Πατέρων</span></h3>
           <div class="tool-subtitle">The Mind of the Fathers · Patristic Formation</div>
-          <div style="background: #556b3d; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Currently Active</div>
+          <div id="patristics-badge" style="background: #556b3d; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Available Now</div>
           <p class="tool-description">
             Systematic formation in the mind of the Fathers, structured around the Nicene Arc and the 
-            Post-Nicene Christological Arc. Three tracks accommodate different rhythms and depths of study — 
-            each covering a distinct scope of Fathers and pace of reading.
+            Post-Nicene Christological Arc. Three tracks accommodate different rhythms and depths of 
+            study — from an intensive 40-week arc to a contemplative two-year reading.
           </p>
-          <div class="track-list">
-            <div class="track-row available">
-              <div class="track-main">
-                <div class="track-name">40-Week Intensive</div>
-                <div class="track-scope">22 Fathers · 14 phases · 4 tracks daily</div>
-              </div>
-              <span class="track-status available">Available</span>
-            </div>
-            <div class="track-row">
-              <div class="track-main">
-                <div class="track-name">1-Year Comprehensive</div>
-                <div class="track-scope">Broader patristic coverage, gentler cadence</div>
-              </div>
-              <span class="track-status coming">Coming Soon</span>
-            </div>
-            <div class="track-row">
-              <div class="track-main">
-                <div class="track-name">2-Year Contemplative</div>
-                <div class="track-scope">Deepest immersion, monastic reading rhythm</div>
-              </div>
-              <span class="track-status coming">Coming Soon</span>
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button onclick="showCurrentStudies()" class="tool-btn primary">Enter Program</button>
-            <a href="patristics-dashboard.html" class="tool-btn secondary">Study Dashboard</a>
+          <div class="tool-actions" id="patristics-actions">
+            <a href="patristics-tracks.html" class="tool-btn primary">Explore Tracks →</a>
           </div>
         </div>
 
-        <div class="tool-card" style="opacity: 0.7;">
-          <div class="tool-icon" style="background: linear-gradient(135deg, #8a7d6a 0%, #bdc3c7 100%);">📖</div>
-          <h3 class="tool-title">Biblical Studies Foundation</h3>
-          <div style="background: #8a7d6a; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+        <div class="tool-card coming-soon">
+          <div class="tool-icon">📖</div>
+          <h3 class="tool-title">Biblical Studies</h3>
+          <div class="tool-subtitle">Scripture and the biblical languages</div>
+          <div class="coming-badge">Coming Soon</div>
           <p class="tool-description">
-            Hebrew and Greek language acquisition, biblical theology, and exegetical method. 
-            Coordinate with patristic study for complete scriptural-traditional integration.
+            Introduction to Old and New Testament, exegetical method, and the biblical 
+            languages — Greek, Hebrew, Church Slavonic. Scripture read with patristic eyes.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">2</span>
-              <span class="tool-stat-label">Languages</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">76</span>
-              <span class="tool-stat-label">Biblical Books</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">3</span>
-              <span class="tool-stat-label">Study Levels</span>
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2026</button>
-            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
-          </div>
         </div>
 
-        <div class="tool-card" style="opacity: 0.7;">
-          <div class="tool-icon" style="background: linear-gradient(135deg, #8a7d6a 0%, #bdc3c7 100%);">⛪</div>
+        <div class="tool-card coming-soon">
+          <div class="tool-icon">⛪</div>
           <h3 class="tool-title">Church History</h3>
-          <div style="background: #8a7d6a; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+          <div class="tool-subtitle">The unfolding of Orthodox life across the centuries</div>
+          <div class="coming-badge">Coming Soon</div>
           <p class="tool-description">
-            Comprehensive Orthodox Church history from apostolic times through modern era. 
-            Councils, controversies, saints, and institutional development across cultures and centuries.
+            Orthodox history from apostolic times through the modern era — councils, 
+            controversies, saints, and the shaping of the Church across cultures.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">7</span>
-              <span class="tool-stat-label">Councils</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">20</span>
-              <span class="tool-stat-label">Centuries</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">15</span>
-              <span class="tool-stat-label">Traditions</span>
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2026</button>
-            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
-          </div>
         </div>
 
-        <div class="tool-card" style="opacity: 0.7;">
-          <div class="tool-icon" style="background: linear-gradient(135deg, #8a7d6a 0%, #bdc3c7 100%);">🕊️</div>
-          <h3 class="tool-title">Sacramental Theology</h3>
-          <div style="background: #8a7d6a; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+        <div class="tool-card coming-soon">
+          <div class="tool-icon">🕊️</div>
+          <h3 class="tool-title">Liturgical Life</h3>
+          <div class="tool-subtitle">Sacraments, services, and the rhythm of worship</div>
+          <div class="coming-badge">Coming Soon</div>
           <p class="tool-description">
-            Deep formation in Orthodox sacramental life and theology. 
-            Seven sacraments, liturgical cycles, pastoral practice, and mystical theology of worship.
+            The Divine Liturgy, the seven holy mysteries, the liturgical year, 
+            Byzantine chant, and the formational power of Orthodox worship.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">7</span>
-              <span class="tool-stat-label">Sacraments</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">4</span>
-              <span class="tool-stat-label">Liturgical Cycles</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">12</span>
-              <span class="tool-stat-label">Major Feasts</span>
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2026</button>
-            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
-          </div>
         </div>
 
-        <div class="tool-card" style="opacity: 0.7;">
-          <div class="tool-icon" style="background: linear-gradient(135deg, #8a7d6a 0%, #bdc3c7 100%);">🏛️</div>
-          <h3 class="tool-title">Orthodox Spirituality</h3>
-          <div style="background: #8a7d6a; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+        <div class="tool-card coming-soon">
+          <div class="tool-icon">🏛️</div>
+          <h3 class="tool-title">Spirituality & Prayer</h3>
+          <div class="tool-subtitle">The contemplative tradition of the Church</div>
+          <div class="coming-badge">Coming Soon</div>
           <p class="tool-description">
-            Contemplative tradition, prayer methods, ascetical theology, and spiritual direction. 
-            Desert Fathers through modern elders, theosis, and practical mystical theology.
+            Hesychasm, the Philokalia, the Jesus Prayer, ascetical practice, and 
+            the spiritual life under guidance of saints and elders.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">50+</span>
-              <span class="tool-stat-label">Spiritual Masters</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">10</span>
-              <span class="tool-stat-label">Prayer Traditions</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">3</span>
-              <span class="tool-stat-label">Formation Levels</span>
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2027</button>
-            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
-          </div>
         </div>
 
-        <div class="tool-card" style="opacity: 0.7;">
-          <div class="tool-icon" style="background: linear-gradient(135deg, #8a7d6a 0%, #bdc3c7 100%);">⚖️</div>
-          <h3 class="tool-title">Systematic Theology</h3>
-          <div style="background: #8a7d6a; color: white; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; margin-bottom: 1rem; display: inline-block;">Coming Soon</div>
+        <div class="tool-card coming-soon">
+          <div class="tool-icon">⚖️</div>
+          <h3 class="tool-title">Theology & Doctrine</h3>
+          <div class="tool-subtitle">Dogmatics, ethics, and systematic theology</div>
+          <div class="coming-badge">Coming Soon</div>
           <p class="tool-description">
-            Orthodox dogmatic theology, ethics, and apologetics. 
-            Complete systematic overview coordinated with patristic and biblical foundations.
+            Orthodox dogmatic theology, moral life, canon law, and ecumenism — 
+            systematic study grounded in the patristic and liturgical tradition.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">7</span>
-              <span class="tool-stat-label">Councils</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">12</span>
-              <span class="tool-stat-label">Doctrines</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">4</span>
-              <span class="tool-stat-label">Levels</span>
-            </div>
-          </div>
-          <div class="tool-actions">
-            <button class="tool-btn primary" style="opacity: 0.5; cursor: not-allowed;" disabled>Coming 2027</button>
-            <button class="tool-btn secondary" style="opacity: 0.5; cursor: not-allowed;" disabled>Notify Me</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Current Studies Section on Homepage -->
-      <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: #e8ddc8; border-radius: 12px;">
-        <h3 style="color: #2a2620; margin-bottom: 1rem;">Your Current Studies</h3>
-        <p style="color: #6b5d4a; margin-bottom: 1.5rem;">You're currently enrolled in <strong><span class="greek">Φρόνημα τῶν Πατέρων</span> (Patristic Formation)</strong> - Week 2 of 40</p>
-        <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap;">
-          <button onclick="showCurrentStudies()" style="background: linear-gradient(135deg, #556b3d 0%, #7a9154 100%); color: white; padding: 1rem 2rem; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Continue Studies →</button>
-          <a href="patristics-dashboard.html" style="background: #faf6ed; color: #2a2620; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-weight: 500; border: 1px solid #bdc3c7; transition: all 0.3s ease;" onmouseover="this.style.background='#e8ddc8'" onmouseout="this.style.background='#faf6ed'">Open Study Dashboard</a>
         </div>
       </div>
     </div>
@@ -946,53 +930,23 @@
           <div class="tool-icon">☩</div>
           <h3 class="tool-title">Father Cards</h3>
           <p class="tool-description">
-            Complete database of 37 Church Fathers with biographical details, key quotes, theological 
-            contributions, and study context. Browse all Fathers or focus on your current week's study.
+            Biographical profiles of the Church Fathers with key works, theological contributions, 
+            and study context. Browse the full library or jump to your current week's Father.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">37</span>
-              <span class="tool-stat-label">Complete Cards</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">3</span>
-              <span class="tool-stat-label">Current Focus</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">7</span>
-              <span class="tool-stat-label">Centuries</span>
-            </div>
-          </div>
           <div class="tool-actions">
-            <a href="father-cards-index.html" class="tool-btn primary">Browse All Fathers</a>
-            <a href="father-cards-index.html" class="tool-btn secondary">Current Week</a>
+            <a href="father-cards-index.html" class="tool-btn primary">Browse Fathers →</a>
           </div>
         </div>
 
         <div class="tool-card">
           <div class="tool-icon">Ω</div>
-          <h3 class="tool-title">Greek Companion</h3>
+          <h3 class="tool-title">Greek Lexicon</h3>
           <p class="tool-description">
-            Master 800+ essential Greek words from the patristic corpus. Each term includes etymology, 
-            parsing, authentic examples from the Fathers, and liturgical pronunciation guides.
+            Essential Greek terms from the patristic corpus, organized by phase. Each entry includes 
+            etymology, parsing, authentic examples from the Fathers, and pronunciation guidance.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number" id="words-mastered">0</span>
-              <span class="tool-stat-label">Mastered</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number" id="words-learning">40</span>
-              <span class="tool-stat-label">Learning</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">760+</span>
-              <span class="tool-stat-label">Remaining</span>
-            </div>
-          </div>
           <div class="tool-actions">
-            <a href="week-2-greek-terms.html" class="tool-btn primary">Week 2 Terms</a>
-            <a href="greek-lexicon-index.html" class="tool-btn secondary">Full Lexicon</a>
+            <a href="greek-lexicon-index.html" class="tool-btn primary">Open Lexicon →</a>
           </div>
         </div>
 
@@ -1000,122 +954,12 @@
           <div class="tool-icon">⊕</div>
           <h3 class="tool-title">Biblical Companion</h3>
           <p class="tool-description">
-            Daily biblical readings coordinated with patristic study. Septuagint for OT, Eastern Orthodox Bible 
-            for NT. Psalms as continuous thread plus strategic books aligned with Fathers' theology.
+            Daily biblical readings coordinated with patristic study — the Psalter as continuous thread 
+            and strategic books aligned with each Father's theology. Eastern Orthodox Bible text.
           </p>
-          <div class="tool-stats">
-            <div class="tool-stat">
-              <span class="tool-stat-number">27</span>
-              <span class="tool-stat-label">NT Books</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number" id="nt-books-read">2</span>
-              <span class="tool-stat-label">Completed</span>
-            </div>
-            <div class="tool-stat">
-              <span class="tool-stat-number">4+</span>
-              <span class="tool-stat-label">Psalm Passes</span>
-            </div>
-          </div>
           <div class="tool-actions">
-            <a href="bible-reader.html" class="tool-btn primary">Bible Reader</a>
+            <a href="bible-reader.html" class="tool-btn primary">Open Bible Reader →</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- Tab 3: My Progress -->
-<div id="tab-progress" class="tab-content">
-  <section class="current-focus">
-    <div class="container">
-      <!-- Current Studies Detailed View -->
-      <div id="current-studies-detail" style="display: none;">
-        <div class="focus-header">
-          <h2 class="focus-title"><span class="greek">Φρόνημα τῶν Πατέρων</span></h2>
-          <p class="focus-subtitle">Week 2 of 40 — 40-Week Intensive Track</p>
-        </div>
-        
-        <div class="week-card">
-          <div class="week-header">
-            <div class="week-badge">Week 2</div>
-            <div class="week-progress">5% Complete • Phase 1: Apostolic Fathers</div>
-          </div>
-          
-          <div class="week-info">
-            <h3 class="phase-title">Apostolic Fathers</h3>
-            <p class="fathers-list">Ignatius of Antioch • Polycarp of Smyrna • Martyrdom of Polycarp</p>
-            <p class="week-description">
-              Completing Ignatius's seven letters and transitioning to Polycarp's <em>Epistle to the Philippians</em> 
-              and the <em>Martyrdom of Polycarp</em>. Focus on episcopal authority, flesh-spirit unity, and the 
-              theology of martyrdom as witness (<em>μαρτυρία</em>).
-            </p>
-            
-            <div class="greek-focus">
-              <div class="greek-focus-title">Greek Focus This Week</div>
-              <div class="greek-terms greek-text">σάρξ (flesh) • ἕνωσις (unity) • ἐπίσκοπος (bishop) • μαρτυρία (witness/martyrdom)</div>
-              <div style="margin-top: 0.5rem;">
-                <a href="week-2-greek-terms.html" style="color: #6b5d4a; font-size: 0.8rem; text-decoration: none; border-bottom: 1px dotted #6b5d4a;">Study Week 2 Terms →</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="weekly-actions">
-            <a href="patristics-dashboard.html" class="week-action">
-              📊 Study Track Dashboard
-            </a>
-            <a href="polycarp-of-smyrna.html" class="week-action secondary">
-              Father Cards: Ignatius & Polycarp
-            </a>
-            <a href="week-2-greek-terms.html" class="week-action secondary">
-              Greek Vocabulary
-            </a>
-            <a href="bible-reader.html" class="week-action secondary">
-              Biblical Companion
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Progress Overview -->
-      <div id="progress-overview">
-        <div class="tools-header">
-          <h2 class="tools-title">My Progress</h2>
-          <p class="tools-description">Real-time progress across all study programs</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-          <div style="background: #faf6ed; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <h4 style="color: #2a2620; margin-bottom: 1rem;">Patristic Formation</h4>
-            <div style="font-size: 2rem; color: #556b3d; font-weight: 600; margin-bottom: 0.5rem;">5%</div>
-            <div style="color: #6b5d4a; font-size: 0.9rem;">Week 2 of 40 • Phase 1 of 14</div>
-            <button onclick="showCurrentStudies()" style="margin-top: 1rem; background: #556b3d; color: white; border: none; padding: 0.5rem 1rem; border-radius: 6px; cursor: pointer;">View Details</button>
-          </div>
-
-          <div style="background: #faf6ed; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <h4 style="color: #2a2620; margin-bottom: 1rem;">Greek Vocabulary</h4>
-            <div style="font-size: 2rem; color: #556b3d; font-weight: 600; margin-bottom: 0.5rem;" id="greek-progress">40</div>
-            <div style="color: #6b5d4a; font-size: 0.9rem;">terms encountered • 760+ remaining</div>
-          </div>
-
-          <div style="background: #faf6ed; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <h4 style="color: #2a2620; margin-bottom: 1rem;">Biblical Reading</h4>
-            <div style="font-size: 2rem; color: #556b3d; font-weight: 600; margin-bottom: 0.5rem;">20%</div>
-            <div style="color: #6b5d4a; font-size: 0.9rem;">Psalm 42 of 150 • Pass 1</div>
-          </div>
-
-          <div style="background: #faf6ed; padding: 1.5rem; border-radius: 8px; text-align: center;">
-            <h4 style="color: #2a2620; margin-bottom: 1rem;">Church Fathers</h4>
-            <div style="font-size: 2rem; color: #556b3d; font-weight: 600; margin-bottom: 0.5rem;">3</div>
-            <div style="color: #6b5d4a; font-size: 0.9rem;">of 37 Fathers encountered</div>
-          </div>
-        </div>
-        
-        <div style="background: #e8ddc8; padding: 2rem; border-radius: 8px; text-align: center;">
-          <h4 style="color: #2a2620; margin-bottom: 1rem;">Other Study Programs</h4>
-          <p style="color: #6b5d4a; margin-bottom: 1.5rem;">Biblical Studies, Church History, Sacramental Theology, Orthodox Spirituality, and Systematic Theology programs available 2026-2027</p>
-          <button style="background: #bdc3c7; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; font-weight: 500; cursor: not-allowed; opacity: 0.7;" disabled>Notify When Available</button>
         </div>
       </div>
     </div>
@@ -1138,66 +982,77 @@
   </div>
 </footer>
 
+<script src="study-data.js"></script>
 <script>
   // Tab Navigation System
   document.addEventListener('DOMContentLoaded', function() {
     const navTabs = document.querySelectorAll('.nav-tab');
-    const tabContents = document.querySelectorAll('.tab-content');
-
     navTabs.forEach(tab => {
       tab.addEventListener('click', function() {
         const targetTab = this.getAttribute('data-tab');
         switchTab(targetTab);
       });
     });
-    
-    // Initialize progress tracking
-    updateProgress();
+    initContinueBanner();
+    decoratePatristicsCard();
   });
 
-  // Switch tab function for programmatic navigation
   function switchTab(targetTab) {
     const navTabs = document.querySelectorAll('.nav-tab');
     const tabContents = document.querySelectorAll('.tab-content');
-    
-    // Remove active class from all tabs and content
     navTabs.forEach(t => t.classList.remove('active'));
     tabContents.forEach(content => content.classList.remove('active'));
-    
-    // Add active class to target tab and corresponding content
-    document.querySelector(`[data-tab="${targetTab}"]`).classList.add('active');
-    document.getElementById(`tab-${targetTab}`).classList.add('active');
+    const target = document.querySelector(`[data-tab="${targetTab}"]`);
+    const content = document.getElementById(`tab-${targetTab}`);
+    if (target) target.classList.add('active');
+    if (content) content.classList.add('active');
   }
 
-  // Show current studies detail view
-  function showCurrentStudies() {
-    switchTab('progress');
-    document.getElementById('progress-overview').style.display = 'none';
-    document.getElementById('current-studies-detail').style.display = 'block';
+  // Continue Studies banner — shown only when user is enrolled in a track.
+  // Pulls enrollment + current week from localStorage via study-data.js helpers.
+  function initContinueBanner() {
+    const banner = document.getElementById('continue-studies-banner');
+    if (!banner) return;
+    const enrollment = (typeof getEnrollment === 'function') ? getEnrollment() : null;
+    if (!enrollment) return;
+    const trackData = (typeof TRACKS !== 'undefined')
+      ? TRACKS[enrollment.topic] && TRACKS[enrollment.topic][enrollment.track]
+      : null;
+    if (!trackData) return;
+
+    // Track name (e.g., "40-Week Intensive")
+    const trackNameEl = document.getElementById('continue-track-name');
+    if (trackNameEl) trackNameEl.textContent = trackData.name;
+
+    // Current week — read from STUDY_STATE if available (set by study-data.js on load)
+    const weekEl = document.getElementById('continue-week');
+    if (weekEl && typeof STUDY_STATE !== 'undefined' && STUDY_STATE.currentWeek) {
+      weekEl.textContent = `Week ${STUDY_STATE.currentWeek}`;
+    }
+
+    banner.style.display = 'block';
   }
 
-  // Progress Tracking
-  function updateProgress() {
-    try {
-      const greekProgress = JSON.parse(localStorage.getItem('greekProgress') || '{}');
-      const mastered = Object.values(greekProgress).filter(status => status === 'mastered').length;
-      const learning = Object.values(greekProgress).filter(status => status === 'learning').length;
-      
-      document.getElementById('words-mastered').textContent = mastered;
-      document.getElementById('words-learning').textContent = learning || 40;
-      document.getElementById('greek-progress').textContent = learning || 40;
-      document.getElementById('nt-books-read').textContent = '2'; // John ✅, 1 Peter ✅
-      
-    } catch (e) {
-      console.log('Progress data not yet available');
+  // Decorate the Patristics topic card when enrolled:
+  //  - Badge: "Available Now" → "Currently Active"
+  //  - Actions: add prominent "Continue →" primary button, demote "Explore Tracks"
+  //    to secondary. Returning users get a one-tap path to their dashboard while
+  //    still being able to revisit the tracks page if they want.
+  function decoratePatristicsCard() {
+    const enrollment = (typeof getEnrollment === 'function') ? getEnrollment() : null;
+    if (!enrollment || enrollment.topic !== 'patristics') return;
+
+    const badge = document.getElementById('patristics-badge');
+    if (badge) badge.textContent = 'Currently Active';
+
+    const actions = document.getElementById('patristics-actions');
+    if (actions) {
+      actions.innerHTML = `
+        <a href="patristics-dashboard.html" class="tool-btn primary">Continue →</a>
+        <a href="patristics-tracks.html" class="tool-btn secondary">View Tracks</a>
+      `;
     }
   }
-
-  // Export for other pages
-  window.OrthodoxCompanionStudies = {
-    updateProgress,
-    showCurrentStudies
-  };
 </script>
 
 </body>
