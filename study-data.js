@@ -1629,3 +1629,106 @@ function linkifyPhaseFathers(fathersString) {
     return name;
   }).filter(Boolean).join(' · ');
 }
+
+// ==================================================================
+// TRACKS — per-topic track metadata. Drives both the tracks page
+// (full detail in Learn More modals) and the dashboard Required Reading
+// panel. Topic-keyed per the "tag data with topic" architectural
+// principle (see roadmap Future Architecture Reviews section).
+// ==================================================================
+const TRACKS = {
+  patristics: {
+    '40-week': {
+      name: '40-Week Intensive',
+      tagline: 'Depth through concentrated rhythm',
+      status: 'available',
+      duration: '40 weeks',
+      cadence: '~60 minutes per day, 6 days per week',
+      scope: '22 Fathers across 14 phases',
+      shortDescription: 'A disciplined daily rhythm through the full Nicene Arc and Post-Nicene Christological Arc. For those who can commit an hour a day to sustained patristic formation.',
+      fullDescription: 'Systematic formation in the mind of the Fathers over forty weeks, structured around the Nicene Arc (Weeks 1–28) and the Post-Nicene Christological Arc (Weeks 29–40). Four integrated tracks run each study day: Psalms, Biblical reading, patristic primary text, and secondary scholarly reading. Day 6 is synthesis; Day 7 is rest.',
+      outcomes: [
+        'Working familiarity with 22 Church Fathers and their core works',
+        'Reading competence in Holmes, Ante-Nicene, and Nicene-Post-Nicene collections',
+        'Integrated Scripture + Tradition reading rhythm',
+        'Foundation for deeper theological or liturgical study'
+      ],
+      requiredResources: [
+        { title: 'The Apostolic Fathers: Greek Texts and English Translations', author: 'Michael W. Holmes', edition: 'Baker Academic, 3rd ed.', phase: 'Weeks 1–4', essential: true },
+        { title: 'Eastern Orthodox Bible', details: 'New Testament + Psalms', phase: 'All weeks', essential: true },
+        { title: 'The Christian Tradition, Vol. 1', author: 'Jaroslav Pelikan', phase: 'All weeks (~15 min/day)', essential: true },
+        { title: 'On the Unity of Christ', author: 'Cyril of Alexandria', edition: 'SVS Press', phase: 'Weeks 29–30', essential: true },
+        { title: 'Pseudo-Dionysius: The Complete Works', edition: 'Paulist Press', phase: 'Weeks 32–33', essential: true },
+        { title: 'Two Hundred Chapters on Theology', author: 'Maximus the Confessor', edition: 'SVS Press', phase: 'Weeks 34–36', essential: true }
+      ],
+      recommendedSecondary: [
+        'Behr — The Nicene Faith',
+        'Anatolios — Retrieving Nicaea',
+        'Louth — Maximus the Confessor',
+        'McGuckin — Cyril of Alexandria and the Christological Controversy',
+        'Kelly — Early Christian Doctrines',
+        'Thunberg — Microcosm and Mediator'
+      ]
+    },
+    '1-year': {
+      name: '1-Year Comprehensive',
+      tagline: 'Broader patristic coverage, gentler cadence',
+      status: 'coming-soon',
+      duration: '52 weeks',
+      cadence: 'To be finalized',
+      scope: 'To be finalized',
+      shortDescription: 'A fuller patristic survey at a more sustainable pace. Scope and structure still being developed.',
+      fullDescription: 'Track in development. Will extend the 40-week core with additional Fathers and reading time. Exact pedagogy, reading list, and cadence not yet finalized.',
+      outcomes: ['To be finalized'],
+      requiredResources: [],
+      recommendedSecondary: []
+    },
+    '2-year': {
+      name: '2-Year Contemplative',
+      tagline: 'Deepest immersion, monastic reading rhythm',
+      status: 'coming-soon',
+      duration: '~100 weeks',
+      cadence: 'To be finalized',
+      scope: 'To be finalized',
+      shortDescription: 'A slow contemplative reading of the patristic corpus at monastic cadence. Structure still being developed.',
+      fullDescription: 'Track in development. Will take the patristic arc at a pace closer to monastic lectio divina — fewer words per day, more time spent with each Father. Exact pedagogy, reading list, and cadence not yet finalized.',
+      outcomes: ['To be finalized'],
+      requiredResources: [],
+      recommendedSecondary: []
+    }
+  }
+};
+
+// ==================================================================
+// ENROLLMENT STATE — tiny helper around localStorage. A user is
+// "enrolled" in exactly one (topic, track) at a time. Switching tracks
+// preserves prior progress in localStorage — it's just paused, not erased.
+// ==================================================================
+const ENROLLMENT_KEY = 'active_enrollment'; // JSON: { topic, track, enrolledAt }
+
+function getEnrollment() {
+  try {
+    const raw = localStorage.getItem(ENROLLMENT_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function setEnrollment(topic, track) {
+  const payload = { topic, track, enrolledAt: new Date().toISOString() };
+  localStorage.setItem(ENROLLMENT_KEY, JSON.stringify(payload));
+  return payload;
+}
+
+function clearEnrollment() {
+  localStorage.removeItem(ENROLLMENT_KEY);
+}
+
+function isEnrolled(topic, track) {
+  const e = getEnrollment();
+  if (!e) return false;
+  if (topic && e.topic !== topic) return false;
+  if (track && e.track !== track) return false;
+  return true;
+}
