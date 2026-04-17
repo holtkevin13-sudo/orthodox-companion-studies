@@ -1019,11 +1019,18 @@ body {
           <div class="progress-text" id="phase-progress-text">Week — of —</div>
         </div>
         <div class="progress-item">
-          <div class="progress-label">Greek Vocabulary</div>
+          <div class="progress-label">NT Books</div>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 2.5%"></div>
+            <div class="progress-fill" id="nt-books-fill" style="width: 0%"></div>
           </div>
-          <div class="progress-text">20 of 800 terms</div>
+          <div class="progress-text" id="nt-books-text">0 of 27 books</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">Psalms</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="psalms-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="psalms-text">Starting Psalter</div>
         </div>
       </div>
     </div>
@@ -1066,18 +1073,27 @@ body {
   <section class="big-picture">
     <h2>The Complete Journey</h2>
     <p>
-      This 40-week program traces the Nicene Arc through 37 Church Fathers across 7 centuries, 
-      following Orthodox theological development from apostolic witness to doctrinal synthesis.
+      Forty weeks tracing the Nicene Arc and its post-Nicene completion — from apostolic witness
+      through Cappadocian Trinitarianism and Chalcedonian Christology to the Damascene synthesis.
+      One formational path through the Fathers, Scripture, Greek, and the great theological threads
+      that shaped Orthodox tradition.
     </p>
     <div class="big-picture-stats">
       <div class="big-stat">
-        <span class="big-number">280</span>
-        <span class="big-label">Total Study Days</span>
+        <span class="big-number">40</span>
+        <span class="big-label">Weeks of Formation</span>
       </div>
+      <div class="big-stat">
+        <span class="big-number">14</span>
+        <span class="big-label">Phases · Apostolic → Post-Nicene</span>
       </div>
+      <div class="big-stat">
+        <span class="big-number">22</span>
+        <span class="big-label">Fathers in the Syllabus</span>
       </div>
-      </div>
-      </div>
+      <div class="big-stat">
+        <span class="big-number">7</span>
+        <span class="big-label">Centuries Traced (~50–750 AD)</span>
       </div>
     </div>
   </section>
@@ -2762,6 +2778,64 @@ function renderPhaseTimeline() {
   }).join('');
 }
 
+// ==================================================================
+// BOOKS_COMPLETED_BY_WEEK — NT book finish points
+// An NT book counts as complete only when:
+//   (1) Its final chapter appears in a week's readings, AND
+//   (2) localStorage has `week{N}Complete` set (user actually finished the week)
+// Total = 26 books across the syllabus. 1 Corinthians ch. 16 is not in the current
+// syllabus (Week 4 ends at 1 Cor 15), so 1 Cor does not count as complete.
+// If Week 4 D5 is updated to "1 Corinthians 15–16" in the future, add '1 Corinthians' below.
+// ==================================================================
+const BOOKS_COMPLETED_BY_WEEK = {
+  2:  ['John'],
+  3:  ['1 John', '2 John', '3 John'],
+  5:  ['Mark'],
+  7:  ['Acts'],
+  8:  ['Galatians', 'James'],
+  11: ['Luke'],
+  12: ['Revelation'],
+  14: ['Hebrews', 'Colossians'],
+  15: ['Philippians', 'Ephesians'],
+  16: ['1 Peter'],
+  17: ['2 Peter'],
+  18: ['2 Corinthians', '1 Thessalonians', '2 Thessalonians'],
+  19: ['1 Timothy', '2 Timothy', 'Titus'],
+  21: ['Matthew'],
+  22: ['Romans'],
+  28: ['Philemon', 'Jude']
+};
+
+const NT_TOTAL_BOOKS = 27; // True count of NT books — tracker shows honest target
+
+function countCompletedBooks() {
+  let count = 0;
+  for (const wk in BOOKS_COMPLETED_BY_WEEK) {
+    if (localStorage.getItem(`week${wk}Complete`)) {
+      count += BOOKS_COMPLETED_BY_WEEK[wk].length;
+    }
+  }
+  return count;
+}
+
+// Psalms: 3/day × 6 reading days × N weeks = 18 × N psalms by end of week N.
+// Cycles through 150 psalms — program completes ~4.8 full passes across 40 weeks.
+function computePsalmsRead() {
+  const currentWeek = STUDY_STATE.currentWeek;
+  return Math.max(0, (currentWeek - 1) * 18);
+}
+
+function formatPsalmsDisplay(total) {
+  if (total === 0) return { text: 'Starting Psalter', fillPct: 0 };
+  const psalm = ((total - 1) % 150) + 1;
+  const pass = Math.floor((total - 1) / 150) + 1;
+  const fillPct = (psalm / 150) * 100;
+  return {
+    text: `Psalm ${psalm} of 150 — Pass ${pass}`,
+    fillPct
+  };
+}
+
 function renderOverallProgress() {
   const currentWeek = STUDY_STATE.currentWeek;
   const phase = getPhaseForWeek(currentWeek);
@@ -2788,6 +2862,22 @@ function renderOverallProgress() {
     }
     if (phaseLabel) phaseLabel.textContent = `Phase ${phase.number}: ${phase.name}`;
   }
+
+  // NT Books tracker
+  const ntFill = document.getElementById('nt-books-fill');
+  const ntText = document.getElementById('nt-books-text');
+  const booksCount = countCompletedBooks();
+  const ntPct = (booksCount / NT_TOTAL_BOOKS) * 100;
+  if (ntFill) ntFill.style.width = `${ntPct.toFixed(1)}%`;
+  if (ntText) ntText.textContent = `${booksCount} of ${NT_TOTAL_BOOKS} books`;
+
+  // Psalms tracker
+  const psalmsFill = document.getElementById('psalms-fill');
+  const psalmsText = document.getElementById('psalms-text');
+  const psalmsTotal = computePsalmsRead();
+  const psalmsDisplay = formatPsalmsDisplay(psalmsTotal);
+  if (psalmsFill) psalmsFill.style.width = `${psalmsDisplay.fillPct.toFixed(1)}%`;
+  if (psalmsText) psalmsText.textContent = psalmsDisplay.text;
 }
 
 // ==================================================================
