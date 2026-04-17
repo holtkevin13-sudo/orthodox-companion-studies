@@ -628,18 +628,21 @@ body {
 }
 
 /* Day completion states */
-.day-card.day-complete {
+.day-card.day-complete,
+.day-card.completed {
   background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%);
   border-color: #27ae60;
   border-width: 2px;
 }
 
-.day-card.day-complete .day-status {
+.day-card.day-complete .day-status,
+.day-card.completed .day-status {
   background: #27ae60;
   color: #ffffff;
 }
 
-.day-card.day-complete .day-progress {
+.day-card.day-complete .day-progress,
+.day-card.completed .day-progress {
   background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
   color: #ffffff;
 }
