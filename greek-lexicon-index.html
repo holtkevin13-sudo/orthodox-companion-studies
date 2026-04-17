@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T19:00:00Z -->
+<!-- build: 2026-04-17T20:30:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greek Lexicon — Orthodox Companion Studies</title>
+<title>Patristic Lexicon — Orthodox Companion Studies</title>
 
 <!-- Orthodox Companion Branding -->
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -12,8 +12,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 
-<meta name="description" content="A growing Greek lexicon for Orthodox patristic studies — theological terms with transliteration, definition, etymology, and Father connections, organized by phase across the 40-week formation program.">
-<meta name="keywords" content="Greek Lexicon, Orthodox Christianity, Patristic Greek, Church Fathers, Byzantine Greek, Theological Terms">
+<meta name="description" content="A growing lexicon of patristic theological vocabulary — Greek and Latin terms organized by phase, tied to the Fathers who shaped them, with transliteration, definition, etymology, and doctrinal connection.">
+<meta name="keywords" content="Patristic Lexicon, Orthodox Christianity, Patristic Greek, Patristic Latin, Church Fathers, Byzantine Greek, Theological Terms">
 
 <style>
 /* Typography — Cormorant Garamond (English) + Gentium Plus (Greek) */
@@ -339,6 +339,23 @@ em, i { font-style: italic; }
 .term-card.current-week {
   border: 2px solid #556b3d;
   background: linear-gradient(145deg, #f4f5ec 0%, #e8ede0 100%);
+}
+
+/* Language tagging — Greek (default) vs Latin. Added by Part 3 amendment
+   so Phase 2.5 Tertullian/Cyprian and Phase 10 Leo render honestly as
+   Latin rather than misfiled as Greek. Badge sits above the headword;
+   Latin entries render in italic Cormorant instead of upright Gentium. */
+.term-language-badge {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+.term-card.is-latin .term-greek {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
 }
 
 .current-week-badge {
@@ -698,7 +715,7 @@ em, i { font-style: italic; }
         </g>
       </svg>
       <div class="greek-ornament">Α · Ω</div>
-      <h1 class="main-title">Greek Lexicon</h1>
+      <h1 class="main-title">Patristic Lexicon</h1>
       <div class="subtitle">The theological vocabulary of the Fathers</div>
       <p class="description">
         A growing reference for the Greek terms that carry Orthodox theology — grouped by phase,
@@ -765,7 +782,7 @@ em, i { font-style: italic; }
 
 <script>
 // ==================================================================
-// Greek Lexicon — data-driven page
+// Patristic Lexicon — data-driven page
 // Reads from PHASE_DATA + LEXICON_ENTRIES in study-data.js
 // Deep-linkable by phase anchor: greek-lexicon-index.html#phase-N
 // ==================================================================
@@ -801,17 +818,25 @@ function renderTermCard(term) {
   const fathers = (term.fathers && term.fathers.length) ? `<div class="term-fathers"><strong>Father(s):</strong> ${term.fathers.join(', ')}</div>` : '';
   const connection = term.connection ? `<div class="term-connection">${term.connection}</div>` : '';
   // Per-term anchor — slug comes from the transliteration so URLs stay stable
-  // even if Greek spelling varies. Used by lexiconAnchorFor() everywhere else
-  // in the app so dashboard pills and Father cards can deep-link directly.
+  // even if Greek/Latin spelling varies. Used by lexiconAnchorFor() everywhere
+  // else in the app so dashboard pills and Father cards can deep-link directly.
   const slug = (typeof slugifyTerm === 'function') ? slugifyTerm(term) : '';
   const anchorAttr = slug ? ` id="term-${slug}"` : '';
+  // Language — omitted field defaults to 'greek' (Part 3 amendment). Latin
+  // entries (Phase 2.5 Tertullian/Cyprian, Phase 10 Leo) are tagged explicitly.
+  const language = (term.language || 'greek').toLowerCase();
+  const languageLabel = language === 'latin' ? 'LATIN' : 'GREEK';
+  const languageClass = language === 'latin' ? ' is-latin' : '';
+  const languageBadge = `<div class="term-language-badge">${languageLabel}</div>`;
   return `
-    <div class="term-card${term.isFocus ? ' focus-term' : ''}"${anchorAttr}
+    <div class="term-card${term.isFocus ? ' focus-term' : ''}${languageClass}"${anchorAttr}
          data-greek="${term.greek}"
          data-letter="${letter}"
          data-english="${(term.english || '').toLowerCase()}"
-         data-phase="${term.phase || ''}">
+         data-phase="${term.phase || ''}"
+         data-language="${language}">
       ${focusBadge}
+      ${languageBadge}
       <div class="term-greek">${term.greek}</div>
       ${transliteration}
       ${english}
