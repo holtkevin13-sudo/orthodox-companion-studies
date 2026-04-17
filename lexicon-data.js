@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T19:00:00Z
+// build: 2026-04-17T19:30:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -419,6 +419,133 @@ const LEXICON_ENTRIES = {
     definition: 'Literally, "outside the Church there is no salvation." Cyprian\'s dictum (Epistle 72.21, echoing De Unitate Ecclesiae 6), addressed originally to schismatics claiming saving grace apart from communion with the bishop. The formula shapes Western ecclesiology permanently and becomes a major point of later theological reception and nuance.',
     etymology: 'Latin: extra (outside) + ecclesiam (the Church) + nulla (no) + salus (salvation)',
     phase: 2.5, fathers: ['Cyprian of Carthage'], connection: 'Salvation Within Ecclesial Communion', letter: 'E'
+  },
+  // --- Irenaeus cluster (Phase 3) ---
+  'ἀνακεφαλαίωσις': {
+    transliteration: 'anakephalaiosis', english: 'Recapitulation, Summing-Up',
+    definition: 'Recapitulation — Irenaeus\'s signature theological concept, drawn from Ephesians 1:10 ("to sum up all things in Christ"). In Adversus Haereses 3.18.1, 3.22.3, and throughout Book 5, Irenaeus expounds recapitulation as Christ\'s retracing of the entire arc of Adam\'s disobedience in obedience — from birth through death and resurrection — so that the whole human race is healed from within. Recapitulation is Irenaean soteriology\'s master key.',
+    etymology: 'From ἀνά (again) + κεφαλαιόω (to sum up, from κεφαλή, head)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Christ Summing Up All Humanity', letter: 'Α'
+  },
+  'εἰκών': {
+    transliteration: 'eikon', english: 'Image, Icon',
+    definition: 'Image, likeness. Irenaeus develops Genesis 1:26 ("in our image and likeness") together with Colossians 1:15 ("image of the invisible God") into a structured anthropology: Christ is the εἰκών of the Father, and humanity is created according to that εἰκών. Image theology grounds both Christology and the dignity of the human person, and becomes — through Irenaeus — the Greek-Latin theological lingua franca of Christian anthropology.',
+    etymology: 'From ἔοικα (to be like, resemble)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Image Theology and Christological Anthropology', letter: 'Ε'
+  },
+  'ὁμοίωσις': {
+    transliteration: 'homoiosis', english: 'Likeness, Assimilation',
+    definition: 'Likeness. Paired with εἰκών (Genesis 1:26), Irenaeus distinguishes image from likeness: the εἰκών is given in creation, the ὁμοίωσις is the goal of spiritual growth, realized only as the indwelling Spirit conforms humanity to Christ (Adversus Haereses 5.6.1; 5.16.2). The distinction founds a long Greek patristic tradition of dynamic spiritual ascent into God.',
+    etymology: 'From ὁμοιόω (to make like)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Image-Likeness Distinction', letter: 'Ο'
+  },
+  'δύο χεῖρες': {
+    transliteration: 'dyo cheires', english: 'Two Hands (of the Father)',
+    definition: 'The "two hands" — Irenaeus\'s memorable figure for the Son and the Holy Spirit as the Father\'s two hands in the work of creation and redemption (Adversus Haereses 4.preface.4; 4.20.1; 5.1.3; 5.6.1). Against the gnostic multiplication of mediating aeons, Irenaeus insists the one God creates and saves directly — by his own Word and Spirit. The image anchors Trinitarian theology in concrete, scriptural language.',
+    etymology: 'From δύο (two) + χεῖρες (hands, plural of χείρ)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Trinitarian Action in Creation and Redemption', letter: 'Δ'
+  },
+  'διαδοχή': {
+    transliteration: 'diadoche', english: 'Succession',
+    definition: 'Succession, handing-on. Irenaeus\'s decisive polemical move: against gnostic claims to secret apostolic teaching, he appeals to the διαδοχή of bishops in the major apostolic sees — especially Rome, Smyrna, and Ephesus (Adversus Haereses 3.3) — as the public, verifiable channel through which authentic apostolic doctrine has been preserved. Apostolic succession is thus established as a structural mark of the Church.',
+    etymology: 'From διαδέχομαι (to receive one after another)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Apostolic Succession of Bishops', letter: 'Δ'
+  },
+  'κανὼν τῆς ἀληθείας': {
+    transliteration: 'kanon tes aletheias', english: 'Rule of Truth',
+    definition: 'The "Rule of Truth" — a baptismal creedal summary of the apostolic faith, received at baptism and functioning as the hermeneutical lens through which Scripture is rightly read. Irenaeus invokes the κανὼν τῆς ἀληθείας against heretical misreadings (Adversus Haereses 1.9.4, 1.22.1, 3.2.1; Epideixis 6). It is the Greek counterpart to Tertullian\'s regula fidei (Phase 2.5).',
+    etymology: 'From κανών (ruler, measuring-stick) + ἀλήθεια (truth)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Creedal Hermeneutical Norm', letter: 'Κ'
+  },
+  'ὑπόθεσις': {
+    transliteration: 'hypothesis', english: 'Plot, Underlying Narrative',
+    definition: 'The underlying "plot" or narrative structure of Scripture. Irenaeus famously compares the heretics to those who take the scattered jewels of a mosaic portraying a king and rearrange them into a picture of a fox or dog (Adversus Haereses 1.8.1, 1.9.4): the pieces are scriptural, but the ὑπόθεσις — the governing story — has been replaced. Right reading requires receiving the scriptural plot as the Church has received it.',
+    etymology: 'From ὑπό (under) + τίθημι (to place) — "that which is laid underneath"',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Scriptural Narrative Integrity Against Heresy', letter: 'Υ'
+  },
+  'ψευδώνυμος γνῶσις': {
+    transliteration: 'pseudonymos gnosis', english: 'Knowledge Falsely So-Called',
+    definition: '"Knowledge falsely so-called" — the phrase from 1 Timothy 6:20 that Irenaeus chose as the Greek title of his magnum opus (Ἔλεγχος καὶ ἀνατροπὴ τῆς ψευδωνύμου γνώσεως, "Detection and Overthrow of Knowledge Falsely So-Called"), conventionally shortened to Adversus Haereses. The phrase frames gnostic systems as a parody of the true γνῶσις given to the Church — knowledge that claims the name without the substance.',
+    etymology: 'From ψευδής (false) + ὄνομα (name) + γνῶσις (knowledge)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Refutation of Gnostic Systems', letter: 'Ψ'
+  },
+  'Δημιουργός': {
+    transliteration: 'Demiourgos', english: 'Creator, Maker',
+    definition: 'Craftsman, maker — in classical Greek, any skilled public worker; in Platonic usage, the divine artisan of the cosmos. Against Marcion, Valentinus, and other Gnostics who degraded the Δημιουργός of the Old Testament into a lesser or hostile being, Irenaeus insists that the Maker of heaven and earth is the very Father of Jesus Christ (Adversus Haereses 1.22.1; 2.1; 4.20). There is one God of both Testaments.',
+    etymology: 'From δήμιος (public) + ἔργον (work)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Unity of Creator and Redeemer God', letter: 'Δ'
+  },
+  'πλάσμα': {
+    transliteration: 'plasma', english: 'Modeled Thing, Creature',
+    definition: 'That which is shaped or modeled. Irenaeus consistently names the human being the πλάσμα of God — God\'s own hand-modeled creation (cf. Genesis 2:7), not the product of inferior aeons. The choice of vocabulary underscores divine intimacy in creation: God does not merely speak humanity into being but shapes it directly with his own two hands (Adversus Haereses 5.1.3; 5.15.2–16.1).',
+    etymology: 'From πλάσσω (to mold, shape)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Human Being as God\'s Own Handiwork', letter: 'Π'
+  },
+  'προκοπή': {
+    transliteration: 'prokope', english: 'Advancement, Growth',
+    definition: 'Progress, advancement. Irenaeus\'s developmental anthropology: Adam was not created perfect but infant-like, with a capacity and vocation for προκοπή — a long growth into the divine likeness (Adversus Haereses 4.38.1–3). Sin interrupted this trajectory; Christ\'s recapitulation resumes and completes it. The term grounds a patient patristic pedagogy of spiritual formation.',
+    etymology: 'From προκόπτω (to cut forward, make progress)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Progressive Divinization of Humanity', letter: 'Π'
+  },
+  'νήπιος': {
+    transliteration: 'nepios', english: 'Infant, Little Child',
+    definition: 'Infant, young child. Against gnostic readings that saw Adam as created perfect and then fallen, Irenaeus argues Adam was created νήπιος — immature, destined to grow into the divine likeness through obedient use of time (Adversus Haereses 4.38.1). Sin arose from infantile impatience rather than from a fall from completion. The figure reframes the whole human project as gradual maturation.',
+    etymology: 'Pre-Greek; traditionally associated with νη- (not) + ἔπος (speech) — "not yet speaking"',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Infant-Adam Anthropology', letter: 'Ν'
+  },
+  'ἐπίδειξις': {
+    transliteration: 'epideixis', english: 'Demonstration, Exposition',
+    definition: 'Demonstration, exposition. The title of Irenaeus\'s second major work, Ἐπίδειξις τοῦ ἀποστολικοῦ κηρύγματος (Demonstration of the Apostolic Preaching), preserved only in an Armenian translation until its rediscovery in 1904. Where Adversus Haereses attacks error, the Epideixis builds a positive catechetical presentation of the Rule of Truth, structured around the saving economy from creation to Christ.',
+    etymology: 'From ἐπί (upon) + δείκνυμι (to show)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Positive Catechetical Exposition', letter: 'Ε'
+  },
+  'αἵρεσις': {
+    transliteration: 'hairesis', english: 'Heresy, School of Thought',
+    definition: 'Originally, a "choice" or school of philosophical opinion — in pre-Christian usage, a neutral term for a philosophical party (Stoic, Epicurean, and so on). Through Irenaeus\'s Adversus Haereses, αἵρεσις takes on its permanent theological meaning: a sectarian deviation from the received apostolic faith, named and refuted by its distortion of the Rule of Truth. The book gives the category its technical shape.',
+    etymology: 'From αἱρέω (to choose)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Theological Meaning of Heresy', letter: 'Α'
+  },
+  'σάρκωσις': {
+    transliteration: 'sarkosis', english: 'Incarnation, Enfleshment',
+    definition: 'Enfleshment. Against gnostic denials that a true God could unite with flesh, Irenaeus insists on the σάρκωσις of the Word: the Son genuinely became flesh (John 1:14), and it is precisely this real assumption of human σάρξ (cf. Phase 1) that makes human flesh redeemable. The term becomes a technical Greek complement to Tertullian\'s Latin incarnatio.',
+    etymology: 'From σαρκόω (to make flesh, from σάρξ)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Real Incarnation Against Docetism', letter: 'Σ'
+  },
+  'ἀνάκρασις': {
+    transliteration: 'anakrasis', english: 'Mingling, Blending',
+    definition: 'Mingling, blending. Irenaeus describes the union of divinity and humanity in Christ as a real ἀνάκρασις — the Word genuinely commingling with human flesh without dissolving into it (Adversus Haereses 4.20.4; cf. 3.19). The metaphor is proto-Chalcedonian: it preserves both the reality of the union and the integrity of each element, anticipating the language that Cyril and the Chalcedonian Definition will fix (Phases 9–10).',
+    etymology: 'From ἀνά (up, through) + κρᾶσις (mingling, from κεράννυμι)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Proto-Chalcedonian Christological Union', letter: 'Α'
+  },
+  'πλάνη': {
+    transliteration: 'plane', english: 'Error, Wandering',
+    definition: 'Wandering, straying, deception. Irenaeus uses πλάνη as a collective name for gnostic systems: they are not merely wrong but disorienting — leading souls astray from the apostolic path (Adversus Haereses 1.preface.2). The term evokes lost travelers whose guide is the serpent\'s deception rather than the Rule of Truth.',
+    etymology: 'From πλανάω (to lead astray)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Gnostic Deception as Spiritual Wandering', letter: 'Π'
+  },
+  'παιδεία': {
+    transliteration: 'paideia', english: 'Training, Formation, Education',
+    definition: 'Formation, education — especially the long-form training of a human being. Irenaeus frames the whole history of salvation as God\'s patient παιδεία of humanity: through the successive covenants, the prophets, and finally the incarnate Son, God trains humanity to bear his presence (Adversus Haereses 4.38.1–3). Salvation is pedagogical as well as redemptive.',
+    etymology: 'From παῖς (child)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Salvation as Divine Pedagogy', letter: 'Π'
+  },
+  'ζωοποίησις': {
+    transliteration: 'zoopoiesis', english: 'Making Alive, Vivification',
+    definition: 'Making alive, vivification. Irenaeus emphasizes the Holy Spirit as giver of life (ζωοποιός) throughout the saving economy — quickening dead flesh at Pentecost, in Baptism, and in the final resurrection (Adversus Haereses 5.1.3; 5.9–13). Pneumatology is thus inseparable from soteriology: the Spirit\'s proper work is the vivification of flesh.',
+    etymology: 'From ζωή (life) + ποιέω (to make)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Pneumatology of Life and Resurrection', letter: 'Ζ'
+  },
+  'ἀρχαιότης': {
+    transliteration: 'archaiotes', english: 'Antiquity',
+    definition: 'Antiquity, age. One of Irenaeus\'s core polemical arguments: the apostolic faith is older than the heretical novelties. By tracing episcopal succession back to the Apostles (cf. διαδοχή) and setting the late date of heretical founders against the much earlier date of Christ\'s disciples, he deploys ἀρχαιότης as a mark of authenticity (Adversus Haereses 3.4; 3.preface).',
+    etymology: 'From ἀρχαῖος (ancient, from ἀρχή, beginning)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Antiquity as Mark of Apostolic Authenticity', letter: 'Α'
+  },
+  'ψυχή': {
+    transliteration: 'psyche', english: 'Soul',
+    definition: 'Soul. Against gnostic anthropologies that despised the body and elevated the soul (or the "spiritual" over both), Irenaeus defends a tripartite unity of ψυχή, σῶμα, and πνεῦμα: the complete human being is flesh and soul animated by the life-giving Spirit (Adversus Haereses 5.6.1; 5.9.1). Anti-dualist anthropology becomes a structural feature of Orthodox theology.',
+    etymology: 'From ψύχω (to breathe, blow)',
+    phase: 3, fathers: ['Irenaeus of Lyons'], connection: 'Anti-Dualist Tripartite Anthropology', letter: 'Ψ'
   }
 };
 
