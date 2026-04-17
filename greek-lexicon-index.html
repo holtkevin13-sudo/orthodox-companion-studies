@@ -15,22 +15,43 @@
 <meta name="keywords" content="Greek Lexicon, Orthodox Christianity, Patristic Greek, Church Fathers, Byzantine Greek, Theological Terms">
 
 <style>
+/* Typography — Cormorant Garamond (English) + Gentium Plus (Greek) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap');
+
 /* CSS Reset & Orthodox Foundation */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { 
-  font-size: 16px; 
+  font-size: 17px; 
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Minion Pro", "Adobe Garamond Pro", "Times New Roman", "Noto Serif", Georgia, serif;
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
   background: 
-    radial-gradient(circle at top left, rgba(41, 128, 185, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at bottom right, rgba(52, 152, 219, 0.03) 0%, transparent 50%),
-    linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
-  color: #2c3e50;
-  line-height: 1.6;
+    radial-gradient(circle at top left, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  color: #2a2620;
+  line-height: 1.7;
   min-height: 100vh;
 }
+
+/* Greek text — Gentium Plus, purpose-built for polytonic Greek.
+   On this page, any large Greek headline gets Gentium automatically. */
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+/* Academic small-caps on major section headings */
+.main-title, .banner-title, .section-title, .phase-lexicon-title, .week-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* Inline emphasis — Cormorant at 600 is already strong enough */
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
 
 .container {
   max-width: 1200px;
@@ -77,10 +98,10 @@ body {
 
 .greek-ornament {
   font-size: 2.5rem;
-  color: #ecf0f1;
+  color: #e8ddc8;
   margin-bottom: 1.2rem;
   letter-spacing: 0.3em;
-  font-family: "Times New Roman", serif;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
 }
 
 .main-title {
@@ -94,7 +115,7 @@ body {
 
 .subtitle {
   font-size: 1.3rem;
-  color: #ecf0f1;
+  color: #e8ddc8;
   font-weight: 300;
   font-style: italic;
   margin-bottom: 1rem;
@@ -103,7 +124,7 @@ body {
 
 .description {
   font-size: 1rem;
-  color: #f8f9fa;
+  color: #faf6ed;
   max-width: 800px;
   margin: 0 auto 2rem;
   line-height: 1.7;
@@ -118,7 +139,7 @@ body {
 
 .stat {
   text-align: center;
-  color: #ecf0f1;
+  color: #e8ddc8;
 }
 
 .stat-number {
@@ -138,7 +159,7 @@ body {
 
 /* Current Week Banner */
 .current-week-section {
-  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  background: linear-gradient(135deg, #556b3d 0%, #2ecc71 100%);
   color: #fff;
   padding: 2rem 0;
   border-bottom: 1px solid #229954;
@@ -185,7 +206,7 @@ body {
 }
 
 .term-greek {
-  font-family: "Times New Roman", serif;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 1.4rem;
   font-weight: 500;
   margin-bottom: 0.3rem;
@@ -213,7 +234,7 @@ body {
 .controls {
   padding: 2rem 0;
   background: #fffdf7;
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom: 1px solid #e8ddc8;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -233,7 +254,7 @@ body {
 .search-input {
   width: 100%;
   padding: 0.8rem 1rem;
-  border: 2px solid #ecf0f1;
+  border: 2px solid #e8ddc8;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
@@ -255,13 +276,13 @@ body {
 
 .filter-label {
   font-size: 0.9rem;
-  color: #5d6d7e;
+  color: #6b5d4a;
   font-weight: 500;
 }
 
 .filter-select {
   padding: 0.6rem 0.8rem;
-  border: 2px solid #ecf0f1;
+  border: 2px solid #e8ddc8;
   border-radius: 6px;
   font-size: 0.9rem;
   font-family: inherit;
@@ -278,7 +299,7 @@ body {
 .alphabet-filter {
   display: flex;
   gap: 0.3rem;
-  background: #ecf0f1;
+  background: #e8ddc8;
   border-radius: 8px;
   padding: 0.3rem;
 }
@@ -289,10 +310,10 @@ body {
   border: none;
   cursor: pointer;
   font-size: 0.8rem;
-  color: #5d6d7e;
+  color: #6b5d4a;
   border-radius: 4px;
   transition: all 0.3s ease;
-  font-family: "Times New Roman", serif;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
 }
 
 .alphabet-btn:hover,
@@ -309,7 +330,7 @@ body {
 
 .section-title {
   font-size: 2rem;
-  color: #2c3e50;
+  color: #2a2620;
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 400;
@@ -324,7 +345,7 @@ body {
 
 .term-card {
   background: #fff;
-  border: 1px solid #ecf0f1;
+  border: 1px solid #e8ddc8;
   border-radius: 10px;
   padding: 1.5rem;
   transition: all 0.3s ease;
@@ -341,7 +362,7 @@ body {
 }
 
 .term-card.current-week {
-  border: 2px solid #27ae60;
+  border: 2px solid #556b3d;
   background: linear-gradient(145deg, #f0fff0 0%, #e8f8e8 100%);
 }
 
@@ -349,7 +370,7 @@ body {
   position: absolute;
   top: -8px;
   right: 1rem;
-  background: #27ae60;
+  background: #556b3d;
   color: #fff;
   padding: 0.25rem 0.6rem;
   border-radius: 10px;
@@ -363,30 +384,30 @@ body {
 }
 
 .term-greek-main {
-  font-family: "Times New Roman", serif;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   font-size: 1.6rem;
-  color: #2c3e50;
+  color: #2a2620;
   margin-bottom: 0.3rem;
   font-weight: 500;
 }
 
 .term-pronunciation {
   font-size: 0.9rem;
-  color: #5d6d7e;
+  color: #6b5d4a;
   font-style: italic;
   margin-bottom: 0.3rem;
 }
 
 .term-english-main {
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: #2a2620;
   font-weight: 600;
   margin-bottom: 0.8rem;
 }
 
 .term-definition {
   font-size: 0.95rem;
-  color: #2c3e50;
+  color: #2a2620;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -397,7 +418,7 @@ body {
   align-items: center;
   margin-bottom: 1rem;
   padding: 0.8rem;
-  background: #f8f9fa;
+  background: #faf6ed;
   border-radius: 6px;
 }
 
@@ -410,11 +431,11 @@ body {
   display: block;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #2c3e50;
+  color: #2a2620;
 }
 
 .meta-label {
-  color: #5d6d7e;
+  color: #6b5d4a;
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -551,7 +572,7 @@ body {
 }
 
 .banner-subtitle {
-  color: #5d6d7e;
+  color: #6b5d4a;
   font-size: 0.95rem;
 }
 
@@ -567,7 +588,7 @@ body {
 
 .phase-lexicon-section {
   background: #ffffff;
-  border: 1px solid #ecf0f1;
+  border: 1px solid #e8ddc8;
   border-left: 4px solid #1a3a5c;
   border-radius: 8px;
   padding: 1.5rem 2rem;
@@ -593,7 +614,7 @@ body {
 .phase-lexicon-header {
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #ecf0f1;
+  border-bottom: 1px solid #e8ddc8;
 }
 
 .phase-lexicon-title {
@@ -613,7 +634,7 @@ body {
 }
 
 .phase-lexicon-meta {
-  color: #7f8c8d;
+  color: #6b5d4a;
   font-size: 0.88rem;
 }
 
@@ -624,7 +645,7 @@ body {
 }
 
 .phase-no-terms {
-  color: #95a5a6;
+  color: #8a7d6a;
   font-style: italic;
   margin: 0;
 }
@@ -651,8 +672,8 @@ body {
 
 .term-phase-tag {
   display: inline-block;
-  background: #ecf0f1;
-  color: #5d6d7e;
+  background: #e8ddc8;
+  color: #6b5d4a;
   font-size: 0.7rem;
   padding: 0.1rem 0.5rem;
   border-radius: 10px;
@@ -662,7 +683,7 @@ body {
 .term-etymology,
 .term-fathers {
   font-size: 0.82rem;
-  color: #5d6d7e;
+  color: #6b5d4a;
   margin-top: 0.5rem;
   line-height: 1.4;
 }
