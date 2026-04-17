@@ -187,9 +187,15 @@ body {
 }
 
 .focus-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
 }
 
 .focus-section {
@@ -220,6 +226,58 @@ body {
 
 .focus-section li:last-child {
   border-bottom: none;
+}
+
+/* Full-width Phase Greek Focus panel — Byzantine gold accent */
+.focus-greek {
+  background: linear-gradient(135deg, #fffaec 0%, #ffffff 100%);
+  border: 1px solid #e8d79a;
+  border-left: 4px solid #D4AF37;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+}
+
+.focus-greek-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.focus-greek-header h3 {
+  color: #1a3a5c;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.focus-greek-link {
+  font-size: 0.9rem;
+  color: #8a6d1f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.focus-greek-link:hover {
+  text-decoration: underline;
+}
+
+.focus-greek-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.greek-term {
+  padding: 0.4rem 0.9rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  font-size: 0.92rem;
+  color: #1a3a5c;
+  font-weight: 500;
 }
 
 .reading-time {
@@ -551,7 +609,7 @@ body {
     gap: 1rem;
   }
   
-  .focus-content, .days-grid, .phases-grid {
+  .focus-grid, .days-grid, .phases-grid {
     grid-template-columns: 1fr;
   }
   
@@ -1023,22 +1081,6 @@ body {
       </div>
     </div>
   </section>
-
-  <!-- Quick Actions -->
-  <div style="text-align: center; margin: 3rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-    <a href="polycarp-of-smyrna.html" style="display: block; background: linear-gradient(135deg, #1544B7 0%, #D4AF37 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-      📖 Today's Father Card
-    </a>
-    <a href="week-2-greek-terms.html" style="display: block; background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-      🇬🇷 Greek Vocabulary
-    </a>
-    <a href="bible-reader.html" style="display: block; background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-      📜 Bible Reader
-    </a>
-    <a href="index.html#progress" style="display: block; background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%); color: #ffffff; padding: 1rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-      📊 Study Hub
-    </a>
-  </div>
 
 </main>
 
@@ -2462,12 +2504,16 @@ function renderStatusHeader() {
 
 function phaseGreekHTML(phase) {
   if (!phase || !phase.greek || phase.greek.length === 0) return '';
+  const phaseLabel = phase.number !== undefined ? `Phase ${phase.number}: ${phase.name}` : phase.name;
   return `
-    <div class="focus-section">
-      <h3>🇬🇷 Phase Greek Focus</h3>
-      <ul>
-        ${phase.greek.map(g => `<li><span>${g}</span><span class="reading-time">Reference</span></li>`).join('')}
-      </ul>
+    <div class="focus-greek">
+      <div class="focus-greek-header">
+        <h3>🇬🇷 Phase Greek Focus — ${phaseLabel}</h3>
+        <a href="greek-lexicon-index.html" class="focus-greek-link">View Lexicon →</a>
+      </div>
+      <div class="focus-greek-terms">
+        ${phase.greek.map(g => `<span class="greek-term">${g}</span>`).join('')}
+      </div>
     </div>
   `;
 }
@@ -2486,9 +2532,11 @@ function renderTodaysFocus() {
 
   if (todayIdx === 6) {
     container.innerHTML = `
-      <div class="focus-section">
-        <h3>🕊️ Today: Rest & Reflection</h3>
-        <p>Sunday is a rest day. Attend Divine Liturgy if possible. Allow this week's readings to settle into prayer.</p>
+      <div class="focus-grid">
+        <div class="focus-section">
+          <h3>🕊️ Today: Rest & Reflection</h3>
+          <p>Sunday is a rest day. Attend Divine Liturgy if possible. Allow this week's readings to settle into prayer.</p>
+        </div>
       </div>
       ${phaseGreekHTML(phase)}
     `;
@@ -2497,14 +2545,16 @@ function renderTodaysFocus() {
 
   if (todayIdx === 5) {
     container.innerHTML = `
-      <div class="focus-section">
-        <h3>📕 Today: Psalms</h3>
-        <ul><li><span>${psalmRange(week, 5)}</span><span class="reading-time">15 min</span></li></ul>
-        <a href="bible-reader.html" class="action-button">Read Psalms →</a>
-      </div>
-      <div class="focus-section">
-        <h3>📝 Today: Review & Synthesis</h3>
-        <p>${wd.reviewPrompt || 'Revisit this week\'s readings. Write a synthesis note on the doctrinal threads you observed.'}</p>
+      <div class="focus-grid">
+        <div class="focus-section">
+          <h3>📕 Today: Psalms</h3>
+          <ul><li><span>${psalmRange(week, 5)}</span><span class="reading-time">15 min</span></li></ul>
+          <a href="bible-reader.html" class="action-button">Read Psalms →</a>
+        </div>
+        <div class="focus-section">
+          <h3>📝 Today: Review & Synthesis</h3>
+          <p>${wd.reviewPrompt || 'Revisit this week\'s readings. Write a synthesis note on the doctrinal threads you observed.'}</p>
+        </div>
       </div>
       ${phaseGreekHTML(phase)}
     `;
@@ -2518,23 +2568,25 @@ function renderTodaysFocus() {
   }
 
   container.innerHTML = `
-    <div class="focus-section">
-      <h3>📕 Psalms</h3>
-      <ul><li><span>${psalmRange(week, todayIdx)}</span><span class="reading-time">15 min</span></li></ul>
-      <a href="bible-reader.html" class="action-button">Read Psalms →</a>
-    </div>
-    <div class="focus-section">
-      <h3>📗 Biblical Reading</h3>
-      <ul><li><span>${day.biblical}</span><span class="reading-time">15 min</span></li></ul>
-      <a href="bible-reader.html" class="action-button">Open Bible Reader →</a>
-    </div>
-    <div class="focus-section">
-      <h3>📖 Patristic Reading</h3>
-      <ul><li><span>${day.patristic}</span><span class="reading-time">15 min</span></li></ul>
-    </div>
-    <div class="focus-section">
-      <h3>📙 Secondary Reading</h3>
-      <ul><li><span>${day.secondary}</span><span class="reading-time">15 min</span></li></ul>
+    <div class="focus-grid">
+      <div class="focus-section">
+        <h3>📕 Psalms</h3>
+        <ul><li><span>${psalmRange(week, todayIdx)}</span><span class="reading-time">15 min</span></li></ul>
+        <a href="bible-reader.html" class="action-button">Read Psalms →</a>
+      </div>
+      <div class="focus-section">
+        <h3>📗 Biblical Reading</h3>
+        <ul><li><span>${day.biblical}</span><span class="reading-time">15 min</span></li></ul>
+        <a href="bible-reader.html" class="action-button">Open Bible Reader →</a>
+      </div>
+      <div class="focus-section">
+        <h3>📖 Patristic Reading</h3>
+        <ul><li><span>${day.patristic}</span><span class="reading-time">15 min</span></li></ul>
+      </div>
+      <div class="focus-section">
+        <h3>📙 Secondary Reading</h3>
+        <ul><li><span>${day.secondary}</span><span class="reading-time">15 min</span></li></ul>
+      </div>
     </div>
     ${phaseGreekHTML(phase)}
   `;
