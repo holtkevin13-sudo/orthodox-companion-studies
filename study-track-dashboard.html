@@ -289,9 +289,11 @@ body {
   transition: all 0.3s ease;
 }
 
-.day-card.completed {
+.day-card.completed,
+.day-card.day-complete {
   background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%);
-  border-color: #27ae60;
+  border: 2px solid #27ae60;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
 }
 
 .day-card.current {
@@ -627,37 +629,39 @@ body {
   color: #495057;
 }
 
-/* Day completion states - More specific selectors */
+/* Day completion states - FORCE GREEN STYLING */
 .day-card.day-complete {
-  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%) !important;
-  border: 2px solid #27ae60 !important;
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+  background: #d5f4e6 !important;
+  border: 3px solid #27ae60 !important;
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4) !important;
 }
 
-.day-card.completed {
-  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%) !important;
-  border: 2px solid #27ae60 !important;
+.day-card.day-complete .day-header {
+  background: rgba(39, 174, 96, 0.1) !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .day-card.day-complete .day-status {
   background: #27ae60 !important;
   color: #ffffff !important;
-}
-
-.day-card.completed .day-status {
-  background: #27ae60 !important;
-  color: #ffffff !important;
+  border-radius: 4px !important;
+  padding: 0.3rem 0.8rem !important;
 }
 
 .day-card.day-complete .day-progress {
-  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
+  background: #27ae60 !important;
   color: #ffffff !important;
-  font-weight: 600;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  padding: 0.75rem !important;
 }
 
-.day-card.completed .day-progress {
-  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
-  color: #ffffff !important;
+/* Also keep existing completed styling */
+.day-card.completed {
+  background: linear-gradient(135deg, #d5f4e6 0%, #ffffff 100%) !important;
+  border: 2px solid #27ae60 !important;
 }
 
 /* Animation for task completion */
@@ -1392,38 +1396,48 @@ class StudyTaskManager {
     const progressDiv = document.getElementById(`${dayId}-progress`);
     const statusDiv = document.getElementById(`${dayId}-status`);
     
-    console.log(`Updating progress for ${dayId}:`, {
-      dayCard: !!dayCard,
-      checkboxCount: dayCheckboxes.length,
-      progressDiv: !!progressDiv,
-      statusDiv: !!statusDiv
-    });
+    console.log(`=== DEBUGGING ${dayId.toUpperCase()} ===`);
+    console.log('Day card:', dayCard);
+    console.log('Checkboxes found:', dayCheckboxes);
+    console.log('Progress div:', progressDiv);
+    console.log('Status div:', statusDiv);
     
     if (!dayCheckboxes.length || !progressDiv) {
-      console.log(`Missing elements for ${dayId} - skipping update`);
+      console.log(`❌ Missing elements for ${dayId} - skipping update`);
       return;
     }
 
     const totalTasks = dayCheckboxes.length;
     const completedTasks = Array.from(dayCheckboxes).filter(cb => cb.checked).length;
     
-    console.log(`${dayId}: ${completedTasks}/${totalTasks} complete`);
+    console.log(`📊 ${dayId}: ${completedTasks}/${totalTasks} complete`);
+    console.log('Current day card classes:', dayCard.className);
     
     // Update progress text
     progressDiv.textContent = `${completedTasks} of ${totalTasks} tasks complete`;
+    console.log('✅ Progress text updated');
     
     // Update day completion state
     if (completedTasks === totalTasks) {
-      dayCard.classList.remove('current', 'upcoming');
+      console.log(`🎯 Day ${dayId} should be complete!`);
+      
+      // Remove all status classes
+      dayCard.classList.remove('current', 'upcoming', 'completed');
+      // Add completion class
       dayCard.classList.add('day-complete');
+      
       statusDiv.textContent = 'Complete';
       statusDiv.className = 'day-status completed';
       progressDiv.textContent = '✅ Day Complete!';
       
-      console.log(`Day ${dayId} marked complete!`);
+      console.log('📝 Classes after completion:', dayCard.className);
+      console.log('📝 Status after completion:', statusDiv.className);
+      
       this.celebrateDayCompletion(dayCard);
     } else {
+      console.log(`📋 Day ${dayId} incomplete (${completedTasks}/${totalTasks})`);
       dayCard.classList.remove('day-complete');
+      
       if (dayCard.classList.contains('current')) {
         statusDiv.textContent = 'Current';
         statusDiv.className = 'day-status current';
@@ -1432,6 +1446,11 @@ class StudyTaskManager {
         statusDiv.className = 'day-status upcoming';
       }
     }
+    
+    // Force a style recalculation
+    dayCard.offsetHeight; // Trigger reflow
+    
+    console.log(`=== END ${dayId.toUpperCase()} DEBUG ===\n`);
   }
 
   // Update all day progress on load
