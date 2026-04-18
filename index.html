@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T20:30:00Z -->
+<!-- build: 2026-04-18T00:30:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -255,60 +255,6 @@
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin-top: 0.25rem;
-  }
-
-  /* Navigation */
-  .main-nav {
-    background: #3a3228;
-    border-bottom: 1px solid #2a2620;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  
-  .nav-tabs {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-tab {
-    flex: 1;
-  }
-  
-  .nav-tab button {
-    width: 100%;
-    padding: 1rem 0.5rem;
-    background: transparent;
-    border: none;
-    color: #bdc3c7;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-bottom: 3px solid transparent;
-  }
-  
-  .nav-tab button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #e8ddc8;
-  }
-  
-  .nav-tab.active button {
-    color: #fffdf7;
-    border-bottom-color: #3498db;
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  /* Tab Content */
-  .tab-content {
-    display: none;
-    min-height: 70vh;
-  }
-  
-  .tab-content.active {
-    display: block;
   }
 
   /* Study Programs Grid */
@@ -707,11 +653,6 @@
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    .nav-tab button {
-      font-size: 0.8rem;
-      padding: 0.8rem 0.5rem;
-    }
-
     .main-title {
       font-size: 2.2rem;
     }
@@ -803,15 +744,6 @@
   </div>
 </header>
 
-<nav class="main-nav">
-  <div class="container">
-    <ul class="nav-tabs">
-      <li class="nav-tab active" data-tab="programs"><button>Study Programs</button></li>
-      <li class="nav-tab" data-tab="resources"><button>Study Resources</button></li>
-    </ul>
-  </div>
-</nav>
-
 <!-- Continue Studies banner — appears when enrolled; populated by JS -->
 <div id="continue-studies-banner" class="continue-banner" style="display: none;">
   <div class="container continue-banner-inner">
@@ -829,8 +761,8 @@
   </div>
 </div>
 
-<!-- Tab 1: Study Programs Overview -->
-<div id="tab-programs" class="tab-content active">
+<!-- Study Programs Overview -->
+<div>
   <section class="study-tools">
     <div class="container">
       <div class="tools-header">
@@ -915,60 +847,6 @@
   </section>
 </div>
 
-<!-- Tab 2: Study Resources -->
-<div id="tab-resources" class="tab-content">
-  <section class="study-tools">
-    <div class="container">
-      <div class="tools-header">
-        <h2 class="tools-title">Study Resources</h2>
-        <p class="tools-description">
-          Comprehensive resources for Orthodox theological formation across all programs
-        </p>
-      </div>
-
-      <div class="tools-grid">
-        <div class="tool-card">
-          <div class="tool-icon">☩</div>
-          <h3 class="tool-title">Father Cards</h3>
-          <p class="tool-description">
-            Biographical profiles of the Church Fathers with key works, theological contributions, 
-            and study context. Browse the full library or jump to your current week's Father.
-          </p>
-          <div class="tool-actions">
-            <a href="father-cards-index.html" class="tool-btn primary">Browse Fathers →</a>
-          </div>
-        </div>
-
-        <div class="tool-card">
-          <div class="tool-icon">Ω</div>
-          <h3 class="tool-title">Patristic Lexicon</h3>
-          <p class="tool-description">
-            Essential theological vocabulary — Greek and Latin — from the patristic corpus, organized
-            by phase. Each entry includes transliteration, definition, etymology, and connection to
-            the Fathers who shaped it.
-          </p>
-          <div class="tool-actions">
-            <a href="greek-lexicon-index.html" class="tool-btn primary">Open Lexicon →</a>
-          </div>
-        </div>
-
-        <div class="tool-card">
-          <div class="tool-icon">⊕</div>
-          <h3 class="tool-title">Biblical Companion</h3>
-          <p class="tool-description">
-            Daily biblical readings coordinated with patristic study — the Psalter as continuous thread 
-            and strategic books aligned with each Father's theology. Eastern Orthodox Bible text.
-          </p>
-          <div class="tool-actions">
-            <a href="bible-reader.html" class="tool-btn primary">Open Bible Reader →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- Tab 4 (Notion Workspace) removed — study app no longer references Notion -->
 
 <footer>
   <div class="container">
@@ -987,29 +865,10 @@
 <script src="lexicon-data.js"></script>
 <script src="study-data.js"></script>
 <script>
-  // Tab Navigation System
   document.addEventListener('DOMContentLoaded', function() {
-    const navTabs = document.querySelectorAll('.nav-tab');
-    navTabs.forEach(tab => {
-      tab.addEventListener('click', function() {
-        const targetTab = this.getAttribute('data-tab');
-        switchTab(targetTab);
-      });
-    });
     initContinueBanner();
     decoratePatristicsCard();
   });
-
-  function switchTab(targetTab) {
-    const navTabs = document.querySelectorAll('.nav-tab');
-    const tabContents = document.querySelectorAll('.tab-content');
-    navTabs.forEach(t => t.classList.remove('active'));
-    tabContents.forEach(content => content.classList.remove('active'));
-    const target = document.querySelector(`[data-tab="${targetTab}"]`);
-    const content = document.getElementById(`tab-${targetTab}`);
-    if (target) target.classList.add('active');
-    if (content) content.classList.add('active');
-  }
 
   // Continue Studies banner — shown only when user is enrolled in a track.
   // Pulls enrollment + current week from localStorage via study-data.js helpers.
