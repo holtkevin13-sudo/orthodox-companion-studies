@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T03:35:23Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Chrysostom — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="John Chrysostom — Orthodox Companion Studies">
+<meta property="og:description" content="The Golden-Mouthed Archbishop of Constantinople — supreme patristic preacher, Antiochene exegete, theologian of divine accommodation, and conscience of the Christian empire.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="John Chrysostom (c. 347 – 407 AD) — Archbishop of Constantinople and the supreme preacher of the patristic era. Seven hundred surviving homilies, the Divine Liturgy that bears his name, and a sustained moral-pastoral witness that ended in exile and death.">
+<meta name="keywords" content="John Chrysostom, Golden-Mouth, Archbishop of Constantinople, Church Fathers, Homilies on Matthew, On the Priesthood, Divine Liturgy, Antiochene Exegesis, Synkatabasis, Eleemosyne, Metanoia, Homilia, Three Hierarchs, Olympias, Comana">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 7 · Chrysostom · Weeks 20–25
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">John Chrysostom</h1>
+    <div class="hero-epithet">Ἰωάννης ὁ Χρυσόστομος · The Golden-Mouthed</div>
+    <div class="hero-meta">c. 347 – 407 AD · Archbishop of Constantinople, Ecumenical Teacher</div>
+    <p class="hero-description">
+      Preacher of Antioch, briefly Archbishop of Constantinople, and — by the sheer weight of
+      his surviving corpus — the supreme patristic master of the Christian homily. Seven hundred
+      of his sermons survive, including consecutive commentaries on Matthew, John, and every
+      Pauline letter. His Divine Liturgy remains the most-prayed service in Orthodox
+      Christendom. His conscience outlived his episcopate: he died in exile for criticizing
+      imperial power.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was John?</h2>
+      <p class="section-text">
+        John was born around 347 AD in Antioch — the great Greek-speaking metropolis of the
+        Roman East, a city of rhetors and philosophers where the first followers of Christ had
+        been called "Christians." His father Secundus, an army officer, died while John was a
+        child; his mother Anthusa, widowed at about twenty, raised him and his sister alone.
+        Anthusa's insistence that her son receive the finest education placed him in the school
+        of the pagan rhetor Libanius, one of the most distinguished teachers of his century.
+        Libanius is reported to have said on his deathbed that John would have been his
+        successor "had the Christians not stolen him from us."
+      </p>
+      <p class="section-text">
+        Baptized around 368 by Meletius of Antioch, John withdrew for several years to the
+        ascetic communities in the mountains above the city, pushing himself into a rigor so
+        severe that it permanently damaged his health. He returned to Antioch and was ordained
+        deacon in 381, priest in 386. The twelve years that followed, at the Great Church of
+        Antioch, made his preaching reputation: the <em>Homilies on the Statues</em> delivered
+        in 387 after the tax riot (when the terrified city faced imperial reprisal for
+        overturning statues of Theodosius); the consecutive expositions of Genesis, Matthew,
+        John, and the Pauline epistles; the discourses <em>On the Incomprehensible Nature of
+        God</em>. His eloquence earned him, posthumously, the epithet <em>Χρυσόστομος</em>,
+        "Golden-Mouthed."
+      </p>
+      <p class="section-text">
+        In 397 the emperor Arcadius had him effectively abducted from Antioch to be consecrated
+        Archbishop of Constantinople. John arrived expecting to preach; he found a court, a
+        clergy, and an empress whose lives he could not leave uncriticized. His homilies —
+        against wealth flaunted in a city of poverty, against clerical luxury, against Empress
+        Eudoxia's public displays — made him enemies fast. A pliant synod at the imperial estate
+        of The Oak deposed him in 403. Popular outcry and the empress's fear after a miscarriage
+        brought him back briefly; a second exile followed in 404. He was marched first to
+        Cucusus in Armenia, then, in 407, forced onward further into the hinterland. He died on
+        September 14, 407, at Comana Pontica, age about sixty, and tradition reports that his
+        last words were <em>Δόξα τῷ Θεῷ πάντων ἕνεκεν</em> — "Glory to God for all things." His
+        relics were returned to Constantinople in 438 amid public penitence. The Orthodox Church
+        commemorates him on November 13 (his repose) and January 27 (the translation of his
+        relics), and on January 30 with Basil and Gregory of Nazianzus as one of the Three
+        Hierarchs.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">700+</div>
+          <div class="stat-label">Surviving Homilies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">90</div>
+          <div class="stat-label">Homilies on Matthew</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2</div>
+          <div class="stat-label">Exiles from Constantinople</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">407</div>
+          <div class="stat-label">Died in Exile</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        No patristic corpus is larger than Chrysostom's. Beyond the seven hundred surviving
+        homilies, we have treatises, letters from exile, catechetical lectures, and the
+        eucharistic liturgy that still bears his name. Three works anchor his enduring witness.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">On the Priesthood</h3>
+          <div class="work-greek">Περὶ Ἱερωσύνης</div>
+          <p class="work-description">
+            Six books, composed at Antioch before John's ordination and cast as a dialogue with
+            his friend Basil (not the Cappadocian) over their mutual call to the priesthood. The
+            treatise is the finest patristic exposition of the pastoral office: its weight, its
+            spiritual dangers, its absolute requirement of self-purification before leading
+            others, and the impossible dignity of the one who offers the eucharistic sacrifice
+            in Christ's name. Gregory of Nazianzus's <em>Oration 2</em> is its precursor; Gregory
+            the Great's <em>Pastoral Rule</em> carries the same tradition into the Latin West.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Homilies on Matthew</h3>
+          <div class="work-greek">Εἰς τὸ κατὰ Ματθαῖον</div>
+          <p class="work-description">
+            Ninety consecutive homilies preached at Antioch in the 390s. The series is the
+            single greatest achievement of patristic biblical preaching — rigorous Antiochene
+            exegesis of every chapter paired with unsparing moral-pastoral application. The
+            homilies on Matthew 25 and on the parables of Lazarus and the rich man are the
+            classical statement of Chrysostom's social ethic: the poor at the church door are
+            another altar, and no gold vessel inside can substitute for Christ clothed and fed
+            in them.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Divine Liturgy</h3>
+          <div class="work-greek">Θεία Λειτουργία</div>
+          <p class="work-description">
+            The principal eucharistic liturgy of the Orthodox Church — celebrated every Sunday
+            of the year except the Sundays of Great Lent and a handful of other occasions on
+            which the longer Liturgy of St. Basil is used. The anaphora bearing Chrysostom's
+            name is a shorter reworking of an older Antiochene tradition; modern liturgical
+            scholarship reads Chrysostom as the shaper and transmitter of this prayer rather
+            than its sole composer. Whatever the precise history of its text, the liturgy
+            remains, with Basil's, the most-prayed Christian service on earth after sixteen
+            hundred years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the structural weight of Chrysostom's pastoral theology. They
+        move from the hermeneutical and Christological ground of his preaching through its
+        central ethical demand and pastoral aim, to the genre he perfected.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-synkatabasis" class="greek-term greek-term-link">συγκατάβασις</a>
+          <div class="transliteration">synkatabasis</div>
+          <div class="english-meaning">Divine Accommodation · Condescension</div>
+          <p class="pillar-explanation">
+            God's loving stoop to human weakness — in Scripture's human speech, in the
+            Incarnation, in the sacraments. For Chrysostom, <em>συγκατάβασις</em> is the shape
+            of all divine self-communication: God meets us where we are because we cannot reach
+            where he is. The concept is hermeneutical, Christological, and pastoral at once.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-eleemosyne" class="greek-term greek-term-link">ἐλεημοσύνη</a>
+          <div class="transliteration">eleēmosynē</div>
+          <div class="english-meaning">Almsgiving · Merciful Giving</div>
+          <p class="pillar-explanation">
+            Chrysostom calls almsgiving the "queen of virtues" — the practical sacrament by
+            which the comfortable meet Christ in the poor (Matthew 25). His homilies on Matthew,
+            on Lazarus and the rich man, and on 1 Corinthians press the demand with unflinching
+            force. <em>Ἐλεημοσύνη</em> is not philanthropy but liturgy continued outside the
+            church doors.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-metanoia" class="greek-term greek-term-link">μετάνοια</a>
+          <div class="transliteration">metanoia</div>
+          <div class="english-meaning">Repentance · Change of Mind</div>
+          <p class="pillar-explanation">
+            Not regretful feeling but a fundamental reorientation of the whole person toward
+            God. Chrysostom treats <em>μετάνοια</em> as the continuous disposition of Christian
+            life rather than an occasional crisis, returning again and again to God's perpetual,
+            hopeful offer: even if you have fallen a thousand times, a thousand times come back.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-homilia" class="greek-term greek-term-link">ὁμιλία</a>
+          <div class="transliteration">homilia</div>
+          <div class="english-meaning">Homily · Preached Discourse</div>
+          <p class="pillar-explanation">
+            Originally "company" or "conversation," the word becomes, through Chrysostom's
+            example, the technical name for the Christian sermon as extended, exegetical,
+            pastoral address. More than seven hundred of his <em>ὁμιλίαι</em> survive, including
+            complete consecutive series on Matthew, John, and every Pauline letter. The genre
+            of Christian preaching as we still know it is set by him.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "Glory to God for all things."
+      </p>
+      <div class="quote-source">— Last words at Comana Pontica, September 14, 407 AD</div>
+    </div>
+
+    <!-- Why Chrysostom Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Chrysostom Matters Today</h2>
+      <p class="section-text">
+        Every Sunday that an Orthodox Christian hears the Divine Liturgy, Chrysostom is in the
+        room. The anaphora, the dialogues, the petitions — all bear his theological
+        fingerprints, even where he is the shaper rather than sole author of the text. But his
+        deeper presence is in the Orthodox habit of preaching itself. To preach a homily as
+        <em>Chrysostom</em> preached — unhurried exposition of the biblical text, followed by
+        unsparing moral application, followed by pastoral encouragement — is to inherit a form
+        he essentially invented for the Christian East. Every Orthodox homilist since has been
+        working in his shadow.
+      </p>
+      <p class="section-text">
+        His social theology has never been equaled in the patristic era. The insistence that
+        the poor are the other altar, that the Christian altar is dishonored by a congregation
+        walking past Christ in the street — this is the prophetic edge of the Orthodox tradition,
+        and it is sharpest in Chrysostom. Modern Orthodox theologians who speak of the "liturgy
+        after the liturgy" — Bishop Anastasios Yannoulatos most famously — are extending exactly
+        his principle: that what happens inside the church only counts if it issues in the love
+        of the poor outside.
+      </p>
+      <p class="section-text">
+        And there is the witness of his end. A bishop who could have made accommodations with
+        power made none, criticized empress and court to their faces, and was broken by them for
+        it — dying on a forced march at sixty. His last recorded words — "Glory to God for all
+        things" — are not the surrender of a defeated man but the confession of one for whom
+        <em>πρόνοια</em>, God's providence, held even the most bitter failures. That doxology
+        passed into Orthodox spirituality permanently; the twentieth-century Akathist of
+        Thanksgiving composed by Protopresbyter Gregory Petrov in a Soviet prison camp is
+        structured around those same words. Chrysostom's witness continues to teach the Church
+        what to say when everything has been taken away.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="gregory-of-nazianzus.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Gregory of Nazianzus</div>
+          <div class="related-desc">The Theologian's <em>Oration 2</em> on the priesthood is the direct precursor to Chrysostom's <em>On the Priesthood</em>.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-synkatabasis" class="related-link">
+          <span class="related-icon">Σ</span>
+          <div class="related-title greek">συγκατάβασις</div>
+          <div class="related-desc">Chrysostom's signature — God's loving stoop to meet us in Scripture, sacrament, and flesh.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-7" class="related-link">
+          <span class="related-icon">Χ</span>
+          <div class="related-title">Phase 7 Lexicon</div>
+          <div class="related-desc">The Chrysostomic vocabulary of preaching, pastoral care, and practical mercy.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// John Chrysostom is Phase 7: Weeks 20–25.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 20 && wk <= 25) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
