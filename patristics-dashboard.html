@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T20:56:11Z -->
+<!-- build: 2026-04-18T21:39:52Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1490,6 +1490,460 @@ em, i { font-style: italic; }
   display: block;
 }
 
+/* ============================================================
+   COURSE COMPLETE SUMMARY — persistent post-Week-40 state.
+   Renders in place of Today's Focus + Week Overview when
+   STUDY_STATE.currentWeek === 40 && week40Complete === "true".
+   Ceremonial but not celebratory: Christ-centered, humble,
+   phronema-oriented. Part II porphyry accent (the course closes
+   in Post-Nicene territory). Gold hairline dividers between
+   subsections. Weight ceiling 600; no 700; no emoji.
+   ============================================================ */
+.course-complete-section {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #6b1e2a;
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.course-complete-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-caption {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  color: #6b5d4a;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.course-complete-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.4rem;
+  line-height: 1.25;
+  color: #6b1e2a;
+  font-weight: 500;
+  margin: 0;
+}
+.course-complete-subheading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+.course-complete-prose {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #2a2620;
+  max-width: 62ch;
+  margin: 0 auto 2.5rem auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-prose p {
+  margin: 0 0 1.1rem 0;
+}
+.course-complete-prose p:last-child {
+  margin-bottom: 0;
+}
+.course-complete-prose .greek {
+  font-family: 'Gentium Plus', 'Gentium', serif;
+  font-style: normal;
+}
+
+/* Journey section — stats + Fathers encountered */
+.course-complete-journey {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-section-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  color: #6b1e2a;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 1.75rem 0;
+}
+.course-complete-dates {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  color: #2a2620;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.course-complete-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.course-complete-stat {
+  text-align: center;
+  padding: 1rem;
+}
+.course-complete-stat-value {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #6b1e2a;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.course-complete-stat-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: #6b5d4a;
+  font-weight: 500;
+}
+.course-complete-stat-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  transition: border-color 0.2s ease;
+}
+.course-complete-stat-link:hover {
+  border-bottom-color: #D4AF37;
+}
+
+/* Fathers-encountered list: two columns (Part I / Part II) on desktop,
+   stacked on mobile. Each Father is a link to their Father card. */
+.course-complete-fathers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.course-complete-fathers-group-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+.course-complete-fathers-group[data-part="i"] .course-complete-fathers-group-label {
+  color: #1a3a5c;
+}
+.course-complete-fathers-group[data-part="ii"] .course-complete-fathers-group-label {
+  color: #6b1e2a;
+}
+.course-complete-fathers-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.course-complete-fathers-list li {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  padding: 0.35rem 0;
+  line-height: 1.4;
+}
+.course-complete-father-link {
+  color: #2a2620;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.course-complete-father-link:hover {
+  color: #6b1e2a;
+  border-bottom-color: #D4AF37;
+}
+.course-complete-fathers-group[data-part="i"] .course-complete-father-link:hover {
+  color: #1a3a5c;
+}
+
+/* Synthesis prompt — reflection invitation, localStorage-backed textarea.
+   Reads as a page in a notebook: cream ground, gold hairline, generous
+   padding. No submit, no count, no feedback. The user writing to
+   themselves. */
+.course-complete-synthesis {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-synthesis-intro {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+.course-complete-synthesis-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 1.5rem auto;
+  max-width: 62ch;
+  counter-reset: synthesis;
+}
+.course-complete-synthesis-questions li {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2620;
+  padding: 0.75rem 0 0.75rem 2.5rem;
+  position: relative;
+  counter-increment: synthesis;
+}
+.course-complete-synthesis-questions li::before {
+  content: counter(synthesis, lower-roman) ".";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  color: #6b1e2a;
+  font-weight: 500;
+  font-size: 1rem;
+  width: 1.8rem;
+  text-align: right;
+}
+.course-complete-synthesis-field {
+  display: block;
+  width: 100%;
+  max-width: 62ch;
+  margin: 0 auto;
+  min-height: 200px;
+  background: #faf6ed;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #D4AF37;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2a2620;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+.course-complete-synthesis-field:focus {
+  outline: none;
+  border-color: #D4AF37;
+}
+.course-complete-synthesis-status {
+  display: block;
+  max-width: 62ch;
+  margin: 0.5rem auto 0 auto;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #6b5d4a;
+  font-weight: 500;
+  text-align: right;
+  min-height: 1.2em;
+}
+
+/* Forward paths — two button-style links, Option-C convention:
+   solid gold #D4AF37, navy text #1a3a5c, Cormorant 600, 4px radius,
+   min-height 44px, 0.75rem/1.5rem padding. Equal visual weight,
+   stacked on mobile. */
+.course-complete-forward {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  text-align: center;
+}
+.course-complete-forward-intro {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.course-complete-forward-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.course-complete-forward-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #D4AF37;
+  color: #1a3a5c;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+  box-sizing: border-box;
+  line-height: 1.4;
+  flex: 1 1 260px;
+  max-width: 360px;
+}
+.course-complete-forward-link:hover {
+  background: #c4a028;
+}
+.course-complete-forward-link:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Print button — subtle action, smaller than forward-path buttons.
+   Clear affordance but visually recedes. */
+.course-complete-print-action {
+  text-align: center;
+}
+.course-complete-print-button {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  background: transparent;
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.course-complete-print-button:hover {
+  background: #D4AF37;
+  color: #ffffff;
+}
+.course-complete-print-button:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Print-only keepsake caption — hidden on screen, shown on print. */
+.course-complete-print-caption {
+  display: none;
+}
+
+/* Responsive — collapse padding and typography at small widths */
+@media (max-width: 600px) {
+  .course-complete-section {
+    padding: 2rem 1.25rem;
+  }
+  .course-complete-heading {
+    font-size: 1.9rem;
+  }
+  .course-complete-prose {
+    font-size: 1.05rem;
+  }
+  .course-complete-forward-link {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .course-complete-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Print stylesheet — keepsake completion record. Hide dashboard
+   chrome and interactive affordances; preserve ceremonial content
+   with black-on-white typography, generous margins, no gradients. */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  /* Hide everything except the course-complete section */
+  body > *:not(.course-complete-section),
+  .status-section,
+  .today-focus,
+  .week-overview,
+  .phase-timeline,
+  .required-reading,
+  .study-tools-section,
+  .session-controls-section,
+  header, nav, footer {
+    display: none !important;
+  }
+  /* Within the course-complete section, hide interactive/personal content */
+  .course-complete-synthesis,
+  .course-complete-forward,
+  .course-complete-print-action {
+    display: none !important;
+  }
+  /* Strip ornamentation; let paper be paper */
+  .course-complete-section {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 1.5cm !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+  }
+  .course-complete-heading,
+  .course-complete-section-label,
+  .course-complete-stat-value,
+  .course-complete-fathers-group-label {
+    color: #000000 !important;
+  }
+  .course-complete-prose,
+  .course-complete-dates,
+  .course-complete-fathers-list li,
+  .course-complete-caption,
+  .course-complete-stat-label {
+    color: #000000 !important;
+  }
+  .course-complete-stat-link {
+    color: #000000 !important;
+    border-bottom: none !important;
+  }
+  .course-complete-father-link {
+    color: #000000 !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+  .course-complete-header {
+    border-bottom: 1px solid #000000 !important;
+  }
+  .course-complete-prose,
+  .course-complete-journey {
+    border-bottom: 1px solid #000000 !important;
+  }
+  /* Keepsake caption appears only on print */
+  .course-complete-print-caption {
+    display: block !important;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #000000;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.95rem;
+    color: #000000;
+    font-style: italic;
+  }
+  .course-complete-print-caption-title {
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+  a { color: #000000 !important; text-decoration: none !important; }
+}
+
 /* Study Tools section — tool-card grid for Father Cards / Lexicon / Bible Reader */
 .study-tools-section {
   background: #fffdf7;
@@ -2004,6 +2458,10 @@ function renderAll() {
   renderPhaseTimeline();
   renderRequiredReading();
   renderOverallProgress();
+  // Course-complete summary is the persistent post-Week-40 state.
+  // Runs last so it can hide Today's Focus + Week Overview without
+  // racing their renderers, and so it observes updated stats.
+  renderCourseCompleteSummary();
 }
 
 function renderStatusHeader() {
@@ -2271,6 +2729,400 @@ function wireWeekTransitionDismiss() {
   if (dismissBtn) dismissBtn.addEventListener('click', remove, { once: true });
   document.querySelectorAll('.task-checkbox').forEach(cb => {
     cb.addEventListener('change', remove, { once: true });
+  });
+}
+
+// ==================================================================
+// COURSE COMPLETE SUMMARY — persistent post-Week-40 ceremonial state.
+// ==================================================================
+// Gated on STUDY_STATE.currentWeek === 40 && week40Complete === "true".
+// When the gate is true, hides .today-focus and .week-overview and
+// injects a .course-complete-section before .phase-timeline. The
+// section is rebuilt on every render so stats, dates, and the Fathers
+// list stay consistent with current data.
+//
+// VOICE: The two prose paragraphs (opening and situating-in-tradition)
+// are AI DRAFTS marked with <!-- AI DRAFT — EDIT --> comments in the
+// emitted HTML. The spec is explicit that Kevin will edit every line;
+// this scaffolding is meant to be rewritten, not preserved verbatim.
+//
+// VOICE ANCHORS (per spec):
+//   - Humility: the course is a door, not a destination
+//   - Christ-centered: the Fathers beheld Him; they are not the point
+//   - Phronema: the goal is a mind received, not a credential earned
+
+function isCourseComplete() {
+  try {
+    if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return false;
+    if (STUDY_STATE.currentWeek !== 40) return false;
+    return localStorage.getItem('week40Complete') === 'true';
+  } catch (e) {
+    return false;
+  }
+}
+
+// Read weekStart_week1 and week40CompleteDate from localStorage and
+// format them as a dignified "Began [date] — Completed [date]" line.
+// Falls back gracefully when either date is missing — we do not fake
+// data or hide the section for want of a stamp.
+function formatJourneyDateRange() {
+  const fmt = (iso) => {
+    if (!iso) return null;
+    try {
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return null;
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch (e) { return null; }
+  };
+  let startISO = null;
+  let endISO = null;
+  try { startISO = localStorage.getItem('weekStart_week1'); } catch (e) {}
+  try { endISO = localStorage.getItem('week40CompleteDate'); } catch (e) {}
+  const start = fmt(startISO);
+  const end = fmt(endISO);
+  if (start && end) return `Began ${start} — completed ${end}.`;
+  if (end) return `Completed ${end}.`;
+  if (start) return `Began ${start}.`;
+  return '';
+}
+
+// Walk PHASE_DATA collecting unique Fathers in the order they appear,
+// split into Part I (weeks 1–28) and Part II (weeks 29–40). Each
+// entry is resolved against FATHER_PAGES for a linkable URL where
+// available; unresolved names render as plain text so nothing is
+// silently dropped. Returns { partI: [{name,url}], partII: [{name,url}] }.
+function collectAllFathers() {
+  const partI = [];
+  const partII = [];
+  const seenI = new Set();
+  const seenII = new Set();
+  try {
+    if (typeof PHASE_DATA === 'undefined' || !PHASE_DATA) return { partI, partII };
+    const keys = Object.keys(PHASE_DATA).sort((a, b) =>
+      PHASE_DATA[a].weeks[0] - PHASE_DATA[b].weeks[0]
+    );
+    keys.forEach(key => {
+      const p = PHASE_DATA[key];
+      if (!p || !p.fathers) return;
+      const firstWeek = p.weeks[0];
+      const bucket = firstWeek <= 28 ? partI : partII;
+      const seen = firstWeek <= 28 ? seenI : seenII;
+      const names = String(p.fathers)
+        .split(/\s*[,;]\s*|\s+&\s+/)
+        .map(s => s.trim())
+        .filter(Boolean);
+      names.forEach(name => {
+        if (seen.has(name)) return;
+        seen.add(name);
+        let url = null;
+        try {
+          if (typeof FATHER_PAGES !== 'undefined' && FATHER_PAGES && FATHER_PAGES[name]) {
+            url = FATHER_PAGES[name];
+          }
+        } catch (e) {}
+        bucket.push({ name, url });
+      });
+    });
+  } catch (e) {}
+  return { partI, partII };
+}
+
+// Count NT books and Psalter passes via existing study-data helpers
+// where available. Returns safe defaults when helpers are absent so
+// the stats block still renders coherent numbers.
+function readCompletionStats() {
+  let ntBooks = 0;
+  let ntTotal = 27;
+  let psalmsRead = 0;
+  let lexiconCount = 0;
+  try {
+    if (typeof countCompletedBooks === 'function') ntBooks = countCompletedBooks() | 0;
+  } catch (e) {}
+  try {
+    if (typeof NT_TOTAL_BOOKS !== 'undefined' && NT_TOTAL_BOOKS) ntTotal = NT_TOTAL_BOOKS | 0;
+  } catch (e) {}
+  try {
+    if (typeof computePsalmsRead === 'function') psalmsRead = computePsalmsRead() | 0;
+  } catch (e) {}
+  try {
+    if (typeof LEXICON_ENTRIES !== 'undefined' && Array.isArray(LEXICON_ENTRIES)) {
+      lexiconCount = LEXICON_ENTRIES.length;
+    }
+  } catch (e) {}
+  // Psalter passes: 150 Psalms per complete cycle of the Psalter.
+  const psalterPasses = psalmsRead > 0 ? (psalmsRead / 150) : 0;
+  return { ntBooks, ntTotal, psalmsRead, psalterPasses, lexiconCount };
+}
+
+// HTML-escape — shared utility for interpolating user-visible strings.
+function cc_esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Build the Fathers list HTML for one part (I or II). Each Father is
+// a link when FATHER_PAGES resolves it, plain text otherwise.
+function fathersListHTML(fathers) {
+  return fathers.map(f => {
+    if (f.url) {
+      return `<li><a class="course-complete-father-link" href="${cc_esc(f.url)}">${cc_esc(f.name)}</a></li>`;
+    }
+    return `<li>${cc_esc(f.name)}</li>`;
+  }).join('');
+}
+
+// Format a psalter-passes display. "completed 1 pass" / "completed 2 passes" /
+// "partial" when < 1 full cycle.
+function formatPsalterPasses(n) {
+  if (!isFinite(n) || n <= 0) return 'partial';
+  if (n < 1) return 'partial';
+  const rounded = Math.floor(n);
+  return rounded === 1 ? '1 pass' : `${rounded} passes`;
+}
+
+// Main renderer. Idempotent — safe to call on every render pass.
+// On gate-true: hides study sections, injects (or replaces) the
+// course-complete section. On gate-false: removes any existing
+// summary and restores study-section visibility.
+function renderCourseCompleteSummary() {
+  const focusEl = document.querySelector('.today-focus');
+  const overviewEl = document.querySelector('.week-overview');
+  const existing = document.getElementById('course-complete-section');
+
+  if (!isCourseComplete()) {
+    // Tear down any prior summary; restore study sections.
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+    if (focusEl) focusEl.style.display = '';
+    if (overviewEl) overviewEl.style.display = '';
+    return;
+  }
+
+  // Hide the ongoing-study sections. Use inline display:none so we
+  // don't fight any future .hidden class convention.
+  if (focusEl) focusEl.style.display = 'none';
+  if (overviewEl) overviewEl.style.display = 'none';
+
+  const { partI, partII } = collectAllFathers();
+  const stats = readCompletionStats();
+  const dateRange = formatJourneyDateRange();
+  const psalterLabel = formatPsalterPasses(stats.psalterPasses);
+  const completionDate = (() => {
+    try {
+      const iso = localStorage.getItem('week40CompleteDate');
+      if (!iso) return '';
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch (e) { return ''; }
+  })();
+
+  const fathersBlockHTML = `
+    <div class="course-complete-fathers">
+      ${partI.length ? `
+        <div class="course-complete-fathers-group" data-part="i">
+          <h4 class="course-complete-fathers-group-label">Part I — Nicene Arc</h4>
+          <ul class="course-complete-fathers-list">${fathersListHTML(partI)}</ul>
+        </div>
+      ` : ''}
+      ${partII.length ? `
+        <div class="course-complete-fathers-group" data-part="ii">
+          <h4 class="course-complete-fathers-group-label">Part II — Post-Nicene Christological Arc</h4>
+          <ul class="course-complete-fathers-list">${fathersListHTML(partII)}</ul>
+        </div>
+      ` : ''}
+    </div>
+  `;
+
+  const statsBlockHTML = `
+    <div class="course-complete-stats">
+      <div class="course-complete-stat">
+        <span class="course-complete-stat-value">${stats.ntBooks}</span>
+        <span class="course-complete-stat-label">of ${stats.ntTotal} New Testament books</span>
+      </div>
+      <div class="course-complete-stat">
+        <span class="course-complete-stat-value">${psalterLabel.split(' ')[0]}</span>
+        <span class="course-complete-stat-label">Psalter ${psalterLabel.split(' ').slice(1).join(' ') || 'completion'}</span>
+      </div>
+      <div class="course-complete-stat">
+        <span class="course-complete-stat-value">${stats.lexiconCount}</span>
+        <span class="course-complete-stat-label">
+          <a class="course-complete-stat-link" href="greek-lexicon-index.html">patristic terms encountered</a>
+        </span>
+      </div>
+    </div>
+  `;
+
+  // Opening prose — AI DRAFT. Second-person, warm, names specific
+  // moments of the 40-week arc. Kevin will edit every line.
+  const openingProseHTML = `
+    <!-- AI DRAFT — EDIT -->
+    <div class="course-complete-prose">
+      <p>Forty weeks ago you began with Clement writing to Corinth and Ignatius walking toward the lions, and you have come now to John of Damascus gathering the whole tradition into a single ordered witness. Between those two points you sat with Athanasius while the Nicene crisis turned on the right word for the Son; with Basil, Gregory, and Gregory as they taught the Church to speak of one God in three Persons without losing either the one or the three; with Cyril and Leo as the councils hammered out what it means that the Word became flesh.</p>
+      <p>The work of the Fathers is not their own thought about Christ; it is the mind of Christ as the Church has received and handed it down — the <span class="greek">φρόνημα</span> (<em>phronema</em>) of the Body, the habit of seeing that one acquires by praying and reading and listening inside the tradition rather than about it. What you have been doing these forty weeks is learning to think with the Church, not to master a subject.</p>
+      <p>And so what you have read is a beginning. The Fathers will not be finished with you when this course ends; the door they opened you will keep walking through, at different depths, for the rest of your life.</p>
+    </div>
+  `;
+
+  // Situating-in-Tradition prose — AI DRAFT. Names the living tradition
+  // past John of Damascus; frames this course as a door.
+  const situatingProseHTML = `
+    <!-- AI DRAFT — EDIT -->
+    <div class="course-complete-prose">
+      <p>The Tradition does not stop at the Damascene. After him come Symeon the New Theologian, for whom the knowledge of God is nothing less than seeing the uncreated light; Gregory Palamas defending the Hesychasts and giving the Church its mature theology of the divine energies; the compilers and voices of the Philokalia, handing the prayer of the heart down through the centuries. And the Tradition is living still, in the monasteries of the Holy Mountain, in the parishes where you will stand next Sunday, in the bishops and theologians and elders of the Orthodox Church today.</p>
+      <p>This course has not surveyed the whole of patristic thought. It has introduced you to twenty-two voices across fourteen phases of the Church's first eight centuries — enough for a door, not a map. The Fathers are not a curriculum to finish; they are companions to return to, different ones at different seasons of your life. Read them again. Read them more slowly next time.</p>
+    </div>
+  `;
+
+  // Synthesis intro + three questions — the questions themselves are
+  // the spec's copy verbatim; the intro is AI DRAFT. Kevin may wish to
+  // revise the intro; the three questions he provided should stay.
+  const synthesisHTML = `
+    <div class="course-complete-synthesis">
+      <h3 class="course-complete-section-label">A Moment to Reflect</h3>
+      <!-- AI DRAFT — EDIT (intro line only; the three questions are Kevin's copy) -->
+      <p class="course-complete-synthesis-intro">Before you choose what comes next, a moment to reflect. Write to yourself, not to an audience — nothing you put here is seen by anyone else.</p>
+      <ol class="course-complete-synthesis-questions">
+        <li>Which Father's voice has taken up residence in how you now think?</li>
+        <li>Where has your understanding of the Church — of Christ, of yourself — changed most?</li>
+        <li>What have you not yet understood, and intend to return to?</li>
+      </ol>
+      <textarea
+        id="course-complete-synthesis-text"
+        class="course-complete-synthesis-field"
+        aria-label="Your reflection (saved locally, private to you)"
+        placeholder="Your reflection — written to yourself."
+      ></textarea>
+      <span class="course-complete-synthesis-status" id="course-complete-synthesis-status" aria-live="polite"></span>
+    </div>
+  `;
+
+  const forwardHTML = `
+    <div class="course-complete-forward">
+      <h3 class="course-complete-section-label">What Comes Next</h3>
+      <p class="course-complete-forward-intro">The Tradition continues. Where will you go next?</p>
+      <div class="course-complete-forward-actions">
+        <a class="course-complete-forward-link" href="index.html">Continue into another discipline</a>
+        <a class="course-complete-forward-link" href="patristics-tracks.html">Return to the patristic corpus at a different depth</a>
+      </div>
+    </div>
+  `;
+
+  const printActionHTML = `
+    <div class="course-complete-print-action">
+      <button type="button" class="course-complete-print-button" id="course-complete-print-btn" aria-label="Print your completion record">
+        Print your completion record
+      </button>
+    </div>
+  `;
+
+  // Print-only keepsake caption — hidden on screen, revealed by @media print.
+  const printCaptionHTML = `
+    <div class="course-complete-print-caption" aria-hidden="true">
+      <span class="course-complete-print-caption-title">Entering the Mind of the Fathers</span>
+      40-Week Course of Orthodox Patristic Formation
+      ${completionDate ? `<br>Completed ${cc_esc(completionDate)}` : ''}
+    </div>
+  `;
+
+  const sectionHTML = `
+    <section class="course-complete-section" id="course-complete-section" aria-labelledby="course-complete-heading">
+      <header class="course-complete-header">
+        <span class="course-complete-caption">Course Complete</span>
+        <h2 class="course-complete-heading" id="course-complete-heading">The forty-week journey is complete.</h2>
+        <div class="course-complete-subheading">Entering the Mind of the Fathers</div>
+      </header>
+
+      ${openingProseHTML}
+
+      <div class="course-complete-journey">
+        <h3 class="course-complete-section-label">Your Journey</h3>
+        ${dateRange ? `<div class="course-complete-dates">${cc_esc(dateRange)}</div>` : ''}
+        ${statsBlockHTML}
+        ${fathersBlockHTML}
+      </div>
+
+      ${situatingProseHTML}
+
+      ${synthesisHTML}
+
+      ${forwardHTML}
+
+      ${printActionHTML}
+
+      ${printCaptionHTML}
+    </section>
+  `;
+
+  // Inject (or replace) the summary section, anchored before the
+  // Phase Timeline so it sits naturally in the reading order.
+  if (existing && existing.parentNode) {
+    existing.outerHTML = sectionHTML;
+  } else {
+    const anchor = document.querySelector('.phase-timeline');
+    if (anchor && anchor.parentNode) {
+      anchor.insertAdjacentHTML('beforebegin', sectionHTML);
+    } else {
+      // Fallback: append to main container (this branch is defensive —
+      // the phase-timeline anchor has been present throughout the
+      // dashboard's history).
+      const main = document.querySelector('main') || document.body;
+      main.insertAdjacentHTML('beforeend', sectionHTML);
+    }
+  }
+}
+
+// Wire the synthesis textarea: load prior text from localStorage on
+// render, autosave on input (debounced 5s), also save on blur so text
+// is never lost when the user navigates away mid-draft. No submit, no
+// character count, no AI feedback — the user writing to themselves.
+function wireSynthesisTextarea() {
+  const ta = document.getElementById('course-complete-synthesis-text');
+  if (!ta) return;
+  const status = document.getElementById('course-complete-synthesis-status');
+
+  // Load prior reflection if present.
+  try {
+    const saved = localStorage.getItem('week40Synthesis');
+    if (saved !== null && saved !== undefined) ta.value = saved;
+  } catch (e) {}
+
+  let timer = null;
+  const save = () => {
+    try {
+      localStorage.setItem('week40Synthesis', ta.value);
+      if (status) {
+        status.textContent = 'Saved';
+        // Clear the status line after a few seconds so it doesn't
+        // linger as visual noise.
+        setTimeout(() => {
+          if (status.textContent === 'Saved') status.textContent = '';
+        }, 2500);
+      }
+    } catch (e) {}
+  };
+
+  ta.addEventListener('input', () => {
+    if (status) status.textContent = 'Writing…';
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      save();
+      timer = null;
+    }, 5000);
+  });
+  ta.addEventListener('blur', () => {
+    if (timer) { clearTimeout(timer); timer = null; }
+    save();
+  });
+}
+
+// Wire the print button to window.print(). The @media print stylesheet
+// handles the keepsake view; no programmatic DOM manipulation needed.
+function wireCourseCompletePrint() {
+  const btn = document.getElementById('course-complete-print-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    try { window.print(); } catch (e) {}
   });
 }
 
@@ -2771,6 +3623,10 @@ class StudyTaskManager {
     // already rendered inside renderTodaysFocus(); this only attaches the
     // dismiss handlers.
     wireWeekTransitionDismiss();
+    // Course-complete summary wiring — textarea autosave + print button.
+    // Safe no-ops when the summary is not present (non-course-complete state).
+    wireSynthesisTextarea();
+    wireCourseCompletePrint();
     if (localStorage.getItem(STUDY_STATE.completeKey) === 'true') {
       this.showWeekCompleteCelebration();
     }
@@ -3011,26 +3867,15 @@ class StudyTaskManager {
   advanceToNextWeek() {
     const week = STUDY_STATE.currentWeek;
 
-    // Course-complete path: advancing past Week 40 is a different beat
-    // than a mid-course transition. Stay on the dashboard so the
-    // transition banner (course-complete variant) is the single
-    // ceremonial moment. The existing week-complete celebration in
-    // Week Overview still provides a "Return to Course Overview" exit
-    // if the student wants to leave; we do not force navigation here.
+    // Course-complete path: the course-complete summary section is the
+    // persistent post-Week-40 state, gated on `week40Complete === "true"`
+    // in localStorage. We preserve that flag (set by the per-week
+    // completion flow) and simply reload so the dashboard re-renders
+    // with the summary replacing Today's Focus and Week Overview. The
+    // existing week-complete celebration in Week Overview won't re-fire
+    // because .week-overview is hidden in course-complete state, so its
+    // anchor query returns null and it bails gracefully.
     if (week >= 40) {
-      try {
-        sessionStorage.setItem('weekTransition', JSON.stringify({
-          justCompletedWeek: 40,
-          newWeek: 40,
-          courseComplete: true,
-          at: Date.now()
-        }));
-      } catch (e) {}
-      // Suppress the week-40 completion-celebration flag so the
-      // transition banner is the primary post-advance acknowledgment.
-      // The date stamp is preserved for the Phase Timeline archive
-      // caption.
-      try { localStorage.removeItem('week40Complete'); } catch (e) {}
       location.reload();
       return;
     }
