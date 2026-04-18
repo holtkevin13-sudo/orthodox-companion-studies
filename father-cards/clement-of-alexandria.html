@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T05:11:49Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clement of Alexandria — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Clement of Alexandria — Orthodox Companion Studies">
+<meta property="og:description" content="Head of the Catechetical School of Alexandria, pioneer of Christian philosophy, and the teacher whose synthesis of Greek learning and biblical faith shaped the whole Alexandrian theological tradition.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Clement of Alexandria (c. 150 – c. 215 AD) — convert from paganism, head of the Catechetical School of Alexandria, teacher of Origen, and the first Christian writer to mount a sustained case for Greek philosophy as preparatory gospel. Author of the Protrepticus, Paedagogus, and Stromateis.">
+<meta name="keywords" content="Clement of Alexandria, Church Fathers, Alexandrian School, Catechetical School, Didaskaleion, Christian Philosophy, Paidagogos, Gnosis, Apatheia, Philosophia, Protrepticus, Paedagogus, Stromateis, Ante-Nicene Fathers">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Ante-Nicene through Phase 7)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks) — adjusted pattern
+   for the 18 out-of-syllabus Fathers.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Alexandrian School · Ante-Nicene
+    </div>
+    <h1 class="hero-title">Clement of Alexandria</h1>
+    <div class="hero-epithet">Κλήμης ὁ Ἀλεξανδρεύς · Head of the Catechetical School</div>
+    <div class="hero-meta">c. 150 – c. 215 AD · Convert, Teacher, Christian Philosopher</div>
+    <p class="hero-description">
+      Convert from paganism, traveled student, and eventually head of the Catechetical School
+      of Alexandria, Clement was the first Christian writer to make a sustained case for
+      Greek philosophy as a <em>παιδαγωγὸς εἰς Χριστόν</em> — a schoolmaster bringing the
+      Greeks to Christ. His pedagogical trilogy (<em>Protrepticus</em>, <em>Paedagogus</em>,
+      <em>Stromateis</em>) maps the soul's movement from pagan seeking, through moral
+      formation, to mature Christian contemplation. Through his student Origen, his method
+      of theological integration would shape the entire Alexandrian tradition.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Clement?</h2>
+      <p class="section-text">
+        Titus Flavius Clemens was born around 150 AD, traditionally in Athens (though some
+        ancient sources place his birth in Alexandria). Raised pagan and well educated in
+        Greek philosophy and literature, he converted to Christianity as a young man and then
+        did what a serious philosophical convert of his century would do: he set out to find
+        the best Christian teachers. The autobiographical prologue to his <em>Stromateis</em>
+        recounts his travels through southern Italy, Syria, and Palestine in search of masters
+        whose lineage he trusted. His journey ended in Alexandria, at the feet of Pantaenus,
+        the first named head of the Catechetical School (<em>Didaskaleion</em>). Clement
+        became Pantaenus's disciple, collaborator, and eventually his successor around the
+        year 190.
+      </p>
+      <p class="section-text">
+        For roughly fifteen years Clement led the Catechetical School through its most
+        influential period. The <em>Didaskaleion</em> was not a seminary in any modern sense;
+        it was something closer to a Christian philosophical academy, where catechumens were
+        prepared for baptism and mature Christians pursued advanced theological formation
+        alongside pagans curious about the faith. Clement taught in this setting the method
+        his writings preserve: an unembarrassed engagement with the best of Greek learning, an
+        insistence that philosophy rightly used is a preparation for the Gospel, and a
+        conviction that the mature Christian — whom he called the true <em>gnostic</em>, the
+        one who has real <em>γνῶσις</em> of God — is formed as much by contemplation and
+        virtue as by doctrine. Among his students was the young Origen, who would take
+        Clement's method further than his teacher dared.
+      </p>
+      <p class="section-text">
+        In 202 or 203 AD, Emperor Septimius Severus issued an edict criminalizing conversion
+        to Christianity and Judaism. Alexandria suffered the persecution sharply; Clement fled
+        the city and never returned. He spent his remaining years with his former student
+        Alexander, then bishop in Cappadocia (later of Jerusalem), and died around 215 AD.
+        His Orthodox reception is nuanced. He is cited respectfully by Basil, Chrysostom,
+        Cyril of Alexandria, and many later Byzantine writers; his name appeared in the Roman
+        Martyrology for centuries before being removed in the late sixteenth century on
+        grounds of lingering uncertainty about some of his speculative positions — positions
+        he was never formally condemned for at any council. What the tradition unambiguously
+        received from him was his method: the confidence that Athens had genuinely prepared
+        for Jerusalem, and that the Gospel could meet Greek philosophy without flinching and
+        without capitulating.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">c. 190</div>
+          <div class="stat-label">Led the Catechetical School</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">8</div>
+          <div class="stat-label">Books of the Stromateis</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Books of the Paedagogus</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">215</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Clement's three principal works form a deliberate pedagogical arc: exhortation to the
+        unbelieving Greek, moral formation of the new Christian, mature teaching for the
+        advanced disciple. He composed them as a trilogy and cross-references the stages in
+        their own texts.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Exhortation to the Greeks</h3>
+          <div class="work-greek">Προτρεπτικὸς πρὸς Ἕλληνας</div>
+          <p class="work-description">
+            The first stage: a sustained apologetic addressed to cultivated pagan readers,
+            inviting them to abandon the mysteries and the poets and to hear the Word. Clement
+            writes as one of them — he knows the philosophers, the tragedians, and the mystery
+            religions from the inside — and uses that knowledge to expose the hollowness of
+            their gods and to point toward the true Word who is Christ. The work is the
+            classical expression of the patristic apologetic voice.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Instructor</h3>
+          <div class="work-greek">Παιδαγωγός</div>
+          <p class="work-description">
+            Three books of moral formation for the baptized Christian. The <em>Paidagōgos</em>
+            is Christ himself, the Word who forms his people in virtue as a pedagogue formed
+            young Greek aristocrats. The treatise covers every area of ordinary Christian life
+            — eating, drinking, clothing, speech, friendship, the marriage bed — under the
+            discipline of the one Teacher. It is the earliest sustained Christian treatment of
+            moral formation as spiritual paedagogy.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Miscellanies</h3>
+          <div class="work-greek">Στρωματεῖς</div>
+          <p class="work-description">
+            Eight books of advanced Christian teaching, deliberately written in a non-linear,
+            "patchwork" style — Clement calls his work <em>στρωματεῖς</em>, "tapestries," to
+            signal that mature Christian wisdom is not a system but a texture. Here Clement
+            unfolds his doctrine of the Christian <em>γνωστικός</em> (the true gnostic),
+            engages with heretical gnosticism by reclaiming its vocabulary, and works out the
+            integration of philosophy and faith that is his lasting contribution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the weight of Clement's distinctive contribution. The first
+        names his governing Christological image; the second, the kind of knowledge he saw as
+        the Christian's proper pursuit; the third, the disposition that marks the mature
+        Christian; the fourth, his signature methodological move.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">παιδαγωγός</span>
+          <div class="transliteration">paidagōgos</div>
+          <div class="english-meaning">Christ the Educator</div>
+          <p class="pillar-explanation">
+            The pedagogue of Greek antiquity was the household slave entrusted with leading
+            children to and from school and forming their character in the process. Clement
+            takes the image and makes it his governing Christology: Christ is the
+            <em>Paidagōgos</em> of the whole human family, leading the race from infancy
+            toward maturity in the Word. Every detail of Christian moral life is his
+            instruction.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">γνῶσις</span>
+          <div class="transliteration">gnōsis</div>
+          <div class="english-meaning">True Christian Knowledge</div>
+          <p class="pillar-explanation">
+            Against the heretical gnostics who claimed esoteric knowledge for a spiritual
+            elite, Clement reclaims the vocabulary of <em>γνῶσις</em> for the Church: the true
+            Christian is the true <em>gnostic</em>, one whose knowledge of God flows from
+            baptism, Scripture, and a life of virtue, not from secret initiations. The move
+            rescues a contested word for the mainstream of Christian formation.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ἀπάθεια</span>
+          <div class="transliteration">apatheia</div>
+          <div class="english-meaning">Dispassion · Freedom from the Passions</div>
+          <p class="pillar-explanation">
+            Not unfeeling but rightly ordered feeling — the soul freed from the disordered
+            passions that bind it to lower things, made capable of the one Desire that is the
+            love of God. Clement is the first Christian writer to systematize
+            <em>ἀπάθεια</em> as a positive Christian ideal; the tradition he opens runs
+            forward through Evagrius and the Desert Fathers into the whole Orthodox ascetical
+            inheritance.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">φιλοσοφία</span>
+          <div class="transliteration">philosophia</div>
+          <div class="english-meaning">Philosophy as Preparatory Gospel</div>
+          <p class="pillar-explanation">
+            Clement's signature methodological move: Greek philosophy was to the Greeks what
+            the Law was to the Jews — a <em>παιδαγωγὸς εἰς Χριστόν</em>, a schoolmaster
+            bringing them to Christ (Stromateis 1.5). Plato and Moses are not rival paths but
+            two preparatory tutors for the one Word. The conviction founds the whole patristic
+            tradition of faith-seeking-understanding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "Philosophy was to the Greeks what the Law was to the Jews: a schoolmaster to bring
+        them to Christ."
+      </p>
+      <div class="quote-source">— Stromateis 1.5.28</div>
+    </div>
+
+    <!-- Why Clement Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Clement Matters Today</h2>
+      <p class="section-text">
+        Every subsequent Orthodox engagement with philosophy, science, or secular learning
+        stands in Clement's debt. The Cappadocians reading Plato, Augustine reading Cicero,
+        Maximus deploying Aristotelian categories, Palamas debating Barlaam — each proceeds
+        on a settlement Clement was among the first to articulate: that the Christian need
+        not flee philosophy, because philosophy itself was given as preparation for the
+        Christ who is the eternal Reason. The modern Orthodox conversation with science,
+        phenomenology, or critical theory continues in the same register. Clement is the
+        reason that register is possible.
+      </p>
+      <p class="section-text">
+        His moral theology in the <em>Paedagogus</em> is one of the earliest sustained
+        Christian treatments of the body — what to eat and drink, how to dress and sleep, how
+        to speak and walk, how to hold one's money, how to love. Nothing is too ordinary to
+        come under the instruction of the Word. The Orthodox tradition of <em>askesis</em> as
+        the ordering of the whole body-and-soul life under Christ begins here in substantial
+        form. Every subsequent handbook of Christian moral life — from the Desert Fathers'
+        sayings to the <em>Philokalia</em> — inherits Clement's premise that there is no
+        spiritual life that is not at the same time a bodily discipline.
+      </p>
+      <p class="section-text">
+        And through Origen, his student, Clement's method passes forward into the whole
+        Alexandrian theological line — through Athanasius and Cyril and on into the
+        Chalcedonian settlement. Orthodox readers sometimes hesitate over Clement because his
+        speculative reach was great and not all of it landed where later tradition could
+        receive it intact. The Church's honest response has been to receive what it could
+        receive — the pedagogical arc, the philosophical confidence, the integration of
+        virtue and knowledge — while quietly letting the less-tested speculations rest. It is
+        not a bad model for how any later generation handles its own most creative
+        theologians.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="justin-martyr.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Justin Martyr</div>
+          <div class="related-desc">The philosopher-martyr whose σπερματικὸς λόγος doctrine prepared the ground for Clement's sustained integration of Greek learning and Christian faith.</div>
+        </a>
+        <a href="athanasius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Athanasius the Great</div>
+          <div class="related-desc">Later Alexandrian theological master. The Catechetical School tradition Clement led runs forward through Origen into Athanasius's defense of Nicaea.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Κ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The growing Orthodox patristic lexicon — Clement's vocabulary of pedagogy, gnosis, and dispassion will anchor future study tracks.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
