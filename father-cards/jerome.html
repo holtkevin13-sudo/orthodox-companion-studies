@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T13:19:27Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jerome — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Jerome — Orthodox Companion Studies">
+<meta property="og:description" content="Biblical scholar, ascetic of Bethlehem, translator of the Latin Vulgate Bible, and one of the four great Latin Fathers of the Church. His thirty-year labor on the Hebraica veritas shaped Western biblical scholarship for a millennium and a half.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Jerome (c. 347 – 420 AD) — Hieronymus Stridonensis, master linguist and biblical scholar, secretary to Pope Damasus, ascetic founder of the monastery at Bethlehem, and translator of the Latin Vulgate. His thirty-year labor on the Hebraica veritas — the Old Testament translated from Hebrew rather than from the Septuagint — became the standard Latin Bible for over a thousand years. Doctor of the Church.">
+<meta name="keywords" content="Jerome, Hieronymus Stridonensis, Church Fathers, Latin Fathers, Vulgate, Vulgata, Hebraica Veritas, Biblical Scholarship, Bethlehem Monastery, Damasus, Letters of Jerome, De Viris Illustribus, Origen Controversy, Rufinus, Doctor of the Church, Four Great Latin Fathers">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Latin Fathers · Nicene Era)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Latin CSS variants for Latin Father cards — italic Cormorant
+   Garamond replaces Gentium Plus for Latin terms; navy color retained.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Latin Fathers · Nicene Era
+    </div>
+    <h1 class="hero-title">Jerome</h1>
+    <div class="hero-epithet latin">Hieronymus Stridonensis · Translator of the Vulgate</div>
+    <div class="hero-meta">c. 347 – 420 AD · Biblical Scholar, Ascetic of Bethlehem</div>
+    <p class="hero-description">
+      Master linguist, priest, secretary to Pope Damasus, ascetic founder of the monastery
+      at Bethlehem beside the Church of the Nativity, and the Latin-speaking Church's
+      greatest biblical scholar. Over the course of roughly thirty years Jerome produced
+      the <em>Vulgata</em> — a Latin Bible translated not from the Septuagint but directly
+      from the Hebrew for the Old Testament and from the best available Greek manuscripts
+      for the New. The achievement remained the standard Latin Bible of the Western Church
+      for more than a thousand years. His voluminous letters, biblical commentaries, and
+      polemical tracts give us a fuller portrait of a Church Father's daily life than any
+      other fourth-century figure. The Orthodox Church commemorates him on June 15.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Jerome?</h2>
+      <p class="section-text">
+        Eusebius Hieronymus was born around 347 AD at Stridon, on the border between
+        Dalmatia and Pannonia — somewhere in the eastern Balkans, the exact location now
+        lost. His family was well-to-do and Christian; his father sent him to Rome in his
+        teens for the finest classical education, under the grammarian Aelius Donatus.
+        Jerome became by all accounts a formidable Latinist, absorbed Virgil and Cicero to
+        the bone, and lived the life of an ambitious young provincial in the capital. He
+        was baptized at Rome around 366, in his late teens, after which he began the slow
+        turn from his classical enthusiasms toward the Christian life. The turn was never
+        complete on his own terms; Jerome's conscience would torment him for decades about
+        whether he was more a Ciceronian than a Christian, and the tension produced some
+        of his sharpest writing.
+      </p>
+      <p class="section-text">
+        In 373 he set out for the East — first to Antioch, where a severe illness and a
+        famous dream (in which Christ charged him with being "a Ciceronian, not a
+        Christian") crystallized his commitment to the ascetic life; then to the Syrian
+        desert at Chalcis, where he lived as a hermit for two or three years and began
+        learning Hebrew from a Jewish convert. Jerome's Hebrew would become the foundation
+        of everything that followed. He returned to Antioch, was ordained priest, moved on
+        to Constantinople where he studied under Gregory of Nazianzus, and then in 382 was
+        called to Rome as secretary to Pope Damasus. Damasus set him the task that would
+        define his life: to produce a revised, authoritative Latin text of the Gospels
+        and Psalms. The commission grew. Over the next thirty years Jerome would translate
+        the entire Bible into Latin, revisiting the New Testament from the Greek and —
+        scandalously to some — retranslating the Old Testament from the Hebrew rather than
+        from the Septuagint the Church had received in Greek.
+      </p>
+      <p class="section-text">
+        After Damasus's death in 384, Jerome left Rome under a cloud — his acerbic
+        criticisms of the Roman clergy and his close spiritual direction of a circle of
+        aristocratic Christian women, particularly the widow Paula and her daughter
+        Eustochium, had made him enemies. He settled with Paula at Bethlehem in 386.
+        There, adjacent to the Church of the Nativity, they founded a double monastery
+        (one community for men, one for women), and there Jerome spent the last
+        thirty-four years of his life translating, writing letters, composing biblical
+        commentaries, and engaging in the ferocious polemical controversies for which he
+        is equally famous. The most consequential was his break with his old friend
+        Rufinus of Aquileia over Origen's theological legacy. Where Rufinus translated
+        Origen's <em>On First Principles</em> into Latin with a sympathetic rendering,
+        Jerome — who had formerly been an Origen enthusiast himself — turned against
+        certain Origenist positions and attacked Rufinus with lacerating savagery. The
+        quarrel ended their friendship and shaped the Latin reception of Origen for
+        centuries. Jerome died at Bethlehem on September 30, 420, having survived Paula
+        by more than a decade and Eustochium by a few years, surrounded by his manuscripts
+        to the end.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">30</div>
+          <div class="stat-label">Years Translating the Vulgate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Biblical Languages Mastered</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">150</div>
+          <div class="stat-label">Surviving Letters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">420</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Jerome's corpus divides into translation, exegesis, and letters. Three works
+        anchor his lasting contribution — the Vulgate, the correspondence, and the
+        historical-literary catalog that is a source for half of what we know about the
+        first four centuries of Christian writers.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">The Vulgate</h3>
+          <div class="work-latin">Biblia Vulgata</div>
+          <p class="work-description">
+            Jerome's Latin translation of the entire Bible, composed over roughly thirty
+            years from 382 to 405 or later. The New Testament he revised from existing Old
+            Latin versions against the Greek; the Old Testament protocanonical books he
+            translated directly from the Hebrew — his <em>Hebraica veritas</em>, the
+            Hebrew truth. The Psalms he translated three times, the final Hebrew-based
+            version known as the <em>Psalterium iuxta Hebraeos</em>. The Vulgate remained
+            the standard Latin Bible of the Western Church for over a thousand years and
+            was declared the official text at the Council of Trent.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Letters</h3>
+          <div class="work-latin">Epistulae</div>
+          <p class="work-description">
+            Some one hundred fifty surviving letters addressed to popes, bishops, monks,
+            widowed aristocrats, scholars, and old friends turned bitter enemies. The
+            correspondence ranges from delicate spiritual direction (Letters 22, 107, and
+            130 on the formation of consecrated women) to exegetical consultation
+            (Letters 53, 57 on translation theory) to polemical ferocity (the
+            <em>Apology against Rufinus</em> and the correspondence surrounding the Origenist
+            controversy). No patristic correspondence gives a fuller portrait of a Church
+            Father as a working scholar, pastor, and controversialist.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">On Illustrious Men</h3>
+          <div class="work-latin">De Viris Illustribus</div>
+          <p class="work-description">
+            A catalog of 135 Christian writers from the apostles through Jerome's own
+            contemporaries (including a self-entry), modeled on Suetonius's pagan collection
+            of the same title. For many early Christian authors — particularly obscure
+            pre-Nicene figures — Jerome's brief entry is the only ancient source of
+            information we possess. The work founded the Christian genre of literary
+            history and remained a reference for Western scholarship through the medieval
+            centuries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Latin terms name the center of Jerome's contribution to the Christian
+        tradition. The first is his monumental translation; the second his scholarly
+        principle; the third his way of life; the fourth his most consequential
+        preoccupation — the ideal of consecrated virginity, to which he devoted some of
+        his most influential writing.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="latin-term">Vulgata</span>
+          <div class="transliteration">vul-GA-ta</div>
+          <div class="english-meaning">The Common Latin Bible</div>
+          <p class="pillar-explanation">
+            The <em>editio vulgata</em> — the "common edition" — is Jerome's Latin Bible
+            that gradually displaced the Old Latin versions across the Western Church. The
+            work represents a translator's judgment call that still shapes biblical
+            scholarship: that the Christian reading of the Old Testament should be
+            anchored in the Hebrew text rather than in its Greek rendering, even though
+            the Greek Septuagint had been the Bible of the Apostles and the Greek Fathers.
+            The choice was contested at the time and remains debated; what is indisputable
+            is the philological labor that produced the result.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term long">Hebraica veritas</span>
+          <div class="transliteration">he-BRA-i-ca VE-ri-tas</div>
+          <div class="english-meaning">The Hebrew Truth · Scholarly Principle</div>
+          <p class="pillar-explanation">
+            Jerome's defense of translating the Old Testament from Hebrew rather than from
+            the Septuagint. His reasoning: to know what Scripture says, the scholar must
+            consult the language in which it was first written. The principle has a cost —
+            it distances the Latin Old Testament from the Septuagint received and used by
+            the Apostolic and Greek patristic tradition — and Augustine himself worried
+            about the implications. But it founded Western biblical scholarship as a
+            discipline that takes the source languages seriously, and the modern critical
+            biblical scholarship of both East and West operates in its shadow.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">asceticus</span>
+          <div class="transliteration">as-CE-ti-cus</div>
+          <div class="english-meaning">Ascetic · The Scholar-Monk</div>
+          <p class="pillar-explanation">
+            Jerome's life — the hermit years in the Syrian desert, the long decades at the
+            Bethlehem monastery — embodies a distinctive Christian ideal: the ascetic as
+            scholar, the monk as translator. For Jerome, silence, fasting, and vigil were
+            not alternatives to intellectual labor but the conditions that made it
+            possible. The life sketched in his letters to the Bethlehem community and in
+            his biographies of Paul of Thebes and Hilarion became the template for Western
+            scholarly monasticism — the shape that would later produce the Benedictine
+            scriptoria and, eventually, the medieval universities.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">virginitas</span>
+          <div class="transliteration">vir-gi-NI-tas</div>
+          <div class="english-meaning">Consecrated Virginity</div>
+          <p class="pillar-explanation">
+            Jerome's most influential pastoral labor was his spiritual direction of the
+            Roman aristocratic women who pursued the consecrated life — Paula, Eustochium,
+            Marcella, and their circle. Letter 22 to Eustochium and Letter 130 to Demetrias
+            became the standard Latin treatises on virginity and shaped both Western
+            monasticism and the later medieval theology of consecrated life. His zeal was
+            not always balanced, and his polemic against critics of virginity (notably
+            <em>Adversus Jovinianum</em>) sometimes overstated its case. But the tradition
+            of consecrated virginity as a serious vocation in the Western Church traces
+            its form to Jerome's pen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-latin">
+        "Ignoratio Scripturarum ignoratio Christi est."
+      </p>
+      <p class="quote-text">
+        "Ignorance of the Scriptures is ignorance of Christ."
+      </p>
+      <div class="quote-source">— Commentary on Isaiah, Prologue</div>
+    </div>
+
+    <!-- Why Jerome Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Jerome Matters Today</h2>
+      <p class="section-text">
+        He is the father of Christian biblical scholarship as a discipline. Before Jerome,
+        Latin Christians read the Bible; with Jerome, they studied it — consulting the
+        Hebrew where it differed from the Greek, weighing variant readings, attending to
+        the grammar of the source languages, tracing the history of textual transmission.
+        Every Orthodox or Catholic or Protestant biblical scholar who has ever sat down
+        with a Hebrew grammar and a critical apparatus is doing work Jerome essentially
+        invented for the Christian tradition. The modern Orthodox biblical renewal — Paul
+        Nadim Tarazi's OCABS scholarship, the patristic recovery in Sources Chrétiennes,
+        Bishop John Behr's work on early Christian reading — operates in the space Jerome
+        opened, even when it reaches different conclusions.
+      </p>
+      <p class="section-text">
+        His preservation labor is nearly as consequential as his translation. Jerome was a
+        collector. The Bethlehem library he built with Paula's resources contained Greek
+        manuscripts that have since been lost; his quotations and translations preserve
+        the only Latin access to significant portions of Origen's biblical commentaries,
+        Eusebius's <em>Chronicle</em>, and other works whose Greek originals are gone. Much
+        of what we know about the pre-Nicene Christian writers reaches us because Jerome
+        catalogued them in <em>De Viris Illustribus</em>. He labored, consciously, as a
+        conservator of a tradition he feared the barbarian invasions would destroy.
+      </p>
+      <p class="section-text">
+        And his reception is usefully instructive. Jerome was a difficult man — vituperative
+        in controversy, thin-skinned, capable of savage polemic against people who had
+        been his friends, holding grudges across decades. The tradition has received him
+        with clear-eyed awareness of this. He is remembered as a Doctor of the Church and
+        as a saint, but not as a model of temperament; his holiness worked in him
+        alongside real failures of charity. The Orthodox tradition's handling of Jerome —
+        honoring his labor without idealizing his character — is itself a useful pastoral
+        example. The Church has never required its great figures to be pleasant, only to
+        be faithful, and Jerome's faithfulness to the scriptural task God gave him is
+        what the Church has received.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="ambrose.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Ambrose of Milan</div>
+          <div class="related-desc">Jerome's senior Latin contemporary. Where Ambrose formed the Latin Church through catechesis and hymnody, Jerome formed it through translation and scholarship — two complementary labors on the same Nicene foundation.</div>
+        </a>
+        <a href="origen.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Origen of Alexandria</div>
+          <div class="related-desc">Jerome's great precedent in biblical scholarship. He consulted Origen's <em>Hexapla</em> constantly at Caesarea, translated many of Origen's commentaries into Latin, and then — in the Origenist controversy — turned against aspects of Origen's theology with characteristic ferocity.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">H</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Jerome's vocabulary of translation, biblical scholarship, and consecrated life bridges Latin and Greek terminology across the full patristic tradition.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
