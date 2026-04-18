@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T15:14:08Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theodore the Studite — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Theodore the Studite — Orthodox Companion Studies">
+<meta property="og:description" content="Abbot of the Studios monastery in Constantinople, defender of icons during the second iconoclasm, and systematizer of the Studite monastic rule that would shape all subsequent Byzantine cenobitic life from Mount Athos to the Russian north.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Theodore the Studite (759 – 826 AD) — Byzantine monastic reformer, Abbot of the Studios monastery in Constantinople, author of the Antirrhetici in defense of the icons during the second iconoclasm (814–842), systematizer of the Studite Typikon, and prolific letter-writer with more than five hundred surviving epistles. Exiled three times for his iconodule and canonical positions. Commemorated November 11 in the Orthodox Church.">
+<meta name="keywords" content="Theodore the Studite, Theodore Studites, Studios Monastery, Constantinople, Second Iconoclasm, Iconodule, Antirrhetici, Three Refutations Against the Iconoclasts, Studite Typikon, Cenobitic Monasticism, Moechian Controversy, Icon Theology, Archetype, Prototype, John of Damascus, Sacred Image">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Byzantine Era · Greek)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Greek pillars — Latin CSS variants retained but unused on this
+   card (Climacus is pure Greek monastic tradition).
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Byzantine Era · Constantinople · Iconodule and Monastic Reformer
+    </div>
+    <h1 class="hero-title">Theodore the Studite</h1>
+    <div class="hero-epithet">Θεόδωρος ὁ Στουδίτης · Abbot of Studios</div>
+    <div class="hero-meta">759 – 826 AD · Byzantine Monastic Reformer, Defender of the Icons</div>
+    <p class="hero-description">
+      Abbot of the Monastery of Studios in Constantinople, defender of the holy icons
+      during the second iconoclasm (814–842), systematizer of the <em>Studite
+      Typikon</em> that would shape Byzantine cenobitic life for the next thousand
+      years, and one of the most prolific letter-writers of the patristic age. Exiled
+      three times — twice for canonical objections to imperial marriage irregularities,
+      once for iconodule refusal of the iconoclast Emperor Leo V's decrees — Theodore
+      combined Studite monastic discipline with theological polemic and pastoral
+      correspondence into a single integrated witness. His <em>Antirrhetici</em>
+      (<em>Three Refutations Against the Iconoclasts</em>) gave the Byzantine Church
+      its most developed iconodule theology, building on John of Damascus and
+      culminating in the victory the final restoration of icons would vindicate in
+      843, seventeen years after Theodore's death. Commemorated November 11.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Theodore?</h2>
+      <p class="section-text">
+        Theodore was born in 759 AD in Constantinople into a pious Byzantine civil-
+        service family. His uncle Plato had become a monk at Sakkoudion in Bithynia
+        and exercised strong spiritual influence on the family; when Theodore was
+        about twenty-one, in 781, his entire family — Theodore, his parents, and his
+        two brothers — renounced the world and entered the monastic life under Plato
+        at Sakkoudion. Theodore was tonsured and eventually ordained priest. In 794,
+        on Plato's resignation, Theodore became Abbot at Sakkoudion. Four years later
+        the monastery was forced by Arab raids to relocate to Constantinople, where
+        the Empress Irene granted the community the ancient Monastery of Studios —
+        founded in the mid-fifth century and long decayed. Theodore revived it, and
+        under his abbacy Studios became the greatest monastic foundation of the
+        middle-Byzantine period.
+      </p>
+      <p class="section-text">
+        Theodore's first exile came in 795, over what Byzantine historians call the
+        Moechian Controversy. Emperor Constantine VI had divorced his first wife and
+        married his mistress Theodote, and the Patriarch Tarasios, under imperial
+        pressure, had tacitly accepted the second marriage. Theodore and Plato refused
+        communion with the priest who had performed the adulterous wedding, and when
+        Theodore denounced the marriage publicly he was flogged and exiled to
+        Thessalonica. The exile ended when Constantine VI was himself deposed and
+        blinded by his mother Irene in 797. A second exile followed in 809, again
+        over the Moechian question, when Patriarch Nikephoros rehabilitated the priest
+        and Theodore protested. The second exile was brief.
+      </p>
+      <p class="section-text">
+        The third exile was the decisive one. In 815 Emperor Leo V the Armenian
+        revived iconoclasm, deposed the iconodule Patriarch Nikephoros, and convened
+        a council that repudiated the Seventh Ecumenical Council of 787. Theodore led
+        the iconodule resistance publicly, organizing a procession of the Studite
+        monks carrying icons around the monastery walls in open defiance of the
+        imperial decree. He was arrested, flogged repeatedly, and exiled first to
+        Metopa in Apollonias, then to Boneta, then to Smyrna — conditions progressively
+        harsher, repeated interrogations punctuated by brutal floggings, his letters
+        smuggled out to the iconodule network that spanned monastic houses from Rome
+        to the Holy Land. The exile lasted from 815 until Leo V's assassination in
+        820. Theodore returned to Constantinople under the more moderate iconoclast
+        Michael II, who permitted icons in private veneration while forbidding them
+        publicly. Theodore died at a monastery on the island of Prinkipos near
+        Constantinople on November 11, 826, seventeen years before iconoclasm's final
+        defeat at the 843 Synod of Constantinople under Empress Theodora. Studios
+        continued under his successors and remained the principal Orthodox cenobitic
+        house of the Byzantine world for the next four centuries.
+      </p>
+      <p class="section-text">
+        His legacy has three distinct strands. Theologically, his <em>Antirrhetici
+        Against the Iconoclasts</em> gave the Byzantine iconodule tradition its most
+        developed argumentative apparatus. Building on John of Damascus's three earlier
+        <em>Orations</em> but pressing further, Theodore articulated the distinction
+        between the person (hypostasis) depicted in the icon and the nature
+        (<em>physis</em>) that cannot be circumscribed — a distinction that answered
+        the iconoclast charge that depicting Christ necessarily confused his two
+        natures. Liturgically, the <em>Studite Typikon</em> — his systematic ordering
+        of monastic life, offices, and discipline — became the foundational monastic
+        rule of the Byzantine world. When Athanasius of Athos founded the Great Lavra
+        on Mount Athos in 963, he built on the Studite pattern; when the Kievan Caves
+        Monastery was founded in the eleventh century by Anthony and Theodosius,
+        they adopted a Studite-derived rule. Pastorally, his roughly five hundred
+        fifty surviving letters — to monks, bishops, laywomen, imperial officials, and
+        the popes of Rome — are one of the great correspondences of the Byzantine
+        Church and give us an unusually detailed view of ninth-century monastic and
+        ecclesiastical life.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Exiles for Orthodoxy</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">~550</div>
+          <div class="stat-label">Surviving Letters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">25</div>
+          <div class="stat-label">Years as Abbot of Studios</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">826</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Theodore's corpus falls into three functional clusters: the iconodule
+        polemics, the monastic catecheses and typikon, and the correspondence. Three
+        works anchor the contribution.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Three Refutations Against the Iconoclasts</h3>
+          <div class="work-greek">Ἀντιρρητικοὶ Τρεῖς κατὰ Εἰκονομάχων</div>
+          <p class="work-description">
+            Composed during Theodore's third exile between 815 and 820, the
+            <em>Antirrhetici</em> are his most developed iconodule theology. Three
+            treatises in dialogue form, each answering a specific iconoclast argument:
+            that the icon cannot truly represent Christ (Antirrheticus I), that
+            depicting Christ confuses his natures (Antirrheticus II), and that the
+            veneration given to icons amounts to idolatry (Antirrheticus III). The
+            key theological move — that the icon represents the <em>person</em>
+            (hypostasis) of Christ, not his divine nature — resolves the iconoclast
+            objection at its root and anchors the Byzantine iconodule position the
+            843 Triumph of Orthodoxy would canonize.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Catecheses</h3>
+          <div class="work-greek">Κατηχήσεις</div>
+          <p class="work-description">
+            Theodore preached catechetical instruction to the monks of Studios three
+            times a week through his abbacy, and the surviving collection — the
+            <em>Great Catechesis</em> and the <em>Small Catechesis</em> — preserves
+            around two hundred of these homilies on the monastic life, the liturgical
+            year, the virtues, and the daily disciplines of the community. Less read
+            today than the <em>Antirrhetici</em>, the <em>Catecheses</em> are the
+            principal witness to Theodore as pastor of his monks and give the
+            Byzantine cenobitic tradition its clearest voice of day-to-day
+            formation.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Studite Typikon</h3>
+          <div class="work-greek">Τυπικὸν Στουδίου</div>
+          <p class="work-description">
+            Theodore's systematic ordering of Studios's liturgical and communal life —
+            the daily office, the reading cycle, the refectory rule, the disciplinary
+            canons, the rhythm of fasts and feasts. The <em>Typikon</em> itself does
+            not survive in Theodore's own hand but was transmitted through the
+            tenth-century redaction known as the <em>Hypotyposis</em> and the later
+            <em>Mount Athos</em> and <em>Russian</em> recensions. Every subsequent
+            Byzantine and Slavic cenobitic foundation — Mount Athos, Kiev Caves, the
+            Serbian and Romanian monasteries, modern American Orthodox monastic
+            houses — operates in the structural inheritance Theodore shaped.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms name the center of Theodore's contribution. The first two
+        belong together — the iconodule theological move is captured in the
+        image-archetype relationship; the third names his monastic-ecclesial vision;
+        the fourth the structural instrument through which that vision shaped
+        Byzantine monasticism for a millennium.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">εἰκών</span>
+          <div class="transliteration">eikōn</div>
+          <div class="english-meaning">Icon · Image that Shares the Name of Its Archetype</div>
+          <p class="pillar-explanation">
+            The icon is not an idol and not a decoration; it is a theologically
+            specific kind of image whose relationship to its archetype is defined by
+            shared name, shared honor, and shared hypostatic reference. When the
+            faithful venerate the icon of Christ, they are not venerating wood and
+            pigment; they are venerating the person of Christ, whose icon participates
+            in his name and bears his honor. The honor paid to the icon, as Basil had
+            said of the emperor's image, passes to the prototype. Theodore makes the
+            principle the architectural foundation of his iconodule theology.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">πρωτότυπον</span>
+          <div class="transliteration">prōtotypon</div>
+          <div class="english-meaning">Archetype · the One the Image Points Toward</div>
+          <p class="pillar-explanation">
+            The <em>prōtotypon</em> is what the icon depicts: the person (hypostasis)
+            of Christ, or of the Theotokos, or of a saint. Crucially, the relationship
+            of icon to archetype is not natural but hypostatic — the icon shares not
+            the nature but the personal identity of the one depicted. This resolves
+            the iconoclast objection that depicting Christ confuses his two natures:
+            the icon represents the person of Christ, which is one, not his natures,
+            which are two. The move is subtle but decisive, and it anchors the
+            Byzantine iconodule theology the Seventh Ecumenical Council had affirmed
+            in 787 and the 843 Triumph of Orthodoxy would permanently canonize.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">κοινόβιον</span>
+          <div class="transliteration">koinobion</div>
+          <div class="english-meaning">Cenobium · Byzantine Communal Monasticism</div>
+          <p class="pillar-explanation">
+            Theodore was committed to the cenobitic model — communal life under an
+            abbot, common meals, common prayer, common labor — in deliberate
+            preference to the more individualistic anchoritic traditions still
+            flourishing in his day. Studios under his abbacy counted perhaps seven
+            hundred to a thousand monks, organized into departments of trades
+            (bookbinding, calligraphy, tailoring, metalwork), with a disciplined
+            liturgical and penitential rhythm. The model became normative for
+            Byzantine monasticism and shaped every subsequent cenobitic foundation
+            East of the Adriatic.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">τυπικόν</span>
+          <div class="transliteration">typikon</div>
+          <div class="english-meaning">Typikon · the Written Monastic Rule</div>
+          <p class="pillar-explanation">
+            The <em>Typikon</em> is the written ordering of a monastic community's
+            liturgical and communal life — the calendar of feasts, the sequence of
+            offices, the fasting rules, the daily rhythm of work and prayer. Theodore
+            did not invent the genre (simpler typika predate Studios), but he gave
+            the Byzantine world its first comprehensive cenobitic typikon, and the
+            <em>Studite Typikon</em> became the template for subsequent Byzantine and
+            Slavic foundations. When a modern Orthodox parish follows the Byzantine
+            liturgical calendar, when an Athonite monastery keeps the night vigil,
+            when the Russian Church celebrates the Great Lent, the structure is a
+            Studite inheritance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "If Christ is truly circumscribable in his humanity, then his icon is true.
+        To deny that Christ can be depicted is to deny the full reality of his
+        Incarnation."
+      </p>
+      <div class="quote-source">— Antirrheticus I.5 (paraphrase)</div>
+    </div>
+
+    <!-- Why Theodore Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Theodore Matters Today</h2>
+      <p class="section-text">
+        He is the theologian who gave the Orthodox East its definitive iconodule
+        argument. John of Damascus had established the framework a century earlier,
+        but Theodore pressed the question into its sharpest Christological form: the
+        icon represents the <em>person</em> of Christ, not his natures; to refuse the
+        icon is to refuse the reality of the Incarnation. Every modern Orthodox
+        defense of the icons — in response to Protestant iconoclasm, to Islamic
+        critique, to the secular-aesthetic dismissal of sacred art — operates in the
+        grammar Theodore articulated. The Sunday of Orthodoxy each year, which
+        commemorates the 843 restoration of the icons, is in large measure a
+        liturgical celebration of what Theodore died seventeen years too early to
+        witness.
+      </p>
+      <p class="section-text">
+        His monastic-liturgical achievement is perhaps even more consequential for
+        ordinary Orthodox Christians. When an Orthodox believer enters any parish
+        church today, the liturgical structure she encounters — the order of the
+        Divine Liturgy, the shape of the daily offices, the rhythm of the liturgical
+        year, the fasts and feasts that organize Orthodox time — descends in its
+        essential form from the Studite synthesis. Mount Athos adopted the Studite
+        pattern in the tenth century; Kievan Rus' inherited it through the Kiev
+        Caves Monastery in the eleventh; the Russian Church carried it across
+        Siberia and eventually to North America. What Theodore wrote as the
+        governance structure for a single Constantinopolitan monastery became the
+        liturgical bloodstream of nearly a billion Christians.
+      </p>
+      <p class="section-text">
+        And his public courage under imperial pressure is a final witness worth
+        naming. Theodore was flogged in the streets of Constantinople for his
+        iconodule position, exiled three times, kept his conscience through repeated
+        interrogations. The modern Orthodox tradition has its own recent witnesses
+        to comparable courage — the new martyrs of the Soviet period, the Orthodox
+        Christians who suffered under Ottoman dhimmi restrictions, the contemporary
+        Middle Eastern Orthodox communities that continue to pay the cost of
+        Christian witness — and Theodore stands as a patristic model for that
+        tradition. The Church's theology of the icon was finally vindicated not by
+        superior argument but by the willingness of men like Theodore to suffer for
+        the truth of what they confessed. The witness is its own argument.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="john-of-damascus.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">John of Damascus</div>
+          <div class="related-desc">The first-generation iconodule Father whose <em>Three Orations on the Divine Images</em> (c. 730) gave Theodore the theological foundation he would develop. Damascene articulated the icon-archetype distinction; Theodore pressed it into its sharpest Christological form during the second iconoclasm.</div>
+        </a>
+        <a href="photios-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Photios the Great</div>
+          <div class="related-desc">Theodore's generation-later successor in the defense of Constantinopolitan Orthodoxy. Where Theodore defended the icons against Byzantine iconoclasm, Photios defended Eastern pneumatology against Latin innovation — two moments of the same underlying conviction that Tradition rightly received can be faithfully defended against imperial and ecclesiastical pressure.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Θ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Theodore's vocabulary of icon, archetype, cenobitic life, and the typikon anchors the liturgical and iconographic grammar of the Byzantine and Slavic Orthodox traditions.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
