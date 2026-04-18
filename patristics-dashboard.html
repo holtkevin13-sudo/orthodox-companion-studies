@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T20:30:00Z -->
+<!-- build: 2026-04-18T00:30:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1298,6 +1298,96 @@ em, i { font-style: italic; }
   margin-bottom: 1rem;
   font-size: 0.9rem;
 }
+
+/* Study Tools section — tool-card grid for Father Cards / Lexicon / Bible Reader */
+.study-tools-section {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.study-tools-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.study-tools-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #2a2620;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-variant: small-caps;
+  margin: 0 0 0.4rem 0;
+}
+.study-tools-subhead {
+  color: #6b5d4a;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+.study-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.study-tool-card {
+  background: #faf6ed;
+  border: 1px solid #e8ddc8;
+  border-radius: 10px;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+.study-tool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(42, 38, 32, 0.1);
+  border-color: #D4AF37;
+}
+.study-tool-icon {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #3a3228 0%, #6b5d4a 100%);
+  color: #fffdf7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 3px 10px rgba(42, 38, 32, 0.15);
+}
+.study-tool-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #2a2620;
+  margin: 0 0 0.75rem 0;
+}
+.study-tool-desc {
+  color: #6b5d4a;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 1.2rem;
+}
+.study-tool-link {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #1a3a5c;
+  color: #fffdf7;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background 0.25s ease;
+  align-self: center;
+}
+.study-tool-link:hover {
+  background: #2a4a6c;
+}
 </style>
 </head>
 
@@ -1405,6 +1495,40 @@ em, i { font-style: italic; }
       <!-- Populated by renderRequiredReading() -->
     </div>
   </details>
+
+  <!-- Study Tools — quick access to Father Cards, Lexicon, Bible Reader -->
+  <section class="study-tools-section">
+    <div class="study-tools-header">
+      <h2 class="study-tools-heading">Study Tools</h2>
+      <div class="study-tools-subhead">Reference resources that run alongside your weekly formation</div>
+    </div>
+    <div class="study-tools-grid">
+      <div class="study-tool-card">
+        <div class="study-tool-icon">☩</div>
+        <h3 class="study-tool-title">Father Cards</h3>
+        <p class="study-tool-desc">
+          Biographical profiles of the Church Fathers with key works, theological contributions, and study context.
+        </p>
+        <a href="father-cards-index.html" class="study-tool-link">Browse Fathers →</a>
+      </div>
+      <div class="study-tool-card">
+        <div class="study-tool-icon">Ω</div>
+        <h3 class="study-tool-title">Patristic Lexicon</h3>
+        <p class="study-tool-desc">
+          Essential theological vocabulary — Greek and Latin — from the patristic corpus. Each entry includes transliteration, definition, etymology, and connection to the Fathers.
+        </p>
+        <a href="greek-lexicon-index.html" class="study-tool-link">Open Lexicon →</a>
+      </div>
+      <div class="study-tool-card">
+        <div class="study-tool-icon">⊕</div>
+        <h3 class="study-tool-title">Biblical Companion</h3>
+        <p class="study-tool-desc">
+          Daily biblical readings coordinated with patristic study — the Psalter as continuous thread and strategic books aligned with each Father's theology.
+        </p>
+        <a href="bible-reader.html" class="study-tool-link">Open Bible Reader →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- Big Picture Overview -->
   <section class="big-picture">
