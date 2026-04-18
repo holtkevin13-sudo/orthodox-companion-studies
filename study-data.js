@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T03:14:01Z
+// build: 2026-04-18T03:27:59Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1468,7 +1468,8 @@ const FATHER_PAGES = {
   'Irenaeus of Lyons': 'father-cards/irenaeus-of-lyons.html',
   'Athanasius the Great': 'father-cards/athanasius-the-great.html',
   'Basil the Great': 'father-cards/basil-the-great.html',
-  'Gregory of Nyssa': 'father-cards/gregory-of-nyssa.html'
+  'Gregory of Nyssa': 'father-cards/gregory-of-nyssa.html',
+  'Gregory of Nazianzus': 'father-cards/gregory-of-nazianzus.html'
   // ...add as pages are built
 };
 
