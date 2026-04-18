@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T15:29:43Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mark of Ephesus — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Mark of Ephesus — Orthodox Companion Studies">
+<meta property="og:description" content="Metropolitan of Ephesus and the sole Orthodox bishop who refused to sign the union decree at the Council of Ferrara-Florence in 1439 — the theological confessor whose refusal preserved the Byzantine-Orthodox theological inheritance at one of the great hinge moments of East-West ecclesial history.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Mark of Ephesus (1392 – 1444 AD) — born Manuel Eugenikos in Constantinople, monk, theologian, and Metropolitan of Ephesus. The principal Orthodox spokesman at the Council of Ferrara-Florence (1438–1439) and the one bishop of the Eastern delegation who refused to sign the union decree Laetentur Caeli on July 6, 1439. Author of the Confession of Faith, the Ten Arguments Against the Filioque, and the Encyclical Against the Greco-Latins. The Orthodox Church commemorates him as 'Pillar of Orthodoxy' and 'Atlas of the Orthodox faith,' with a feast on January 19.">
+<meta name="keywords" content="Mark of Ephesus, Mark Eugenikos, Manuel Eugenikos, Metropolitan of Ephesus, Council of Ferrara-Florence, 1439 Union, Laetentur Caeli, Pillar of Orthodoxy, Filioque, Purgatory Rejection, Purifying Fire, Homologia, Confession, Byzantine Theological Resistance, Photian Inheritance, Palamite Continuity, Post-Byzantine Orthodox Identity">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Byzantine Era · Greek)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Greek pillars — Latin CSS variants retained but unused on this
+   card (Climacus is pure Greek monastic tradition).
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Late Byzantine Era · Ephesus · Confessor at Florence
+    </div>
+    <h1 class="hero-title">Mark of Ephesus</h1>
+    <div class="hero-epithet">Μᾶρκος ὁ Εὐγενικός · Pillar of Orthodoxy</div>
+    <div class="hero-meta">1392 – 1444 AD · Metropolitan of Ephesus, Confessor at Ferrara-Florence</div>
+    <p class="hero-description">
+      Byzantine theologian of the final generation before the Fall of Constantinople,
+      Metropolitan of Ephesus, and the principal Orthodox spokesman at the Council
+      of Ferrara-Florence (1438–1439). When the union decree <em>Laetentur Caeli</em>
+      was read on July 6, 1439, Mark was the only bishop of the twenty-two Orthodox
+      metropolitans present who refused to sign. The refusal was decisive. Upon the
+      document's arrival in Constantinople the Orthodox faithful rejected the union
+      en masse, and within decades the Florentine act had effectively lapsed. Mark's
+      confession carried the Photian and Palamite inheritance through the council's
+      proceedings and back to a Byzantine Church that would fall to the Ottomans
+      fourteen years later but would not accept uniatism as the price of military
+      rescue. The Orthodox Church commemorates him as <em>Στῦλος τῆς Ὀρθοδοξίας</em>
+      — Pillar of Orthodoxy — on January 19.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Mark?</h2>
+      <p class="section-text">
+        Mark was born in Constantinople in 1392 as Manuel Eugenikos. His father George
+        was a deacon of Hagia Sophia and a teacher of rhetoric; his mother Maria was
+        daughter of a pious physician. The boy received an exceptional humanist
+        education in the last flowering of Byzantine scholarship — his principal
+        teachers were Joseph Bryennios (the theologian and preacher who shaped the
+        generation of Orthodox intellectuals that came of age in the early fifteenth
+        century) and George Gemistos Plethon (the Neoplatonist philosopher whose own
+        later heterodoxy Mark would eventually have to navigate). By his early twenties
+        Manuel was himself teaching rhetoric and philosophy in Constantinople. In 1418,
+        at about twenty-six, he left the secular teaching life for the monastic habit
+        at the Monastery of the Virgin of St. George of Mangana, taking the name Mark.
+        He subsequently lived as a hermit on the island of Antigone and later returned
+        to Constantinople at the monastery of St. George of Antipherus, where he
+        combined monastic discipline with continuing theological study.
+      </p>
+      <p class="section-text">
+        In 1437 Emperor John VIII Palaeologus consecrated Mark Metropolitan of Ephesus.
+        The reason was specific and urgent: the emperor was preparing the Orthodox
+        delegation to the proposed union council with Rome, which he hoped would
+        secure Western military aid against the advancing Ottomans. Mark, already
+        recognized as one of the foremost theologians of his generation, was needed
+        as part of the delegation. He accepted the consecration reluctantly. He
+        departed for Italy with the imperial retinue in late 1437, attended the
+        Council of Ferrara from its opening in April 1438, and was one of the six
+        principal Orthodox spokesmen at the sessions that debated the <em>filioque</em>,
+        purgatory, the form of the Eucharistic bread, and the primacy of the Roman
+        see. The council transferred to Florence in January 1439 as financial
+        pressures mounted, and the Orthodox delegation — already materially dependent
+        on papal support for food and lodging — found its theological position
+        progressively undermined by exhaustion, coercion, and the emperor's political
+        need for the union's success.
+      </p>
+      <p class="section-text">
+        The union decree <em>Laetentur Caeli</em> was read on July 6, 1439. Mark did
+        not sign. He was the only Orthodox bishop of the twenty-two present to
+        refuse. The Greek contemporary account by Sylvester Syropoulos — the deacon
+        and official historian of the council — records the moment with quiet
+        precision: "When they saw that Mark had not signed, Pope Eugenius said,
+        <em>We have accomplished nothing</em>." The line has become proverbial in
+        Orthodox historical memory. The Pope understood that an Orthodox union
+        without the principal Orthodox theologian's signature was not an Orthodox
+        union. When the Byzantine delegation returned to Constantinople in early
+        1440, the union was met with popular rejection in the capital; the signatory
+        bishops were jeered in the streets; Mark was welcomed as a confessor and
+        hero of the faith. He was briefly exiled to the island of Lemnos in 1440 but
+        was recalled to the capital. He spent the remaining four years of his life
+        writing theological defenses of his Florence position, corresponding with
+        Orthodox communities throughout the shrinking Byzantine world, and warning
+        against the eucharistic dangers of accepting union-signatory clergy. He died
+        on June 23, 1444, at fifty-two, nine years before the fall of Constantinople.
+      </p>
+      <p class="section-text">
+        A word on Mark's reception is worth including, since this card sits at a
+        point where Orthodox memory has sometimes been used in ways that do not honor
+        Mark's theological precision. The Orthodox Church's veneration of Mark is
+        without reservation — he is <em>στῦλος τῆς Ὀρθοδοξίας</em> (Pillar of
+        Orthodoxy) and <em>ἄτλας τῆς Ὀρθοδοξίας</em> (Atlas of the Orthodox faith),
+        celebrated with a proper feast, a body of liturgical hymnography, and
+        explicit designation as confessor. His refusal at Florence is celebrated
+        precisely because it was theological rather than political, principled rather
+        than reactive. What Mark refused was not ecumenical conversation but the
+        specific shape of fifteenth-century union — a union that papered over
+        real doctrinal disagreement (the <em>filioque</em>, purgatory as a distinct
+        retributive locale, unleavened bread in the Eucharist, papal primacy as
+        universal jurisdiction) rather than resolving them through genuine conciliar
+        consensus. Modern Catholic-Orthodox dialogue — the Ravenna Statement, the
+        2003 North American Statement on the <em>filioque</em>, the continuing Joint
+        International Commission — proceeds explicitly because union-by-fiat failed
+        at Florence and continues to be acknowledged by serious Catholic theology as
+        a premature attempt that genuine ecumenical dialogue must now work past
+        rather than revive. Mark's witness is part of what makes the modern
+        conversation possible. Reading him as a cheerful anti-Catholic polemicist
+        misses what the Orthodox tradition actually celebrates in him: a theologian
+        whose fidelity to the received faith preserved the ground on which genuine
+        future dialogue could eventually occur.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">1</div>
+          <div class="stat-label">Metropolitan Refusing Union at Florence</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1439</div>
+          <div class="stat-label">Laetentur Caeli Rejected</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">52</div>
+          <div class="stat-label">Years of Life</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1444</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Mark's theological corpus falls into three clusters: the Florence-era
+        disputations, the post-Florence doctrinal expositions, and the pastoral
+        correspondence from his last years. Three texts anchor the contribution.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Confession of Faith</h3>
+          <div class="work-greek">Ἔκθεσις τῆς Πίστεως</div>
+          <p class="work-description">
+            Composed shortly after the 1439 council, and issued formally in June
+            1439 before Mark's departure from Florence. The <em>Confession</em> states
+            precisely what Mark held and what he refused: the procession of the Holy
+            Spirit from the Father alone, the rejection of the Latin
+            <em>filioque</em> in both Creed and Symbol, the rejection of purgatorial
+            fire as a distinct penal locale, the rejection of the papal claim to
+            universal jurisdiction in the Florentine form, and the affirmation of
+            the received conciliar tradition of the seven Ecumenical Councils as
+            unalterable. It is the cleanest short statement of the Orthodox position
+            Mark defended.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Ten Arguments Against the Filioque</h3>
+          <div class="work-greek">Κεφάλαια Δέκα</div>
+          <p class="work-description">
+            The ten-chapter dossier of Mark's filioque arguments produced during the
+            Florence debates themselves, building on the ninth-century Photian
+            inheritance and incorporating material from Gregory of Cyprus (the
+            thirteenth-century patriarch who had defended Orthodox pneumatology
+            against the 1274 Council of Lyons). The <em>Ten Arguments</em> are the
+            principal witness to Mark's theological method in the council chamber:
+            scriptural exegesis, patristic florilegium, conciliar precedent, and
+            sustained pressure on the logical implications of the <em>filioque</em>
+            for the monarchy of the Father.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Encyclical Against the Greco-Latins</h3>
+          <div class="work-greek">Ἐγκύκλιος κατὰ Γραικολατίνων</div>
+          <p class="work-description">
+            Written in 1440 or 1441 after Mark's return to Constantinople, addressed
+            to the faithful of the Byzantine world concerning the Orthodox position
+            vis-à-vis the bishops who had signed the Florentine union. The
+            <em>Encyclical</em> is a pastoral theological document urging the
+            faithful not to participate eucharistically with the union-signatory
+            clergy and articulating the specific grounds on which Mark believed the
+            union was theologically unsound. Its sharp polemical tone reflects the
+            pastoral emergency as Mark understood it; its doctrinal substance is
+            continuous with the <em>Confession of Faith</em>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms name the center of Mark's contribution. The first is his
+        signature hagiographic category; the second his appeal-ground against
+        fifteenth-century doctrinal innovation; the third the distinctively
+        Florentine issue on which he pressed hardest; the fourth the ecclesiological
+        principle his refusal embodied.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">ὁμολογία</span>
+          <div class="transliteration">homologia</div>
+          <div class="english-meaning">Confession · Steadfast Witness under Pressure</div>
+          <p class="pillar-explanation">
+            The category that names what Mark did at Florence and what the Orthodox
+            tradition celebrates in him. <em>Ὁμολογία</em> is the public confession
+            of the received faith under conditions that make the confession costly —
+            social, political, imperial, or ecclesiastical pressure to yield. Mark
+            is <em>homologētēs</em>, confessor: he refused to sign not out of
+            stubbornness or provincial loyalty but because he judged that the
+            Florentine formulation altered the received faith at specific
+            theologically consequential points. The Orthodox reception has honored
+            that judgment by naming Mark the Pillar of Orthodoxy.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">παράδοσις</span>
+          <div class="transliteration">paradosis</div>
+          <div class="english-meaning">Tradition · the Received and Unalterable Deposit</div>
+          <p class="pillar-explanation">
+            Mark's appeal-ground throughout the Florence debates. The faith received
+            from the apostles, articulated at the seven Ecumenical Councils, and
+            transmitted through the Fathers, cannot be altered by any subsequent
+            synodal act — not by imperial need, not by political exigency, not by
+            the collective decision of an even substantial majority of bishops. The
+            principle is the same one Photios had invoked in the ninth century
+            against the filioque, the same one Mark of Ephesus now deploys in the
+            fifteenth against the union. In both moments it is <em>paradosis</em>
+            that limits what conciliar authority may legitimately do.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term long">πῦρ καθάρσιον</span>
+          <div class="transliteration">pyr katharsion</div>
+          <div class="english-meaning">Purifying Fire · Against Latin Purgatory</div>
+          <p class="pillar-explanation">
+            Mark's first major intervention at the Council of Ferrara was the rejection
+            of the Latin doctrine of purgatorial fire — not a denial of any
+            post-mortem purification (the Orthodox tradition affirms prayer for the
+            dead and a genuine <em>middle state</em>) but a refusal of the specific
+            Latin construction: a distinct penal locale where souls endure quantifiable
+            retributive fire to satisfy temporal penalties for sin. The doctrinal
+            issue carried wider implications — about the nature of sin, grace, and
+            divine justice — that Mark believed the Latin formulation had distorted.
+            His two <em>Orations on the Purifying Fire</em> at Ferrara laid out the
+            Orthodox position that has been settled teaching ever since.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ἑνότης</span>
+          <div class="transliteration">henotēs</div>
+          <div class="english-meaning">Unity · Genuine Communion in the Truth</div>
+          <p class="pillar-explanation">
+            The ecclesiological principle Mark's refusal embodied: true unity is
+            communion in the received truth, not a signed document that papers over
+            unresolved doctrinal disagreement. Mark did not oppose East-West dialogue
+            nor dream of permanent East-West separation; what he refused was the
+            specific form of union the Florentine party had constructed — a union
+            that left the doctrinal questions essentially unresolved and substituted
+            signed agreement for theological consensus. Every subsequent genuine
+            Catholic-Orthodox ecumenical engagement has had to begin by
+            acknowledging that Florence's version of unity failed for the reasons
+            Mark identified, and that genuine unity must be sought through
+            substantive doctrinal reconciliation rather than by imposed formula.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "I hold to what the Fathers have handed down. I receive what is received from
+        them; what is not received, that I refuse — even if it cost me my life."
+      </p>
+      <div class="quote-source">— Confession of Faith (adapted)</div>
+    </div>
+
+    <!-- Why Mark Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Mark Matters Today</h2>
+      <p class="section-text">
+        He is the Orthodox tradition's canonical witness to the principle that
+        conciliar truth cannot be produced by conciliar fiat. The Florentine bishops
+        who signed <em>Laetentur Caeli</em> had been under enormous pressure —
+        political, financial, existential — and the union they endorsed was genuinely
+        plausible as a calculation: Ottoman armies were approaching Constantinople,
+        Western military aid might turn on the union's success, the doctrinal
+        disagreements could be held in abeyance or resolved by later theological
+        work. Mark refused the calculation. A union that did not resolve the
+        doctrinal questions, he judged, was not a true union regardless of how many
+        bishops signed it; and the pressure under which the Orthodox delegation had
+        been made to sign was itself a corrosive witness to the union's lack of
+        genuine consensus. Fourteen years later Constantinople fell anyway; the
+        promised Western aid did not materialize in sufficient force; the Florentine
+        union lapsed. Mark was vindicated by events, but the more important
+        vindication is theological: conciliar authority cannot manufacture doctrinal
+        truth where genuine consensus has not been reached.
+      </p>
+      <p class="section-text">
+        His continuing significance for Orthodox identity — particularly for the
+        post-Byzantine, post-1453 Orthodox world — cannot be overstated. Mark is
+        the saint through whom the Orthodox tradition carried its theological
+        integrity into four centuries of Ottoman rule, through the Russian imperial
+        period, through the catastrophe of the twentieth-century persecutions,
+        into the global diaspora. Every subsequent Orthodox engagement with the
+        West — from the 1672 Synod of Jerusalem to the modern Catholic-Orthodox
+        dialogue — has invoked Mark as the figure who secured the theological
+        ground on which Orthodox identity rests. The Orthodox Church was not
+        destined by providence to accept the Florentine union; that it did not do
+        so is in significant measure Mark's doing.
+      </p>
+      <p class="section-text">
+        And his witness holds a particular edge for the contemporary Orthodox
+        Christian navigating the modern ecumenical moment. Mark is not a model of
+        anti-Catholic polemic — the hagiographic record is notably free of the
+        bitter polemical bombast that marks some later Orthodox anti-Roman
+        literature — but neither is he a model of indifference to doctrinal
+        specificity. He was a theologian who took the specific content of the
+        Orthodox faith seriously enough to refuse its dilution under pressure. The
+        contemporary Orthodox Christian who prays for ecumenical reconciliation and
+        who works in good faith with Catholic and Protestant interlocutors (as Mark
+        himself worked, at Ferrara and Florence, for over a year in substantive
+        theological dialogue before he refused to sign) can learn from Mark the
+        discipline of taking doctrinal specificity seriously without surrendering
+        the hope of genuine Christian reunion. His refusal is not the last word but
+        the honest word — the word that makes future words possible.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="photios-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Photios the Great</div>
+          <div class="related-desc">Mark's ninth-century theological ancestor on the central East-West doctrinal question. The <em>filioque</em> arguments Mark pressed at Florence in 1439 are the direct continuation of the Photian <em>Mystagogy</em> of the 880s — the same theological grammar applied six centuries later in another hinge moment of ecclesial history.</div>
+        </a>
+        <a href="gregory-palamas.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Gregory Palamas</div>
+          <div class="related-desc">The fourteenth-century Athonite whose essence-energies theology was the Byzantine theological inheritance Mark defended. Mark cited Palamas in the Florentine debates, and his refusal to sign was simultaneously a refusal of any formula that would compromise the Palamite patrimony. The Florence union would have required implicit repudiation of what the 1351 Council of Constantinople had affirmed.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Μ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Mark's vocabulary of confession, unalterable tradition, the purifying fire, and genuine ecclesial unity anchors the Orthodox theological inheritance at the hinge point between the Byzantine and post-Byzantine periods.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
