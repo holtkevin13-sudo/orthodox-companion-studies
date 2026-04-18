@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-17T21:30:00Z
+// build: 2026-04-18T17:45:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -160,6 +160,25 @@ const LEXICON_ENTRIES = {
     definition: 'Teaching, doctrine. The title word of the earliest Christian manual outside the New Testament (c. 50–120 AD), covering moral instruction, liturgical practice (Baptism, Eucharist), and church order.',
     etymology: 'From διδάσκω (to teach)',
     phase: 1, fathers: ['Didache'], connection: 'Earliest Church Catechesis', letter: 'Δ'
+  },
+  // --- Papias cluster (Phase 1) ---
+  'ζῶσα φωνή': {
+    transliteration: 'zosa phone', english: 'Living Voice',
+    definition: 'The "living voice" — Papias\'s stated preference for oral apostolic tradition over written sources. In the prologue to his Exposition of the Lord\'s Oracles (preserved by Eusebius, Church History 3.39), Papias explains that whenever he met those who had followed the presbyters, he inquired after their words — convinced that what was received from a still-living witness profited him more than what was drawn from books. The phrase crystallizes a pre-canonical theology of living tradition: the apostolic Word transmitted not only textually but through continuous, embodied witness from teacher to hearer.',
+    etymology: 'From ζῶσα (feminine present participle of ζῆν, to live) + φωνή (voice)',
+    phase: 1, fathers: ['Papias of Hierapolis'], connection: 'Oral Tradition as Living Apostolic Witness', letter: 'Ζ'
+  },
+  'λόγιον': {
+    transliteration: 'logion', english: 'Oracle, Saying',
+    definition: 'Oracle, divinely-given saying — the genre designation of Papias\'s lost five-book work, the Exposition of the Lord\'s Oracles (Λογίων Κυριακῶν Ἐξηγήσεις, c. 110–130). Though the book itself does not survive, Irenaeus, Eusebius, and later writers preserve its title and fragments. Papias\'s choice of λόγιον — the same term the Septuagint uses for prophetic utterances and Paul for the "oracles of God" entrusted to Israel (Romans 3:2) — positions the sayings and deeds of Christ within the register of divine revelation, a foundational move for the Church\'s reception of the Gospels as Scripture.',
+    etymology: 'Diminutive of λόγος (word, saying); in LXX and NT usage, a divinely-delivered utterance',
+    phase: 1, fathers: ['Papias of Hierapolis'], connection: 'Christ\'s Sayings as Divine Oracles', letter: 'Λ'
+  },
+  'ἑρμηνευτής': {
+    transliteration: 'hermeneutes', english: 'Interpreter',
+    definition: 'Interpreter, translator — Papias\'s famous description of Mark as the ἑρμηνευτής of Peter (fragment preserved in Eusebius, Church History 3.39.15): Mark, having become Peter\'s interpreter, wrote down accurately whatever he remembered of the Lord\'s sayings and deeds. The term anchors the Patristic tradition\'s understanding of the Gospel of Mark as Petrine memory rendered into writing — the Evangelist serving as the mediating voice between the apostle\'s preaching and the written text. This single designation becomes foundational for later patristic Gospel criticism, shaping how Irenaeus, Clement of Alexandria, Origen, and Eusebius account for Mark\'s apostolic authority.',
+    etymology: 'From ἑρμηνεύω (to interpret, translate, explain)',
+    phase: 1, fathers: ['Papias of Hierapolis'], connection: 'Mark as Petrine Interpreter; Gospel Origins', letter: 'Ε'
   },
   // --- Justin cluster (Phase 2) ---
   'λόγος': {
@@ -584,200 +603,200 @@ const LEXICON_ENTRIES = {
     transliteration: 'phthora', english: 'Corruption, Decay',
     definition: 'Corruption — the decay into which humanity fell through sin, resulting in subjection to death and dissolution. The opening diagnosis of Athanasius\'s De Incarnatione (3–5): because human nature had its being "out of nothing" (ἐκ τοῦ μὴ ὄντος), sin set it on a return path toward non-being. Only the Word\'s entering that trajectory could reverse it.',
     etymology: 'From φθείρω (to ruin, destroy, decay)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Human Condition After the Fall', letter: 'Φ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Human Condition After the Fall', letter: 'Φ'
   },
   'ἀφθαρσία': {
     transliteration: 'aphtharsia', english: 'Incorruption, Imperishability',
     definition: 'Incorruption — the freedom from decay that belongs properly to God and is gifted to humanity through the Incarnation. In De Incarnatione 9, Athanasius frames the whole saving work as the Word clothing mortal flesh with his own divine ἀφθαρσία, so that what was racing toward dissolution is anchored in the imperishable life of God. Already attested in Paul (1 Corinthians 15:53–54), the term receives its systematic Christological home here.',
     etymology: 'From ἀ- (not) + φθορά (corruption)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Christ Clothing Humanity with Divine Incorruption', letter: 'Α'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Christ Clothing Humanity with Divine Incorruption', letter: 'Α'
   },
   'θέωσις': {
     transliteration: 'theosis', english: 'Deification, Divinization',
     definition: 'Deification — humanity\'s participation in the divine life. Athanasius\'s famous formula: "He became man that we might be made God" (De Incarnatione 54). Athanasius himself more often uses the verbal-noun form θεοποίησις; θέωσις becomes the standard term through the Cappadocians and Maximus. The concept anchors Orthodox soteriology: salvation is not merely forgiveness but the restoration of humanity to genuine communion with God.',
     etymology: 'From θεόω (to make divine, from θεός)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Salvation as Participation in God', letter: 'Θ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Salvation as Participation in God', letter: 'Θ'
   },
   'θεοποίησις': {
     transliteration: 'theopoiesis', english: 'Making-Divine, Deification',
     definition: 'The making-divine of humanity — Athanasius\'s actual preferred term (with its verb θεοποιέω) for what later tradition calls θέωσις. The emphasis falls on divine action: God makes us divine; we do not ascend by our own power (Orations Against the Arians 1.38–39, 2.70; De Decretis 14). The pair θεοποίησις / θέωσις represents the same soteriological reality under slightly different accents.',
     etymology: 'From θεός (God) + ποιέω (to make)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Divine Action in Deification', letter: 'Θ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Divine Action in Deification', letter: 'Θ'
   },
   'ὁμοούσιος': {
     transliteration: 'homoousios', english: 'Consubstantial, Of the Same Essence',
     definition: '"Of the same essence" — the decisive term inserted into the Creed of Nicaea (325) to affirm that the Son is of the very same οὐσία as the Father, not a lesser or created being. Athanasius becomes ὁμοούσιος\'s most determined defender across four decades and five exiles, insisting the word guards the basic logic of salvation: only one who is God by nature (φύσει) can divinize creatures by grace (χάριτι).',
     etymology: 'From ὁμός (same) + οὐσία (essence)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Nicene Confession of the Son\'s Deity', letter: 'Ο'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Nicene Confession of the Son\'s Deity', letter: 'Ο'
   },
   'ὁμοιούσιος': {
     transliteration: 'homoiousios', english: 'Of Similar Essence',
     definition: '"Of like essence" — the Semi-Arian compromise position of the mid-fourth century (Basil of Ancyra and others), asserting the Son\'s likeness to the Father without full sameness. Athanasius comes to regard most ὁμοιούσιοι as genuine allies under the skin (De Synodis 41–43), willing to work toward reconciliation on the ὁμοούσιος. The famous single-iota difference between the two terms masks a real theological gravity.',
     etymology: 'From ὅμοιος (similar) + οὐσία (essence)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Semi-Arian Middle Position', letter: 'Ο'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Semi-Arian Middle Position', letter: 'Ο'
   },
   'ἀνόμοιος': {
     transliteration: 'anomoios', english: 'Unlike, Dissimilar',
     definition: '"Unlike" — the radical Arian position (Aetius, Eunomius) that the Son is unlike the Father in essence. Athanasius treats the ἀνόμοιοι as Arian subordinationism laid bare: where moderate Arians had qualified their claims, the ἀνόμοιοι stated them plainly. Refuting them clarifies the full stakes of the Nicene confession.',
     etymology: 'From ἀ- (not) + ὅμοιος (similar)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Radical Arian Denial', letter: 'Α'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Radical Arian Denial', letter: 'Α'
   },
   'ἀγέννητος': {
     transliteration: 'agennetos', english: 'Unbegotten',
     definition: 'Unbegotten — the property proper to God the Father. Athanasius, followed by the Cappadocians, fixes ἀγέννητος as a hypostatic property distinguishing the Father from the Son, who is γεννητός (begotten). Against the Eunomian argument that ἀγέννητος IS the very definition of God (and so the Son, being γεννητός, cannot be God), Athanasius insists ἀγέννητος names the Father\'s unique mode of being, not the divine essence itself.',
     etymology: 'From ἀ- (not) + γεννητός (begotten)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Father\'s Hypostatic Property', letter: 'Α'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Father\'s Hypostatic Property', letter: 'Α'
   },
   'γεννητός': {
     transliteration: 'gennetos', english: 'Begotten',
     definition: 'Begotten — said of the Son in relation to the Father, asserting an eternal generation that is real relation but not temporal origin. The Nicene Creed\'s "begotten not made" (γεννηθέντα οὐ ποιηθέντα) fixes the distinction: γεννητός (double nu) marks the eternal Son; γενητός (single nu, "made, come-to-be") marks creatures. Athanasius polices the one-letter difference with unrelenting precision.',
     etymology: 'From γεννάω (to beget, bear)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Eternal Generation of the Son', letter: 'Γ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Eternal Generation of the Son', letter: 'Γ'
   },
   'κτίσμα': {
     transliteration: 'ktisma', english: 'Creature, Created Thing',
     definition: 'That which is created. Arius\'s central claim: the Son is κτίσμα — the highest creature, but a creature nonetheless. Athanasius\'s Orations Against the Arians is sustained demolition of this claim: if the Son were κτίσμα, he could not possess the divine life to communicate to humanity; deification (cf. θεοποίησις) would be impossible. The one who divinizes must himself be God.',
     etymology: 'From κτίζω (to create, found)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Arian Claim That the Son Is Created', letter: 'Κ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Arian Claim That the Son Is Created', letter: 'Κ'
   },
   'ἐνανθρώπησις': {
     transliteration: 'enanthropesis', english: 'Becoming-Human, Incarnation',
     definition: 'The Word\'s becoming-human. Athanasius\'s preferred Greek term for the Incarnation (De Incarnatione; Orations Against the Arians 1.38), complementing the σάρκωσις of Irenaeus (Phase 3). The choice emphasizes that the Word assumed not just flesh but complete humanity (ἄνθρωπος) — body and rational soul — making the whole human being the subject of divine life.',
     etymology: 'From ἐν (in) + ἄνθρωπος (human being)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Word\'s Assumption of Full Humanity', letter: 'Ε'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Word\'s Assumption of Full Humanity', letter: 'Ε'
   },
   'ἐκ τοῦ μὴ ὄντος': {
     transliteration: 'ek tou me ontos', english: 'Out of Non-Being',
     definition: '"Out of non-being" — the condition of creatures, who exist only because God calls them from nothing. The anathemas appended to the Creed of Nicaea condemn those who say of the Son that he is ἐκ τοῦ μὴ ὄντος (that is, created like other creatures). Athanasius uses the phrase in De Incarnatione 3–4 to diagnose the human trajectory back toward non-being apart from the Word\'s intervention.',
     etymology: 'From ἐκ (out of) + τοῦ μὴ ὄντος (the non-being)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Creaturely Contingency and Arian Christology', letter: 'Ε'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Creaturely Contingency and Arian Christology', letter: 'Ε'
   },
   'αὐτοθεός': {
     transliteration: 'autotheos', english: 'God-Himself, True God',
     definition: '"God Himself" — Athanasius\'s term for the Son as true God by nature, not God-by-participation or God-by-name (Orations Against the Arians 1.9; 3.16). αὐτοθεός sharpens the Nicene claim: the Son is not divine as a gift received from another but as sharing the very being of the Father.',
     etymology: 'From αὐτός (self, himself) + θεός (God)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Son as True God by Nature', letter: 'Α'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Son as True God by Nature', letter: 'Α'
   },
   'υἱοθεσία': {
     transliteration: 'huiothesia', english: 'Adoption as Sons',
     definition: 'Adoption as sons and daughters. Athanasius\'s key distinction: the Son is υἱὸς φύσει (Son by nature); Christians become υἱοὶ χάριτι (sons by grace) through the Incarnation and the gift of the Spirit (Orations 1.37–39; 2.59). Our υἱοθεσία depends on the Son\'s natural sonship — which is why the Son\'s full deity is the ground of our own saving adoption.',
     etymology: 'From υἱός (son) + θέσις (placing, positing); Pauline in Romans 8:15, 23',
-    phase: 4, fathers: ['Athanasius'], connection: 'Participatory Sonship by Grace', letter: 'Υ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Participatory Sonship by Grace', letter: 'Υ'
   },
   'ἐκ τῆς οὐσίας τοῦ Πατρός': {
     transliteration: 'ek tes ousias tou patros', english: 'Of the Essence of the Father',
     definition: '"From the essence of the Father" — a clause of the original 325 Nicene Creed asserting the Son\'s derivation not from the Father\'s will or creative act but from the Father\'s very οὐσία. Athanasius defends this clause vigorously in De Decretis. The Niceno-Constantinopolitan Creed of 381 drops it, retaining only "begotten of the Father before all worlds" — but the doctrinal force is carried forward by ὁμοούσιος.',
     etymology: 'From ἐκ (out of) + τῆς οὐσίας (the essence) + τοῦ Πατρός (of the Father)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Nicene Derivation of the Son from the Father', letter: 'Ε'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Nicene Derivation of the Son from the Father', letter: 'Ε'
   },
   'κανών': {
     transliteration: 'kanon', english: 'Canon, Rule, Norm',
     definition: 'Rule, measuring-stick, norm. Athanasius\'s Festal Letter 39 (367 AD) contains the first extant full list of the twenty-seven canonical books of the New Testament — exactly the ones the Church universal eventually received. The letter uses κανών in this technical scriptural sense, fixing the vocabulary by which later tradition distinguishes canonical books (βιβλία κανονιζόμενα) from other edifying writings.',
     etymology: 'From κανών (reed, measuring-rod); cf. κανὼν τῆς ἀληθείας (Phase 3)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Fixing of the New Testament Canon', letter: 'Κ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Fixing of the New Testament Canon', letter: 'Κ'
   },
   'ὄργανον': {
     transliteration: 'organon', english: 'Instrument, Organ',
     definition: 'Instrument. Athanasius describes the flesh that Christ assumed as the ὄργανον through which the Word acts for human salvation — miracles, healings, death, and resurrection all worked through this human instrument by its divine subject (De Incarnatione 8, 18, 43–44). The image guards both the reality of Christ\'s human acts and the ultimate agency of the Word who acts through them.',
     etymology: 'From ἔργον (work) — literally "that with which work is done"',
-    phase: 4, fathers: ['Athanasius'], connection: 'Christ\'s Flesh as the Word\'s Instrument', letter: 'Ο'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Christ\'s Flesh as the Word\'s Instrument', letter: 'Ο'
   },
   'μοναχός': {
     transliteration: 'monachos', english: 'Monk, Solitary',
     definition: 'Monk — literally "solitary," "one who is alone." Athanasius\'s Vita Antonii (Life of Antony, c. 357) is the foundational document of monastic literature, circulating quickly through Greek and Latin Christendom and shaping monasticism East and West. Through the Vita, μοναχός becomes the technical name for the Christian ascetic devoted to withdrawal, prayer, and spiritual combat.',
     etymology: 'From μόνος (alone, single)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Foundational Monastic Vocabulary', letter: 'Μ'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Foundational Monastic Vocabulary', letter: 'Μ'
   },
   'ἀναχώρησις': {
     transliteration: 'anachoresis', english: 'Withdrawal, Retreat',
     definition: 'Withdrawal — the monk\'s physical and spiritual retreat from the world to seek God in solitude. Antony\'s ἀναχώρησις into the Egyptian desert, recounted by Athanasius in the Vita Antonii, becomes the paradigm for the whole anchoritic (ἀναχωρητικός) tradition — those who withdraw not to abandon humanity but to pray for it in concentrated solitude.',
     etymology: 'From ἀνά (back) + χωρέω (to withdraw, make space)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Desert Anchoritic Tradition', letter: 'Α'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Desert Anchoritic Tradition', letter: 'Α'
   },
   'ἄσκησις': {
     transliteration: 'askesis', english: 'Ascesis, Training',
     definition: 'Training, exercise. Originally the disciplined training of athletes; in Athanasius\'s Vita Antonii, the sustained spiritual exercise of the monk — fasting, vigils, prayer, and the guarding of the heart — by which the whole person is trained toward God. The term anchors a permanent patristic grammar: holiness is a discipline as well as a gift.',
     etymology: 'From ἀσκέω (to train, practice)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Spiritual Discipline and Formation', letter: 'Α'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Spiritual Discipline and Formation', letter: 'Α'
   },
   'ἡσυχία': {
     transliteration: 'hesychia', english: 'Stillness, Silence',
     definition: 'Stillness, inner silence — the cultivated quiet of heart and body that is both condition and fruit of contemplative prayer. Athanasius\'s portrait of Antony in the Vita describes this ἡσυχία as the fruit of ἄσκησις and ἀναχώρησις. The term becomes the seed of the later Orthodox hesychast tradition.',
     etymology: 'Pre-Greek; traditionally related to ἧμαι (to sit, be still)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Contemplative Stillness', letter: 'Η'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Contemplative Stillness', letter: 'Η'
   },
   'ἀπάθεια': {
     transliteration: 'apatheia', english: 'Dispassion, Freedom from Passions',
     definition: 'Freedom from passions — not the absence of feeling but the reordering of the affections so they are no longer ruled by disordered desires. Athanasius presents Antony as having attained ἀπάθεια through decades of ἄσκησις (Vita Antonii 14, 67). The term gathers up a strand of Stoic ethics, reshapes it in a Christian key, and hands it forward to Evagrius, Maximus, and the whole Orthodox ascetical tradition.',
     etymology: 'From ἀ- (not) + πάθος (passion, suffering)',
-    phase: 4, fathers: ['Athanasius'], connection: 'Reordering of the Passions', letter: 'Α'
+    phase: 4, fathers: ['Athanasius the Great'], connection: 'Reordering of the Passions', letter: 'Α'
   },
   // --- Basil + Gregory of Nyssa cluster (Phase 5, Cappadocian) ---
   'οὐσία': {
     transliteration: 'ousia', english: 'Essence, Substance',
     definition: 'Essence, being, substance — what a thing is. In the Cappadocian Trinitarian grammar, οὐσία names the single divine reality shared by Father, Son, and Spirit (μία οὐσία), distinguished from ὑπόστασις (the three who share it). This precise terminological discipline, fixed by Basil in Against Eunomius and in Letter 38, gives Greek theology its durable vocabulary for confessing one God in three.',
     etymology: 'From εἰμί (to be); present participle οὖσα (being)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Cappadocian Trinitarian Essence', letter: 'Ο'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Cappadocian Trinitarian Essence', letter: 'Ο'
   },
   'ὑπόστασις': {
     transliteration: 'hypostasis', english: 'Hypostasis, Person, Subsistence',
     definition: 'Subsistence, concrete individual reality — that which stands under. The Cappadocians fix ὑπόστασις as the technical name for each of the three divine persons — Father, Son, Spirit — who share one οὐσία. Earlier Greek usage (including Athanasius, Phase 4) had sometimes used οὐσία and ὑπόστασις interchangeably; the Cappadocian precision settles the difference and allows the West\'s persona and the East\'s ὑπόστασις to be read together without confusion.',
     etymology: 'From ὑπό (under) + στάσις (standing, from ἵστημι)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Trinitarian Person', letter: 'Υ'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Trinitarian Person', letter: 'Υ'
   },
   'ἰδιότης': {
     transliteration: 'idiotes', english: 'Particularity, Individuating Property',
     definition: 'Particularity — the distinctive property that marks out one ὑπόστασις from the others. For Basil (Letter 38; On the Holy Spirit), what distinguishes Father from Son from Spirit are their ἰδιώματα: the Father\'s unbegottenness, the Son\'s begottenness, the Spirit\'s procession. The ἰδιότης is hypostatic, not essential: it constitutes the person without dividing the essence.',
     etymology: 'From ἴδιος (one\'s own, peculiar)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Hypostatic Properties in the Trinity', letter: 'Ι'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Hypostatic Properties in the Trinity', letter: 'Ι'
   },
   'τρόπος ὑπάρξεως': {
     transliteration: 'tropos hyparxeos', english: 'Mode of Existence',
     definition: 'Mode of existence — the Cappadocian formula for how the three hypostases of the one God differ. The Father exists unbegotten; the Son, begotten; the Spirit, by procession. These are not three essences but three modes of existing the one essence. The phrase stabilizes in Basil\'s letters and receives fuller development from the two Gregorys.',
     etymology: 'From τρόπος (manner, way) + ὕπαρξις (existing, from ὑπάρχω)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Hypostatic Mode of Being', letter: 'Τ'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Hypostatic Mode of Being', letter: 'Τ'
   },
   'ἀγεννησία': {
     transliteration: 'agennesia', english: 'Unbegottenness',
     definition: 'Unbegottenness — the noun form for the property proper to the Father (cf. ἀγέννητος, Phase 4). Against Eunomius, who argued that ἀγεννησία names the very divine essence (and so the Son, not being ἀγέννητος, cannot be God), the Cappadocians distinguish: ἀγεννησία is a hypostatic property, not the essence itself. Basil and both Gregorys build sustained polemic on this distinction.',
     etymology: 'From ἀ- (not) + γεννάω (to beget)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Father\'s Hypostatic Property', letter: 'Α'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Father\'s Hypostatic Property', letter: 'Α'
   },
   'πνεῦμα': {
     transliteration: 'pneuma', english: 'Spirit, Breath, Wind',
     definition: 'Breath, wind, spirit. Basil\'s De Spiritu Sancto (375) is the foundational defense of the full deity of the Holy Πνεῦμα against the Pneumatomachoi ("Spirit-fighters"), who allowed the Son his divinity but denied it to the Spirit. Basil\'s argument from the Spirit\'s worship and glorification anchors the fourth-century consolidation of full Trinitarian confession — sealed in the Niceno-Constantinopolitan Creed of 381.',
     etymology: 'From πνέω (to blow, breathe)',
-    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Full Deity of the Holy Spirit', letter: 'Π'
+    phase: 5, fathers: ['Basil the Great'], connection: 'Full Deity of the Holy Spirit', letter: 'Π'
   },
   'ὁμοτιμία': {
     transliteration: 'homotimia', english: 'Equal Honor',
     definition: 'Equal honor — Basil\'s decisive argument for the Spirit\'s deity (De Spiritu Sancto 10–27). The liturgical practice of worshipping the Spirit "together with" (συν-) Father and Son — a co-worship already fixed in the Church\'s doxology — logically requires the Spirit\'s equal divinity: only God receives the honor due to God. The argument translates doxological practice into dogmatic conclusion.',
     etymology: 'From ὁμός (same) + τιμή (honor)',
-    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Liturgical Argument for the Spirit\'s Deity', letter: 'Ο'
+    phase: 5, fathers: ['Basil the Great'], connection: 'Liturgical Argument for the Spirit\'s Deity', letter: 'Ο'
   },
   'ἐκπόρευσις': {
     transliteration: 'ekporeusis', english: 'Procession',
     definition: 'Procession — specifically, the eternal procession of the Holy Spirit from the Father (John 15:26). The Cappadocians fix ἐκπόρευσις as the Spirit\'s distinctive mode of origin, parallel to the Son\'s γέννησις (begetting). It is this precise term that the Niceno-Constantinopolitan Creed uses of the Spirit, and it is the central vocabulary of the later Filioque controversy between East and West.',
     etymology: 'From ἐκ (out of) + πορεύομαι (to go, journey)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Eternal Procession of the Holy Spirit', letter: 'Ε'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Eternal Procession of the Holy Spirit', letter: 'Ε'
   },
   'κοινωνία': {
     transliteration: 'koinonia', english: 'Communion, Fellowship',
     definition: 'Communion, shared participation. For the Cappadocians, κοινωνία names both the intra-Trinitarian reality — the one essence held in common by Father, Son, and Spirit — and the ecclesial-sacramental fellowship through which creatures are drawn into that divine life. The term connects Trinitarian theology proper with liturgy and spiritual life.',
     etymology: 'From κοινός (common, shared)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Trinitarian and Ecclesial Communion', letter: 'Κ'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Trinitarian and Ecclesial Communion', letter: 'Κ'
   },
   'μέθεξις': {
     transliteration: 'methexis', english: 'Participation',
     definition: 'Participation, partaking. Borrowing Plato\'s metaphysics of μέθεξις (creatures participating in the Forms), Gregory of Nyssa and the Cappadocian tradition refigure it theologically: creatures have no divine nature in themselves but participate in the divine life by grace. μέθεξις grounds a careful account of how finite beings can genuinely share in an infinite God without becoming infinite themselves.',
     etymology: 'From μετά (with) + ἔχω (to have, hold) — "to have with"',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Creaturely Participation in God', letter: 'Μ'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Creaturely Participation in God', letter: 'Μ'
   },
   'θεωρία': {
     transliteration: 'theoria', english: 'Contemplation, Vision',
     definition: 'Contemplation, beholding. The higher of the two classical stages of the spiritual life (paired with πρᾶξις, active virtue): the direct, receptive contemplation of God by the purified intellect. Basil and the two Gregorys deepen a pattern that begins in Origen and Clement, and that Maximus will develop further (Phase 12). θεωρία is not abstract theorizing but the prayerful seeing of God\'s presence in Scripture and creation.',
     etymology: 'From θεωρέω (to behold, contemplate, gaze upon)',
-    phase: 5, fathers: ['Basil of Caesarea', 'Gregory of Nyssa'], connection: 'Contemplative Stage of the Spiritual Life', letter: 'Θ'
+    phase: 5, fathers: ['Basil the Great', 'Gregory of Nyssa'], connection: 'Contemplative Stage of the Spiritual Life', letter: 'Θ'
   },
   'ἐπέκτασις': {
     transliteration: 'epektasis', english: 'Perpetual Straining-Forward',
@@ -837,13 +856,13 @@ const LEXICON_ENTRIES = {
     transliteration: 'koinobion', english: 'Cenobitic Community',
     definition: 'Community life — the shared monastic household. Basil\'s Asketikon (Long Rules and Short Rules) develops the κοινόβιον as the normative form of Christian asceticism, in contrast to the solitary anchoritic tradition of Antony (Phase 4). Basil argues that the gospel commandments of love cannot be practiced alone; communal monasticism is therefore theologically required, not merely pastorally prudent. The pattern becomes the foundation of Eastern monasticism.',
     etymology: 'From κοινός (common) + βίος (life)',
-    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Cenobitic Monastic Life', letter: 'Κ'
+    phase: 5, fathers: ['Basil the Great'], connection: 'Cenobitic Monastic Life', letter: 'Κ'
   },
   'φιλανθρωπία': {
     transliteration: 'philanthropia', english: 'Love of Humanity',
     definition: 'Love of humanity. A classical virtue that Basil translates into institutional practice: the Basileiad outside Caesarea (c. 370s) — a complex of hospitals, hospices, and shelters for the poor and the sick — is perhaps the first organized Christian charitable institution at scale, a visible φιλανθρωπία answering God\'s own love for humanity. The term anchors a patristic theology of social mercy that shapes later Byzantine charitable foundations.',
     etymology: 'From φίλος (loving) + ἄνθρωπος (human being)',
-    phase: 5, fathers: ['Basil of Caesarea'], connection: 'Christian Charitable Institutions', letter: 'Φ'
+    phase: 5, fathers: ['Basil the Great'], connection: 'Christian Charitable Institutions', letter: 'Φ'
   },
   // --- Gregory Nazianzen cluster (Phase 6) ---
   'θεολογία': {
