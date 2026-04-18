@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T20:38:47Z -->
+<!-- build: 2026-04-18T20:56:11Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1392,6 +1392,104 @@ em, i { font-style: italic; }
   font-size: 0.9rem;
 }
 
+/* Week-transition banner — shown once per advance action via a
+   sessionStorage signal. Sits at the top of Today's Focus, above the
+   Week Father link card. Cream ground, gold hairline, Cormorant
+   typography — intended as a quiet seminary-registrar acknowledgment
+   that one week has been archived and another has opened. Not modal,
+   not auto-dismissing on a timer; dismisses on the Begin-Week button
+   or on the user's first task checkbox interaction in the new week. */
+.week-transition-banner {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #D4AF37;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+.week-transition-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.week-transition-archived {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #6b5d4a;
+  font-size: 0.85rem;
+}
+.week-transition-opening {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  color: #1a3a5c;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+.week-transition-banner[data-part="ii"] .week-transition-opening {
+  color: #6b1e2a;
+}
+.week-transition-begin {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a3a5c;
+  background: transparent;
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  font-variant: small-caps;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.week-transition-begin:hover {
+  background: #D4AF37;
+  color: #ffffff;
+}
+.week-transition-begin:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.week-transition-banner[data-part="ii"] .week-transition-begin {
+  color: #6b1e2a;
+}
+.week-transition-banner[data-part="ii"] .week-transition-begin:hover {
+  color: #ffffff;
+}
+@media (max-width: 600px) {
+  .week-transition-banner {
+    grid-template-columns: 1fr;
+  }
+  .week-transition-begin {
+    justify-self: start;
+  }
+}
+
+/* Phase Timeline — "Completed [date]" caption for archived phases.
+   Hidden by default; revealed only when the phase card carries the
+   existing .phase-completed state class. Pairs with the existing
+   gold ✓ mark and opacity 0.72 dimming to read as honorable archive
+   rather than greyed-out inactivity. */
+.phase-completed-caption {
+  display: none;
+  margin-top: 0.5rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #6b5d4a;
+  font-weight: 500;
+}
+.phase-card.phase-completed .phase-completed-caption {
+  display: block;
+}
+
 /* Study Tools section — tool-card grid for Father Cards / Lexicon / Bible Reader */
 .study-tools-section {
   background: #fffdf7;
@@ -2050,6 +2148,132 @@ function weekFatherHTML() {
   `;
 }
 
+// ==================================================================
+// WEEK TRANSITION BANNER — one-shot post-advance ceremonial moment.
+// ==================================================================
+// When the student confirms advance from Week N to Week N+1, the
+// advanceToNextWeek() method writes a sessionStorage signal describing
+// the transition. On the very next render, weekTransitionBannerHTML()
+// reads that signal (consuming it atomically so it shows exactly once),
+// emits an inline banner at the top of Today's Focus, and leaves the
+// rest of the dashboard untouched. The banner self-dismisses on the
+// Begin-Week button or on the first task-checkbox interaction.
+// No modal, no confetti, no streak — a quiet page-turn.
+
+function readWeekTransitionFlag() {
+  try {
+    const raw = sessionStorage.getItem('weekTransition');
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return null;
+    return parsed;
+  } catch (e) {
+    return null;
+  }
+}
+function consumeWeekTransitionFlag() {
+  try { sessionStorage.removeItem('weekTransition'); } catch (e) {}
+}
+
+// Resolve the Father(s) line for an arbitrary week via PHASE_DATA.
+// Mirrors the routing logic in getCurrentWeekFathers() but returns
+// the raw phase.fathers string rather than FATHER_PAGES-resolved
+// links — this is display copy, not navigation.
+function fatherNamesForWeek(w) {
+  try {
+    if (typeof getPhaseForWeek !== 'function') return '';
+    const ph = getPhaseForWeek(w);
+    if (!ph || !ph.fathers) return '';
+    return String(ph.fathers).trim();
+  } catch (e) { return ''; }
+}
+
+function weekTransitionBannerHTML() {
+  const flag = readWeekTransitionFlag();
+  if (!flag) return '';
+  // Consume on read — banner shows exactly once, regardless of whether
+  // the flag matches current state. A stale flag (user reverted week
+  // via some other path) is discarded silently without rendering.
+  consumeWeekTransitionFlag();
+
+  if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return '';
+  const newWeek = STUDY_STATE.currentWeek;
+  if (typeof newWeek !== 'number' || !isFinite(newWeek)) return '';
+
+  // Sanity gate: flag must describe the state we are actually rendering.
+  if (flag.courseComplete) {
+    if (newWeek !== 40) return '';
+  } else if (flag.newWeek !== newWeek) {
+    return '';
+  }
+
+  const esc = (s) => String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  const part = newWeek <= 28 ? 'i' : 'ii';
+
+  // Course-complete variant: terminal banner after advancing past Week 40.
+  if (flag.courseComplete) {
+    const week40Father = fatherNamesForWeek(40) || 'John of Damascus';
+    return `
+      <div class="week-transition-banner" data-variant="course-complete" data-part="${part}" id="week-transition-banner" role="status" aria-live="polite">
+        <div class="week-transition-body">
+          <span class="week-transition-archived">Week 40 with ${esc(week40Father)} — archived.</span>
+          <span class="week-transition-opening">You've completed the full patristic arc.</span>
+        </div>
+        <button type="button" class="week-transition-begin" id="week-transition-dismiss" aria-label="Close">
+          Close
+        </button>
+      </div>
+    `;
+  }
+
+  // Standard variant: Week N → Week N+1.
+  const completedFather = fatherNamesForWeek(flag.justCompletedWeek);
+  const newFather = fatherNamesForWeek(newWeek);
+  const archivedLine = completedFather
+    ? `Week ${flag.justCompletedWeek} with ${esc(completedFather)} — archived.`
+    : `Week ${flag.justCompletedWeek} — archived.`;
+  const openingLine = newFather
+    ? `Beginning Week ${newWeek}: ${esc(newFather)}`
+    : `Beginning Week ${newWeek}`;
+
+  return `
+    <div class="week-transition-banner" data-part="${part}" id="week-transition-banner" role="status" aria-live="polite">
+      <div class="week-transition-body">
+        <span class="week-transition-archived">${archivedLine}</span>
+        <span class="week-transition-opening">${openingLine}</span>
+      </div>
+      <button type="button" class="week-transition-begin" id="week-transition-dismiss" aria-label="Dismiss and begin Week ${newWeek}">
+        Begin Week ${newWeek}
+      </button>
+    </div>
+  `;
+}
+
+// Wire the banner's dismiss behavior. Called from StudyTaskManager.init()
+// AFTER renderAll() and attachEventListeners(), so the week-overview task
+// checkboxes exist in the DOM at this point. The banner dismisses on:
+//   - explicit Begin-Week / Close button click
+//   - first change event on any .task-checkbox (first real engagement
+//     with the new week's work)
+// The listeners are { once: true } so they self-detach on first fire.
+function wireWeekTransitionDismiss() {
+  const banner = document.getElementById('week-transition-banner');
+  if (!banner) return;
+  const remove = () => {
+    if (banner.parentNode) banner.parentNode.removeChild(banner);
+  };
+  const dismissBtn = document.getElementById('week-transition-dismiss');
+  if (dismissBtn) dismissBtn.addEventListener('click', remove, { once: true });
+  document.querySelectorAll('.task-checkbox').forEach(cb => {
+    cb.addEventListener('change', remove, { once: true });
+  });
+}
+
 function phaseFathersHTML(phase) {
   if (!phase || !phase.fathers) return '';
   const label = phase.number !== undefined
@@ -2075,8 +2299,13 @@ function renderTodaysFocus() {
   const phase = getPhaseForWeek(week);
   const todayIdx = computeTodayDayIdx();
 
+  // One-shot transition banner (empty string on normal loads). Rendered
+  // above the Week Father link card at the top of Today's Focus.
+  const transitionHTML = weekTransitionBannerHTML();
+
   if (todayIdx === 6) {
     container.innerHTML = `
+      ${transitionHTML}
       ${weekFatherHTML()}
       ${phaseFathersHTML(phase)}
       <div class="focus-grid">
@@ -2092,6 +2321,7 @@ function renderTodaysFocus() {
 
   if (todayIdx === 5) {
     container.innerHTML = `
+      ${transitionHTML}
       ${weekFatherHTML()}
       ${phaseFathersHTML(phase)}
       <div class="focus-grid">
@@ -2117,6 +2347,7 @@ function renderTodaysFocus() {
   }
 
   container.innerHTML = `
+    ${transitionHTML}
     ${weekFatherHTML()}
     ${phaseFathersHTML(phase)}
     <div class="focus-grid">
@@ -2290,6 +2521,27 @@ function renderPhaseTimeline() {
       ? `Week ${firstWeek}`
       : `Weeks ${firstWeek}\u2013${lastWeek}`;
 
+    // Archive caption: for completed phases, prefer the stored completion
+    // date of the phase's last week. Graceful fallback to "Completed"
+    // alone when no date was recorded (older archives predating the
+    // week-complete timestamp, or progress migrated from legacy storage).
+    let completedCaption = '';
+    if (lastWeek < currentWeek) {
+      let dateStr = '';
+      try {
+        const raw = localStorage.getItem(`week${lastWeek}CompleteDate`);
+        if (raw) {
+          const d = new Date(raw);
+          if (!isNaN(d.getTime())) {
+            dateStr = d.toLocaleDateString(undefined, {
+              year: 'numeric', month: 'short', day: 'numeric'
+            });
+          }
+        }
+      } catch (e) {}
+      completedCaption = dateStr ? `Completed ${dateStr}` : 'Completed';
+    }
+
     return `
       <div class="phase-card ${partClass} ${stateClass}">
         <div class="phase-header">
@@ -2308,6 +2560,7 @@ function renderPhaseTimeline() {
             <span class="phase-label">Biblical</span><span class="phase-value">${p.biblicalTrack || '\u2014'}</span>
           </div>
         </div>
+        <div class="phase-completed-caption">${completedCaption}</div>
       </div>
     `;
   }).join('');
@@ -2513,6 +2766,11 @@ class StudyTaskManager {
     this.loadProgress();
     this.attachEventListeners();
     this.updateAllDayStates();
+    // Wire transition-banner dismiss AFTER renderAll + attachEventListeners
+    // so the .task-checkbox nodes exist in the DOM. The banner (if any) was
+    // already rendered inside renderTodaysFocus(); this only attaches the
+    // dismiss handlers.
+    wireWeekTransitionDismiss();
     if (localStorage.getItem(STUDY_STATE.completeKey) === 'true') {
       this.showWeekCompleteCelebration();
     }
@@ -2752,12 +3010,41 @@ class StudyTaskManager {
 
   advanceToNextWeek() {
     const week = STUDY_STATE.currentWeek;
+
+    // Course-complete path: advancing past Week 40 is a different beat
+    // than a mid-course transition. Stay on the dashboard so the
+    // transition banner (course-complete variant) is the single
+    // ceremonial moment. The existing week-complete celebration in
+    // Week Overview still provides a "Return to Course Overview" exit
+    // if the student wants to leave; we do not force navigation here.
     if (week >= 40) {
-      // The 40 weeks are concluded. Return the student to the overview page
-      // where they can reflect on the completed formation rather than advancing.
-      window.location.href = 'index.html';
+      try {
+        sessionStorage.setItem('weekTransition', JSON.stringify({
+          justCompletedWeek: 40,
+          newWeek: 40,
+          courseComplete: true,
+          at: Date.now()
+        }));
+      } catch (e) {}
+      // Suppress the week-40 completion-celebration flag so the
+      // transition banner is the primary post-advance acknowledgment.
+      // The date stamp is preserved for the Phase Timeline archive
+      // caption.
+      try { localStorage.removeItem('week40Complete'); } catch (e) {}
+      location.reload();
       return;
     }
+
+    // Standard mid-course advance: record the transition, increment
+    // currentWeek, and reload so every renderer picks up the new week.
+    try {
+      sessionStorage.setItem('weekTransition', JSON.stringify({
+        justCompletedWeek: week,
+        newWeek: week + 1,
+        courseComplete: false,
+        at: Date.now()
+      }));
+    } catch (e) {}
     STUDY_STATE.currentWeek = week + 1;
     STUDY_STATE.ensureWeekStart(week + 1);
     location.reload();
