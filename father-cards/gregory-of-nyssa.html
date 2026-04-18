@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T03:14:01Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gregory of Nyssa — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Gregory of Nyssa — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Nyssa, younger brother of Basil, and the mystical theologian of the Cappadocian trio — architect of apophatic theology, perpetual ἐπέκτασις, and the spiritual ascent into the divine darkness.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Gregory of Nyssa (c. 335 – c. 394 AD) — Bishop of Nyssa, younger brother of Basil the Great, and the most speculatively daring of the Cappadocian Fathers. Author of the Life of Moses, the Homilies on the Song of Songs, On the Making of Man, and the Life of Macrina.">
+<meta name="keywords" content="Gregory of Nyssa, Cappadocian Fathers, Church Fathers, Life of Moses, On the Making of Man, Song of Songs, Epektasis, Gnophos, Theios Eros, Apeiria, Apophatic Theology, Mystical Theology, Macrina, Orthodox Mysticism">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 5 · Cappadocians · Week 17
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Gregory of Nyssa</h1>
+    <div class="hero-epithet">Γρηγόριος Νύσσης · Father of the Fathers</div>
+    <div class="hero-meta">c. 335 – c. 394 AD · Bishop of Nyssa, Mystical Theologian</div>
+    <p class="hero-description">
+      Younger brother of Basil the Great and spiritual student of his sister Macrina, Gregory of
+      Nyssa is the speculatively boldest of the three Cappadocians — the mystical theologian of
+      the trio, and the patristic architect of apophatic theology. His <em>Life of Moses</em> and
+      his <em>Homilies on the Song of Songs</em> read the spiritual life as perpetual
+      <em>ἐπέκτασις</em> — an unceasing stretching forward into the infinite God, a beatitude
+      that is not arrival but unending advance.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Gregory?</h2>
+      <p class="section-text">
+        Gregory was born around 335 AD, the third of ten children in the same extraordinary
+        Cappadocian household that produced Basil the Great. Unlike his older brother, he was not
+        sent abroad to Athens; his formal education was local, conducted largely through Basil
+        himself. Gregory's own way of putting it — that his brother was his master (διδάσκαλος) —
+        became almost a proverb. He was a married rhetor in early adulthood, perhaps for a time
+        inclined to leave the clerical life altogether. His sister Macrina, the eldest of the
+        siblings and a monastic founder in her own right, was by Gregory's own testimony his
+        theological guide. In <em>On the Soul and the Resurrection</em>, composed at her deathbed,
+        he casts her as the Socrates of a Platonic dialogue on the immortality of the soul. It
+        is no small thing that one of the major theologians of the fourth century presents his
+        sister as his teacher.
+      </p>
+      <p class="section-text">
+        In 371 or 372, against his own inclination, Basil pressed Gregory into the episcopate of
+        Nyssa — a small and uncongenial town in Cappadocia. Gregory struggled administratively
+        through his early years and was even deposed for a time under the Arian emperor Valens
+        (376–378), but after Valens's death at Adrianople he was restored. By the time of the
+        Council of Constantinople in 381 he had become one of the pillars of Nicene orthodoxy in
+        the East — so much so that the emperor Theodosius named him in an edict as one of the
+        touchstones of communion in the eastern empire. He was active at Constantinople and in
+        the preceding local councils, defending the Spirit's deity and refining the Cappadocian
+        Trinitarian grammar Basil had begun.
+      </p>
+      <p class="section-text">
+        His mature work is mystical rather than polemical. After 381 he composed the
+        <em>Homilies on the Song of Songs</em>, the <em>Life of Moses</em>, and the
+        <em>Life of Macrina</em>, alongside dogmatic treatises like <em>On Not Three Gods</em>
+        and the <em>Catechetical Oration</em>. These late writings are the clearest patristic
+        foundation of what Orthodox theology still calls the apophatic way: the knowledge of God
+        as the knowledge of one who exceeds every concept, the meeting with God in the divine
+        darkness at the summit of Sinai. He died around 394 AD. The Seventh Ecumenical Council
+        (Nicaea II, 787) honored him with the title <em>Πατὴρ Πατέρων</em> — "Father of the
+        Fathers" — for his theological depth. The Orthodox Church commemorates him on January 10.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">c. 335</div>
+          <div class="stat-label">Born in Cappadocia</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">381</div>
+          <div class="stat-label">Council of Constantinople</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 390</div>
+          <div class="stat-label">Life of Moses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Macrina</div>
+          <div class="stat-label">His Sister and Teacher</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Gregory wrote widely across dogmatic, exegetical, ascetical, and hagiographic registers.
+        Three works define his mature theological voice — and together furnish the vocabulary of
+        Orthodox mystical theology through Pseudo-Dionysius, Maximus, and the whole later
+        tradition.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Life of Moses</h3>
+          <div class="work-greek">Περὶ τοῦ Βίου Μωϋσέως</div>
+          <p class="work-description">
+            Gregory's mystical masterpiece, composed late in life (c. 390). Moses's ascent of
+            Sinai — from the burning bush, through the cloud, and finally into the
+            <em>γνόφος</em>, the thick darkness where God is met beyond all conceptual grasp — is
+            read as the pattern of the soul's ascent. The treatise ends not at a summit but at
+            the ongoing movement: the friend of God is one who forever reaches further. The
+            <em>Life of Moses</em> is the single most important patristic source text for the
+            apophatic tradition.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Homilies on the Song of Songs</h3>
+          <div class="work-greek">Εἰς τὸ Ἆσμα τῶν Ἀσμάτων</div>
+          <p class="work-description">
+            Fifteen homilies on the Song of Songs, read as the dialogue of Christ the Bridegroom
+            with the soul and with the Church. Gregory baptizes Plato's ἔρως here: the soul's
+            desire for God is <em>θεῖος ἔρως</em>, ardent and ever-deepening — not grasping
+            appetite but an answering love to the Beauty that has first loved us. These homilies
+            are a foundational document of Christian mystical theology East and West, and the
+            taproot of every later tradition of bridal mysticism.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">On the Making of Man</h3>
+          <div class="work-greek">Περὶ Κατασκευῆς Ἀνθρώπου</div>
+          <p class="work-description">
+            Written around 379 AD as a companion to Basil's <em>Hexaemeron</em>, completing what
+            Basil had left unsaid about the creation of humanity. Gregory develops a rich
+            theological anthropology: humanity made in God's image as the summit of creation, the
+            creation of humanity as including both male and female as mutual image-bearing, the
+            dignity of embodiment, and the shape of life in paradise before the Fall. The treatise
+            grounds later Orthodox anthropology and remains a reference point for any account of
+            the human person in the image of God.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four distinctively Gregorian Greek terms carry the weight of his spiritual theology.
+        Taken together they tell one story: because God is infinite, God cannot be comprehended;
+        at the summit of all our knowing is a luminous darkness; the only adequate response is
+        a love that never reaches its end.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-epektasis" class="greek-term greek-term-link">ἐπέκτασις</a>
+          <div class="transliteration">epektasis</div>
+          <div class="english-meaning">Perpetual Stretching-Forward</div>
+          <p class="pillar-explanation">
+            Gregory's signature concept, drawn from Paul's "stretching forward" in Philippians
+            3:13. Because God is infinite, the soul never exhausts God; because the soul is made
+            to receive God, it never stops reaching. Beatitude is not arrival but perpetual
+            advance — a dynamic eternity of always more. The concept re-enters patristic theology
+            in Maximus and shapes the whole Orthodox tradition of the spiritual life.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-apeiria" class="greek-term greek-term-link">ἀπειρία</a>
+          <div class="transliteration">apeiria</div>
+          <div class="english-meaning">Infinity · Unboundedness</div>
+          <p class="pillar-explanation">
+            The first patristic doctrine of divine infinity in its own right — not just vastness,
+            but genuine non-finiteness. God has no outer limit and no inner end. This is the
+            metaphysical ground on which Gregory's whole apophatic theology and his doctrine of
+            perpetual ἐπέκτασις rest: what has no limit cannot be circumscribed, comprehended,
+            or exhausted.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-gnophos" class="greek-term greek-term-link">γνόφος</a>
+          <div class="transliteration">gnophos</div>
+          <div class="english-meaning">Divine Darkness</div>
+          <p class="pillar-explanation">
+            The "thick darkness" into which Moses entered on Sinai (Exodus 20:21). In Gregory's
+            <em>Life of Moses</em>, <em>γνόφος</em> names the apophatic summit of the spiritual
+            ascent: past every affirmable attribute of God, the soul enters a luminous darkness
+            in which God is known precisely as incomprehensible. The figure anchors the whole
+            later apophatic tradition — Pseudo-Dionysius most directly, and, through him, the
+            mystical theology of East and West.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-theios-eros" class="greek-term greek-term-link">θεῖος ἔρως</a>
+          <div class="transliteration">theios erōs</div>
+          <div class="english-meaning">Divine Love · Holy Desire</div>
+          <p class="pillar-explanation">
+            Gregory's baptism of Plato's <em>ἔρως</em> for Christian mystical theology,
+            especially in the Song of Songs homilies. Divine <em>ἔρως</em> is not grasping
+            appetite but the soul's ardent drawing toward the infinite Beauty that has first
+            loved it. The term feeds directly into Pseudo-Dionysius's <em>Divine Names</em> and
+            the whole Orthodox tradition of the soul as bride.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "This truly is the vision of God: never to be satisfied in the desire to see him."
+      </p>
+      <div class="quote-source">— Life of Moses 2.239</div>
+    </div>
+
+    <!-- Why Gregory Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Gregory Matters Today</h2>
+      <p class="section-text">
+        Gregory is the patristic fountainhead of apophatic theology. Every Orthodox account of
+        the knowledge of God as the unknowing of God — from Pseudo-Dionysius through Maximus to
+        Gregory Palamas, and from Palamas into the modern theologians of the Russian and Greek
+        renewal — is drinking from the wells Gregory dug. When Orthodox theology insists that God
+        is known not by being comprehended but by being met, and that the summit of the knowledge
+        of God is a darkness, it is speaking Gregory of Nyssa.
+      </p>
+      <p class="section-text">
+        His transformation of Athanasius's <em>θέωσις</em> into <em>ἐπέκτασις</em> matters for
+        anyone asking what beatitude could possibly be. If heaven is the vision of an infinite
+        God, then heaven cannot be static contemplation of a completed object; it must be
+        dynamic, a perpetual further-in and further-up. Gregory's account lets the soul stay
+        alive in eternity — always receiving, always stretching, never finished and never bored.
+        This is arguably the most generative single idea in Orthodox spiritual theology.
+      </p>
+      <p class="section-text">
+        Finally, a word on Macrina. Gregory's <em>On the Soul and the Resurrection</em> casts his
+        older sister as the philosopher-teacher of the dialogue — and the dialogue is not a mere
+        literary device. Gregory is testifying that the theology of his household came through
+        Macrina. For an Orthodox tradition that has sometimes struggled to name the contribution
+        of women in its own past, Gregory of Nyssa's witness is a needed corrective: one of the
+        four greatest theologians of the fourth century tells us that he was catechized and
+        taught by his sister, and wrote one of his major works as a tribute to her wisdom at the
+        edge of her death.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="basil-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Basil the Great</div>
+          <div class="related-desc">Gregory's older brother, teacher, and the architect of the Cappadocian Trinitarian grammar.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-epektasis" class="related-link">
+          <span class="related-icon">Ε</span>
+          <div class="related-title greek">ἐπέκτασις</div>
+          <div class="related-desc">Gregory's signature concept — the soul's unceasing advance into the infinite God.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-5" class="related-link">
+          <span class="related-icon">Κ</span>
+          <div class="related-title">Phase 5 Lexicon</div>
+          <div class="related-desc">The Cappadocian vocabulary of Trinity, apophatic theology, and mystical ascent.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase week.
+// Gregory of Nyssa is Phase 5: Week 17.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk === 17) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
