@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T14:48:25Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gregory Palamas — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Gregory Palamas — Orthodox Companion Studies">
+<meta property="og:description" content="Athonite monk, Archbishop of Thessalonica, and the fourteenth-century theologian who articulated the essence-energies distinction that vindicated the hesychast tradition and shapes Orthodox theology of grace to this day. Commemorated on the Second Sunday of Great Lent.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Gregory Palamas (1296 – 1359 AD) — Constantinopolitan aristocrat turned Athonite hesychast, defender of the monks of Mount Athos against the theological critique of Barlaam the Calabrian, articulator of the essence-energies distinction that grounded the Orthodox theology of grace, and Archbishop of Thessalonica from 1347 to 1359. Vindicated at the Constantinople councils of 1341, 1347, and 1351. Commemorated on the Second Sunday of Great Lent and on November 14.">
+<meta name="keywords" content="Gregory Palamas, Gregorios Palamas, Hesychasm, Mount Athos, Barlaam Controversy, Essence and Energies, Uncreated Light, Tabor Light, Triads, Hagiorite Tome, Constantinople Councils 1341 1347 1351, Archbishop of Thessalonica, Second Sunday of Lent, Philokalia, Byzantine Theology">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Byzantine Era · Greek)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Greek pillars — Latin CSS variants retained but unused on this
+   card (Climacus is pure Greek monastic tradition).
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Byzantine Era · Mount Athos · Hesychast Defender
+    </div>
+    <h1 class="hero-title">Gregory Palamas</h1>
+    <div class="hero-epithet">Γρηγόριος ὁ Παλαμᾶς · Defender of the Hesychasts</div>
+    <div class="hero-meta">1296 – 1359 AD · Athonite Monk, Archbishop of Thessalonica</div>
+    <p class="hero-description">
+      Aristocratic Constantinopolitan who left imperial service at about twenty to
+      become an Athonite monk, spent two decades in hesychast prayer on the Holy
+      Mountain, and then — between 1336 and 1341 — led the defense of the Athonite
+      hesychasts against the theological critique of Barlaam the Calabrian. The
+      essence-energies distinction he articulated in the course of that defense
+      vindicated the hesychasts' claim to see the uncreated light in prayer, and his
+      formulation became the settled Orthodox theology of grace. Vindicated at the
+      Constantinople councils of 1341, 1347, and 1351, consecrated Archbishop of
+      Thessalonica in 1347, held captive by Ottoman Turks for roughly a year
+      (1354–1355), died in Thessalonica in 1359. The Orthodox Church commemorates him
+      on the Second Sunday of Great Lent — the sequel to the Sunday of Orthodoxy — as
+      the theologian through whom the hesychast patrimony was preserved.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Gregory?</h2>
+      <p class="section-text">
+        Gregory was born in Constantinople in 1296 to the aristocratic Palamas family —
+        his father Constantine was a senator and intimate of the Emperor Andronicus II
+        Palaeologus, who personally supervised the boy's education after Constantine's
+        early death. Gregory was formed in the full curriculum of late Byzantine
+        humanism: philosophy under Theodore Metochites, the Aristotelian logical
+        tradition, the classical rhetorical training a young nobleman required for
+        imperial service. At about twenty, with his formation complete and a brilliant
+        secular career ahead of him, Gregory announced his intention to become a monk.
+        He persuaded his mother, two brothers, and two sisters to embrace the monastic
+        life with him. In 1316 he departed for Mount Athos.
+      </p>
+      <p class="section-text">
+        For the next two decades Gregory lived the life of a contemplative Athonite
+        monk — first at the Vatopedi monastery under the spiritual direction of the
+        elder Nicodemus, then at the Great Lavra, then in the eremitic setting of
+        Glossia on the mountain's southern slopes. He practiced the hesychast
+        discipline of continuous prayer, watchfulness, the Jesus Prayer, and the
+        psalmody and vigil of the Athonite rhythm. He wrote little during these years;
+        he was living what he would later be called to defend. Around 1335 the
+        controversy that would define his life erupted. Barlaam the Calabrian — a
+        Greek Italian monk and scholar — began to attack the spiritual practices of
+        the Athonite hesychasts, arguing that their claim to see the uncreated light
+        of God was either metaphorical (and so their literal claims absurd) or else
+        heretical (and so their whole theological tradition suspect). The hesychasts
+        turned to Gregory. Between 1338 and 1341 he composed the three <em>Triads in
+        Defense of the Holy Hesychasts</em> and helped draft the <em>Hagiorite Tome</em>
+        (1340), the confessional statement of the Athonite elders that articulated
+        what the hesychast tradition held as its own.
+      </p>
+      <p class="section-text">
+        The controversy was adjudicated at three Constantinople councils — June 1341,
+        February 1347, and May 1351 — all of which vindicated Palamas and condemned
+        Barlaam and his subsequent allies (Gregory Akindynos, Nicephorus Gregoras).
+        The 1351 council in particular produced a <em>Synodal Tome</em> that
+        effectively canonized the essence-energies distinction as the Orthodox
+        theology of grace and the uncreated light. Gregory was consecrated Archbishop
+        of Thessalonica in May 1347, though civil unrest in the city delayed his
+        actual entry there until 1350. He spent the next nine years pastoring the
+        second city of the Byzantine Empire — a difficult charge, beset by factional
+        politics, Ottoman raids on the Macedonian countryside, and the preaching
+        demands of a metropolitan see. In 1354, on a voyage to Constantinople, his
+        ship was intercepted by Ottoman Turks and Gregory was held for roughly a year
+        before being ransomed. The captivity produced one of the more remarkable
+        Byzantine Christian-Muslim dialogical texts: Gregory's own report of his
+        conversations with Turkish hosts (including the son of the emir) on the
+        similarities and differences between Christianity and Islam. He returned to
+        Thessalonica in 1355, continued his pastoral labors for four more years, and
+        died on November 14, 1359, at about sixty-three. He was canonized within a
+        decade of his death, and his feast was extended across the Orthodox world on
+        the Second Sunday of Great Lent — a position of extraordinary liturgical
+        prominence, making every Orthodox Lent a renewal of the hesychast
+        inheritance.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">20</div>
+          <div class="stat-label">Years on Mount Athos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Councils of Vindication (1341, 1347, 1351)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Years as Archbishop of Thessalonica</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1359</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Gregory's corpus falls into two halves: the polemical-theological works
+        produced during the Barlaam controversy between 1336 and 1351, and the
+        pastoral homilies preached during his years as Archbishop of Thessalonica.
+        Three works anchor the contribution.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Triads in Defense of the Holy Hesychasts</h3>
+          <div class="work-greek">Ὑπὲρ τῶν Ἱερῶς Ἡσυχαζόντων</div>
+          <p class="work-description">
+            Nine treatises in three groups of three, composed between 1338 and 1341
+            as the principal theological response to Barlaam. The <em>Triads</em>
+            articulate the essence-energies distinction, defend the hesychasts' bodily
+            practices as integral to the prayer of the whole human person, and argue
+            that the uncreated light seen at the Transfiguration is the same light the
+            hesychast may see in prayer. The work is the foundational text of the
+            Palamite synthesis and one of the most important Byzantine theological
+            compositions of the second millennium. The modern standard edition is
+            Meyendorff's critical text (1959); the English reader accesses the
+            <em>Triads</em> principally through the Gendle translation (1983).
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Hagiorite Tome</h3>
+          <div class="work-greek">Ἁγιορείτικος Τόμος</div>
+          <p class="work-description">
+            The confessional statement of the Athonite monastic community produced in
+            1340, largely drafted by Palamas and signed by the abbots and elders of
+            the Holy Mountain as the collective response of the hesychast community
+            to Barlaam's attack. Shorter than the <em>Triads</em> and more accessible,
+            the <em>Tome</em> functions as the manifesto of the hesychast tradition
+            and as the public face of the position the councils of 1341 through 1351
+            would eventually vindicate. It is one of the key Palamite doctrinal
+            documents of the fourteenth century.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Homilies</h3>
+          <div class="work-greek">Ὁμιλίαι</div>
+          <p class="work-description">
+            About sixty-three surviving homilies preached by Gregory during his years
+            as Archbishop of Thessalonica on the Sunday Gospels, the major feasts,
+            and the lives of saints. The <em>Homilies</em> show Palamas as pastor
+            rather than polemicist: the essence-energies distinction is in the
+            background of the preaching but is not its subject. The subject is the
+            ordinary Christian life of the faithful — repentance, the virtues, the
+            sacraments, the preparation for death. Less read than the <em>Triads</em>
+            in the scholarly tradition, the <em>Homilies</em> are the bridge through
+            which Palamite theology becomes ordinary Orthodox pastoral formation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms name the architecture of Gregory's theological contribution.
+        The first two belong together — the essence-energies distinction is a single
+        theological move expressed in a pair of terms. The third names the goal the
+        distinction protects; the fourth names the monastic practice for which he
+        was called to fight.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term long">ἐνέργεια</span>
+          <div class="transliteration">energeia</div>
+          <div class="english-meaning">Divine Energy · God's Self-Communication</div>
+          <p class="pillar-explanation">
+            The uncreated operations or activities of God — his light, his grace, his
+            glory, his wisdom — as they go forth from his essence and are genuinely
+            participated in by the creature. The <em>energies</em> are not
+            intermediaries between God and the creature but God himself in his
+            self-communication: they are not created gifts but the uncreated divine
+            life made truly accessible. The light the disciples saw at the
+            Transfiguration, the light the hesychasts saw in prayer, the grace given
+            in the sacraments and in the Christian life — all are divine
+            <em>energies</em>. God is genuinely known and genuinely possessed through
+            them, while his essence remains forever beyond creaturely reach.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">οὐσία</span>
+          <div class="transliteration">ousia</div>
+          <div class="english-meaning">Divine Essence · Unknowable and Unparticipable</div>
+          <p class="pillar-explanation">
+            The divine nature itself, what God is in himself, utterly beyond
+            creaturely comprehension or participation. The essence-energies
+            distinction preserves the classical patristic conviction (Basil, Gregory
+            of Nyssa, Chrysostom, John of Damascus) that God's being in its depths
+            remains forever unknowable, while the conviction equally classical
+            (Athanasius, the Cappadocians, Maximus, Symeon) that the Christian
+            genuinely participates in God's own life is held in parallel. The essence
+            remains inaccessible; the energies are the real presence of God himself
+            in the creature. The two together articulate how the incomprehensible
+            God is nonetheless truly communicable.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">θέωσις</span>
+          <div class="transliteration">theōsis</div>
+          <div class="english-meaning">Deification · the Goal the Distinction Protects</div>
+          <p class="pillar-explanation">
+            The essence-energies distinction is not an abstract metaphysical claim
+            but a pastoral protection. If the Christian participates not in created
+            gifts but in the uncreated divine energies, then deification is real
+            participation in God rather than moral improvement alongside him. The
+            hesychast who sees the uncreated light is not having a private mystical
+            experience but is tasting in advance what the whole Christian is called
+            to. Palamas defends the distinction because he is defending
+            <em>theōsis</em> — the actual communicability of the divine life to the
+            creature — against any theology that would reduce grace to a created
+            effect of divine causality.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term long">ἡσυχασμός</span>
+          <div class="transliteration">hēsychasmos</div>
+          <div class="english-meaning">Hesychasm · the Prayer of Stillness</div>
+          <p class="pillar-explanation">
+            The Athonite monastic tradition of continuous interior prayer — the Jesus
+            Prayer repeated in the heart, the integration of breathing with prayer,
+            the attention of the mind drawn down into the heart, the watchfulness
+            against thoughts, and the experience of divine light that this prayer
+            sometimes yielded. Palamas did not invent hesychasm; it is the inheritance
+            of Climacus, Symeon, and the whole Philokalic tradition. What he did was
+            defend it — and by defending it theologically gave the practice its
+            permanent home in the mainstream Orthodox tradition rather than its
+            remaining merely a monastic specialism. Every Athonite monastery today,
+            every parish that teaches the Jesus Prayer, every Orthodox spiritual
+            father who directs a catechumen into the interior life, operates in the
+            grammar Palamas vindicated.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "The light which shone at the Transfiguration was not a created light but the
+        uncreated glory of God, which the apostles were enabled to see by the grace
+        of the Holy Spirit."
+      </p>
+      <div class="quote-source">— Triads 3.1.12</div>
+    </div>
+
+    <!-- Why Gregory Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Gregory Matters Today</h2>
+      <p class="section-text">
+        He is the theologian who gave the Orthodox tradition its doctrinal articulation
+        of grace. Where the Latin West would develop the scholastic categories of
+        created grace, habitus gratiae, the distinction of nature and supernatural,
+        the Orthodox East took its settled theology from Palamas: grace is the
+        uncreated divine energy, God himself in his self-communication to the
+        creature, really given and really received. The whole modern Orthodox theology
+        of sacraments, prayer, and the spiritual life presupposes this framework.
+        When a contemporary Orthodox theologian (Meyendorff, Lossky, Staniloae,
+        Zizioulas) discusses grace, or the Church, or deification, the Palamite
+        grammar is the working idiom.
+      </p>
+      <p class="section-text">
+        The placement of his feast on the Second Sunday of Great Lent, immediately
+        after the Sunday of Orthodoxy, is itself a liturgical statement of his
+        importance. The Sunday of Orthodoxy commemorates the final victory over
+        iconoclasm and the restoration of the icons in 843; the following week
+        commemorates Palamas. The Church has placed them together deliberately: the
+        restoration of the icons and the vindication of hesychasm are two moments of
+        the same theological conviction, that matter and the creaturely can genuinely
+        bear the uncreated. The icons are not decorative; they are windows into
+        divine presence. The hesychasts do not dream; they see what is really there.
+        Both convictions stand or fall together, and the Orthodox Lent begins every
+        year by renewing them.
+      </p>
+      <p class="section-text">
+        And his career itself — the Constantinopolitan aristocrat who left the imperial
+        court for the monastic life, the contemplative drawn unwillingly into polemic,
+        the bishop who accepted Ottoman captivity without bitterness, the pastor who
+        preached ordinary homilies to ordinary Thessalonians for nine years — offers a
+        witness the modern Orthodox tradition continues to need. Palamas is not
+        finally remembered as a polemicist, though the <em>Triads</em> are his most
+        studied work. He is remembered as a monk who became a bishop who never
+        stopped being a monk, and whose theological articulation grew out of the life
+        of prayer before it grew into the controversy that made it famous. Every
+        modern Orthodox Christian who receives the essence-energies distinction as
+        her own theological inheritance receives it from a man whose prior and deeper
+        inheritance was simply the Jesus Prayer practiced over twenty years on the
+        Holy Mountain. The theology was the fruit of the prayer, not the other way
+        around.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="symeon-the-new-theologian.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Symeon the New Theologian</div>
+          <div class="related-desc">Palamas's indispensable precursor. Symeon's teaching on the uncreated light three centuries earlier gave the hesychast tradition the patristic authority it would need when Barlaam attacked. Palamas cites Symeon continuously as witness to the experiential reception of divine light.</div>
+        </a>
+        <a href="maximus-the-confessor.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Maximus the Confessor</div>
+          <div class="related-desc">The seventh-century theologian whose metaphysical framework of divine and creaturely operations underlies the Palamite essence-energies distinction. Maximus articulates the theological architecture; Palamas carries it forward into the fourteenth-century controversy and its permanent Orthodox reception.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Π</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Palamas's vocabulary of the divine energies, the unknowable essence, deification, and hesychasm anchors the settled Orthodox theology of grace and the spiritual life.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
