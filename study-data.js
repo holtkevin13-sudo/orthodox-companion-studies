@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T05:11:49Z
+// build: 2026-04-18T05:18:31Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1477,7 +1477,8 @@ const FATHER_PAGES = {
   'Maximus the Confessor': 'father-cards/maximus-the-confessor.html',
   'John of Damascus': 'father-cards/john-of-damascus.html',
   // --- Extension: 18 out-of-syllabus Fathers (future tracks) ---
-  'Clement of Alexandria': 'father-cards/clement-of-alexandria.html'
+  'Clement of Alexandria': 'father-cards/clement-of-alexandria.html',
+  'Origen of Alexandria': 'father-cards/origen.html'
   // ...add as pages are built
 };
 
