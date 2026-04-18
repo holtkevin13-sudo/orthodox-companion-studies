@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T02:29:05Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tertullian — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tertullian — Orthodox Companion Studies">
+<meta property="og:description" content="Rhetor of Carthage and the first Latin Father — who coined trinitas, substantia, persona, and sacramentum, and whose Latin theological grammar runs through the Western tradition.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Tertullian (c. 155 – c. 240 AD) — North African rhetor, first major Christian writer in Latin, author of Against Praxeas and the Prescription of Heretics. Coined trinitas, substantia, persona; later separated from the Catholic Church into Montanism.">
+<meta name="keywords" content="Tertullian, Latin Fathers, Church Fathers, Trinitas, Substantia, Persona, Sacramentum, Regula Fidei, Against Praxeas, Apologeticum, Montanism, Carthage, Early Christianity">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English/Latin) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+/* Latin-Father variant: italic Cormorant for Latin epithets */
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+/* Latin-Father variant: Latin work title in italic Cormorant */
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+/* Latin-Father variant: Latin theological pillar term in italic Cormorant */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .latin-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+/* Latin-Father variant: Latin related-title in italic Cormorant */
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 2.5 · Latin Fathers · Weeks 7–8
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Tertullian</h1>
+    <div class="hero-epithet latin">Tertullianus Afer · Tertullian the African</div>
+    <div class="hero-meta">c. 155 – c. 240 AD · Rhetor of Carthage, First Latin Father</div>
+    <p class="hero-description">
+      The first major Christian writer to work in Latin, Tertullian coined the theological vocabulary
+      the Western Church has used ever since — <em>trinitas</em>, <em>substantia</em>,
+      <em>persona</em>, <em>sacramentum</em>, <em>regula fidei</em> — and pressed it into polemical,
+      apologetic, and sacramental work of astonishing range. His later drift into Montanism keeps
+      him outside the Church's calendar of saints, but his grammar runs through all subsequent
+      Latin theology.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Tertullian?</h2>
+      <p class="section-text">
+        Tertullian was born around 155 AD in Carthage, the great Latin-speaking city of Roman North
+        Africa. Our biographical sources are thin and partly contested — chiefly Jerome's later
+        notices and inferences from Tertullian's own works — but the picture is consistent: a highly
+        educated Roman African, deeply formed in classical rhetoric and the Latin legal tradition,
+        who converted to Christianity around 197 AD. His writings are saturated with the cadences
+        of Roman oratory and legal argument. Whether he was ever formally a presbyter, as Jerome
+        claims, is disputed; many modern readers take him to have been a layman of exceptional
+        theological authority.
+      </p>
+      <p class="section-text">
+        From roughly 197 until the 220s he poured out treatises: apologetic works addressed to pagan
+        governors, polemics against Marcion and Praxeas, legal-style arguments for the Church's prior
+        claim to Scripture, catechetical pieces on Baptism and prayer, anthropological and ascetical
+        works, and a theological Christology that already speaks of duae substantiae — two natures —
+        in Christ nearly 250 years before Chalcedon. Across more than thirty surviving treatises he
+        effectively invents Latin theological vocabulary: <em>trinitas</em>, <em>substantia</em>,
+        <em>persona</em>, <em>sacramentum</em>, <em>regula fidei</em>, <em>satisfactio</em>,
+        <em>praescriptio</em>. Whatever one thinks of his later path, the West's theological Latin
+        is Tertullian's Latin.
+      </p>
+      <p class="section-text">
+        Around 207 AD Tertullian moved toward the New Prophecy movement from Asia Minor — what
+        later writers called Montanism — with its claims of ongoing prophetic revelation and its
+        rigorist discipline. By his later works he was writing explicitly from within that movement
+        and against the Catholic Church's more lenient pastoral practice on questions of penance,
+        remarriage, and flight in persecution. The Church has never enrolled him among the saints;
+        no Orthodox synaxarion commemorates him. Yet even in antiquity Cyprian, his young admirer in
+        the next generation, is reported to have asked for "the Master" each day and read him as a
+        source — the pattern of critical reception that the Church has applied to Tertullian ever
+        since. His vocabulary is part of the Church's permanent theological inheritance; his
+        Montanist turn is not.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">30+</div>
+          <div class="stat-label">Extant Treatises</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 197</div>
+          <div class="stat-label">Apologeticum Written</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">Latin</div>
+          <div class="stat-label">First Theological Language</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">1st</div>
+          <div class="stat-label">Latin Father</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Tertullian's corpus is vast and varied — apologetic, polemical, pastoral, ascetical. Three
+        works stand at the heart of his theological legacy and structure the reading in this week:
+        a defense of Christianity to Rome's ruling class, the treatise that gave Latin its
+        Trinitarian grammar, and a legal argument that Scripture belongs to the Church.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Apologeticum</h3>
+          <div class="work-latin">Apologeticum · Apology</div>
+          <p class="work-description">
+            Written around 197 AD and addressed to the Roman provincial governors, the
+            <em>Apologeticum</em> is Tertullian's most influential apologetic work. In polished
+            forensic Latin he dismantles the standard legal and moral charges against Christians,
+            defends the Church's worship and common life, and turns the prosecution back on its
+            accusers. The treatise closes with the aphorism that would echo through the history of
+            Christian persecution: the blood of Christians is a seed.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Against Praxeas</h3>
+          <div class="work-latin">Adversus Praxean</div>
+          <p class="work-description">
+            Composed c. 213 AD against a Monarchian teacher who collapsed the Trinity into a single
+            divine person, <em>Adversus Praxean</em> is the foundational text of Latin Trinitarian
+            theology. Here Tertullian fixes the grammar that the West will use permanently:
+            <em>una substantia, tres personae</em> — "one substance, three persons." In Christ, he
+            argues, <em>duae substantiae</em> are conjoined in <em>una persona</em> — two natures
+            in one person — anticipating Chalcedon by more than two centuries.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Prescription of Heretics</h3>
+          <div class="work-latin">De Praescriptione Haereticorum</div>
+          <p class="work-description">
+            Written around 200 AD, this short treatise deploys a Roman legal term — <em>praescriptio</em>,
+            a prior claim that defeats an opponent's case before it can be argued — to insist that
+            Scripture belongs to the Church. Heretics, Tertullian argues, have no standing to appeal
+            to Scripture because the Apostolic tradition, publicly handed down through the succession
+            of bishops, precedes and circumscribes any heretical reading. Scripture is the Church's
+            book, not the sectarian's.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Tertullian is a coiner of words. Where earlier Christians took over existing terms from Greek
+        or Latin culture, he forges new vocabulary or wrenches familiar words into new theological
+        shapes. Four terms carry the weight of his inheritance.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-trinitas" class="latin-term latin-term-link">trinitas</a>
+          <div class="transliteration">Tertullian's coinage</div>
+          <div class="english-meaning">Trinity · Triune God</div>
+          <p class="pillar-explanation">
+            The first technical theological term for the Triune God in any language
+            (<em>Adversus Praxean</em> 2). Tertullian's formula <em>una substantia, tres personae</em>
+            precedes by more than a century the Greek <span class="greek">μία οὐσία, τρεῖς ὑποστάσεις</span>
+            of the Cappadocians and sets the Latin grammar of the Trinity permanently.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-persona" class="latin-term latin-term-link">persona</a>
+          <div class="transliteration">cf. <span class="greek">πρόσωπον · ὑπόστασις</span></div>
+          <div class="english-meaning">Person · Distinct Subsistent</div>
+          <p class="pillar-explanation">
+            Originally the actor's mask or legal standing in Roman life, Tertullian transforms
+            <em>persona</em> into the Latin term for the three distinct subsistents within the one
+            God. The word later becomes contested when Latins translate it into Greek, since
+            <span class="greek">πρόσωπον</span> still carried the residue of "mere mask" — a
+            reminder that theological vocabulary travels unevenly across languages.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-regula-fidei" class="latin-term latin-term-link">regula fidei</a>
+          <div class="transliteration">cf. <span class="greek">κανὼν τῆς ἀληθείας</span></div>
+          <div class="english-meaning">Rule of Faith</div>
+          <p class="pillar-explanation">
+            The fixed summary of core apostolic teaching, handed down publicly from the Apostles
+            through the bishops. Tertullian invokes the <em>regula fidei</em> throughout his
+            polemical works as the criterion against which heretical novelty is measured — the
+            Latin cognate of Irenaeus's Greek <span class="greek">κανὼν τῆς ἀληθείας</span>, and
+            the structural anchor of orthodox reading.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-sacramentum" class="latin-term latin-term-link">sacramentum</a>
+          <div class="transliteration">cf. <span class="greek">μυστήριον</span></div>
+          <div class="english-meaning">Sacrament · Sacred Oath</div>
+          <p class="pillar-explanation">
+            Originally the Roman soldier's oath of allegiance to his emperor. Tertullian applies
+            <em>sacramentum</em> to Baptism above all: the Christian enlists under Christ the King
+            and binds himself to his campaign. The martial resonance stays in the Latin word and
+            shapes Western sacramental theology for a thousand years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <div class="quote-latin">Semen est sanguis Christianorum.</div>
+      <p class="quote-text">
+        "The blood of Christians is a seed."
+      </p>
+      <div class="quote-source">— Apologeticum 50.13</div>
+    </div>
+
+    <!-- Why Tertullian Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Tertullian Matters Today</h2>
+      <p class="section-text">
+        Tertullian hands the Latin Church its theological grammar. <em>Trinitas</em>,
+        <em>substantia</em>, <em>persona</em>, <em>natura</em>, <em>sacramentum</em>,
+        <em>regula fidei</em>, <em>satisfactio</em> — these are not decorative Latinisms but the
+        load-bearing terms of Western theology, and every one of them is either his coinage or his
+        decisive reshaping. When Augustine writes on the Trinity, when Anselm writes on atonement,
+        when the scholastics work out sacramental theology, the vocabulary is still Tertullian's.
+        Orthodox theologians engaging the Latin tradition necessarily pass through him.
+      </p>
+      <p class="section-text">
+        His Trinitarian grammar in <em>Adversus Praxean</em> — one substance in three persons, and
+        in Christ two substances conjoined in one person — anticipates by a long margin the
+        formulas that the ecumenical councils will canonize. He is not, of course, Nicene or
+        Chalcedonian in the technical sense; the councils will refine and sometimes correct the
+        Latin vocabulary as it crosses into Greek. But the West receives from Tertullian the
+        grammatical structure into which Nicene and Chalcedonian confession will later be fitted.
+      </p>
+      <p class="section-text">
+        His Montanist turn is a genuine complication and the Church has not pretended otherwise.
+        Montanism's rigorism, its claim of ongoing prophecy, and its eventual sectarian posture set
+        Tertullian at odds with the Catholic Church's pastoral practice, and his later works argue
+        that case sharply. The Church's response has been a mature one: to receive his vocabulary
+        and his orthodox theology, to read him as a source and not as a saint, and to let the
+        Montanist material stand as a warning rather than a warrant. The principle at work is
+        Augustine's later one — that the truth is not diminished by the flaws of the one who
+        speaks it — and it is a principle the Orthodox tradition shares.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="justin-martyr.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Justin Martyr</div>
+          <div class="related-desc">The Greek apologist whose apologetic genre Tertullian takes up and recasts in Latin.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-trinitas" class="related-link">
+          <span class="related-icon">T</span>
+          <div class="related-title latin">trinitas</div>
+          <div class="related-desc">Tertullian's foundational coinage — the Latin grammar of the Trinity.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-2.5" class="related-link">
+          <span class="related-icon">L</span>
+          <div class="related-title">Phase 2.5 Lexicon</div>
+          <div class="related-desc">The Latin vocabulary of Tertullian and Cyprian — Trinitarian, sacramental, ecclesial.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Tertullian is Phase 2.5: Week 7 (Cyprian takes Week 8).
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk === 7) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
