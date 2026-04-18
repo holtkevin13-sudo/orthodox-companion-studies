@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T01:00:00Z -->
+<!-- build: 2026-04-18T01:30:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -188,9 +188,10 @@ em, i { font-style: italic; }
 }
 
 .term-transliteration {
-  font-size: 0.92rem;
-  color: #6b5d4a;
-  margin-bottom: 0.5rem;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.05rem;
+  color: #4a3f32;
+  margin-bottom: 0.55rem;
   font-style: italic;
   letter-spacing: 0.01em;
 }
@@ -407,9 +408,11 @@ em, i { font-style: italic; }
   margin-bottom: 0.25rem;
 }
 .term-card .term-english {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
   color: #2a2620;
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
 /* Copy-link button — subtle icon in the top-right of each card. Copies the
@@ -500,9 +503,10 @@ em, i { font-style: italic; }
 }
 
 .term-definition {
-  font-size: 0.96rem;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
   color: #2a2620;
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 0.4rem;
 }
 
@@ -524,18 +528,19 @@ em, i { font-style: italic; }
 .term-meta-label {
   font-variant: small-caps;
   letter-spacing: 0.12em;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #8a6d1f;
   display: block;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.2rem;
 }
 .term-card.is-latin .term-meta-label { color: #6b1e2a; }
 
 .term-meta-content {
-  font-size: 0.9rem;
-  color: #4a3f32;
-  line-height: 1.5;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 0.95rem;
+  color: #2a2620;
+  line-height: 1.55;
 }
 
 /* Father names become links where a Father card exists. Graceful — unlinked
@@ -862,10 +867,11 @@ em, i { font-style: italic; }
 /* Legacy selectors retained; primary styling now flows through .term-meta-row */
 .term-etymology,
 .term-fathers {
-  font-size: 0.88rem;
-  color: #4a3f32;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 0.95rem;
+  color: #2a2620;
   margin-top: 0.5rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* Pastoral note / Orthodox Reception — optional editorial block on select entries.
@@ -889,8 +895,9 @@ em, i { font-style: italic; }
   margin-bottom: 0.3rem;
 }
 .term-pastoral-text {
-  font-size: 0.92rem;
-  line-height: 1.55;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 0.98rem;
+  line-height: 1.6;
   color: #2a2620;
   font-style: italic;
   margin: 0;
@@ -997,13 +1004,16 @@ em, i { font-style: italic; }
 }
 
 /* Mobile: unstick the controls bar entirely — a 3-row alphabet grid plus
-   search + filter would eat half the screen. Users tap return-to-top instead. */
+   search + filter would eat half the screen. Users tap return-to-top instead.
+   Also bumps the copy-link tap target from 32px → 40px so it hits Apple's
+   effective-44px recommendation with padding, and slightly raises body text. */
 @media (max-width: 768px) {
   .controls {
     position: static;
   }
   .term-card {
     scroll-margin-top: 1.5rem;
+    padding: 1.4rem 1.25rem 1.2rem;
   }
   .term-card:target {
     scroll-margin-top: 1.5rem;
@@ -1013,6 +1023,24 @@ em, i { font-style: italic; }
   }
   .scroll-progress {
     height: 2px;
+  }
+  .term-copy-link {
+    width: 40px;
+    height: 40px;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.05rem;
+  }
+  .term-definition,
+  .term-meta-content,
+  .term-pastoral-text {
+    font-size: 1rem;
+  }
+  .term-card .term-greek {
+    font-size: 1.65rem;
+  }
+  .term-transliteration {
+    font-size: 1.1rem;
   }
 }
 
