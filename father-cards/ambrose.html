@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T13:12:16Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ambrose of Milan — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Ambrose of Milan — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Milan, catechist of Augustine, and the pastoral theologian whose hymns, mystagogical catecheses, and civic courage shaped the Latin Church at its fourth-century turning point.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Ambrose of Milan (c. 339 – 397 AD) — Roman provincial governor acclaimed bishop by popular demand, pastor and preacher of Milan through the reign of four emperors, author of De Mysteriis and De Sacramentis, composer of Latin hymnody, and the bishop who excommunicated the Emperor Theodosius after the Thessalonica massacre. Doctor of the Church and one of the four great Latin Fathers.">
+<meta name="keywords" content="Ambrose of Milan, Ambrosius Mediolanensis, Church Fathers, Latin Fathers, De Mysteriis, De Sacramentis, De Officiis, Ambrosian Hymns, Pastoral Theology, Mystagogy, Theodosius, Thessalonica Massacre, Doctor of the Church, Four Great Latin Fathers">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Latin Fathers · Nicene Era)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Latin CSS variants for Latin Father cards — italic Cormorant
+   Garamond replaces Gentium Plus for Latin terms; navy color retained.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Latin Fathers · Nicene Era
+    </div>
+    <h1 class="hero-title">Ambrose of Milan</h1>
+    <div class="hero-epithet latin">Ambrosius Mediolanensis · Bishop and Catechist</div>
+    <div class="hero-meta">c. 339 – 397 AD · Bishop of Milan, Pastor of Augustine</div>
+    <p class="hero-description">
+      Roman provincial governor acclaimed bishop by the voice of the Milanese crowd,
+      preacher and catechist through the reign of four emperors, composer of the Latin
+      Church's first sustained hymnody, and the bishop who stood his ground against the
+      Emperor Theodosius when imperial power overstepped. It was from Ambrose's preaching
+      that the young rhetorician Augustine first heard the Scriptures read with
+      intelligence; it was at Ambrose's hand that Augustine received baptism at the
+      Paschal Vigil of 387. The Orthodox Church commemorates him on December 7. The
+      Western tradition numbers him among the four great Latin Fathers of the Church.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Ambrose?</h2>
+      <p class="section-text">
+        Aurelius Ambrosius was born around 339 AD at Trier, then the seat of the praetorian
+        prefecture of Gaul, into one of the most distinguished Christian senatorial families
+        of the western empire. His father was praetorian prefect of Gaul; after his father's
+        early death the family returned to Rome, where Ambrose and his siblings — including
+        his revered elder sister Marcellina, a consecrated virgin whose memory would shape
+        his later treatises on virginity — received the finest classical education Rome
+        could offer. Ambrose trained as a lawyer and rose through the cursus honorum of
+        imperial service. By about 370 he had become governor (<em>consularis</em>) of the
+        Italian province of Liguria and Aemilia, headquartered at Milan, which under
+        Valentinian I had become the western imperial capital.
+      </p>
+      <p class="section-text">
+        In 374 the Bishop of Milan, the Arian Auxentius, died. Milan's Christian community
+        was deeply divided between Arians and Nicenes, and a riot threatened at the
+        episcopal election. Ambrose, as governor, went to the basilica to restore order —
+        and the crowd, according to the ancient accounts, spontaneously acclaimed him
+        bishop. He was at that moment not even baptized; he was a catechumen, learned in
+        law and rhetoric but not in theology. He tried to flee, and when flight proved
+        impossible he consented. He was baptized, ordained through the minor orders, made
+        priest, and consecrated bishop in the space of eight days — December 7, 374. What
+        he did next is the more remarkable story. Ambrose set himself to learn the
+        Scriptures and the Greek Fathers with the disciplined intensity of the Roman
+        jurist he had been, reading Basil, the two Gregories, Origen, Philo of Alexandria;
+        within a few years he was one of the most capable theological preachers in the
+        Latin West.
+      </p>
+      <p class="section-text">
+        His episcopate of twenty-three years coincided with extraordinary events in Church
+        and empire. He presided at the Council of Aquileia in 381, which completed the
+        Western reception of Nicaea. He stood down the Arian Empress Justina in 386 when
+        she tried to seize the Portian Basilica for Arian worship, famously holding the
+        church with his congregation through the night with his newly composed hymns on
+        their lips. He confronted the Emperor Theodosius in 390 after the massacre at
+        Thessalonica — perhaps seven thousand civilians killed in reprisal for a riot — and
+        required the emperor's public penance before readmitting him to Eucharistic
+        communion. The moment set a precedent of pastoral authority over imperial conscience
+        that would shape Church-state relations for a thousand years. Through all of this
+        he kept preaching, catechizing, composing hymns, and writing the great treatises
+        that would form Augustine, Paulinus of Nola, and the generations of Latin clergy
+        who studied them in every subsequent century. He died on Holy Saturday, April 4,
+        397, having received communion from his successor Honoratus and having blessed the
+        Church he had served for twenty-three years.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">374</div>
+          <div class="stat-label">Acclaimed Bishop of Milan</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">8</div>
+          <div class="stat-label">Days from Baptism to Episcopate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">387</div>
+          <div class="stat-label">Baptized Augustine at Easter</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">397</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Ambrose wrote extensively in three registers: mystagogical catechesis, pastoral
+        and ascetic instruction, and hymnody. Three works define his pastoral legacy.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">On the Mysteries</h3>
+          <div class="work-latin">De Mysteriis</div>
+          <p class="work-description">
+            Ambrose's post-baptismal catechesis for the <em>neophyti</em> of Milan — the
+            newly baptized of Easter Week. Six short lectures unfold the meaning of the
+            rites they have just received: the renunciation of Satan, the water of Baptism,
+            the anointing with chrism, the white garment, and the Eucharist. The companion
+            work <em>De Sacramentis</em> preserves the spontaneous stenographic record of
+            the same catechesis delivered on different occasions. Together the two give the
+            earliest complete Latin witness to fourth-century Christian initiation.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">On the Duties of Ministers</h3>
+          <div class="work-latin">De Officiis Ministrorum</div>
+          <p class="work-description">
+            Three books of moral and pastoral instruction for Ambrose's clergy, modeled
+            deliberately on Cicero's <em>De Officiis</em> and repurposing its Stoic
+            ethical categories for Christian pastoral formation. The work is the first
+            sustained Christian treatise on pastoral office and vocation; its influence on
+            the medieval Latin clergy — and through them on the shape of Western pastoral
+            theology — is difficult to overstate.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Ambrosian Hymns</h3>
+          <div class="work-latin">Hymni Ambrosiani</div>
+          <p class="work-description">
+            A small cluster of metrical Latin hymns whose survival is incontestable —
+            <em>Aeterne rerum conditor</em>, <em>Deus creator omnium</em>, <em>Iam surgit
+            hora tertia</em>, <em>Veni redemptor gentium</em> — composed for congregational
+            singing during the 386 basilica siege and preserved in the Western liturgical
+            tradition ever since. Augustine's tears at hearing them sung in Milan became one
+            of the memorable passages of his <em>Confessions</em>. With these hymns Ambrose
+            essentially inaugurates Latin liturgical song.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Latin terms carry Ambrose's distinctive contribution to the Church's pastoral
+        theology. The first names the sacramental realism at the heart of his mystagogy;
+        the second his work as composer and founder of Latin liturgical song; the third
+        his conception of the bishop's office; the fourth his great pastoral confrontation
+        with imperial power.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="latin-term">mysterium</span>
+          <div class="transliteration">mys-TE-ri-um</div>
+          <div class="english-meaning">Mystery · the Sacraments</div>
+          <p class="pillar-explanation">
+            Ambrose's preferred term for what Baptism, Chrism, and Eucharist are: not
+            symbols or memorials but real participations in the saving acts of Christ. His
+            Eucharistic realism — that the bread and wine, after the consecrating words,
+            are truly the Body and Blood of Christ — is articulated with the same clarity
+            as Cyril of Jerusalem's in the East. Western sacramental theology inherits the
+            vocabulary of <em>mysterium</em> directly from Ambrose's catechetical preaching.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">hymnus</span>
+          <div class="transliteration">HYM-nus</div>
+          <div class="english-meaning">Hymn · Congregational Song</div>
+          <p class="pillar-explanation">
+            Under the pressure of the 386 basilica siege, Ambrose composed metrical Latin
+            hymns in stanzas short enough for an ordinary congregation to learn and sing.
+            The form — iambic dimeter, four-line stanzas, accessible theology in memorable
+            verse — became the pattern of Western liturgical hymnody for fifteen hundred
+            years. The Office hymns of the Roman and monastic breviaries trace their
+            lineage to the handful of hymns Ambrose taught the Milanese to sing in the
+            embattled church.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">pastor</span>
+          <div class="transliteration">PAS-tor</div>
+          <div class="english-meaning">Pastor · Shepherd of Souls</div>
+          <p class="pillar-explanation">
+            The bishop, for Ambrose, is first and finally a pastor — a shepherd whose
+            office is the care of souls, whose every other activity flows from that center.
+            His <em>De Officiis Ministrorum</em> works out what pastoral office concretely
+            requires: formation in virtue, steadfastness in doctrine, generosity with the
+            poor, moral courage before the powerful. The treatise trains the Western clergy
+            in a vision of pastoral life that both Gregory the Great and the medieval
+            tradition inherit whole.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">auctoritas</span>
+          <div class="transliteration">auc-TO-ri-tas</div>
+          <div class="english-meaning">Authority · Pastoral Courage</div>
+          <p class="pillar-explanation">
+            The <em>auctoritas</em> of the bishop is for Ambrose derivative and serious —
+            not a personal prerogative but a charge held on behalf of Christ and his people.
+            When Theodosius stood outside the basilica after the Thessalonica massacre,
+            Ambrose's refusal to admit him to communion until he had publicly repented was
+            the exercise of that authority at full extension. The scene has resonated
+            across Christian history: the bishop, not the emperor, names what sin is and
+            what repentance requires.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-latin">
+        "Ubi Petrus, ibi Ecclesia; ubi Ecclesia, ibi nulla mors, sed vita aeterna."
+      </p>
+      <p class="quote-text">
+        "Where Peter is, there is the Church; where the Church is, there is no death, but
+        life eternal."
+      </p>
+      <div class="quote-source">— Explanation of Psalm 40</div>
+    </div>
+
+    <!-- Why Ambrose Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Ambrose Matters Today</h2>
+      <p class="section-text">
+        He is, first and practically, the father of Western Christian hymnody. Every
+        Christian — Orthodox, Catholic, or Protestant — who sings a four-line stanza in a
+        congregation is doing something Ambrose essentially invented. The Orthodox liturgical
+        tradition has its own rich hymnographical lineage running through Romanos, Andrew
+        of Crete, and John of Damascus; the Ambrosian strand is a parallel Western witness
+        to the same patristic conviction that theology sung together shapes a people more
+        deeply than theology merely heard. The Milanese Christians who held the basilica
+        with Ambrose's hymns on their lips were being formed by what they sang.
+      </p>
+      <p class="section-text">
+        He is also the pastor of Augustine, and through Augustine of the whole Western
+        theological tradition. It was Ambrose's allegorical preaching on the Old Testament
+        — learned from Origen and the Cappadocians — that opened Scripture to the young
+        Manichaean rhetorician from North Africa and eventually led him to Christian faith.
+        Without Ambrose there is no <em>Confessions</em>, no <em>City of God</em>, no
+        Western Augustinian theological tradition. The Orthodox reception of Augustine,
+        which has rightly grown more careful and more nuanced in recent decades, still has
+        to reckon with Ambrose as the figure whose pastoral formation made Augustine
+        possible.
+      </p>
+      <p class="section-text">
+        And he is the patristic standard for the bishop who stands firm against imperial
+        overreach. In every century since, when a Christian pastor has had to say to
+        political power <em>this far and no further</em>, the scene at the basilica door
+        in Milan has been somewhere in the back of his mind. The confrontation was not
+        about politics in any modern sense; it was about whether the Church's pastoral
+        discipline is serious enough to apply even to emperors, whether communion really is
+        communion in Christ and not a civic accessory. Ambrose's answer — that Theodosius,
+        for all his imperial power, would approach the Holy Mysteries only on his knees
+        as a penitent — set the standard for what Christian pastoral authority actually
+        means.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="hilary-of-poitiers.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Hilary of Poitiers</div>
+          <div class="related-desc">Ambrose's Latin Trinitarian predecessor. Where Hilary forged the Latin vocabulary of Nicene orthodoxy, Ambrose inherits it and carries it into sacramental catechesis, pastoral instruction, and the hymns of the Milanese congregation.</div>
+        </a>
+        <a href="cyril-of-jerusalem.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Cyril of Jerusalem</div>
+          <div class="related-desc">The Greek counterpart in mystagogical catechesis. Cyril's post-baptismal <em>Mystagogical Catecheses</em> at Jerusalem and Ambrose's <em>De Mysteriis</em> at Milan together form the fullest patristic witness to fourth-century Christian initiation.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">A</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Ambrose's vocabulary of mystery, pastoral office, and hymnody connects to the Greek μυστήρια, ποιμήν, and ὕμνος traditions that anchor future tracks in liturgics and pastoral theology.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
