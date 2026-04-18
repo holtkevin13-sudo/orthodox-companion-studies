@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T20:06:35Z -->
+<!-- build: 2026-04-18T20:29:08Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -260,6 +260,76 @@ em, i { font-style: italic; }
 
 .patristic-link:hover {
   border-bottom-color: #1a3a5c;
+}
+
+/* This Week's Father link — week-scoped anchor at top of Today's Focus.
+   Populated by renderTodaysFocus() via weekFatherHTML(). Renders a
+   card-like element pointing to the Father card for the active week.
+   Palette follows phase: navy for Part I (weeks 1–28), porphyry for
+   Part II (weeks 29–40). Gold is reserved for focus highlighting. */
+.week-father-link {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.5;
+}
+.week-father-link[data-part="ii"] {
+  border-left-color: #6b1e2a;
+}
+.week-father-link-caption {
+  display: block;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #6b5d4a;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+.week-father-link-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  color: #1a3a5c;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+.week-father-link[data-part="ii"] .week-father-link-label {
+  color: #6b1e2a;
+}
+.week-father-link-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  color: #1a3a5c;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.week-father-link[data-part="ii"] .week-father-link-name {
+  color: #6b1e2a;
+}
+.week-father-link-name:hover {
+  border-bottom-color: #1a3a5c;
+}
+.week-father-link[data-part="ii"] .week-father-link-name:hover {
+  border-bottom-color: #6b1e2a;
+}
+.week-father-link-name:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.week-father-link-sep {
+  color: #8a7d66;
+  margin: 0 0.35rem;
+  font-weight: 400;
+}
+.week-father-link-arrow {
+  color: inherit;
+  margin-left: 0.25rem;
+  font-weight: 500;
 }
 
 /* Phase Fathers line — shown at top of Today's Focus, weekly-level context */
@@ -922,6 +992,19 @@ em, i { font-style: italic; }
   
   .big-picture-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .week-father-link {
+    padding: 0.85rem 1rem;
+  }
+  .week-father-link-caption {
+    font-size: 0.8rem;
+  }
+  .week-father-link-label {
+    font-size: 0.95rem;
+  }
+  .week-father-link-name {
+    font-size: 1.02rem;
   }
 }
 
@@ -1891,6 +1974,81 @@ function phaseGreekHTML(phase) {
   `;
 }
 
+// Resolve the Father(s) for the current study week via PHASE_DATA,
+// returning an array of { name, url } pairs. Uses the existing
+// FATHER_PAGES global for URL lookup — does not duplicate routing logic.
+// Returns [] on any failure (uninitialized STUDY_STATE, missing phase,
+// missing FATHER_PAGES entry, unknown Father name). Empty array signals
+// the caller to hide the element rather than render a broken state.
+function getCurrentWeekFathers() {
+  try {
+    if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return [];
+    const week = STUDY_STATE.currentWeek;
+    if (typeof week !== 'number' || !isFinite(week)) return [];
+    if (typeof getPhaseForWeek !== 'function') return [];
+    const phase = getPhaseForWeek(week);
+    if (!phase || !phase.fathers) return [];
+    if (typeof FATHER_PAGES === 'undefined' || !FATHER_PAGES) return [];
+
+    // phase.fathers is a human-readable string — split on commas or
+    // semicolons, trim, drop empties. Ampersand "Basil & Gregory" is
+    // also tolerated as a separator.
+    const names = String(phase.fathers)
+      .split(/\s*[,;]\s*|\s+&\s+/)
+      .map(s => s.trim())
+      .filter(Boolean);
+
+    const out = [];
+    names.forEach(name => {
+      const url = FATHER_PAGES[name];
+      if (url) out.push({ name: name, url: url });
+    });
+    return out;
+  } catch (e) {
+    return [];
+  }
+}
+
+// Render the "This Week's Father(s)" link card at the top of Today's
+// Focus. Hidden (empty string) when no resolvable Fathers exist for the
+// current week. Palette driven by Part I (weeks 1–28, navy) vs Part II
+// (weeks 29–40, porphyry) via a data-part attribute on the card.
+function weekFatherHTML() {
+  const fathers = getCurrentWeekFathers();
+  if (!fathers.length) return '';
+  if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return '';
+  const week = STUDY_STATE.currentWeek;
+  if (typeof week !== 'number' || !isFinite(week)) return '';
+
+  const part = week <= 28 ? 'i' : 'ii';
+  const isMulti = fathers.length > 1;
+  const label = isMulti ? "This Week's Fathers:" : "This Week's Father:";
+
+  // Escape minimal HTML-unsafe characters in Father names — they are
+  // drawn from a curated data file but we keep the guard anyway.
+  const esc = (s) => String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  const sep = ' <span class="week-father-link-sep">\u00b7</span> ';
+  const linkHTML = fathers.map(f =>
+    `<a class="week-father-link-name" href="${esc(f.url)}">${esc(f.name)}</a>`
+  ).join(sep);
+
+  // Single-Father: arrow follows the name directly. Multi-Father: one
+  // arrow after the full list.
+  const arrow = ' <span class="week-father-link-arrow" aria-hidden="true">\u2192</span>';
+
+  return `
+    <div class="week-father-link" data-part="${part}">
+      <span class="week-father-link-caption">Week ${week}</span>
+      <span class="week-father-link-label">${label}</span>${linkHTML}${arrow}
+    </div>
+  `;
+}
+
 function phaseFathersHTML(phase) {
   if (!phase || !phase.fathers) return '';
   const label = phase.number !== undefined
@@ -1918,6 +2076,7 @@ function renderTodaysFocus() {
 
   if (todayIdx === 6) {
     container.innerHTML = `
+      ${weekFatherHTML()}
       ${phaseFathersHTML(phase)}
       <div class="focus-grid">
         <div class="focus-section">
@@ -1932,6 +2091,7 @@ function renderTodaysFocus() {
 
   if (todayIdx === 5) {
     container.innerHTML = `
+      ${weekFatherHTML()}
       ${phaseFathersHTML(phase)}
       <div class="focus-grid">
         <div class="focus-section">
@@ -1956,6 +2116,7 @@ function renderTodaysFocus() {
   }
 
   container.innerHTML = `
+    ${weekFatherHTML()}
     ${phaseFathersHTML(phase)}
     <div class="focus-grid">
       <div class="focus-section">
