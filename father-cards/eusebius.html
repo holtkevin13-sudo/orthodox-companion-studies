@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T05:25:35Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eusebius of Caesarea — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Eusebius of Caesarea — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Caesarea, father of Church history, foundational Christian apologist — and a figure of genuinely complex reception due to his theological moderation during the Arian controversy.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Eusebius of Caesarea (c. 260 – c. 339 AD) — student of Pamphilus, Bishop of Caesarea, and the historian whose Ecclesiastical History founded the whole tradition of Christian historiography. Author of the Chronicle, Praeparatio Evangelica, Demonstratio Evangelica, Life of Constantine, and many other scholarly works. Signed the Nicene Creed with hesitation; his theological moderation during the Arian controversy gives his reception a partial and nuanced character.">
+<meta name="keywords" content="Eusebius of Caesarea, Church Fathers, Ecclesiastical History, Church History, Chronicle, Praeparatio Evangelica, Demonstratio Evangelica, Life of Constantine, Apostolic Succession, Pamphilus, Origen Library, Council of Nicaea, Arian Controversy">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Nicene-era)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Pastoral-care reception handling: honest acknowledgment of
+   Eusebius's theological moderation during the Arian controversy
+   + received foundational contribution to Christian historiography.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Nicene Era · Bishop and Historian
+    </div>
+    <h1 class="hero-title">Eusebius of Caesarea</h1>
+    <div class="hero-epithet">Εὐσέβιος ὁ Καισαρεύς · Father of Church History</div>
+    <div class="hero-meta">c. 260 – c. 339 AD · Bishop of Caesarea, Historian and Apologist</div>
+    <p class="hero-description">
+      Student of the martyr-scholar Pamphilus, heir to Origen's great Caesarean library,
+      Bishop of Caesarea Palestinae through the whole Arian crisis, and the historian whose
+      <em>Ecclesiastical History</em> founded the Christian genre of church history itself.
+      Without him we would have almost no direct documentary knowledge of the first three
+      Christian centuries. His theological positions during the Arian controversy were
+      cautious, imperfect, and never clearly Arian — and never quite what Nicaea was. The
+      Church receives his scholarship and historiography unambiguously; his theological
+      moderation is remembered as what it was.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Eusebius?</h2>
+      <p class="section-text">
+        Eusebius was born around 260 AD, most likely at Caesarea Palestinae — the Mediterranean
+        coastal city that was the provincial capital, the seat of a significant Christian
+        community, and, crucially for Eusebius's formation, the home of Origen's library. In
+        his twenties he became the disciple and close collaborator of Pamphilus, a priest of
+        Caesarea who had inherited and expanded Origen's scholarly enterprise: copying
+        manuscripts, correcting texts, cataloguing books, and training students. Eusebius
+        spent perhaps two decades in Pamphilus's company. The two collaborated on an
+        <em>Apology for Origen</em> meant to defend the great Alexandrian against his later
+        critics. Pamphilus gave Eusebius his name — for the rest of his life Eusebius signed
+        himself <em>Eusebius of Pamphilus</em>, honoring the relationship.
+      </p>
+      <p class="section-text">
+        The Great Persecution under Diocletian and his successors (303–311) tested that
+        friendship in blood. Pamphilus was imprisoned, tortured, and ultimately martyred in
+        309; many of Eusebius's other teachers and companions died in the same years.
+        Eusebius himself was imprisoned for a period, though the circumstances are murky
+        enough that later enemies would accuse him of having compromised to save his life —
+        a charge he strenuously denied. What is certain is that he survived, and that after
+        the Peace of the Church under Constantine he was elected Bishop of Caesarea around
+        314, and he devoted the remaining twenty-five years of his life to the scholarly
+        and theological work that would make his name. His <em>Ecclesiastical History</em>,
+        ten books, remains the single most important source we possess for Christianity's
+        first three centuries. Without it we would not have Papias's fragments, most of the
+        martyrdom accounts, the lists of early bishops, or hundreds of patristic citations
+        that survive only in Eusebius's transcription.
+      </p>
+      <p class="section-text">
+        His role in the Arian controversy is the complicating factor the Church's reception
+        of him has had to honestly reckon with. Eusebius was never an Arian in the full
+        sense — he never followed Arius's sharper subordinationism, and he insisted on the
+        Son's eternal generation. But his own theology leaned toward a moderate
+        subordinationism, and when Arius was condemned in Alexandria he corresponded with
+        sympathy and sought to broker compromise. An Antiochene synod in 324 or early 325
+        provisionally excommunicated him; he was rehabilitated at Nicaea later in 325 and
+        signed the Creed, though according to his own extant letter to his Caesarean
+        congregation he did so with theological reservations about the term
+        <em>ὁμοούσιος</em>. In the decade after Nicaea he sided repeatedly with the
+        Eusebian court party that sought to dilute the Nicene settlement and to readmit
+        moderate Arians; in 335 he participated in the Synod of Tyre that deposed Athanasius.
+        He never embraced Arius's theology, but he also never embraced Athanasius's defense
+        of Nicaea without remainder. He died around 339 AD. He was never canonized. Modern
+        Orthodox historiography — Florovsky, Pelikan, Meyendorff — receives his historical
+        and scholarly contribution as foundational and indispensable, while treating his
+        theological moderation as a real limitation that the Nicene tradition had to move
+        beyond.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">10</div>
+          <div class="stat-label">Books of the Ecclesiastical History</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">15</div>
+          <div class="stat-label">Books of the Praeparatio Evangelica</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">325</div>
+          <div class="stat-label">Signed the Nicene Creed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 339</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Eusebius wrote voluminously across historical, apologetic, exegetical, and panegyric
+        registers. Three works define his lasting contribution.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Ecclesiastical History</h3>
+          <div class="work-greek">Ἐκκλησιαστικὴ Ἱστορία</div>
+          <p class="work-description">
+            Ten books tracing the Church from the apostles through the Great Persecution and
+            the accession of Constantine. The work founds a new genre: no one had written a
+            sustained history of Christianity before. Eusebius organizes his narrative around
+            the episcopal successions of the major sees, the succession of Christian teachers
+            and writers, and the history of martyrdom. For vast portions of the first three
+            centuries — Papias, Hegesippus, Melito of Sardis, the Antiochene martyrs, the
+            early Syrian tradition — the <em>History</em> is our only surviving source.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Preparation for the Gospel</h3>
+          <div class="work-greek">Εὐαγγελικὴ Προπαρασκευή</div>
+          <p class="work-description">
+            Fifteen books of apologetic addressed to educated pagans. Eusebius assembles a
+            vast dossier of quotations from Greek philosophers, poets, and religious writers,
+            showing where their own tradition points beyond itself — and then argues that
+            what the best of paganism sought is answered in Christianity. The work and its
+            companion <em>Demonstration of the Gospel</em> together preserve an enormous
+            quantity of classical material that would otherwise be lost, making Eusebius a
+            principal source for ancient philosophy as well as for ancient Christianity.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Chronicle</h3>
+          <div class="work-greek">Χρονικά</div>
+          <p class="work-description">
+            A universal chronology synchronizing sacred and secular history from Abraham to
+            Eusebius's own day, in two parts: a synchronized dating survey and a tabular
+            timeline. Jerome translated and continued it into Latin; through that continuation
+            the <em>Chronicle</em> became the foundational template for medieval Western
+            historiography. The Greek original survives only in fragments and in an Armenian
+            translation; Jerome's Latin version remained a standard reference for over a
+            thousand years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms anchor Eusebius's distinctive contribution. The first two are the
+        scholarly disciplines he founded or transformed; the third organizes his historical
+        method; the fourth names the genre he deployed to meet the pagan intellectual world.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">ἱστορία</span>
+          <div class="transliteration">historia</div>
+          <div class="english-meaning">Church History · The Founding Genre</div>
+          <p class="pillar-explanation">
+            Before Eusebius there was no <em>ecclesiastical history</em>. He invented the
+            practice of narrating the Church as a continuous corporate subject — not a
+            cluster of local communities but the one body reaching from the apostles through
+            the bishops, teachers, and martyrs of every subsequent generation. Every later
+            Church history, Eastern and Western, medieval and modern, stands in his debt.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">χρονικά</span>
+          <div class="transliteration">chronika</div>
+          <div class="english-meaning">Chronicle · Universal Timeline</div>
+          <p class="pillar-explanation">
+            The <em>Chronicle</em> sets biblical history alongside Greek, Persian, and Roman
+            history in parallel columns, producing a single synchronized timeline of the
+            world from Abraham onward. Through Jerome's Latin translation and continuation,
+            this framework became the skeleton of Western medieval historiography. The
+            Christian conviction that time has a unified shape and a single direction —
+            Creation to Incarnation to Last Things — finds its first scholarly expression
+            in Eusebius's tabular scroll.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">διαδοχή</span>
+          <div class="transliteration">diadochē</div>
+          <div class="english-meaning">Apostolic Succession</div>
+          <p class="pillar-explanation">
+            Inherited from Irenaeus and deployed systematically: Eusebius organizes his
+            entire <em>Ecclesiastical History</em> around the episcopal successions of the
+            principal sees (Rome, Alexandria, Antioch, Jerusalem). The concept becomes for
+            him a historiographical tool — the way to track the Church's continuity in
+            time. Every subsequent Orthodox account of episcopal lineage rests on the
+            scholarly labor Eusebius did to establish the primitive successions.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ἀπολογία</span>
+          <div class="transliteration">apologia</div>
+          <div class="english-meaning">Defense of the Faith</div>
+          <p class="pillar-explanation">
+            The <em>Praeparatio Evangelica</em> and <em>Demonstratio Evangelica</em>,
+            together, form the largest apologetic corpus of the patristic age: thirty-five
+            books of sustained engagement with pagan philosophy, religion, and culture. The
+            method — assemble the best of the other tradition, show where it points beyond
+            itself, then present Christ as what it was reaching for — carries forward into
+            Augustine's <em>City of God</em> and the whole later Christian apologetic
+            tradition.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "I shall be the first to walk this lonely and untrodden way."
+      </p>
+      <div class="quote-source">— Ecclesiastical History 1.1.3</div>
+    </div>
+
+    <!-- Why Eusebius Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Eusebius Matters Today</h2>
+      <p class="section-text">
+        Every serious study of early Christianity starts with him. The documentary sources
+        for the first three centuries — the lists of bishops, the martyrdom accounts, the
+        citations from lost works of Papias and Hegesippus and Irenaeus and many others, the
+        chronology of the pre-Nicene Church — reach us almost exclusively through Eusebius's
+        transmission. Contemporary historical scholarship on early Christianity (Bauckham,
+        Hurtado, Ehrman, Young, and Orthodox scholars like John Behr and Paul Gavrilyuk)
+        still begins by reading Eusebius carefully, even when it corrects him. There is no
+        bypassing him; he is the archivist of what would otherwise not survive.
+      </p>
+      <p class="section-text">
+        His historiographical method — a Church understood as a continuous body with
+        traceable episcopal lineage, theological formation as a living tradition rather than
+        a collection of propositions — shapes the Orthodox self-understanding to this day.
+        When Orthodox Christians speak of "the tradition of the Fathers" as a coherent
+        whole, of "the teaching of the Apostles" as something passed down through identifiable
+        successions, they are speaking in categories Eusebius gave patristic theology its
+        disciplined form. Bishop John Behr's work on patristic formation, the scholarly
+        architecture of the twentieth-century Orthodox revival, the <em>Sources Chrétiennes</em>
+        series that transmits the Fathers to modern readers — all are Eusebian in method,
+        even when they engage texts Eusebius himself never saw.
+      </p>
+      <p class="section-text">
+        His theological record during the Arian crisis is the honest complication. The
+        tradition has held it in tension with the rest: Eusebius was not Arius, but he was
+        not Athanasius either, and at moments when the Nicene settlement most needed
+        unambiguous defenders he was among the compromisers. The Church has not canonized
+        him. It has also not repudiated him. It has simply held his scholarly contribution
+        and his theological limitations in the same hand, receiving what can be received
+        while acknowledging what must be acknowledged. That posture — neither whitewash nor
+        condemnation, but discernment — is itself something the tradition has learned in
+        part by living with Eusebius's memory. The Church can receive the witness of an
+        imperfect servant without pretending the imperfection was not there.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="irenaeus-of-lyons.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Irenaeus of Lyons</div>
+          <div class="related-desc">The patristic father of διαδοχή. Eusebius inherits Irenaeus's succession-argument and makes it the organizing principle of the <em>Ecclesiastical History</em>.</div>
+        </a>
+        <a href="athanasius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Athanasius the Great</div>
+          <div class="related-desc">Eusebius's contemporary and theological counterweight at Nicaea. The comparison illuminates both: Athanasius for his Nicene precision, Eusebius for the scholarly framework within which Nicaea was remembered.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Ε</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Eusebius's vocabulary of historiography, succession, and apologetic engagement will anchor future tracks in Church history.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
