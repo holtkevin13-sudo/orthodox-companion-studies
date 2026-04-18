@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T14:26:42Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isaac the Syrian — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Isaac the Syrian — Orthodox Companion Studies">
+<meta property="og:description" content="Seventh-century ascetic bishop of Nineveh, briefly in office and long in the cave — author of the Ascetical Homilies that became the Byzantine tradition's most beloved handbook of the interior life, read across the Orthodox world in Greek translation from the ninth century to our own day.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Isaac the Syrian (c. 613 – c. 700 AD) — also known as Isaac of Nineveh, East Syrian monk and bishop whose Ascetical Homilies entered the Greek Orthodox tradition in translation in the ninth century and became one of the most beloved works of Orthodox spiritual theology. The famous 'merciful heart' passage (Homily 71) is his most quoted text. Commemorated January 28 in the Orthodox Church.">
+<meta name="keywords" content="Isaac the Syrian, Isaac of Nineveh, Ascetical Homilies, Merciful Heart, Syriac Spirituality, Silence, Repentance, Tears, Wonder, Theoria, Beth Qatraye, Mount Matout, Hesychast Tradition, Philokalia">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Byzantine Era · Greek)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Greek pillars — Latin CSS variants retained but unused on this
+   card (Climacus is pure Greek monastic tradition).
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Syriac Tradition · East Syrian Monastic
+    </div>
+    <h1 class="hero-title">Isaac the Syrian</h1>
+    <div class="hero-epithet">Ἰσαὰκ ὁ Σῦρος · Isaac of Nineveh</div>
+    <div class="hero-meta">c. 613 – c. 700 AD · Bishop Briefly, Ascetic for Life</div>
+    <p class="hero-description">
+      Seventh-century monk of the East Syrian Church of the East, consecrated bishop of
+      Nineveh and resigning after only five months to return to the solitude of Mount
+      Matout, where he lived the remainder of his long life in the cave that has carried
+      his name ever since. The <em>Ascetical Homilies</em> he produced over decades of
+      prayer and interior watchfulness entered the Greek Byzantine tradition in
+      translation in the ninth century at the monastery of Mar Saba in Palestine, and
+      from there spread across the Orthodox world to become one of the most beloved
+      works of spiritual theology the tradition possesses. His gentle theology of God's
+      mercy, his extraordinary teaching on silence, and his famous passage on the
+      "merciful heart" have shaped the Orthodox interior life for more than a thousand
+      years. Commemorated January 28.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Isaac?</h2>
+      <p class="section-text">
+        Isaac was born around 613 AD in Beth Qatraye — the Christian communities of
+        eastern Arabia, along the shore of what is today Qatar and Bahrain. The region
+        was Syriac-speaking, theologically part of the Church of the East, and already
+        a significant monastic landscape. Isaac entered the monastic life as a young
+        man at the monastery of Beth Abhe (or perhaps Mar Matthew, the sources vary),
+        and his reputation as a holy monk and teacher grew steadily. Around 676, at
+        about sixty years of age, the Patriarch of the Church of the East, Mar George I
+        (also called Giwargis), consecrated Isaac bishop of Nineveh — the ancient
+        Assyrian city near modern Mosul. Isaac had not sought the office.
+      </p>
+      <p class="section-text">
+        He served as bishop for five months. The traditional account, preserved in the
+        Syriac <em>Book of Chastity</em> of Isho'dnah of Basra, relates that Isaac could
+        not bring himself to adjudicate the quarrels and worldly disputes the episcopal
+        office required, and after five months he resigned the see and withdrew to the
+        wilderness. He went to Mount Matout, part of the Huzistan mountains in what is
+        today southwestern Iran, and settled in a cave where he would live for the rest
+        of his long life. The <em>Ascetical Homilies</em> — the substantial body of
+        spiritual teaching that is his surviving corpus — were composed in this period,
+        during which he also slowly lost his sight from the combined strain of fasting,
+        tears, and reading by poor light. He died at Mount Matout around 700 AD, at
+        roughly eighty-seven years of age. Local tradition says he was buried at the
+        monastery of Rabban Shabur in the same region.
+      </p>
+      <p class="section-text">
+        Isaac's entry into the Orthodox Greek-speaking tradition is one of the quietly
+        remarkable chapters of patristic transmission. In the ninth century, two monks
+        of the monastery of Mar Saba in the Palestinian desert — Patrikios and Abramios —
+        translated Isaac's homilies from Syriac into Greek. The text entered the
+        Byzantine monastic world and spread rapidly: to Sinai, to Constantinople, to
+        Mount Athos in the following centuries, and eventually through Paisius
+        Velichkovsky's Slavonic translation (1787) into the Russian Orthodox tradition.
+        The <em>Philokalia</em> in the eighteenth century cites Isaac continuously.
+        Modern English readers receive him principally through the two volumes of
+        <em>Ascetical Homilies</em> translated by the Holy Transfiguration Monastery in
+        Boston (1984) and the second part of the homilies translated by Bishop Hilarion
+        Alfeyev and published by the Oxford University Press (1995 onward). His reception
+        in the Byzantine-Slavic Orthodox tradition has been without reservation,
+        notwithstanding his origin in a church not in communion with Byzantium — a quiet
+        witness to the way holiness transcends the jurisdictional lines of its historical
+        moment.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Months as Bishop of Nineveh</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">25</div>
+          <div class="stat-label">Years at Mount Matout</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 800</div>
+          <div class="stat-label">Translated into Greek at Mar Saba</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 700</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Isaac's corpus is one body of ascetical-contemplative prose in several parts,
+        transmitted in Syriac and subsequently in Greek translation with a partially
+        different sequencing. Modern scholarship distinguishes the First, Second, and
+        Third Parts; the Greek Byzantine tradition received principally the First Part.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Ascetical Homilies (Part I)</h3>
+          <div class="work-greek">Λόγοι Ἀσκητικοί</div>
+          <p class="work-description">
+            The body of Isaac's teaching that entered the Greek-speaking Orthodox world
+            through the ninth-century Mar Saba translation. Roughly eighty-two homilies
+            on the full range of the ascetical and contemplative life: the beginning of
+            the monk's path, the way of silence, the stages of prayer, the gift of
+            tears, the three degrees of knowledge, and much more. The famous "merciful
+            heart" passage is Homily 71 (Greek numbering; 81 in some editions). This
+            is the Isaac most Orthodox readers know.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Second Part</h3>
+          <div class="work-greek">Δευτέρα Συλλογή</div>
+          <p class="work-description">
+            A second body of forty-one homilies, lost to the Byzantine tradition but
+            preserved in the Syriac manuscript tradition and rediscovered by Sebastian
+            Brock in the Bodleian Library in 1983. Published in Bishop Hilarion
+            Alfeyev's English translation in 1995 and subsequent volumes. The Second
+            Part has a more explicitly hopeful eschatology and is the source of some
+            of the more universalist-tending passages in Isaac that the modern Orthodox
+            tradition has received with a mixture of gratitude and pastoral care.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Chapters of Knowledge</h3>
+          <div class="work-greek">Κεφάλαια Γνωστικά</div>
+          <p class="work-description">
+            Short numbered chapters on the contemplative life, in the Evagrian
+            <em>kephalaia</em> form that had by Isaac's time become the standard
+            Eastern monastic genre. The chapters distill his teaching into dense
+            meditative units of one to three sentences each, designed for slow
+            reflection rather than rapid reading. Part of the corpus discovered in the
+            Second Part manuscripts. A significant portion has now been edited and
+            translated.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the center of Isaac's received teaching (the Greek
+        translations in which the tradition knows him). The first names his
+        distinctive emphasis among the desert virtues; the second the mode of
+        repentance he teaches; the third his signature theological gift; the fourth
+        the goal toward which the whole ascent is ordered.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">σιωπή</span>
+          <div class="transliteration">siōpē</div>
+          <div class="english-meaning">Silence · The Foundation of Prayer</div>
+          <p class="pillar-explanation">
+            Where Climacus emphasizes <em>hēsychia</em> (stillness of the whole
+            interior person), Isaac presses deeper onto <em>σιωπή</em> — silence itself
+            as the primary school of prayer. "The silence of the tongue is the mother
+            of prayer and the reviver of the lapsed," he writes. Silence for Isaac is
+            not absence of speech but presence of God, the condition in which the
+            heart becomes capable of receiving what no word can deliver. His teaching
+            on silence has shaped every later Orthodox contemplative tradition, from
+            Byzantine hesychasm to the modern Athonite elders.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">μετάνοια</span>
+          <div class="transliteration">metanoia</div>
+          <div class="english-meaning">Repentance · Second Baptism through Tears</div>
+          <p class="pillar-explanation">
+            Isaac's teaching on repentance is marked by an unusual emphasis on tears as
+            the mark of genuine interior change. "Tears are the sign that God has heard
+            the prayer." He calls the gift of tears a <em>second baptism</em> — the
+            baptism by water washes the body, the baptism of tears washes the soul and
+            remakes the heart. This theology of tears, inherited partly from Climacus
+            but given its definitive form by Isaac, shapes the whole Orthodox
+            understanding of what serious repentance actually looks like in the human
+            creature.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term long">καρδία ἐλεήμων</span>
+          <div class="transliteration">kardia eleēmōn</div>
+          <div class="english-meaning">The Merciful Heart · Isaac's Signature</div>
+          <p class="pillar-explanation">
+            The famous passage of Homily 71: <em>"What is a merciful heart? It is a
+            heart burning with love for the whole of creation — for humanity, for the
+            birds, for the animals, for demons, and for all that exists."</em> No
+            patristic passage has been quoted more often in the modern Orthodox
+            devotional tradition. Isaac's theology of mercy is the pastoral soul of
+            his ascetical teaching: the goal of all the labor is not the perfected
+            self but the merciful heart, and the merciful heart extends its mercy
+            without limit, even to those whom human judgment would exclude.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">θαῦμα</span>
+          <div class="transliteration">thauma</div>
+          <div class="english-meaning">Wonder · The Summit of Prayer</div>
+          <p class="pillar-explanation">
+            For Isaac, the highest stage of prayer is not petition, not even
+            contemplation in the usual sense, but <em>θαῦμα</em> — wonder, the soul's
+            silenced standing before mysteries it can no longer articulate. "Prayer
+            is abolished and silenced in the amazement of divine things." The stage is
+            inherited from Evagrian contemplative theology but given Isaac's
+            distinctively experiential tone: wonder is not an intellectual act but the
+            soul's whole posture when it has come to the edge of what the creaturely
+            mind can encompass and must simply be still in awe.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "What is a merciful heart? It is a heart burning with love for the whole of
+        creation — for humanity, for the birds, for the animals, for demons, and for
+        all that exists."
+      </p>
+      <div class="quote-source">— Ascetical Homilies 71</div>
+    </div>
+
+    <!-- Why Isaac Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Isaac Matters Today</h2>
+      <p class="section-text">
+        In the modern Orthodox world Isaac may be the single most widely read patristic
+        ascetical author outside the monastic context itself. The English-speaking
+        Orthodox reader who has never opened Climacus will often have read Isaac;
+        the Holy Transfiguration Monastery's 1984 translation of the <em>Ascetical
+        Homilies</em> has shaped two generations of English-speaking Orthodox
+        spirituality. The gentleness of his teaching, the pastoral tone of his writing,
+        the absence of the polemical edges that sometimes appear in the Byzantine
+        ascetical corpus, make him unusually approachable for readers coming to
+        Orthodox spiritual theology without monastic formation.
+      </p>
+      <p class="section-text">
+        His theology of mercy has a particular resonance in the twenty-first century.
+        Isaac's insistence that the merciful heart extends its mercy to all creation —
+        that "even to demons" is not rhetorical excess but genuine theological
+        content — has been read in our era as a serious answer to every theology that
+        draws the circle of divine love too narrowly. Modern Orthodox scholarship
+        (Bishop Hilarion Alfeyev, David Bentley Hart, Kallistos Ware) has turned with
+        fresh attention to Isaac's eschatology, finding there a patristic witness to a
+        God whose mercy does not finally exhaust itself. Whether Isaac teaches a
+        definite universal apokatastasis or holds the question open is itself debated;
+        what is not debated is the tenderness of his theological register.
+      </p>
+      <p class="section-text">
+        And his transmission across confessional lines is a quiet lesson the modern
+        Church needs. Isaac was a bishop of the Church of the East — the Syriac-speaking
+        body that had been out of formal communion with the Byzantine Chalcedonian
+        Church since the fifth century. The monks of Mar Saba who translated him in the
+        ninth century were not asking whether he was canonically theirs; they were
+        asking whether his teaching was true. The Orthodox tradition has since
+        received him as one of its own saints, and it has done so without rewriting
+        his history. The example stands — holiness, the tradition has shown, can cross
+        jurisdictional lines when the Spirit wills it, and the Church's task is to
+        recognize what the Spirit has done rather than to insist on administrative
+        prerequisites for sanctity.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="john-climacus.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">John Climacus</div>
+          <div class="related-desc">Isaac's near contemporary and fellow seventh-century father of the interior life. Where Climacus gives the ascetical life its stepwise ladder, Isaac gives it its deepest pastoral voice — the same monastic heart in two complementary registers.</div>
+        </a>
+        <a href="symeon-the-new-theologian.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Symeon the New Theologian</div>
+          <div class="related-desc">Byzantine mystic of the tenth-eleventh centuries whose theology of divine light and experiential knowledge of God stands in unbroken continuity with Isaac's contemplative tradition. The <em>Philokalia</em> reads them together as witnesses to the same grace.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Ἰ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Isaac's vocabulary of silence, tears, the merciful heart, and wonder anchors the tender pastoral register of Orthodox interior theology.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
