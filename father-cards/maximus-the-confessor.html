@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T04:08:59Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maximus the Confessor — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Maximus the Confessor — Orthodox Companion Studies">
+<meta property="og:description" content="The seventh-century Byzantine monk and confessor who defended dyothelite Christology at the cost of his hand and tongue — and gave the Orthodox tradition its most comprehensive theological synthesis.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Maximus the Confessor (c. 580 – 662 AD) — Byzantine monk, theological synthesizer, and confessor of dyothelite Christology. Author of the Ambigua, Two Hundred Chapters on Theology, Four Centuries on Love, and the Mystagogy. Mutilated and exiled by the Monothelite imperial court; vindicated nineteen years after his death at the Sixth Ecumenical Council (681).">
+<meta name="keywords" content="Maximus the Confessor, Church Fathers, Dyothelite, Two Wills, Dyo Thelemata, Logoi, Perichoresis, Confessor, Ambigua, Two Hundred Chapters, Four Centuries on Love, Mystagogy, Byzantine Theology, Monothelite Controversy, Constantinople III">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Phases 9–13)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 12 · Maximus the Confessor · Weeks 34–36
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Maximus the Confessor</h1>
+    <div class="hero-epithet">Μάξιμος ὁ Ὁμολογητής · The Confessor</div>
+    <div class="hero-meta">c. 580 – 662 AD · Byzantine Monk and Theological Synthesizer</div>
+    <p class="hero-description">
+      Byzantine nobleman turned monk, the most complete theological synthesizer in the patristic
+      tradition, and the confessor who lost his right hand and tongue rather than subscribe to
+      an imperial compromise he believed fatal to the Christian faith. Maximus gathered the
+      Cappadocians, Cyril, and Dionysius into a single luminous vision of God, creation, and
+      the Incarnate Word — and sealed it with his blood. His <em>Ambigua</em>, Two Hundred
+      Chapters, Centuries on Love, and <em>Mystagogy</em> anchor the Orthodox theological
+      imagination to this day.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Maximus?</h2>
+      <p class="section-text">
+        Maximus was born around 580 AD. The traditional Greek <em>Life</em> places his
+        birthplace in Constantinople and his family among the Byzantine nobility; a Syriac
+        <em>Life</em> discovered in the early twentieth century gives him Palestinian origins
+        and a less aristocratic background. Scholars still argue the point. What is certain is
+        that by his late twenties he held high administrative office at the imperial court under
+        Emperor Heraclius — <em>protoasecretis</em>, first secretary — and that around 614, at
+        the height of his career, he renounced it. He entered the monastery of Chrysopolis,
+        across the Bosphorus from Constantinople, and later moved to the community of St. George
+        at Cyzicus. He never held ecclesiastical office; he remained, throughout his long life,
+        simply a monk.
+      </p>
+      <p class="section-text">
+        The Persian invasion of Asia Minor in 626 drove Maximus west. He reached Carthage, in
+        North Africa, probably around 628, and there he stayed for the next twenty years under
+        the patronage of the monastery of Eucratas and in close association with its abbot
+        Sophronius — the same Sophronius who in 634 would become Patriarch of Jerusalem and
+        open the resistance to Monothelitism. From Carthage, Maximus wrote his greatest works:
+        the two collections of <em>Ambigua</em> (theological "difficulties" drawn from Gregory
+        of Nazianzus and Pseudo-Dionysius), the Four Centuries on Love, the Two Hundred Chapters
+        on Theology and Economy, the Questions to Thalassius, and the <em>Mystagogy</em>. In
+        645 he publicly debated the deposed Monothelite patriarch Pyrrhus at Carthage and,
+        according to the surviving acts, persuaded him — briefly — of the dyothelite position.
+      </p>
+      <p class="section-text">
+        The confrontation with imperial Monothelitism defined his last fifteen years. The Emperor
+        Constans II had issued the Typos (648) forbidding discussion of Christ's wills — a
+        compromise intended to placate Monothelite dissent in Syria and Egypt, and one Maximus
+        judged a betrayal of Chalcedonian Christology. He traveled to Rome. At the Lateran
+        Council of 649, under Pope Martin I, Maximus was almost certainly the principal
+        theological architect of the council's ringing affirmation of two wills and two
+        energies in Christ. For this, both Maximus and Martin were arrested by imperial agents
+        in 653. Martin was exiled to Crimea, where he died in 655. Maximus was tried at
+        Constantinople, exiled to Bizya in Thrace, retried, and finally — in 662, at about
+        eighty-two years of age — condemned to have his right hand cut off (to silence his
+        writing) and his tongue cut out (to silence his confession). He was exiled to Lazica on
+        the east coast of the Black Sea, where he died on August 13 of that same year.
+        Nineteen years later, the Sixth Ecumenical Council at Constantinople (681) vindicated
+        his teaching; the two wills and two energies became binding Orthodox doctrine. The
+        Church commemorates him on January 21.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">681</div>
+          <div class="stat-label">Vindicated at Constantinople III</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">662</div>
+          <div class="stat-label">Died in Exile at Lazica</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">400</div>
+          <div class="stat-label">Chapters on Love</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">200</div>
+          <div class="stat-label">Chapters on Theology</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        The Maximian corpus is unusually diverse. It includes dogmatic treatises, exegetical
+        commentary, liturgical theology, spiritual handbooks in the aphoristic "centuries" form,
+        and a body of letters and polemical opuscula against Monothelitism. Three works anchor
+        the program.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Ambigua</h3>
+          <div class="work-greek">Περὶ διαφόρων ἀπόρων</div>
+          <p class="work-description">
+            Two collections of theological "difficulties." <em>Ambigua to John</em> — the
+            earlier, longer collection — works through knotty passages in Gregory of Nazianzus,
+            developing along the way the classical doctrine of the <em>λόγοι</em>, the cosmic
+            mediation of Christ, and the modes of deification. <em>Ambigua to Thomas</em>
+            addresses Pseudo-Dionysius. Together the Ambigua are Maximus's speculative
+            masterpiece: Cappadocian theology, Dionysian apophasis, and Cyrillian Christology
+            drawn into a single coherent vision.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Two Hundred Chapters on Theology</h3>
+          <div class="work-greek">Κεφάλαια θεολογικὰ καὶ οἰκονομικά</div>
+          <p class="work-description">
+            Two hundred aphoristic chapters — arranged, like Evagrius's "centuries" and the
+            later Philokalic collections, in gnomic sentences meant for meditative reading
+            rather than linear argument. The work moves between divine incomprehensibility, the
+            economy of salvation, the ascetic struggle, and the contemplation of nature and
+            Scripture. It is one of the fullest compressed statements of Maximus's theological
+            vision — a primary text for the spiritual reader as much as for the dogmatician.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Disputation with Pyrrhus</h3>
+          <div class="work-greek">Διάλεξις πρὸς Πύρρον</div>
+          <p class="work-description">
+            The acts of the public debate held at Carthage in July 645 between Maximus and
+            Pyrrhus, the deposed Monothelite Patriarch of Constantinople. The dialogue preserves
+            Maximus's decisive arguments for two natural wills in Christ — the biblical
+            grounding in Gethsemane, the metaphysical premise that a nature without its natural
+            faculties is no nature at all, the Christological necessity that what is not assumed
+            is not healed. The <em>Disputation</em> became the standard dyothelite reference for
+            the remaining decades of the controversy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the weight of Maximus's witness. The first is the doctrine for
+        which he was mutilated and exiled; the second his signature cosmology; the third a
+        term he was first to use substantively for the mystery of Christ's two natures; the
+        fourth the title the Church gave him for what he endured.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-dyo-thelemata" class="greek-term greek-term-link long">δύο θελήματα</a>
+          <div class="transliteration">dyo thelēmata</div>
+          <div class="english-meaning">Two Wills · Dyothelite Doctrine</div>
+          <p class="pillar-explanation">
+            The one Christ, because he has two complete natures, has two natural wills — one
+            divine, one human — operating in perfect harmony. Against Monothelitism, Maximus
+            argues that a nature without its natural faculties is no nature at all: the human
+            Christ prays "not my will but yours" with a genuinely human will, freely willing
+            what the Father wills. The doctrine is vindicated at Constantinople III in 681 —
+            nineteen years after Maximus died in exile.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-logoi" class="greek-term greek-term-link">λόγοι</a>
+          <div class="transliteration">logoi</div>
+          <div class="english-meaning">Logoi · Divine Reasons</div>
+          <p class="pillar-explanation">
+            Every creature has its own <em>λόγος</em> — the divine reason according to which it
+            exists and is ordered toward God — eternally held in the mind of the incarnate
+            <em>Λόγος</em>. Creation is the speaking-forth of the one Word into many words;
+            salvation is the drawing of the many <em>λόγοι</em> back into unity in the one. The
+            doctrine is Maximus's signature cosmological synthesis, taking up Stoic, Philonic,
+            and Dionysian lineages into a distinctively Christian vision of cosmic Christology.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-perichoresis" class="greek-term greek-term-link">περιχώρησις</a>
+          <div class="transliteration">perichōrēsis</div>
+          <div class="english-meaning">Mutual Indwelling · Coinherence</div>
+          <p class="pillar-explanation">
+            Interpenetration. Maximus is the first Christian theologian to use
+            <em>περιχώρησις</em> substantively, applying it to the mutual coinherence of the
+            two natures in Christ: divinity and humanity interpenetrate without confusion in
+            the single Son. John of Damascus will extend the term to the Trinity, giving
+            Orthodox Triadology one of its central categories. The grammar is Maximus's.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-homologetes" class="greek-term greek-term-link">ὁμολογητής</a>
+          <div class="transliteration">homologētēs</div>
+          <div class="english-meaning">Confessor</div>
+          <p class="pillar-explanation">
+            The title the Church gives to one who has suffered for the faith without martyrdom
+            in the strictest sense. Maximus bears it because of what his last decade cost him:
+            condemned by the imperial Monothelite court, tortured, mutilated in his writing
+            hand and his speaking tongue, exiled to die on the far Black Sea. His confession
+            outlived his voice. The Church's title tells what kind of theology this was —
+            theology paid for in the body.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "He who loves God cannot help but love every man as himself."
+      </p>
+      <div class="quote-source">— Four Centuries on Love 1.13</div>
+    </div>
+
+    <!-- Why Maximus Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Maximus Matters Today</h2>
+      <p class="section-text">
+        Maximus is the patristic synthesizer — the theologian through whom the prior tradition
+        passes into its durable Byzantine form. Irenaeus's recapitulation, Athanasius's
+        incarnational soteriology, the Cappadocians' Trinitarian grammar, Cyril's Christology,
+        Dionysius's apophatic and cosmological vision: Maximus holds all of it together without
+        reducing any of it. When an Orthodox theologian of any later century reaches for the
+        patristic inheritance, she reaches through Maximus. He is the lens in which the
+        tradition is focused and the channel through which it reaches Palamas, the Philokalic
+        writers, and the modern Orthodox renewal.
+      </p>
+      <p class="section-text">
+        His specifically dyothelite doctrine is not a museum piece. To say that Christ willed
+        humanly as well as divinely is to insist that human willing — including the prayer in
+        Gethsemane, "not my will but yours be done" — was genuinely taken up by the Son of God
+        and made his own. Every Christian account of prayer, of obedience, of the Christian's
+        conformity to Christ depends on this being true. If Christ had no human will, the
+        Incarnation did not reach the faculty by which humans most characteristically sin or
+        are saved. Maximus saw this with a clarity no one before him had matched, and the
+        Church paid him the extraordinary compliment of making his answer the Church's answer.
+      </p>
+      <p class="section-text">
+        The <em>λόγοι</em> doctrine is the patristic tradition's fullest resource for thinking
+        about creation's relation to God. Each created thing has its divine reason, held
+        eternally in the incarnate Word, and finds its completion by returning to that Word.
+        This is not pantheism — the creature is not God — but it is a cosmology in which every
+        thing bears the imprint of Christ and every thing is ordered toward him. Contemporary
+        Orthodox accounts of ecology, of work, of the arts, all draw from this well. And the
+        <em>Mystagogy</em>'s reading of the Divine Liturgy as a cosmic symbol — the Church
+        enacting the whole of creation's return — has shaped every subsequent Orthodox
+        liturgical commentary. Finally, there is his witness itself. That the Church's answer
+        to the most subtle Christological question of its first seven hundred years was
+        defended, at the cost of hand and tongue, by an old monk with no office except his
+        confession — this is itself a patristic teaching. Orthodoxy has never separated
+        theology from the one who suffers for it, and Maximus is why.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="pseudo-dionysius.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Pseudo-Dionysius</div>
+          <div class="related-desc">The Areopagite whose corpus Maximus defended through the <em>Ambigua to Thomas</em> — apophatic theology passed forward through him.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-dyo-thelemata" class="related-link">
+          <span class="related-icon">Δ</span>
+          <div class="related-title greek">δύο θελήματα</div>
+          <div class="related-desc">The dyothelite confession — two natural wills in the one Christ, vindicated at Constantinople III (681).</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-12" class="related-link">
+          <span class="related-icon">Μ</span>
+          <div class="related-title">Phase 12 Lexicon</div>
+          <div class="related-desc">The Maximian vocabulary of wills, energies, logoi, and the mystery of Christ's cosmic mediation.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Maximus the Confessor is Phase 12: Weeks 34–36.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 34 && wk <= 36) pill.style.display = 'inline-block';
+  }
+
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
