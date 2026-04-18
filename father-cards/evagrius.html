@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T13:52:08Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evagrius Ponticus — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Evagrius Ponticus — Orthodox Companion Studies">
+<meta property="og:description" content="Desert theologian, pupil of the Cappadocians, and the cataloger of the eight logismoi whose ascetic and prayer writings anchor the whole later Orthodox tradition — preserved across the centuries even as specific Origenist positions were condemned at Constantinople II (553).">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Evagrius Ponticus (c. 345 – 399 AD) — deacon of Constantinople, pupil of Basil the Great and Gregory of Nazianzus, desert monk at Nitria and the Kellia, and the first systematic theologian of the desert tradition. Author of Praktikos, On Prayer, and the Chapters on Knowledge. His eight logismoi became the Western seven deadly sins through John Cassian. Specific Origenist positions condemned at Constantinople II (553); his ascetic and contemplative writings preserved across the Orthodox tradition, often under pseudonymous attribution.">
+<meta name="keywords" content="Evagrius Ponticus, Evagrius of Pontus, Desert Fathers, Nitria, Kellia, Eight Logismoi, Eight Passionate Thoughts, Praktikos, Chapters on Prayer, Kephalaia Gnostika, Apatheia, Theoria, Nous, Proseuche, Constantinople II, Origenism, John Cassian, Seven Deadly Sins">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Desert Fathers · Late Patristic)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Pastoral-care reception handling: honors Evagrius's genuinely
+   received ascetic and prayer writings while acknowledging the
+   condemnation of specific Origenist positions at Constantinople II
+   (553). Tradition's distinction between received method and
+   rejected speculation — same posture applied to Origen.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Desert Fathers · Late Patristic
+    </div>
+    <h1 class="hero-title">Evagrius Ponticus</h1>
+    <div class="hero-epithet">Εὐάγριος ὁ Ποντικός · The Desert Theologian</div>
+    <div class="hero-meta">c. 345 – 399 AD · Deacon of Constantinople, Monk of the Kellia</div>
+    <p class="hero-description">
+      Pupil of the Cappadocians, deacon of Constantinople at the Second Ecumenical Council,
+      and the first systematic theologian of the desert tradition. Evagrius fled imperial
+      Constantinople for the Egyptian desert in 382, joined the monastic community at the
+      Kellia under Macarius of Alexandria, and for the last sixteen years of his life
+      gave the desert its written theology — the first systematic analysis of the
+      <em>logismoi</em> (passionate thoughts), the first sustained patristic treatise on
+      prayer, and the ascetic-contemplative framework that shapes all later Orthodox
+      spiritual theology. His theological reception is genuinely complex: specific
+      Origenist positions he held were condemned at Constantinople II (553), while his
+      ascetic and prayer writings were quietly preserved across the tradition.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Evagrius?</h2>
+      <p class="section-text">
+        Evagrius was born around 345 AD at Ibora in Pontus, the Black Sea region of
+        northern Asia Minor. His father was a chorepiskopos — a rural bishop's deputy —
+        and the family was part of the same Pontic Christian network that produced Basil
+        the Great and the two Gregories. Evagrius became Basil's disciple in his youth,
+        was ordained reader in the Cappadocian church, and upon Basil's death in 379
+        attached himself to Gregory of Nazianzus, who ordained him deacon and brought
+        him to Constantinople when he took up the patriarchate there. Evagrius attended
+        the Second Ecumenical Council in 381 as Gregory's deacon and theological
+        secretary. His formation as a theologian was as complete as the fourth century
+        could offer: Basilian monastic rule, Gregorian Trinitarian theology, and full
+        familiarity with the Cappadocian inheritance of Origen.
+      </p>
+      <p class="section-text">
+        What nearly ended his ecclesiastical career was a love affair. According to
+        Palladius's <em>Lausiac History</em> — the principal source for Evagrius's
+        biography — Evagrius in Constantinople fell into a compromising relationship
+        with the wife of a high imperial official. A dream vision, followed by urgent
+        counsel from the desert mother Melania the Elder, persuaded him to flee the
+        capital. He went first to Jerusalem, then — on Melania's instruction — to
+        Egypt, where in 383 he joined the monastic community at Nitria and quickly
+        moved to the deeper solitude of the Kellia, the "cells" that Macarius of
+        Alexandria had founded between Nitria and Scetis. He was about thirty-eight.
+        For the remaining sixteen years of his life he lived the Kellia's semi-anchoritic
+        rhythm — solitude in his cell through the week, gathering for the Saturday-Sunday
+        synaxis — and wrote.
+      </p>
+      <p class="section-text">
+        What emerged was the first systematic body of desert theology. Evagrius worked
+        with the materials Anthony and Macarius had lived but had not codified: the
+        typology of the passions, the structure of ascetic struggle, the stages of
+        contemplative prayer, the discernment of thoughts. He gave these materials
+        theological form — short numbered chapters (<em>kephalaia</em>), a compressed
+        prose meant for meditation rather than exposition, a conscious integration of
+        Origenian speculative theology with lived monastic practice. The form would
+        be imitated for a thousand years; the <em>Philokalia</em> itself is structurally
+        Evagrian. He also cataloged the eight <em>logismoi</em> — the eight genera of
+        passionate thoughts (gluttony, lust, avarice, sadness, anger, acedia, vainglory,
+        pride) — that John Cassian would carry into the Latin West and that Gregory the
+        Great would consolidate into the seven deadly sins. Every subsequent Christian
+        tradition of moral-theological catalog, East and West, descends from Evagrius's
+        list. He died at the Kellia on the eve of Epiphany, January 5, 399 AD, having
+        received communion at the liturgy the evening before.
+      </p>
+      <p class="section-text">
+        The reception is genuinely complex and worth naming clearly. Evagrius had
+        absorbed from his Cappadocian teachers — and from his own theological reading —
+        Origen's speculative cosmology of pre-existent minds, a sweeping apokatastasis,
+        and the interpretive framework that came to be called Origenism. These
+        speculative positions became central to a controversy that unfolded across the
+        fifth and sixth centuries among the Palestinian monasteries, culminating in the
+        condemnations associated with the Second Council of Constantinople in 553 —
+        which named Evagrius alongside Origen and Didymus the Blind as upholders of
+        positions rejected by the Church (pre-existence of souls, the final absorption
+        of all creatures back into an undifferentiated divine unity, the subordinate
+        metaphysical categories that framed these positions). The condemnation was
+        unambiguous and is received by the Orthodox tradition as doctrinally binding.
+        What the tradition also did, however, was quietly preserve the great bulk of
+        Evagrius's ascetic and prayer writings. The <em>Praktikos</em>, <em>On Prayer</em>,
+        and many of the shorter works survived in Greek and Syriac manuscripts, often
+        transmitted under the name of Nilus of Sinai or other safer attributions, and
+        were read continuously across the centuries. The <em>Philokalia</em> in 1782
+        printed <em>On Prayer</em> openly under the name "Nilus" but with no attempt to
+        hide that the text was shaping Orthodox spiritual reading. Modern scholarship
+        (Antoine Guillaumont, Gabriel Bunge, William Harmless, Columba Stewart, Augustine
+        Casiday, and Orthodox voices like Louth and Behr) has restored Evagrius's name
+        to the writings that circulated pseudonymously, and the contemporary Orthodox
+        reception distinguishes, as the tradition itself distinguished implicitly for
+        fourteen centuries: specific Origenist cosmological speculations rejected,
+        ascetic and contemplative teaching received. The distinction is a pastoral
+        teaching of the same order applied to Origen himself: the Church honors what
+        can be honored and names what must be named.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">8</div>
+          <div class="stat-label">Logismoi Cataloged</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">16</div>
+          <div class="stat-label">Years in the Desert</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">553</div>
+          <div class="stat-label">Origenist Positions Condemned</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">399</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Evagrius wrote in short, numbered chapters (<em>kephalaia</em>), a form he
+        essentially invented for theological meditation. The three works below anchor
+        the portion of his corpus the Orthodox tradition has received with full honor.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">The Praktikos</h3>
+          <div class="work-greek">Πρακτικός</div>
+          <p class="work-description">
+            One hundred numbered chapters on the ascetic life, organized around the eight
+            <em>logismoi</em> (passionate thoughts) and the virtues that answer each. The
+            <em>Praktikos</em> is the classical desert handbook — John Cassian's
+            <em>Institutes</em> in Latin is essentially a pastoral expansion of it, and
+            the Byzantine monastic tradition read it continuously from the fifth century
+            onward. The work gave the Orthodox spiritual tradition its systematic
+            vocabulary for the battle with the passions and the shape of ascetic
+            struggle.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Chapters on Prayer</h3>
+          <div class="work-greek">Περὶ Προσευχῆς</div>
+          <p class="work-description">
+            One hundred fifty-three chapters on prayer (the number matches the 153 fish of
+            John 21), the first sustained patristic treatise on prayer in Christian
+            history. The work circulated for centuries under the name of Nilus of Sinai
+            and was read continuously across the Orthodox tradition. It gave the later
+            hesychast tradition its vocabulary of pure prayer, of the mind's approach to
+            God beyond all images, and of the stages of contemplative ascent. Its
+            influence on Maximus the Confessor, John Climacus, Symeon the New Theologian,
+            and Palamas is pervasive.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Antirrhetikos</h3>
+          <div class="work-greek">Ἀντιρρητικός</div>
+          <p class="work-description">
+            The "Counter-Arguments" — a working manual of scriptural texts answered to
+            each of the eight <em>logismoi</em>, showing the practitioner how to use the
+            words of Scripture to repel each genus of passionate thought as it arises.
+            The work is a practical companion to the <em>Praktikos</em>, giving the
+            desert monk a tested repertoire of scriptural weapons. Survives mostly in
+            Syriac, with fragments in Greek. Its method — Scripture as the instrument of
+            the heart's combat — carries forward into the later Jesus Prayer tradition
+            and into the Athonite practice of repelling thoughts through prayerful
+            rehearsal of scriptural words.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms name the center of Evagrius's received ascetic and contemplative
+        theology — the part of his corpus the tradition has quietly preserved and handed
+        on across the centuries. The first names his taxonomy of the interior battle;
+        the second the goal of ascetic practice; the third the mode of contemplative
+        life it opens onto; the fourth his definition of what pure prayer actually is.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">λογισμοί</span>
+          <div class="transliteration">logismoi</div>
+          <div class="english-meaning">Passionate Thoughts · The Eight Genera</div>
+          <p class="pillar-explanation">
+            Evagrius's great contribution to ascetic diagnostics. He cataloged the eight
+            genera of passionate thoughts — gluttony, lust, avarice, sadness, anger,
+            acedia (spiritual listlessness), vainglory, and pride — and showed how each
+            operates, interlocks with the others, and is answered by specific virtues
+            and scriptural texts. John Cassian carried the list into the Latin West,
+            where Gregory the Great later consolidated it into the seven deadly sins.
+            Every subsequent Christian moral-theological catalog descends from Evagrius's
+            work.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ἀπάθεια</span>
+          <div class="transliteration">apatheia</div>
+          <div class="english-meaning">Dispassion · Freedom from the Passions</div>
+          <p class="pillar-explanation">
+            For Evagrius, <em>ἀπάθεια</em> is the goal of the ascetic life — not unfeeling
+            but rightly ordered feeling, the soul freed from the disordered passions that
+            bind it and therefore finally capable of the one Desire that is the love of
+            God. Clement of Alexandria had used the term; Evagrius systematizes it.
+            <em>Ἀπάθεια</em> is not holiness itself but its necessary condition, "the
+            flower of the ascetic life" (<em>Praktikos</em> 81). The whole later Orthodox
+            ascetical tradition works with this vocabulary.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">θεωρία</span>
+          <div class="transliteration">theōria</div>
+          <div class="english-meaning">Contemplation · Vision of Divine Realities</div>
+          <p class="pillar-explanation">
+            What <em>ἀπάθεια</em> makes possible: the contemplative vision of created
+            realities in their divine intelligibility, and beyond that the contemplation
+            of the Trinity itself. Evagrius distinguishes <em>θεωρία φυσική</em>
+            (natural contemplation, of created things as they manifest God) from
+            <em>θεωρία θεολογική</em> (theological contemplation, of God in himself).
+            The distinction shapes all subsequent Orthodox spiritual theology and
+            anchors the hesychast theology of vision from Climacus to Palamas.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">προσευχή</span>
+          <div class="transliteration">proseuchē</div>
+          <div class="english-meaning">Prayer · Ascent of the Nous to God</div>
+          <p class="pillar-explanation">
+            Evagrius defines prayer as "the ascent of the nous to God" (<em>On Prayer</em>
+            35) — the intellect's movement into communion with the divine, pure of images
+            and concepts. The definition and the <em>On Prayer</em> corpus as a whole
+            became the founding theology of Christian contemplative prayer in the Eastern
+            tradition. His famous formula — that the theologian is the one who prays
+            truly, and the one who prays truly is a theologian — anchors the Orthodox
+            conviction that theology and prayer are not two enterprises but one.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "If you are a theologian, you will pray truly; and if you pray truly, you are a
+        theologian."
+      </p>
+      <div class="quote-source">— On Prayer 61</div>
+    </div>
+
+    <!-- Why Evagrius Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Evagrius Matters Today</h2>
+      <p class="section-text">
+        The Orthodox contemplative tradition, in its systematic articulation, is
+        Evagrian in its bones. The Philokalia's vocabulary — the <em>logismoi</em>, the
+        virtues, <em>apatheia</em>, <em>theōria</em>, pure prayer — was given to the
+        tradition by Evagrius. When Climacus writes the <em>Ladder</em>, when Maximus
+        composes his <em>Chapters on Love</em>, when Gregory of Sinai teaches the stages
+        of prayer, when Palamas defends the hesychasts of Athos, they are working in
+        Evagrius's systematic grammar. The tradition could not have articulated itself
+        as fully as it did without him.
+      </p>
+      <p class="section-text">
+        The pastoral use of his diagnostic of thoughts extends well beyond the cloister.
+        Every Orthodox Christian who has taken seriously the examination of conscience,
+        who has recognized acedia or vainglory at work in an ordinary Tuesday afternoon,
+        who has reached for Scripture to repel an intrusive thought in prayer, is doing
+        work Evagrius gave the tradition its vocabulary to do. Modern Orthodox pastoral
+        theology (Hierotheos Vlachos's <em>Orthodox Psychotherapy</em>, the spiritual
+        direction of Elder Sophrony Sakharov and his disciples, the psychological-spiritual
+        integration in the writings of John Chryssavgis) depends on Evagrius's tools.
+      </p>
+      <p class="section-text">
+        And the reception itself is the third teaching. The Church held two truths
+        together across fourteen centuries: that certain Origenist positions Evagrius
+        held were genuinely rejected at Constantinople II, and that his ascetic and
+        prayer writings were genuinely received and transmitted. The writings circulated
+        under pseudonymous attribution not because the tradition was confused about
+        who wrote them but because the tradition was discerning what in the author's
+        theological work could be received intact. The strategy was not deception but
+        pastoral preservation. Modern scholarship has restored the name to the
+        writings; the Church's tradition of discernment remains the same. A theologian
+        of real genius can offer both gifts worth receiving and speculations worth
+        rejecting, and the Church's task is to sift rather than to adopt or discard
+        whole. Evagrius is the paradigm case in the desert tradition, as Origen is the
+        paradigm case in the Alexandrian tradition — and the Church has been doing
+        this kind of discernment with his work for seventeen centuries.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="macarius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Macarius the Great</div>
+          <div class="related-desc">Evagrius's desert contemporary and theological counterweight. Macarius emphasizes the heart's tasting of grace; Evagrius emphasizes the intellect's ascent in prayer. The two together form the full Orthodox inheritance, which later hesychasm integrates into a single vision.</div>
+        </a>
+        <a href="origen.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Origen of Alexandria</div>
+          <div class="related-desc">The theological ancestor whose speculative framework Evagrius inherited through the Cappadocians. The Orthodox distinction between received method and rejected speculation, applied to both figures, is one of the tradition's enduring acts of discernment.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Ε</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Evagrius's vocabulary of the logismoi, apatheia, theōria, and pure prayer anchors the whole later Philokalic and hesychast inheritance of systematic contemplative theology.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
