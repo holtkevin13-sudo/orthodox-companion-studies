@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T14:08:08Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gregory the Great — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Gregory the Great — Orthodox Companion Studies">
+<meta property="og:description" content="Pope, monastic reformer, pastoral theologian, and missionary — the Latin pope of the late sixth century whose Pastoral Rule shaped the medieval bishop's office and whose Dialogues gave Italian monasticism its hagiographic voice. Commemorated in the Orthodox East as St. Gregory the Dialogist.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Gregory the Great (c. 540 – 604 AD) — Pope of Rome from 590, former Roman prefect who sold his family fortune to found monasteries, author of the Pastoral Rule, the Dialogues, the Moralia in Job, and forty homilies on the Gospels. Consolidated Cassian's eight logismoi into the seven deadly sins; sent Augustine of Canterbury to convert the Anglo-Saxons; standardized the Roman liturgical chant that bears his name. Commemorated in the Orthodox Church as St. Gregory the Dialogist on March 12.">
+<meta name="keywords" content="Gregory the Great, Gregorius Magnus, Gregory I, Pope Gregory, Dialogues, Pastoral Rule, Regula Pastoralis, Moralia in Job, Seven Deadly Sins, Gregorian Chant, Augustine of Canterbury, Anglo-Saxon Mission, Benedict of Nursia, St. Gregory the Dialogist, Byzantine-Era Latin Father">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Byzantine Era · Latin + Greek)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   First porphyry card in extension — palette transition from the
+   navy-era (Ante-Nicene through desert monastic) to porphyry-era
+   (Byzantine and late patristic Latin).
+   Latin CSS variants active for Gregory's Latin pillars and quote.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Byzantine Era · Latin Pope and Dialogist
+    </div>
+    <h1 class="hero-title">Gregory the Great</h1>
+    <div class="hero-epithet latin">Gregorius Magnus · The Dialogist</div>
+    <div class="hero-meta">c. 540 – 604 AD · Bishop of Rome, Monastic Reformer, Pastoral Doctor</div>
+    <p class="hero-description">
+      Former prefect of Rome who sold his family's wealth to found seven monasteries,
+      reluctant pope of the Roman see from 590 to 604, author of the <em>Pastoral Rule</em>
+      that shaped every medieval bishop's formation, composer of the <em>Dialogues</em>
+      on the Italian saints that gave the West the <em>Life of Benedict</em>, and the
+      pope who dispatched Augustine to Canterbury to convert the Anglo-Saxons. The Orthodox
+      Church commemorates him as St. Gregory the Dialogist on March 12 and reveres him as
+      one of the great Byzantine-era Latin Fathers — the last of the Latin Fathers the
+      undivided Church received in common, and the bishop of Rome who shaped both the
+      Western pastoral tradition and, through his standardization of the Roman rite,
+      centuries of Western liturgical music.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Gregory?</h2>
+      <p class="section-text">
+        Gregory was born around 540 AD into one of the oldest senatorial families of Rome —
+        the Anicii, a clan that had already produced Pope Felix III (Gregory's
+        great-great-grandfather) and would shortly produce his own cousin Pope Felix IV.
+        His family's wealth was immense and their Christian faith was serious; Gregory's
+        mother Silvia and two paternal aunts, Tarsilla and Aemiliana, lived as consecrated
+        virgins and are commemorated as saints. Gregory himself trained as a Roman lawyer,
+        rose rapidly through civic office, and was appointed urban prefect of Rome —
+        effectively the mayor of the ancient capital — in 573, when he was only about
+        thirty-three. Rome at that moment was in steep decline, the old imperial
+        administration decayed, the Lombard invasions consuming the Italian peninsula.
+        Gregory served the city faithfully for a year or two and then walked away.
+      </p>
+      <p class="section-text">
+        He sold his vast Roman estates and his Sicilian properties, distributed the bulk
+        to the poor, and used what remained to found seven monasteries: six in Sicily and
+        one at his family's Roman palace on the Caelian Hill, which he converted into
+        the Monastery of St. Andrew. Gregory himself took the Benedictine habit there
+        around 575 and lived as a simple monk until Pope Pelagius II called him back
+        into service — first as papal ambassador (<em>apocrisiarius</em>) to Constantinople,
+        where Gregory spent seven years learning Greek imperfectly but learning Byzantine
+        ecclesiastical politics thoroughly, then as abbot of St. Andrew's upon his return
+        to Rome in 586, and finally — when Pelagius died in a plague that swept Rome
+        in 590 — as his unwilling successor. Gregory tried to refuse the papacy. He
+        wrote personally to the Emperor Maurice begging him not to confirm the election.
+        The letter was intercepted by Gregory's brother Palatinus. Gregory was consecrated
+        Pope on September 3, 590.
+      </p>
+      <p class="section-text">
+        What followed is the most sustained and influential pontificate of the patristic
+        age. Gregory faced Rome on the verge of collapse — the Lombards pressing south,
+        imperial support from Constantinople faltering, the grain supply failing,
+        outbreaks of plague continuing to decimate the population. He organized the
+        papal patrimony into a working system of estate administration that fed Roman
+        refugees and ransomed Lombard captives, negotiated directly with the Lombard
+        king Agilulf when the imperial exarchate would not, and preached nearly weekly
+        to whatever remained of the Roman Christian population. In 596 he dispatched
+        forty monks from St. Andrew's, led by his namesake Augustine, to convert the
+        Anglo-Saxon kingdoms of Britain — a mission whose success brought the whole of
+        England into Latin Christianity within a century. He reformed the Roman liturgy,
+        standardized its chant (which would bear his name as Gregorian chant through
+        the medieval period), and wrote continuously through all of it: the
+        <em>Pastoral Rule</em>, the <em>Dialogues</em>, the massive <em>Moralia in Job</em>,
+        the forty homilies on the Gospels, the twenty-two homilies on Ezekiel, and a
+        correspondence of over eight hundred surviving letters. He died on March 12, 604,
+        worn out by fourteen years of relentless pastoral and civic labor. The Orthodox
+        Church has received him unambiguously as one of its own Fathers — commemorated
+        as St. Gregory the Dialogist after his famous work on the Italian saints,
+        celebrated for his <em>Presanctified Liturgy</em> still used during Lenten
+        weekdays in the Byzantine rite, and numbered among the great Byzantine-era
+        Latin voices before the widening divergences of the later medieval centuries.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">7</div>
+          <div class="stat-label">Monasteries Founded</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">14</div>
+          <div class="stat-label">Years as Pope</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">800</div>
+          <div class="stat-label">Surviving Letters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">604</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Gregory's output is vast and falls into three clusters: pastoral theology,
+        hagiography, and exegesis. Three works anchor his lasting contribution.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">The Pastoral Rule</h3>
+          <div class="work-latin">Regula Pastoralis</div>
+          <p class="work-description">
+            Four books on the office of the bishop, composed in the first year of his
+            pontificate to answer Bishop John of Ravenna's question about why Gregory
+            had resisted the papacy. Who should take the pastoral office, the qualities
+            required, the methods of preaching to different hearers according to their
+            condition, and the bishop's own interior life of prayer and humility. The
+            work became the manual of episcopal formation for the Latin West through
+            the whole medieval period; King Alfred translated it into Old English in the
+            ninth century; the Byzantine world received it in Greek translation. No
+            patristic treatise shaped the office of the Christian bishop more completely.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Dialogues</h3>
+          <div class="work-latin">Dialogi</div>
+          <p class="work-description">
+            Four books in dialogue form between Gregory and his deacon Peter, recounting
+            the lives and miracles of Italian saints — Book II is devoted entirely to
+            Benedict of Nursia and is the only substantial patristic witness we possess
+            to the life of the founder of Western monasticism. The <em>Dialogues</em>
+            gave Gregory the Orthodox epithet <em>the Dialogist</em>, under which the
+            East primarily knows him. Some modern Catholic scholarship has questioned
+            whether Gregory himself wrote the whole <em>Dialogues</em>; the Orthodox
+            tradition receives them under his name and as his work.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Moralia on Job</h3>
+          <div class="work-latin">Moralia in Iob</div>
+          <p class="work-description">
+            Thirty-five books of commentary on the Book of Job, begun at Constantinople
+            during Gregory's years as papal ambassador and completed in the first decade
+            of his pontificate. The work reads Job at three levels — literal, allegorical,
+            and moral — and in the process gives the medieval West its most complete
+            treatise on the Christian moral life. The consolidation of Cassian's eight
+            <em>logismoi</em> into the seven deadly sins (combining vainglory into pride
+            and dropping sadness as a distinct category) takes place in <em>Moralia</em>
+            31, and every subsequent Western catalog of vices descends from that text.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Latin terms name the center of Gregory's contribution. The first is his
+        signature category for the Christian life; the second names the pastoral vocation
+        that shaped his pontificate and his most influential book; the third the
+        moral-theological consolidation that fixed the seven deadly sins for Western
+        Christianity; the fourth the hagiographic mode through which he taught holiness.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="latin-term">contemplatio</span>
+          <div class="transliteration">con-tem-PLA-ti-o</div>
+          <div class="english-meaning">Contemplation · The Vision of God</div>
+          <p class="pillar-explanation">
+            For Gregory, the goal of the Christian life — monastic or pastoral — is
+            <em>contemplatio</em>: the loving vision of God that is both present gift
+            and eschatological promise. His distinctive move is to refuse the separation
+            of contemplation and pastoral office. The bishop must enter contemplation
+            in order to serve from it; he must descend from it to serve without being
+            consumed by what service costs. The whole <em>Pastoral Rule</em> proceeds
+            from this refusal, and the Western tradition of the contemplative-active
+            bishop (Bede, Anselm, Bernard, and onward) inherits Gregory's integration.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">pastor</span>
+          <div class="transliteration">PAS-tor</div>
+          <div class="english-meaning">Pastor · Shepherd of Souls</div>
+          <p class="pillar-explanation">
+            The <em>Regula Pastoralis</em> names Gregory's central theological concern:
+            what it means to be a shepherd of souls, how one is rightly prepared for the
+            office, how one exercises it without destroying one's own soul in the labor.
+            The bishop must preach differently to the proud and the humble, to the
+            generous and the avaricious, to the chaste and the lustful — adapting the
+            word of God to the actual condition of each hearer. No patristic text on
+            pastoral office has been more influential, and the vocation of the
+            <em>pastor animarum</em> as Gregory defines it remains the working
+            vocabulary of Orthodox, Catholic, and Protestant pastoral theology alike.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term long">septem peccata</span>
+          <div class="transliteration">SEP-tem pec-CA-ta</div>
+          <div class="english-meaning">Seven Deadly Sins</div>
+          <p class="pillar-explanation">
+            In <em>Moralia</em> 31, Gregory consolidated Cassian's eight <em>logismoi</em>
+            into the seven capital vices — pride (absorbing vainglory), avarice, lust,
+            envy (recast from Cassian's sadness-envy), gluttony, anger, and acedia —
+            with pride identified as the root of the others. The list became the standard
+            catalog of Western moral theology, appearing in every medieval confessional
+            manual and carrying forward into modern Catholic and Orthodox moral reflection
+            alike. The Orthodox tradition retains the Evagrian-Cassianic eight in its
+            monastic literature and the Gregorian seven in its lay catechetical
+            tradition; both lineages are the same tree.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">dialogus</span>
+          <div class="transliteration">di-A-lo-gus</div>
+          <div class="english-meaning">Dialogue · Hagiographic Method</div>
+          <p class="pillar-explanation">
+            Gregory teaches by narrative. His <em>Dialogues</em> — whose second book is
+            the life of Benedict — work not through systematic exposition but through
+            stories of particular holy men and women whose lives disclose what sanctity
+            concretely looks like. The method gives him a way of teaching that reaches
+            beyond the literate few to a Christian populace who could receive the
+            story even when they could not parse the doctrine. Hagiography as a
+            serious theological genre, shaped by patristic conviction about the
+            continuing action of God in particular lives, is Gregory's legacy, and the
+            Orthodox tradition's immense hagiographic inheritance owes much to his
+            Western precedent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-latin">
+        "Ars est artium regimen animarum."
+      </p>
+      <p class="quote-text">
+        "The care of souls is the art of arts."
+      </p>
+      <div class="quote-source">— Pastoral Rule 1.1</div>
+    </div>
+
+    <!-- Why Gregory Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Gregory Matters Today</h2>
+      <p class="section-text">
+        He is the last of the Latin Fathers the undivided Church received in common.
+        After Gregory, the Latin West and the Greek East will continue to commune and
+        to share saints and Fathers for another four centuries, but the centers of
+        theological gravity will gradually diverge. Gregory stands at the last point of
+        unforced synthesis — a Latin pope fluent in the spirituality of the Egyptian
+        desert, a Western bishop who served as ambassador in Constantinople and composed
+        a <em>Presanctified Liturgy</em> the Byzantine rite still prays through Lent,
+        a pastoral theologian whose <em>Pastoral Rule</em> was translated into Greek and
+        received across the East. When the Orthodox tradition calls him <em>the
+        Dialogist</em> and commemorates him on March 12, it is honoring the pope of the
+        undivided Church.
+      </p>
+      <p class="section-text">
+        His integration of contemplative and pastoral life is perhaps his most
+        consequential gift to Orthodox pastoral theology. The temptation in every
+        Christian tradition is to separate prayer and ministry — to treat contemplation
+        as the monk's vocation and pastoral activity as the bishop's. Gregory refused
+        that separation at the structural level: the bishop must be a contemplative,
+        and the contemplative must be ready to be called from silence into the care of
+        souls. The Orthodox tradition's best pastoral witness — the bishops who are
+        hesychasts, the priests who are men of prayer, the elders who serve the faithful
+        out of the depths of their own prayer — operates in Gregory's pattern. The
+        refusal to separate is itself a pastoral teaching.
+      </p>
+      <p class="section-text">
+        And his administrative achievement — feeding a collapsing Rome, ransoming
+        Lombard captives, organizing papal estates for the relief of the poor,
+        negotiating with invaders the empire would not fight — is a concrete witness to
+        what pastoral office actually costs and can accomplish. The modern Orthodox
+        parish priest or diocesan bishop who juggles the liturgical calendar, the
+        building-maintenance budget, the pastoral visitations, the diocesan politics,
+        and the hours of prayer he knows he must keep to preserve his own soul has
+        Gregory as a patron. No Father among the fathers understood more concretely
+        that pastoral office is a slow martyrdom of the self undertaken for the sake of
+        the flock, and Gregory accepted that cost with steady love for fourteen years
+        until it killed him.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="john-cassian.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">John Cassian</div>
+          <div class="related-desc">The desert-to-Latin bridge figure whose eight logismoi Gregory consolidated into the seven deadly sins. Cassian transmits; Gregory codifies. The Western moral-theological tradition runs Evagrius → Cassian → Gregory in a single line.</div>
+        </a>
+        <a href="ambrose.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Ambrose of Milan</div>
+          <div class="related-desc">Gregory's great Latin pastoral predecessor. Ambrose's <em>De Officiis Ministrorum</em> and Gregory's <em>Pastoral Rule</em> together form the two pillars of Latin pastoral theology — complementary visions of the bishop as shepherd, separated by two centuries and united by a common patristic center.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">G</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Gregory's Latin vocabulary of contemplation, pastoral office, the seven deadly sins, and hagiographic dialogue connects to the parallel Greek traditions of θεωρία, ποιμήν, and λογισμοί.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
