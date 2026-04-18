@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T13:19:27Z
+// build: 2026-04-18T13:29:45Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1484,7 +1484,8 @@ const FATHER_PAGES = {
   'Ephrem the Syrian': 'father-cards/ephrem-the-syrian.html',
   'Hilary of Poitiers': 'father-cards/hilary-of-poitiers.html',
   'Ambrose of Milan': 'father-cards/ambrose.html',
-  'Jerome': 'father-cards/jerome.html'
+  'Jerome': 'father-cards/jerome.html',
+  'Augustine of Hippo': 'father-cards/augustine.html'
   // ...add as pages are built
 };
 
