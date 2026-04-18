@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T03:03:57Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basil the Great — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Basil the Great — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Caesarea, Cappadocian Father, and author of On the Holy Spirit — whose defense of the Spirit's full deity completed the Nicene confession of the Trinity.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Basil the Great (c. 330 – 379 AD) — Bishop of Caesarea in Cappadocia, author of On the Holy Spirit and Against Eunomius, and co-architect of the Cappadocian Trinitarian grammar of one essence in three hypostases. Founder of the Basileias social complex and of the liturgy that bears his name.">
+<meta name="keywords" content="Basil the Great, Basil of Caesarea, Cappadocian Fathers, Church Fathers, On the Holy Spirit, De Spiritu Sancto, Pneuma, Homotimia, Ousia, Hypostasis, Trinity, Pneumatomachoi, Liturgy of St. Basil, Basileias, Monasticism">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 5 · Cappadocians · Week 16
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Basil the Great</h1>
+    <div class="hero-epithet">Βασίλειος ὁ Μέγας · Father of the Cappadocians</div>
+    <div class="hero-meta">c. 330 – 379 AD · Bishop of Caesarea, Cappadocian Father</div>
+    <p class="hero-description">
+      Bishop of Caesarea in Cappadocia, monastic organizer, liturgist, and social reformer,
+      Basil is the central figure of the fourth-century Cappadocian school that completed what
+      Nicaea began. His <em>On the Holy Spirit</em> defended the Spirit's full deity against the
+      Pneumatomachoi and made possible the Church's final Trinitarian confession at Constantinople
+      in 381. His grammar of <em>one οὐσία in three ὑποστάσεις</em> is the Greek Church's durable
+      language for the Trinity.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Basil?</h2>
+      <p class="section-text">
+        Basil was born around 330 AD into a Cappadocian family already on its way to becoming a
+        household of saints. His grandmother Macrina the Elder had been a disciple of Gregory the
+        Wonderworker; his father, Basil the Elder, was a rhetor; his mother Emmelia, his older
+        sister Macrina the Younger, and his younger brothers Gregory of Nyssa and Peter of Sebaste
+        would all be venerated by the Church. He was educated at home, then in Caesarea, then in
+        Constantinople, and finally at Athens, where he met Gregory of Nazianzus. The friendship
+        that began in the Athenian lecture halls — Gregory later recalled that they knew only two
+        streets in the city, the one to the church and the one to the school — would shape the
+        course of Eastern theology.
+      </p>
+      <p class="section-text">
+        Around 357 AD Basil was baptized and, on the advice of his sister Macrina, renounced the
+        rhetor's career he had been preparing for. He traveled through the monastic settlements of
+        Egypt, Syria, and Palestine, and on his return founded a semi-communal monastic house on
+        the family estate at Annisa in Pontus. From this period come the <em>Long Rules</em> and
+        <em>Short Rules</em>, which shape Eastern Christian monasticism to this day — balanced,
+        cenobitic, lay rather than clerical in emphasis, oriented around obedience, manual work,
+        and liturgical prayer. In 364 he was ordained priest under Bishop Eusebius of Caesarea;
+        in 370 he succeeded Eusebius as bishop of the city and metropolitan of Cappadocia. He
+        was about forty.
+      </p>
+      <p class="section-text">
+        The nine years of his episcopate were a single sustained action: defending Nicene
+        Christology against the neo-Arianism of Eunomius, defending the Spirit's deity against
+        the Pneumatomachoi, holding the Church in Cappadocia together through the pressure of the
+        Arian emperor Valens. Gregory of Nazianzus's later Funeral Oration (Oration 43) preserves
+        the famous encounter with the imperial prefect Modestus: when Modestus threatened the
+        bishop with confiscation, exile, torture, and death, Basil replied that he had nothing
+        worth confiscating, was at home wherever God's earth stretched, could not be tortured
+        beyond the first blow, and welcomed death as sending him sooner to God. "Here is someone
+        who has never been addressed in this way before," Modestus said. "Perhaps," Basil
+        answered, "you have never met a real bishop." He also built the <em>Basileias</em>, an
+        unprecedented complex at Caesarea that housed a hospital, a hospice, a leper colony, and
+        shelter for the poor — Christian philanthropy organized into visible institutional form.
+        He died on January 1, 379 AD. The liturgy that bears his name is still the Church's
+        anaphora on the Sundays of Great Lent, on Holy Thursday and Holy Saturday, and on the
+        eves of Christmas and Theophany.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">c. 330</div>
+          <div class="stat-label">Born in Cappadocia</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">9</div>
+          <div class="stat-label">Years as Bishop</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 375</div>
+          <div class="stat-label">On the Holy Spirit</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">300+</div>
+          <div class="stat-label">Surviving Letters</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Basil wrote across the whole range of a fourth-century bishop's office — dogmatic
+        treatises, polemical refutations, homilies on Scripture, ascetic rules, liturgical
+        composition, and an immense body of letters. Three works are foundational for the
+        Phase 5 reading.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">On the Holy Spirit</h3>
+          <div class="work-greek">Περὶ τοῦ Ἁγίου Πνεύματος</div>
+          <p class="work-description">
+            Composed around 375 AD at the request of Basil's disciple Amphilochius of Iconium, this
+            treatise is the foundational defense of the Spirit's full divinity. Basil does not
+            bluntly write "the Spirit is God" — he explains why he does not, as a matter of
+            pastoral strategy — but the argument from the Church's liturgical co-worship of
+            Father, Son, and Spirit (<em>ὁμοτιμία</em>) secures the doctrinal conclusion through
+            doxology. The book is the theological bridge between Nicaea's Christology (325) and
+            Constantinople's full Trinitarian confession (381).
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Against Eunomius</h3>
+          <div class="work-greek">Κατὰ Εὐνομίου</div>
+          <p class="work-description">
+            Three books composed around 363–365 AD against the neo-Arian Eunomius, who argued that
+            "unbegottenness" (<em>ἀγεννησία</em>) <em>is</em> the divine essence, so the Son —
+            being begotten — cannot be God. Basil systematically distinguishes hypostatic
+            properties from the one shared essence, laying down the technical vocabulary of
+            <em>οὐσία</em> and <em>ὑπόστασις</em> that the two Gregorys would inherit. Without
+            this book, the Cappadocian Trinitarian grammar would have no spine.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Hexaemeron</h3>
+          <div class="work-greek">Ἑξαήμερος</div>
+          <p class="work-description">
+            Nine homilies on the six days of creation (Genesis 1), delivered during Great Lent
+            around 378 AD. Basil moves through the creation narrative with scientific curiosity,
+            pastoral warmth, and theological precision, holding off both Origenist over-allegorizing
+            and bare literalism. The work is foundational for Eastern Christian creation theology;
+            Ambrose of Milan adapts it into Latin shortly after, carrying Basil's exegetical
+            method into the Western tradition.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the Basilian theological program. The first two belong
+        distinctively to him as the architect of pneumatology; the second two are the Cappadocian
+        Trinitarian grammar he fixed and handed on to Gregory of Nyssa and Gregory of Nazianzus.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-pneuma" class="greek-term greek-term-link">πνεῦμα</a>
+          <div class="transliteration">pneuma</div>
+          <div class="english-meaning">Spirit · Breath</div>
+          <p class="pillar-explanation">
+            Breath, wind, spirit — and in Basil's <em>De Spiritu Sancto</em>, the subject of the
+            fourth-century's last great doctrinal battle. Against the <em>Pneumatomachoi</em>
+            ("Spirit-fighters") who conceded the Son's deity but denied it to the Spirit, Basil
+            argues from Scripture and liturgical practice that the <em>πνεῦμα</em> is fully God,
+            eternally proceeding from the Father and inseparable in worship from Father and Son.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-homotimia" class="greek-term greek-term-link">ὁμοτιμία</a>
+          <div class="transliteration">homotimia</div>
+          <div class="english-meaning">Equal Honor</div>
+          <p class="pillar-explanation">
+            Basil's signature argument for the Spirit's deity (<em>On the Holy Spirit</em> 10–27).
+            The Church already worships the Spirit "together with" (<em>συν-</em>) the Father and
+            the Son in the doxology handed down from the apostles. If only God receives the honor
+            due to God, and the Church in her settled prayer honors the Spirit on equal terms with
+            the Father and Son, then the Spirit must be God. Liturgical practice becomes
+            theological premise.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-ousia" class="greek-term greek-term-link">οὐσία</a>
+          <div class="transliteration">ousia</div>
+          <div class="english-meaning">Essence · Being</div>
+          <p class="pillar-explanation">
+            Essence — what a thing <em>is</em>. In the Cappadocian Trinitarian grammar Basil
+            fixes, <em>μία οὐσία</em> (one essence) names the single divine reality shared by
+            Father, Son, and Spirit. Athanasius's <em>ὁμοούσιος</em> is now made to function
+            within a precise distinction between the one essence and the three who share it.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-hypostasis" class="greek-term greek-term-link">ὑπόστασις</a>
+          <div class="transliteration">hypostasis</div>
+          <div class="english-meaning">Person · Subsistence</div>
+          <p class="pillar-explanation">
+            Paired with <em>οὐσία</em>: <em>ὑπόστασις</em> names each concrete subsistent — Father,
+            Son, and Spirit — who shares the one essence. Earlier Greek usage, including
+            Athanasius, had sometimes used the two terms interchangeably; Basil's distinction
+            settles the difference and lets the West's <em>persona</em> and the East's
+            <em>ὑπόστασις</em> be read together without confusion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "The way of the knowledge of God lies from the One Spirit, through the One Son,
+        to the One Father."
+      </p>
+      <div class="quote-source">— On the Holy Spirit 18.47</div>
+    </div>
+
+    <!-- Why Basil Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Basil Matters Today</h2>
+      <p class="section-text">
+        Every time an Orthodox Christian prays the Nicene-Constantinopolitan Creed and confesses
+        the Holy Spirit as "the Lord, the Giver of Life, who proceeds from the Father, who with
+        the Father and the Son together is worshipped and glorified," they are speaking Basil's
+        theology. The Council of Constantinople in 381, two years after his death, canonized in
+        its creed the conclusions he had drawn from the Church's doxological practice. The
+        specific logic of that confession — the full deity of the Spirit, grounded in
+        co-worship — is Basil's work.
+      </p>
+      <p class="section-text">
+        His Trinitarian grammar is equally durable. The Cappadocian formula of <em>one essence in
+        three hypostases</em> gave the Greek Church a stable way to hold together what Nicaea had
+        insisted on. Every later Christological settlement, from Ephesus to Chalcedon and beyond,
+        presupposes this grammar. When modern Orthodox theology speaks of communion, personhood,
+        and relation — the tradition of Zizioulas, of Lossky before him, of the whole
+        neo-Patristic synthesis — the vocabulary traces back to Basil's careful work against
+        Eunomius.
+      </p>
+      <p class="section-text">
+        There is also the pastoral Basil, the bishop who did not separate doctrine from care.
+        The <em>Basileias</em> at Caesarea was the first organized Christian social institution of
+        its scale — hospital, hospice, leprosarium, almshouse — and it was the concrete form, in
+        one city, of the theology Basil preached. The monastic rule that bears his name shapes
+        Eastern monasticism to this day, and the Liturgy of St. Basil is still celebrated more
+        than sixteen centuries later. A theologian whose office was always pastoral, a pastor
+        whose theology was always at liturgy, a friend whose friendship with Gregory of Nazianzus
+        held the Cappadocian school together — Basil's witness is that these things belong
+        finally in one person.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="athanasius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Athanasius the Great</div>
+          <div class="related-desc">Basil's Nicene predecessor — his homoousios for the Son prepared the ground for Basil's pneumatology.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-homotimia" class="related-link">
+          <span class="related-icon">Ω</span>
+          <div class="related-title greek">ὁμοτιμία</div>
+          <div class="related-desc">Basil's signature argument — the equal honor owed to the Spirit in the Church's doxology.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-5" class="related-link">
+          <span class="related-icon">Κ</span>
+          <div class="related-title">Phase 5 Lexicon</div>
+          <div class="related-desc">The Cappadocian vocabulary of Trinity, procession, and communion.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase week.
+// Basil is Phase 5: Week 16 (Gregory of Nyssa gets Week 17).
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk === 16) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
