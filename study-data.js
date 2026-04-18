@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T15:07:13Z
+// build: 2026-04-18T15:14:08Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1495,7 +1495,8 @@ const FATHER_PAGES = {
   'Isaac the Syrian': 'father-cards/isaac-the-syrian.html',
   'Symeon the New Theologian': 'father-cards/symeon-the-new-theologian.html',
   'Gregory Palamas': 'father-cards/gregory-palamas.html',
-  'Photios the Great': 'father-cards/photios-the-great.html'
+  'Photios the Great': 'father-cards/photios-the-great.html',
+  'Theodore the Studite': 'father-cards/theodore-the-studite.html'
   // ...add as pages are built
 };
 
