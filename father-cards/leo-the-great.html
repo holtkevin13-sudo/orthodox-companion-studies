@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T03:53:37Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leo the Great — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Leo the Great — Orthodox Companion Studies">
+<meta property="og:description" content="Pope of Rome whose Tome to Flavian gave the Council of Chalcedon its Latin Christological grammar — two natures, one person — in permanent complement to Cyril's Greek.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Leo the Great (c. 400 – 461 AD) — Pope of Rome 440-461, author of the Tome received at the Council of Chalcedon as the Latin witness to the orthodox Christological faith. Preacher of ninety-six surviving sermons and author of the most carefully-preserved papal letter collection of late antiquity.">
+<meta name="keywords" content="Leo the Great, Pope Leo I, Latin Fathers, Church Fathers, Tome of Leo, Tomus Leonis, Chalcedon, Two Natures One Person, Utraque Forma, Communicatio Idiomatum, Sedes Petri, Roman See, Attila">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English/Latin) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Phases 9–13)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   This card also uses the Latin-variant classes (introduced on
+   Tertullian and Cyprian in Part I): italic Cormorant for Latin
+   hero-epithet, work-latin, latin-term, quote-latin, etc.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+/* Latin-Father variant: italic Cormorant for Latin epithets */
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+/* Latin-Father variant: Latin work title in italic Cormorant */
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+/* Multi-word Greek phrases — smaller size + natural wrap */
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* Latin-Father variant: italic Cormorant for Latin pillar terms */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .latin-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+/* Long Latin phrases — reduce font size to allow natural wrap */
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 10 · Leo the Great · Week 31
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Leo the Great</h1>
+    <div class="hero-epithet latin">Leo Magnus · Pope of Rome</div>
+    <div class="hero-meta">c. 400 – 461 AD · Bishop of Rome, Author of the Tome</div>
+    <p class="hero-description">
+      Pope of Rome for twenty-one years and the first bishop of Rome the Church calls "the
+      Great," Leo gave the Council of Chalcedon in 451 its Latin Christological grammar.
+      His <em>Tome to Flavian</em> — read aloud at Chalcedon and received by the assembled
+      bishops with the cry "Peter has spoken through Leo" — is the Latin witness complementing
+      Cyril's Greek, the permanent companion text to the Chalcedonian Definition.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Leo?</h2>
+      <p class="section-text">
+        Leo was born around 400 AD, probably in Tuscany, of an aristocratic Roman family. He
+        served as deacon under Popes Celestine and Sixtus III, and by the 430s was already the
+        Roman church's most capable administrator and diplomat — Sixtus entrusted him with
+        delicate missions including a reconciliation between two Gallic generals whose feud
+        threatened the western empire. When Sixtus died in 440, Leo was in Gaul on just such a
+        mission; he was elected pope in his absence and returned to Rome to take up the office.
+      </p>
+      <p class="section-text">
+        His papacy unfolded through the steady collapse of Roman power in the West. In 452 he
+        met Attila the Hun at the Mincio River in northern Italy and, according to tradition,
+        persuaded the Hunnic leader to turn back from Rome. Three years later he confronted
+        Gaiseric the Vandal at the walls of Rome itself; this time the city could not be saved
+        from pillage, but Leo secured Gaiseric's promise not to burn the city or massacre the
+        population. During the same years he built up the Roman liturgy, composed what would
+        become the classical corpus of Latin papal preaching, and — through correspondence
+        covering nearly every province of the Christian world — extended the governance of the
+        Roman see in ways his successors would take for granted.
+      </p>
+      <p class="section-text">
+        The event for which the Church holds him came in 449. The archimandrite Eutyches at
+        Constantinople had taught that after the Incarnation Christ had only one nature; the
+        so-called Robber Synod of Ephesus under Dioscorus of Alexandria ratified the teaching
+        and deposed Flavian of Constantinople, who had opposed it. Leo intervened with a long,
+        careful dogmatic letter to Flavian — Epistle 28, the <em>Tome</em> — setting out in
+        Latin the two-natures Christology he had inherited from the older Latin tradition and
+        that he now insisted the universal Church must confess. At the Council of Chalcedon in
+        451, when the Tome was read aloud, the bishops — according to the acts — rose to
+        acclaim it: <em>Petrus per Leonem locutus est</em>, "Peter has spoken through Leo." The
+        Chalcedonian Definition was framed in its wake. Leo died on November 10, 461, and was
+        the first Pope buried within St. Peter's Basilica. The Orthodox Church commemorates him
+        on February 18.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">451</div>
+          <div class="stat-label">Council of Chalcedon</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">21</div>
+          <div class="stat-label">Years as Pope</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">96</div>
+          <div class="stat-label">Surviving Sermons</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">461</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        The Leonine corpus is more unified than most patristic bodies of work. Everything Leo
+        wrote is pastoral: the papal sermons for the liturgical year, the letters governing
+        the daily life of the Roman see, and the one great dogmatic letter that stands at the
+        center of the Christological settlement.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">The Tome</h3>
+          <div class="work-latin">Epistula 28 ad Flavianum</div>
+          <p class="work-description">
+            Leo's dogmatic letter of June 449 to Flavian of Constantinople. Six chapters of
+            compressed Latin Christology: the one Christ is two natures, divine and human,
+            united without confusion in a single <em>persona</em>. Each nature retains its own
+            properties; each nature acts what is proper to itself in communion with the other.
+            The letter's lapidary formulations — <em>agit utraque forma cum alterius communione
+            quod proprium est</em> — become the Latin backbone of the Chalcedonian confession.
+            Read aloud at the Council of Chalcedon in 451 and received as definitional.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Sermons</h3>
+          <div class="work-latin">Sermones</div>
+          <p class="work-description">
+            Ninety-six papal sermons preserved in Leo's collected edition — the classical corpus
+            of Latin liturgical preaching. The Christmas sermons (Sermones 21–26) and Passion
+            sermons (Sermones 52–70) are particularly important, weaving incarnational theology
+            into the liturgical year. Leo's Christmas Sermon 21 contains the most famous
+            exhortation of his preaching: <em>Agnosce, o Christiane, dignitatem tuam</em> —
+            "Christian, recognize your dignity" — and the theological basis for that dignity in
+            the assumed human nature of the Incarnate Word.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Letters</h3>
+          <div class="work-latin">Epistulae</div>
+          <p class="work-description">
+            One hundred seventy-three letters survive — the most carefully preserved papal
+            correspondence of late antiquity. They cover Christology (the Nestorian and
+            Eutychian controversies), ecclesial discipline, the churches of North Africa and
+            Gaul and Illyricum, the Petrine prerogatives of the Roman see, and the pastoral
+            governance of a pope in a collapsing empire. For the historian as much as for the
+            theologian, the letters are Leo's widest footprint.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Latin terms carry the weight of Leo's theological witness. The first names his
+        defining work; the second and third the Christological grammar of the Tome; the fourth
+        the ecclesiological claim that shapes the Roman see from Leo forward.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-tomus-leonis" class="latin-term latin-term-link">Tomus Leonis</a>
+          <div class="transliteration">Leo, Epistle 28 (449)</div>
+          <div class="english-meaning">The Tome of Leo</div>
+          <p class="pillar-explanation">
+            Leo's dogmatic letter to Flavian, the definitional Latin statement of
+            Chalcedonian Christology. Against Eutychian monophysitism the Tome insists with
+            patient Latin precision: the one Christ is one person in two natures — truly God
+            and truly human, each nature unimpaired, both belonging to the single subject
+            acting in Gospel history.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-utraque-forma" class="latin-term latin-term-link">utraque forma</a>
+          <div class="transliteration">Tome 4</div>
+          <div class="english-meaning">Each Form · Both Forms</div>
+          <p class="pillar-explanation">
+            "<em>Agit utraque forma cum alterius communione quod proprium est</em>" — each form,
+            divinity and humanity, does what is proper to it in communion with the other. The
+            Word acts divinely; the flesh acts humanly; but both are the acts of the one Christ.
+            The formula preserves the integrity of each nature and the unity of the agent in a
+            single compressed sentence.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-communicatio-idiomatum" class="latin-term latin-term-link long">communicatio idiomatum</a>
+          <div class="transliteration">cf. Cyril's <span class="greek">ἀντίδοσις</span></div>
+          <div class="english-meaning">Communication of Properties</div>
+          <p class="pillar-explanation">
+            The Latin counterpart to Cyril's <em>ἀντίδοσις</em>. Because divinity and humanity
+            are united in one <em>persona</em>, the properties of each nature may be predicated
+            of the one Christ: the Son of God truly died; the Son of Mary truly created. The
+            predicate is said of the person, not swapped between natures. Leo fixes the enduring
+            Latin grammar of this confession.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-sedes-petri" class="latin-term latin-term-link">sedes Petri</a>
+          <div class="transliteration">Sermones 3–5</div>
+          <div class="english-meaning">See of Peter</div>
+          <p class="pillar-explanation">
+            The Roman see as the abiding locus of Petrine ministry. Leo's anniversary sermons
+            articulate an older Roman conviction with new doctrinal force: the bishop of Rome
+            exercises the office of Peter himself, and Peter's authority continues through his
+            successors. The phrase becomes a central term of Latin ecclesiology, complementing
+            Cyprian's earlier <em>cathedra Petri</em>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <div class="quote-latin">Agit enim utraque forma cum alterius communione quod proprium est.</div>
+      <p class="quote-text">
+        "Each form does what is proper to it in communion with the other."
+      </p>
+      <div class="quote-source">— Tome of Leo 4 (Epistle 28 to Flavian)</div>
+    </div>
+
+    <!-- Why Leo Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Leo Matters Today</h2>
+      <p class="section-text">
+        Leo is the Latin companion to Cyril in Chalcedonian Christology. The Council of
+        Chalcedon in 451 received the Tome and Cyril's Second Letter to Nestorius as its pair
+        of normative texts — the Greek and Latin witnesses together defining what it means to
+        confess one Christ in two natures. When an Orthodox Christian prays the Divine Liturgy
+        and confesses the Christ of the Creed, that confession rests on a fifth-century
+        settlement in which Leo's Latin and Cyril's Greek converged. Every subsequent
+        Christological formulation in East and West presupposes their joint witness.
+      </p>
+      <p class="section-text">
+        His contribution is distinctively Latin in register. Where Cyril's Greek is theological
+        and doxological — shaped by the liturgical needs of defending <em>Θεοτόκος</em> —
+        Leo's Latin is juridical and pastoral — shaped by the needs of a Roman episcopate
+        governing a Mediterranean world. The grammar of <em>utraque forma</em> and
+        <em>communicatio idiomatum</em> gives Western theology a vocabulary that medieval
+        scholasticism will spend centuries refining. The Reformation-era disputes over Christ's
+        natures will still be working inside Leo's categories. And for the Orthodox reader,
+        Leo is the testimony that the Latin tradition, at its depth, is already the same
+        tradition confessed at Chalcedon — that Christological orthodoxy preceded the schisms
+        that came later.
+      </p>
+      <p class="section-text">
+        His ecclesiology is where the roads diverge. Leo's articulation of the
+        <em>sedes Petri</em> — the Roman see as continuing Peter's own authority, the pope as
+        exercising Peter's office rather than being merely Peter's successor — is received
+        differently East and West. Catholic doctrine develops Leo's premises directly into
+        later papal claims; Orthodox tradition, while venerating Leo as a saint and receiving
+        his Christology without reservation, reads him in conjunction with Cyprian's
+        <em>cathedra Petri</em> (which every bishop's chair shares) rather than as a warrant
+        for jurisdictional primacy. The conversation between these readings remains open in
+        Catholic-Orthodox dialogue, and Leo is both a shared patrimony and, honestly, a point
+        of continuing difference.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="cyril-of-alexandria.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Cyril of Alexandria</div>
+          <div class="related-desc">Leo's Greek counterpart at Chalcedon — their Christologies converge into the single faith defined in 451.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-tomus-leonis" class="related-link">
+          <span class="related-icon">T</span>
+          <div class="related-title latin">Tomus Leonis</div>
+          <div class="related-desc">Leo's dogmatic letter of 449 — the Latin Christological charter received at Chalcedon.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-10" class="related-link">
+          <span class="related-icon">L</span>
+          <div class="related-title">Phase 10 Lexicon</div>
+          <div class="related-desc">The Leonine Latin vocabulary of Chalcedonian Christology, papal office, and mystery of the Incarnation.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase week.
+// Leo the Great is Phase 10: Week 31.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk === 31) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
