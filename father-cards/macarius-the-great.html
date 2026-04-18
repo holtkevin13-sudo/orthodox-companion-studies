@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T13:45:02Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macarius the Great — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Macarius the Great — Orthodox Companion Studies">
+<meta property="og:description" content="Desert father of Scetis, disciple of Anthony's tradition, and the patristic witness whose spiritual theology of the heart anchors the whole later Orthodox experiential tradition — from the Philokalia to modern hesychasm.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Macarius the Great (c. 300 – 391 AD) — Macarius the Egyptian, founding father of the Scetis desert community, the disciple of Anthony's tradition whose fifty homilies on the heart, the experience of grace, and the indwelling of the Holy Spirit anchor the Orthodox experiential tradition. Commemorated January 19.">
+<meta name="keywords" content="Macarius the Great, Macarius the Egyptian, Desert Fathers, Scetis, Egyptian Monasticism, Kardia, Heart, Hagion Pneuma, Holy Spirit, Experiential Grace, Macarian Homilies, Spiritual Homilies, Hesychasm, Philokalia, Apophthegmata">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Desert Fathers · Late Patristic)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Latin CSS variants retained for reusability but not used on this
+   Greek-pillar card (Anthony pre-dates the Latin Fathers' work).
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Egyptian Desert · Father of Scetis
+    </div>
+    <h1 class="hero-title">Macarius the Great</h1>
+    <div class="hero-epithet">Μακάριος ὁ Αἰγύπτιος · The Spirit-Bearer</div>
+    <div class="hero-meta">c. 300 – 391 AD · Desert Father, Founder of Scetis</div>
+    <p class="hero-description">
+      Coptic peasant from the Nile delta who withdrew as a young man to the wilderness of
+      Scetis — the remote salt-desert valley west of the Delta that would become, under his
+      leadership, one of the three great monastic centers of Egypt alongside Nitria and the
+      Kellia. Disciple in spirit of Anthony, whom he visited more than once in the Inner
+      Mountain, Macarius lived nearly sixty years in the desert and drew to himself a
+      community of ascetics whose names fill the <em>Apophthegmata</em> — Moses the
+      Ethiopian, Arsenius the Great, Poemen, and many others. His spiritual theology, as
+      transmitted in the <em>Fifty Spiritual Homilies</em> and the <em>Great Letter</em>,
+      became one of the anchoring texts of the whole later Orthodox hesychast and
+      Philokalic tradition. The Orthodox Church commemorates him on January 19.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Macarius?</h2>
+      <p class="section-text">
+        Macarius was born around 300 AD in a village of the Nile delta, to a Coptic
+        Christian family of modest means. His early life was the ordinary life of a
+        peasant: he worked as a camel-driver on the salt caravans that crossed the Wadi
+        el-Natrun, learning the stark geography of the desert that would later become his
+        home. According to the hagiographical tradition he was briefly married, was
+        widowed young, and experienced the death of his wife as the decisive call to
+        monastic life. He withdrew first to a cell near his village, then — at about
+        thirty — to the deep solitude of Scetis, the remote wadi west of the Delta that
+        was until then uninhabited by Christian ascetics.
+      </p>
+      <p class="section-text">
+        Under his spiritual fatherhood the desert of Scetis became populated. Unlike
+        Anthony, who retreated ever further from community, Macarius became the founding
+        elder of a desert lavra — a loose community of solitaries gathering around a
+        common church for the Saturday-Sunday synaxis while each living in his own cell
+        through the week. The model, called <em>semi-anchoritic</em> in modern scholarship,
+        became one of the permanent forms of Orthodox monastic life: the cluster of
+        hesychast cells around a church, which shapes Mount Athos and the Romanian and
+        Russian skete traditions to this day. The roster of disciples who formed under
+        Macarius is extraordinary — Moses the Ethiopian, the converted brigand who became
+        a priest-monk; Arsenius the Great, the former tutor of imperial princes; Poemen,
+        whose sayings fill more pages of the <em>Apophthegmata</em> than any other single
+        elder's. The desert was becoming a theological school.
+      </p>
+      <p class="section-text">
+        Macarius visited Anthony in the Inner Mountain more than once, and the older man
+        is said to have spoken of him as "my true son in the spiritual life." Unlike
+        Anthony, Macarius was ordained priest — around his fortieth year — to celebrate
+        the liturgy for the growing Scetis community. He lived through the Arian
+        controversy and was briefly exiled by the Arian bishop Lucius of Alexandria to
+        an island in the Delta; he returned to Scetis when Orthodox rule was restored and
+        lived the last decades of his life in the rhythm of prayer, instruction, and
+        physical labor that he had practiced since youth. He died at about ninety-one, in
+        391 AD, and was buried at Scetis. The monastery that still bears his name —
+        Deir Anba Maqar, the Monastery of Saint Macarius — has continued in unbroken
+        occupation since the fourth century and remains one of the great Coptic Orthodox
+        monastic houses. His reception throughout the Orthodox tradition is without
+        reservation: the <em>Philokalia</em> opens its first volume with extensive
+        extracts from the Macarian corpus, and the whole hesychast vocabulary of the
+        heart traces its lineage to his teaching.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">c. 330</div>
+          <div class="stat-label">Founded Scetis Community</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">50</div>
+          <div class="stat-label">Spiritual Homilies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">60</div>
+          <div class="stat-label">Years in the Desert</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">391</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        The Macarian corpus is a scholarly puzzle — the texts attributed to Macarius in
+        the Byzantine manuscript tradition were clearly composed in Syria or northern
+        Mesopotamia, not in Egypt, by a writer working a generation or two after Macarius's
+        death. Modern scholarship calls this anonymous figure Pseudo-Macarius. But the
+        Orthodox tradition has received the corpus under Macarius's name, and its spiritual
+        theology is continuous with what the Egyptian desert transmitted. Three collections
+        define the inheritance.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Fifty Spiritual Homilies</h3>
+          <div class="work-greek">Ὁμιλίαι Πνευματικαί</div>
+          <p class="work-description">
+            The most widely circulated Macarian text and one of the central works of
+            Orthodox spiritual theology. Fifty homilies exploring the soul's movement
+            toward communion with God through prayer, the indwelling of the Holy Spirit,
+            the experience of grace in the heart, and the long battle with the passions.
+            The <em>Homilies</em> shaped both the Byzantine hesychast tradition and,
+            through seventeenth-century Pietism, significant strands of Protestant
+            spirituality. The Orthodox <em>Philokalia</em> opens its first volume with
+            Macarian extracts.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Great Letter</h3>
+          <div class="work-greek">Ἐπιστολὴ Μεγάλη</div>
+          <p class="work-description">
+            A long treatise-letter on the Christian life, preserved in Greek and in
+            Symeon the New Theologian's later paraphrase. The <em>Great Letter</em>
+            develops the theology of the Holy Spirit's transforming work in the heart
+            with particular depth and became one of the most quoted Macarian texts in
+            subsequent Eastern spiritual literature. Its phrase — that the Christian must
+            become "possessor of the Spirit" (πνευματοφόρος) — gave the tradition its
+            working definition of what the mature spiritual life actually is.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Sayings of Macarius</h3>
+          <div class="work-greek">Ἀποφθέγματα Μακαρίου</div>
+          <p class="work-description">
+            Forty-one sayings collected in the <em>Apophthegmata Patrum</em>, preserving
+            the practical spiritual instruction Macarius gave his disciples at Scetis.
+            The sayings cover the whole range of desert concerns: the guarding of thoughts,
+            the practice of the cell, the warfare with demons, the signs of genuine versus
+            counterfeit spiritual experience, the primacy of humility over extraordinary
+            gifts. Together with the Anthony sayings they form the opening alphabetical
+            section of the great Desert Fathers collection.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the center of Macarius's spiritual theology. The first
+        names the interior space where God is genuinely met; the second names the divine
+        person met there; the third names the mode of knowing that is possible when the
+        heart is prepared; the fourth names what the Christian becomes when the Spirit
+        indwells the heart as its continuous guest.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">καρδία</span>
+          <div class="transliteration">kardia</div>
+          <div class="english-meaning">Heart · the Interior Altar</div>
+          <p class="pillar-explanation">
+            Not merely the seat of emotion but the whole interior person — the deep
+            center of intellect, will, and desire unified under grace. For Macarius the
+            heart is where God genuinely dwells in the baptized Christian and where the
+            whole spiritual combat is actually fought. The Philokalic and hesychast
+            tradition's insistence that the mind must "descend into the heart" in prayer
+            is Macarian in origin; every later Orthodox spirituality of the heart —
+            Climacus, Symeon, Palamas, Brianchaninov, Sophrony — works the vein Macarius
+            opened.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">Ἅγιον Πνεῦμα</span>
+          <div class="transliteration">Hagion Pneuma</div>
+          <div class="english-meaning">The Holy Spirit · the Indwelling Guest</div>
+          <p class="pillar-explanation">
+            The <em>Homilies</em> are perhaps the most Pneumatologically-centered text of
+            the patristic age. The Holy Spirit is for Macarius not a doctrinal abstraction
+            but a Person actively indwelling the heart of the baptized Christian, slowly
+            transforming the soul into what Macarius calls a throne of God. The stress on
+            the continuous experiential operation of the Spirit in the Christian life
+            distinguishes Macarian spirituality from more intellectualist strands and
+            anchors the whole later Orthodox theology of grace as real divine presence.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">πεῖρα</span>
+          <div class="transliteration">peira</div>
+          <div class="english-meaning">Experience · Knowledge by Taste</div>
+          <p class="pillar-explanation">
+            Macarian spirituality insists on <em>πεῖρα</em> — experience, the firsthand
+            knowledge that comes from tasting rather than from hearing about. The Christian
+            does not merely believe in grace; the Christian tastes it, feels it as a real
+            warmth in the heart, knows the Spirit's presence with the same certainty she
+            knows her own existence. This experiential emphasis is the Macarian counterweight
+            to the intellectualist desert tradition of Evagrius, and the two together —
+            mind and heart, <em>νοῦς</em> and <em>πεῖρα</em> — form the full Orthodox
+            inheritance.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">πνευματοφόρος</span>
+          <div class="transliteration">pneumatophoros</div>
+          <div class="english-meaning">Spirit-Bearer · the Mature Christian</div>
+          <p class="pillar-explanation">
+            The Macarian term for what the mature Christian actually is — a bearer of the
+            Holy Spirit, one in whom the Spirit has taken up real, continuous residence
+            and through whom the Spirit's gifts can flow to others. The category became
+            the tradition's working definition of the holy elder (<em>γέρων</em>): not
+            someone with rare supernatural gifts, but someone in whom the Spirit has
+            become palpably at home. Every later Orthodox tradition of elderhood — the
+            Optina elders, St. Paisios of Mount Athos, the Athonite elders of the modern
+            period — presupposes Macarius's theology.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "The heart itself is but a small vessel, yet dragons are there, and lions; there
+        are poisonous beasts and all the treasures of evil. There are rough and uneven
+        roads; there are precipices. But there too are God, the angels, the life and the
+        Kingdom, the light and the apostles, the treasures of grace — all things are
+        there."
+      </p>
+      <div class="quote-source">— Spiritual Homily 43.7</div>
+    </div>
+
+    <!-- Why Macarius Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Macarius Matters Today</h2>
+      <p class="section-text">
+        The Orthodox theology of the heart — its centrality in Philokalic spirituality,
+        its role in the Jesus Prayer tradition, its continuing pastoral significance in
+        modern Orthodox catechesis — runs through Macarius as its patristic anchor. When
+        St. Theophan the Recluse instructs his readers to "descend from the head into
+        the heart," when Father Sophrony Sakharov writes of the "mind in the heart,"
+        when a contemporary Orthodox priest directs a parishioner to attend to what is
+        happening in her heart during prayer, the whole vocabulary is Macarian. No later
+        Father gave the tradition a fuller or more usable theology of interior Christian
+        experience.
+      </p>
+      <p class="section-text">
+        His Pneumatology is equally consequential. The Macarian emphasis on the Holy
+        Spirit as continuously, palpably indwelling the baptized Christian has shaped
+        every subsequent Orthodox theology of grace. It is also the reason the Orthodox
+        tradition has never quite developed the Western categories of created grace and
+        uncreated grace as a sharp distinction: for Macarius, grace simply is the
+        Spirit's own presence in the heart, and any theology of grace that moves too far
+        from that concrete Personal presence loses the thread. Palamas's theology of the
+        divine energies builds on the Macarian foundation; the modern Orthodox-Catholic
+        dialogue on grace (Lossky, Meyendorff, Zizioulas) repeatedly returns to the
+        Macarian center.
+      </p>
+      <p class="section-text">
+        And the <em>Pseudo-Macarius</em> scholarly puzzle is itself theologically
+        instructive. The tradition received the texts under Macarius's name; modern
+        scholarship has shown they were composed by a later Syrian writer. The Orthodox
+        response has not been to repudiate the corpus but to hold both truths together:
+        that Macarius of Egypt is the historical elder whose lived holiness these texts
+        transmit, and that the Syrian author who gave them literary form worked in
+        faithful continuity with that inheritance. The texts are Macarian in substance
+        even if not in authorship. The Church's instinct here — that holy tradition is
+        lived before it is written, and that faithful amplification of a founder's voice
+        is itself a form of discipleship — is worth noting as a model of how to hold
+        scholarly history and tradition's reception together without forcing a choice.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="anthony-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Anthony the Great</div>
+          <div class="related-desc">Macarius's older contemporary and the spiritual patriarch whose inheritance he received. Anthony teaches the foundations — stillness, watchfulness, discernment — that Macarius then deepens into a full theology of the heart and the indwelling Spirit.</div>
+        </a>
+        <a href="evagrius.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Evagrius Ponticus</div>
+          <div class="related-desc">Macarius's contemporary and theological counterweight. Evagrius emphasizes the mind's ascent in prayer; Macarius emphasizes the heart's tasting of grace. The two together form the full Orthodox inheritance, with later hesychasm integrating both streams.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Μ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Macarius's vocabulary of the heart, the indwelling Spirit, experiential knowledge, and Spirit-bearing anchors the whole later hesychast and Philokalic inheritance.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T13:38:01Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anthony the Great — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Anthony the Great — Orthodox Companion Studies">
+<meta property="og:description" content="Father of Christian monasticism, first anchorite of the Egyptian desert, and the figure whose Life by Athanasius shaped monastic formation East and West for more than fifteen centuries.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Anthony the Great (c. 251 – 356 AD) — Coptic Christian from middle Egypt, founding father of Christian monasticism, first of the great anchorites of the Egyptian desert. His Life was written by Athanasius of Alexandria and became the defining text of Christian monastic formation East and West. Commemorated January 17.">
+<meta name="keywords" content="Anthony the Great, Anthony of Egypt, Desert Fathers, Egyptian Monasticism, Anchorite, Hesychia, Nepsis, Diakrisis, Aktēmosynē, Life of Anthony, Athanasius, Apophthegmata Patrum, Sayings of the Desert Fathers, Coptic Christianity">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Desert Fathers · Late Patristic)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Latin CSS variants retained for reusability but not used on this
+   Greek-pillar card (Anthony pre-dates the Latin Fathers' work).
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Egyptian Desert · Father of Monasticism
+    </div>
+    <h1 class="hero-title">Anthony the Great</h1>
+    <div class="hero-epithet">Ἀντώνιος ὁ Μέγας · Father of Monks</div>
+    <div class="hero-meta">c. 251 – 356 AD · Egyptian Anchorite, Founder of Desert Monasticism</div>
+    <p class="hero-description">
+      Coptic Christian from middle Egypt, first of the great anchorites, and the founding
+      father of Christian monastic life. At about twenty, Anthony heard the Gospel of the
+      rich young ruler read in church, took its counsel literally, gave away his inheritance,
+      and withdrew first to the edge of his village, then deeper into the wilderness, then
+      across the Nile to the Outer Mountain and finally to the Inner Mountain near the
+      Red Sea. He lived more than eighty years in the desert and died at perhaps 105.
+      Athanasius's <em>Life of Anthony</em>, written within a year of his death, became the
+      most influential monastic text in Christian history. The Orthodox Church commemorates
+      him on January 17.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Anthony?</h2>
+      <p class="section-text">
+        Anthony was born around 251 AD at Coma, a Coptic-speaking village in middle Egypt.
+        His parents were wealthy Christian landholders; he was their only son, and they left
+        him and his younger sister with the family estate and a sizable share of the local
+        wealth when they died — Anthony was about eighteen or twenty. Not long after, on a
+        Sunday at the village church, he heard the lector read from the Gospel of Matthew:
+        <em>If you would be perfect, go, sell what you possess, and give to the poor, and
+        you will have treasure in heaven; and come, follow me.</em> Anthony heard the
+        sentence as spoken to him. He arranged care for his sister in a community of
+        consecrated virgins, gave his fields to his neighbors, sold what was left and
+        distributed the proceeds to the poor, and began to learn the ascetic life from
+        a local elder at the edge of his village.
+      </p>
+      <p class="section-text">
+        The life he pursued grew progressively more solitary. First he lived in a hut at
+        the village outskirts, practicing prayer, manual labor, and Scripture memorization
+        under his elder's direction. Then he withdrew to the tombs outside the town; then
+        across the Nile to an abandoned fort at Pispir; finally, after twenty years there,
+        deeper still to what he called the Inner Mountain near the Red Sea, where he lived
+        the remainder of his long life. At each stage the growing crowd of disciples and
+        visitors prompted him to retreat further. The desert under his influence became a
+        populated landscape of cells — "the desert made a city," Athanasius famously wrote —
+        and Anthony's mature years were spent in a constant rhythm of solitude for prayer
+        interrupted by pastoral visits from pilgrims, bishops, and the emperor's
+        correspondence.
+      </p>
+      <p class="section-text">
+        He emerged from the desert only a handful of times, each for the sake of the
+        Church. He went to Alexandria during the Great Persecution (311) to encourage the
+        confessors and to offer himself for martyrdom if called (he was not). He went to
+        Alexandria again around 338, at Athanasius's request, to preach against the Arians
+        and to give the Nicene cause the moral weight of his presence. He corresponded
+        with the Emperor Constantine and with bishops, wrote the small collection of
+        <em>Letters</em> that survives in Greek and Coptic versions, and offered the
+        spiritual direction to which Athanasius's biography and the later
+        <em>Apophthegmata Patrum</em> bear witness. He died at the Inner Mountain on
+        January 17, 356, having instructed his two attendants to bury him secretly so
+        that his body could not become the object of devotional attention he felt would
+        be unhealthy. He was about 105. Within a year Athanasius had written the
+        <em>Life</em>; by the end of the century it had been translated into Latin and was
+        shaping the ascetic movements of Gaul, Italy, and North Africa. Augustine at
+        Milan was converted partly by hearing it read aloud.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">c. 270</div>
+          <div class="stat-label">Began Ascetic Life</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">85</div>
+          <div class="stat-label">Years in the Desert</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">105</div>
+          <div class="stat-label">Years of Life</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">356</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Anthony himself left a modest written corpus — he was not a literary theologian but
+        a spiritual father whose teaching was above all lived and passed down through
+        discipleship. Three textual traditions carry his voice.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Life of Anthony</h3>
+          <div class="work-greek">Βίος Ἀντωνίου</div>
+          <p class="work-description">
+            Written by Athanasius of Alexandria around 357, within a year of Anthony's
+            death, and often simply called the <em>Vita Antonii</em>. The work is not
+            Anthony's own, but it is the indispensable window into his life and teaching.
+            Translated into Latin by Evagrius of Antioch within a generation, the
+            <em>Life</em> spread through the whole Christian world and shaped monastic
+            formation for fifteen centuries. Augustine's <em>Confessions</em> records that
+            its reading in Milan was part of what led him to Christian conversion.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Letters of Anthony</h3>
+          <div class="work-greek">Ἐπιστολαὶ Ἀντωνίου</div>
+          <p class="work-description">
+            A small collection of seven letters preserved in Greek, Coptic, Latin, Georgian,
+            and Arabic versions, giving us something closer to Anthony's own voice. The
+            letters are substantial and theologically alert — the Anthony they reveal is
+            well-read in Scripture, familiar with Origenian spiritual categories, and
+            concerned above all with the knowledge of the self as the path to the knowledge
+            of God. They correct any simplistic image of Anthony as illiterate: he was a
+            deeply formed Christian mind, even if he never pursued the rhetorical training
+            of a Basil or an Augustine.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Sayings of Anthony</h3>
+          <div class="work-greek">Ἀποφθέγματα Ἀντωνίου</div>
+          <p class="work-description">
+            The opening section of the great <em>Apophthegmata Patrum</em> — the Sayings
+            of the Desert Fathers — collects thirty-eight sayings attributed to Anthony,
+            preserving the kind of brief, lapidary spiritual instruction for which desert
+            elders were sought out. "Whoever you may be, always have God before your eyes;
+            whatever you do, do it according to the testimony of the holy Scriptures; in
+            whatever place you live, do not easily leave it. Keep these three precepts and
+            you will be saved." The sayings give the texture of the desert spiritual
+            direction that Cassian and later Western monasticism would transmit to the
+            medieval tradition.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the center of Anthony's desert teaching. The first names
+        the stillness that makes prayer possible; the second the vigilance that sustains
+        it; the third the discernment that directs the spiritual life; the fourth the
+        poverty that frees the soul for God.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">ἡσυχία</span>
+          <div class="transliteration">hēsychia</div>
+          <div class="english-meaning">Stillness · Silence of Heart</div>
+          <p class="pillar-explanation">
+            Not mere absence of sound but the settled interior stillness in which the soul
+            can be present to God. Anthony's retreat into the desert was its geographical
+            enactment; but the desert was always a means to the interior stillness of heart
+            that is the real goal of the monastic life. The hesychast tradition of later
+            Byzantine spirituality — Climacus, Gregory of Sinai, Palamas — traces its
+            lineage through the Egyptian desert to Anthony as its patriarch.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">νῆψις</span>
+          <div class="transliteration">nēpsis</div>
+          <div class="english-meaning">Watchfulness · Sobriety of the Heart</div>
+          <p class="pillar-explanation">
+            The continuous vigilance of the mind that guards the heart — watching the
+            thoughts (<em>logismoi</em>) as they arise, discerning which come from God,
+            which from the passions, and which from the demonic, and responding to each
+            before it takes root. <em>Nēpsis</em> is the daily work of the desert monk;
+            it is also the governing category of the <em>Philokalia</em>, which is
+            literally "the love of the beautiful things" that <em>nēpsis</em> makes
+            possible.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">διάκρισις</span>
+          <div class="transliteration">diakrisis</div>
+          <div class="english-meaning">Discernment · The Mother of Virtues</div>
+          <p class="pillar-explanation">
+            Anthony told his disciples that discernment is the queen of the virtues, the
+            one without which the others cannot be rightly ordered. Not all spiritual zeal
+            is from God; not all apparent evil is to be fled. The mature Christian needs
+            the trained capacity to tell the difference — between thoughts that purify and
+            thoughts that mimic purity, between the Spirit's call to greater austerity and
+            the demon's call to destructive excess. The desert produced an entire
+            literature of discernment, and Anthony is its patron.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ἀκτημοσύνη</span>
+          <div class="transliteration">aktēmosynē</div>
+          <div class="english-meaning">Possessionlessness · Voluntary Poverty</div>
+          <p class="pillar-explanation">
+            The monastic practice of owning nothing beyond what is needed for the day —
+            the form of freedom the Gospel of the rich young ruler pressed on Anthony at
+            the beginning. <em>Aktēmosynē</em> is not itself holiness; it is the clearing
+            of the ground in which holiness may grow. What one does with the freedom that
+            poverty gives is the actual question. Every later monastic tradition — Basil's
+            cenobia, the Cappadocian hospices, Benedictine Europe, the kenotic saints of
+            Russia — works out its own answer to that question within the framework
+            Anthony first embodied.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "I no longer fear God; I love him: for perfect love casts out fear."
+      </p>
+      <div class="quote-source">— Apophthegmata, Anthony 32</div>
+    </div>
+
+    <!-- Why Anthony Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Anthony Matters Today</h2>
+      <p class="section-text">
+        The whole subsequent monastic tradition — Pachomian cenobitism, Cappadocian
+        monastic rule, Palestinian lavras, Studite urban monasticism, Athonite hesychasm,
+        Benedictine Europe, Russian kenotic sainthood — treats Anthony as its patriarch.
+        Every Orthodox monk and nun who has ever taken the tonsure stands in a lineage
+        that runs, humanly speaking, to a young Coptic farmer who heard the Gospel read
+        in church one Sunday and took the sentence literally. The desert made a city, and
+        the city has never emptied.
+      </p>
+      <p class="section-text">
+        His teaching shapes the ordinary Orthodox spiritual life well beyond the monastic
+        enclosure. Every lay Christian who keeps a rule of prayer, who examines thoughts,
+        who seeks the counsel of a spiritual father, who practices the Jesus Prayer, who
+        reads the <em>Philokalia</em>, is working in the vocabulary Anthony gave the
+        desert. The modern Orthodox revival of the Jesus Prayer and of neptic spiritual
+        reading (St. Ignaty Brianchaninov, St. Theophan the Recluse, St. Paisios, Father
+        Sophrony Sakharov) consciously recovers the desert inheritance for a twenty-first
+        century that no one in Anthony's time could have imagined.
+      </p>
+      <p class="section-text">
+        And his witness is practical in a way the Church's more speculative Fathers
+        cannot quite be. Anthony was a Coptic peasant with modest literacy, and the
+        wisdom the Church received from him is a wisdom any Christian can receive: watch
+        your thoughts, keep a rule of prayer, practice discernment, stay in your cell,
+        trust God. The wisdom does not require Greek philosophy or theological erudition
+        to receive. It requires only the willingness to pray, to watch, and to keep at it
+        for the length of a lifetime. In that sense Anthony's voice is perhaps the most
+        democratic of the Fathers — the voice that does not require a formed intellect to
+        hear, only a faithful heart.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="athanasius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Athanasius the Great</div>
+          <div class="related-desc">Anthony's biographer. The <em>Life of Anthony</em>, written within a year of the saint's death, is the single most influential monastic text in Christian history. The bond between the Alexandrian patriarch and the desert father shaped both of their legacies.</div>
+        </a>
+        <a href="macarius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Macarius the Great</div>
+          <div class="related-desc">The next great desert father, who founded the monastic community at Scetis a generation after Anthony. Macarius carries forward and deepens the spiritual vocabulary Anthony inaugurated.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Ἀ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Anthony's vocabulary of stillness, watchfulness, discernment, and voluntary poverty anchors the whole later hesychast and Philokalic tradition.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
