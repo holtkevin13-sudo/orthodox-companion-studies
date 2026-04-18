@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T19:00:00Z -->
+<!-- build: 2026-04-18T00:30:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,10 +7,10 @@
 <title>Father Cards — Orthodox Companion Studies</title>
 
 <!-- Orthodox Companion Branding -->
-<link rel="icon" type="image/x-icon" href="../favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
 <meta name="description" content="Complete database of 37 Church Fathers from Apostolic times through Byzantine period. Browse alphabetically or by historical period.">
 <meta name="keywords" content="Church Fathers, Orthodox Christianity, Patristics, Apostolic Fathers, Ante-Nicene Fathers, Nicene Fathers, Post-Nicene Fathers">
@@ -268,20 +268,20 @@ em, i { font-style: italic; }
   border: 1px solid transparent;
 }
 
-.period-apostolic { background: #e8f5e8; color: #2e7d32; }
-.period-apostolic:hover, .period-apostolic.active { background: #2e7d32; color: #fff; }
+.period-apostolic { background: #dce8c9; color: #556b3d; }
+.period-apostolic:hover, .period-apostolic.active { background: #556b3d; color: #fffdf7; }
 
-.period-ante-nicene { background: #e3f2fd; color: #1976d2; }
-.period-ante-nicene:hover, .period-ante-nicene.active { background: #1976d2; color: #fff; }
+.period-ante-nicene { background: #e8ddc8; color: #1a3a5c; }
+.period-ante-nicene:hover, .period-ante-nicene.active { background: #1a3a5c; color: #fffdf7; }
 
-.period-nicene { background: #fff3e0; color: #f57c00; }
-.period-nicene:hover, .period-nicene.active { background: #f57c00; color: #fff; }
+.period-nicene { background: #fff3cc; color: #8a6d1f; }
+.period-nicene:hover, .period-nicene.active { background: #8a6d1f; color: #fffdf7; }
 
-.period-post-nicene { background: #f3e5f5; color: #7b1fa2; }
-.period-post-nicene:hover, .period-post-nicene.active { background: #7b1fa2; color: #fff; }
+.period-post-nicene { background: #f5e6d3; color: #3a3228; }
+.period-post-nicene:hover, .period-post-nicene.active { background: #3a3228; color: #fffdf7; }
 
-.period-byzantine { background: #fce4ec; color: #c2185b; }
-.period-byzantine:hover, .period-byzantine.active { background: #c2185b; color: #fff; }
+.period-byzantine { background: #f0d9dc; color: #6b1e2a; }
+.period-byzantine:hover, .period-byzantine.active { background: #6b1e2a; color: #fffdf7; }
 
 /* Father Cards Grid */
 .fathers-section {
@@ -335,7 +335,7 @@ em, i { font-style: italic; }
 
 .father-card.current-week {
   border: 3px solid #556b3d;
-  background: linear-gradient(145deg, #f8fff8 0%, #f0fff0 100%);
+  background: linear-gradient(145deg, #fffdf7 0%, #f5efe0 100%);
 }
 
 .current-week-badge {
@@ -1028,20 +1028,20 @@ function populateFathersGrid() {
 // Create individual father card
 function createFatherCard(father) {
   const card = document.createElement('a');
-  card.href = `${father.id}.html`;
+  card.href = `father-cards/${father.id}.html`;
   card.className = `father-card${father.currentWeek ? ' current-week' : ''}`;
   card.dataset.period = father.period;
   card.dataset.name = father.name.toLowerCase();
   card.dataset.location = father.location.toLowerCase();
   card.dataset.tags = father.tags.join(' ').toLowerCase();
   
-  // Period colors
+  // Period colors — Byzantine palette
   const periodColors = {
-    apostolic: '#e8f5e8',
-    'ante-nicene': '#e3f2fd', 
-    nicene: '#fff3e0',
-    'post-nicene': '#f3e5f5',
-    byzantine: '#fce4ec'
+    apostolic: '#dce8c9',
+    'ante-nicene': '#e8ddc8',
+    nicene: '#fff3cc',
+    'post-nicene': '#f5e6d3',
+    byzantine: '#f0d9dc'
   };
   
   card.innerHTML = `
