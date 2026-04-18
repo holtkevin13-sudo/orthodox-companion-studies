@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T13:29:45Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Augustine of Hippo — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Augustine of Hippo — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Hippo, Doctor of the Western Church, and the most influential theologian of the Latin tradition — received by the Orthodox tradition with genuine appreciation and genuine reservation.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Augustine of Hippo (354 – 430 AD) — Aurelius Augustinus, rhetorician, convert, Bishop of Hippo Regius in North Africa, and the towering theologian of the Latin West. Author of the Confessions, City of God, De Trinitate, and On Christian Doctrine. His theology of grace, original sin, and predestination decisively shaped Western Christianity and remains the focus of genuine Orthodox theological reservation. Commemorated in the Orthodox Church as Blessed Augustine on June 15.">
+<meta name="keywords" content="Augustine of Hippo, Aurelius Augustinus, Church Fathers, Latin Fathers, Confessions, City of God, De Trinitate, On Christian Doctrine, Grace, Original Sin, Predestination, Pelagianism, Monica, Blessed Augustine, Orthodox Reception of Augustine">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Latin Fathers · Late Patristic)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Latin CSS variants for Latin Father cards.
+   Pastoral-care reception handling: honors Augustine's genuine
+   reception in the East (Blessed Augustine) while acknowledging
+   the Orthodox tradition's careful reservations on grace, original
+   sin, and predestination. Not whitewash; not condemnation.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Latin Fathers · Late Patristic
+    </div>
+    <h1 class="hero-title">Augustine of Hippo</h1>
+    <div class="hero-epithet latin">Aurelius Augustinus · Blessed Augustine</div>
+    <div class="hero-meta">354 – 430 AD · Bishop of Hippo Regius, North African Doctor</div>
+    <p class="hero-description">
+      Rhetorician, Manichaean seeker, reluctant convert, priest and then Bishop of Hippo
+      Regius for thirty-five years, author of the <em>Confessions</em>, the <em>City of
+      God</em>, and the long labor of <em>De Trinitate</em>. No Latin Father has exercised
+      more influence on Western Christianity; few have been received by the Orthodox East
+      with more careful, discerning attention. The Orthodox tradition commemorates him as
+      <em>Blessed Augustine</em> on June 15 — honoring a real Father of the Church while
+      reserving judgment on particular positions that shaped the later Latin theology of
+      grace and original sin in ways the East did not follow.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Augustine?</h2>
+      <p class="section-text">
+        Aurelius Augustinus was born on November 13, 354, at Thagaste in Roman North Africa
+        — today Souk Ahras in Algeria. His mother Monica was a devout Christian; his father
+        Patricius was a pagan minor landowner who would be baptized only on his deathbed.
+        The family could barely afford Augustine's education, which his father scraped
+        together to provide: grammar school at Thagaste, rhetoric at Madauros, and
+        eventually — with the help of a wealthy patron — advanced study at Carthage. There
+        Augustine read Cicero's now-lost <em>Hortensius</em>, which ignited in him a
+        lifelong desire for wisdom. His mother's faith seemed to him at that stage
+        intellectually insufficient, and for roughly a decade he was a committed adherent
+        of Manichaeism, the dualist religion that promised a philosophical Christianity
+        cleansed of the difficulties of the Old Testament.
+      </p>
+      <p class="section-text">
+        In 383 he crossed to Rome, then to Milan, to teach rhetoric — the appointment was
+        engineered by Symmachus, the pagan orator, who expected Augustine to be a useful
+        provincial ally. What Augustine found at Milan was Ambrose. He went to hear the
+        bishop preach out of rhetorical curiosity and discovered an allegorical reading of
+        the Old Testament that made the Manichaean objections collapse. The conversion was
+        slow and agonized. Monica had followed her son across the Mediterranean, and she
+        prayed him home through a long summer of moral struggle. The famous scene in the
+        garden at Milan — the child's voice calling <em>tolle, lege</em>, "take and read,"
+        and Augustine's eye falling on Romans 13 — came on a day in August 386. Ambrose
+        baptized him at the Paschal Vigil of 387. Monica died at Ostia shortly after, on
+        their way home to Africa.
+      </p>
+      <p class="section-text">
+        Augustine returned to Thagaste intending a quiet monastic life of prayer and
+        writing. The Christian community of Hippo Regius had other plans: in 391, on a
+        visit to the coastal city, he was seized by the congregation during the liturgy
+        and ordained priest against his tearful protest. In 395 he was consecrated bishop.
+        The next thirty-five years he spent in the ordinary labor of an African bishop —
+        preaching three or four times a week, adjudicating disputes in his episcopal court,
+        writing letters and treatises, and combating the three great controversies of his
+        episcopate: against the Manichees (from whom he had himself come), against the
+        Donatists (the North African rigorist schism), and against Pelagius and his
+        followers on the nature of grace and human freedom. He died at Hippo on August 28,
+        430, while the Vandals besieged the city; the siege would fall shortly after his
+        death, and the North African church he had built would be shattered within a
+        generation.
+      </p>
+      <p class="section-text">
+        The Orthodox reception of Augustine is genuinely careful and worth naming clearly.
+        The Eastern Church received him as a Father — under the title <em>Blessed</em>
+        Augustine, distinguishing his stature from the four Greek Doctors (Basil, the
+        two Gregories, John Chrysostom) without excluding him from the communion of
+        Fathers. His <em>Confessions</em>, his Trinitarian and Christological theology in
+        the more general sense, his love of Scripture, and his pastoral wisdom in the
+        sermons and letters are received with genuine gratitude. What the Orthodox
+        tradition has reserved judgment on, consistently from the Photian era through
+        Palamas and into the modern period, are specific positions developed in his
+        Pelagian controversy writings: his hardening doctrine of original sin as inherited
+        guilt rather than inherited mortality; his teaching on grace and predestination as
+        it moved toward the later Western categories of irresistible grace and double
+        predestination; and certain formulations in <em>De Trinitate</em> that, whatever
+        Augustine's actual intent, became the textual basis for the Western
+        <em>filioque</em> theology. Modern Orthodox scholarship — John Romanides, Vladimir
+        Lossky, John Meyendorff, Georges Florovsky, Seraphim Rose, David Bentley Hart in
+        his own idiom — has worked to articulate this reservation with increasing nuance:
+        not a repudiation of Augustine, but a clear-eyed distinction between the Blessed
+        Augustine the East genuinely received and the scholastic Augustinianism the later
+        West built on his foundations. The discernment is itself a pastoral teaching: the
+        Church honors the Father without adopting every line of the thought.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">387</div>
+          <div class="stat-label">Baptized by Ambrose at Milan</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">35</div>
+          <div class="stat-label">Years as Bishop of Hippo</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">113</div>
+          <div class="stat-label">Surviving Treatises</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">430</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Augustine's surviving corpus is enormous — 113 treatises, nearly 300 letters, and
+        over 400 sermons, not counting the Psalms commentary and the biblical expositions.
+        Three works stand at the center of what the tradition has received.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Confessions</h3>
+          <div class="work-latin">Confessiones</div>
+          <p class="work-description">
+            Thirteen books composed around 397–400, addressed to God in sustained prayer
+            and reviewing Augustine's life from infancy through his conversion and his
+            mother's death. The work is the first sustained Christian autobiography and
+            remains one of the most beloved texts of the patristic age East and West.
+            Orthodox reception of the <em>Confessions</em> is unambiguous: the book's
+            searching honesty, its theology of memory and desire, and its portrayal of
+            the soul's restlessness until it rests in God have been received across the
+            tradition.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The City of God</h3>
+          <div class="work-latin">De Civitate Dei</div>
+          <p class="work-description">
+            Twenty-two books written between 413 and 426 in response to pagan claims that
+            the sack of Rome in 410 was the punishment for abandoning the old gods.
+            Augustine answers with a sweeping theology of history: two cities — the City
+            of God and the earthly city — woven together throughout history and finally
+            separated at the Last Judgment. The work founds the Christian philosophy of
+            history and shaped Western political theology for a thousand years. Its
+            substantial portions are received without difficulty in the Orthodox
+            tradition; some of its more developed predestinarian passages are read with
+            the same care noted elsewhere.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">On the Trinity</h3>
+          <div class="work-latin">De Trinitate</div>
+          <p class="work-description">
+            Fifteen books composed over roughly twenty years (c. 399–419). Augustine's
+            most ambitious systematic project: the Trinity approached from Scripture in
+            Books 1–7, then explored through psychological analogies in the human soul in
+            Books 8–15. The psychological analogies — memory, understanding, will as a
+            created image of the Triune God — have been one of the most influential and
+            most contested Augustinian legacies. The Orthodox tradition receives the
+            scriptural argument with gratitude and reads the psychological analogies with
+            the theological care that Photius, Palamas, and modern Orthodox Trinitarian
+            theologians like Lossky and Zizioulas have modeled.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Latin terms name the center of Augustine's distinctive contribution. The first
+        is the word he used for what the <em>Confessions</em> is; the second names his
+        theological anthropology's most original move; the third his great theology of
+        history; the fourth his signature doctrine — the term around which both his
+        genuine reception and the East's reservations have gathered.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="latin-term">confessio</span>
+          <div class="transliteration">con-FES-si-o</div>
+          <div class="english-meaning">Confession · Prayerful Self-Narration</div>
+          <p class="pillar-explanation">
+            Augustine plays throughout the <em>Confessions</em> on the double sense of the
+            Latin word: <em>confessio</em> as acknowledgment of sin and <em>confessio</em>
+            as acknowledgment of God's glory. The two are one act. To confess who God is
+            is necessarily to confess who one is before him. The form Augustine invents —
+            sustained prayer as autobiography, the self laid open to God in the act of
+            being told — becomes one of the Church's enduring modes of spiritual writing.
+            Every later Christian autobiography of spiritual struggle operates in the
+            genre Augustine created.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">memoria</span>
+          <div class="transliteration">me-MO-ri-a</div>
+          <div class="english-meaning">Memory · Faculty of the Soul</div>
+          <p class="pillar-explanation">
+            Memory for Augustine is not a storehouse of past impressions but the deep
+            interior space in which the soul's identity abides — the faculty by which the
+            human person is a self across time and in which God is genuinely, if
+            obscurely, already known. Book 10 of the <em>Confessions</em> and Books 8–15
+            of <em>De Trinitate</em> unfold this theology: memory, understanding, and
+            will as a created triune image of the God in whose image humanity is made.
+            The analogy has been the most influential and the most theologically contested
+            of Augustine's moves.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term long">civitas Dei</span>
+          <div class="transliteration">CI-vi-tas DE-i</div>
+          <div class="english-meaning">The City of God · Two Cities in History</div>
+          <p class="pillar-explanation">
+            Augustine's sweeping theological reading of history: two cities, the earthly
+            and the heavenly, interwoven throughout the whole human story and distinguished
+            by what each loves. The earthly city is the society of those who love
+            themselves to the contempt of God; the City of God is the society of those
+            who love God to the contempt of self. The framework founds the Christian
+            philosophy of history and anchors a theology of the Church that remains
+            influential across East and West alike.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">gratia</span>
+          <div class="transliteration">GRA-ti-a</div>
+          <div class="english-meaning">Grace · The Contested Legacy</div>
+          <p class="pillar-explanation">
+            Augustine's theology of grace — that salvation is God's work within the soul,
+            not the soul's achievement before God — is received wherever the Pelagian
+            denial of that priority has needed to be answered. Where the Orthodox tradition
+            has reserved judgment is on the specific formulations his later Pelagian-era
+            writings pressed toward: grace as irresistible, election as unconditional,
+            the mass of fallen humanity as a <em>massa damnata</em> from which only the
+            predestined are drawn. The Eastern tradition has affirmed the primacy of grace
+            no less than Augustine did, but it has articulated synergy between grace and
+            human freedom in ways that do not follow his later hardening. The word
+            <em>gratia</em> marks where Augustine is most himself and where the Orthodox
+            reception has been most discerning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-latin">
+        "Fecisti nos ad te, Domine, et inquietum est cor nostrum, donec requiescat in te."
+      </p>
+      <p class="quote-text">
+        "You have made us for yourself, O Lord, and our heart is restless until it rests in
+        you."
+      </p>
+      <div class="quote-source">— Confessions 1.1.1</div>
+    </div>
+
+    <!-- Why Augustine Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Augustine Matters Today</h2>
+      <p class="section-text">
+        The opening line of the <em>Confessions</em> — quoted above — is arguably the
+        single most widely received line of Western patristic theology in the Orthodox
+        world. Every tradition of Christian spiritual writing that takes restlessness as
+        the soul's default condition before communion with God carries some of this
+        sentence. The Jesus Prayer tradition, the Philokalic insistence that the mind's
+        natural habitation is the heart attending to God, the whole patristic instinct
+        that happiness and holiness are not two pursuits but one — each can find in
+        Augustine's opening an Orthodox welcome. Blessed Augustine is a Father genuinely
+        received.
+      </p>
+      <p class="section-text">
+        His scriptural mind is another ground of reception. The Psalms commentary
+        (<em>Enarrationes in Psalmos</em>) is one of the most extensive patristic
+        expositions of the Psalter; Augustine's sermons on the Gospel of John draw out
+        the Johannine Christology with a care that subsequent East-West conversation has
+        mostly treated with gratitude. The practical pastoral theology of his letters —
+        on marriage, on the formation of clergy, on the care of the poor, on forgiveness
+        within the Christian community — sits comfortably alongside what John Chrysostom
+        is saying at the same moment on the other side of the Mediterranean.
+      </p>
+      <p class="section-text">
+        The reservation, when it is spoken clearly, is worth understanding not as a list
+        of theological errors but as a different theological center of gravity. The Greek
+        patristic tradition — Athanasius, the Cappadocians, Maximus — developed its
+        soteriology around <em>theosis</em>, the human creature's participation in the
+        divine life. Augustine developed his soteriology in the middle of the Pelagian
+        crisis, around <em>gratia</em>, the divine rescue of a human will that cannot save
+        itself. Both are scriptural; both are patristic; neither is reducible to the
+        other. The Orthodox tradition has received Augustine as a Father whose proper
+        home is the wider communion of Fathers and whose more distinctive soteriological
+        formulations are read within that wider communion rather than as the definitive
+        word. Reading Augustine this way — as Blessed Augustine, in dialogue with the
+        Greek Fathers, as one voice in the patristic chorus rather than as the voice
+        that sets the key for it — is itself a pastoral teaching about how the Church
+        discerns her own received tradition.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="ambrose.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Ambrose of Milan</div>
+          <div class="related-desc">Augustine's catechist, the bishop who baptized him at the Paschal Vigil of 387 and whose allegorical preaching first opened the Old Testament to him. No Ambrose, no Augustine.</div>
+        </a>
+        <a href="john-chrysostom.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">John Chrysostom</div>
+          <div class="related-desc">Augustine's exact Greek contemporary. The pastoral-theological parallel — both men preaching, catechizing, shepherding their sees in the same decades — illuminates the complementarity and the divergence of the Greek and Latin patristic voices.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">A</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Augustine's Latin vocabulary of grace, memory, confession, and the two cities connects to the Greek patristic vocabulary of θέωσις, νοῦς, ἐξομολόγησις, and ἐκκλησία.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
