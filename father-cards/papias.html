@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T02:07:33Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papias — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Papias — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Hierapolis, hearer of the elders, and the earliest Christian witness to the composition of Matthew and Mark — preserved only in fragments through Irenaeus and Eusebius.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Papias (c. 60–130 AD) — Bishop of Hierapolis, preserved only in fragments: the earliest surviving witness to the composition of Matthew and Mark, and the defender of oral apostolic tradition as the Church's living memory.">
+<meta name="keywords" content="Papias, Papias of Hierapolis, Church Fathers, Apostolic Fathers, Expositions of the Lord's Sayings, Gospel Origins, Matthew, Mark, Living Voice, Apostolic Tradition, Early Christianity">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid (from Polycarp template — for Fathers with smaller corpora) */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars (Polycarp style — separated transliteration + meaning) */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 1 · Apostolic Fathers · Weeks 1–4
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Papias</h1>
+    <div class="hero-epithet">Παπίας Ἱεραπόλεως · Papias of Hierapolis</div>
+    <div class="hero-meta">c. 60 – c. 130 AD · Bishop of Hierapolis, preserved in fragments</div>
+    <p class="hero-description">
+      A bishop of Hierapolis in Phrygia, companion of Polycarp, and a hearer of "the elders" who had
+      themselves known the Apostles. His five-volume <em>Expositions of the Sayings of the Lord</em>
+      is lost, but the surviving fragments contain the earliest Christian testimony to how the Gospels
+      of Matthew and Mark came to be written, and the Church's earliest explicit preference for the
+      living voice of tradition over the written page.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Papias?</h2>
+      <p class="section-text">
+        Papias belongs to the second Christian generation — the layer immediately after the Apostles,
+        still within reach of men and women who had heard them speak. Irenaeus, writing toward the close
+        of the second century, describes him as "a hearer of John, and a companion of Polycarp, a man
+        of primitive times" (<em>Against Heresies</em> 5.33.4). Which John Irenaeus had in mind — the
+        Apostle, or a separate figure whom Papias himself distinguishes as "John the Elder" — was already
+        a point of discussion in antiquity and remains contested in modern scholarship. Either way, Papias
+        represents the generation that still listened to those who had listened.
+      </p>
+      <p class="section-text">
+        He was bishop of Hierapolis, a town in western Phrygia (in modern Turkey) near Colossae and
+        Laodicea — the same Lycus-valley setting that Paul addresses in Colossians. There he composed
+        around the 120s or 130s AD a five-book work under the title <em>Expositions of the Sayings of
+        the Lord</em> (Λογίων Κυριακῶν Ἐξηγήσεις). The Expositions gathered and commented on traditions
+        Papias had received from the elders — the generation between himself and the Apostles — along
+        with scriptural material and eschatological teaching. The complete work is lost. What remains
+        are fragments preserved chiefly by Irenaeus and, more extensively, by Eusebius of Caesarea in
+        his <em>Ecclesiastical History</em> (3.39) around 313 AD.
+      </p>
+      <p class="section-text">
+        Eusebius, writing two centuries later, praises Papias for his care in gathering traditions but
+        dismisses his literal millenarian eschatology — calling him "a man of very small intelligence"
+        on that score. This judgment should be read with Eusebius's own theological interests in view:
+        by his day, chiliasm had become theologically unfashionable, and Eusebius preserved Papias
+        precisely because the earlier material was too valuable to lose. Later tradition remembers
+        Papias as a hieromartyr; the Orthodox Church commemorates him on February 22. His chiliasm is
+        one of the places where an individual patristic voice was later weighed and qualified within
+        the Church's conciliar discernment, a proper development rather than a scandal.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Books of Expositions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 130</div>
+          <div class="stat-label">Composition Date</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2nd</div>
+          <div class="stat-label">Christian Generation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">20+</div>
+          <div class="stat-label">Surviving Fragments</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Written Legacy -->
+    <section class="section">
+      <h2 class="section-title">Written Legacy</h2>
+      <p class="section-text">
+        Nothing Papias wrote survives whole. What we have are citations, usually brief, in later authors
+        who quoted him to preserve a tradition, to support an argument, or — in Eusebius's case — to
+        critique him. Three portions of the fragmentary material have outsized importance for the
+        history of Christian tradition.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Expositions of the Sayings of the Lord</h3>
+          <div class="work-greek">Λογίων Κυριακῶν Ἐξηγήσεις</div>
+          <p class="work-description">
+            Papias's five-book collection and commentary, composed in Hierapolis around 120–130 AD. The
+            work preserved and interpreted traditions Papias had received from "the elders" who had
+            heard the Apostles. Lost in its original form; what survives are roughly two dozen fragments
+            in Irenaeus, Eusebius, Apollinarius, Andrew of Caesarea, and other later witnesses, collected
+            and translated in the Holmes edition of the Apostolic Fathers.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Fragment on Mark</h3>
+          <div class="work-greek">περὶ Μάρκου</div>
+          <p class="work-description">
+            Papias's testimony, attributed by him to "the Elder," that Mark was Peter's
+            <span class="greek">ἑρμηνευτής</span> — interpreter or translator — and that Mark wrote down
+            accurately what he remembered of Peter's preaching, though not in the order of the Lord's
+            sayings or deeds (preserved in Eusebius, <em>Ecclesiastical History</em> 3.39.15). This is
+            the earliest surviving external testimony to the composition of Mark's Gospel.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Fragment on Matthew</h3>
+          <div class="work-greek">περὶ Ματθαίου</div>
+          <p class="work-description">
+            Papias's short notice that Matthew "arranged the sayings (<span class="greek">λόγια</span>)
+            in the Hebrew dialect, and each interpreted them as best he could" (Eusebius,
+            <em>Ecclesiastical History</em> 3.39.16). Every modern discussion of the synoptic problem
+            and Matthew's Semitic substrate begins here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Papias's fragments are small, but they cluster around a single set of concerns: how did the
+        Lord's teaching reach the Church, and how does the Church know what it has received? Four terms
+        carry his contribution.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-paradosis" class="greek-term greek-term-link">παράδοσις</a>
+          <div class="transliteration">paradosis</div>
+          <div class="english-meaning">Tradition · Handing-down</div>
+          <p class="pillar-explanation">
+            Papias is the clearest Phase 1 witness to the structural role of apostolic tradition. He
+            gathered his material not by inference from texts but by asking what the elders had heard
+            from the Apostles — tradition as a chain of listening that the written Gospels ratify
+            rather than replace.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ζῶσα φωνή</span>
+          <div class="transliteration">zōsa phōnē</div>
+          <div class="english-meaning">Living Voice</div>
+          <p class="pillar-explanation">
+            Papias's methodological signature. In his preface he explains that he did not think books
+            would profit him as much as what came "from a living and abiding voice." The principle is
+            not anti-scriptural — it is the affirmation that the Church's memory lives in persons and
+            is received from them, with the written text standing inside that living handing-on.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">λόγια</span>
+          <div class="transliteration">logia</div>
+          <div class="english-meaning">Sayings · Oracles of the Lord</div>
+          <p class="pillar-explanation">
+            The word at the heart of Papias's lost title: "Expositions of the Sayings of the Lord."
+            Λόγια names the body of Jesus's teaching as a sacred deposit worthy of exposition. It is
+            the same vocabulary Paul uses for the "oracles of God" entrusted to Israel (Romans 3:2),
+            here extended to the words of Christ held by the Church.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ἑρμηνευτής</span>
+          <div class="transliteration">hermēneutēs</div>
+          <div class="english-meaning">Interpreter · Translator</div>
+          <p class="pillar-explanation">
+            Mark, says Papias, was Peter's ἑρμηνευτής. The term can mean both translator (Peter spoke
+            Aramaic; Mark rendered him in Greek) and interpreter (the Gospel is Peter's preaching given
+            extended form in writing). Either way, Papias witnesses a concrete, traceable link between
+            apostolic voice and canonical text.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "I did not suppose that what came from books would profit me so much as what came from a
+        living and abiding voice."
+      </p>
+      <div class="quote-source">— Papias, Preface (Eusebius, Ecclesiastical History 3.39.4)</div>
+    </div>
+
+    <!-- Why Papias Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Papias Matters Today</h2>
+      <p class="section-text">
+        For a Father whose own book is lost, Papias exerts a remarkable pull on every later conversation
+        about Scripture and tradition. His Mark-and-Matthew fragments are the opening page of every
+        serious discussion of Gospel origins: the earliest external witness that Mark's Gospel stands
+        in the shadow of Peter's preaching, and that Matthew has a Semitic substrate older than its
+        Greek form. Modern synoptic scholarship may argue about the details, but the questions are
+        Papias's questions.
+      </p>
+      <p class="section-text">
+        His deeper contribution, though, is methodological. Papias puts the <em>living voice</em>
+        before the page. He is not anti-textual — he wrote a five-volume book — but he refuses to let
+        the page stand by itself. The Gospels are the preserved form of a preaching; the preaching is
+        the apostolic voice; the apostolic voice lives in the Church. This is the grammar of Orthodox
+        tradition still: Scripture is read inside the Church's listening, not outside of it.
+      </p>
+      <p class="section-text">
+        Finally, the honest handling of Papias's chiliasm matters. Eusebius preserved him while
+        disagreeing with him. The Church kept the witness and corrected the opinion. That pattern —
+        an individual Father's position weighed within the symphonic judgment of the whole — is a
+        healthier model for ressourcement than either uncritical veneration or easy dismissal.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="polycarp-of-smyrna.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Polycarp of Smyrna</div>
+          <div class="related-desc">Papias's companion, per Irenaeus — fellow bearer of the Johannine tradition in Asia Minor.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-paradosis" class="related-link">
+          <span class="related-icon">Ω</span>
+          <div class="related-title greek">παράδοσις</div>
+          <div class="related-desc">Tradition as the Church's living handing-on — the principle Papias most explicitly defends.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-1" class="related-link">
+          <span class="related-icon">Α</span>
+          <div class="related-title">Phase 1 Lexicon</div>
+          <div class="related-desc">Greek terms of the Apostolic Fathers — the vocabulary of the sub-apostolic Church.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Papias is Phase 1: Weeks 1–4.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 1 && wk <= 4) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
