@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T05:47:23Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilary of Poitiers — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Hilary of Poitiers — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Poitiers, the Athanasius of the West, and the first sustained Latin expositor of Nicene Trinitarian theology. His De Trinitate bridged the Greek theological vocabulary of Nicaea to the Latin-speaking Church.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Hilary of Poitiers (c. 310 – c. 367 AD) — wealthy pagan convert, Bishop of Poitiers, exiled four years to Phrygia by the Arian emperor Constantius II, and the Latin Father whose De Trinitate (12 books) established the bridge between Greek Nicene theology and the Latin-speaking Church. Jerome called him the Athanasius of the West. Declared Doctor of the Church by Pius IX in 1851.">
+<meta name="keywords" content="Hilary of Poitiers, Hilarius Pictaviensis, Church Fathers, Latin Fathers, De Trinitate, De Synodis, Commentary on Matthew, Consubstantialis, Aeterna Generatio, Nicene Orthodoxy, Arian Controversy, Constantius II, Athanasius of the West, Doctor of the Church">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Latin Fathers · Nicene Era)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Latin CSS variants for Latin Father cards — italic Cormorant
+   Garamond replaces Gentium Plus for Latin terms; navy color retained.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Latin Fathers · Nicene Era
+    </div>
+    <h1 class="hero-title">Hilary of Poitiers</h1>
+    <div class="hero-epithet latin">Hilarius Pictaviensis · The Athanasius of the West</div>
+    <div class="hero-meta">c. 310 – c. 367 AD · Bishop of Poitiers, Trinitarian Doctor</div>
+    <p class="hero-description">
+      Wealthy pagan convert, Bishop of Poitiers through the high Arian crisis, and the Latin
+      Father whose <em>De Trinitate</em> became the Western Church's first sustained
+      theological bridge to the Greek vocabulary of Nicaea. Exiled four years to Phrygia by
+      the Arian emperor Constantius II, Hilary learned Greek in his banishment and brought
+      home to Gaul a Trinitarian theology that could meet the Cappadocians on their own
+      ground. Jerome gave him the name by which the Church has known him since: the
+      Athanasius of the West.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Hilary?</h2>
+      <p class="section-text">
+        Hilary was born around 310 AD in Pictavium — modern Poitiers — in central-western
+        Gaul, into a wealthy Gallo-Roman family of rank. The classical education he received
+        would mark every page he wrote: Jerome, who had an ear for such things, called him
+        <em>Rhodanus latinae eloquentiae</em>, the Rhône of Latin eloquence. He was raised
+        pagan. In his own account at the opening of <em>De Trinitate</em>, Hilary traces his
+        conversion to his reading of Scripture as an adult — the shock of the Johannine
+        Prologue, the recognition that the God the philosophers reached for was the God
+        Scripture revealed. He was baptized as a grown man, married, and remained the head
+        of his household through what would have been an ordinary aristocratic life, until
+        around 350 or 353 the Christian community of Poitiers elected him their bishop.
+      </p>
+      <p class="section-text">
+        His episcopate coincided with the middle act of the Arian crisis — the years when
+        the Emperor Constantius II, increasingly hostile to the Nicene party, was pressing
+        the Latin West toward a compromise with the Eastern semi-Arian bishops. At the
+        Council of Béziers in 356, called to enforce that compromise, Hilary refused to sign
+        against Athanasius. Constantius responded by exiling him to Phrygia, in the heart
+        of Asia Minor. The banishment lasted four years and turned out to be the making of
+        his theology. Cut off from Latin ecclesiastical politics, Hilary threw himself into
+        Greek — the language, the theologians, the terminological precision that Nicaea had
+        required and that Western Latin had not yet developed the grammar to express. He
+        read Athanasius, the Cappadocians, the Eastern synodal documents. He began drafting
+        what would become <em>De Trinitate</em> in twelve books, the first sustained Latin
+        engagement with the full theological depth of Nicene orthodoxy.
+      </p>
+      <p class="section-text">
+        Constantius eventually grew so frustrated with Hilary's agitation in the East that
+        he sent him home in 360, apparently hoping distance would muzzle him. It did not.
+        For the remaining seven years of his life Hilary labored to consolidate the Nicene
+        faith in Gaul, wrote his <em>De Synodis</em> to explain the Eastern confessions to
+        his Latin brothers, and completed his biblical commentaries and hymnody. He died
+        around 367 AD at Poitiers. The Orthodox Church commemorates him on January 14
+        (January 13 in the Western calendar). In 1851 Pope Pius IX declared him a Doctor of
+        the Church — one of only a few Latin Fathers to receive the title. His achievement
+        is neatly captured in the name Jerome gave him: the Athanasius of the West. Where
+        Athanasius had fought the Arian battle in Greek, Hilary fought it in Latin with the
+        same precision and the same cost, and with the additional labor of coining a
+        theological vocabulary that did not yet exist for his language.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Books of De Trinitate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">353</div>
+          <div class="stat-label">Became Bishop of Poitiers</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">4</div>
+          <div class="stat-label">Years in Phrygian Exile</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 367</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Hilary's surviving corpus covers systematic theology, synodal apologetic, and
+        biblical exegesis. Three works stand at the center.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">On the Trinity</h3>
+          <div class="work-latin">De Trinitate</div>
+          <p class="work-description">
+            Twelve books, largely composed in Phrygian exile and completed after his return
+            to Gaul. The work systematically treats the Father, the Son, and the Holy
+            Spirit, with particular attention to the biblical passages the Arians had
+            weaponized for their subordinationism. Hilary's method is to let Scripture
+            answer Scripture, and to deploy the Greek theological vocabulary of Nicaea in
+            a Latin register carefully worked out for the purpose. <em>De Trinitate</em> is
+            the first mature Latin Trinitarian treatise and established the grammar every
+            subsequent Western engagement would use.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">On the Synods</h3>
+          <div class="work-latin">De Synodis</div>
+          <p class="work-description">
+            A treatise written in exile for the bishops of Gaul, Germania, and Britain,
+            explaining the various Eastern synodal confessions from 341 onward and
+            distinguishing defensible formulations from Arian deviations. The work is also
+            Hilary's gentle argument to the Latin West that the Eastern moderate parties —
+            the Homoiousians, who spoke of the Son as <em>of like substance</em> with the
+            Father — were closer to Nicaea than their vocabulary initially suggested. It is
+            one of the great irenic theological documents of the patristic age.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Commentary on Matthew</h3>
+          <div class="work-latin">Commentarius in Matthaeum</div>
+          <p class="work-description">
+            Written before his exile, this is the earliest surviving sustained Latin
+            commentary on a Gospel. Hilary reads Matthew typologically, attentive to the
+            mystical as well as the literal sense, and draws especially on the Latin
+            exegetical tradition that Tertullian and Cyprian had begun. The commentary
+            shows Hilary's theology already fully formed on the foundational points —
+            the divinity of the Son, the reality of the Incarnation, the economy of
+            salvation — well before the Arian crisis demanded their public defense.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Latin terms carry the weight of Hilary's Trinitarian contribution. The first
+        is his coinage for rendering the Greek ὁμοούσιος into Latin; the second names the
+        central dynamic of the Son's origin; the third articulates his Christology of the
+        Son's revelation of the Father; the fourth names the mystery in which it all becomes
+        visible.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="latin-term long">consubstantialis</span>
+          <div class="transliteration">con-sub-stan-ti-A-lis</div>
+          <div class="english-meaning">Of One Substance · the Latin of Nicaea</div>
+          <p class="pillar-explanation">
+            Hilary's precise Latin rendering of the Greek <em>ὁμοούσιος</em> — the contested
+            Nicene word affirming that the Son shares the Father's very being. The Latin
+            term had existed before Hilary, but he established it as the theological
+            equivalent with sufficient rigor that the Western tradition could say what
+            Nicaea said without ambiguity. The creed the Latin-speaking Church prays at
+            every Liturgy — "of one substance with the Father" — carries Hilary's
+            fingerprints.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term long">aeterna generatio</span>
+          <div class="transliteration">ae-TER-na ge-ne-RA-ti-o</div>
+          <div class="english-meaning">Eternal Generation of the Son</div>
+          <p class="pillar-explanation">
+            The central Hilarian emphasis against every subordinationism: the Son is
+            generated from the Father — truly generated, truly Son — and that generation is
+            eternal, without beginning or end. There was never a time when the Father was
+            not begetting the Son; there was never a time when the Son was not being
+            begotten. The formulation protects both the Son's full divinity and his real
+            relation of Sonship, and becomes the shape of every subsequent Western
+            Trinitarian grammar.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">imago</span>
+          <div class="transliteration">i-MA-go</div>
+          <div class="english-meaning">Image · the Son as Image of the Father</div>
+          <p class="pillar-explanation">
+            In the Son the Father makes himself visible; the Son is the full, living image
+            of what the Father is. For Hilary this is not a reduction — as if the image were
+            less than the original — but the very mode of the Son's divinity: he is all
+            that the Father is, reflected back as Son. The Greek theological inheritance of
+            <em>εἰκών</em> (from Irenaeus onward) passes into Latin through Hilary's <em>imago</em>,
+            and the Nicene sense of Christ as true revelation of the invisible God gets
+            its Western articulation here.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="latin-term">sacramentum</span>
+          <div class="transliteration">sa-cra-MEN-tum</div>
+          <div class="english-meaning">Mystery · the Incarnation as Sign</div>
+          <p class="pillar-explanation">
+            Hilary uses <em>sacramentum</em> less of the liturgical rites than of the great
+            mystery itself: the Incarnation, the whole economy by which the invisible God
+            becomes visible, audible, and touchable in Christ. Every detail of Christ's
+            earthly life discloses the mystery in a different key. The word anticipates
+            Augustine's later sacramental theology and gives Western reflection on the
+            mysteries a Christological center from the beginning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-latin">
+        "Non minor Filius quia Filius, nec maior Pater quia Pater."
+      </p>
+      <p class="quote-text">
+        "The Son is not less because he is Son, nor the Father greater because he is Father."
+      </p>
+      <div class="quote-source">— De Trinitate 4.14</div>
+    </div>
+
+    <!-- Why Hilary Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Hilary Matters Today</h2>
+      <p class="section-text">
+        Hilary is the reason the Latin Nicene Creed carries the theological weight that it
+        does. When the Latin-speaking Church sings <em>consubstantialem Patri</em> —
+        "consubstantial with the Father" — the vocabulary was forged in the fourth-century
+        translation labor that Hilary began and that Ambrose and Augustine after him
+        refined. Without the generation of Latin theological speakers Hilary trained and
+        wrote for, the Western reception of Nicaea would have been delayed by decades and
+        shaped by categories less adequate to the conciliar faith.
+      </p>
+      <p class="section-text">
+        His method is perhaps even more useful to the Church of our day than his
+        conclusions. Hilary was a Latin Father who realized the theological resources of his
+        tradition were insufficient to say what had to be said, who then learned Greek in
+        the middle of his life, who read deeply in a theological literature alien to his
+        formation, and who came home carrying what he had learned. Every subsequent
+        ecumenical theology that has actually moved the Church forward — the Cappadocian
+        reception of Hilary in the East, the Latin reception of the Cappadocians, the
+        twentieth-century <em>Nouvelle Théologie</em> reading the Greeks, the modern
+        Orthodox-Catholic dialogue's patience with linguistic asymmetry — runs in the groove
+        Hilary first cut. Theology done well requires reading across one's own tradition's
+        walls.
+      </p>
+      <p class="section-text">
+        And he is a patristic example of what it looks like to accept the cost of fidelity
+        with good humor. Four years in a Phrygian backwater, separated from his see, his
+        family, and his language, would have broken most men. Hilary used the years to
+        learn Greek and write his masterpiece. The witness is not only of his doctrine but
+        of his disposition: theological steadfastness does not require bitterness, and
+        exile, when God wills it, can be the most productive classroom of a bishop's life.
+        The modern Orthodox Christian working under adverse circumstances — theological,
+        cultural, or political — has in Hilary a model of how to transform the adversity
+        into serious theological work.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="athanasius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Athanasius the Great</div>
+          <div class="related-desc">The Nicene defender of the East. Jerome's "Athanasius of the West" is the compliment that names the parallel: Hilary fought the same battle in Latin, with the same cost, and produced the Western counterpart to Athanasius's Greek Trinitarian theology.</div>
+        </a>
+        <a href="tertullian.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Tertullian</div>
+          <div class="related-desc">The original coiner of the Latin theological vocabulary (<em>trinitas</em>, <em>persona</em>, <em>substantia</em>). Hilary inherits Tertullian's grammar and pushes it to the precision Nicaea required.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">H</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Hilary's Latin Trinitarian vocabulary bridges to the Greek ὁμοούσιος, εἰκών, and γέννησις tradition that anchors future Trinitarian study tracks.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
