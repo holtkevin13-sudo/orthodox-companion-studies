@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T14:00:45Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Cassian — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="John Cassian — Orthodox Companion Studies">
+<meta property="og:description" content="The critical bridge figure transmitting Egyptian desert spirituality to the Latin West. His Institutes and Conferences shaped Western monasticism for fifteen centuries — preserved by the Orthodox East without reservation as a saint and Father.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="John Cassian (c. 360 – c. 435 AD) — Scythian-born monk formed in the Egyptian desert under the disciples of Evagrius, founder of the Abbey of Saint-Victor at Marseilles, and author of the Institutes and the Conferences that transmitted desert spirituality to the Latin West. Benedict of Nursia made his writings mandatory reading in the Rule. The Orthodox Church commemorates him as a saint on February 29. His Conference 13 on grace and free will is the classic Eastern statement of synergy.">
+<meta name="keywords" content="John Cassian, Johannes Cassianus, Desert Fathers, Scetis, Kellia, Institutes, Conferences, Collationes, Eight Logismoi, Seven Deadly Sins, Semi-Pelagianism, Synergy, Marseilles, Abbey of Saint-Victor, Bridge to Western Monasticism, Benedict of Nursia">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Desert Fathers · Late Patristic)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   Cassian bridges Greek Eastern desert and Latin Western monasticism:
+   Greek-pillar primary, Latin CSS retained for quote translation.
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+/* --- Latin Father variants (italic Cormorant instead of Gentium Plus) --- */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Desert Fathers · Bridge to the Latin West
+    </div>
+    <h1 class="hero-title">John Cassian</h1>
+    <div class="hero-epithet">Ἰωάννης ὁ Κασσιανός · Transmitter of the Desert</div>
+    <div class="hero-meta">c. 360 – c. 435 AD · Scythian Monk, Founder of Saint-Victor</div>
+    <p class="hero-description">
+      Born in the Balkans, formed in the monasteries of Bethlehem and the Egyptian desert,
+      exiled westward during the first Origenist crisis of 400, priest at Rome, and
+      founder of two monasteries at Marseilles where he wrote the works that transmitted
+      Egyptian desert spirituality to the Latin-speaking Church. Benedict of Nursia would
+      make Cassian's <em>Conferences</em> mandatory reading in his Rule, and through the
+      Benedictines the desert voice of Evagrius, Macarius, and the great elders of Scetis
+      became the theological foundation of Western monasticism for fifteen hundred years.
+      The Orthodox Church commemorates him on February 29 (and on March 29 in non-leap
+      years).
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Cassian?</h2>
+      <p class="section-text">
+        John Cassian was born around 360 AD, probably in Scythia Minor — roughly the
+        modern Romanian-Bulgarian Black Sea coast, part of the Roman province of Lower
+        Moesia. He was bilingual from youth in Latin and Greek, a rare combination that
+        would shape his vocation. As a young man, perhaps in his early twenties, he
+        traveled with his friend Germanus to the Holy Land and entered a monastery at
+        Bethlehem, where they professed the ascetic life together. The Bethlehem community
+        formed them well, but reports of the Egyptian desert drew them further. Around
+        385 the two set off for Egypt, where for some fifteen years they lived as
+        disciples in the great monastic centers: Scetis under the disciples of Macarius,
+        then the Kellia under the circle of Evagrius Ponticus, whose theological formation
+        Cassian absorbed with extraordinary thoroughness.
+      </p>
+      <p class="section-text">
+        The Origenist crisis of 399–400 ended their Egyptian years. The Patriarch
+        Theophilus of Alexandria, shifting politically against the pro-Origen monastic
+        faction, expelled hundreds of monks from Nitria and the Kellia. Cassian and
+        Germanus were among them. They fled first to Constantinople, where John
+        Chrysostom received them and ordained Germanus priest and Cassian deacon. When
+        Chrysostom was himself exiled in 404, Cassian carried the Constantinopolitan
+        church's appeal for justice to Pope Innocent I at Rome. There Cassian stayed for
+        some years, ordained priest around this period, and there he was eventually
+        invited — by Bishop Proculus of Marseilles or by the Gallic monastic community
+        associated with him — to come west and found monasteries on the Egyptian model.
+        Around 415 Cassian settled at Marseilles and founded two monastic houses: the
+        Abbey of Saint-Victor for men and a women's community whose name is less well
+        attested. Both operated under the rule and rhythm Cassian had learned in Egypt.
+      </p>
+      <p class="section-text">
+        The remaining two decades of his life he spent writing. The two great works —
+        the <em>Institutes of the Coenobia</em> (twelve books on monastic rule and on
+        the eight <em>logismoi</em>) and the <em>Conferences</em> (twenty-four dialogues
+        with the desert elders he had known in Egypt) — were composed at Marseilles
+        between roughly 420 and 430 and circulated rapidly across Gaul, North Africa,
+        Italy, and beyond. They became, within a generation, the standard Latin
+        introduction to desert monastic theology. Benedict of Nursia, composing his Rule
+        at Monte Cassino a century later, made Cassian's <em>Conferences</em> and
+        <em>Institutes</em> mandatory reading for his monks — "for an instructed monk is
+        formed by these books" (<em>Rule</em> 73). Through the Benedictine movement and
+        its daughter orders, Cassian became the actual theological foundation of Western
+        monastic life until the Reformation and, in Catholic monastic houses, beyond it.
+        Cassian died at Marseilles around 435 AD.
+      </p>
+      <p class="section-text">
+        A word on his reception is worth adding, since it differs East and West in an
+        illuminating way. The Orthodox tradition has received Cassian without reservation
+        — as a saint (commemorated February 29 or March 29) and as a transmitter of
+        authentic desert theology. The Western tradition's reception is more complicated:
+        his <em>Conference 13</em>, on grace and human freedom, was read by some in the
+        Augustinian party as insufficiently Augustinian, and the label
+        "semi-Pelagianism" was later attached to the position Cassian is taken to
+        represent. The label is anachronistic and unhelpful on its own terms — Cassian
+        is neither Augustinian nor Pelagian but is articulating the synergistic
+        understanding of grace and free will the Greek Fathers had held continuously
+        since Irenaeus — and the Orthodox tradition simply does not recognize the
+        "semi-Pelagian" framework as defining a real theological problem. What Cassian
+        says in <em>Conference 13</em> — that God's grace is genuinely primary and
+        irreplaceable, and that the human will genuinely cooperates with it in real
+        freedom — is the plain Eastern teaching, received unambiguously by the Greek
+        patristic tradition from beginning to end. Modern Orthodox scholarship (Georges
+        Florovsky, John Meyendorff, Augustine Casiday, Columba Stewart) reads Cassian as
+        he deserves to be read: a bridge figure carrying the Eastern synergy into a
+        Latin-speaking context where it would, under Augustinian pressure, become briefly
+        controversial before being rehabilitated in the later Western tradition. East and
+        West now increasingly read Cassian together.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">15</div>
+          <div class="stat-label">Years in the Egyptian Desert</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Books of the Institutes</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">24</div>
+          <div class="stat-label">Conferences with Desert Elders</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 435</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Cassian wrote in Latin but thought in Greek categories throughout. His two great
+        works are organized around the concerns of the Egyptian desert — the structure
+        of community life, the battle with the passions, the discernment of spirits, the
+        stages of contemplative prayer — but articulated in a Latin monastic grammar
+        that could shape Western houses for a thousand years. Three works define his
+        contribution.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">The Institutes</h3>
+          <div class="work-latin">De Institutis Coenobiorum</div>
+          <p class="work-description">
+            Twelve books on the institutional structure of the coenobium — dress, hours
+            of prayer, the Psalter, the round of daily labor — followed by eight books
+            on the eight <em>logismoi</em>, one book per thought, transmitting Evagrius's
+            diagnostic into Latin with expanded practical commentary. The <em>Institutes</em>
+            became the structural template for Western monastic rules, including
+            Benedict's, and the eight-logismoi teaching was consolidated by Gregory the
+            Great a century later into what the West would call the seven deadly sins.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Conferences</h3>
+          <div class="work-latin">Collationes Patrum</div>
+          <p class="work-description">
+            Twenty-four dialogues with the desert elders Cassian had known in Egypt —
+            Abba Moses, Abba Paphnutius, Abba Serenus, Abba Isaac, and others — on the
+            full range of monastic spiritual life: the goal of the monk, discernment,
+            the stages of prayer, the guarding of thoughts, grace and free will
+            (<em>Conference 13</em>), nocturnal visions, the kinds of monks, the kinds
+            of prayer, and much else. The work is at once Cassian's memoir of his
+            desert formation and the most complete patristic theological survey of
+            monastic life to survive. Benedict reads the Latin <em>Conferences</em> in
+            his Rule; the Byzantine tradition eventually reads the Greek translation of
+            Cassian alongside the <em>Philokalia</em>.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">On the Incarnation</h3>
+          <div class="work-latin">De Incarnatione Domini</div>
+          <p class="work-description">
+            Seven books composed around 430 at the request of the young Roman deacon
+            Leo — later Pope Leo the Great — to answer the Christology of Nestorius
+            from the Western side of the controversy. Less read than the monastic works
+            but historically significant: Cassian's intervention helped shape the
+            Western reception of Chalcedon and the position Leo himself would later
+            articulate in the <em>Tome</em>. The work shows Cassian as something more
+            than a monastic writer — as a theological mind serving the whole Church at
+            one of its doctrinal turning points.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms (as Cassian thought in them) name the center of his contribution.
+        The first is his institutional emphasis; the second his ascetic method; the third
+        the Evagrian inheritance he transmitted whole; the fourth his pastoral-theological
+        signature — the discernment that gives everything else its shape.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">κοινόβιον</span>
+          <div class="transliteration">koinobion</div>
+          <div class="english-meaning">Cenobium · Community Life</div>
+          <p class="pillar-explanation">
+            Where Anthony had established the anchoritic life and Macarius the
+            semi-anchoritic, Cassian's <em>Institutes</em> systematize the
+            <em>cenobium</em> — the fully communal monastic house, with its shared
+            Psalter-office, common meals, common labor, and obedience to an abbot. This
+            is the model Pachomius had pioneered in Egypt and that Cassian carries west,
+            and it becomes the structural foundation of Benedictine monasticism. Every
+            Orthodox coenobitic house — Athos, Kiev Lavra, Jordanville — descends in form
+            from the rule Cassian transmitted.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">πρᾶξις</span>
+          <div class="transliteration">praxis</div>
+          <div class="english-meaning">Practice · Ascetic Formation</div>
+          <p class="pillar-explanation">
+            The active ascetic life — fasting, vigil, psalmody, manual labor, the battle
+            with the passions — as the necessary foundation for any contemplative
+            attainment. Cassian inherits the Evagrian distinction between
+            <em>praxis</em> (the ascetic life) and <em>theōria</em> (contemplation) and
+            organizes his <em>Institutes</em> around the first, his <em>Conferences</em>
+            around the second. The pattern — practice before contemplation, the virtues
+            before the vision — becomes the ordinary framework of Western monastic
+            formation and is also the Orthodox tradition's own rhythm.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">ὀκτὼ λογισμοί</span>
+          <div class="transliteration">oktō logismoi</div>
+          <div class="english-meaning">Eight Passionate Thoughts</div>
+          <p class="pillar-explanation">
+            Cassian transmits Evagrius's eight genera of passionate thoughts — gluttony,
+            lust, avarice, sadness, anger, acedia, vainglory, pride — into Latin with
+            expanded commentary, devoting eight of the twelve books of the
+            <em>Institutes</em> to them. Gregory the Great would later consolidate
+            Cassian's list into the seven deadly sins of the Western tradition (combining
+            vainglory into pride and dropping sadness). Through Cassian, Evagrius's
+            diagnostic of the heart's interior life reaches every subsequent Latin moral
+            theology.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">διάκρισις</span>
+          <div class="transliteration">diakrisis · discretio</div>
+          <div class="english-meaning">Discernment · The Mother of Virtues</div>
+          <p class="pillar-explanation">
+            Cassian's <em>Conference 2</em>, delivered by Abba Moses, is the classical
+            patristic treatise on discernment. <em>Discretio</em> — the Latin rendering
+            of the Greek <em>διάκρισις</em> — is for Cassian the virtue without which
+            no other virtue is rightly ordered: the trained capacity to distinguish
+            between what comes from God, what from the self, and what from the demonic.
+            Benedict's entire Rule proceeds from this Cassianic premise, and every
+            subsequent Western tradition of spiritual direction — Ignatian, Carmelite,
+            Salesian — operates in the vocabulary Cassian established.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-latin">
+        "Non in silvis tantum vel solitudinibus est perfectio, sed in ipso cordis
+        proposito."
+      </p>
+      <p class="quote-text">
+        "Perfection is not found in forests or in solitudes alone, but in the heart's
+        own resolve."
+      </p>
+      <div class="quote-source">— Conferences 24.26 (summary)</div>
+    </div>
+
+    <!-- Why Cassian Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Cassian Matters Today</h2>
+      <p class="section-text">
+        He is the bridge. Without Cassian, the Egyptian desert — with its diagnostic of
+        the <em>logismoi</em>, its theology of prayer, its discipline of discernment —
+        would have remained a Greek and Coptic inheritance largely unavailable to the
+        Latin-speaking Church. With Cassian, that inheritance becomes the structural
+        foundation of Western monasticism for fifteen hundred years, shaping Benedict,
+        the Cistercian reform, the medieval Carthusians, and eventually the spiritual
+        traditions of Ignatius, Teresa of Ávila, and Thérèse of Lisieux. No single
+        fifth-century figure did more for the cross-pollination of East and West in
+        patristic spirituality.
+      </p>
+      <p class="section-text">
+        His <em>Conference 13</em> on grace and free will is particularly valuable for
+        the contemporary Orthodox reader navigating East-West theological conversation.
+        Cassian articulates synergy — the real cooperation of divine grace with human
+        freedom — in a Latin register that acknowledges everything the anti-Pelagian
+        polemic legitimately protects while refusing the Augustinian hardening of grace
+        into irresistible causality. The Greek Fathers held this synergistic
+        understanding continuously, but Cassian is the Latin voice who preserves it
+        through the Augustinian moment. Modern Orthodox-Catholic dialogue on grace —
+        and contemporary Western scholarship's own rehabilitation of Cassian (Columba
+        Stewart, Boniface Ramsey, Augustine Casiday, Owen Chadwick) — increasingly
+        recognize that the label "semi-Pelagianism" was always a polemical category
+        in search of a theology, and what Cassian actually teaches is the plain Eastern
+        synergy that predates the Western controversy.
+      </p>
+      <p class="section-text">
+        For the modern Orthodox reader of the desert tradition, Cassian is also a
+        practical entry point. The <em>Institutes</em> and <em>Conferences</em> give
+        the Egyptian material a systematic, teachable shape that the <em>Apophthegmata</em>
+        and even Evagrius's compressed <em>kephalaia</em> do not. Where the Sayings
+        provide vivid flashes and the <em>Praktikos</em> provides dense aphorism,
+        Cassian provides narrative exposition — the desert as it was actually lived,
+        explained to a beginner in the master's own voice. The English reader coming
+        fresh to the desert tradition today could do worse than start with Conferences
+        1–3 (on the goal of the monk, discernment, and renunciation) as Cassian
+        transmitted them. The voice of Abba Moses comes through with remarkable clarity,
+        and through Cassian the whole Egyptian inheritance becomes approachable in a
+        way it might otherwise not be.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="evagrius.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Evagrius Ponticus</div>
+          <div class="related-desc">Cassian's teacher in Egypt and the theological source of his eight-logismoi teaching. Cassian carries Evagrius's method into Latin and preserves the ascetic-contemplative framework that would otherwise have been lost to the Western tradition.</div>
+        </a>
+        <a href="gregory-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Gregory the Great</div>
+          <div class="related-desc">The Latin pope who consolidated Cassian's eight logismoi into the seven deadly sins of Western moral theology. The line runs Evagrius → Cassian → Gregory, and every subsequent Western catalog of vices descends from this transmission.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Ἰ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Cassian's bridge vocabulary of cenobitic life, practice, the eight logismoi, and discernment anchors the structural grammar of both Eastern and Western monastic tradition.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
