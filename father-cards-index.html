@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T00:30:00Z -->
+<!-- build: 2026-04-18T17:19:10Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,8 +12,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<meta name="description" content="Complete database of 37 Church Fathers from Apostolic times through Byzantine period. Browse alphabetically or by historical period.">
-<meta name="keywords" content="Church Fathers, Orthodox Christianity, Patristics, Apostolic Fathers, Ante-Nicene Fathers, Nicene Fathers, Post-Nicene Fathers">
+<meta name="description" content="Complete database of 40 Church Fathers from Apostolic times through the close of Byzantium. Browse alphabetically, by historical period, or by tradition.">
+<meta name="keywords" content="Church Fathers, Orthodox Christianity, Patristics, Apostolic Fathers, Ante-Nicene Fathers, Nicene Fathers, Post-Nicene Fathers, Byzantine Fathers, Desert Fathers, Alexandrian School, Latin Fathers, Syrian Tradition, Hesychasm">
 
 <style>
 /* Typography — Cormorant Garamond (English) + Gentium Plus (Greek) */
@@ -449,6 +449,76 @@ em, i { font-style: italic; }
   font-weight: 500;
 }
 
+/* Tradition Navigation — secondary row of school/lineage filters */
+.tradition-nav {
+  padding: 1.25rem 0;
+  background: #f5efe0;
+  border-bottom: 1px solid #e8ddc8;
+}
+
+.tradition-label {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #6b5d4a;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.tradition-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tradition-link,
+.period-link.period-all {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: #fffdf7;
+  color: #1a3a5c;
+  border-color: #1a3a5c;
+}
+
+.tradition-link:hover,
+.tradition-link.active {
+  background: #1a3a5c;
+  color: #fffdf7;
+}
+
+/* "All" pill — gold accent on the period row */
+.period-link.period-all {
+  background: #fffdf7;
+  color: #6b1e2a;
+  border-color: #D4AF37;
+}
+
+.period-link.period-all:hover,
+.period-link.period-all.active {
+  background: #D4AF37;
+  color: #2a2620;
+  border-color: #D4AF37;
+}
+
+/* Touch targets on mobile */
+@media (max-width: 768px) {
+  .tradition-link,
+  .period-link.period-all {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
 /* Return to Top */
 .return-to-top {
   position: fixed;
@@ -555,18 +625,18 @@ em, i { font-style: italic; }
     <div class="hero-content">
       <div class="cross-ornament">☩</div>
       <h1 class="main-title">Church Father Cards</h1>
-      <div class="subtitle">37 Fathers across 7 Centuries</div>
+      <div class="subtitle">40 Fathers across 14 Centuries</div>
       <p class="description">
-        Complete database of Church Fathers from the Apostolic period through Byzantine era. 
+        Complete database of Church Fathers from the Apostolic period through the close of Byzantium. 
         Discover their lives, writings, and theological contributions to Orthodox Christianity.
       </p>
       <div class="stats">
         <div class="stat">
-          <span class="stat-number">37</span>
+          <span class="stat-number">40</span>
           <span class="stat-label">Church Fathers</span>
         </div>
         <div class="stat">
-          <span class="stat-number">7</span>
+          <span class="stat-number">14</span>
           <span class="stat-label">Centuries</span>
         </div>
         <div class="stat">
@@ -574,7 +644,7 @@ em, i { font-style: italic; }
           <span class="stat-label">Historical Periods</span>
         </div>
         <div class="stat">
-          <span class="stat-number">3</span>
+          <span class="stat-number" id="current-focus-count">0</span>
           <span class="stat-label">Current Focus</span>
         </div>
       </div>
@@ -591,7 +661,7 @@ em, i { font-style: italic; }
       
       <div class="filter-group">
         <label class="filter-label">Period:</label>
-        <select class="filter-select" id="period-filter" onchange="filterFathers()">
+        <select class="filter-select" id="period-filter" onchange="onPeriodSelectChange()">
           <option value="">All Periods</option>
           <option value="apostolic">Apostolic (50-150 AD)</option>
           <option value="ante-nicene">Ante-Nicene (150-325 AD)</option>
@@ -612,11 +682,28 @@ em, i { font-style: italic; }
 <section class="period-nav">
   <div class="container">
     <div class="period-links">
+      <a href="#all" class="period-link period-all active" onclick="filterByPeriod('')">All 40</a>
       <a href="#apostolic" class="period-link period-apostolic" onclick="filterByPeriod('apostolic')">Apostolic Fathers</a>
       <a href="#ante-nicene" class="period-link period-ante-nicene" onclick="filterByPeriod('ante-nicene')">Ante-Nicene</a>
       <a href="#nicene" class="period-link period-nicene" onclick="filterByPeriod('nicene')">Nicene Fathers</a>
       <a href="#post-nicene" class="period-link period-post-nicene" onclick="filterByPeriod('post-nicene')">Post-Nicene</a>
       <a href="#byzantine" class="period-link period-byzantine" onclick="filterByPeriod('byzantine')">Byzantine</a>
+    </div>
+  </div>
+</section>
+
+<section class="tradition-nav">
+  <div class="container">
+    <span class="tradition-label">Schools &amp; Traditions</span>
+    <div class="tradition-links">
+      <a href="#alexandrian" class="tradition-link" onclick="filterByTradition('alexandrian')">Alexandrian School</a>
+      <a href="#latin" class="tradition-link" onclick="filterByTradition('latin')">Latin Fathers</a>
+      <a href="#desert" class="tradition-link" onclick="filterByTradition('desert')">Desert &amp; Monastic</a>
+      <a href="#philokalic" class="tradition-link" onclick="filterByTradition('philokalic')">Philokalic / Hesychast</a>
+      <a href="#later-byzantine" class="tradition-link" onclick="filterByTradition('later-byzantine')">Later Byzantine</a>
+      <a href="#syrian" class="tradition-link" onclick="filterByTradition('syrian')">Syrian Tradition</a>
+      <a href="#missionary" class="tradition-link" onclick="filterByTradition('missionary')">Missionary Fathers</a>
+      <a href="#post-byzantine" class="tradition-link" onclick="filterByTradition('post-byzantine')">Post-Byzantine</a>
     </div>
   </div>
 </section>
@@ -647,12 +734,46 @@ em, i { font-style: italic; }
 <script>
 // Father Data
 const fathers = [
-  // Apostolic Fathers (50-150 AD)
+  // ----- Apostolic Fathers (c. 50–150 AD) -----
+  {
+    id: "ignatius-of-antioch",
+    pageKey: "Ignatius of Antioch",
+    name: "Ignatius of Antioch",
+    dates: "c. 50–110 AD",
+    period: "apostolic",
+    traditions: [],
+    location: "Antioch",
+    currentWeek: false,
+    week: 2,
+    description: "Third Bishop of Antioch, martyr. Seven letters written en route to martyrdom establish episcopal authority and Eucharistic theology.",
+    works: 7,
+    letters: 7,
+    councils: 0,
+    tags: ["Martyrdom", "Episcopal Authority", "Eucharist", "Unity"]
+  },
+  {
+    id: "polycarp-of-smyrna",
+    pageKey: "Polycarp of Smyrna",
+    name: "Polycarp of Smyrna",
+    dates: "c. 69–155 AD",
+    period: "apostolic",
+    traditions: [],
+    location: "Smyrna",
+    currentWeek: false,
+    week: 2,
+    description: "Bishop of Smyrna, disciple of John the Apostle. His martyrdom account is the earliest authentic record of Christian martyrdom.",
+    works: 3,
+    letters: 1,
+    councils: 0,
+    tags: ["Martyrdom", "Apostolic Tradition", "Witness"]
+  },
   {
     id: "clement-of-rome",
+    pageKey: "Clement of Rome",
     name: "Clement of Rome",
-    dates: "c. 35-99 AD",
+    dates: "c. 35–99 AD",
     period: "apostolic",
+    traditions: [],
     location: "Rome",
     currentWeek: false,
     week: 3,
@@ -663,38 +784,12 @@ const fathers = [
     tags: ["Apostolic Succession", "Church Unity", "Authority"]
   },
   {
-    id: "ignatius-of-antioch",
-    name: "Ignatius of Antioch",
-    dates: "c. 50-110 AD", 
-    period: "apostolic",
-    location: "Antioch",
-    currentWeek: true,
-    week: 2,
-    description: "Third Bishop of Antioch, martyr. Seven letters written en route to martyrdom establish episcopal authority and Eucharistic theology.",
-    works: 7,
-    letters: 7,
-    councils: 0,
-    tags: ["Martyrdom", "Episcopal Authority", "Eucharist", "Unity"]
-  },
-  {
-    id: "polycarp-of-smyrna", 
-    name: "Polycarp of Smyrna",
-    dates: "c. 69-155 AD",
-    period: "apostolic",
-    location: "Smyrna",
-    currentWeek: true,
-    week: 2,
-    description: "Bishop of Smyrna, disciple of John the Apostle. His martyrdom account is the earliest authentic record of Christian martyrdom.",
-    works: 3,
-    letters: 1,
-    councils: 0,
-    tags: ["Martyrdom", "Apostolic Tradition", "Witness"]
-  },
-  {
     id: "papias-of-hierapolis",
-    name: "Papias of Hierapolis", 
-    dates: "c. 60-130 AD",
+    pageKey: "Papias",
+    name: "Papias of Hierapolis",
+    dates: "c. 60–130 AD",
     period: "apostolic",
+    traditions: [],
     location: "Hierapolis",
     currentWeek: false,
     week: 4,
@@ -704,25 +799,15 @@ const fathers = [
     councils: 0,
     tags: ["Gospel Tradition", "Apostolic Memory", "Scripture"]
   },
-  {
-    id: "clement-of-alexandria",
-    name: "Clement of Alexandria",
-    dates: "c. 150-215 AD",
-    period: "ante-nicene",
-    location: "Alexandria",
-    currentWeek: false,
-    week: 9,
-    description: "Head of Catechetical School of Alexandria. Pioneered Christian philosophy and the integration of Greek learning with Christian faith.",
-    works: 12,
-    letters: 3,
-    councils: 0,
-    tags: ["Christian Philosophy", "Catechesis", "Greek Learning"]
-  },
+
+  // ----- Ante-Nicene Fathers (c. 150–325 AD) -----
   {
     id: "justin-martyr",
+    pageKey: "Justin Martyr",
     name: "Justin Martyr",
-    dates: "c. 100-165 AD",
-    period: "ante-nicene", 
+    dates: "c. 100–165 AD",
+    period: "ante-nicene",
+    traditions: [],
     location: "Rome",
     currentWeek: false,
     week: 5,
@@ -733,67 +818,111 @@ const fathers = [
     tags: ["Apologetics", "Philosophy", "Martyrdom", "Logos"]
   },
   {
-    id: "irenaeus-of-lyons",
-    name: "Irenaeus of Lyons",
-    dates: "c. 130-202 AD",
-    period: "ante-nicene",
-    location: "Lyons",
-    currentWeek: false,
-    week: 9,
-    description: "Bishop of Lyons, theologian. His 'Against Heresies' combats Gnosticism and develops recapitulation theory.",
-    works: 6,
-    letters: 2,
-    councils: 0,
-    tags: ["Anti-Gnosticism", "Recapitulation", "Scripture", "Tradition"]
-  },
-  {
     id: "tertullian",
+    pageKey: "Tertullian",
     name: "Tertullian",
-    dates: "c. 155-240 AD",
+    dates: "c. 155–240 AD",
     period: "ante-nicene",
+    traditions: ["latin"],
     location: "Carthage",
     currentWeek: false,
     week: 7,
-    description: "First major Latin theologian. Coined term 'Trinity' and developed theological vocabulary that shaped Western Christianity.",
+    description: "First major Latin theologian. Coined the term 'Trinity' and developed theological vocabulary that shaped Western Christianity.",
     works: 31,
     letters: 5,
     councils: 0,
     tags: ["Trinity", "Latin Theology", "Apologetics", "Montanism"]
   },
   {
-    id: "origen-of-alexandria",
-    name: "Origen of Alexandria", 
-    dates: "c. 185-254 AD",
-    period: "ante-nicene",
-    location: "Alexandria",
-    currentWeek: false,
-    week: 10,
-    description: "Prolific theologian and biblical scholar. Developed allegorical interpretation and systematic theology, though some views later questioned.",
-    works: 800,
-    letters: 15,
-    councils: 0,
-    tags: ["Biblical Exegesis", "Theology", "Allegorical Interpretation"]
-  },
-  {
     id: "cyprian-of-carthage",
+    pageKey: "Cyprian of Carthage",
     name: "Cyprian of Carthage",
-    dates: "c. 210-258 AD", 
+    dates: "c. 210–258 AD",
     period: "ante-nicene",
+    traditions: ["latin"],
     location: "Carthage",
     currentWeek: false,
     week: 8,
-    description: "Bishop of Carthage, martyr. Developed theology of Church unity and episcopal authority during persecution periods.",
+    description: "Bishop of Carthage, martyr. Developed the theology of Church unity and episcopal authority during persecution periods.",
     works: 13,
     letters: 81,
     councils: 2,
     tags: ["Church Unity", "Episcopal Authority", "Martyrdom", "Persecution"]
   },
   {
-    id: "athanasius-the-great",
-    name: "Athanasius the Great",
-    dates: "c. 296-373 AD",
+    id: "irenaeus-of-lyons",
+    pageKey: "Irenaeus of Lyons",
+    name: "Irenaeus of Lyons",
+    dates: "c. 130–202 AD",
+    period: "ante-nicene",
+    traditions: [],
+    location: "Lyons",
+    currentWeek: false,
+    week: 9,
+    description: "Bishop of Lyons, theologian. His 'Against Heresies' combats Gnosticism and develops recapitulation theology.",
+    works: 6,
+    letters: 2,
+    councils: 0,
+    tags: ["Anti-Gnosticism", "Recapitulation", "Scripture", "Tradition"]
+  },
+  {
+    id: "clement-of-alexandria",
+    pageKey: "Clement of Alexandria",
+    name: "Clement of Alexandria",
+    dates: "c. 150–215 AD",
+    period: "ante-nicene",
+    traditions: ["alexandrian"],
+    location: "Alexandria",
+    currentWeek: false,
+    week: 9,
+    description: "Head of the Catechetical School of Alexandria. Pioneered Christian philosophy and the integration of Greek learning with the faith.",
+    works: 12,
+    letters: 3,
+    councils: 0,
+    tags: ["Christian Philosophy", "Catechesis", "Greek Learning"]
+  },
+  {
+    id: "origen",
+    pageKey: "Origen of Alexandria",
+    name: "Origen of Alexandria",
+    dates: "c. 185–254 AD",
+    period: "ante-nicene",
+    traditions: ["alexandrian"],
+    location: "Alexandria",
+    currentWeek: false,
+    week: 10,
+    description: "Prolific theologian and biblical scholar. Developed allegorical interpretation and systematic theology; several later views questioned.",
+    works: 800,
+    letters: 15,
+    councils: 0,
+    tags: ["Biblical Exegesis", "Theology", "Allegorical Interpretation"]
+  },
+
+  // ----- Nicene Fathers (c. 325–450 AD) -----
+  {
+    id: "eusebius",
+    pageKey: "Eusebius of Caesarea",
+    name: "Eusebius of Caesarea",
+    dates: "c. 263–339 AD",
     period: "nicene",
-    location: "Alexandria", 
+    traditions: [],
+    location: "Caesarea",
+    currentWeek: false,
+    week: 12,
+    description: "Bishop of Caesarea, 'Father of Church History.' His Ecclesiastical History preserves the primary record of early Christianity.",
+    works: 46,
+    letters: 20,
+    councils: 2,
+    tags: ["Church History", "Biblical Scholarship", "Constantinian Age"]
+  },
+  {
+    id: "athanasius-the-great",
+    pageKey: "Athanasius the Great",
+    name: "Athanasius the Great",
+    dates: "c. 296–373 AD",
+    period: "nicene",
+    traditions: ["alexandrian"],
+    location: "Alexandria",
     currentWeek: false,
     week: 14,
     description: "Patriarch of Alexandria, defender of Nicene orthodoxy. Combated Arianism and articulated the full divinity of Christ.",
@@ -803,24 +932,92 @@ const fathers = [
     tags: ["Anti-Arianism", "Christology", "Nicene Creed", "Theosis"]
   },
   {
-    id: "basil-the-great",
-    name: "Basil the Great",
-    dates: "c. 330-379 AD",
+    id: "cyril-of-jerusalem",
+    pageKey: "Cyril of Jerusalem",
+    name: "Cyril of Jerusalem",
+    dates: "c. 313–386 AD",
     period: "nicene",
+    traditions: [],
+    location: "Jerusalem",
+    currentWeek: false,
+    week: 15,
+    description: "Bishop of Jerusalem. His Catechetical and Mystagogical Lectures remain foundational witnesses to fourth-century baptismal theology.",
+    works: 24,
+    letters: 3,
+    councils: 1,
+    tags: ["Catechesis", "Mystagogy", "Baptism", "Eucharist"]
+  },
+  {
+    id: "hilary-of-poitiers",
+    pageKey: "Hilary of Poitiers",
+    name: "Hilary of Poitiers",
+    dates: "c. 310–367 AD",
+    period: "nicene",
+    traditions: ["latin"],
+    location: "Poitiers",
+    currentWeek: false,
+    week: 15,
+    description: "Bishop of Poitiers, 'Athanasius of the West.' Defended Nicene Trinitarian faith against Arianism in the Latin-speaking Church.",
+    works: 15,
+    letters: 5,
+    councils: 1,
+    tags: ["Trinity", "Anti-Arianism", "Latin Theology"]
+  },
+  {
+    id: "ephrem-the-syrian",
+    pageKey: "Ephrem the Syrian",
+    name: "Ephrem the Syrian",
+    dates: "c. 306–373 AD",
+    period: "nicene",
+    traditions: ["syrian"],
+    location: "Nisibis / Edessa",
+    currentWeek: false,
+    week: 16,
+    description: "Syriac deacon and hymnographer, 'Harp of the Spirit.' Shaped Eastern liturgy through metrical hymns and typological exegesis.",
+    works: 400,
+    letters: 0,
+    councils: 0,
+    tags: ["Syriac Tradition", "Hymnography", "Typology", "Poetry"]
+  },
+  {
+    id: "basil-the-great",
+    pageKey: "Basil the Great",
+    name: "Basil the Great",
+    dates: "c. 330–379 AD",
+    period: "nicene",
+    traditions: [],
     location: "Caesarea",
     currentWeek: false,
     week: 16,
-    description: "Bishop of Caesarea, monastic reformer. One of the Cappadocian Fathers who articulated Trinitarian theology.",
+    description: "Bishop of Caesarea, monastic reformer. One of the Cappadocian Fathers who articulated mature Trinitarian theology.",
     works: 24,
     letters: 365,
     councils: 1,
     tags: ["Trinity", "Monasticism", "Cappadocian Fathers", "Social Justice"]
   },
   {
-    id: "gregory-of-nazianzus",
-    name: "Gregory of Nazianzus",
-    dates: "c. 329-390 AD",
+    id: "gregory-of-nyssa",
+    pageKey: "Gregory of Nyssa",
+    name: "Gregory of Nyssa",
+    dates: "c. 335–395 AD",
     period: "nicene",
+    traditions: [],
+    location: "Nyssa",
+    currentWeek: false,
+    week: 17,
+    description: "Bishop of Nyssa, mystic and philosopher. The most speculative of the Cappadocian Fathers, developing a profound mystical theology.",
+    works: 43,
+    letters: 30,
+    councils: 1,
+    tags: ["Mystical Theology", "Cappadocian Fathers", "Philosophy", "Theosis"]
+  },
+  {
+    id: "gregory-of-nazianzus",
+    pageKey: "Gregory of Nazianzus",
+    name: "Gregory of Nazianzus",
+    dates: "c. 329–390 AD",
+    period: "nicene",
+    traditions: [],
     location: "Constantinople",
     currentWeek: false,
     week: 18,
@@ -831,28 +1028,80 @@ const fathers = [
     tags: ["Trinity", "The Theologian", "Cappadocian Fathers", "Oratory"]
   },
   {
-    id: "gregory-of-nyssa",
-    name: "Gregory of Nyssa",
-    dates: "c. 335-395 AD",
+    id: "ambrose",
+    pageKey: "Ambrose of Milan",
+    name: "Ambrose of Milan",
+    dates: "c. 340–397 AD",
     period: "nicene",
-    location: "Nyssa",
+    traditions: ["latin"],
+    location: "Milan",
     currentWeek: false,
-    week: 17,
-    description: "Bishop of Nyssa, mystic and theologian. Most philosophical of the Cappadocian Fathers, developed mystical theology.",
-    works: 43,
-    letters: 30,
-    councils: 1,
-    tags: ["Mystical Theology", "Cappadocian Fathers", "Philosophy", "Theosis"]
+    week: 19,
+    description: "Bishop of Milan, Doctor of the Church, mentor of Augustine. Shaped Western allegorical exegesis, hymnography, and Church-state theology.",
+    works: 40,
+    letters: 91,
+    councils: 2,
+    tags: ["Allegorical Exegesis", "Hymnography", "Church and State", "Pastoral"]
+  },
+  {
+    id: "anthony-the-great",
+    pageKey: "Anthony the Great",
+    name: "Anthony the Great",
+    dates: "c. 251–356 AD",
+    period: "nicene",
+    traditions: ["desert"],
+    location: "Egyptian Desert",
+    currentWeek: false,
+    week: 19,
+    description: "Father of Christian monasticism. His withdrawal into the Egyptian desert, recounted in Athanasius' Life, shaped all later ascetic life.",
+    works: 7,
+    letters: 7,
+    councils: 0,
+    tags: ["Monasticism", "Desert Fathers", "Asceticism", "Spiritual Warfare"]
+  },
+  {
+    id: "macarius-the-great",
+    pageKey: "Macarius the Great",
+    name: "Macarius the Great",
+    dates: "c. 300–391 AD",
+    period: "nicene",
+    traditions: ["desert", "philokalic"],
+    location: "Scetis",
+    currentWeek: false,
+    week: 19,
+    description: "Egyptian Desert Father. The homilies in the Macarian corpus shaped later monastic teaching on grace, prayer of the heart, and inner experience.",
+    works: 50,
+    letters: 7,
+    councils: 0,
+    tags: ["Monasticism", "Desert Fathers", "Prayer of the Heart", "Mystical Theology"]
+  },
+  {
+    id: "evagrius",
+    pageKey: "Evagrius Ponticus",
+    name: "Evagrius Ponticus",
+    dates: "c. 345–399 AD",
+    period: "nicene",
+    traditions: ["desert", "philokalic"],
+    location: "Egyptian Desert",
+    currentWeek: false,
+    week: 20,
+    description: "Desert monk and ascetical theorist. Systematized the eight logismoi and charted the stages of praktike leading to contemplation.",
+    works: 30,
+    letters: 62,
+    councils: 0,
+    tags: ["Asceticism", "Eight Passions", "Contemplation", "Praktike"]
   },
   {
     id: "john-chrysostom",
+    pageKey: "John Chrysostom",
     name: "John Chrysostom",
-    dates: "c. 349-407 AD",
+    dates: "c. 349–407 AD",
     period: "nicene",
-    location: "Constantinople", 
+    traditions: [],
+    location: "Constantinople",
     currentWeek: false,
     week: 20,
-    description: "Archbishop of Constantinople, 'Golden-Mouthed.' Greatest preacher of the ancient Church and biblical expositor.",
+    description: "Archbishop of Constantinople, 'Golden-Mouthed.' Greatest preacher of the ancient Church and a master biblical expositor.",
     works: 700,
     letters: 242,
     councils: 1,
@@ -860,37 +1109,45 @@ const fathers = [
   },
   {
     id: "jerome",
+    pageKey: "Jerome",
     name: "Jerome",
-    dates: "c. 347-420 AD",
+    dates: "c. 347–420 AD",
     period: "nicene",
+    traditions: ["latin"],
     location: "Bethlehem",
     currentWeek: false,
     week: 21,
-    description: "Biblical scholar and translator. Translated the Bible into Latin (Vulgate) and was a master of biblical languages.",
+    description: "Biblical scholar and translator. Rendered the Scriptures into Latin (the Vulgate) and was a master of the biblical languages.",
     works: 120,
     letters: 154,
     councils: 0,
     tags: ["Biblical Translation", "Vulgate", "Biblical Languages", "Monasticism"]
   },
   {
-    id: "augustine-of-hippo",
-    name: "Augustine of Hippo", 
-    dates: "354-430 AD",
+    id: "augustine",
+    pageKey: "Augustine of Hippo",
+    name: "Augustine of Hippo",
+    dates: "354–430 AD",
     period: "nicene",
+    traditions: ["latin"],
     location: "Hippo",
     currentWeek: false,
     week: 22,
-    description: "Bishop of Hippo, theologian and philosopher. Shaped Western Christianity through his theological and philosophical works.",
+    description: "Bishop of Hippo, theologian and philosopher. Shaped Western Christianity profoundly through his theological and philosophical works.",
     works: 117,
     letters: 300,
     councils: 3,
     tags: ["Grace", "Original Sin", "City of God", "Confessions"]
   },
+
+  // ----- Post-Nicene Fathers (c. 450–800 AD) -----
   {
     id: "cyril-of-alexandria",
+    pageKey: "Cyril of Alexandria",
     name: "Cyril of Alexandria",
-    dates: "c. 378-444 AD",
+    dates: "c. 378–444 AD",
     period: "post-nicene",
+    traditions: ["alexandrian"],
     location: "Alexandria",
     currentWeek: false,
     week: 29,
@@ -902,27 +1159,47 @@ const fathers = [
   },
   {
     id: "leo-the-great",
+    pageKey: "Leo the Great",
     name: "Leo the Great",
-    dates: "c. 400-461 AD", 
+    dates: "c. 400–461 AD",
     period: "post-nicene",
+    traditions: ["latin"],
     location: "Rome",
     currentWeek: false,
     week: 30,
-    description: "Pope and Doctor of the Church. His Tome provided the Christological formula accepted at the Council of Chalcedon.",
+    description: "Pope and Doctor of the Church. His Tome supplied the Christological formula received at the Council of Chalcedon.",
     works: 96,
     letters: 143,
     councils: 1,
     tags: ["Papal Authority", "Christology", "Council of Chalcedon", "Two Natures"]
   },
   {
+    id: "john-cassian",
+    pageKey: "John Cassian",
+    name: "John Cassian",
+    dates: "c. 360–435 AD",
+    period: "post-nicene",
+    traditions: ["desert", "latin"],
+    location: "Marseilles",
+    currentWeek: false,
+    week: 31,
+    description: "Brought Egyptian monastic experience to the Latin West. His Institutes and Conferences shaped all subsequent Western monastic rules.",
+    works: 3,
+    letters: 0,
+    councils: 0,
+    tags: ["Monasticism", "Western Monasticism", "Eight Thoughts", "Discernment"]
+  },
+  {
     id: "pseudo-dionysius",
-    name: "Pseudo-Dionysius",
+    pageKey: "Pseudo-Dionysius the Areopagite",
+    name: "Pseudo-Dionysius the Areopagite",
     dates: "c. 500 AD",
-    period: "post-nicene", 
+    period: "post-nicene",
+    traditions: ["syrian"],
     location: "Syria",
     currentWeek: false,
     week: 32,
-    description: "Mystical theologian whose works profoundly influenced Eastern and Western Christian mysticism and theology.",
+    description: "Anonymous mystical theologian whose Corpus Areopagiticum profoundly shaped Eastern and Western Christian mysticism.",
     works: 4,
     letters: 10,
     councils: 0,
@@ -930,9 +1207,11 @@ const fathers = [
   },
   {
     id: "maximus-the-confessor",
+    pageKey: "Maximus the Confessor",
     name: "Maximus the Confessor",
-    dates: "c. 580-662 AD",
+    dates: "c. 580–662 AD",
     period: "post-nicene",
+    traditions: ["philokalic"],
     location: "Constantinople",
     currentWeek: false,
     week: 34,
@@ -943,56 +1222,130 @@ const fathers = [
     tags: ["Two Wills", "Christology", "Theological Anthropology", "Mysticism"]
   },
   {
-    id: "john-of-damascus",
-    name: "John of Damascus",
-    dates: "c. 675-749 AD",
+    id: "gregory-the-great",
+    pageKey: "Gregory the Great",
+    name: "Gregory the Great",
+    dates: "c. 540–604 AD",
     period: "post-nicene",
+    traditions: ["latin"],
+    location: "Rome",
+    currentWeek: false,
+    week: 34,
+    description: "Pope, monastic reformer, and father of the medieval West. His Pastoral Rule shaped episcopal ministry for centuries.",
+    works: 20,
+    letters: 850,
+    councils: 0,
+    tags: ["Papal Authority", "Pastoral Care", "Liturgy", "Monastic Reform"]
+  },
+  {
+    id: "john-climacus",
+    pageKey: "John Climacus",
+    name: "John Climacus",
+    dates: "c. 579–649 AD",
+    period: "post-nicene",
+    traditions: ["desert", "philokalic"],
+    location: "Mount Sinai",
+    currentWeek: false,
+    week: 35,
+    description: "Abbot of Mount Sinai. His Ladder of Divine Ascent remains the standard handbook of Orthodox monastic ascetical theology.",
+    works: 2,
+    letters: 1,
+    councils: 0,
+    tags: ["Monasticism", "Ladder of Divine Ascent", "Asceticism", "Hesychasm"]
+  },
+  {
+    id: "isaac-the-syrian",
+    pageKey: "Isaac the Syrian",
+    name: "Isaac the Syrian",
+    dates: "c. 613–700 AD",
+    period: "post-nicene",
+    traditions: ["syrian", "philokalic"],
+    location: "Nineveh",
+    currentWeek: false,
+    week: 35,
+    description: "Syriac bishop and mystic. His Ascetical Homilies remain among the deepest expositions of Christian stillness and divine compassion.",
+    works: 85,
+    letters: 5,
+    councils: 0,
+    tags: ["Syriac Tradition", "Mysticism", "Hesychasm", "Stillness"]
+  },
+  {
+    id: "john-of-damascus",
+    pageKey: "John of Damascus",
+    name: "John of Damascus",
+    dates: "c. 675–749 AD",
+    period: "post-nicene",
+    traditions: [],
     location: "Damascus",
     currentWeek: false,
     week: 36,
-    description: "Last of the Church Fathers. Systematized Orthodox theology and defended icon veneration against iconoclasts.",
+    description: "Last of the Eastern Fathers. Systematized Orthodox theology and defended icon veneration against iconoclasm.",
     works: 15,
     letters: 8,
     councils: 0,
     tags: ["Icon Veneration", "Systematic Theology", "Iconoclastic Controversy"]
   },
+
+  // ----- Byzantine Fathers (c. 800–1453 AD) -----
   {
     id: "theodore-the-studite",
+    pageKey: "Theodore the Studite",
     name: "Theodore the Studite",
-    dates: "759-826 AD",
+    dates: "759–826 AD",
     period: "byzantine",
-    location: "Constantinople", 
+    traditions: ["later-byzantine"],
+    location: "Constantinople",
     currentWeek: false,
     week: 37,
-    description: "Abbot and reformer. Defended icon veneration and reformed monastic life in the Byzantine Empire.",
+    description: "Abbot and reformer. Defended icon veneration in the second iconoclastic crisis and reformed Byzantine monastic life.",
     works: 16,
     letters: 564,
     councils: 1,
     tags: ["Icon Veneration", "Monastic Reform", "Studite Rule"]
   },
   {
-    id: "photios-the-great",
-    name: "Photios the Great",
-    dates: "c. 810-893 AD",
+    id: "cyril-and-methodius",
+    pageKey: "Cyril and Methodius",
+    name: "Cyril and Methodius",
+    dates: "9th century",
     period: "byzantine",
+    traditions: ["missionary"],
+    location: "Thessalonica / Moravia",
+    currentWeek: false,
+    week: 38,
+    description: "Brothers and Equal-to-the-Apostles. Evangelized the Slavs, devised the Glagolitic alphabet, and translated the liturgy into Slavonic.",
+    works: 10,
+    letters: 0,
+    councils: 0,
+    tags: ["Missionary", "Slavonic Liturgy", "Glagolitic Alphabet", "Equal-to-the-Apostles"]
+  },
+  {
+    id: "photios-the-great",
+    pageKey: "Photios the Great",
+    name: "Photios the Great",
+    dates: "c. 810–893 AD",
+    period: "byzantine",
+    traditions: ["later-byzantine"],
     location: "Constantinople",
     currentWeek: false,
     week: 38,
-    description: "Patriarch of Constantinople, scholar. Defended Eastern Church against papal claims and preserved classical learning.",
+    description: "Patriarch of Constantinople, scholar. Defended Eastern ecclesial integrity and preserved classical learning in the Bibliotheca.",
     works: 294,
     letters: 298,
     councils: 2,
-    tags: ["Filioque Controversy", "Scholarship", "Papal Authority", "Eastern Rights"]
+    tags: ["Filioque Controversy", "Scholarship", "Papal Claims", "Eastern Rights"]
   },
   {
-    id: "symeon-the-new-theologian", 
+    id: "symeon-the-new-theologian",
+    pageKey: "Symeon the New Theologian",
     name: "Symeon the New Theologian",
-    dates: "949-1022 AD",
+    dates: "949–1022 AD",
     period: "byzantine",
+    traditions: ["later-byzantine", "philokalic"],
     location: "Constantinople",
     currentWeek: false,
     week: 39,
-    description: "Mystic and theologian. Emphasized personal experience of God and wrote extensively on mystical prayer and theosis.",
+    description: "Mystic and theologian. Emphasized conscious personal experience of God and wrote extensively on mystical prayer and theosis.",
     works: 34,
     letters: 15,
     councils: 0,
@@ -1000,17 +1353,35 @@ const fathers = [
   },
   {
     id: "gregory-palamas",
-    name: "Gregory Palamas", 
-    dates: "c. 1296-1359 AD",
+    pageKey: "Gregory Palamas",
+    name: "Gregory Palamas",
+    dates: "c. 1296–1359 AD",
     period: "byzantine",
-    location: "Mount Athos",
+    traditions: ["later-byzantine", "philokalic"],
+    location: "Mount Athos / Thessalonica",
     currentWeek: false,
     week: 40,
-    description: "Archbishop of Thessalonica, Hesychast defender. Articulated the distinction between God's essence and energies.",
+    description: "Archbishop of Thessalonica, defender of Hesychasm. Articulated the distinction between God's essence and uncreated energies.",
     works: 150,
     letters: 48,
     councils: 3,
     tags: ["Hesychasm", "Essence-Energies", "Jesus Prayer", "Mystical Theology"]
+  },
+  {
+    id: "mark-of-ephesus",
+    pageKey: "Mark of Ephesus",
+    name: "Mark of Ephesus",
+    dates: "c. 1392–1444 AD",
+    period: "byzantine",
+    traditions: ["later-byzantine", "post-byzantine"],
+    location: "Ephesus / Constantinople",
+    currentWeek: false,
+    week: 40,
+    description: "Metropolitan of Ephesus. The sole hierarch who refused to sign the Union of Florence, preserving Orthodox integrity on the eve of 1453.",
+    works: 100,
+    letters: 25,
+    councils: 1,
+    tags: ["Anti-Union", "Palamite Theology", "Council of Florence", "Pillar of Orthodoxy"]
   }
 ];
 
@@ -1028,13 +1399,23 @@ function populateFathersGrid() {
 // Create individual father card
 function createFatherCard(father) {
   const card = document.createElement('a');
-  card.href = `father-cards/${father.id}.html`;
+
+  // URL comes from FATHER_PAGES (single source of truth in study-data.js).
+  // If FATHER_PAGES is unavailable (study-data.js failed to load) or the
+  // pageKey is missing, the tile becomes inert rather than pointing to a
+  // guessed URL — there is deliberately no parallel ID-based scheme.
+  const href = (typeof FATHER_PAGES !== 'undefined' && father.pageKey)
+    ? FATHER_PAGES[father.pageKey]
+    : null;
+  card.href = href || '#';
+
   card.className = `father-card${father.currentWeek ? ' current-week' : ''}`;
   card.dataset.period = father.period;
   card.dataset.name = father.name.toLowerCase();
-  card.dataset.location = father.location.toLowerCase();
-  card.dataset.tags = father.tags.join(' ').toLowerCase();
-  
+  card.dataset.location = (father.location || '').toLowerCase();
+  card.dataset.tags = (father.tags || []).join(' ').toLowerCase();
+  card.dataset.traditions = (father.traditions || []).join(' ').toLowerCase();
+
   // Period colors — Byzantine palette
   const periodColors = {
     apostolic: '#dce8c9',
@@ -1043,23 +1424,31 @@ function createFatherCard(father) {
     'post-nicene': '#f5e6d3',
     byzantine: '#f0d9dc'
   };
-  
+
+  const periodLabels = {
+    apostolic: 'Apostolic',
+    'ante-nicene': 'Ante-Nicene',
+    nicene: 'Nicene',
+    'post-nicene': 'Post-Nicene',
+    byzantine: 'Byzantine'
+  };
+
   card.innerHTML = `
     ${father.currentWeek ? '<div class="current-week-badge">Current Week</div>' : ''}
-    
+
     <div class="father-header">
       <div class="father-icon">☩</div>
       <div class="father-info">
         <h3 class="father-name">${father.name}</h3>
         <div class="father-dates">${father.dates}</div>
         <span class="father-period" style="background: ${periodColors[father.period]}; color: #2a2620;">
-          ${father.period.charAt(0).toUpperCase() + father.period.slice(1).replace('-', '-')}
+          ${periodLabels[father.period] || father.period}
         </span>
       </div>
     </div>
-    
+
     <p class="father-description">${father.description}</p>
-    
+
     <div class="father-meta">
       <div class="meta-item">
         <span class="meta-value">${father.works}</span>
@@ -1074,40 +1463,90 @@ function createFatherCard(father) {
         <span class="meta-label">Councils</span>
       </div>
     </div>
-    
+
     <div class="father-tags">
-      ${father.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+      ${(father.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
     </div>
   `;
-  
+
   return card;
 }
 
-// Filter functions
+// ==================================================================
+// Filter state + functions
+// Period filter (chronological) and tradition filter (school/lineage)
+// are independent axes. Search layers over both.
+// ==================================================================
+let activePeriod = '';      // '' means all
+let activeTradition = '';   // '' means all
+
 function filterFathers() {
-  const searchTerm = document.getElementById('search').value.toLowerCase();
-  const periodFilter = document.getElementById('period-filter').value;
+  const searchTerm = document.getElementById('search').value.toLowerCase().trim();
+  const periodFilter = activePeriod;
+  const traditionFilter = activeTradition;
   const cards = document.querySelectorAll('.father-card');
-  
+
   cards.forEach(card => {
-    const matchesSearch = card.dataset.name.includes(searchTerm) || 
-                         card.dataset.location.includes(searchTerm) ||
-                         card.dataset.tags.includes(searchTerm);
+    const matchesSearch = !searchTerm ||
+      card.dataset.name.includes(searchTerm) ||
+      card.dataset.location.includes(searchTerm) ||
+      card.dataset.tags.includes(searchTerm) ||
+      card.dataset.traditions.includes(searchTerm);
     const matchesPeriod = !periodFilter || card.dataset.period === periodFilter;
-    
-    card.style.display = matchesSearch && matchesPeriod ? 'block' : 'none';
+    const matchesTradition = !traditionFilter ||
+      card.dataset.traditions.split(' ').includes(traditionFilter);
+
+    card.style.display = (matchesSearch && matchesPeriod && matchesTradition) ? 'block' : 'none';
   });
 }
 
+function setActivePeriodChip(period) {
+  document.querySelectorAll('.period-link').forEach(link => link.classList.remove('active'));
+  if (!period) {
+    const allChip = document.querySelector('.period-link.period-all');
+    if (allChip) allChip.classList.add('active');
+  } else {
+    const chip = document.querySelector(`.period-link.period-${period}`);
+    if (chip) chip.classList.add('active');
+  }
+}
+
+function setActiveTraditionChip(tradition) {
+  document.querySelectorAll('.tradition-link').forEach(link => link.classList.remove('active'));
+  if (tradition) {
+    const chip = document.querySelector(`.tradition-link[href="#${tradition}"]`);
+    if (chip) chip.classList.add('active');
+  }
+}
+
 function filterByPeriod(period) {
-  document.getElementById('period-filter').value = period;
+  // Clicking any period chip clears tradition; clicking "All" clears both.
+  activePeriod = period || '';
+  activeTradition = '';
+  const periodSelect = document.getElementById('period-filter');
+  if (periodSelect) periodSelect.value = activePeriod;
+  setActivePeriodChip(activePeriod);
+  setActiveTraditionChip('');
   filterFathers();
-  
-  // Update active period link
-  document.querySelectorAll('.period-link').forEach(link => {
-    link.classList.remove('active');
-  });
-  document.querySelector(`.period-${period}`).classList.add('active');
+}
+
+function filterByTradition(tradition) {
+  // Tradition filter is independent of period; selecting one clears period
+  // so the user sees all Fathers matching that tradition across eras.
+  activeTradition = tradition || '';
+  activePeriod = '';
+  const periodSelect = document.getElementById('period-filter');
+  if (periodSelect) periodSelect.value = '';
+  setActivePeriodChip('');
+  setActiveTraditionChip(activeTradition);
+  filterFathers();
+}
+
+// Keep legacy <select> behavior: when the user changes the dropdown,
+// route through filterByPeriod so chip state stays in sync.
+function onPeriodSelectChange() {
+  const value = document.getElementById('period-filter').value;
+  filterByPeriod(value);
 }
 
 // View toggle
@@ -1144,6 +1583,13 @@ window.addEventListener('scroll', function() {
 // Overrides the hardcoded currentWeek flags using STUDY_STATE +
 // PHASE_DATA from study-data.js. Called before populateFathersGrid().
 // ==================================================================
+function updateCurrentFocusCount() {
+  const el = document.getElementById('current-focus-count');
+  if (!el) return;
+  const n = fathers.filter(f => f.currentWeek).length;
+  el.textContent = String(n);
+}
+
 function markCurrentFathersByPhase() {
   // Guard: if study-data.js failed to load, leave hardcoded values alone.
   if (typeof STUDY_STATE === 'undefined' || typeof getPhaseForWeek !== 'function' || typeof isFatherInPhase !== 'function') {
@@ -1173,6 +1619,7 @@ function updateCurrentWeekBanner() {
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
   markCurrentFathersByPhase();
+  updateCurrentFocusCount();
   updateCurrentWeekBanner();
   populateFathersGrid();
 });
