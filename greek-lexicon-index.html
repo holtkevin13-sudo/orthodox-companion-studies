@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T00:30:00Z -->
+<!-- build: 2026-04-18T01:00:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -188,10 +188,11 @@ em, i { font-style: italic; }
 }
 
 .term-transliteration {
-  font-size: 0.9rem;
-  opacity: 0.8;
+  font-size: 0.92rem;
+  color: #6b5d4a;
   margin-bottom: 0.5rem;
   font-style: italic;
+  letter-spacing: 0.01em;
 }
 
 .term-english {
@@ -201,8 +202,16 @@ em, i { font-style: italic; }
 }
 
 .term-connection {
-  font-size: 0.85rem;
-  opacity: 0.9;
+  font-size: 0.78rem;
+  color: #1a3a5c;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin: 0.3rem 0 0.9rem 0;
+  line-height: 1.3;
+}
+.term-card.is-latin .term-connection {
+  color: #6b1e2a;
 }
 
 /* Search and Filter */
@@ -346,20 +355,22 @@ em, i { font-style: italic; }
 }
 
 .term-card {
-  background: #fff;
+  background: #fffdf7;
   border: 1px solid #e8ddc8;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1.6rem 1.5rem 1.4rem;
   transition: all 0.3s ease;
   text-decoration: none;
-  color: inherit;
+  color: #2a2620;
   display: block;
   position: relative;
+  scroll-margin-top: 8rem;
 }
 
 .term-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+  background: #fffaf0;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.18);
   border-color: #D4AF37;
 }
 
@@ -368,22 +379,86 @@ em, i { font-style: italic; }
   background: linear-gradient(145deg, #f4f5ec 0%, #e8ede0 100%);
 }
 
-/* Language tagging — Greek (default) vs Latin. Added by Part 3 amendment
-   so Phase 2.5 Tertullian/Cyprian and Phase 10 Leo render honestly as
-   Latin rather than misfiled as Greek. Badge sits above the headword;
+/* Language tagging — Greek (default) vs Latin. Badge sits above the headword;
    Latin entries render in italic Cormorant instead of upright Gentium. */
 .term-language-badge {
   font-variant: small-caps;
-  letter-spacing: 0.1em;
-  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  font-size: 0.68rem;
   color: #8a6d1f;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  display: inline-block;
 }
+.term-card.is-latin .term-language-badge { color: #6b1e2a; }
 .term-card.is-latin .term-greek {
   font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
   font-style: italic;
+  color: #6b1e2a;
 }
+
+/* Override .term-greek inside cards — liturgical weight */
+.term-card .term-greek {
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: #2a2620;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+}
+.term-card .term-english {
+  color: #2a2620;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Copy-link button — subtle icon in the top-right of each card. Copies the
+   canonical #term-<slug> URL to clipboard for external note-taking. */
+.term-copy-link {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #8a7d6a;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+.term-copy-link:hover {
+  background: rgba(212, 175, 55, 0.12);
+  border-color: #D4AF37;
+  color: #8a6d1f;
+}
+.term-copy-link.copied {
+  background: #dce8c9;
+  border-color: #556b3d;
+  color: #556b3d;
+}
+.term-copy-link .copy-tooltip {
+  position: absolute;
+  top: -1.8rem;
+  right: 0;
+  background: #2a2620;
+  color: #fffdf7;
+  font-size: 0.72rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  letter-spacing: 0.04em;
+}
+.term-copy-link.copied .copy-tooltip { opacity: 1; }
 
 .current-week-badge {
   position: absolute;
@@ -425,10 +500,63 @@ em, i { font-style: italic; }
 }
 
 .term-definition {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: #2a2620;
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Subtle rule separating primary content (greek/english/connection/definition)
+   from metadata (etymology/fathers). Gives the eye a rest and signals hierarchy. */
+.term-meta-divider {
+  height: 1px;
+  background: #e8ddc8;
+  margin: 1rem 0 0.9rem 0;
+}
+
+/* Structured metadata rows — small-caps label above content, not inline prefix.
+   Scans faster than bolded inline "Etymology:" prefixes. */
+.term-meta-row {
+  margin-bottom: 0.7rem;
+}
+.term-meta-row:last-child { margin-bottom: 0; }
+
+.term-meta-label {
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #8a6d1f;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+.term-card.is-latin .term-meta-label { color: #6b1e2a; }
+
+.term-meta-content {
+  font-size: 0.9rem;
+  color: #4a3f32;
+  line-height: 1.5;
+}
+
+/* Father names become links where a Father card exists. Graceful — unlinked
+   names render as plain text. */
+.term-father-link {
+  color: #1a3a5c;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(26, 58, 92, 0.4);
+  transition: all 0.2s ease;
+}
+.term-father-link:hover {
+  color: #2a4a6c;
+  border-bottom-color: #1a3a5c;
+  border-bottom-style: solid;
+}
+.term-card.is-latin .term-father-link {
+  color: #6b1e2a;
+  border-bottom-color: rgba(107, 30, 42, 0.4);
+}
+.term-card.is-latin .term-father-link:hover {
+  border-bottom-color: #6b1e2a;
 }
 
 .term-meta {
@@ -614,7 +742,7 @@ em, i { font-style: italic; }
   margin: 2.5rem 0 1rem 0;
   padding-bottom: 0.4rem;
   border-bottom: 2px solid #e8ddc8;
-  scroll-margin-top: 2rem;
+  scroll-margin-top: 8rem;
   text-align: left;
   letter-spacing: 0.02em;
 }
@@ -713,8 +841,12 @@ em, i { font-style: italic; }
 
 .term-card.focus-term {
   border-color: #D4AF37;
-  border-width: 1px;
-  background: linear-gradient(135deg, #fffdf7 0%, #ffffff 100%);
+  border-width: 2px;
+  background: linear-gradient(135deg, #fffdf4 0%, #fff7df 100%);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
+}
+.term-card.focus-term:hover {
+  box-shadow: 0 8px 22px rgba(212, 175, 55, 0.28);
 }
 
 .term-phase-tag {
@@ -727,12 +859,13 @@ em, i { font-style: italic; }
   margin-bottom: 0.5rem;
 }
 
+/* Legacy selectors retained; primary styling now flows through .term-meta-row */
 .term-etymology,
 .term-fathers {
-  font-size: 0.82rem;
-  color: #6b5d4a;
+  font-size: 0.88rem;
+  color: #4a3f32;
   margin-top: 0.5rem;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* Pastoral note / Orthodox Reception — optional editorial block on select entries.
@@ -768,9 +901,119 @@ em, i { font-style: italic; }
    gold so they see exactly where they landed. Also adds scroll-margin
    so the highlighted card isn't crammed against the top of the viewport. */
 .term-card:target {
-  scroll-margin-top: 1.5rem;
+  scroll-margin-top: 8rem;
   animation: termLandingPulse 2.2s ease-out;
   border-color: #D4AF37;
+}
+
+/* Scroll progress — thin gold bar at the very top showing position through the
+   282-entry list. Purely orienting; does not block interaction. */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #D4AF37 0%, #8a6d1f 100%);
+  z-index: 200;
+  transition: width 0.1s ease-out;
+  pointer-events: none;
+}
+
+/* Search result count — subtle status line beneath the controls. Updates on
+   every filter change so users know whether their query is working. */
+.search-status {
+  padding: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: #6b5d4a;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+.search-status .result-count-num {
+  color: #1a3a5c;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Empty state — shown when a filter/search returns zero results. */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: #6b5d4a;
+}
+.empty-state[hidden] { display: none; }
+.empty-state-icon {
+  font-family: 'Gentium Plus', Georgia, serif;
+  font-size: 3.5rem;
+  color: #D4AF37;
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.empty-state h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  color: #2a2620;
+  font-weight: 500;
+  margin: 0 0 0.75rem 0;
+}
+.empty-state h3 .empty-query {
+  color: #6b1e2a;
+  font-style: italic;
+  font-weight: 600;
+}
+.empty-state p {
+  font-size: 0.95rem;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+.empty-state-reset {
+  margin-top: 1.25rem;
+  display: inline-block;
+  padding: 0.55rem 1.2rem;
+  background: #1a3a5c;
+  color: #fffdf7;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-family: inherit;
+}
+.empty-state-reset:hover { background: #2a4a6c; }
+
+/* Keyboard-focus visible — accessibility for `/` and Tab navigation */
+.search-input:focus,
+.filter-select:focus,
+.alphabet-btn:focus-visible,
+.term-copy-link:focus-visible,
+.term-father-link:focus-visible,
+.empty-state-reset:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Mobile: unstick the controls bar entirely — a 3-row alphabet grid plus
+   search + filter would eat half the screen. Users tap return-to-top instead. */
+@media (max-width: 768px) {
+  .controls {
+    position: static;
+  }
+  .term-card {
+    scroll-margin-top: 1.5rem;
+  }
+  .term-card:target {
+    scroll-margin-top: 1.5rem;
+  }
+  .letter-divider {
+    scroll-margin-top: 1.5rem;
+  }
+  .scroll-progress {
+    height: 2px;
+  }
 }
 
 @keyframes termLandingPulse {
@@ -783,6 +1026,9 @@ em, i { font-style: italic; }
 </head>
 
 <body>
+
+<!-- Scroll progress indicator — thin gold bar showing scroll position -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
 <header class="hero">
   <div class="container">
@@ -840,6 +1086,19 @@ em, i { font-style: italic; }
         <!-- Populated dynamically by populateAlphabetJumplinks() -->
       </div>
     </div>
+    <div class="search-status" id="search-status">
+      Showing all <span class="result-count-num" id="result-count-num">—</span> entries
+    </div>
+  </div>
+</section>
+
+<!-- Empty state — shown when filters/search return zero -->
+<section class="container" id="empty-state-wrap">
+  <div class="empty-state" id="empty-state" hidden>
+    <div class="empty-state-icon">Ω</div>
+    <h3>No terms match <span class="empty-query" id="empty-query-display"></span></h3>
+    <p>Try searching by transliteration (e.g. <em>theosis</em>), English meaning, or Father name — or clear filters to browse all 282 entries.</p>
+    <button class="empty-state-reset" id="empty-state-reset">Clear filters</button>
   </div>
 </section>
 
@@ -904,8 +1163,8 @@ function firstLetterOf(term) {
 //     same term can appear twice on the page without duplicate IDs.
 function renderTermCard(term, isPreview) {
   const focusBadge = term.isFocus ? '<div class="focus-badge">Focus Term</div>' : '';
-  const transliteration = term.transliteration ? `<div class="term-transliteration">${term.transliteration}</div>` : '';
-  const english = term.english ? `<div class="term-english">${term.english}</div>` : '';
+  const transliteration = term.transliteration ? `<div class="term-transliteration">${escapeHtml(term.transliteration)}</div>` : '';
+  const english = term.english ? `<div class="term-english">${escapeHtml(term.english)}</div>` : '';
   // Language — omitted field defaults to 'greek'. Latin entries tagged explicitly.
   const language = (term.language || 'greek').toLowerCase();
   const languageClass = language === 'latin' ? ' is-latin' : '';
@@ -920,8 +1179,8 @@ function renderTermCard(term, isPreview) {
       : '';
     return `
       <div class="term-preview-card${languageClass}"
-           data-greek="${term.greek}">
-        <div class="term-greek">${term.greek}</div>
+           data-greek="${escapeAttr(term.greek)}">
+        <div class="term-greek">${escapeHtml(term.greek)}</div>
         ${transliteration}
         ${english}
         ${previewLink}
@@ -929,49 +1188,112 @@ function renderTermCard(term, isPreview) {
     `;
   }
 
-  // Full card — canonical anchor location.
-  const definition = term.definition ? `<p class="term-definition">${term.definition}</p>` : '';
-  const etymology = term.etymology ? `<div class="term-etymology"><strong>Etymology:</strong> ${term.etymology}</div>` : '';
-  const fathers = (term.fathers && term.fathers.length) ? `<div class="term-fathers"><strong>Father(s):</strong> ${term.fathers.join(', ')}</div>` : '';
-  const connection = term.connection ? `<div class="term-connection">${term.connection}</div>` : '';
-  // Pastoral note — optional field on select entries (e.g., χιλιασμός, πλοῦτος,
-  // θεουργία, Διονύσιος Ἀρεοπαγίτης, sermo, Christus totus, plus the four
-  // Chalcedonian adverbs). Rendered as a visually distinct block — porphyry
-  // left-border, small-caps label — so readers see it as separate editorial
-  // guidance from the primary definition.
+  // --- Full card — canonical anchor location. ---
+  const definition = term.definition ? `<p class="term-definition">${escapeHtml(term.definition)}</p>` : '';
+  // Connection is promoted to the top of the card (under english) as a
+  // small-caps doctrinal anchor — the single fastest "what's this about" signal.
+  const connection = term.connection
+    ? `<div class="term-connection">${escapeHtml(term.connection)}</div>`
+    : '';
+
+  // Etymology + Fathers render as structured meta-rows with small-caps labels
+  // above the content — scans faster than bolded inline prefixes.
+  const etymology = term.etymology ? `
+    <div class="term-meta-row">
+      <span class="term-meta-label">Etymology</span>
+      <div class="term-meta-content">${escapeHtml(term.etymology)}</div>
+    </div>
+  ` : '';
+
+  // Father names become links where a Father card exists (via fatherPageByShortName).
+  // Graceful — unlinked names render as plain text.
+  let fathers = '';
+  if (term.fathers && term.fathers.length) {
+    const linkedNames = term.fathers.map(name => {
+      const url = (typeof fatherPageByShortName === 'function') ? fatherPageByShortName(name) : null;
+      return url
+        ? `<a href="${url}" class="term-father-link">${escapeHtml(name)}</a>`
+        : escapeHtml(name);
+    }).join(', ');
+    const fatherLabel = term.fathers.length > 1 ? 'Fathers' : 'Father';
+    fathers = `
+      <div class="term-meta-row">
+        <span class="term-meta-label">${fatherLabel}</span>
+        <div class="term-meta-content">${linkedNames}</div>
+      </div>
+    `;
+  }
+
+  // Pastoral note — optional editorial block on select entries. Rendered as a
+  // visually distinct block (porphyry border, small-caps Orthodox Reception label).
   const pastoralNote = term.pastoralNote ? `
     <div class="term-pastoral-note">
       <div class="term-pastoral-label">Orthodox Reception</div>
-      <p class="term-pastoral-text">${term.pastoralNote}</p>
+      <p class="term-pastoral-text">${escapeHtml(term.pastoralNote)}</p>
     </div>
   ` : '';
+
   const anchorAttr = slug ? ` id="term-${slug}"` : '';
   const languageLabel = language === 'latin' ? 'LATIN' : 'GREEK';
   const languageBadge = `<div class="term-language-badge">${languageLabel}</div>`;
   const fathersDataAttr = (term.fathers && term.fathers.length)
-    ? term.fathers.join(' ').toLowerCase() : '';
+    ? escapeAttr(term.fathers.join(' ').toLowerCase()) : '';
   const letter = firstLetterOf(term);
+
+  // Copy-link button — copies the canonical #term-<slug> URL to clipboard.
+  // Data attribute carries the slug; click handler delegated globally.
+  const copyBtn = slug ? `
+    <button class="term-copy-link" data-term-slug="${slug}" aria-label="Copy link to this term" type="button">
+      <span class="copy-icon" aria-hidden="true">🔗</span>
+      <span class="copy-tooltip">Copied</span>
+    </button>
+  ` : '';
+
+  // Meta divider only appears if there IS metadata to separate from the definition
+  const hasMetadata = etymology || fathers;
+  const metaDivider = (definition && hasMetadata) ? '<div class="term-meta-divider"></div>' : '';
+
   return `
     <div class="term-card${term.isFocus ? ' focus-term' : ''}${languageClass}"${anchorAttr}
-         data-greek="${term.greek}"
-         data-letter="${letter}"
-         data-transliteration="${(term.transliteration || '').toLowerCase()}"
-         data-english="${(term.english || '').toLowerCase()}"
+         data-greek="${escapeAttr(term.greek)}"
+         data-letter="${escapeAttr(letter)}"
+         data-transliteration="${escapeAttr((term.transliteration || '').toLowerCase())}"
+         data-english="${escapeAttr((term.english || '').toLowerCase())}"
          data-fathers="${fathersDataAttr}"
-         data-phase="${term.phase || ''}"
+         data-phase="${escapeAttr(term.phase || '')}"
          data-language="${language}">
-      ${focusBadge}
+      ${copyBtn}
       ${languageBadge}
-      <div class="term-greek">${term.greek}</div>
+      ${focusBadge}
+      <div class="term-greek">${escapeHtml(term.greek)}</div>
       ${transliteration}
       ${english}
+      ${connection}
       ${definition}
+      ${metaDivider}
       ${etymology}
       ${fathers}
-      ${connection}
       ${pastoralNote}
     </div>
   `;
+}
+
+// HTML-escape helpers so user content and field values can't break attributes
+// or inject markup. Applied everywhere a LEXICON_ENTRIES field hits the DOM.
+function escapeHtml(s) {
+  if (s == null) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+function escapeAttr(s) {
+  if (s == null) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
 
 function populateCurrentPhaseFocus() {
@@ -1091,13 +1413,18 @@ function populateAlphabetJumplinks() {
 
 let activeLetter = '';
 let activeScript = '';  // 'greek' | 'latin' | '' (when activeLetter is empty)
+const TOTAL_ENTRIES = (typeof LEXICON_ENTRIES !== 'undefined')
+  ? Object.keys(LEXICON_ENTRIES).length : 0;
 
 // Unified filter — runs over the flat alphabetical list. Matches across
 // Greek script, transliteration, English, and Father names. Hides empty
-// letter dividers along with their empty grids.
+// letter dividers and script-group-labels along with their empty grids,
+// and updates the live result count + empty-state display.
 function filterTerms() {
   const searchVal = (document.getElementById('search').value || '').toLowerCase();
   const phaseFilter = document.getElementById('phase-filter').value;
+
+  let visibleCount = 0;
 
   // First pass: per-card visibility.
   document.querySelectorAll('.term-card').forEach(card => {
@@ -1119,23 +1446,21 @@ function filterTerms() {
     const letterMatch = !activeLetter
       || (letter === activeLetter && (!activeScript || activeScript === language));
 
-    card.style.display = (searchMatch && phaseMatch && letterMatch) ? '' : 'none';
+    const visible = searchMatch && phaseMatch && letterMatch;
+    card.style.display = visible ? '' : 'none';
+    if (visible) visibleCount++;
   });
 
-  // Second pass: hide a letter-divider + its following grid when the grid has
-  // zero visible cards. Also hide script-group-labels when all their letters
-  // are hidden.
+  // Second pass: hide empty letter grids + dividers + script-group-labels.
   document.querySelectorAll('.letter-grid').forEach(grid => {
     const anyVisible = Array.from(grid.querySelectorAll('.term-card'))
       .some(c => c.style.display !== 'none');
     grid.style.display = anyVisible ? '' : 'none';
-    // The letter-divider precedes the grid in DOM order.
     const divider = grid.previousElementSibling;
     if (divider && divider.classList.contains('letter-divider')) {
       divider.style.display = anyVisible ? '' : 'none';
     }
   });
-  // Hide a script-group-label if all its letter-grids are hidden.
   document.querySelectorAll('.script-group-label').forEach(label => {
     let node = label.nextElementSibling;
     let anyVisible = false;
@@ -1148,6 +1473,56 @@ function filterTerms() {
     }
     label.style.display = anyVisible ? '' : 'none';
   });
+
+  // Third pass: update result count + empty state.
+  updateResultStatus(visibleCount, searchVal, phaseFilter);
+}
+
+// Updates the live result count line + toggles the empty-state block.
+function updateResultStatus(visibleCount, searchVal, phaseFilter) {
+  const statusEl = document.getElementById('search-status');
+  const countEl = document.getElementById('result-count-num');
+  const empty = document.getElementById('empty-state');
+  const emptyQuery = document.getElementById('empty-query-display');
+  const anyFilter = !!(searchVal || phaseFilter || activeLetter);
+
+  if (countEl) countEl.textContent = String(visibleCount);
+  if (statusEl) {
+    if (!anyFilter) {
+      statusEl.innerHTML = `Showing all <span class="result-count-num" id="result-count-num">${TOTAL_ENTRIES}</span> entries`;
+    } else if (visibleCount === 0) {
+      statusEl.innerHTML = `<span class="result-count-num" id="result-count-num">0</span> entries match your filters`;
+    } else if (visibleCount === 1) {
+      statusEl.innerHTML = `<span class="result-count-num" id="result-count-num">1</span> entry matches`;
+    } else {
+      statusEl.innerHTML = `<span class="result-count-num" id="result-count-num">${visibleCount}</span> of ${TOTAL_ENTRIES} entries match`;
+    }
+  }
+  if (empty) {
+    if (visibleCount === 0 && anyFilter) {
+      empty.hidden = false;
+      if (emptyQuery) {
+        if (searchVal) emptyQuery.textContent = `"${searchVal}"`;
+        else emptyQuery.textContent = `your filters`;
+      }
+    } else {
+      empty.hidden = true;
+    }
+  }
+}
+
+// Clears all active filters (search, phase, letter) and re-runs filterTerms.
+function clearAllFilters() {
+  const search = document.getElementById('search');
+  const phase = document.getElementById('phase-filter');
+  if (search) search.value = '';
+  if (phase) phase.value = '';
+  activeLetter = '';
+  activeScript = '';
+  document.querySelectorAll('.alphabet-btn').forEach(b => b.classList.remove('active'));
+  const allBtn = document.querySelector('.alphabet-btn[data-letter=""]');
+  if (allBtn) allBtn.classList.add('active');
+  filterTerms();
 }
 
 function filterByLetter(letter, ev, script) {
@@ -1157,7 +1532,6 @@ function filterByLetter(letter, ev, script) {
   if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
   else if (ev && ev.target) ev.target.classList.add('active');
   filterTerms();
-  // Smooth-scroll to the selected letter divider, if any.
   if (letter && script) {
     const id = `letter-${script === 'latin' ? 'lat-' : 'gr-'}${letter}`;
     const target = document.getElementById(id);
@@ -1168,11 +1542,84 @@ function filterByLetter(letter, ev, script) {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Unified scroll listener: return-to-top visibility + scroll progress bar.
 window.addEventListener('scroll', function() {
   const btn = document.getElementById('return-to-top');
+  if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+}, { passive: true });
+
+// Delegated click handler for copy-link buttons. Each card's button carries
+// data-term-slug; we build the canonical URL from location.origin + pathname.
+document.addEventListener('click', function(ev) {
+  const btn = ev.target.closest('.term-copy-link');
   if (!btn) return;
-  // Use .visible class to match the CSS opacity/pointer-events transition.
-  btn.classList.toggle('visible', window.scrollY > 400);
+  ev.preventDefault();
+  const slug = btn.dataset.termSlug;
+  if (!slug) return;
+  const url = `${location.origin}${location.pathname}#term-${slug}`;
+  const writeClipboard = (text) => {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    // Fallback for older browsers / insecure contexts
+    return new Promise((resolve, reject) => {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        resolve();
+      } catch (e) { reject(e); }
+    });
+  };
+  writeClipboard(url).then(() => {
+    btn.classList.add('copied');
+    setTimeout(() => btn.classList.remove('copied'), 1500);
+  }).catch(() => {
+    console.warn('Clipboard write failed');
+  });
+});
+
+// Keyboard shortcuts: `/` focuses search (unless already typing), `Esc` clears
+// search and unfocuses. Both gate on a not-already-typing check so we don't
+// hijack users mid-entry in form fields elsewhere.
+document.addEventListener('keydown', function(ev) {
+  const active = document.activeElement;
+  const typing = active && (
+    active.tagName === 'INPUT' ||
+    active.tagName === 'TEXTAREA' ||
+    active.isContentEditable
+  );
+  const search = document.getElementById('search');
+  if (!search) return;
+
+  if (ev.key === '/' && !typing) {
+    ev.preventDefault();
+    search.focus();
+    search.select();
+  } else if (ev.key === 'Escape') {
+    // If focused in search with content, clear it. Otherwise let Esc bubble.
+    if (active === search) {
+      if (search.value) {
+        search.value = '';
+        filterTerms();
+      } else {
+        search.blur();
+      }
+    }
+  }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1180,7 +1627,11 @@ document.addEventListener('DOMContentLoaded', function() {
   populateAlphabeticalList();
   populateAlphabetJumplinks();
   populateCurrentPhaseFocus();
-  // Optional integrity check during dev — warn if a lexicon slug collides.
+  // Wire the "Clear filters" button in the empty-state block.
+  const resetBtn = document.getElementById('empty-state-reset');
+  if (resetBtn) resetBtn.addEventListener('click', clearAllFilters);
+  // Initialize result count display.
+  filterTerms();
   if (typeof validateLexicon === 'function') {
     try { validateLexicon(); } catch (e) { console.warn('Lexicon validation:', e); }
   }
