@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-17T19:00:00Z
+// build: 2026-04-18T00:30:00Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1265,7 +1265,7 @@ const PHASE_DATA = {
        fathers: 'Basil the Great · Gregory of Nyssa',
        primaryText: 'On the Holy Spirit · Life of Moses · On the Making of Man',
        biblicalTrack: 'Exodus 1–24 · 1–2 Peter',
-       greek: ['οὐσία (essence)', 'ὑπόστασις (person)', 'πνεῦμα (Spirit)', 'ἐπέκτασις (perpetual striving)', 'γνόφος (divine darkness)'] },
+       greek: ['οὐσία (essence)', 'ὑπόστασις (person)', 'πνεῦμα (Spirit)', 'ἐπέκτασις (perpetual striving)', 'θεῖος ἔρως (divine love)', 'γνόφος (divine darkness)'] },
   6: { number: 6, name: 'Gregory Nazianzen', weeks: [18, 19],
        fathers: 'Gregory of Nazianzus',
        primaryText: 'Theological Orations (27–31)',
@@ -1280,7 +1280,7 @@ const PHASE_DATA = {
        fathers: 'Synthesis of Part I — all 7 phases re-read',
        primaryText: 'Re-reading Phases 1–7 · Final synthesis paper',
        biblicalTrack: 'Job · Song of Songs · Sirach',
-       greek: [] },
+       greek: ['ἐπίσκοπος (bishop)', 'λόγος (Word)', 'trinitas (Trinity)', 'ἀνακεφαλαίωσις (recapitulation)', 'ὁμοούσιος (consubstantial)', 'θέωσις (deification)', 'οὐσία (essence)', 'ὑπόστασις (hypostasis)', 'θεολογία (theology)', 'μετάνοια (repentance)'] },
   9: { number: 9, name: 'Cyril of Alexandria', weeks: [29, 30],
        fathers: 'Cyril of Alexandria',
        primaryText: 'On the Unity of Christ',
@@ -1305,12 +1305,12 @@ const PHASE_DATA = {
        fathers: 'John of Damascus',
        primaryText: 'Exact Exposition of the Orthodox Faith · On Holy Images',
        biblicalTrack: 'Re-integration of core texts · Image theology (Exodus 20 · Deut 4)',
-       greek: ['περιχώρησις (perichoresis)', 'ἐνυπόστατος (enhypostaton)', 'προσκύνησις / λατρεία (veneration / worship)'] },
+       greek: ['περιχώρησις (perichoresis)', 'ἐνυπόστατος (enhypostaton)', 'προσκύνησις (veneration)', 'λατρεία (worship)'] },
   14: { number: 14, name: 'Integration II + Final Synthesis', weeks: [39, 40],
        fathers: 'Synthesis of full 40 weeks',
        primaryText: 'Re-reading key texts across the arc',
        biblicalTrack: 'Full biblical arc re-integrated · Revelation 21–22',
-       greek: [] }
+       greek: ['ὁμοούσιος (consubstantial)', 'ὑπόστασις (hypostasis)', 'θέωσις (deification)', 'Θεοτόκος (Theotokos)', 'μία φύσις τοῦ Λόγου σεσαρκωμένη (one incarnate nature)', 'duae naturae, una persona (two natures, one person)', 'ἀποφατική (apophatic)', 'δύο θελήματα (two wills)', 'περιχώρησις (perichoresis)', 'ἐνυπόστατος (enhypostatic)'] }
 };
 
 function getPhaseForWeek(weekNum) {
@@ -1458,8 +1458,8 @@ function formatPsalmsDisplay(total) {
 // page is built and links appear automatically across all 40 weeks.
 // ==================================================================
 const FATHER_PAGES = {
-  'Ignatius of Antioch': 'ignatius-of-antioch.html',
-  'Polycarp of Smyrna': 'polycarp-of-smyrna.html'
+  'Ignatius of Antioch': 'father-cards/ignatius-of-antioch.html',
+  'Polycarp of Smyrna': 'father-cards/polycarp-of-smyrna.html'
   // 'Clement of Rome': 'clement-of-rome.html',
   // ...add as pages are built
 };
