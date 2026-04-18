@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T03:59:47Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pseudo-Dionysius the Areopagite — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Pseudo-Dionysius the Areopagite — Orthodox Companion Studies">
+<meta property="og:description" content="The anonymous late-fifth-century theologian whose Mystical Theology, Divine Names, and Hierarchies shaped Orthodox apophatic tradition East and West.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Pseudo-Dionysius the Areopagite (late 5th / early 6th century AD) — an anonymous Greek theologian writing under the pseudonym of Paul's Athenian convert. Author of the Corpus Dionysiacum: Mystical Theology, Divine Names, Celestial Hierarchy, Ecclesiastical Hierarchy, and Letters. Architect of Christian apophatic theology and inventor of the term 'hierarchy.'">
+<meta name="keywords" content="Pseudo-Dionysius, Dionysius the Areopagite, Mystical Theology, Divine Names, Celestial Hierarchy, Ecclesiastical Hierarchy, Apophatic Theology, Cataphatic Theology, Hyperousios, Hierarchia, Negative Theology, Orthodox Mysticism">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART II PORPHYRY ACCENT SCHEME (Phases 9–13)
+   Primary accent: porphyry #6b1e2a
+   Universal accent: gold #D4AF37
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #6b1e2a; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #6b1e2a;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #6b1e2a;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #6b1e2a;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #6b1e2a;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #6b1e2a;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 1.9rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.55rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 11 · Pseudo-Dionysius · Weeks 32–33
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Pseudo-Dionysius the Areopagite</h1>
+    <div class="hero-epithet">Διονύσιος ὁ Ἀρεοπαγίτης · The Areopagite</div>
+    <div class="hero-meta">Late 5th / early 6th century AD · Anonymous author of the Corpus Dionysiacum</div>
+    <p class="hero-description">
+      A still-anonymous Greek theologian writing around 500 AD, the Pseudo-Areopagite assumed
+      the mantle of Paul's Athenian convert (Acts 17:34) and produced a small corpus —
+      four treatises and ten letters — that became one of the most influential bodies of
+      theological writing in Christian history. His <em>Mystical Theology</em> founded the
+      classical grammar of apophatic ascent; his <em>Divine Names</em> systematized cataphatic
+      speech about God; his two <em>Hierarchies</em> introduced the very term "hierarchy" into
+      Christian theology.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was "Dionysius"?</h2>
+      <p class="section-text">
+        The author we now call Pseudo-Dionysius the Areopagite presents himself as a disciple
+        of the Apostle Paul — specifically, as the Dionysius who, in Acts 17:34, heard Paul
+        preach at the Areopagus in Athens and became a believer. His letters address men and
+        women of the apostolic generation. This self-presentation was accepted in both East
+        and West for roughly nine centuries. It is no longer. Beginning with Lorenzo Valla
+        in 1457 and maturing in the critical scholarship of the nineteenth and twentieth
+        centuries, the corpus has been dated on stylistic, terminological, and citational
+        grounds to approximately 500 AD. The author cites Proclus (d. 485); he is cited in
+        turn by Severus of Antioch in 532 and at the Constantinopolitan <em>collatio</em> of
+        533. His Greek is that of late-fifth-century Syria. The Dionysius who speaks as Paul's
+        convert is a sixth-century monk wearing the apostolic voice as a mask.
+      </p>
+      <p class="section-text">
+        The unmasking has not diminished him. Modern Orthodox scholarship — Georges Florovsky,
+        Andrew Louth, Hieromonk Alexander Golitzin — has largely accepted the critical dating
+        and gone on reading the corpus as serious patristic theology. The Orthodox Church
+        continues to keep the feast of Dionysius the Areopagite on October 3, venerating the
+        Acts 17:34 figure; scholarly treatments acknowledge that the text we possess comes
+        from a later hand. The precise identity of that hand remains disputed. Hypotheses have
+        included Peter the Iberian, Severus of Antioch, and various other sixth-century Syrian
+        or Palestinian monks. None has carried the field. What the scholarship has established
+        is the author's philosophical environment: he worked in the orbit of late Neoplatonism,
+        particularly Proclus, which he systematically christened in the service of Christian
+        theology.
+      </p>
+      <p class="section-text">
+        From some Syrian monastic setting the corpus emerged nearly complete around the year
+        500. John of Scythopolis began annotating it within a generation. Maximus the Confessor
+        wrote further scholia defending its orthodoxy in the seventh century. In 835 the
+        Byzantine court sent a Greek manuscript to Louis the Pious; Eriugena's Latin
+        translation in the 860s brought the corpus into the Western stream, where it shaped
+        Aquinas (who cites it some seventeen hundred times), the German mystics, and the
+        Carmelite tradition through John of the Cross. In the East the corpus was read
+        continuously and became foundational for Maximus, for Gregory Palamas's essence–energies
+        distinction, and — through Vladimir Lossky — for the modern Orthodox theology of the
+        twentieth century. Whoever the human author was, the Church's judgment is that he gave
+        her a durable language for the knowledge of God as the unknowing of God.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">c. 500</div>
+          <div class="stat-label">Composition Date</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">4</div>
+          <div class="stat-label">Treatises in the Corpus</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10</div>
+          <div class="stat-label">Letters Preserved</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">9</div>
+          <div class="stat-label">Celestial Hierarchy Ranks</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        The Corpus Dionysiacum consists of four treatises and ten letters. They are meant to
+        be read together — the longer treatises framed by the short <em>Mystical Theology</em>
+        at the apex — as a single integrated vision of God, creation, and the Church's return.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Mystical Theology</h3>
+          <div class="work-greek">Περὶ μυστικῆς θεολογίας</div>
+          <p class="work-description">
+            The shortest treatise in the corpus — only five chapters — and by far the most
+            influential. Moses's ascent of Sinai is the guiding figure: having purified himself
+            and climbed past every creaturely image of God, Moses enters the cloud and meets
+            God in a luminous darkness of unknowing. The method is apophatic: affirm every
+            divine name, then negate each in turn, and finally negate the negations themselves,
+            passing beyond speech into silence. This is the classical grammar of Christian
+            apophatic theology.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Divine Names</h3>
+          <div class="work-greek">Περὶ θείων ὀνομάτων</div>
+          <p class="work-description">
+            The longest treatise, and the cataphatic companion to the <em>Mystical Theology</em>.
+            Thirteen chapters unpack the names Scripture gives to God — Good, Being, Life,
+            Wisdom, Power, Peace, and above all Beauty and Love. Chapter 4 on the Good and on
+            divine <em>ἔρως</em> becomes a central patristic source for the theology of God as
+            love — indeed, for the claim (taken up by Maximus and others) that God is an
+            ecstatic lover whose very divinity is self-giving.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">The Hierarchies</h3>
+          <div class="work-greek">Περὶ τῆς οὐρανίου καὶ ἐκκλησιαστικῆς ἱεραρχίας</div>
+          <p class="work-description">
+            Two companion treatises. The <em>Celestial Hierarchy</em> presents the nine ranks
+            of angels (Seraphim, Cherubim, Thrones — Dominions, Virtues, Powers — Principalities,
+            Archangels, Angels) as three triads receiving and passing on the divine light. The
+            <em>Ecclesiastical Hierarchy</em> gives the corresponding structure of the Church on
+            earth, with its sacraments and orders. Together they present creation itself as a
+            descending communication of divine light from the <em>θεαρχία</em> to the last of
+            the redeemed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the weight of the Dionysian project. The first two are the
+        twin methods of theological speech. The third names the ontological move that
+        everything else depends on: God is not a being. The fourth names the cosmological
+        architecture in which that non-being-God communicates himself to every creature.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-apophatike" class="greek-term greek-term-link">ἀποφατική</a>
+          <div class="transliteration">apophatikē</div>
+          <div class="english-meaning">Apophatic · The Way of Negation</div>
+          <p class="pillar-explanation">
+            The way of "unsaying." Having affirmed every name of God in the cataphatic work,
+            the soul must then deny each name in turn — including the denials themselves —
+            passing beyond every human conception to meet God in the darkness above speech.
+            The method draws directly on Gregory of Nyssa's <em>γνόφος</em> and shapes the
+            whole later Christian mystical tradition.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-kataphatike" class="greek-term greek-term-link">καταφατική</a>
+          <div class="transliteration">kataphatikē</div>
+          <div class="english-meaning">Cataphatic · The Way of Affirmation</div>
+          <p class="pillar-explanation">
+            Apophasis is not a rejection of speech but a passage through it. First we must
+            gather up every scriptural and creaturely name of God — Good, Being, Life, Light,
+            Love — and affirm them all. Only after this cataphatic fullness does negation
+            have anything to negate. Dionysius's two methods are sequential, not opposed.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-hyperousios" class="greek-term greek-term-link">ὑπερούσιος</a>
+          <div class="transliteration">hyperousios</div>
+          <div class="english-meaning">Super-Essential · Beyond Being</div>
+          <p class="pillar-explanation">
+            Dionysius's most characteristic epithet for God: not one being among beings, not
+            even the highest being, but <em>beyond</em> being itself. The prefix <em>ὑπερ-</em>
+            ("above, beyond") does the work of apophasis in advance — to say "super-essential"
+            is already to deny that God is a being alongside others. The term passes through
+            Maximus into Aquinas's treatment of divine transcendence.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-hierarchia" class="greek-term greek-term-link">ἱεραρχία</a>
+          <div class="transliteration">hierarchia</div>
+          <div class="english-meaning">Hierarchy · Sacred Order</div>
+          <p class="pillar-explanation">
+            Dionysius coins this word — literally "sacred ordering" — to name the ordered
+            structure through which the one divine light is communicated to all things: each
+            rank receives from those above and ministers to those below, in an economy of
+            graded illumination. The two <em>Hierarchies</em> apply the principle across angels
+            and sacraments, creation and Church.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "The truly mysterious darkness of unknowing."
+      </p>
+      <div class="quote-source">— Mystical Theology 1.3</div>
+    </div>
+
+    <!-- Why Dionysius Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Dionysius Matters Today</h2>
+      <p class="section-text">
+        Pseudo-Dionysius is the patristic author whose vocabulary Orthodox theology most
+        visibly still speaks. Vladimir Lossky's <em>The Mystical Theology of the Eastern
+        Church</em> (1944) — the book that more than any other defined twentieth-century
+        Orthodox self-understanding in the West — takes its title directly from Dionysius and
+        argues that apophatic theology is the native idiom of the Eastern tradition. When
+        Gregory Palamas in the fourteenth century distinguishes God's essence (unknowable,
+        <em>ὑπερούσιος</em>) from his energies (participable by creatures), he is working
+        directly from the Dionysian grammar. Contemporary Orthodox accounts of prayer,
+        silence, and the limits of theological speech descend continuously from the Corpus.
+      </p>
+      <p class="section-text">
+        His influence on the West is nearly as extensive. Eriugena's ninth-century Latin
+        translation made him a source for the medieval mystical tradition; Albert the Great
+        wrote a commentary; Thomas Aquinas cites him more than a thousand times; Meister
+        Eckhart, John Tauler, Nicholas of Cusa, and John of the Cross all work in his shadow.
+        To a remarkable degree the common Christian vocabulary of mysticism — affirmation,
+        negation, darkness of unknowing, ecstatic love, divine names — is Dionysius's
+        vocabulary, translated and retranslated across languages and centuries. When a modern
+        spiritual writer talks about "negative theology" or "the cloud of unknowing," the
+        trail runs back here.
+      </p>
+      <p class="section-text">
+        A final word on the pseudonymity. For most of Church history the Dionysian corpus was
+        read under the authority of Paul's Athenian disciple; since the nineteenth century it
+        has been read with the understanding that this authority was a literary fiction. The
+        question of whether this matters is worth taking seriously. The Orthodox tradition's
+        typical answer — articulated by Florovsky, Louth, and others — is that the author's
+        identity matters less than his witness: the corpus teaches orthodox Trinitarian and
+        Christological faith, it has been received by councils and Fathers, and its theology
+        has proven durable across fifteen centuries of reading. What the pseudonym obscured
+        was the name of a person. What it did not obscure was the content of a tradition. The
+        Church's willingness to read a book on its merits, once its authorship is known to be
+        disputed, is itself a kind of discernment. The Dionysian corpus has passed that test.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="gregory-of-nyssa.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Gregory of Nyssa</div>
+          <div class="related-desc">The direct patristic source — Gregory's γνόφος and θεῖος ἔρως are the wells Dionysius draws from.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-apophatike" class="related-link">
+          <span class="related-icon">Ἀ</span>
+          <div class="related-title greek">ἀποφατική</div>
+          <div class="related-desc">The apophatic method — Dionysius's great contribution to the Orthodox tradition of theological speech.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-11" class="related-link">
+          <span class="related-icon">Δ</span>
+          <div class="related-title">Phase 11 Lexicon</div>
+          <div class="related-desc">The Dionysian vocabulary of transcendence, procession, return, and the sacred order of all things.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Pseudo-Dionysius is Phase 11: Weeks 32–33.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 32 && wk <= 33) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
