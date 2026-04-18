@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T15:29:43Z
+// build: 2026-04-18T19:14:03Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1502,15 +1502,192 @@ const FATHER_PAGES = {
   // ...add as pages are built
 };
 
-// Detect a matchable Father name inside a patristic reading string.
-// Returns the URL if a FATHER_PAGES match is found, or null.
+// ==================================================================
+// Linkification support tables — built ONCE at module load.
+//
+// Four bugs addressed here (tracked in Notion):
+//   1. Work-title gap — readings that name a Father's work without
+//      naming the Father (e.g. "On the Priesthood") now link via
+//      WORK_TITLES.
+//   2. Honorific-suffix gap — bare given names ("Athanasius", "Leo",
+//      "Maximus") and uniquely-identifying surnames ("Chrysostom",
+//      "Palamas", "Climacus") now link via BARE_NAME_LOOKUP.
+//   3. Gregory collision — bare "Gregory" no longer collapses to the
+//      first "Gregory" in iteration order; it simply does not link.
+//      Same treatment for bare "John" (Bug 4) and bare "Cyril".
+//   4. John collision — handled together with Bug 3.
+//
+// Rules:
+//   - FATHER_PAGES is NOT modified. Canonical keys stay as display form.
+//   - Any bare form that would map to MORE THAN ONE FATHER_PAGES key
+//     is considered ambiguous and excluded from BARE_NAME_LOOKUP.
+//     "Clement" (Rome + Alexandria) is auto-blocked this way.
+//   - John / Gregory / Cyril are ALSO explicitly blocklisted as a
+//     belt-and-suspenders guard per spec.
+//   - "Martyr" is a generic category word and is blocklisted even
+//     though it happens to be unambiguous in the current library.
+//   - "Methodius" is added as a special case pointing to the dual
+//     "Cyril and Methodius" card (no suffix rule would generate it,
+//     but it is unambiguous across FATHER_PAGES).
+//
+// Matching in fatherPageForReading() tries the LONGEST form first,
+// so "Gregory of Nyssa" is preferred over bare "Gregory" (which is
+// blocked anyway), and "Cyril and Methodius" is preferred over bare
+// "Methodius".
+// ==================================================================
+
+// Unambiguous short-title -> canonical FATHER_PAGES key.
+// Only truly distinctive titles belong here. Ambiguous titles like
+// "Homilies" or "Orations" MUST NOT be added.
+const WORK_TITLES = {
+  'On the Priesthood':          'John Chrysostom',
+  'Mystical Theology':          'Pseudo-Dionysius the Areopagite',
+  'De Fide Orthodoxa':          'John of Damascus',
+  'The Ladder of Divine Ascent':'John Climacus'
+};
+
+// Honorific suffixes stripped from FATHER_PAGES keys to derive the
+// bare-given-name form used in casual reference (e.g. stripping
+// " the Great" from "Athanasius the Great" yields "Athanasius").
+// The standalone-surname suffixes (those not starting with "of " or
+// "the ") ALSO contribute their tail as a bare form — this is how
+// "Chrysostom" routes to John Chrysostom and "Palamas" to Gregory
+// Palamas.
+const HONORIFIC_SUFFIXES = [
+  ' the Great',
+  ' the Theologian',
+  ' the Confessor',
+  ' the Areopagite',
+  ' the Studite',
+  ' the New Theologian',
+  ' the Syrian',
+  ' the Damascene',
+  ' of Nyssa',
+  ' of Nazianzus',
+  ' of Alexandria',
+  ' of Jerusalem',
+  ' of Antioch',
+  ' of Rome',
+  ' of Smyrna',
+  ' of Hierapolis',
+  ' of Lyons',
+  ' of Carthage',
+  ' of Poitiers',
+  ' of Milan',
+  ' of Hippo',
+  ' of Caesarea',
+  ' of Ephesus',
+  ' of Egypt',
+  ' Ponticus',
+  ' Palamas',
+  ' Chrysostom',
+  ' Climacus',
+  ' Cassian',
+  ' Martyr'
+];
+
+// Bare names that MUST NOT auto-link even if they happen to be
+// unambiguous today — preserves correct behavior as FATHER_PAGES grows.
+const AMBIGUOUS_BARE_BLOCKLIST = new Set(['john', 'gregory', 'cyril']);
+
+// Generic category words — unambiguous in FATHER_PAGES but too common
+// in prose to safely auto-link (e.g. "martyr" appears constantly).
+const GENERIC_BARE_BLOCKLIST = new Set(['martyr']);
+
+// Build the bare-name lookup: lowercase form -> canonical FATHER_PAGES key.
+// Runs once at module load.
+const BARE_NAME_LOOKUP = (function buildBareNameLookup() {
+  const canonicalsByForm = Object.create(null); // form -> Set of canonical keys
+
+  function addForm(form, canonical) {
+    const key = String(form || '').trim().toLowerCase();
+    if (!key) return;
+    if (!canonicalsByForm[key]) canonicalsByForm[key] = new Set();
+    canonicalsByForm[key].add(canonical);
+  }
+
+  for (const fullName of Object.keys(FATHER_PAGES)) {
+    // The canonical full name is always a valid lookup form.
+    addForm(fullName, fullName);
+
+    // Suffix-based derivations.
+    for (const suffix of HONORIFIC_SUFFIXES) {
+      if (fullName.endsWith(suffix)) {
+        // Prefix = the given name (e.g. "Athanasius" from "Athanasius the Great").
+        const prefix = fullName.slice(0, -suffix.length);
+        addForm(prefix, fullName);
+
+        // Tail = the identifying surname — ONLY for suffixes that are
+        // not place-based ("of X") and not generic-epithet ("the X").
+        // Handles "Chrysostom", "Climacus", "Palamas", "Cassian", "Ponticus", "Martyr".
+        const tail = suffix.trim();
+        if (!/^(?:of|the)\s/i.test(tail)) {
+          addForm(tail, fullName);
+        }
+      }
+    }
+  }
+
+  // Special case: "Cyril and Methodius" is a dual-subject card. No suffix
+  // rule would produce "Methodius", but it is unambiguous across the
+  // library, so add it manually. (Bare "Cyril" stays blocked — see below.)
+  if (FATHER_PAGES['Cyril and Methodius']) {
+    addForm('Methodius', 'Cyril and Methodius');
+  }
+
+  // Keep only forms that resolve to exactly one canonical, and strip any
+  // form on either blocklist.
+  const lookup = Object.create(null);
+  for (const key of Object.keys(canonicalsByForm)) {
+    if (canonicalsByForm[key].size !== 1) continue;
+    if (AMBIGUOUS_BARE_BLOCKLIST.has(key)) continue;
+    if (GENERIC_BARE_BLOCKLIST.has(key)) continue;
+    lookup[key] = canonicalsByForm[key].values().next().value;
+  }
+  return lookup;
+})();
+
+// Precomputed, length-sorted list of [form, url] pairs — longer forms
+// are tested first so a disambiguated match always beats a bare one
+// (e.g. "Gregory of Nyssa" beats "Ignatius"; "Cyril and Methodius"
+// beats "Methodius"). Built once at module load.
+const LINKIFY_CANDIDATES = (function buildLinkifyCandidates() {
+  const out = [];
+
+  // Bare-name lookup entries (includes full canonical forms too).
+  for (const form of Object.keys(BARE_NAME_LOOKUP)) {
+    const canonical = BARE_NAME_LOOKUP[form];
+    const url = FATHER_PAGES[canonical];
+    if (url) out.push([form, url]);
+  }
+
+  // Work-title entries.
+  for (const title of Object.keys(WORK_TITLES)) {
+    const canonical = WORK_TITLES[title];
+    const url = FATHER_PAGES[canonical];
+    if (url) out.push([title.toLowerCase(), url]);
+  }
+
+  // Longest forms first — specificity wins.
+  out.sort((a, b) => b[0].length - a[0].length);
+  return out;
+})();
+
+// Escape a string for safe inclusion in a RegExp body.
+function escapeRegex(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Detect a matchable Father reference (by canonical name, bare name,
+// or distinctive work title) inside a patristic reading string.
+// Returns the URL of the Father's card if found, or null.
+// Preserves the original signature and return shape.
 function fatherPageForReading(readingText) {
   if (!readingText) return null;
-  for (const [fullName, url] of Object.entries(FATHER_PAGES)) {
-    // Match the first name (before "of") as a whole word.
-    // e.g. "Ignatius of Antioch" -> look for "Ignatius" in reading.
-    const firstName = fullName.split(/\s+of\s+/)[0];
-    const regex = new RegExp(`\\b${firstName}\\b`, 'i');
+  for (const pair of LINKIFY_CANDIDATES) {
+    const form = pair[0];
+    const url = pair[1];
+    const regex = new RegExp(`\\b${escapeRegex(form)}\\b`, 'i');
     if (regex.test(readingText)) return url;
   }
   return null;
