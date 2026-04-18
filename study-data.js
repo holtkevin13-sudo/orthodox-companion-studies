@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T00:30:00Z
+// build: 2026-04-18T01:30:00Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1519,15 +1519,27 @@ function getPhaseTerms(phase) {
   if (!phase) return [];
   const byGreek = new Map();
 
-  // Focus terms from PHASE_DATA[phase].greek — format: "ἐπίσκοπος (bishop)"
+  // Focus terms from PHASE_DATA[phase].greek — format: "ἐπίσκοπος (bishop)".
+  // If the pill headword exists anywhere in LEXICON_ENTRIES (even under a
+  // different phase, which is the normal case for Phase 8 and Phase 14
+  // Integration pills that review terms from earlier phases), pull in the
+  // full entry data so Integration weeks render rich cards rather than
+  // bare stubs. Otherwise fall back to the parenthetical english only.
   (phase.greek || []).forEach(item => {
     const match = item.match(/^([^\(]+)\s*\(([^\)]+)\)$/);
     const greek = match ? match[1].trim() : item.trim();
     const english = match ? match[2].trim() : '';
-    byGreek.set(greek, { greek, english, isFocus: true });
+    const fullEntry = LEXICON_ENTRIES[greek];
+    if (fullEntry) {
+      byGreek.set(greek, { greek, ...fullEntry, isFocus: true });
+    } else {
+      byGreek.set(greek, { greek, english, isFocus: true });
+    }
   });
 
-  // Enrich with LEXICON_ENTRIES for this phase
+  // Enrich any non-pill entries whose phase matches the current phase. This
+  // catches lexicon entries not yet added as pills but assigned to this phase,
+  // so they still surface in the Current Phase Focus banner for this phase.
   for (const [greek, entry] of Object.entries(LEXICON_ENTRIES)) {
     if (String(entry.phase) === String(phase.number)) {
       const existing = byGreek.get(greek) || {};
