@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T21:45:00Z -->
+<!-- build: 2026-04-18T00:30:00Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -273,10 +273,25 @@ em, i { font-style: italic; }
 
 .alphabet-filter {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.3rem;
   background: #e8ddc8;
   border-radius: 8px;
   padding: 0.3rem;
+  align-items: center;
+}
+
+.alphabet-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+
+.alphabet-divider {
+  width: 1px;
+  height: 1.4rem;
+  background: #bfb093;
+  margin: 0 0.5rem;
 }
 
 .alphabet-btn {
@@ -291,9 +306,21 @@ em, i { font-style: italic; }
   font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
 }
 
+.alphabet-btn.is-latin {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b1e2a;
+}
+
 .alphabet-btn:hover,
 .alphabet-btn.active {
   background: #1a3a5c;
+  color: #fffdf7;
+}
+
+.alphabet-btn.is-latin:hover,
+.alphabet-btn.is-latin.active {
+  background: #6b1e2a;
   color: #fffdf7;
 }
 
@@ -574,73 +601,101 @@ em, i { font-style: italic; }
   gap: 1rem;
 }
 
-.phase-sections {
+.alphabetical-terms {
   margin: 2rem 0;
 }
 
-.phase-lexicon-section {
-  background: #ffffff;
-  border: 1px solid #e8ddc8;
-  border-left: 4px solid #1a3a5c;
-  border-radius: 8px;
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
-  scroll-margin-top: 2rem;
-}
-
-.phase-lexicon-section[data-phase="9"],
-.phase-lexicon-section[data-phase="10"],
-.phase-lexicon-section[data-phase="11"],
-.phase-lexicon-section[data-phase="12"],
-.phase-lexicon-section[data-phase="13"],
-.phase-lexicon-section[data-phase="14"] {
-  border-left-color: #6b1e2a;
-}
-
-.phase-lexicon-section.phase-current {
-  border-left-color: #D4AF37;
-  border-left-width: 6px;
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
-}
-
-.phase-lexicon-header {
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid #e8ddc8;
-}
-
-.phase-lexicon-title {
+/* Letter divider — inserted between alphabet groupings in the flat list */
+.letter-divider {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 500;
   color: #1a3a5c;
-  font-size: 1.4rem;
-  margin: 0 0 0.25rem 0;
-  font-weight: 600;
+  margin: 2.5rem 0 1rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e8ddc8;
+  scroll-margin-top: 2rem;
+  text-align: left;
+  letter-spacing: 0.02em;
 }
-
-.phase-lexicon-section[data-phase="9"] .phase-lexicon-title,
-.phase-lexicon-section[data-phase="10"] .phase-lexicon-title,
-.phase-lexicon-section[data-phase="11"] .phase-lexicon-title,
-.phase-lexicon-section[data-phase="12"] .phase-lexicon-title,
-.phase-lexicon-section[data-phase="13"] .phase-lexicon-title,
-.phase-lexicon-section[data-phase="14"] .phase-lexicon-title {
+.letter-divider.is-latin {
   color: #6b1e2a;
+  font-style: italic;
+}
+.letter-divider:first-of-type {
+  margin-top: 1rem;
 }
 
-.phase-lexicon-meta {
+/* Script-group heading — "Greek" / "Latin" labels above each run of letters */
+.script-group-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
   color: #6b5d4a;
-  font-size: 0.88rem;
+  margin: 2.5rem 0 0.5rem 0;
+  text-align: left;
+  border-bottom: 1px solid #e8ddc8;
+  padding-bottom: 0.4rem;
 }
+.script-group-label.is-latin { color: #6b1e2a; }
+.script-group-label:first-child { margin-top: 0.5rem; }
 
-.phase-lexicon-terms {
+/* Grid that holds term cards within a letter section */
+.letter-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.phase-no-terms {
-  color: #6b5d4a;
-  font-style: italic;
-  margin: 0;
+/* Compact preview card (current-phase focus banner) — no id attr, links to full entry */
+.term-preview-card {
+  background: #ffffff;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #D4AF37;
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  transition: all 0.2s ease;
 }
+.term-preview-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(42, 38, 32, 0.08);
+}
+.term-preview-card .term-greek {
+  font-family: 'Gentium Plus', Georgia, serif;
+  font-size: 1.25rem;
+  color: #2a2620;
+  margin-bottom: 0.1rem;
+}
+.term-preview-card.is-latin .term-greek {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b1e2a;
+}
+.term-preview-card .term-transliteration {
+  font-size: 0.85rem;
+  color: #8a7d6a;
+  font-style: italic;
+  margin-bottom: 0.15rem;
+}
+.term-preview-card .term-english {
+  font-size: 0.9rem;
+  color: #6b5d4a;
+  margin-bottom: 0.5rem;
+}
+.term-preview-card .term-preview-link {
+  display: inline-block;
+  font-size: 0.82rem;
+  color: #1a3a5c;
+  text-decoration: none;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+}
+.term-preview-card .term-preview-link:hover {
+  text-decoration: underline;
+}
+.term-preview-card.is-latin .term-preview-link { color: #6b1e2a; }
 
 .focus-badge {
   display: inline-block;
@@ -746,9 +801,9 @@ em, i { font-style: italic; }
       <h1 class="main-title">Patristic Lexicon</h1>
       <div class="subtitle">The theological vocabulary of the Fathers</div>
       <p class="description">
-        A growing reference for the Greek terms that carry Orthodox theology — grouped by phase,
-        tied to the Fathers who shaped them, and cross-linked throughout your readings. Each
-        entry includes transliteration, definition, etymology, and doctrinal connection.
+        A growing reference for the Greek and Latin terms that carry Orthodox theology — organized
+        alphabetically, tied to the Fathers who shaped them, and cross-linked throughout your readings.
+        Each entry includes transliteration, definition, etymology, and doctrinal connection.
       </p>
     </div>
   </div>
@@ -781,22 +836,15 @@ em, i { font-style: italic; }
           <!-- Populated dynamically -->
         </select>
       </div>
-      <div class="alphabet-filter">
-        <button class="alphabet-btn active" onclick="filterByLetter('', event)">All</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Α', event)">Α</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Ε', event)">Ε</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Θ', event)">Θ</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Μ', event)">Μ</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Ο', event)">Ο</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Σ', event)">Σ</button>
-        <button class="alphabet-btn" onclick="filterByLetter('Φ', event)">Φ</button>
+      <div class="alphabet-filter" id="alphabet-filter">
+        <!-- Populated dynamically by populateAlphabetJumplinks() -->
       </div>
     </div>
   </div>
 </section>
 
-<!-- Phase sections — each with anchor id for deep linking -->
-<section class="phase-sections container" id="phase-sections">
+<!-- Alphabetical flat list — all entries, with letter dividers -->
+<section class="alphabetical-terms container" id="alphabetical-terms">
   <!-- Populated dynamically -->
 </section>
 
@@ -812,7 +860,9 @@ em, i { font-style: italic; }
 // ==================================================================
 // Patristic Lexicon — data-driven page
 // Reads from PHASE_DATA + LEXICON_ENTRIES in study-data.js
-// Deep-linkable by phase anchor: greek-lexicon-index.html#phase-N
+// Flat alphabetical list: Greek entries first, then Latin.
+// Deep-linkable by per-term anchor: greek-lexicon-index.html#term-<slug>
+//                       letter anchor: greek-lexicon-index.html#letter-<L>
 // ==================================================================
 
 function phaseKeysInOrder() {
@@ -836,43 +886,78 @@ function populatePhaseDropdown() {
   }
 }
 
-function renderTermCard(term) {
-  const letter = term.letter || (term.greek ? term.greek.charAt(0).toUpperCase() : '');
+// Return a sanitized headword for use as the first-letter key, stripping
+// accents/breathings so that Ἀ, Ἁ, Ά and Α all group under Α.
+function firstLetterOf(term) {
+  const head = term.greek || '';
+  if (!head) return '';
+  const first = head.charAt(0);
+  // Normalize: strip combining marks so polytonic accents collapse to base letter
+  return first.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+}
+
+// Render a single term card. Two modes:
+//   isPreview=false (default): full card with id="term-<slug>" anchor. Used
+//     for the flat alphabetical list below — canonical anchor location.
+//   isPreview=true: compact card, NO id, with a "View full entry" link to
+//     the canonical anchor. Used in the Current Phase Focus banner so the
+//     same term can appear twice on the page without duplicate IDs.
+function renderTermCard(term, isPreview) {
   const focusBadge = term.isFocus ? '<div class="focus-badge">Focus Term</div>' : '';
   const transliteration = term.transliteration ? `<div class="term-transliteration">${term.transliteration}</div>` : '';
   const english = term.english ? `<div class="term-english">${term.english}</div>` : '';
+  // Language — omitted field defaults to 'greek'. Latin entries tagged explicitly.
+  const language = (term.language || 'greek').toLowerCase();
+  const languageClass = language === 'latin' ? ' is-latin' : '';
+  // Slug for the canonical term anchor — stable across Greek/Latin spelling variations.
+  const slug = (typeof slugifyTerm === 'function') ? slugifyTerm(term) : '';
+
+  if (isPreview) {
+    // Compact preview card — NO id attribute (full card below owns the anchor).
+    const linkHref = slug ? `#term-${slug}` : '';
+    const previewLink = linkHref
+      ? `<a href="${linkHref}" class="term-preview-link">View full entry →</a>`
+      : '';
+    return `
+      <div class="term-preview-card${languageClass}"
+           data-greek="${term.greek}">
+        <div class="term-greek">${term.greek}</div>
+        ${transliteration}
+        ${english}
+        ${previewLink}
+      </div>
+    `;
+  }
+
+  // Full card — canonical anchor location.
   const definition = term.definition ? `<p class="term-definition">${term.definition}</p>` : '';
   const etymology = term.etymology ? `<div class="term-etymology"><strong>Etymology:</strong> ${term.etymology}</div>` : '';
   const fathers = (term.fathers && term.fathers.length) ? `<div class="term-fathers"><strong>Father(s):</strong> ${term.fathers.join(', ')}</div>` : '';
   const connection = term.connection ? `<div class="term-connection">${term.connection}</div>` : '';
-  // Pastoral note — optional field on select entries (currently 10: χιλιασμός,
-  // πλοῦτος, θεουργία, Διονύσιος Ἀρεοπαγίτης, sermo, Christus totus, plus the
-  // four Chalcedonian adverbs). Provides Orthodox reception, doctrinal clarification,
-  // or scholarly attribution beyond what the core definition supplies. Rendered
-  // as a visually distinct block — porphyry left-border, small-caps label — so
-  // readers see it as separate editorial guidance from the primary definition.
+  // Pastoral note — optional field on select entries (e.g., χιλιασμός, πλοῦτος,
+  // θεουργία, Διονύσιος Ἀρεοπαγίτης, sermo, Christus totus, plus the four
+  // Chalcedonian adverbs). Rendered as a visually distinct block — porphyry
+  // left-border, small-caps label — so readers see it as separate editorial
+  // guidance from the primary definition.
   const pastoralNote = term.pastoralNote ? `
     <div class="term-pastoral-note">
       <div class="term-pastoral-label">Orthodox Reception</div>
       <p class="term-pastoral-text">${term.pastoralNote}</p>
     </div>
   ` : '';
-  // Per-term anchor — slug comes from the transliteration so URLs stay stable
-  // even if Greek/Latin spelling varies. Used by lexiconAnchorFor() everywhere
-  // else in the app so dashboard pills and Father cards can deep-link directly.
-  const slug = (typeof slugifyTerm === 'function') ? slugifyTerm(term) : '';
   const anchorAttr = slug ? ` id="term-${slug}"` : '';
-  // Language — omitted field defaults to 'greek' (Part 3 amendment). Latin
-  // entries (Phase 2.5 Tertullian/Cyprian, Phase 10 Leo) are tagged explicitly.
-  const language = (term.language || 'greek').toLowerCase();
   const languageLabel = language === 'latin' ? 'LATIN' : 'GREEK';
-  const languageClass = language === 'latin' ? ' is-latin' : '';
   const languageBadge = `<div class="term-language-badge">${languageLabel}</div>`;
+  const fathersDataAttr = (term.fathers && term.fathers.length)
+    ? term.fathers.join(' ').toLowerCase() : '';
+  const letter = firstLetterOf(term);
   return `
     <div class="term-card${term.isFocus ? ' focus-term' : ''}${languageClass}"${anchorAttr}
          data-greek="${term.greek}"
          data-letter="${letter}"
+         data-transliteration="${(term.transliteration || '').toLowerCase()}"
          data-english="${(term.english || '').toLowerCase()}"
+         data-fathers="${fathersDataAttr}"
          data-phase="${term.phase || ''}"
          data-language="${language}">
       ${focusBadge}
@@ -900,69 +985,184 @@ function populateCurrentPhaseFocus() {
   if (subEl) subEl.textContent = `Week ${week} · ${weekRangeLabel(phase)} · ${phase.fathers}`;
   if (termsEl) {
     const terms = getPhaseTerms(phase);
-    termsEl.innerHTML = terms.map(t => renderTermCard(t)).join('');
+    // Preview mode — no id attributes, compact cards that link to the canonical
+    // entry in the alphabetical list below.
+    termsEl.innerHTML = terms.map(t => renderTermCard(t, true)).join('');
   }
 }
 
-function populatePhaseSections() {
-  const container = document.getElementById('phase-sections');
+// Sort a list of LEXICON_ENTRIES [greek, entry] pairs by headword using a
+// locale-aware comparator. Greek entries sort by Greek collation; Latin by
+// Latin collation. Accents/breathings are stripped for comparison so ἀ and α
+// sort together under alpha.
+function sortEntries(pairs, locale) {
+  return pairs.slice().sort((a, b) => {
+    const ka = a[0].normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    const kb = b[0].normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    return ka.localeCompare(kb, locale);
+  });
+}
+
+// Build the flat alphabetical list. Greek entries first (grouped by Greek
+// letter), then Latin entries (grouped by Latin letter). Letter dividers
+// between each run carry id="letter-X" for jumplink anchoring.
+function populateAlphabeticalList() {
+  const container = document.getElementById('alphabetical-terms');
   if (!container) return;
-  const currentPhase = getPhaseForWeek(STUDY_STATE.currentWeek);
-  const currentPhaseKey = currentPhase ? String(currentPhase.number) : null;
+  const pairs = Object.entries(LEXICON_ENTRIES);
+  const greekPairs = pairs.filter(([, e]) => (e.language || 'greek').toLowerCase() !== 'latin');
+  const latinPairs = pairs.filter(([, e]) => (e.language || 'greek').toLowerCase() === 'latin');
+  const sortedGreek = sortEntries(greekPairs, 'el');
+  const sortedLatin = sortEntries(latinPairs, 'la');
 
-  for (const key of phaseKeysInOrder()) {
-    const p = PHASE_DATA[key];
-    const terms = getPhaseTerms(p);
-    const isCurrent = String(p.number) === currentPhaseKey;
-
-    const section = document.createElement('section');
-    section.className = `phase-lexicon-section${isCurrent ? ' phase-current' : ''}`;
-    section.id = `phase-${p.number}`;
-    section.dataset.phase = String(p.number);
-
-    section.innerHTML = `
-      <div class="phase-lexicon-header">
-        <h2 class="phase-lexicon-title">Phase ${p.number}: ${p.name}</h2>
-        <div class="phase-lexicon-meta">${weekRangeLabel(p)} · ${p.fathers}</div>
-      </div>
-      <div class="phase-lexicon-terms">
-        ${terms.length === 0
-          ? '<p class="phase-no-terms">No Greek focus terms recorded for this phase yet.</p>'
-          : terms.map(t => renderTermCard(t)).join('')}
-      </div>
-    `;
-    container.appendChild(section);
+  const html = [];
+  if (sortedGreek.length) {
+    html.push(`<div class="script-group-label">Greek</div>`);
+    html.push(buildLetteredSections(sortedGreek, false));
   }
+  if (sortedLatin.length) {
+    html.push(`<div class="script-group-label is-latin">Latin</div>`);
+    html.push(buildLetteredSections(sortedLatin, true));
+  }
+  container.innerHTML = html.join('\n');
+}
+
+// Given sorted [greek, entry] pairs for one script, emit a sequence of
+// <h2 class="letter-divider"> headers, each followed by a .letter-grid of
+// full term cards for that letter.
+function buildLetteredSections(sortedPairs, isLatin) {
+  const groups = new Map();
+  for (const [greek, entry] of sortedPairs) {
+    const term = { greek, ...entry };
+    const letter = firstLetterOf(term);
+    if (!groups.has(letter)) groups.set(letter, []);
+    groups.get(letter).push(term);
+  }
+  const parts = [];
+  for (const [letter, terms] of groups.entries()) {
+    const cls = isLatin ? 'letter-divider is-latin' : 'letter-divider';
+    const letterId = `letter-${isLatin ? 'lat-' : 'gr-'}${letter}`;
+    parts.push(`<h2 class="${cls}" id="${letterId}" data-letter="${letter}" data-script="${isLatin ? 'latin' : 'greek'}">${letter}</h2>`);
+    parts.push(`<div class="letter-grid" data-letter-grid="${letterId}">`);
+    parts.push(terms.map(t => renderTermCard(t, false)).join(''));
+    parts.push(`</div>`);
+  }
+  return parts.join('\n');
+}
+
+// Scan LEXICON_ENTRIES for all distinct first-letters per script and render
+// the jumplink row. Greek letters on the left, pipe divider, Latin on the right.
+function populateAlphabetJumplinks() {
+  const host = document.getElementById('alphabet-filter');
+  if (!host) return;
+  const pairs = Object.entries(LEXICON_ENTRIES);
+  const greekLetters = new Set();
+  const latinLetters = new Set();
+  for (const [greek, entry] of pairs) {
+    const isLatin = (entry.language || 'greek').toLowerCase() === 'latin';
+    const letter = firstLetterOf({ greek });
+    if (!letter) continue;
+    (isLatin ? latinLetters : greekLetters).add(letter);
+  }
+  const sortedGreek = Array.from(greekLetters).sort((a, b) => a.localeCompare(b, 'el'));
+  const sortedLatin = Array.from(latinLetters).sort((a, b) => a.localeCompare(b, 'la'));
+
+  const parts = [];
+  parts.push(`<button class="alphabet-btn active" data-letter="" onclick="filterByLetter('', event)">All</button>`);
+  if (sortedGreek.length) {
+    parts.push(`<div class="alphabet-group">`);
+    for (const L of sortedGreek) {
+      parts.push(`<button class="alphabet-btn" data-letter="${L}" data-script="greek" onclick="filterByLetter('${L}', event, 'greek')">${L}</button>`);
+    }
+    parts.push(`</div>`);
+  }
+  if (sortedGreek.length && sortedLatin.length) {
+    parts.push(`<div class="alphabet-divider" aria-hidden="true"></div>`);
+  }
+  if (sortedLatin.length) {
+    parts.push(`<div class="alphabet-group">`);
+    for (const L of sortedLatin) {
+      parts.push(`<button class="alphabet-btn is-latin" data-letter="${L}" data-script="latin" onclick="filterByLetter('${L}', event, 'latin')">${L}</button>`);
+    }
+    parts.push(`</div>`);
+  }
+  host.innerHTML = parts.join('\n');
 }
 
 let activeLetter = '';
+let activeScript = '';  // 'greek' | 'latin' | '' (when activeLetter is empty)
+
+// Unified filter — runs over the flat alphabetical list. Matches across
+// Greek script, transliteration, English, and Father names. Hides empty
+// letter dividers along with their empty grids.
 function filterTerms() {
   const searchVal = (document.getElementById('search').value || '').toLowerCase();
   const phaseFilter = document.getElementById('phase-filter').value;
 
-  document.querySelectorAll('.phase-lexicon-section').forEach(section => {
-    const sectionPhase = section.dataset.phase;
-    const phaseMatch = !phaseFilter || phaseFilter === sectionPhase;
+  // First pass: per-card visibility.
+  document.querySelectorAll('.term-card').forEach(card => {
+    const greek = (card.dataset.greek || '').toLowerCase();
+    const transliteration = card.dataset.transliteration || '';
+    const english = card.dataset.english || '';
+    const fathers = card.dataset.fathers || '';
+    const letter = card.dataset.letter || '';
+    const language = card.dataset.language || 'greek';
+    const phase = card.dataset.phase || '';
+
+    const searchMatch = !searchVal
+      || greek.includes(searchVal)
+      || transliteration.includes(searchVal)
+      || english.includes(searchVal)
+      || fathers.includes(searchVal);
+    const phaseMatch = !phaseFilter || phaseFilter === phase;
+    // Letter filter is script-scoped when we know the script (from the button click).
+    const letterMatch = !activeLetter
+      || (letter === activeLetter && (!activeScript || activeScript === language));
+
+    card.style.display = (searchMatch && phaseMatch && letterMatch) ? '' : 'none';
+  });
+
+  // Second pass: hide a letter-divider + its following grid when the grid has
+  // zero visible cards. Also hide script-group-labels when all their letters
+  // are hidden.
+  document.querySelectorAll('.letter-grid').forEach(grid => {
+    const anyVisible = Array.from(grid.querySelectorAll('.term-card'))
+      .some(c => c.style.display !== 'none');
+    grid.style.display = anyVisible ? '' : 'none';
+    // The letter-divider precedes the grid in DOM order.
+    const divider = grid.previousElementSibling;
+    if (divider && divider.classList.contains('letter-divider')) {
+      divider.style.display = anyVisible ? '' : 'none';
+    }
+  });
+  // Hide a script-group-label if all its letter-grids are hidden.
+  document.querySelectorAll('.script-group-label').forEach(label => {
+    let node = label.nextElementSibling;
     let anyVisible = false;
-    section.querySelectorAll('.term-card').forEach(card => {
-      const greek = (card.dataset.greek || '').toLowerCase();
-      const english = card.dataset.english || '';
-      const letter = card.dataset.letter || '';
-      const searchMatch = !searchVal || greek.includes(searchVal) || english.includes(searchVal);
-      const letterMatch = !activeLetter || letter === activeLetter;
-      const visible = phaseMatch && searchMatch && letterMatch;
-      card.style.display = visible ? '' : 'none';
-      if (visible) anyVisible = true;
-    });
-    section.style.display = anyVisible ? '' : 'none';
+    while (node && !node.classList.contains('script-group-label')) {
+      if (node.classList.contains('letter-grid') && node.style.display !== 'none') {
+        anyVisible = true;
+        break;
+      }
+      node = node.nextElementSibling;
+    }
+    label.style.display = anyVisible ? '' : 'none';
   });
 }
 
-function filterByLetter(letter, ev) {
+function filterByLetter(letter, ev, script) {
   activeLetter = letter;
+  activeScript = script || '';
   document.querySelectorAll('.alphabet-btn').forEach(b => b.classList.remove('active'));
-  if (ev && ev.target) ev.target.classList.add('active');
+  if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
+  else if (ev && ev.target) ev.target.classList.add('active');
   filterTerms();
+  // Smooth-scroll to the selected letter divider, if any.
+  if (letter && script) {
+    const id = `letter-${script === 'latin' ? 'lat-' : 'gr-'}${letter}`;
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
 
 function scrollToTop() {
@@ -971,14 +1171,20 @@ function scrollToTop() {
 window.addEventListener('scroll', function() {
   const btn = document.getElementById('return-to-top');
   if (!btn) return;
-  btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+  // Use .visible class to match the CSS opacity/pointer-events transition.
+  btn.classList.toggle('visible', window.scrollY > 400);
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  populateCurrentPhaseFocus();
   populatePhaseDropdown();
-  populatePhaseSections();
-  // If URL has a #phase-N hash, browser auto-scrolls via scroll-margin-top CSS
+  populateAlphabeticalList();
+  populateAlphabetJumplinks();
+  populateCurrentPhaseFocus();
+  // Optional integrity check during dev — warn if a lexicon slug collides.
+  if (typeof validateLexicon === 'function') {
+    try { validateLexicon(); } catch (e) { console.warn('Lexicon validation:', e); }
+  }
+  // If URL has a #term-<slug> or #letter-X hash, browser auto-scrolls via scroll-margin-top CSS.
 });
 </script>
 
