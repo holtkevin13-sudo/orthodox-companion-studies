@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T02:14:55Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justin Martyr — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Justin Martyr — Orthodox Companion Studies">
+<meta property="og:description" content="Philosopher, apologist, and martyr — the first major Christian thinker to argue the faith as the true philosophy and to set Christian revelation in conversation with the best of Greek thought.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Justin Martyr (c. 100–165 AD) — philosopher, apologist, and martyr whose Apologies and Dialogue with Trypho established Logos Christology, typological exegesis of the Old Testament, and Christianity as the true philosophy.">
+<meta name="keywords" content="Justin Martyr, Church Fathers, Apologists, Logos Christology, Spermatikos Logos, Seed Logos, Philosophy, Typology, Dialogue with Trypho, First Apology, Second Apology, Early Christianity">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid (from Polycarp template — for Fathers with smaller corpora) */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars (Polycarp style — separated transliteration + meaning) */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 2 · Apologists · Weeks 5–6
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Justin Martyr</h1>
+    <div class="hero-epithet">Ἰουστῖνος ὁ Φιλόσοφος · Justin the Philosopher</div>
+    <div class="hero-meta">c. 100 – c. 165 AD · Philosopher, Apologist, Martyr in Rome</div>
+    <p class="hero-description">
+      The first major Christian thinker to set the faith in sustained conversation with Greek
+      philosophy, Justin argued that whatever is true in Plato or the Stoics belongs already to Christ,
+      the incarnate Logos in whom all reason shares. His two Apologies and <em>Dialogue with Trypho</em>
+      laid the foundations of Logos Christology, typological exegesis, and the Christian engagement
+      with the wider intellectual world.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Justin?</h2>
+      <p class="section-text">
+        Justin was born around 100 AD in Flavia Neapolis — modern Nablus — in Samaria, to a pagan
+        Greek-speaking family. He himself tells the story of his conversion at the opening of the
+        <em>Dialogue with Trypho</em>. As a young man he moved through the philosophical schools of
+        his age in succession: Stoics, Peripatetics, Pythagoreans, and finally Platonists, in whom he
+        thought he had found rest. Then, walking one day by the sea, he met an unnamed old man who
+        pressed him with questions his Platonism could not answer and pointed him to the Hebrew
+        prophets and to Christ. Justin did not abandon philosophy; he changed its object. He continued
+        to wear the philosopher's cloak after his baptism and taught Christianity as the one school
+        of thought that actually delivered what the others sought.
+      </p>
+      <p class="section-text">
+        By the middle of the second century he had opened a school in Rome, where he taught openly and
+        debated publicly with rival teachers — among them the Cynic philosopher Crescens, who
+        (according to Justin himself and later tradition) bore a grudge that eventually helped bring
+        him before the authorities. His students included Tatian, who later wrote his own apologetic
+        work and compiled the <em>Diatessaron</em>. Around 165 AD Justin and six of his companions
+        were arrested, tried before Junius Rusticus, urban prefect under Marcus Aurelius, and executed
+        for refusing to sacrifice to the gods. The proceedings survive as the <em>Acts of Justin and
+        Companions</em>, one of the earliest authentic Christian court-transcript martyrdoms.
+      </p>
+      <p class="section-text">
+        His three surviving works — the <em>First Apology</em>, the shorter <em>Second Apology</em>,
+        and the lengthy <em>Dialogue with Trypho</em> — are the first substantial body of
+        post-apostolic Christian prose. Eusebius and Irenaeus knew of several more that are now lost:
+        a <em>Syntagma Against All Heresies</em>, a work <em>On the Resurrection</em>, a treatise
+        against Marcion, and others. The Church has remembered him as Justin the Philosopher and
+        Martyr, and his feast is kept on June 1.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">3</div>
+          <div class="stat-label">Extant Works</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 153</div>
+          <div class="stat-label">First Apology</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">c. 165</div>
+          <div class="stat-label">Martyred in Rome</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2nd</div>
+          <div class="stat-label">Century Apologist</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Written Legacy -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Three works survive intact, each a landmark of its kind: the earliest detailed Christian
+        appeal to a Roman emperor, the earliest extended Christian response to a specific local
+        persecution, and the earliest extensive Christian-Jewish dialogue. Together they invented
+        several genres of Christian writing at once.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">First Apology</h3>
+          <div class="work-greek">Ἀπολογία Αʹ</div>
+          <p class="work-description">
+            Addressed around 153 AD to the emperor Antoninus Pius, his sons, the Senate, and the Roman
+            people. In sixty-eight chapters Justin defends Christians against the standard charges —
+            atheism, immorality, political disloyalty — and argues that Christianity fulfills what
+            Greek philosophy sought. Chapters 61–67 contain the earliest detailed external description
+            of Christian Baptism and the Eucharist, naming them by their Greek names and describing
+            the Sunday gathering, the readings, the prayers, and the distribution.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Second Apology</h3>
+          <div class="work-greek">Ἀπολογία Βʹ</div>
+          <p class="work-description">
+            A shorter and more occasional piece, c. 153–155 AD, prompted by the recent execution of a
+            Roman Christian woman and her catechist. The most condensed expression of Justin's
+            distinctive theological move: that the <span class="greek">σπερματικὸς λόγος</span>
+            scattered seeds of truth among pagan philosophers, so that Socrates and Heraclitus,
+            living by reason, already lived in partial communion with Christ the full Logos.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Dialogue with Trypho</h3>
+          <div class="work-greek">Πρὸς Τρύφωνα Ἰουδαῖον Διάλογος</div>
+          <p class="work-description">
+            A literary dialogue of 142 chapters, probably composed late in Justin's life (c. 155–160),
+            staging a two-day conversation with a learned Jew named Trypho on the meaning of the
+            Scriptures. The most sustained second-century Christian argument that the Hebrew
+            Scriptures, read through Christ, are the Church's own book — and the single most influential
+            early source for Christian typological exegesis of the Old Testament.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Justin's theology moves along one axis: Christ is the Logos in whom all reason participates.
+        Four terms carry that axis into concrete theological work — cosmic Christology, a generous
+        reading of pagan wisdom, a defense of Christianity as the philosophy that completes philosophy,
+        and an exegesis that finds Christ in the figures of the Old Testament.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-logos" class="greek-term greek-term-link">λόγος</a>
+          <div class="transliteration">logos</div>
+          <div class="english-meaning">Word · Reason · Rational Principle</div>
+          <p class="pillar-explanation">
+            For Justin, Christ is the cosmic Λόγος — the divine Word who spoke through the prophets,
+            illumines every rational being, and became flesh in Jesus. His Logos Christology is the
+            theological bridge across which the faith can walk into the Greco-Roman world and speak
+            without losing itself.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-spermatikos-logos" class="greek-term greek-term-link">σπερματικὸς λόγος</a>
+          <div class="transliteration">spermatikos logos</div>
+          <div class="english-meaning">Seed-Logos · Seminal Word</div>
+          <p class="pillar-explanation">
+            Justin's signature move, borrowed from Stoic cosmology and baptized. The Logos sows seeds
+            of himself in every rational being, so that Socrates and Heraclitus, living by reason,
+            already partly belonged to Christ. What pagan philosophy glimpsed in fragments is fully
+            disclosed in the incarnate Word.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-philosophia" class="greek-term greek-term-link">φιλοσοφία</a>
+          <div class="transliteration">philosophia</div>
+          <div class="english-meaning">Philosophy · Love of Wisdom</div>
+          <p class="pillar-explanation">
+            Christianity, for Justin, is not the enemy of philosophy but its completion. He kept his
+            philosopher's cloak after baptism as a deliberate sign: the Christian is the true
+            philosopher, because only in Christ does the love of wisdom find the Wisdom it loves.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-typos" class="greek-term greek-term-link">τύπος</a>
+          <div class="transliteration">typos</div>
+          <div class="english-meaning">Type · Figure · Pattern</div>
+          <p class="pillar-explanation">
+            The <em>Dialogue</em> is above all a school of typological reading. Moses's outstretched
+            arms at Rephidim prefigure the Cross; Isaac bearing the wood, the bronze serpent, Jonah
+            in the fish — each is a τύπος of Christ. This hermeneutic hardens in Justin into a stable
+            Orthodox way of reading the Old Testament as already Christian book.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "Those who lived with the Logos are Christians, even though they were reckoned atheists —
+        as among the Greeks, Socrates and Heraclitus and those like them."
+      </p>
+      <div class="quote-source">— First Apology 46.3</div>
+    </div>
+
+    <!-- Why Justin Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Justin Matters Today</h2>
+      <p class="section-text">
+        Justin is the first Christian thinker to treat Greek philosophy as a serious dialogue partner
+        rather than a rival to be repelled. His generosity is costly and precise: what Plato and the
+        Stoics glimpsed is genuinely of Christ, but the fullness of Christ is not Plato or the Stoics.
+        The move opens a door the Church has walked through ever since — wherever Christian theology
+        engages honestly with non-Christian thought without collapsing into it, Justin is in the
+        background.
+      </p>
+      <p class="section-text">
+        His Logos Christology became structural for later Alexandrian theology and, through it, for
+        Nicaea. Orthodox readers should note honestly that Justin's expressions sometimes carry a
+        functional subordinationism — the Logos as "second in rank" after the Father (1 Apology 13) —
+        which the Church's conciliar discernment at Nicaea and Constantinople later refined. This is
+        not a failure of Justin but an early stage in the doctrinal development that his own Logos
+        theology made possible. To read him now is to see the raw material on which later Fathers
+        worked.
+      </p>
+      <p class="section-text">
+        Above all, Justin fuses thought and witness. He is a philosopher who dies for his philosophy,
+        and the coherence of the two makes him a model for the intellectual life of faith. He shows
+        that rigorous engagement with the world's best arguments and readiness to die for Christ
+        belong on the same page. His feast, June 1, keeps that fusion inside the Orthodox Church's
+        year.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="polycarp-of-smyrna.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Polycarp of Smyrna</div>
+          <div class="related-desc">Fellow second-century martyr a decade before Justin — witness through episcopal faithfulness.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-spermatikos-logos" class="related-link">
+          <span class="related-icon">Ω</span>
+          <div class="related-title greek">σπερματικὸς λόγος</div>
+          <div class="related-desc">Justin's signature concept — the seed of the Word among the nations.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-2" class="related-link">
+          <span class="related-icon">Α</span>
+          <div class="related-title">Phase 2 Lexicon</div>
+          <div class="related-desc">Greek vocabulary of the Apologists — Logos, philosophy, prophecy, sacraments.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Justin is Phase 2: Weeks 5–6.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 5 && wk <= 6) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
