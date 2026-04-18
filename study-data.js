@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T04:08:59Z
+// build: 2026-04-18T04:19:10Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1474,8 +1474,9 @@ const FATHER_PAGES = {
   'Cyril of Alexandria': 'father-cards/cyril-of-alexandria.html',
   'Leo the Great': 'father-cards/leo-the-great.html',
   'Pseudo-Dionysius the Areopagite': 'father-cards/pseudo-dionysius.html',
-  'Maximus the Confessor': 'father-cards/maximus-the-confessor.html'
-  // ...add as pages are built
+  'Maximus the Confessor': 'father-cards/maximus-the-confessor.html',
+  'John of Damascus': 'father-cards/john-of-damascus.html'
+  // All 18 Father cards built.
 };
 
 // Detect a matchable Father name inside a patristic reading string.
