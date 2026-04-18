@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T03:53:37Z
+// build: 2026-04-18T03:59:47Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1472,7 +1472,8 @@ const FATHER_PAGES = {
   'Gregory of Nazianzus': 'father-cards/gregory-of-nazianzus.html',
   'John Chrysostom': 'father-cards/john-chrysostom.html',
   'Cyril of Alexandria': 'father-cards/cyril-of-alexandria.html',
-  'Leo the Great': 'father-cards/leo-the-great.html'
+  'Leo the Great': 'father-cards/leo-the-great.html',
+  'Pseudo-Dionysius the Areopagite': 'father-cards/pseudo-dionysius.html'
   // ...add as pages are built
 };
 
