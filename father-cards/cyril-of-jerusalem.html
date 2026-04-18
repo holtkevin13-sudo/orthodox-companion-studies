@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T05:31:51Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyril of Jerusalem — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Cyril of Jerusalem — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Jerusalem, master catechist, and author of the most complete surviving patristic catechumenate — the Catechetical Lectures and Mystagogical Catecheses that formed the baptismal candidates of the Holy City in the fourth century.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Cyril of Jerusalem (c. 315 – 386 AD) — Bishop of the Holy City through the turbulent middle decades of the fourth century, exiled three times by imperial Arian pressure, and the author of the only complete patristic course of pre- and post-baptismal catechesis to survive: 18 Catechetical Lectures delivered during Lent and 5 Mystagogical Catecheses for the newly baptized of Easter Week.">
+<meta name="keywords" content="Cyril of Jerusalem, Church Fathers, Jerusalem, Catechesis, Mystagogy, Baptism, Catechetical Lectures, Mystagogical Catecheses, Photismos, Mysteria, Nicene Era, Holy Week Mystagogy, Jerusalem Liturgy">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* =================================================================
+   PART I NAVY ACCENT SCHEME (Nicene Era)
+   Primary accent: navy #1a3a5c
+   Universal accent: gold #D4AF37
+   Display-only pillars (no lexicon hyperlinks).
+   ================================================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+/* Display-only Greek term (not a link) for out-of-syllabus Fathers */
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .greek-term.very-long {
+  font-size: 1.15rem;
+  line-height: 1.3;
+  white-space: normal;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+  .theology-pillar .greek-term.very-long { font-size: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Nicene Era · Bishop of the Holy City
+    </div>
+    <h1 class="hero-title">Cyril of Jerusalem</h1>
+    <div class="hero-epithet">Κύριλλος Ἱεροσολύμων · Catechetical Master</div>
+    <div class="hero-meta">c. 315 – 386 AD · Bishop of Jerusalem, Master of the Catechumenate</div>
+    <p class="hero-description">
+      Bishop of Jerusalem through the turbulent middle decades of the fourth century, exiled
+      three times by imperial Arian pressure, and the author of the most complete patristic
+      course of baptismal catechesis to survive. The eighteen <em>Catechetical Lectures</em>
+      — delivered during Lent to the candidates preparing for Easter Baptism — and the five
+      <em>Mystagogical Catecheses</em> given to the newly illumined during Easter Week remain
+      the richest window we possess into the formation of a fourth-century Christian. Cyril
+      taught in the shadow of the Holy Sepulchre; every word he wrote was shaped by the
+      places Christ had walked.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Cyril?</h2>
+      <p class="section-text">
+        Cyril was born around 315 AD, probably in or near Jerusalem itself. He was ordained
+        deacon by Macarius of Jerusalem, the bishop who had overseen Constantine's discovery
+        of the Holy Sepulchre site and the construction of the basilica that would become
+        Cyril's own preaching home. Cyril was ordained priest around 343 under Macarius's
+        successor Maximus, and around 350 he succeeded Maximus as Bishop of Jerusalem. He
+        was not yet forty.
+      </p>
+      <p class="section-text">
+        The decades that followed were shaped by the Arian crisis and its political
+        consequences. Cyril's early theology was cautious about the Nicene term
+        <em>ὁμοούσιος</em>, and he was closer in temperament to what modern scholars call
+        the "Homoian" or moderate-Nicene center than to the sharp Athanasian position.
+        But unlike Eusebius of Caesarea he moved steadily toward the full Nicene confession
+        as the controversy unfolded, and by the Second Ecumenical Council at Constantinople
+        in 381 he was an unambiguous defender of the homoousian faith. Three times in the
+        meantime he was exiled by Arian-leaning imperial authorities — in 357, 360, and 367 —
+        and accumulated roughly sixteen years out of his episcopate. He returned each time,
+        resumed the work of catechesis, and eventually outlived most of his opponents.
+      </p>
+      <p class="section-text">
+        His pastoral instrument was the Jerusalem catechumenate. Every year during Lent,
+        candidates for Easter Baptism gathered at the Martyrium — the great basilica Constantine
+        had built over Golgotha — to be prepared for the mysteries. Cyril preached the
+        eighteen <em>Catechetical Lectures</em> to them on Scripture, the Creed, and the
+        Christian life. During Easter Week, now robed in white as the newly baptized, they
+        returned for the five <em>Mystagogical Catecheses</em> explaining what had happened
+        to them in the sacraments of initiation. This rhythm — catechesis, Baptism,
+        mystagogy — was the formational pattern of the ancient Church, and Cyril is the
+        single teacher whose complete practice of it survives. He died at Jerusalem in 386,
+        full of years, and the Orthodox Church commemorates him on March 18.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">18</div>
+          <div class="stat-label">Catechetical Lectures</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Mystagogical Catecheses</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">16</div>
+          <div class="stat-label">Cumulative Years in Exile</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">386</div>
+          <div class="stat-label">Year of Repose</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Cyril's surviving corpus is small but remarkably unified. Almost everything we have
+        is the preaching of his catechumenate, preserved by the stenographers who attended
+        his lectures. Three related works carry the whole of his pastoral theology.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Catechetical Lectures</h3>
+          <div class="work-greek">Κατηχήσεις</div>
+          <p class="work-description">
+            Eighteen lectures delivered during Lent 348 or 350 to the <em>φωτιζόμενοι</em>,
+            the candidates being enlightened for Easter Baptism. The sequence covers
+            repentance, the Scriptures, the nature of God, the Creed article by article, and
+            the Christian life. Cyril's pastoral tone, his vivid scriptural sense, and the
+            setting — delivered within sight of Calvary — give the Lectures a warmth and
+            immediacy unmatched in the patristic catechetical literature.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Mystagogical Catecheses</h3>
+          <div class="work-greek">Μυσταγωγικαὶ Κατηχήσεις</div>
+          <p class="work-description">
+            Five lectures delivered during Easter Week, after the candidates had received
+            Baptism, Chrismation, and Eucharist at the Paschal Vigil. Now initiated into the
+            mysteries, they could be told what those mysteries were: the theology of
+            Baptism as dying-and-rising, of Chrismation as the gift of the Holy Spirit, and
+            of the Eucharist as true communion with the Body and Blood of Christ. The
+            <em>Mystagogical Catecheses</em> are the earliest sustained liturgical theology
+            in the patristic corpus. (Some scholars attribute them to Cyril's successor
+            John II rather than Cyril himself; the Orthodox tradition receives them under
+            Cyril's name.)
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Letter to Constantius</h3>
+          <div class="work-greek">Ἐπιστολὴ πρὸς Κωνστάντιον</div>
+          <p class="work-description">
+            A letter to the emperor Constantius II reporting the apparition of a luminous
+            cross over Jerusalem on May 7, 351 — seen, according to Cyril, by the entire
+            population of the city. The event is commemorated in the Orthodox calendar on
+            that date. The letter is a rare window into Cyril's pastoral voice outside the
+            catechetical setting, and a historical source for the fourth-century Christian
+            imagination of Jerusalem as the sacred geography of the whole Church.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms hold the center of Cyril's pastoral-liturgical theology. Two name
+        the phases of his catechumenate; the other two name what happens in the mysteries
+        themselves.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <span class="greek-term">κατήχησις</span>
+          <div class="transliteration">katēchēsis</div>
+          <div class="english-meaning">Catechesis · Pre-Baptismal Instruction</div>
+          <p class="pillar-explanation">
+            "Sounding down into" — the root verb <em>κατηχέω</em> names instruction given
+            by voice, person to person. For Cyril, catechesis is not information transfer
+            but pastoral formation of catechumens being prepared for Baptism. Every element
+            of the Christian life — Scripture, Creed, prayer, virtue — is woven into the
+            single arc of Lent and its Paschal fulfillment.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">μυσταγωγία</span>
+          <div class="transliteration">mystagōgia</div>
+          <div class="english-meaning">Mystagogy · Initiation into the Mysteries</div>
+          <p class="pillar-explanation">
+            "Leading into the mysteries." Once the candidates had received the sacraments at
+            Pascha, Cyril turned to explain what they had just experienced — Baptism's
+            dying-and-rising, Chrismation's anointing with the Spirit, the Eucharist as
+            true Body and Blood. Mystagogy follows the order of lived participation rather
+            than doctrinal abstraction: the theology explains what has already happened.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">φωτισμός</span>
+          <div class="transliteration">phōtismos</div>
+          <div class="english-meaning">Illumination · Baptism</div>
+          <p class="pillar-explanation">
+            "Enlightenment." Cyril's preferred name for Baptism — it makes the baptismal
+            candidates <em>φωτιζόμενοι</em>, "those being enlightened," and their finished
+            state <em>νεοφώτιστοι</em>, "newly-illumined." The emphasis is on what Baptism
+            really communicates: the divine light of Christ flooding the soul, conquering
+            the darkness of sin and death. Justin had used <em>φωτισμός</em> for Baptism
+            before him; Cyril makes it the central pastoral image.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <span class="greek-term">μυστήρια</span>
+          <div class="transliteration">mystēria</div>
+          <div class="english-meaning">Mysteries · Sacraments</div>
+          <p class="pillar-explanation">
+            The three sacraments of initiation — Baptism, Chrismation, Eucharist — celebrated
+            together at the Paschal Vigil. Cyril's realism about the Eucharist is the most
+            striking feature of his sacramental theology: the bread and wine, after the
+            epiclesis, are no longer bread and wine but the very Body and Blood of Christ
+            (Mystagogical Catechesis 4). His teaching on the Real Presence is one of the
+            earliest and clearest of the patristic age.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "At the same moment you died and were born; that saving water was both your grave
+        and your mother."
+      </p>
+      <div class="quote-source">— Mystagogical Catechesis 2.4</div>
+    </div>
+
+    <!-- Why Cyril Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Cyril Matters Today</h2>
+      <p class="section-text">
+        Every Orthodox catechumen still receives, in substance, what Cyril gave the
+        <em>φωτιζόμενοι</em> of fourth-century Jerusalem. The annual rhythm of Lent as a
+        catechetical season, the centrality of the Paschal Vigil as the moment of
+        illumination, the mystagogical unpacking of Baptism and Eucharist during Easter Week
+        — these patterns derive their shape from the Jerusalem practice Cyril codified. When
+        a modern Orthodox catechism explains Baptism as death-and-resurrection or the
+        Eucharist as true communion with the Body of Christ, it is paraphrasing Cyril more
+        than perhaps any other single source.
+      </p>
+      <p class="section-text">
+        His Eucharistic realism, articulated in Mystagogical Catecheses 4 and 5, is one of
+        the clearest patristic statements of the Real Presence and remains a staple
+        reference in Orthodox sacramental theology. The distinction he draws — before the
+        epiclesis, bread and wine; after the epiclesis, the Body and Blood of Christ — gives
+        subsequent Eastern Eucharistic theology its structural vocabulary. Aquinas in the
+        West and Nicholas Cabasilas in the East alike build on Cyril.
+      </p>
+      <p class="section-text">
+        Finally, he is one of the great examples of pastoral perseverance through political
+        adversity. Three exiles, sixteen years out of his see, a fourth-century political
+        landscape that repeatedly tried to break him — and he returned each time to the
+        same work: preparing the next year's candidates for Easter Baptism. The steady,
+        unspectacular labor of catechizing ordinary Christians is itself a patristic witness,
+        and Cyril shows how it is done. In an age when Orthodox mission and Orthodox
+        re-evangelization increasingly depend on serious catechetical formation, his example
+        is more than historical; it is practical.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="athanasius-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Athanasius the Great</div>
+          <div class="related-desc">Cyril's contemporary in the Nicene struggle and fellow exile for the faith. Where Athanasius is the polemicist-theologian, Cyril is the pastoral catechist of the same cause.</div>
+        </a>
+        <a href="gregory-of-nazianzus.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Gregory of Nazianzus</div>
+          <div class="related-desc">Fellow Father of the Second Ecumenical Council (381) and, like Cyril, a pastoral-theological voice. Their complementary methods — preaching and catechesis — together define the Nicene reception.</div>
+        </a>
+        <a href="../greek-lexicon-index.html" class="related-link">
+          <span class="related-icon">Κ</span>
+          <div class="related-title">Greek Lexicon</div>
+          <div class="related-desc">The Orthodox patristic lexicon — Cyril's vocabulary of catechesis, mystagogy, illumination, and the mysteries will anchor future catechetical tracks.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script>
+// Out-of-syllabus Father — no phase-gated "Currently Studying" indicator.
+// Only the return-to-top behavior is needed here.
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
