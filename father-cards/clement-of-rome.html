@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T01:55:47Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clement of Rome — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Clement of Rome — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop of Rome whose letter to the Corinthians (c. 96 AD) — the earliest surviving Christian document outside the New Testament — grounded apostolic succession, ecclesial concord, and the Church's ordered life in the sending of Christ.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Clement of Rome (c. 35 – c. 99 AD) — Bishop of Rome, Hieromartyr, and author of 1 Clement: the earliest Christian writing outside the New Testament and the foundational articulation of apostolic succession and ecclesial concord.">
+<meta name="keywords" content="Clement of Rome, 1 Clement, Church Fathers, Apostolic Fathers, Apostolic Succession, Ecclesiology, Homonoia, Concord, Early Christianity, Roman Church, Corinthian Schism">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid (from Polycarp template — for Fathers with smaller corpora) */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars (Polycarp style — separated transliteration + meaning) */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 1 · Apostolic Fathers · Weeks 1–4
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Clement of Rome</h1>
+    <div class="hero-epithet">Κλήμης ὁ Ῥωμαῖος · Clement the Roman</div>
+    <div class="hero-meta">c. 35 – c. 99 AD · Bishop of Rome, Hieromartyr</div>
+    <p class="hero-description">
+      A successor of the Apostle Peter in the Roman see, Clement wrote in the last years of the first
+      century to the church at Corinth, where a schism had unseated the lawful presbyters. His letter —
+      the earliest surviving Christian document outside the New Testament — grounds apostolic succession,
+      ecclesial concord, and the Church's ordered life in the sending of Christ.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Clement?</h2>
+      <p class="section-text">
+        Clement stands at the threshold between the apostolic generation and the sub-apostolic Church.
+        Irenaeus, writing around 180 AD, names him as third in the line of Roman bishops after the
+        Apostles — following Linus and Anencletus — and reports that Clement had himself known the
+        Apostles and kept their preaching fresh in his ears. Tertullian gives an alternative tradition
+        in which Peter ordained Clement directly. Whichever sequence one follows, Clement is unmistakably
+        a bridge figure: a Roman Christian of the second Christian generation whose memory and authority
+        the Church at Rome kept close.
+      </p>
+      <p class="section-text">
+        The event that fixes him in history is a letter. Around the year 96 AD — near the close of
+        Domitian's reign, or shortly after — the Roman church wrote to the Corinthians to address a
+        grievous situation: a group of younger men had deposed the lawful presbyters of the Corinthian
+        church, apparently without cause. The letter, though formally written in the name of "the Church
+        of God which sojourns at Rome" to "the Church of God which sojourns at Corinth," was understood
+        in antiquity to have been composed by Clement. It was read aloud in the Corinthian liturgy long
+        after it was sent, and some eastern churches treated it as near-canonical well into the fourth
+        century.
+      </p>
+      <p class="section-text">
+        Tradition holds that Clement was martyred under Trajan — tied to an anchor and drowned in the
+        Black Sea. The details are late and legendary, but the Church has remembered him as a hieromartyr
+        from an early date, and his name is preserved in the intercessions of the Divine Liturgy. In the
+        ninth century, Saints Cyril and Methodius recovered relics believed to be his and brought them
+        to Rome, where they remain at the Basilica of San Clemente.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">1</div>
+          <div class="stat-label">Authentic Epistle</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">65</div>
+          <div class="stat-label">Chapters in 1 Clement</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">AD 96</div>
+          <div class="stat-label">Sent to Corinth</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">3rd</div>
+          <div class="stat-label">From the Apostles</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Written Legacy -->
+    <section class="section">
+      <h2 class="section-title">Written Legacy</h2>
+      <p class="section-text">
+        Only one work can be credited to Clement with any confidence. But his name attracted further
+        writings in antiquity, and the whole cluster — authentic, attributed, and pseudepigraphic —
+        shaped how later Christians remembered the earliest Roman Church.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">1 Clement (Epistle to the Corinthians)</h3>
+          <div class="work-greek">Πρὸς Κορινθίους Αʹ</div>
+          <p class="work-description">
+            Clement's authentic letter, sixty-five chapters long, sent from Rome to Corinth c. 96 AD to
+            heal a schism in which a faction had deposed the rightful presbyters. The letter interweaves
+            Old Testament typology, Pauline echoes, and classical motifs on order and concord to press
+            the Corinthians toward repentance and restoration of their ministers. It is the earliest
+            surviving Christian writing outside the New Testament and the first datable articulation
+            of apostolic succession as an ecclesial principle.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">2 Clement (attributed)</h3>
+          <div class="work-greek">Πρὸς Κορινθίους Βʹ</div>
+          <p class="work-description">
+            An anonymous homily of the mid-second century, bundled with 1 Clement in the early manuscript
+            tradition and thus preserved under his name. Modern scholarship is unanimous that Clement did
+            not write it, but the text remains valuable as the earliest surviving Christian homily and
+            continues to appear in editions of the Apostolic Fathers — including the Holmes volume used
+            in this program.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Pseudo-Clementine Literature</h3>
+          <div class="work-greek">Ψευδοκλημεντινά</div>
+          <p class="work-description">
+            A later Syrian corpus — the Homilies, the Recognitions, and two epistles on virginity —
+            composed in Clement's name in the third and fourth centuries. The texts are valuable for
+            the history of Jewish-Christian theology and early Christian novelistic writing, but they
+            are pseudepigraphic by scholarly consensus and should not be read as Clementine in any
+            strict sense.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        1 Clement returns again and again to four related concerns: the Church as a divinely ordered
+        community, the concord proper to it, the apostolic sending that constitutes its ministry, and
+        the love in which its whole life is held. These are not four separate topics but four facets
+        of a single vision — the Church as God's household, rightly ordered because given, not
+        negotiated.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-ekklesia" class="greek-term greek-term-link">ἐκκλησία</a>
+          <div class="transliteration">ekklesia</div>
+          <div class="english-meaning">Church · Called-out Assembly</div>
+          <p class="pillar-explanation">
+            For Clement the ἐκκλησία is not a voluntary society but a body given by God, patterned on
+            Israel's ordered worship and bearing the ministry the Apostles handed on. The Corinthian
+            rupture is grave precisely because it tears what has been divinely knit.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-homonoia" class="greek-term greek-term-link">ὁμονοία</a>
+          <div class="transliteration">homonoia</div>
+          <div class="english-meaning">Concord · Like-mindedness</div>
+          <p class="pillar-explanation">
+            The central virtue of the letter. Clement opposes ὁμονοία to σχίσμα and στάσις — schism and
+            sedition — and draws on both Scripture and the ordered regularity of creation itself to
+            show that concord is not mere agreeableness but the peace God grants to his household.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-apostolos" class="greek-term greek-term-link">ἀπόστολος</a>
+          <div class="transliteration">apostolos</div>
+          <div class="english-meaning">Apostle · Sent One</div>
+          <p class="pillar-explanation">
+            In chapters 42 and 44 Clement sets out the sending that constitutes ministry: Christ was
+            sent from God; the Apostles were sent from Christ; they appointed the first bishops and
+            deacons; and those first appointed arranged for succession in their turn. This is the
+            earliest surviving articulation of apostolic succession as the Church's structural principle.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-agape" class="greek-term greek-term-link">ἀγάπη</a>
+          <div class="transliteration">agape</div>
+          <div class="english-meaning">Love · Self-Giving Love</div>
+          <p class="pillar-explanation">
+            Chapters 49–50 form an encomium on love in the manner of 1 Corinthians 13, reshaped for
+            a letter about schism. For Clement, love is not sentimental: it is the substance of
+            communion — the virtue that heals division because it is, by its nature, the opposite
+            of division.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "Love admits no schism, love raises no rebellion, love does all things in concord."
+      </p>
+      <div class="quote-source">— 1 Clement 49.5</div>
+    </div>
+
+    <!-- Why Clement Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Clement Matters Today</h2>
+      <p class="section-text">
+        Clement hands the Orthodox Church a framework that remains load-bearing. The claim in chapter 42
+        — that apostolic ministry is a line of sending that begins in the Father and reaches the local
+        church through the Apostles and their appointed successors — is the structural logic behind
+        Orthodox ecclesiology. Bishops do not inherit a role they designed; they stand in a chain of
+        hands they did not originate. This is why schism, for Clement, is not a disagreement among
+        Christians but a rupture in a sending.
+      </p>
+      <p class="section-text">
+        He also gives the Church a vocabulary for disagreement. Concord (ὁμονοία) is not forced unanimity
+        or conflict avoidance; it is the peace proper to a body whose members have been fitted together
+        by God. Clement's willingness to address the Corinthians' internal crisis from across the
+        Mediterranean — firmly, pastorally, with extensive appeal to Scripture rather than to his own
+        office — models an ecclesial seriousness that is neither authoritarian nor indifferent.
+      </p>
+      <p class="section-text">
+        Finally, the letter's presence in the intercessions of the Divine Liturgy keeps Clement's voice
+        inside the Church's prayer. To remember him is to remember a Rome that still belonged
+        unambiguously to the one Church, and to hold in view a form of primacy exercised as service to
+        concord rather than as jurisdiction over it.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="ignatius-of-antioch.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Ignatius of Antioch</div>
+          <div class="related-desc">Near-contemporary apostolic father whose letters develop the threefold ministry Clement presupposes.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-homonoia" class="related-link">
+          <span class="related-icon">Ω</span>
+          <div class="related-title greek">ὁμονοία</div>
+          <div class="related-desc">Clement's signature term — the concord that holds the Church's ordered life together.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-1" class="related-link">
+          <span class="related-icon">Α</span>
+          <div class="related-title">Phase 1 Lexicon</div>
+          <div class="related-desc">Greek terms of the Apostolic Fathers — the vocabulary of the sub-apostolic Church.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Clement is Phase 1: Weeks 1–4.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 1 && wk <= 4) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
