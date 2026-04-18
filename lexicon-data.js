@@ -16,7 +16,7 @@
 //
 // Dependencies: none. No DOM access, no localStorage.
 // ==================================================================
-// build: 2026-04-18T17:45:00Z
+// build: 2026-04-18T19:15:00Z
 
 // ==================================================================
 // LEXICON_ENTRIES — detailed Greek term reference, keyed by Greek script.
@@ -166,19 +166,19 @@ const LEXICON_ENTRIES = {
     transliteration: 'zosa phone', english: 'Living Voice',
     definition: 'The "living voice" — Papias\'s stated preference for oral apostolic tradition over written sources. In the prologue to his Exposition of the Lord\'s Oracles (preserved by Eusebius, Church History 3.39), Papias explains that whenever he met those who had followed the presbyters, he inquired after their words — convinced that what was received from a still-living witness profited him more than what was drawn from books. The phrase crystallizes a pre-canonical theology of living tradition: the apostolic Word transmitted not only textually but through continuous, embodied witness from teacher to hearer.',
     etymology: 'From ζῶσα (feminine present participle of ζῆν, to live) + φωνή (voice)',
-    phase: 1, fathers: ['Papias of Hierapolis'], connection: 'Oral Tradition as Living Apostolic Witness', letter: 'Ζ'
+    phase: 1, fathers: ['Papias'], connection: 'Oral Tradition as Living Apostolic Witness', letter: 'Ζ'
   },
   'λόγιον': {
     transliteration: 'logion', english: 'Oracle, Saying',
     definition: 'Oracle, divinely-given saying — the genre designation of Papias\'s lost five-book work, the Exposition of the Lord\'s Oracles (Λογίων Κυριακῶν Ἐξηγήσεις, c. 110–130). Though the book itself does not survive, Irenaeus, Eusebius, and later writers preserve its title and fragments. Papias\'s choice of λόγιον — the same term the Septuagint uses for prophetic utterances and Paul for the "oracles of God" entrusted to Israel (Romans 3:2) — positions the sayings and deeds of Christ within the register of divine revelation, a foundational move for the Church\'s reception of the Gospels as Scripture.',
     etymology: 'Diminutive of λόγος (word, saying); in LXX and NT usage, a divinely-delivered utterance',
-    phase: 1, fathers: ['Papias of Hierapolis'], connection: 'Christ\'s Sayings as Divine Oracles', letter: 'Λ'
+    phase: 1, fathers: ['Papias'], connection: 'Christ\'s Sayings as Divine Oracles', letter: 'Λ'
   },
   'ἑρμηνευτής': {
     transliteration: 'hermeneutes', english: 'Interpreter',
     definition: 'Interpreter, translator — Papias\'s famous description of Mark as the ἑρμηνευτής of Peter (fragment preserved in Eusebius, Church History 3.39.15): Mark, having become Peter\'s interpreter, wrote down accurately whatever he remembered of the Lord\'s sayings and deeds. The term anchors the Patristic tradition\'s understanding of the Gospel of Mark as Petrine memory rendered into writing — the Evangelist serving as the mediating voice between the apostle\'s preaching and the written text. This single designation becomes foundational for later patristic Gospel criticism, shaping how Irenaeus, Clement of Alexandria, Origen, and Eusebius account for Mark\'s apostolic authority.',
     etymology: 'From ἑρμηνεύω (to interpret, translate, explain)',
-    phase: 1, fathers: ['Papias of Hierapolis'], connection: 'Mark as Petrine Interpreter; Gospel Origins', letter: 'Ε'
+    phase: 1, fathers: ['Papias'], connection: 'Mark as Petrine Interpreter; Gospel Origins', letter: 'Ε'
   },
   // --- Justin cluster (Phase 2) ---
   'λόγος': {
