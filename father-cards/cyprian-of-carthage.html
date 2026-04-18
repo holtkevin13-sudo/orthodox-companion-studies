@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T02:41:18Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyprian of Carthage — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Cyprian of Carthage — Orthodox Companion Studies">
+<meta property="og:description" content="Bishop and martyr of Carthage whose De Unitate Ecclesiae gave the Latin Church its grammar for episcopal unity, pastoral discipline, and the one episcopate held in common by the bishops of the world.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Cyprian of Carthage (c. 200 – 258 AD) — Bishop of Carthage, author of De Unitate Ecclesiae and De Lapsis, shaper of Latin episcopal ecclesiology and the pastoral theology of the post-persecution Church. Martyred under Valerian in 258.">
+<meta name="keywords" content="Cyprian of Carthage, Latin Fathers, Church Fathers, Episcopal Ecclesiology, De Unitate Ecclesiae, De Lapsis, Cathedra Petri, Extra Ecclesiam Nulla Salus, Schism, Lapsi, Martyrdom, Decian Persecution, Valerian">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English/Latin) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+/* Latin-Father variant: italic Cormorant for Latin epithets */
+.hero-epithet.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+/* Latin-Father variant: Latin work title in italic Cormorant */
+.work-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+/* Latin-Father variant: Latin theological pillar term in italic Cormorant */
+.theology-pillar .latin-term {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .latin-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+/* Long Latin pillar terms — reduce font-size to prevent overflow in narrow cards */
+.theology-pillar .latin-term.long {
+  font-size: 1.35rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+/* Latin-Father variant */
+.related-title.latin {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .latin-term.long { font-size: 1.1rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 2.5 · Latin Fathers · Weeks 7–8
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Cyprian of Carthage</h1>
+    <div class="hero-epithet latin">Caecilius Cyprianus · Bishop and Martyr</div>
+    <div class="hero-meta">c. 200 – 258 AD · Bishop of Carthage, Hieromartyr under Valerian</div>
+    <p class="hero-description">
+      Bishop of Carthage during two persecutions, Cyprian gave the Latin Church its grammar for
+      episcopal unity and its pastoral theology of reconciliation. His <em>De Unitate Ecclesiae</em>
+      and <em>De Lapsis</em>, written in the aftermath of the Decian crisis, shape Western
+      ecclesiology ever after. His 81 surviving letters are the richest correspondence of any
+      pre-Nicene bishop, and his martyrdom under Valerian seals his pastoral witness.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Cyprian?</h2>
+      <p class="section-text">
+        Thascius Caecilius Cyprianus was born around 200 AD, probably in Carthage, into a wealthy
+        pagan family of Roman North Africa. His early career was that of a classically trained
+        rhetor and a figure of standing in Carthaginian civic life. His conversion, around 246 AD,
+        was the work of an elderly presbyter named Caecilius, whose name Cyprian would carry
+        thereafter. The shift was decisive and rapid: Cyprian sold his estates for the poor, was
+        baptized, was ordained presbyter, and then — over the objections of some of the clergy who
+        thought the progression too fast — was elected bishop of Carthage around 248 or early 249 AD.
+        He would hold that see for about ten years.
+      </p>
+      <p class="section-text">
+        Almost immediately his episcopate was tested. In late 249 the emperor Decius issued an
+        edict requiring all inhabitants of the empire to sacrifice publicly to the Roman gods and
+        to produce a <em>libellus</em>, a certificate of compliance. Many Christians complied or
+        purchased fraudulent certificates, becoming the <em>lapsi</em> — "the fallen." Cyprian
+        himself went into hiding, guiding his church through letters — a choice that was
+        controversial in its own day but that he defended as pastoral prudence: a bishop captured
+        or killed in the first days of persecution could not govern a church in crisis. When the
+        persecution eased in 251, the Church faced an immediate question: how to reconcile the
+        <em>lapsi</em>. Against the laxists, who wanted quick readmission on the strength of
+        confessors' letters, and against the rigorist Novatian, who would not readmit them at all,
+        Cyprian argued for readmission through disciplined penance mediated by the bishop. That
+        answer became the Latin Church's durable pattern for post-baptismal reconciliation.
+      </p>
+      <p class="section-text">
+        His later years were consumed by two further controversies: a dispute with Pope Stephen of
+        Rome over whether the baptism of heretics and schismatics was valid (Cyprian held it was
+        not; Rome held it was, and Rome's position eventually prevailed in the West, while
+        Cyprian's position has lived on in parts of the Eastern canonical tradition), and a second
+        persecution under the emperor Valerian. This time Cyprian did not flee. He was first
+        exiled to Curubis, then recalled, tried, and beheaded on September 14, 258 AD. The
+        <em>Acta Cypriani</em>, an early authentic martyr act, preserve the court transcript of
+        his sentencing and his final words: <em>Deo gratias</em> — "Thanks be to God." The Orthodox
+        Church commemorates him among the saints; his feast is kept on August 31.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">81</div>
+          <div class="stat-label">Surviving Letters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">10</div>
+          <div class="stat-label">Years as Bishop</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">258</div>
+          <div class="stat-label">Year of Martyrdom</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">2</div>
+          <div class="stat-label">Persecutions Faced</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Cyprian's literary production is shaped from beginning to end by his episcopal office. The
+        two treatises that matter most are both responses to the Decian crisis; the letters are
+        the working archive of a bishop governing under pressure.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">On the Unity of the Church</h3>
+          <div class="work-latin">De Unitate Ecclesiae</div>
+          <p class="work-description">
+            Written around 251 AD in response to the Novatianist schism, this short treatise is
+            Cyprian's masterpiece and the foundational text of Latin episcopal ecclesiology. The
+            episcopate is one, each bishop holding his part of it in common with the rest
+            (<em>episcopatus unus est, cuius a singulis in solidum pars tenetur</em>). Outside that
+            communion, no sacrament is safe and no salvation assured. The text's central figure of
+            the one <em>cathedra Petri</em> as the type of all episcopal chairs has shaped East
+            and West differently; it remains one of the most studied ecclesiological passages of
+            the pre-Nicene Church.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">On the Lapsed</h3>
+          <div class="work-latin">De Lapsis</div>
+          <p class="work-description">
+            Composed alongside <em>De Unitate</em> in 251, this treatise addresses the pastoral
+            crisis of the lapsed. Cyprian refuses both cheap absolution — the confessors could
+            recommend, but only the bishop could reconcile — and rigorist exclusion. Restoration
+            requires visible penance proportioned to the gravity of the fall, carried out in
+            communion with the bishop. The text becomes the template for Western penitential
+            theology and the seed of the later sacrament of reconciliation.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Epistulae</h3>
+          <div class="work-latin">Letters</div>
+          <p class="work-description">
+            Cyprian's eighty-one surviving letters are the richest episcopal correspondence to
+            survive from before Nicaea. They range across persecution and pastoral care, schism
+            and the re-reception of the lapsed, episcopal relations across North Africa and with
+            Rome, and the dispute with Stephen over the baptism of heretics. For any student of
+            mid-third-century Church life — its councils, its martyrs, its quarrels — they are
+            the single most valuable documentary source.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Cyprian's theological world is ecclesial from first to last. His four pillar terms cluster
+        around one question: what is the visible form of the one Church, and what follows when
+        that form is torn?
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-episcopus" class="latin-term latin-term-link">episcopus</a>
+          <div class="transliteration">cf. <span class="greek">ἐπίσκοπος</span></div>
+          <div class="english-meaning">Bishop · Overseer</div>
+          <p class="pillar-explanation">
+            For Cyprian the bishop is the visible center of the local Church's unity. Each
+            <em>episcopus</em> holds the office in its fullness, and all bishops together
+            constitute the one episcopate held <em>in solidum</em> — as a single undivided trust.
+            Outside that episcopal communion there is no ecclesial life.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-cathedra-petri" class="latin-term latin-term-link">cathedra Petri</a>
+          <div class="transliteration">Tertullian → Cyprian → Leo</div>
+          <div class="english-meaning">Chair of Peter</div>
+          <p class="pillar-explanation">
+            The "chair of Peter" — the apostolic seat Christ promised to Peter, and for Cyprian
+            the figure of an episcopate grounded on a single rock. Whether this rock is Rome
+            specifically or every valid bishop's chair as participating in the one Petrine
+            commission has been read differently East and West; Orthodox reception typically
+            takes the latter reading, with every bishop sharing equally in the Petrine charge.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-lapsi" class="latin-term latin-term-link">lapsi</a>
+          <div class="transliteration">the Decian crisis</div>
+          <div class="english-meaning">The Lapsed · The Fallen</div>
+          <p class="pillar-explanation">
+            Those who denied the faith under the Decian persecution — by sacrificing, by purchasing
+            false certificates, or by complicity. Cyprian's answer to their readmission — visible
+            penance, mediated by the bishop, proportioned to the fall — becomes the enduring
+            Western shape of reconciliation after serious post-baptismal sin.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-extra-ecclesiam-nulla-salus" class="latin-term latin-term-link long">extra ecclesiam nulla salus</a>
+          <div class="transliteration">Epistle 72.21</div>
+          <div class="english-meaning">No Salvation Outside the Church</div>
+          <p class="pillar-explanation">
+            Cyprian's famous dictum — addressed, originally, to schismatics who claimed saving
+            grace apart from communion with their bishop. The formula has had a long and contested
+            reception in both East and West; read in context it is less a verdict on individuals
+            than a claim about where the Church's visible life and sacraments are to be found.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <div class="quote-latin">Habere non potest Deum patrem qui ecclesiam non habet matrem.</div>
+      <p class="quote-text">
+        "He cannot have God as Father who does not have the Church as Mother."
+      </p>
+      <div class="quote-source">— On the Unity of the Church 6</div>
+    </div>
+
+    <!-- Why Cyprian Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Cyprian Matters Today</h2>
+      <p class="section-text">
+        Cyprian hands the Orthodox East and the Latin West a shared grammar for thinking about the
+        Church as a visible communion of local churches, each gathered around its bishop, all bound
+        together in the one episcopate. Modern Orthodox eucharistic ecclesiology — as developed by
+        Afanasiev, Zizioulas, and the Russian theologians before them — draws heavily on this
+        Cyprianic grammar. The local church, gathered around its bishop at the Eucharist, is the
+        whole Church, and the bishops together are the collegial sign of the one Catholic Church.
+      </p>
+      <p class="section-text">
+        His pastoral theology of the lapsed still speaks. The argument with both laxism and
+        rigorism — that the Church neither forgives cheaply nor withholds forgiveness indefinitely,
+        but restores through visible penance proportioned to the fall — is the template the Church
+        still uses. Post-baptismal sin does not annul baptism, but neither does baptism leave no
+        subsequent work to do. The bishop's role in reconciliation is not legal fiction; it is the
+        visible form of the Church receiving her wounded members back into herself.
+      </p>
+      <p class="section-text">
+        The complications in Cyprian's reception are worth naming honestly. His dispute with Rome
+        over the baptism of heretics ended, in the West, with Rome's position prevailing; but
+        Cyprian's principle — that valid sacraments are given within the one Church — lives on in
+        Orthodox canonical practice, especially in Russian tradition's reception of certain groups
+        by baptism rather than chrismation. His formula <em>extra ecclesiam nulla salus</em> has
+        been read in maximal and minimal senses across the centuries; the pastoral and theological
+        work of weighing what it rightly means continues. What does not waver is the seriousness
+        with which Cyprian took the Church's visible communion — and his willingness, at Curubis
+        in 258, to die for what he had taught.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="tertullian.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Tertullian</div>
+          <div class="related-desc">The earlier African rhetor whose Latin theological vocabulary Cyprian inherits and extends.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-episcopus" class="related-link">
+          <span class="related-icon">E</span>
+          <div class="related-title latin">episcopus</div>
+          <div class="related-desc">Cyprian's signature term — the bishop as the visible center of the local Church.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-2.5" class="related-link">
+          <span class="related-icon">L</span>
+          <div class="related-title">Phase 2.5 Lexicon</div>
+          <div class="related-desc">The Latin vocabulary of Tertullian and Cyprian — Trinitarian, sacramental, ecclesial.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Cyprian is Phase 2.5: Week 8.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk === 8) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
