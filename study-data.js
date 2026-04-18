@@ -28,7 +28,7 @@
 //
 // Dependencies: lexicon-data.js (for LEXICON_ENTRIES global).
 // ==================================================================
-// build: 2026-04-18T01:30:00Z
+// build: 2026-04-18T01:55:47Z
 
 // ==================================================================
 // WEEK_DATA — canonical 40-week syllabus
@@ -1459,8 +1459,8 @@ function formatPsalmsDisplay(total) {
 // ==================================================================
 const FATHER_PAGES = {
   'Ignatius of Antioch': 'father-cards/ignatius-of-antioch.html',
-  'Polycarp of Smyrna': 'father-cards/polycarp-of-smyrna.html'
-  // 'Clement of Rome': 'clement-of-rome.html',
+  'Polycarp of Smyrna': 'father-cards/polycarp-of-smyrna.html',
+  'Clement of Rome': 'father-cards/clement-of-rome.html'
   // ...add as pages are built
 };
 
