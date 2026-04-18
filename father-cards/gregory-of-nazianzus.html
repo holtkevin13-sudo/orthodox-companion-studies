@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-18T03:27:59Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gregory of Nazianzus — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Gregory of Nazianzus — Orthodox Companion Studies">
+<meta property="og:description" content="The Theologian — whose Five Theological Orations at Constantinople fixed the Orthodox grammar of the Trinity and whose Letter 101 to Cledonius established the soteriological logic of the Incarnation.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Gregory of Nazianzus (c. 329 – 390 AD) — Cappadocian Father, brief Archbishop of Constantinople, and the only Father besides John the Evangelist honored in Orthodox tradition as 'the Theologian.' Author of the Five Theological Orations, the Festal Orations, and the Letters to Cledonius against Apollinarius.">
+<meta name="keywords" content="Gregory of Nazianzus, Gregory the Theologian, Cappadocian Fathers, Five Theological Orations, Letter 101, Apollinarius, Theology, Theologos, Schesis, Aproslepton, Katharsis, Trinity, Christology, Orthodox Theology">
+<meta name="author" content="Orthodox Companion Studies">
+
+<!-- Typography: Cormorant Garamond (English) + Gentium Plus (Greek) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 17px; scroll-behavior: smooth; }
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #2a2620;
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: #3a3228;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e8ddc8;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back nav */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.5rem 0 0.8rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover { color: #1a3a5c; }
+
+/* Hero */
+.hero {
+  padding: 1rem 0 3rem;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.phase-context {
+  font-variant: small-caps;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.current-focus-pill {
+  display: inline-block;
+  padding: 0.25rem 0.85rem;
+  background: #D4AF37;
+  color: #3a3228;
+  border-radius: 12px;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-left: 0.6rem;
+  vertical-align: middle;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #3a3228;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.3rem;
+}
+
+.hero-epithet {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+}
+
+.hero-meta {
+  font-size: 1rem;
+  font-style: italic;
+  color: #6b5d4a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin: 0 auto;
+  color: #2a2620;
+  line-height: 1.7;
+}
+
+/* Main sections */
+.section {
+  margin-bottom: 3rem;
+}
+.section-text {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+.section-text:last-child { margin-bottom: 0; }
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.stat-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-value {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  line-height: 1;
+}
+.stat-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #6b5d4a;
+  margin-top: 0.5rem;
+}
+
+/* Works grid */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.work-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin-bottom: 0.35rem;
+}
+.work-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #8a6d1f;
+  margin-bottom: 0.7rem;
+}
+.work-description {
+  font-size: 0.98rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Theological pillars */
+.theology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.theology-pillar {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #D4AF37;
+  border-radius: 4px;
+  padding: 1.3rem;
+}
+.theology-pillar .greek-term {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.7rem;
+  color: #1a3a5c;
+  font-weight: 400;
+  line-height: 1.2;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.theology-pillar .greek-term-link:hover {
+  color: #8a6d1f;
+  text-decoration: underline;
+  text-decoration-color: rgba(212, 175, 55, 0.6);
+  text-underline-offset: 0.2em;
+}
+.theology-pillar .greek-term.long {
+  font-size: 1.4rem;
+}
+.theology-pillar .transliteration {
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+  margin-top: 0.1rem;
+}
+.theology-pillar .english-meaning {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin: 0.3rem 0 0.8rem;
+}
+.theology-pillar .pillar-explanation {
+  font-size: 0.96rem;
+  color: #3a3228;
+  line-height: 1.6;
+}
+
+/* Featured quote */
+.quote-section {
+  margin: 2.5rem 0;
+  padding: 2rem;
+  background: #fffdf7;
+  border-left: 4px solid #D4AF37;
+  border-radius: 4px;
+  text-align: center;
+}
+.quote-text {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #3a3228;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
+}
+.quote-source {
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-size: 0.82rem;
+  color: #8a6d1f;
+}
+
+/* Related resources */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.related-link {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+.related-link:hover {
+  border-color: #D4AF37;
+  transform: translateY(-1px);
+}
+.related-icon {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.5rem;
+  color: #1a3a5c;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+.related-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #3a3228;
+  margin-bottom: 0.3rem;
+}
+.related-title.greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.2rem;
+}
+.related-desc {
+  font-size: 0.88rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Return to top */
+.return-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1a3a5c;
+  color: #faf6ed;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.return-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+.return-to-top:hover { transform: translateY(-2px); }
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 16px; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-epithet { font-size: 1.15rem; }
+  .section-title { font-size: 1.35rem; }
+  .quote-text { font-size: 1.1rem; }
+  .container { padding: 0 1rem; }
+  .return-to-top { bottom: 1rem; right: 1rem; }
+  .theology-pillar .greek-term.long { font-size: 1.2rem; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.8rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="../father-cards-index.html" class="back-nav">← Father Cards</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+      <g fill="#D4AF37">
+        <rect x="46" y="8" width="8" height="104"/>
+        <rect x="32" y="20" width="36" height="6"/>
+        <rect x="22" y="42" width="56" height="8"/>
+        <polygon points="28,88 72,78 72,86 28,96"/>
+      </g>
+    </svg>
+    <div class="phase-context">
+      Phase 6 · Gregory Nazianzen · Weeks 18–19
+      <span class="current-focus-pill" id="current-focus-pill" style="display: none;">Currently Studying</span>
+    </div>
+    <h1 class="hero-title">Gregory of Nazianzus</h1>
+    <div class="hero-epithet">Γρηγόριος ὁ Θεολόγος · The Theologian</div>
+    <div class="hero-meta">c. 329 – 390 AD · Cappadocian Father and Archbishop of Constantinople</div>
+    <p class="hero-description">
+      The orator, poet, and theologian of the Cappadocian trio — lifelong friend of Basil,
+      briefly Archbishop of Constantinople at the very moment the Church settled her
+      Trinitarian confession, and the only Father besides John the Evangelist (and later
+      Symeon the New Theologian) honored in Orthodox tradition as <em>ὁ Θεολόγος</em>,
+      "The Theologian." His <em>Five Theological Orations</em>, preached at Constantinople in
+      380, fix the Orthodox grammar for speaking of the Trinity.
+    </p>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Overview -->
+    <section class="section">
+      <h2 class="section-title">Who Was Gregory?</h2>
+      <p class="section-text">
+        Gregory was born around 329 AD at the family estate of Arianzum near the small Cappadocian
+        town of Nazianzus. His father, also Gregory, was a convert from a Jewish-pagan syncretic
+        sect and had become bishop of Nazianzus; his mother Nonna, his younger brother Caesarius
+        (a court physician), and his sister Gorgonia are all commemorated as saints. He was sent
+        abroad for his education — first to Caesarea Cappadocia, then to Caesarea in Palestine,
+        then to Alexandria, and finally to Athens, where he studied rhetoric and philosophy for
+        almost a decade. It was at Athens that he met Basil. The friendship that began there — two
+        young Cappadocians who, as Gregory later wrote in his funeral oration for Basil, "seemed
+        to share one soul inhabiting two bodies" — became the defining relationship of his life.
+      </p>
+      <p class="section-text">
+        Gregory was reluctant about ordained ministry in a way Basil never was. Baptized only in
+        his thirties, he wrote the first treatise in the Christian tradition on the difficulty of
+        the priestly office, <em>Oration 2 On the Priesthood</em> — an immense text on the
+        pastor's duty to purify himself before purifying others, composed after he had fled his
+        own ordination and then returned. When Basil in 372 consecrated him bishop of Sasima —
+        a tiny trafficked crossroads Gregory scornfully described as "a wholly horrid little
+        place" — the act strained their friendship; Gregory never actually served there,
+        assisting his elderly father at Nazianzus instead. After his father's death in 374 he
+        retreated to monastic solitude at Seleucia for several years.
+      </p>
+      <p class="section-text">
+        In 379 the small Nicene community at Constantinople — reduced almost to a sect by decades
+        of Arian imperial patronage — invited him to come and preach. From a private chapel he
+        called <em>Anastasia</em> ("Resurrection"), Gregory delivered the homilies that would
+        become the <em>Five Theological Orations</em> (Or. 27–31) in the summer of 380. They
+        rebuilt Nicene orthodoxy in the capital city. When Theodosius I entered Constantinople
+        later that year with an edict mandating Nicene Christianity, Gregory was installed as
+        bishop. He presided at the Council of Constantinople in 381 after the death of Meletius
+        of Antioch. But canonical objections — he had been consecrated for Sasima, not
+        Constantinople — combined with ecclesial politics to push him out, and within weeks he
+        resigned. He retired to Arianzum and spent his last years in prayer, writing, and
+        composing some of the most remarkable autobiographical poetry in the patristic corpus.
+        He died around 390 AD. The Orthodox Church commemorates him on January 25.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Theological Orations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">45</div>
+          <div class="stat-label">Total Orations</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">249</div>
+          <div class="stat-label">Surviving Letters</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">380</div>
+          <div class="stat-label">Year of the Five Orations</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Major Works -->
+    <section class="section">
+      <h2 class="section-title">Major Works</h2>
+      <p class="section-text">
+        Gregory's surviving corpus is the most literarily rich of any Greek Father of his century:
+        orations, letters, and a substantial body of Greek hexameter and iambic poetry. Three
+        groups of writings anchor his theological legacy.
+      </p>
+      <div class="works-grid">
+        <div class="work-card">
+          <h3 class="work-title">Five Theological Orations</h3>
+          <div class="work-greek">Λόγοι Θεολογικοί (Or. 27–31)</div>
+          <p class="work-description">
+            The Orthodox Church's classical statement on the Trinity, preached at the Anastasia
+            chapel in Constantinople during the summer of 380. The first oration is a preface on
+            the moral-ascetical prerequisites of theology (κάθαρσις). The second defines theology
+            itself. The third and fourth unfold the deity of the Son; the fifth, the deity of the
+            Holy Spirit. Together they formed the theological spine of the Council of
+            Constantinople (381) and gave Gregory his title: <em>ὁ Θεολόγος</em>.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Festal Orations</h3>
+          <div class="work-greek">Or. 38–41, 45</div>
+          <p class="work-description">
+            Oration 38 on the Nativity ("Christ is born, give glory! Christ from heaven, meet
+            him!"), Oration 39 on Theophany, Oration 40 on Holy Baptism, Oration 41 on Pentecost,
+            and Oration 45 on Pascha. These festal sermons set the Orthodox pattern for preaching
+            at the great feasts, and large sections have passed directly into the hymnography of
+            the Byzantine rite. Oration 38 in particular is read at Orthros of the Nativity to
+            this day.
+          </p>
+        </div>
+        <div class="work-card">
+          <h3 class="work-title">Letters 101 & 102 to Cledonius</h3>
+          <div class="work-greek">Ἐπιστολαὶ πρὸς Κληδόνιον</div>
+          <p class="work-description">
+            Two dense letters composed around 381–383 against the Christology of Apollinarius of
+            Laodicea, who had denied Christ a human rational soul. Letter 101 contains Gregory's
+            most famous theological formula — <em>what is not assumed is not healed</em> — the
+            axiom that fixes soteriology to Christology and requires a whole Christ for a whole
+            salvation. The letters are the direct precursor of the Christological work of Cyril
+            and the Chalcedonian settlement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theological Pillars -->
+    <section class="section">
+      <h2 class="section-title">Theological Pillars</h2>
+      <p class="section-text">
+        Four Greek terms carry the distinctive weight of Gregory's theology. The first two are
+        Trinitarian, the third Christological, the fourth ascetical — but for Gregory these are
+        not separate departments. Theology is one reality: the purified soul's speech about the
+        triune God who has assumed us wholly in Christ.
+      </p>
+      <div class="theology-grid">
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-theologos" class="greek-term greek-term-link">Θεολόγος</a>
+          <div class="transliteration">Theologos</div>
+          <div class="english-meaning">The Theologian</div>
+          <p class="pillar-explanation">
+            The epithet applied in Orthodox tradition to only three figures: John the Evangelist,
+            Gregory of Nazianzus, and Symeon the New Theologian. That Gregory alone among the
+            post-apostolic Fathers receives this title marks the degree to which his treatment
+            of God's triune being in the <em>Five Theological Orations</em> became the Orthodox
+            grammar for speaking of God.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-schesis" class="greek-term greek-term-link">σχέσις</a>
+          <div class="transliteration">schesis</div>
+          <div class="english-meaning">Relation · Relationship</div>
+          <p class="pillar-explanation">
+            What distinguishes the three hypostases of the Trinity from one another, Gregory
+            argues, is not their essence (one) nor their activity (one) but their mutual
+            <em>σχέσεις</em>: the Father is Father only in relation to the Son; the Son is Son
+            only in relation to the Father; the Spirit proceeds from the Father. Trinitarian
+            distinction is relational at root — and therefore neither divides the divine essence
+            nor reduces the three to modes of the one.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-aproslepton" class="greek-term greek-term-link">ἀπρόσληπτον</a>
+          <div class="transliteration">aproslēpton</div>
+          <div class="english-meaning">Unassumed · Not Taken Up</div>
+          <p class="pillar-explanation">
+            Against Apollinarius, who denied Christ a human rational soul, Gregory lays down the
+            decisive axiom of Orthodox Christology: <em>τὸ γὰρ ἀπρόσληπτον, ἀθεράπευτον</em> —
+            "what is not assumed is not healed" (<em>Letter 101.5</em>). Christ's saving work
+            reaches every dimension of human nature precisely because he assumed every dimension.
+            No half-Incarnation could save a whole humanity.
+          </p>
+        </div>
+        <div class="theology-pillar">
+          <a href="../greek-lexicon-index.html#term-katharsis" class="greek-term greek-term-link">κάθαρσις</a>
+          <div class="transliteration">katharsis</div>
+          <div class="english-meaning">Purification · Cleansing</div>
+          <p class="pillar-explanation">
+            The opening move of the first Theological Oration: one must be purified before
+            speaking of God, and even then one must speak with fear (<em>Or. 27.3</em>).
+            Theological speech without <em>κάθαρσις</em> corrupts both speaker and hearer.
+            The principle grounds a long Orthodox tradition joining moral-ascetical discipline to
+            theological competence — you cannot separate how one lives from what one may rightly
+            say about God.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <div class="quote-section">
+      <p class="quote-text">
+        "What is not assumed is not healed."
+      </p>
+      <div class="quote-source">— Letter 101.5 to Cledonius</div>
+    </div>
+
+    <!-- Why Gregory Matters Today -->
+    <section class="section">
+      <h2 class="section-title">Why Gregory Matters Today</h2>
+      <p class="section-text">
+        Gregory is the theologian whose vocabulary Orthodox Christians use whenever they speak of
+        the Trinity in anything beyond the barest terms. His account of the three hypostases as
+        relational — distinguished not by essence or activity but by their mutual
+        <em>σχέσεις</em> — is the grammar every later Trinitarian theology (including Western
+        scholastic thought) picks up and works with. His consolidation of what Basil had begun
+        around <em>οὐσία</em> and <em>ὑπόστασις</em> made possible the 381 creed, and through
+        that creed, the shared confession of all historic Christians.
+      </p>
+      <p class="section-text">
+        His Christological dictum is equally foundational. "What is not assumed is not healed"
+        fixes the logic that every later Christological controversy — Nestorian, monophysite,
+        monothelite — has to navigate. If Christ did not assume a human mind, the mind is
+        unhealed; if he did not assume a human will, the will is unhealed. Maximus the Confessor,
+        in his seventh-century fight against monotheletism, will press exactly this Gregorian
+        premise all the way through. The axiom is still operative in every serious modern account
+        of the Incarnation.
+      </p>
+      <p class="section-text">
+        But Gregory's witness is not only doctrinal. He is the patristic teacher of a connection
+        Orthodoxy has never let go of: the connection between theology and spiritual life.
+        Theology is not a skill; it is the purified soul's speech about God. To theologize
+        without <em>κάθαρσις</em>, he says, is to corrupt both the speaker and the hearer. This
+        has immense implications for how Orthodox Christianity understands theological education
+        — why the monk and the pastor have some claim to theology that the credentialed
+        intellectual alone does not. The academic theologian who is not praying, Gregory suggests,
+        is doing something other than theology. That critique still stings, and it still guides.
+      </p>
+    </section>
+
+    <!-- Related Resources -->
+    <section class="section">
+      <h2 class="section-title">Explore Related Resources</h2>
+      <div class="related-grid">
+        <a href="basil-the-great.html" class="related-link">
+          <span class="related-icon">☩</span>
+          <div class="related-title">Basil the Great</div>
+          <div class="related-desc">Gregory's lifelong friend from their student days at Athens — the other half of the Cappadocian partnership.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#term-theologos" class="related-link">
+          <span class="related-icon">Θ</span>
+          <div class="related-title greek">Θεολόγος</div>
+          <div class="related-desc">Gregory's unique title — "The Theologian," shared only with John the Evangelist and Symeon the New Theologian.</div>
+        </a>
+        <a href="../greek-lexicon-index.html#phase-6" class="related-link">
+          <span class="related-icon">Λ</span>
+          <div class="related-title">Phase 6 Lexicon</div>
+          <div class="related-desc">The Gregorian vocabulary of Trinity, relation, kenōsis, and purification.</div>
+        </a>
+        <a href="../patristics-dashboard.html" class="related-link">
+          <span class="related-icon">◆</span>
+          <div class="related-title">Current Studies</div>
+          <div class="related-desc">Return to your patristic formation dashboard.</div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<button class="return-to-top" id="return-to-top" aria-label="Return to top">↑</button>
+
+<script src="../lexicon-data.js"></script>
+<script src="../study-data.js"></script>
+<script>
+// Show "Currently Studying" pill if the user is in this Father's phase weeks.
+// Gregory of Nazianzus is Phase 6: Weeks 18–19.
+document.addEventListener('DOMContentLoaded', function() {
+  const pill = document.getElementById('current-focus-pill');
+  if (pill && typeof STUDY_STATE !== 'undefined') {
+    const wk = STUDY_STATE.currentWeek;
+    if (wk >= 18 && wk <= 19) pill.style.display = 'inline-block';
+  }
+
+  // Return-to-top behavior
+  const btn = document.getElementById('return-to-top');
+  if (btn) {
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.pageYOffset > 400);
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
