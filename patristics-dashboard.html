@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T21:39:52Z -->
+<!-- build: 2026-04-18T23:43:39Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -458,6 +458,115 @@ em, i { font-style: italic; }
   font-size: 0.88rem;
   font-weight: 400;
   font-style: italic;
+}
+
+/* "+N more terms" expander — secondary affordance below the focus-term row.
+   Native <details>/<summary> for accessibility; collapsed by default.
+   Suppressed at the template level when no non-focus terms are tagged to
+   the current phase (e.g. Integration phases 8 and 14 whose focus list is
+   itself a cross-phase review). */
+.focus-greek-more {
+  margin-top: 0.85rem;
+}
+
+.focus-greek-more-summary {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8a6d1f;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  list-style: none;
+  user-select: none;
+}
+
+/* Suppress the default disclosure triangle in every engine so we can
+   control the toggle glyph ourselves via ::before. */
+.focus-greek-more-summary::-webkit-details-marker { display: none; }
+.focus-greek-more-summary::marker { content: ''; }
+
+.focus-greek-more-summary::before {
+  content: '+';
+  display: inline-block;
+  width: 0.9em;
+  opacity: 0.7;
+}
+
+.focus-greek-more[open] .focus-greek-more-summary::before {
+  content: '−';
+}
+
+.focus-greek-more-summary:hover {
+  text-decoration: underline;
+}
+
+.focus-greek-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.focus-greek-more-pill {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.focus-greek-more-pill:hover {
+  border-color: #8a6d1f;
+  background: #fffaec;
+}
+
+.focus-greek-more-pill-head {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-weight: 600;
+  color: #1a3a5c;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Latin headwords: italic Cormorant, matching the focus-pill convention
+   (see .greek-term[data-language="latin"] above). */
+.focus-greek-more-pill[data-language="latin"] .focus-greek-more-pill-head {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+}
+
+.focus-greek-more-pill-trans {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin-top: 0.15rem;
+}
+
+.focus-greek-more-pill-gloss {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  color: #2a2620;
+  font-size: 0.85rem;
+  line-height: 1.25;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  .focus-greek-more-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .focus-greek-more-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .reading-time {
@@ -2483,23 +2592,34 @@ function phaseGreekHTML(phase) {
 
   // Use getPhaseTerms which merges PHASE_DATA[n].greek focus terms with
   // LEXICON_ENTRIES for the phase, returning the full enriched term set.
-  // For Phase 1 this means all 20 Apostolic Fathers entries instead of
-  // only the 4 short focus-term names.
+  // Focus terms (the curated short list anchoring primary daily study)
+  // are flagged isFocus: true; additional phase-tagged lexicon entries
+  // come back isFocus: false and render in the "+N more terms" expander.
   const terms = (typeof getPhaseTerms === 'function') ? getPhaseTerms(phase) : [];
   if (!terms.length) return '';
+
+  // Partition for the two-tier display: focus pills get the existing
+  // gold-accent treatment in the primary row; non-focus terms go into a
+  // collapsed <details> expander below. When moreTerms is empty — e.g.
+  // Integration phases 8 and 14 whose entire focus list is a cross-phase
+  // review and no lexicon entries are tagged to that phase directly —
+  // the expander is suppressed entirely (graceful degradation).
+  const focusTerms = terms.filter(t => t.isFocus);
+  const moreTerms  = terms.filter(t => !t.isFocus);
 
   const phaseLabel = phase.number !== undefined
     ? `Phase ${phase.number}: ${phase.name}`
     : phase.name;
 
-  // Each pill: Greek/Latin + English inline. Full definition appears as a
-  // native tooltip on hover (desktop) for scholarly reinforcement.
-  // Pills are clickable — they deep-link to the term's entry in the
-  // main lexicon via `lexiconAnchorFor()`. Landing highlight CSS on
-  // the lexicon page shows the user exactly where they arrived.
-  // data-language drives font styling (upright Gentium for Greek,
-  // italic Cormorant for Latin) per the Part 3 amendment.
-  const termPills = terms.map(t => {
+  // Focus pills — unchanged existing treatment. Greek/Latin + English
+  // inline. Full definition appears as a native tooltip on hover
+  // (desktop) for scholarly reinforcement. Pills are clickable — they
+  // deep-link to the term's entry in the main lexicon via
+  // `lexiconAnchorFor()`. Landing highlight CSS on the lexicon page
+  // shows the user exactly where they arrived. data-language drives
+  // font styling (upright Gentium for Greek, italic Cormorant for
+  // Latin) per the Part 3 amendment.
+  const termPills = focusTerms.map(t => {
     const greek = t.greek || '';
     const english = t.english || t.transliteration || '';
     const title = t.definition
@@ -2515,6 +2635,43 @@ function phaseGreekHTML(phase) {
     return `<a href="${href}" class="greek-term" data-language="${language}" title="${title}"><span class="greek-term-greek">${greek}</span>${englishHTML}</a>`;
   }).join('');
 
+  // Compact grid pills for the expander. Denser format than the focus
+  // pills: headword + transliteration (italic) + short English gloss,
+  // stacked vertically in a 140px-min auto-fill grid. Same
+  // lexiconAnchorFor() deep-link as focus pills, same language-aware
+  // font styling.
+  let moreHTML = '';
+  if (moreTerms.length > 0) {
+    const morePills = moreTerms.map(t => {
+      const greek = t.greek || '';
+      const trans = t.transliteration || '';
+      const english = t.english || '';
+      const href = (typeof lexiconAnchorFor === 'function')
+        ? lexiconAnchorFor(t)
+        : 'greek-lexicon-index.html';
+      const language = (t.language || 'greek').toLowerCase();
+      const title = t.definition
+        ? t.definition.replace(/"/g, '&quot;').replace(/\s+/g, ' ')
+        : (trans || english);
+      const transHTML = trans
+        ? `<div class="focus-greek-more-pill-trans">${trans}</div>`
+        : '';
+      const glossHTML = english
+        ? `<div class="focus-greek-more-pill-gloss">${english}</div>`
+        : '';
+      return `<a href="${href}" class="focus-greek-more-pill" data-language="${language}" title="${title}"><div class="focus-greek-more-pill-head">${greek}</div>${transHTML}${glossHTML}</a>`;
+    }).join('');
+
+    const moreLabel = `${moreTerms.length} more ${moreTerms.length === 1 ? 'term' : 'terms'}`;
+    moreHTML = `
+      <details class="focus-greek-more">
+        <summary class="focus-greek-more-summary">${moreLabel}</summary>
+        <div class="focus-greek-more-grid">
+          ${morePills}
+        </div>
+      </details>`;
+  }
+
   return `
     <div class="focus-greek">
       <div class="focus-greek-header">
@@ -2526,7 +2683,7 @@ function phaseGreekHTML(phase) {
       </div>
       <div class="focus-greek-terms">
         ${termPills}
-      </div>
+      </div>${moreHTML}
     </div>
   `;
 }
