@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T00:30:00Z -->
+<!-- build: 2026-04-18T19:34:58Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1388,6 +1388,167 @@ em, i { font-style: italic; }
 .study-tool-link:hover {
   background: #2a4a6c;
 }
+
+/* ============================================================
+   SESSION CONTROLS — BUG 2 FIX
+   Byzantine palette (navy/porphyry/gold/cream), weight cap 600,
+   44px minimum touch targets on all interactive elements.
+   ============================================================ */
+.session-controls-section {
+  margin: 3rem 0 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 253, 247, 0.6);
+  border: 1px solid #e8ddc8;
+  border-radius: 8px;
+}
+.session-controls-header {
+  margin-bottom: 1.5rem;
+}
+.session-controls-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.25;
+}
+.session-controls-subhead {
+  font-size: 0.95rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Primary: safe, everyday action */
+.session-controls-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.btn-reset-week {
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+  background: #1a3a5c;
+  color: #fffdf7;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.btn-reset-week:hover {
+  background: #2a4a6c;
+}
+.btn-reset-week:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.session-controls-hint {
+  font-size: 0.9rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Danger zone: collapsed by default, warning-forward when open */
+.session-controls-danger {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e8ddc8;
+  padding-top: 1.25rem;
+}
+.session-controls-danger summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6b2a3a;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  user-select: none;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.session-controls-danger summary::-webkit-details-marker { display: none; }
+.session-controls-danger summary:hover {
+  background: rgba(107, 42, 58, 0.06);
+}
+.session-controls-danger summary:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.session-controls-danger .danger-marker {
+  color: #8a3a4a;
+  font-size: 1.1rem;
+  font-variant: normal;
+  letter-spacing: 0;
+}
+.session-controls-danger[open] summary {
+  margin-bottom: 0.75rem;
+}
+.danger-body {
+  padding: 1rem 1rem 0.5rem 1rem;
+  background: rgba(107, 42, 58, 0.04);
+  border-left: 3px solid #8a3a4a;
+  border-radius: 0 6px 6px 0;
+}
+.danger-warning {
+  font-size: 0.95rem;
+  color: #4a2028;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+.danger-warning strong {
+  font-weight: 600;
+  color: #6b2a3a;
+}
+.btn-reset-all {
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+  background: #8a3a4a;
+  color: #fffdf7;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.btn-reset-all:hover {
+  background: #6b2a3a;
+}
+.btn-reset-all:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.danger-hint {
+  font-size: 0.85rem;
+  color: #6b5d4a;
+  font-style: italic;
+  margin-top: 0.6rem;
+}
+.danger-hint code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  background: rgba(26, 58, 92, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: #1a3a5c;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .session-controls-section { padding: 1.25rem; }
+  .session-controls-primary { flex-direction: column; align-items: stretch; }
+  .btn-reset-week, .btn-reset-all { width: 100%; }
+}
 </style>
 </head>
 
@@ -1528,6 +1689,38 @@ em, i { font-style: italic; }
         <a href="bible-reader.html" class="study-tool-link">Open Bible Reader →</a>
       </div>
     </div>
+  </section>
+
+  <!-- Session Controls — BUG 2 FIX
+       Safe, everyday action (Reset This Week) sits in primary UI.
+       Destructive action (Reset All Progress) is hidden behind a collapsed
+       <details> with warning copy and requires a second typed confirmation. -->
+  <section class="session-controls-section" aria-labelledby="session-controls-heading">
+    <div class="session-controls-header">
+      <h2 class="session-controls-heading" id="session-controls-heading">Session Controls</h2>
+      <div class="session-controls-subhead">Reset your progress for this week, or — carefully — across the whole course</div>
+    </div>
+
+    <div class="session-controls-primary">
+      <button type="button" class="btn-reset-week" id="btn-reset-week">Reset This Week</button>
+      <div class="session-controls-hint">Unchecks all tasks for Week <span id="reset-week-label">—</span>. Previous weeks are not affected.</div>
+    </div>
+
+    <details class="session-controls-danger">
+      <summary>
+        <span class="danger-marker" aria-hidden="true">⚠</span>
+        <span class="danger-summary-text">Advanced — Danger Zone</span>
+      </summary>
+      <div class="danger-body">
+        <p class="danger-warning">
+          The control below permanently deletes your entire study archive across all
+          40 weeks — every completed week, every date stamp. <strong>This cannot be undone.</strong>
+          Use only if you truly want to start the course over from the beginning.
+        </p>
+        <button type="button" class="btn-reset-all" id="btn-reset-all">Reset All Progress</button>
+        <div class="danger-hint">Requires a second confirmation, then typing <code>RESET ALL</code> exactly.</div>
+      </div>
+    </details>
   </section>
 
   <!-- Big Picture Overview -->
@@ -2197,12 +2390,53 @@ class StudyTaskManager {
     }
   }
 
+  // BUG 1 FIX — Pure class + pill updater for a single day card.
+  // Owns only the visual status state (CSS classes on the card, class + text
+  // on the .day-status pill). Does NOT touch progress count text or animation;
+  // those are updateDayState's concern. Kept separate so either can be called
+  // independently and neither can regress the other.
+  //
+  // Always-remove set covers every status class this function may have ever
+  // applied (including day-rest and the legacy day-complete), so the card
+  // always starts from a clean slate before the new status is applied.
+  updateDayCardStatus(dayIdx) {
+    const card = document.getElementById(`day-${dayIdx}`);
+    if (!card) return;
+    const statusDiv = card.querySelector('.day-status');
+
+    const status = getDayStatus(dayIdx);
+
+    // Map: status -> [card-classes-to-add, pill-class, pill-label]
+    const map = {
+      completed: ['completed',          'completed', 'Completed'],
+      current:   ['current',            'current',   'Current'],
+      missed:    ['day-missed',         'missed',    'Needs Attention'],
+      upcoming:  ['upcoming',           'upcoming',  'Upcoming'],
+      rest:      ['day-rest upcoming',  'rest',      'Rest Day']
+    };
+    const entry = map[status] || map.upcoming;
+    const cardClasses = entry[0];
+    const pillClass   = entry[1];
+    const pillLabel   = entry[2];
+
+    // Strip every status class this function could ever apply, then reapply.
+    card.classList.remove(
+      'completed', 'current', 'upcoming',
+      'day-missed', 'day-rest', 'day-complete'
+    );
+    cardClasses.split(' ').forEach(c => { if (c) card.classList.add(c); });
+
+    if (statusDiv) {
+      statusDiv.className = `day-status ${pillClass}`;
+      statusDiv.textContent = pillLabel;
+    }
+  }
+
   updateDayState(dayIdx) {
     const card = document.getElementById(`day-${dayIdx}`);
     if (!card) return;
     const cbs = card.querySelectorAll('.task-checkbox');
     const progress = document.getElementById(`progress-day-${dayIdx}`);
-    const statusDiv = card.querySelector('.day-status');
     if (!cbs.length && dayIdx !== 6) return;
 
     const total = cbs.length;
@@ -2211,24 +2445,10 @@ class StudyTaskManager {
       progress.textContent = (done === total && total > 0) ? 'Day complete' : `${done} of ${total} tasks complete`;
     }
 
-    // Remove all state classes, then reapply based on current state
-    card.classList.remove('completed', 'current', 'upcoming', 'day-missed');
-
-    const status = getDayStatus(dayIdx);
-    const map = {
-      completed: ['completed', 'Completed'],
-      current: ['current', 'Current'],
-      missed: ['day-missed', 'Needs Attention'],
-      upcoming: ['upcoming', 'Upcoming'],
-      rest: ['day-rest upcoming', 'Rest Day']
-    };
-    const [cls, label] = map[status] || map.upcoming;
-    cls.split(' ').forEach(c => card.classList.add(c));
-    if (statusDiv) {
-      const statusClass = status === 'missed' ? 'missed' : status === 'rest' ? 'rest' : status === 'current' ? 'current' : status === 'completed' ? 'completed' : 'upcoming';
-      statusDiv.className = `day-status ${statusClass}`;
-      statusDiv.textContent = label;
-    }
+    // Delegate class + pill management to the dedicated updater.
+    // This is the line that was effectively missing/broken: the card's
+    // CSS class was not being recomputed when checkboxes changed.
+    this.updateDayCardStatus(dayIdx);
 
     if (done === total && total > 0) {
       card.style.transform = 'scale(1.02)';
@@ -2375,8 +2595,46 @@ class StudyTaskManager {
     location.reload();
   }
 
-  resetProgress() {
-    if (!confirm('Reset ALL study progress? This clears checkboxes and completion flags across all 40 weeks.')) return;
+  // BUG 2 FIX — Safe, everyday reset: clears only the current week's
+  // progress keys. Other weeks' archives are preserved. Single confirm.
+  resetCurrentWeek() {
+    const week = STUDY_STATE.currentWeek;
+    if (!confirm(`Reset progress for Week ${week}? This will uncheck all tasks for this week only. Previous weeks are not affected.`)) return;
+
+    // Clear only the four keys scoped to the current week.
+    localStorage.removeItem(`studyProgress_week${week}`);
+    localStorage.removeItem(`week${week}Complete`);
+    localStorage.removeItem(`week${week}CompleteDate`);
+    localStorage.removeItem(`weekStart_week${week}`);
+
+    // Reload so the dashboard re-renders from a clean state for this week.
+    // studyCurrentWeek is preserved, so we stay on the same week.
+    location.reload();
+  }
+
+  // BUG 2 FIX — Guarded, whole-archive reset. Two-step confirmation:
+  // first a standard confirm(), then a prompt() that requires the exact
+  // string "RESET ALL" (case-sensitive). Any cancel or mismatch aborts
+  // with zero state changes. Preserves non-week localStorage keys
+  // (enrollment, preferences, anything not in the week-scoped sweep).
+  resetAllProgress() {
+    const firstOk = confirm(
+      'Reset ALL progress across all 40 weeks? This will permanently delete ' +
+      'your entire study archive, including every completed week. ' +
+      'This action cannot be undone. Continue?'
+    );
+    if (!firstOk) return;
+
+    const typed = prompt(
+      'To confirm, type exactly:  RESET ALL\n\n' +
+      '(case-sensitive; anything else will cancel)'
+    );
+    if (typed !== 'RESET ALL') {
+      alert('Reset cancelled — archive preserved.');
+      return;
+    }
+
+    // Canonical sweep — same set of keys the original resetProgress() used.
     for (let i = 1; i <= 40; i++) {
       localStorage.removeItem(`studyProgress_week${i}`);
       localStorage.removeItem(`week${i}Complete`);
@@ -2388,7 +2646,14 @@ class StudyTaskManager {
     localStorage.removeItem('studyProgress');
     localStorage.removeItem('week2Complete');
     localStorage.removeItem('weekCompleteDate');
+
     location.reload();
+  }
+
+  // Kept as a thin alias so any console users of window.resetStudyProgress()
+  // still hit the guarded all-weeks path rather than losing data silently.
+  resetProgress() {
+    this.resetAllProgress();
   }
 }
 
@@ -2404,7 +2669,25 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.removeItem('studyProgress');
   }
   window.studyTaskManager = new StudyTaskManager();
-  window.resetStudyProgress = () => window.studyTaskManager.resetProgress();
+  // Legacy alias — points at the guarded all-weeks path, not the safe one.
+  window.resetStudyProgress = () => window.studyTaskManager.resetAllProgress();
+  // New: explicit bindings for the two split reset actions.
+  window.resetCurrentWeek   = () => window.studyTaskManager.resetCurrentWeek();
+  window.resetAllProgress   = () => window.studyTaskManager.resetAllProgress();
+
+  // BUG 2 FIX — wire Session Controls buttons and populate the week label.
+  const resetWeekBtn   = document.getElementById('btn-reset-week');
+  const resetAllBtn    = document.getElementById('btn-reset-all');
+  const resetWeekLabel = document.getElementById('reset-week-label');
+  if (resetWeekLabel && typeof STUDY_STATE !== 'undefined') {
+    resetWeekLabel.textContent = STUDY_STATE.currentWeek;
+  }
+  if (resetWeekBtn) {
+    resetWeekBtn.addEventListener('click', () => window.studyTaskManager.resetCurrentWeek());
+  }
+  if (resetAllBtn) {
+    resetAllBtn.addEventListener('click', () => window.studyTaskManager.resetAllProgress());
+  }
 });
 </script>
 
