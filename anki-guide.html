@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-19T00:46:10Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Using Anki for Patristic Vocabulary — Orthodox Companion Studies</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta name="description" content="A guide to using the Patristic Lexicon Anki deck — how to install Anki, import the 285-term deck, and work it into daily review alongside the 40-week formation program.">
+<meta name="keywords" content="Anki, Patristic Lexicon, Orthodox Companion Studies, spaced repetition, patristic Greek, patristic Latin">
+
+<style>
+/* Typography — Cormorant Garamond (English) + Gentium Plus (Greek) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* CSS Reset & Orthodox Foundation */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  background:
+    radial-gradient(circle at top left, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  color: #2a2620;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* Greek text — Gentium Plus */
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+/* Academic small-caps on major section headings */
+.main-title, .section-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* Inline emphasis */
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header — canonical parchment hero matching Father cards + dashboard + lexicon */
+.hero {
+  background: linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  color: #2a2620;
+  padding: 2.5rem 0 3rem;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid #e8ddc8;
+}
+
+.back-nav {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  color: #6b5d4a;
+  padding: 0.4rem 0.9rem;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-style: italic;
+  transition: color 0.2s ease;
+}
+.back-nav:hover {
+  color: #1a3a5c;
+}
+.back-nav:focus-visible {
+  outline: 2px solid #1a3a5c;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-cross {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.35));
+}
+
+.greek-ornament {
+  font-size: 2rem;
+  color: #8a6d1f;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.4em;
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  opacity: 0.85;
+}
+
+.main-title {
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: #3a3228;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-size: 1.15rem;
+  color: #8a6d1f;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.02rem;
+  color: #2a2620;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Guide body — prose sections in a narrow reading column */
+.guide-body {
+  padding: 3rem 0 4rem;
+}
+
+.guide-section {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 10px;
+  padding: 2rem 2.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.section-title {
+  font-size: 1.4rem;
+  color: #1a3a5c;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.guide-section p {
+  margin-bottom: 0.9rem;
+  color: #2a2620;
+  font-size: 1.02rem;
+}
+.guide-section p:last-child { margin-bottom: 0; }
+
+.guide-section a {
+  color: #1a3a5c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 58, 92, 0.25);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.guide-section a:hover {
+  color: #6b1e2a;
+  border-bottom-color: rgba(107, 30, 42, 0.45);
+}
+
+/* Platform list — three-way grid for Desktop / Android / iOS */
+.platform-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0.5rem;
+}
+.platform {
+  background: #faf6ed;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 1rem 1.15rem;
+}
+.platform-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2a2620;
+  margin-bottom: 0.2rem;
+}
+.platform-price {
+  font-size: 0.88rem;
+  color: #8a6d1f;
+  font-style: italic;
+  margin-bottom: 0.45rem;
+  letter-spacing: 0.02em;
+}
+.platform-note {
+  font-size: 0.92rem;
+  color: #6b5d4a;
+  line-height: 1.55;
+}
+.platform-note a {
+  color: #1a3a5c;
+  border-bottom: 1px solid rgba(26, 58, 92, 0.2);
+}
+
+/* Ordered steps — used for import flow */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 0.8rem 0 0.3rem;
+}
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 2.6rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.65;
+  color: #2a2620;
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.9rem;
+  height: 1.9rem;
+  line-height: 1.9rem;
+  text-align: center;
+  border: 1px solid #D4AF37;
+  color: #8a6d1f;
+  border-radius: 50%;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #fffdf7;
+}
+
+/* Definition-style list for daily-use explanations */
+.terms {
+  margin: 0.8rem 0 0.3rem;
+}
+.terms dt {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  color: #1a3a5c;
+  margin-top: 0.75rem;
+  font-size: 1.02rem;
+}
+.terms dt:first-child { margin-top: 0; }
+.terms dd {
+  margin: 0.15rem 0 0.2rem 0;
+  color: #2a2620;
+  line-height: 1.6;
+}
+
+/* Inline code-like tokens (for Anki menu paths, tags, filenames) */
+.token {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: rgba(26, 58, 92, 0.06);
+  color: #1a3a5c;
+  padding: 0.08em 0.38em;
+  border-radius: 3px;
+  letter-spacing: 0.01em;
+}
+
+/* Closing download CTA — same gold-on-navy treatment as the dashboard button */
+.guide-cta {
+  text-align: center;
+  padding: 1rem 0 0;
+}
+.guide-cta-line {
+  font-size: 0.98rem;
+  color: #6b5d4a;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.guide-download {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  background: #D4AF37;
+  color: #1a3a5c;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+  box-sizing: border-box;
+  line-height: 1.4;
+  border-bottom: none;
+}
+.guide-download:hover {
+  background: #c4a028;
+  color: #1a3a5c;
+  border-bottom: none;
+}
+.guide-download:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Scroll progress indicator — thin gold bar at top */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #D4AF37 0%, #8a6d1f 100%);
+  z-index: 200;
+  transition: width 0.1s ease-out;
+  pointer-events: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .back-nav {
+    position: static;
+    display: inline-block;
+    margin: 0 0 1rem 0;
+  }
+  .hero {
+    padding: 1.75rem 0 2.25rem;
+  }
+  .main-title {
+    font-size: 1.9rem;
+  }
+  .guide-section {
+    padding: 1.5rem 1.35rem;
+  }
+  .guide-body {
+    padding: 2rem 0 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+  .platform-list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Scroll progress indicator — thin gold bar showing scroll position -->
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="container">
+    <a href="patristics-dashboard.html" class="back-nav">← Dashboard</a>
+
+    <div class="hero-content">
+      <svg class="hero-cross" viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg" aria-label="Orthodox Cross" role="img">
+        <g fill="#D4AF37">
+          <rect x="46" y="8" width="8" height="104"/>
+          <rect x="32" y="20" width="36" height="6"/>
+          <rect x="22" y="42" width="56" height="8"/>
+          <polygon points="28,88 72,78 72,86 28,96"/>
+        </g>
+      </svg>
+      <div class="greek-ornament">Α · Ω</div>
+      <h1 class="main-title">Using Anki for Patristic Vocabulary</h1>
+      <div class="subtitle">A companion guide to the 285-term lexicon deck</div>
+      <p class="description">
+        How to install Anki, import the Patristic Lexicon deck, and weave daily vocabulary review
+        into your 40-week formation — without it becoming another thing to dread.
+      </p>
+    </div>
+  </div>
+</header>
+
+<main class="guide-body">
+  <div class="container">
+
+    <section class="guide-section">
+      <h2 class="section-title">Why Anki</h2>
+      <p>
+        Anki is a free, open-source spaced-repetition application that has quietly become the
+        standard tool among seminarians, medical students, and language learners for the slow
+        work of committing a vocabulary to long-term memory. It has been under active development
+        for more than fifteen years, runs on every major platform, and costs nothing on desktop
+        and Android.
+      </p>
+      <p>
+        Orthodox Companion Studies uses Anki rather than building its own in-app flashcard feature
+        for two reasons. First, Anki is already better at this than anything we could build in a
+        reasonable timeframe — its review algorithm has been refined over years of real use.
+        Second, it lets us keep our engineering focus on formational depth: lexicon content,
+        Father card scholarship, biblical companion alignment. Anki owns the flashcard layer; we
+        own the patristic content.
+      </p>
+      <p>
+        The Patristic Lexicon deck is optional. If you are reading the Fathers in English and
+        absorbing the terms contextually, you can safely skip it. If you want the vocabulary to
+        become automatic — recognized at sight, recalled under pressure — daily Anki review is
+        the tool.
+      </p>
+    </section>
+
+    <section class="guide-section">
+      <h2 class="section-title">How to Get Anki</h2>
+      <p>
+        Anki runs on every platform. Start with the desktop application; the mobile apps sync
+        with it through a free AnkiWeb account.
+      </p>
+      <div class="platform-list">
+        <div class="platform">
+          <div class="platform-name">Desktop</div>
+          <div class="platform-price">Free — macOS, Windows, Linux</div>
+          <div class="platform-note">
+            Download from <a href="https://apps.ankiweb.net" target="_blank" rel="noopener">apps.ankiweb.net</a>.
+            This is where you will import the deck.
+          </div>
+        </div>
+        <div class="platform">
+          <div class="platform-name">AnkiDroid</div>
+          <div class="platform-price">Free — Android</div>
+          <div class="platform-note">
+            Install from the Google Play Store. Maintained by a separate open-source team from the
+            desktop app, but fully compatible.
+          </div>
+        </div>
+        <div class="platform">
+          <div class="platform-name">AnkiMobile</div>
+          <div class="platform-price">$25 one-time — iOS</div>
+          <div class="platform-note">
+            Optional. Revenue from AnkiMobile funds ongoing development of the free desktop and
+            Android apps. On iPhone or iPad, this is the only Anki app to trust.
+          </div>
+        </div>
+      </div>
+      <p>
+        An <strong>AnkiWeb</strong> account is free and lets your review progress sync across
+        devices. Recommended if you plan to review on both desktop and phone. Create one at
+        <a href="https://ankiweb.net" target="_blank" rel="noopener">ankiweb.net</a> and sign in
+        from each device.
+      </p>
+    </section>
+
+    <section class="guide-section">
+      <h2 class="section-title">Importing the Deck</h2>
+      <p>
+        The deck file is <span class="token">patristic-lexicon.apkg</span> — a single package
+        containing all 285 entries, card templates, and styling.
+      </p>
+      <ol class="steps">
+        <li>
+          Download <span class="token">patristic-lexicon.apkg</span> from the Study Tools section
+          on your <a href="patristics-dashboard.html">dashboard</a>. It will land in your
+          Downloads folder.
+        </li>
+        <li>
+          Double-click the file. Anki opens and imports the deck automatically. If double-click
+          does nothing, open Anki first and use <span class="token">File → Import</span>, then
+          select the file.
+        </li>
+        <li>
+          After import you will see <strong>Patristic Lexicon</strong> at the top level of your
+          deck list, with thirteen phase subdecks underneath (Phase 01 through Phase 13, with
+          Phase 02.5 sitting between 02 and 03 — the Tertullian and Cyprian Latin material).
+        </li>
+        <li>
+          If you are syncing: click <span class="token">Sync</span> once in desktop Anki. The
+          deck uploads to AnkiWeb and becomes available to pull down on your mobile device.
+        </li>
+      </ol>
+    </section>
+
+    <section class="guide-section">
+      <h2 class="section-title">Daily Review</h2>
+      <p>
+        Anki shows you a small batch of cards each day — new cards you have never seen, plus
+        older cards the algorithm has decided are due for review. You look at the front of each
+        card, try to recall the answer, click to flip, then rate your recall. The algorithm uses
+        your ratings to decide when to show the card again.
+      </p>
+      <dl class="terms">
+        <dt>Again</dt>
+        <dd>You did not recall it. The card returns within minutes.</dd>
+        <dt>Hard</dt>
+        <dd>You recalled it, but it was a struggle. The interval shrinks.</dd>
+        <dt>Good</dt>
+        <dd>You recalled it cleanly. Use this for most cards — it is the default.</dd>
+        <dt>Easy</dt>
+        <dd>Trivial recall. The interval grows quickly. Use sparingly; over-using Easy makes cards disappear for months and your memory suffers.</dd>
+      </dl>
+      <p>
+        Every lexicon entry generates two cards:
+      </p>
+      <dl class="terms">
+        <dt>Recognition</dt>
+        <dd>Greek or Latin headword on the front, English and full definition on the back. This is
+          the easier direction — appropriate for reading the Fathers.</dd>
+        <dt>Production</dt>
+        <dd>English gloss on the front, Greek or Latin headword on the back. Harder — appropriate
+          for actually writing or speaking the terms. If Production cards feel like grinding after
+          a week, you can suspend them in bulk (Browse → filter by card template
+          <span class="token">Production</span> → Suspend) and keep only Recognition.</dd>
+      </dl>
+      <p>
+        You can review the parent deck to see everything due across all phases, or drill into a
+        single phase subdeck — for example, reviewing only <strong>Phase 01</strong> during the
+        weeks you are reading the Apostolic Fathers. Both approaches work; both preserve the same
+        review history.
+      </p>
+      <p>
+        Tags are applied to every card: <span class="token">phase-1</span> through
+        <span class="token">phase-13</span> (including <span class="token">phase-2-5</span>),
+        <span class="token">language-greek</span> and <span class="token">language-latin</span>,
+        <span class="token">father-ignatius-of-antioch</span> and so on for each Father
+        (nineteen distinct), and <span class="token">pastoral-note</span> for the ten entries
+        that carry a pastoral framing in the lexicon. These let you build filtered decks for
+        targeted review — for instance, all Cyril of Alexandria terms, or all Latin terms, or
+        everything from Phase 10 at once.
+      </p>
+    </section>
+
+    <section class="guide-section">
+      <h2 class="section-title">When the Lexicon Grows</h2>
+      <p>
+        The Patristic Lexicon is a living reference. As new terms are added — the target is eight
+        hundred entries over time — the Anki deck is regenerated and reposted to the dashboard.
+        To update: download the new <span class="token">.apkg</span> and import it the same way
+        as the first time. Anki recognizes existing cards by a stable identifier and updates them
+        in place rather than duplicating; your review history for every term you have already
+        seen is preserved.
+      </p>
+      <p>
+        If you ever want to reset and start fresh, delete the deck in Anki
+        (<span class="token">right-click the deck → Delete</span>) before re-importing.
+      </p>
+    </section>
+
+    <section class="guide-cta">
+      <p class="guide-cta-line">Ready to start?</p>
+      <a href="patristic-lexicon.apkg" class="guide-download" download>Download Deck</a>
+    </section>
+
+  </div>
+</main>
+
+<script>
+// Scroll progress bar — matches greek-lexicon-index.html behavior.
+window.addEventListener('scroll', function() {
+  const bar = document.getElementById('scroll-progress');
+  if (bar) {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0;
+    bar.style.width = pct + '%';
+  }
+}, { passive: true });
+</script>
+
+</body>
+</html>
