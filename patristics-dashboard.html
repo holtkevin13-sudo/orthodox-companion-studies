@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-19T01:51:36Z -->
+<!-- build: 2026-04-19T02:14:23Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1209,11 +1209,17 @@ em, i { font-style: italic; }
     background: #ffffff !important;
     color: #000000 !important;
   }
-  /* Hide everything except required-reading and its print-only siblings */
+  /* Hide everything except required-reading and its print-only siblings.
+     NOTE: selector is `> div.container` (not `> .container`) so it matches
+     only the back-nav wrapper <div class="container"> and does NOT match
+     <main class="container">. With `> .container` (specificity 0,2,1) the
+     rule beat the `body.print-mode-reading-list main` unhide (0,1,2) and
+     blanked the print preview. Pinning to div.container leaves main
+     visible while still hiding the back-nav strip. */
   body.print-mode-reading-list header,
   body.print-mode-reading-list nav,
   body.print-mode-reading-list footer,
-  body.print-mode-reading-list > .container,
+  body.print-mode-reading-list > div.container,
   body.print-mode-reading-list .status-dashboard,
   body.print-mode-reading-list .status-section,
   body.print-mode-reading-list .today-focus,
@@ -2783,6 +2789,271 @@ em, i { font-style: italic; }
   .session-controls-primary { flex-direction: column; align-items: stretch; }
   .btn-reset-week, .btn-reset-all { width: 100%; }
 }
+
+/* ============================================================
+   ITEM 1 — Back-to-top button
+   Single-mechanism visibility: JS toggles .visible class; CSS owns
+   display + opacity + transition. Deliberately does NOT mix the
+   .visible class with direct style.display writes (the documented
+   Greek Lexicon sync bug pattern).
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fffdf7;
+  border: 1px solid #c9b27a;
+  color: #D4AF37;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(42, 38, 32, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.15s ease, box-shadow 0.2s ease;
+  z-index: 900;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  border-color: #8a6d1f;
+  box-shadow: 0 4px 14px rgba(42, 38, 32, 0.18);
+  transform: translateY(-2px);
+}
+.back-to-top:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: none;
+  stroke: #D4AF37;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.back-to-top:hover svg {
+  stroke: #8a6d1f;
+}
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+@media print {
+  .back-to-top { display: none !important; }
+}
+
+/* ============================================================
+   ITEM 2 — Resource ownership segmented control (three states)
+   Three pill-buttons per primary/biblical row. Direct-set, not a
+   cycle. Active state fills; inactive states are hairline outlines.
+   ============================================================ */
+.resource-status-control {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: 0.1rem;
+  display: inline-flex;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+}
+.resource-status-pill {
+  background: transparent;
+  border: 1px solid #c9b27a;
+  color: #6b5d4a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.22rem 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.3;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.resource-status-pill:hover {
+  border-color: #8a6d1f;
+  color: #3a3228;
+}
+.resource-status-pill:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+/* Active states — filled, palette-matched */
+.resource-status-pill.active[data-status="to-order"] {
+  background: #6b1e2a;
+  border-color: #6b1e2a;
+  color: #faf6ed;
+}
+.resource-status-pill.active[data-status="plan-ahead"] {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: #c9b27a;
+  color: #8a6d1f;
+}
+.resource-status-pill.active[data-status="ordered"] {
+  background: #8a6d1f;
+  border-color: #8a6d1f;
+  color: #faf6ed;
+}
+.resource-status-pill.active[data-status="have"] {
+  background: #556b3d;
+  border-color: #556b3d;
+  color: #faf6ed;
+}
+/* Status pill variant for the row's right-side tag pill (unified pill) */
+.required-item-status--ordered {
+  background: #8a6d1f;
+  color: #faf6ed;
+}
+/* Filter chip count tint when "ordered" chip is active is inherited from
+   .required-filter-chip.active — no override needed. */
+
+/* Mobile treatment — vertical stack if horizontal row won't fit. */
+@media (max-width: 600px) {
+  .resource-status-control {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+    min-width: 6.5rem;
+  }
+  .resource-status-pill {
+    text-align: center;
+  }
+}
+
+/* Print glyph for the "ordered" state — in-transit indicator. */
+@media print {
+  body.print-mode-reading-list .required-item.ordered::before {
+    content: "\25D0 ";
+  }
+  body.print-mode-reading-list .required-item.ordered {
+    opacity: 1 !important;
+  }
+  /* Hide the segmented control in print; the ::before glyph is the
+     print affordance. */
+  body.print-mode-reading-list .resource-status-control {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   ITEM 4 — Day 7 rest-day advance affordance
+   Participatory rest-day completion. Pre-click caption + button
+   inside the existing .day-rest-content. Gentle palette, not
+   directive.
+   ============================================================ */
+.day-rest-advance {
+  margin-top: 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #e8ddc8;
+  font-style: normal;
+}
+.day-rest-advance-caption {
+  color: #6b5d4a;
+  font-size: 0.88rem;
+  font-style: italic;
+  margin-bottom: 0.55rem;
+  line-height: 1.5;
+}
+.day-rest-advance-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  background: #fffdf7;
+  border: 1px solid #c9b27a;
+  color: #8a6d1f;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.day-rest-advance-button:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: #8a6d1f;
+  color: #6b5310;
+}
+.day-rest-advance-button:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+
+/* Week-complete banner — refined advance actions layout for the
+   two-option rest-aware pattern (primary "Rest through Sunday" +
+   secondary "Advance now" text link). */
+.advance-actions-secondary-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #e8ddc8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(232, 221, 200, 0.4);
+  cursor: pointer;
+  padding: 0.15rem 0;
+  line-height: 1.4;
+  transition: color 0.15s ease, border-bottom-color 0.15s ease;
+}
+.advance-actions-secondary-link:hover {
+  color: #faf6ed;
+  border-bottom-color: #faf6ed;
+}
+.advance-actions-secondary-link:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+/* Refined primary button copy variant — outlined muted-gold to
+   signal "softer" default. The existing .btn-advance (gold fill)
+   still works if a week isn't following the rest-aware pattern. */
+.btn-advance-rest {
+  background: transparent;
+  color: #faf6ed;
+  padding: 0.875rem 2rem;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.btn-advance-rest:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #D4AF37;
+}
+.btn-advance-rest:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.advance-actions-column {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
 </style>
 </head>
 
@@ -3906,6 +4177,17 @@ function createDayCard(dayIdx, weekData) {
   // D7: Rest day
   if (dayIdx === 6) {
     card.className = 'day-card day-rest upcoming';
+    // Week 40's Day 7 routes into course-complete; mid-course weeks get the
+    // rest-aware advance copy. The button in both cases calls attemptAdvance()
+    // on the shared manager, which honors missed-day reconciliation.
+    const wn = weekData.number;
+    const isFinalWeek = wn >= 40;
+    const buttonLabel = isFinalWeek
+      ? 'Mark course complete'
+      : `Mark rest complete and advance to Week ${wn + 1}`;
+    const captionText = isFinalWeek
+      ? 'When you are ready to close the course, mark it complete and open the summary.'
+      : 'When your rest day is complete, mark it and move into the new week.';
     card.innerHTML = `
       <div class="day-header">
         <div class="day-title">${getDayLabel(dayIdx)}</div>
@@ -3915,6 +4197,14 @@ function createDayCard(dayIdx, weekData) {
         <strong>Rest &amp; Reflection:</strong> No new material today.<br>
         <strong>Optional:</strong> Attend Divine Liturgy. Allow this week's readings to settle.<br>
         <strong>Preparation:</strong> Preview next week when ready.
+        <div class="day-rest-advance">
+          <div class="day-rest-advance-caption">${captionText}</div>
+          <button type="button" class="day-rest-advance-button" id="day-rest-advance-btn"
+                  aria-label="${buttonLabel}"
+                  onclick="if(window.studyTaskManager){window.studyTaskManager.attemptAdvance();}">
+            ${buttonLabel}
+          </button>
+        </div>
       </div>
     `;
     return card;
@@ -4086,54 +4376,103 @@ function parsePhaseToWeekRange(phase) {
 // Required Reading — resource ownership + filter + printable list
 // ==================================================================
 
-// localStorage key for user-global resource ownership. Shape: { [id]: true }.
+// localStorage key for user-global resource ownership.
+// Schema (current, three-state): { [id]: 'to-order' | 'plan-ahead' | 'ordered' | 'have' }
+// Schema (legacy, boolean):      { [id]: true }  — `true` migrates to 'have'.
 // Not enrollment-scoped — you either own a book or you don't, regardless of
 // which track surfaces it.
 const RESOURCE_OWNERSHIP_KEY = 'resource_ownership';
+const RESOURCE_STATUSES = ['to-order', 'plan-ahead', 'ordered', 'have'];
 
 // In-memory filter state. Not persisted — resets on reload because users
 // typically want the full list first.
 let RESOURCE_FILTER = 'all';
 
+// Read the raw map from localStorage, migrating legacy boolean values
+// transparently. Boolean `true` -> 'have'. Boolean `false` or anything
+// unrecognized -> entry dropped (classifier will derive to-order/plan-ahead
+// from phase).
 function getOwnershipMap() {
+  let raw;
   try {
-    const raw = localStorage.getItem(RESOURCE_OWNERSHIP_KEY);
-    return raw ? JSON.parse(raw) : {};
+    raw = localStorage.getItem(RESOURCE_OWNERSHIP_KEY);
   } catch (e) {
     return {};
   }
+  if (!raw) return {};
+  let parsed;
+  try { parsed = JSON.parse(raw); } catch (e) { return {}; }
+  if (!parsed || typeof parsed !== 'object') return {};
+
+  // Migrate in place. Only persist if we actually changed anything.
+  let mutated = false;
+  const out = {};
+  Object.keys(parsed).forEach(id => {
+    const v = parsed[id];
+    if (v === true) { out[id] = 'have'; mutated = true; }
+    else if (typeof v === 'string' && RESOURCE_STATUSES.indexOf(v) !== -1) { out[id] = v; }
+    else { mutated = true; /* drop false / unrecognized */ }
+  });
+  if (mutated) {
+    try { localStorage.setItem(RESOURCE_OWNERSHIP_KEY, JSON.stringify(out)); } catch (e) {}
+  }
+  return out;
 }
 
-function setOwnership(id, isOwned) {
+// Persist a resource's explicit status. Passing null/undefined removes the
+// entry, letting the classifier fall back to phase-derived default.
+function setResourceStatus(id, status) {
   if (!id) return;
   let map;
   try {
     const raw = localStorage.getItem(RESOURCE_OWNERSHIP_KEY);
     map = raw ? JSON.parse(raw) : {};
+    if (!map || typeof map !== 'object') map = {};
   } catch (e) {
     map = {};
   }
-  if (isOwned) map[id] = true;
-  else delete map[id];
+  if (status && RESOURCE_STATUSES.indexOf(status) !== -1) {
+    map[id] = status;
+  } else {
+    delete map[id];
+  }
   try {
     localStorage.setItem(RESOURCE_OWNERSHIP_KEY, JSON.stringify(map));
   } catch (e) {}
 }
 
+// Back-compat alias for legacy call sites (none remaining after this patch,
+// but kept defensively in case other scripts reference it).
+function setOwnership(id, isOwned) {
+  setResourceStatus(id, isOwned ? 'have' : null);
+}
+
 // Classify a resource for pill + filter purposes. Precedence:
-// inApp (always wins) → owned → current (phase <= currentWeek) → upcoming.
+// inApp (always wins) → explicit user status in map → phase-derived default
+// (to-order if phase <= currentWeek, else plan-ahead).
 function classifyResource(r, currentWeek, ownedMap) {
   if (r.inApp) return 'in-app';
-  if (ownedMap && r.id && ownedMap[r.id]) return 'have';
+  if (ownedMap && r.id && ownedMap[r.id]) {
+    const stored = ownedMap[r.id];
+    if (RESOURCE_STATUSES.indexOf(stored) !== -1) return stored;
+  }
   const range = parsePhaseToWeekRange(r.phase);
   const isCurrent = !range || range.isAll || range.start <= currentWeek;
   return isCurrent ? 'to-order' : 'plan-ahead';
 }
 
-// Checkbox onchange handler. Persists ownership then re-renders to update
-// stats, pills, and counts. Preserves filter state across re-render.
+// Segmented-control click handler. Direct-set (not a cycle). Persists the
+// chosen status, then re-renders so pills, counts, filter chips, and row
+// classes all stay consistent.
+function setResourceOwnershipStatus(id, status) {
+  setResourceStatus(id, status);
+  renderRequiredReading();
+}
+
+// Back-compat handler for any stale checkbox references (none remaining
+// after this patch). Treats checked as 'have', unchecked as clearing.
 function toggleResourceOwnership(id, checkboxEl) {
-  setOwnership(id, !!(checkboxEl && checkboxEl.checked));
+  setResourceStatus(id, (checkboxEl && checkboxEl.checked) ? 'have' : null);
   renderRequiredReading();
 }
 
@@ -4178,7 +4517,8 @@ function applyResourceFilter(filterKey, btnEl) {
     const msgs = {
       'to-order': 'No books to order right now.',
       'plan-ahead': 'No books on the Plan-Ahead list.',
-      'have': 'No books checked off yet — tick the box on each book you own.',
+      'ordered': 'No books in transit.',
+      'have': 'No books on your shelf yet — mark each one as you acquire it.',
       'in-app': 'No in-app resources match this filter.'
     };
     emptyEl.textContent = msgs[RESOURCE_FILTER] || 'No resources match this filter.';
@@ -4262,9 +4602,10 @@ function renderRequiredReading() {
   const statTotal = primaryBiblical.length;
   const statToOrder = primaryBiblical.filter(c => c.status === 'to-order').length;
   const statPlanAhead = primaryBiblical.filter(c => c.status === 'plan-ahead').length;
+  const statOrdered = primaryBiblical.filter(c => c.status === 'ordered').length;
   const statHaveOnly = primaryBiblical.filter(c => c.status === 'have').length;
   const statInApp = primaryBiblical.filter(c => c.status === 'in-app').length;
-  // "On your shelf" = owned via checkbox + in-app (always accessible)
+  // "On your shelf" = owned via explicit 'have' state + in-app (always accessible)
   const statOnShelf = statHaveOnly + statInApp;
   const secondaryTotal = classified.filter(c => c.r.category === 'secondary').length;
   const recommendedTotal = (track.recommendedSecondary || []).length;
@@ -4273,6 +4614,7 @@ function renderRequiredReading() {
   if (metaEl) {
     const parts = [`${statTotal} resources`];
     if (statToOrder > 0) parts.push(`${statToOrder} to order`);
+    if (statOrdered > 0) parts.push(`${statOrdered} ordered`);
     if (statPlanAhead > 0) parts.push(`${statPlanAhead} to plan`);
     metaEl.textContent = parts.join(' · ');
   }
@@ -4299,8 +4641,17 @@ function renderRequiredReading() {
   const STATUS_LABELS = {
     'to-order': 'To order',
     'plan-ahead': 'Plan ahead',
+    'ordered': 'Ordered',
     'have': 'Have',
     'in-app': 'In-app'
+  };
+
+  // Short-form labels for the segmented control (tighter row budget).
+  const SEGMENT_LABELS = {
+    'to-order': 'To order',
+    'plan-ahead': 'Plan ahead',
+    'ordered': 'Ordered',
+    'have': 'Have'
   };
 
   // Render a single classified resource row.
@@ -4309,15 +4660,32 @@ function renderRequiredReading() {
     const r = c.r;
     const status = c.status;
     const isOwned = status === 'have';
+    const isOrdered = status === 'ordered';
 
-    // Primary + biblical rows get an ownership checkbox, except inApp items.
-    const hasCheckbox = (r.category === 'primary' || r.category === 'biblical') && !r.inApp && r.id;
-    const checkboxHTML = hasCheckbox
-      ? `<label class="required-item-check">
-           <input type="checkbox" ${isOwned ? 'checked' : ''}
-             onchange="toggleResourceOwnership('${escAttr(r.id)}', this)"
-             aria-label="I have ${escAttr(r.title)}">
-         </label>`
+    // Primary + biblical rows get a three-state segmented control, except inApp items.
+    const hasStatusControl = (r.category === 'primary' || r.category === 'biblical') && !r.inApp && r.id;
+    // The first pill dynamically labels "To order" vs "Plan ahead" based on
+    // phase position — same slot, dynamic label. The user's explicit status
+    // (ordered / have) lives in the two following slots.
+    const range = parsePhaseToWeekRange(r.phase);
+    const isCurrent = !range || range.isAll || range.start <= currentWeek;
+    const firstSlotKey = isCurrent ? 'to-order' : 'plan-ahead';
+    const firstSlotLabel = SEGMENT_LABELS[firstSlotKey];
+    const segments = [
+      { key: firstSlotKey, label: firstSlotLabel },
+      { key: 'ordered',    label: SEGMENT_LABELS['ordered'] },
+      { key: 'have',       label: SEGMENT_LABELS['have'] }
+    ];
+    const statusControlHTML = hasStatusControl
+      ? `<div class="resource-status-control" role="group" aria-label="Ownership status for ${escAttr(r.title)}">
+           ${segments.map(seg => `
+             <button type="button"
+                     class="resource-status-pill${status === seg.key ? ' active' : ''}"
+                     data-status="${seg.key}"
+                     aria-pressed="${status === seg.key ? 'true' : 'false'}"
+                     onclick="setResourceOwnershipStatus('${escAttr(r.id)}', '${seg.key}')">${seg.label}</button>
+           `).join('')}
+         </div>`
       : '';
 
     const statusPill = `<span class="required-item-status required-item-status--${status}">${STATUS_LABELS[status]}</span>`;
@@ -4331,9 +4699,20 @@ function renderRequiredReading() {
       ? `<div class="required-item-inapp-link"><a href="bible-reader.html">Open Biblical Companion →</a></div>`
       : '';
 
+    // Row-level state classes:
+    //   .owned   → dims opacity (existing visual for "on your shelf")
+    //   .ordered → drives the print ◐ glyph (no opacity change — the book
+    //              isn't yours yet, so don't fade it on screen)
+    const rowClasses = [
+      'required-item',
+      c.isUpcoming ? 'upcoming' : '',
+      isOwned ? 'owned' : '',
+      isOrdered ? 'ordered' : ''
+    ].filter(Boolean).join(' ');
+
     return `
-      <li class="required-item${c.isUpcoming ? ' upcoming' : ''}${isOwned ? ' owned' : ''}" data-status="${status}" data-id="${escAttr(r.id)}">
-        ${checkboxHTML}
+      <li class="${rowClasses}" data-status="${status}" data-id="${escAttr(r.id)}">
+        ${statusControlHTML}
         <div class="required-item-main">
           <div class="required-item-title">${r.title}</div>
           ${r.author ? `<div class="required-item-author">${r.author}</div>` : ''}
@@ -4419,16 +4798,26 @@ function renderRequiredReading() {
     ? `<span class="required-secondary-tally">${tallyBits.join(' · ')}</span>`
     : '';
 
+  // Primary stat line — the "ordered" segment only appears when at least
+  // one resource is in the ordered state, to avoid visual clutter for users
+  // who never use that middle state.
+  const statLineBits = [
+    `<strong>${statTotal}</strong> resources`,
+    `<strong>${statToOrder}</strong> to order`
+  ];
+  if (statOrdered > 0) statLineBits.push(`<strong>${statOrdered}</strong> ordered`);
+  statLineBits.push(`<strong>${statOnShelf}</strong> on your shelf`);
+
   const statLineHTML = `
     <div class="required-stat-row">
       <div class="required-stat-line">
-        <strong>${statTotal}</strong> resources · <strong>${statToOrder}</strong> to order · <strong>${statOnShelf}</strong> on your shelf
+        ${statLineBits.join(' · ')}
         ${tallyLine}
       </div>
       <div class="required-help">
         <button type="button" class="required-help-toggle" onclick="toggleRequiredHelp(this)" aria-label="About this reading list">?</button>
         <div class="required-help-content">
-          Books for your current track, grouped by type. Public-domain primary texts (Holmes, ANF, NPNF) are freely available online; scholarly editions need to be purchased. Tick the box on each book as you acquire it — ownership persists on this device.
+          Books for your current track, grouped by type. Public-domain primary texts (Holmes, ANF, NPNF) are freely available online; scholarly editions need to be purchased. Use the three-state control on each row — <em>To order</em> / <em>Plan ahead</em>, <em>Ordered</em>, or <em>Have</em> — to track acquisition. Ownership persists on this device.
         </div>
       </div>
       <button type="button" class="required-print-btn" onclick="openPrintReadingList()">Print reading list</button>
@@ -4440,6 +4829,7 @@ function renderRequiredReading() {
     'all': primaryBiblical.length,
     'to-order': statToOrder,
     'plan-ahead': statPlanAhead,
+    'ordered': statOrdered,
     'have': statHaveOnly,
     'in-app': statInApp
   };
@@ -4447,6 +4837,7 @@ function renderRequiredReading() {
     { key: 'all', label: 'All' },
     { key: 'to-order', label: 'To order' },
     { key: 'plan-ahead', label: 'Plan ahead' },
+    { key: 'ordered', label: 'Ordered' },
     { key: 'have', label: 'Have' },
     { key: 'in-app', label: 'In-app' }
   ];
@@ -4725,6 +5116,23 @@ class StudyTaskManager {
          <div class="week-conclusion-next-title">Week ${week + 1} · ${nextTitle}</div>
          <div class="week-conclusion-next-context">${nextPhaseLine}</div>`;
 
+    // Advance actions — two-option rest-aware pattern for mid-course weeks:
+    //   • Primary (outlined muted-gold): "Rest through Sunday, advance later"
+    //     — dismisses the banner, user stays on current week; they'll advance
+    //     via the Day 7 rest card's button once Sunday arrives.
+    //   • Secondary (small text link): "Advance now" — runs attemptAdvance()
+    //     immediately, same path as before.
+    // Week 40 keeps a single primary action since the rest rhythm doesn't
+    // apply to course completion.
+    const advanceActionsHTML = isLast
+      ? `<div class="advance-actions">
+           <button class="btn-advance" id="btn-advance-week">Return to Course Overview</button>
+         </div>`
+      : `<div class="advance-actions-column">
+           <button class="btn-advance-rest" id="btn-rest-through-sunday" type="button">Rest through Sunday, advance later</button>
+           <button class="advance-actions-secondary-link" id="btn-advance-week" type="button">Advance now</button>
+         </div>`;
+
     const celebration = document.createElement('div');
     celebration.className = 'week-complete-banner';
     celebration.innerHTML = `
@@ -4734,11 +5142,7 @@ class StudyTaskManager {
       ${reflection}
       <hr class="week-conclusion-divider">
       ${nextBlock}
-      <div class="advance-actions">
-        <button class="btn-advance" id="btn-advance-week">
-          ${isLast ? 'Return to Course Overview' : `Begin Week ${week + 1}`}
-        </button>
-      </div>
+      ${advanceActionsHTML}
     `;
     weekSection.parentNode.insertBefore(celebration, weekSection);
     celebration.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -4746,6 +5150,10 @@ class StudyTaskManager {
     localStorage.setItem(`week${week}CompleteDate`, new Date().toISOString());
     const btn = document.getElementById('btn-advance-week');
     if (btn) btn.addEventListener('click', () => this.attemptAdvance());
+    // "Rest through Sunday" — dismiss the banner only; user will advance
+    // via the Day 7 rest card button when their actual rest day arrives.
+    const restBtn = document.getElementById('btn-rest-through-sunday');
+    if (restBtn) restBtn.addEventListener('click', () => this.removeWeekCompleteCelebration());
   }
 
   removeWeekCompleteCelebration() {
@@ -4925,7 +5333,53 @@ document.addEventListener('DOMContentLoaded', function() {
     resetAllBtn.addEventListener('click', () => window.studyTaskManager.resetAllProgress());
   }
 });
+
+// ==================================================================
+// ITEM 1 — Back-to-top button
+// Scroll listener: passive, rAF-throttled. Single-mechanism visibility
+// (.visible class via JS; display + opacity + transition via CSS).
+// Deliberately does NOT mix with style.display writes.
+// ==================================================================
+(function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  const THRESHOLD = 400;
+  let ticking = false;
+
+  function update() {
+    const y = window.scrollY || window.pageYOffset || 0;
+    btn.classList.toggle('visible', y > THRESHOLD);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    // Use scrollTo with smooth behavior; falls back to instant-top on
+    // browsers without smooth-scroll support.
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  });
+
+  // Initial sync in case page loads scrolled (anchor nav, refresh mid-page).
+  update();
+})();
 </script>
+
+<!-- Back-to-top button — fixed bottom-right, appears after ~400px scroll -->
+<button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <polyline points="6 15 12 9 18 15"></polyline>
+  </svg>
+</button>
 
 </body>
 </html>
