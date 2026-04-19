@@ -1,0 +1,5385 @@
+<!DOCTYPE html>
+<!-- build: 2026-04-19T02:14:23Z -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Φρόνημα τῶν Πατέρων — Study Track Dashboard</title>
+
+<!-- Orthodox Companion Branding -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Φρόνημα τῶν Πατέρων — Study Track Dashboard">
+<meta property="og:description" content="Complete 40-week Orthodox Patristic Formation program dashboard. Track daily progress, weekly plans, and your journey through the Church Fathers.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Orthodox Companion Studies">
+
+<meta name="description" content="Your complete dashboard for the 40-week Orthodox Patristic Formation program. Daily guidance, weekly plans, and systematic progress through the Church Fathers.">
+<meta name="keywords" content="Orthodox Formation, Patristics, Church Fathers, Study Program, Orthodox Education">
+<meta name="author" content="Orthodox Companion Studies">
+
+<style>
+/* Typography — Cormorant Garamond (English) + Gentium Plus (Greek) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Gentium+Plus:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* CSS Reset & Orthodox Foundation */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { 
+  font-size: 17px; 
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  background: 
+    radial-gradient(circle at top left, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at bottom right, rgba(26, 58, 92, 0.03) 0%, transparent 50%),
+    linear-gradient(135deg, #faf6ed 0%, #f5efe0 100%);
+  color: #2a2620;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* Greek text — Gentium Plus, purpose-built for polytonic Greek */
+.greek, .greek-term, .term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+/* Academic small-caps on major section headings */
+.section-title, .status-title, .focus-title, .phases-title, .week-title, 
+.progress-title, .stats-title, .focus-greek-header h3 {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* Inline emphasis — Cormorant at 600 is already strong enough; 700 looks heavy */
+strong, b { font-weight: 600; }
+em, i { font-style: italic; }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Back Navigation */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b5d4a;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 1rem 0 2rem 0;
+  transition: color 0.3s ease;
+}
+
+.back-nav:hover {
+  color: #1a3a5c;
+}
+
+/* Header */
+.hero {
+  background: 
+    linear-gradient(135deg, rgba(26, 58, 92, 0.95) 0%, rgba(26, 58, 92, 0.95) 100%),
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100"><defs><pattern id="cross" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M18 10h4v10h10v4H22v10h-4V24H8v-4h10V10z" fill="%23ffffff08"/></pattern></defs><rect width="200" height="100" fill="url(%23cross)"/></svg>');
+  color: #fffdf7;
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 3px solid #3a3228;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  color: #fffdf7;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #e8ddc8;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e8ddc8;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Current Status Dashboard */
+.status-dashboard {
+  background: #ffffff;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  border: 1px solid #e8ddc8;
+}
+
+.status-header {
+  background: linear-gradient(135deg, #1a3a5c 0%, #D4AF37 100%);
+  color: #ffffff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.status-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.current-week {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.progress-bars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.progress-item {
+  text-align: center;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.status-content {
+  padding: 2rem;
+}
+
+/* Today's Focus */
+.today-focus {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+  border: 2px solid #D4AF37;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.focus-title {
+  font-size: 1.8rem;
+  color: #1a3a5c;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.focus-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.focus-section {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e8ddc8;
+}
+
+.focus-section h3 {
+  color: #1a3a5c;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.focus-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.focus-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #faf6ed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.focus-section li:last-child {
+  border-bottom: none;
+}
+
+/* Patristic reading links — subtle scholarly underline, not button-styled */
+.patristic-link {
+  color: #1a3a5c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(26, 58, 92, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.patristic-link:hover {
+  border-bottom-color: #1a3a5c;
+}
+
+/* This Week's Father link — week-scoped anchor at top of Today's Focus.
+   Populated by renderTodaysFocus() via weekFatherHTML(). Renders a
+   card-like element pointing to the Father card for the active week.
+   Palette follows phase: navy for Part I (weeks 1–28), porphyry for
+   Part II (weeks 29–40). Gold is reserved for focus highlighting. */
+.week-father-link {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #1a3a5c;
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.25rem 0;
+  line-height: 1.5;
+}
+.week-father-link[data-part="ii"] {
+  border-left-color: #6b1e2a;
+}
+.week-father-link-caption {
+  display: block;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #6b5d4a;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+.week-father-link-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  color: #1a3a5c;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+.week-father-link[data-part="ii"] .week-father-link-label {
+  color: #6b1e2a;
+}
+.week-father-link-name {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  color: #1a3a5c;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.week-father-link[data-part="ii"] .week-father-link-name {
+  color: #6b1e2a;
+}
+.week-father-link-name:hover {
+  border-bottom-color: #1a3a5c;
+}
+.week-father-link[data-part="ii"] .week-father-link-name:hover {
+  border-bottom-color: #6b1e2a;
+}
+.week-father-link-name:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.week-father-link-sep {
+  color: #8a7d66;
+  margin: 0 0.35rem;
+  font-weight: 400;
+}
+.week-father-link-arrow {
+  color: inherit;
+  margin-left: 0.25rem;
+  font-weight: 500;
+}
+
+/* Phase Fathers line — shown at top of Today's Focus, weekly-level context */
+.phase-fathers-line {
+  margin: 0 0 1.5rem 0;
+  padding: 0.75rem 1.1rem;
+  background: rgba(212, 175, 55, 0.05);
+  border-left: 3px solid rgba(212, 175, 55, 0.35);
+  border-radius: 4px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+.phase-fathers-label {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: #8a6d1f;
+  font-weight: 500;
+  margin-right: 0.7rem;
+}
+.phase-fathers-names {
+  color: #3a3228;
+  font-style: italic;
+}
+
+/* Full-width Phase Greek Focus panel — Byzantine gold accent */
+.focus-greek {
+  background: linear-gradient(135deg, #fffaec 0%, #ffffff 100%);
+  border: 1px solid #e8d79a;
+  border-left: 4px solid #D4AF37;
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+}
+
+.focus-greek-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.focus-greek-header h3 {
+  color: #1a3a5c;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.focus-greek-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.focus-greek-count {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #8a6d1f;
+  font-weight: 500;
+}
+
+.focus-greek-link {
+  font-size: 0.9rem;
+  color: #8a6d1f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.focus-greek-link:hover {
+  text-decoration: underline;
+}
+
+.focus-greek-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.greek-term {
+  padding: 0.35rem 0.85rem;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: 20px;
+  font-size: 0.92rem;
+  color: #1a3a5c;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.greek-term:hover {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: rgba(212, 175, 55, 0.7);
+  transform: translateY(-1px);
+}
+
+.greek-term-greek {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+}
+
+/* Latin vocabulary pills (Phase 2.5 Tertullian/Cyprian, Phase 10 Leo the Great).
+   Italic Cormorant distinguishes Latin terms from Greek without adding a badge
+   at pill scale. Default (no data-language or data-language="greek") keeps the
+   upright Gentium styling above. */
+.greek-term[data-language="latin"] .greek-term-greek {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+}
+
+.greek-term-sep {
+  color: #8a6d1f;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.greek-term-english {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  color: #3a3228;
+  font-size: 0.88rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* "+N more terms" expander — secondary affordance below the focus-term row.
+   Native <details>/<summary> for accessibility; collapsed by default.
+   Suppressed at the template level when no non-focus terms are tagged to
+   the current phase (e.g. Integration phases 8 and 14 whose focus list is
+   itself a cross-phase review). */
+.focus-greek-more {
+  margin-top: 0.85rem;
+}
+
+.focus-greek-more-summary {
+  display: inline-block;
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #8a6d1f;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  list-style: none;
+  user-select: none;
+}
+
+/* Suppress the default disclosure triangle in every engine so we can
+   control the toggle glyph ourselves via ::before. */
+.focus-greek-more-summary::-webkit-details-marker { display: none; }
+.focus-greek-more-summary::marker { content: ''; }
+
+.focus-greek-more-summary::before {
+  content: '+';
+  display: inline-block;
+  width: 0.9em;
+  opacity: 0.7;
+}
+
+.focus-greek-more[open] .focus-greek-more-summary::before {
+  content: '−';
+}
+
+.focus-greek-more-summary:hover {
+  text-decoration: underline;
+}
+
+.focus-greek-more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.focus-greek-more-pill {
+  display: block;
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.focus-greek-more-pill:hover {
+  border-color: #8a6d1f;
+  background: #fffaec;
+}
+
+.focus-greek-more-pill-head {
+  font-family: 'Gentium Plus', 'Gentium Book Plus', 'Noto Serif', Georgia, serif;
+  font-weight: 600;
+  color: #1a3a5c;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Latin headwords: italic Cormorant, matching the focus-pill convention
+   (see .greek-term[data-language="latin"] above). */
+.focus-greek-more-pill[data-language="latin"] .focus-greek-more-pill-head {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+}
+
+.focus-greek-more-pill-trans {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  margin-top: 0.15rem;
+}
+
+.focus-greek-more-pill-gloss {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  color: #2a2620;
+  font-size: 0.85rem;
+  line-height: 1.25;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 640px) {
+  .focus-greek-more-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .focus-greek-more-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.reading-time {
+  font-size: 0.85rem;
+  color: #6b5d4a;
+  font-weight: 500;
+}
+
+.action-button {
+  display: inline-block;
+  background: #1a3a5c;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  background: #1a3a5c;
+  transform: translateY(-2px);
+}
+
+/* Week Overview */
+.week-overview {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.week-header {
+  background: linear-gradient(135deg, #2a2620 0%, #3a3228 100%);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.week-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.week-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.week-content {
+  padding: 2rem;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.day-card {
+  border: 1px solid #e8ddc8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.day-card.completed,
+.day-card.day-complete {
+  background: linear-gradient(135deg, #dce8c9 0%, #ffffff 100%);
+  border: 2px solid #556b3d;
+  box-shadow: 0 4px 12px rgba(85, 107, 61, 0.2);
+}
+
+.day-card.current {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffffff 100%);
+  border-color: #D4AF37;
+  border-width: 2px;
+}
+
+.day-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.day-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2a2620;
+}
+
+.day-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.day-status.completed {
+  background: #556b3d;
+  color: #ffffff;
+}
+
+.day-status.current {
+  background: #D4AF37;
+  color: #2a2620;
+}
+
+.day-status.upcoming {
+  background: #e8ddc8;
+  color: #6b5d4a;
+}
+
+.day-readings {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6b5d4a;
+}
+
+.day-readings strong {
+  color: #2a2620;
+}
+
+/* Required Reading panel — collapsible accordion between Phase Timeline
+   and Big Picture. Pulls from TRACKS.patristics['40-week'].requiredResources.
+   Splits resources into "Currently Reading" (active phase) vs "Upcoming" 
+   (future phases — important for Part II acquisitions). */
+.required-reading {
+  margin-top: 2rem;
+  background: #faf6ed;
+  border: 1px solid #e8ddc8;
+  border-left: 4px solid #D4AF37;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.required-reading summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  user-select: none;
+}
+.required-reading summary::-webkit-details-marker { display: none; }
+.required-reading summary:hover { background: rgba(212, 175, 55, 0.05); }
+.required-reading-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #3a3228;
+  font-size: 1.15rem;
+}
+.required-reading-meta {
+  font-size: 0.85rem;
+  color: #8a7d6a;
+  font-style: italic;
+}
+.required-reading-chevron {
+  color: #8a6d1f;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+.required-reading[open] .required-reading-chevron {
+  transform: rotate(180deg);
+}
+.required-reading-body {
+  padding: 0 1.4rem 1.5rem;
+  border-top: 1px solid #e8ddc8;
+}
+.required-reading-intro {
+  color: #6b5d4a;
+  font-style: italic;
+  font-size: 0.95rem;
+  margin: 1rem 0 1.5rem;
+  line-height: 1.65;
+}
+.required-group {
+  margin-bottom: 1.5rem;
+}
+.required-group:last-child { margin-bottom: 0; }
+.required-group-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a3a5c;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e8ddc8;
+}
+.required-group-title.upcoming { color: #8a6d1f; }
+.required-subcategory {
+  margin-top: 0.9rem;
+}
+.required-subcategory:first-child { margin-top: 0.4rem; }
+.required-subcategory-title {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: #6b5d4a;
+  margin-bottom: 0.3rem;
+  padding-left: 0.1rem;
+}
+.required-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.required-item {
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed #eadfca;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.required-item:last-child { border-bottom: none; }
+.required-item-main {
+  flex: 1 1 300px;
+}
+.required-item-title {
+  color: #2a2620;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.required-item-author {
+  color: #6b5d4a;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.required-item-meta {
+  color: #8a7d6a;
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+.required-item-tags {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.required-item-phase {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  background: rgba(26, 58, 92, 0.08);
+  color: #1a3a5c;
+  white-space: nowrap;
+}
+.required-item.upcoming .required-item-phase {
+  background: rgba(212, 175, 55, 0.15);
+  color: #8a6d1f;
+}
+.required-item-acquire {
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  background: #6b1e2a;
+  color: #faf6ed;
+  white-space: nowrap;
+}
+.required-item.to-purchase .required-item-title {
+  color: #1a3a5c;
+}
+.secondary-toggle {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e8ddc8;
+}
+.secondary-toggle summary {
+  padding: 0;
+  font-size: 0.9rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+.secondary-toggle summary:hover { background: transparent; color: #1a3a5c; }
+.secondary-list {
+  list-style: none;
+  padding: 0.8rem 0 0 0;
+  margin: 0;
+}
+.secondary-list li {
+  padding: 0.35rem 0;
+  color: #6b5d4a;
+  font-size: 0.92rem;
+}
+
+/* ==============================================================
+   Required Reading — extended redesign (2026-04-19)
+   - Header stat line replaces dense intro paragraph
+   - Filter chip row above content (All / To Order / Plan Ahead / Have / In-App)
+   - Per-row ownership checkbox persisted in localStorage key `resource_ownership`
+   - Unified status pill (.required-item-status) with four variants
+   - Per-row free-web link, collapsed to section callout when 100% of a
+     subsection shares the same source and ≥2 items
+   - Recommended further reading as a display-only subsection with
+     typography parity but no pills and no ownership tracking
+   - Printable reading list via `body.print-mode-reading-list`
+   ============================================================== */
+
+/* Stat line + help tooltip row */
+.required-stat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 0.85rem;
+}
+.required-stat-line {
+  color: #3a3228;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  flex: 1 1 auto;
+}
+.required-stat-line strong {
+  font-weight: 600;
+  color: #2a2620;
+}
+.required-secondary-tally {
+  display: block;
+  color: #8a7d6a;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+.required-help {
+  position: relative;
+  flex: 0 0 auto;
+}
+.required-help-toggle {
+  background: transparent;
+  border: 1px solid #c9b27a;
+  color: #8a6d1f;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.required-help-toggle:hover { background: rgba(212, 175, 55, 0.1); color: #6b5310; }
+.required-help-toggle:focus-visible { outline: 2px solid #8a6d1f; outline-offset: 2px; }
+.required-help-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  width: min(320px, 90vw);
+  background: #faf6ed;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #3a3228;
+  font-style: italic;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 20;
+}
+.required-help.open .required-help-content { display: block; }
+
+/* Print button — subtle gold-outlined small-caps */
+.required-print-btn {
+  background: transparent;
+  border: 1px solid #c9b27a;
+  color: #8a6d1f;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.required-print-btn:hover { background: rgba(212, 175, 55, 0.1); color: #6b5310; }
+.required-print-btn:focus-visible { outline: 2px solid #8a6d1f; outline-offset: 2px; }
+
+/* Filter chip row */
+.required-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #eadfca;
+}
+.required-filter-chip {
+  background: transparent;
+  border: 1px solid #e8ddc8;
+  color: #6b5d4a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.required-filter-chip:hover {
+  background: rgba(212, 175, 55, 0.08);
+  color: #3a3228;
+  border-color: #c9b27a;
+}
+.required-filter-chip.active {
+  background: #1a3a5c;
+  color: #faf6ed;
+  border-color: #1a3a5c;
+}
+.required-filter-chip:focus-visible { outline: 2px solid #8a6d1f; outline-offset: 2px; }
+.required-filter-chip-count {
+  opacity: 0.75;
+  margin-left: 0.25rem;
+  font-size: 0.78rem;
+}
+
+/* Ownership checkbox — native checkbox restyled with Byzantine accent */
+.required-item-check {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: 0.2rem;
+}
+.required-item-check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1.5px solid #c9b27a;
+  border-radius: 3px;
+  background: #fffdf7;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  vertical-align: middle;
+}
+.required-item-check input[type="checkbox"]:hover {
+  border-color: #8a6d1f;
+}
+.required-item-check input[type="checkbox"]:checked {
+  background: #556b3d;
+  border-color: #556b3d;
+}
+.required-item-check input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 0.1rem;
+  left: 0.3rem;
+  width: 0.3rem;
+  height: 0.55rem;
+  border: solid #fffdf7;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.required-item-check input[type="checkbox"]:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+
+/* Row layout — add left checkbox rail; preserve existing main/tags flex */
+.required-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.required-item.owned {
+  opacity: 0.6;
+}
+.required-item.owned .required-item-title {
+  text-decoration: none;
+}
+
+/* Unified status pill — four variants matching the filter chips 1:1 */
+.required-item-status {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.required-item-status--to-order {
+  background: #6b1e2a;
+  color: #faf6ed;
+}
+.required-item-status--plan-ahead {
+  background: rgba(212, 175, 55, 0.18);
+  color: #8a6d1f;
+}
+.required-item-status--have {
+  background: rgba(85, 107, 61, 0.18);
+  color: #556b3d;
+}
+.required-item-status--in-app {
+  background: #1a3a5c;
+  color: #faf6ed;
+}
+
+/* Per-row free-web link — compact muted-gold single line. No icon at this size. */
+.required-item-freeweb {
+  display: block;
+  margin-top: 0.3rem;
+  color: #8a6d1f;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.required-item-freeweb a {
+  color: #8a6d1f;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9b27a;
+}
+.required-item-freeweb a:hover {
+  color: #6b5310;
+  border-bottom-color: #8a6d1f;
+}
+
+/* Subsection-level callout — fires only when every item in a subsection
+   shares one freeWeb source AND count >= 2. Suppresses per-row lines. */
+.required-freeweb-callout {
+  margin: 0.15rem 0 0.85rem;
+  padding: 0.55rem 0.8rem;
+  background: rgba(212, 175, 55, 0.08);
+  border-left: 3px solid #D4AF37;
+  border-radius: 0 4px 4px 0;
+  color: #6b5310;
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.required-freeweb-callout a {
+  color: #6b5310;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9b27a;
+  font-style: normal;
+  font-weight: 500;
+}
+.required-freeweb-callout a:hover {
+  color: #4d3c0b;
+  border-bottom-color: #8a6d1f;
+}
+
+/* Recommended further reading — display-only subsection with typography
+   parity but no checkbox, no status pill, no filter participation. */
+.required-recommended-section {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e8ddc8;
+}
+.required-recommended-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #6b5d4a;
+  margin-bottom: 0.45rem;
+}
+.required-recommended-intro {
+  color: #8a7d6a;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 0.85rem;
+  line-height: 1.5;
+}
+
+/* In-App link for EOB row — renders as an "Open Biblical Companion →" affordance */
+.required-item-inapp-link {
+  display: block;
+  margin-top: 0.3rem;
+  color: #1a3a5c;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.required-item-inapp-link a {
+  color: #1a3a5c;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(26, 58, 92, 0.4);
+}
+.required-item-inapp-link a:hover {
+  border-bottom-color: #1a3a5c;
+}
+
+/* Empty-filter state (e.g., "Have" selected with nothing owned yet) */
+.required-empty-state {
+  padding: 1.25rem 0.25rem;
+  color: #8a7d6a;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+/* Print-only header and caption — hidden on screen, revealed by @media print
+   when body has .print-mode-reading-list class. */
+.required-print-header,
+.required-print-caption {
+  display: none;
+}
+
+/* Reading-list print mode — overrides default @media print course-complete rules
+   by piggybacking on body.print-mode-reading-list specificity. */
+@media print {
+  body.print-mode-reading-list {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  /* Hide everything except required-reading and its print-only siblings.
+     NOTE: selector is `> div.container` (not `> .container`) so it matches
+     only the back-nav wrapper <div class="container"> and does NOT match
+     <main class="container">. With `> .container` (specificity 0,2,1) the
+     rule beat the `body.print-mode-reading-list main` unhide (0,1,2) and
+     blanked the print preview. Pinning to div.container leaves main
+     visible while still hiding the back-nav strip. */
+  body.print-mode-reading-list header,
+  body.print-mode-reading-list nav,
+  body.print-mode-reading-list footer,
+  body.print-mode-reading-list > div.container,
+  body.print-mode-reading-list .status-dashboard,
+  body.print-mode-reading-list .status-section,
+  body.print-mode-reading-list .today-focus,
+  body.print-mode-reading-list .week-overview,
+  body.print-mode-reading-list .phase-timeline,
+  body.print-mode-reading-list .study-tools-section,
+  body.print-mode-reading-list .session-controls-section,
+  body.print-mode-reading-list .course-complete-section,
+  body.print-mode-reading-list .week-navigation,
+  body.print-mode-reading-list .phase-greek-panel,
+  body.print-mode-reading-list .week-father-card {
+    display: none !important;
+  }
+  /* Force main and the required-reading details open and visible */
+  body.print-mode-reading-list main,
+  body.print-mode-reading-list .required-reading,
+  body.print-mode-reading-list .required-reading-body {
+    display: block !important;
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  /* Hide the interactive summary chrome (chevron, hover label) */
+  body.print-mode-reading-list .required-reading > summary,
+  body.print-mode-reading-list .required-reading-chevron,
+  body.print-mode-reading-list .required-filter-chips,
+  body.print-mode-reading-list .required-print-btn,
+  body.print-mode-reading-list .required-help,
+  body.print-mode-reading-list .required-stat-line,
+  body.print-mode-reading-list .required-item-check input[type="checkbox"],
+  body.print-mode-reading-list .required-category--secondary,
+  body.print-mode-reading-list .required-recommended-section,
+  body.print-mode-reading-list .required-item-status,
+  body.print-mode-reading-list .required-item-freeweb,
+  body.print-mode-reading-list .required-freeweb-callout,
+  body.print-mode-reading-list .required-item-inapp-link {
+    display: none !important;
+  }
+  /* Print-only header: course title + current week */
+  body.print-mode-reading-list .required-print-header {
+    display: block !important;
+    text-align: center;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #000000;
+    color: #000000 !important;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  body.print-mode-reading-list .required-print-header-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  body.print-mode-reading-list .required-print-header-sub {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #000000 !important;
+  }
+  /* Replace interactive checkbox with a glyph on each row */
+  body.print-mode-reading-list .required-item::before {
+    content: "\2610 ";
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    color: #000000;
+  }
+  body.print-mode-reading-list .required-item.owned::before {
+    content: "\2611 ";
+  }
+  body.print-mode-reading-list .required-item.owned {
+    opacity: 1 !important;
+  }
+  body.print-mode-reading-list .required-item {
+    padding: 0.5rem 0 !important;
+    border-bottom: none !important;
+    page-break-inside: avoid;
+    color: #000000 !important;
+  }
+  body.print-mode-reading-list .required-item-title,
+  body.print-mode-reading-list .required-item-author,
+  body.print-mode-reading-list .required-item-meta,
+  body.print-mode-reading-list .required-item-phase,
+  body.print-mode-reading-list .required-group-title,
+  body.print-mode-reading-list .required-subcategory-title {
+    color: #000000 !important;
+    background: transparent !important;
+  }
+  body.print-mode-reading-list .required-item-phase {
+    border: 1px solid #999999;
+  }
+  /* Print caption at bottom */
+  body.print-mode-reading-list .required-print-caption {
+    display: block !important;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #000000;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.88rem;
+    color: #000000;
+    font-style: italic;
+  }
+  body.print-mode-reading-list a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+}
+
+/* Mobile — single column, tighter spacing, phase pill wraps below */
+@media (max-width: 600px) {
+  .required-reading summary { padding: 0.9rem 1rem; }
+  .required-reading-body { padding: 0 1rem 1.25rem; }
+  .required-reading-title { font-size: 1.05rem; }
+  .required-reading-meta { display: none; }
+  .required-item { flex-wrap: wrap; gap: 0.55rem; }
+  .required-item-main { flex: 1 1 100%; }
+  .required-item-tags { margin-top: 0.25rem; justify-content: flex-start; }
+  .required-stat-row { gap: 0.5rem; }
+  .required-print-btn { font-size: 0.78rem; padding: 0.3rem 0.7rem; }
+  .required-filter-chips { gap: 0.3rem; }
+  .required-filter-chip { font-size: 0.78rem; padding: 0.25rem 0.6rem; }
+}
+
+/* Phase Timeline — Byzantine palette */
+.phase-timeline {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.timeline-header {
+  background: linear-gradient(135deg, #1a3a5c 0%, #2a2620 100%);
+  color: #ffffff;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-bottom: 3px solid #D4AF37;
+}
+
+.timeline-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.timeline-content {
+  padding: 2rem;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.phase-card {
+  border: 1px solid #e8ddc8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  background: #ffffff;
+  border-left: 4px solid #cfd8dc;
+  transition: all 0.2s ease;
+}
+
+/* Part I — Nicene Arc (Phases 1–8, Weeks 1–28): deep navy */
+.phase-card.phase-part-i {
+  border-left-color: #1a3a5c;
+}
+.phase-card.phase-part-i .phase-number,
+.phase-card.phase-part-i .phase-title {
+  color: #1a3a5c;
+}
+
+/* Part II — Post-Nicene Christological Arc (Phases 9–14, Weeks 29–40): porphyry */
+.phase-card.phase-part-ii {
+  border-left-color: #6b1e2a;
+}
+.phase-card.phase-part-ii .phase-number,
+.phase-card.phase-part-ii .phase-title {
+  color: #6b1e2a;
+}
+
+/* Active phase — gold highlight overrides part color */
+.phase-card.phase-current {
+  border: 2px solid #D4AF37;
+  border-left-width: 4px;
+  border-left-color: #D4AF37;
+  background: linear-gradient(135deg, #fffcf2 0%, #ffffff 100%);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+/* Completed phase */
+.phase-card.phase-completed {
+  opacity: 0.72;
+}
+.phase-card.phase-completed::after {
+  content: '✓';
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  color: #D4AF37;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.phase-number {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.phase-weeks {
+  font-size: 0.75rem;
+  color: #6b5d4a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.phase-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.phase-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.phase-row {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.phase-label {
+  display: inline-block;
+  min-width: 70px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #8a7d6a;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 0.5rem;
+  vertical-align: top;
+}
+
+.phase-value {
+  color: #6b5d4a;
+}
+
+/* Big Picture Overview */
+.big-picture {
+  background: linear-gradient(135deg, #2a2620 0%, #3a3228 100%);
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.big-picture h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.big-picture-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.big-stat {
+  text-align: center;
+}
+
+.big-number {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #D4AF37;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.big-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .progress-bars {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .focus-grid, .days-grid, .phases-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .study-tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .study-tool-card {
+    padding: 1.5rem;
+  }
+  
+  .big-picture-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .week-father-link {
+    padding: 0.85rem 1rem;
+  }
+  .week-father-link-caption {
+    font-size: 0.8rem;
+  }
+  .week-father-link-label {
+    font-size: 0.95rem;
+  }
+  .week-father-link-name {
+    font-size: 1.02rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+  
+  .status-header, .week-content, .timeline-content {
+    padding: 1.5rem;
+  }
+  
+  .big-picture {
+    padding: 2rem 1.5rem;
+  }
+  
+  .big-number {
+    font-size: 2rem;
+  }
+}
+
+/* Task System Styling */
+.day-tasks {
+  margin: 1rem 0;
+}
+
+.task-item {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f2f6;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  gap: 0.75rem;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #1a3a5c;
+  flex-shrink: 0;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.task-time {
+  font-size: 0.8rem;
+  color: #6b5d4a;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Checked state styling */
+.task-checkbox:checked + .task-text {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: #556b3d;
+}
+
+.day-progress {
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: linear-gradient(135deg, #faf6ed 0%, #e9ecef 100%);
+  border-radius: 6px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+/* Day completion states - FORCE GREEN STYLING */
+.day-card.day-complete {
+  background: #dce8c9 !important;
+  border: 3px solid #556b3d !important;
+  box-shadow: 0 6px 20px rgba(85, 107, 61, 0.4) !important;
+}
+
+.day-card.day-complete .day-header {
+  background: rgba(85, 107, 61, 0.1) !important;
+  border-radius: 6px !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.day-card.day-complete .day-status {
+  background: #556b3d !important;
+  color: #ffffff !important;
+  border-radius: 4px !important;
+  padding: 0.3rem 0.8rem !important;
+}
+
+.day-card.day-complete .day-progress {
+  background: #556b3d !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  padding: 0.75rem !important;
+}
+
+/* Also keep existing completed styling */
+.day-card.completed {
+  background: linear-gradient(135deg, #dce8c9 0%, #ffffff 100%) !important;
+  border: 2px solid #556b3d !important;
+}
+
+/* Animation for task completion */
+@keyframes taskComplete {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.task-checkbox:checked {
+  animation: taskComplete 0.3s ease;
+}
+
+/* Week completion - Seminary-appropriate styling */
+.week-complete-banner {
+  background: linear-gradient(135deg, #2a2620 0%, #3a3228 100%);
+  color: #e8ddc8;
+  padding: 2.5rem 2.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  border-left: 4px solid #D4AF37;
+  box-shadow: 0 4px 20px rgba(42, 38, 32, 0.25);
+}
+
+.week-conclusion-label {
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  color: #D4AF37;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.week-conclusion-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #faf6ed;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+}
+
+.week-conclusion-context {
+  font-style: italic;
+  color: #c9bca0;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.02rem;
+}
+
+.week-conclusion-reflection {
+  font-style: italic;
+  color: #e8ddc8;
+  margin: 1.5rem 0;
+  padding: 0 1rem;
+  border-left: 2px solid rgba(212, 175, 55, 0.4);
+  line-height: 1.7;
+}
+
+.week-conclusion-divider {
+  border: none;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  margin: 1.75rem 0;
+}
+
+.week-conclusion-next-label {
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+  font-size: 0.78rem;
+  color: #D4AF37;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+.week-conclusion-next-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #faf6ed;
+  margin-bottom: 0.25rem;
+}
+
+.week-conclusion-next-context {
+  font-style: italic;
+  color: #c9bca0;
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+}
+
+@media (max-width: 480px) {
+  .task-label {
+    gap: 0.5rem;
+  }
+  
+  .task-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================================
+   PHASE 3 — Data-driven week rendering additions
+   ============================================================ */
+
+/* "Missed" day — amber accent, not punitive */
+.day-card.day-missed {
+  border-left: 4px solid #D4AF37;
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.06) 0%, rgba(212, 160, 23, 0.02) 100%);
+}
+.day-status.missed {
+  background: rgba(212, 160, 23, 0.15);
+  color: #8a6d1f;
+  border: 1px solid rgba(212, 160, 23, 0.4);
+}
+.day-status.rest {
+  background: rgba(127, 140, 141, 0.15);
+  color: #6b5d4a;
+  border: 1px solid rgba(127, 140, 141, 0.4);
+}
+
+/* Advance button inside celebration banner */
+.advance-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn-advance {
+  background: #D4AF37;
+  color: #2a2620;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-advance:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+.btn-advance-secondary {
+  background: transparent;
+  color: #e8ddc8;
+  border: 1px solid rgba(236, 240, 241, 0.4);
+  padding: 0.875rem 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.btn-advance-secondary:hover {
+  background: rgba(236, 240, 241, 0.1);
+}
+
+/* Reconciliation dialog (appears when advancing with missed days) */
+.reconcile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+.reconcile-dialog {
+  background: #ffffff;
+  color: #2a2620;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #D4AF37;
+}
+.reconcile-dialog h3 {
+  margin: 0 0 1rem 0;
+  color: #2a2620;
+  font-size: 1.3rem;
+}
+.reconcile-dialog p {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+.reconcile-dialog ul.missed-list {
+  margin: 1rem 0;
+  padding: 0.75rem 1rem 0.75rem 2rem;
+  background: rgba(212, 160, 23, 0.08);
+  border-radius: 4px;
+  border-left: 3px solid #D4AF37;
+}
+.reconcile-dialog ul.missed-list li {
+  margin: 0.25rem 0;
+  color: #8a6d1f;
+}
+.reconcile-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.reconcile-actions button {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease;
+}
+.reconcile-actions button:hover {
+  transform: translateY(-1px);
+}
+.reconcile-actions .btn-catchup {
+  background: #D4AF37;
+  color: #2a2620;
+}
+.reconcile-actions .btn-moveon {
+  background: transparent;
+  color: #2a2620;
+  border: 1px solid #3a3228;
+}
+
+/* Readings summary style for completed days (collapsed view) */
+.day-readings-summary {
+  padding: 1rem 1.25rem;
+  background: rgba(85, 107, 61, 0.05);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #2a2620;
+}
+.day-readings-summary strong {
+  color: #556b3d;
+  font-weight: 600;
+  display: inline-block;
+  min-width: 5.5rem;
+}
+
+/* Rest day styling */
+.day-card.day-rest {
+  opacity: 0.85;
+}
+.day-rest-content {
+  padding: 1rem 1.25rem;
+  color: #6b5d4a;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+.day-rest-content strong {
+  color: #2a2620;
+  font-style: normal;
+}
+
+/* Archive indicator for weeks already advanced past */
+.archive-notice {
+  background: #f4ecd8;
+  color: #8a6d1f;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border-left: 3px solid #D4AF37;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Week-transition banner — shown once per advance action via a
+   sessionStorage signal. Sits at the top of Today's Focus, above the
+   Week Father link card. Cream ground, gold hairline, Cormorant
+   typography — intended as a quiet seminary-registrar acknowledgment
+   that one week has been archived and another has opened. Not modal,
+   not auto-dismissing on a timer; dismisses on the Begin-Week button
+   or on the user's first task checkbox interaction in the new week. */
+.week-transition-banner {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #D4AF37;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+.week-transition-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.week-transition-archived {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #6b5d4a;
+  font-size: 0.85rem;
+}
+.week-transition-opening {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  color: #1a3a5c;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+.week-transition-banner[data-part="ii"] .week-transition-opening {
+  color: #6b1e2a;
+}
+.week-transition-begin {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #1a3a5c;
+  background: transparent;
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  font-variant: small-caps;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.week-transition-begin:hover {
+  background: #D4AF37;
+  color: #ffffff;
+}
+.week-transition-begin:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.week-transition-banner[data-part="ii"] .week-transition-begin {
+  color: #6b1e2a;
+}
+.week-transition-banner[data-part="ii"] .week-transition-begin:hover {
+  color: #ffffff;
+}
+@media (max-width: 600px) {
+  .week-transition-banner {
+    grid-template-columns: 1fr;
+  }
+  .week-transition-begin {
+    justify-self: start;
+  }
+}
+
+/* Phase Timeline — "Completed [date]" caption for archived phases.
+   Hidden by default; revealed only when the phase card carries the
+   existing .phase-completed state class. Pairs with the existing
+   gold ✓ mark and opacity 0.72 dimming to read as honorable archive
+   rather than greyed-out inactivity. */
+.phase-completed-caption {
+  display: none;
+  margin-top: 0.5rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: #6b5d4a;
+  font-weight: 500;
+}
+.phase-card.phase-completed .phase-completed-caption {
+  display: block;
+}
+
+/* ============================================================
+   COURSE COMPLETE SUMMARY — persistent post-Week-40 state.
+   Renders in place of Today's Focus + Week Overview when
+   STUDY_STATE.currentWeek === 40 && week40Complete === "true".
+   Ceremonial but not celebratory: Christ-centered, humble,
+   phronema-oriented. Part II porphyry accent (the course closes
+   in Post-Nicene territory). Gold hairline dividers between
+   subsections. Weight ceiling 600; no 700; no emoji.
+   ============================================================ */
+.course-complete-section {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-top: 3px solid #6b1e2a;
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.course-complete-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-caption {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.95rem;
+  color: #6b5d4a;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+.course-complete-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.4rem;
+  line-height: 1.25;
+  color: #6b1e2a;
+  font-weight: 500;
+  margin: 0;
+}
+.course-complete-subheading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+}
+.course-complete-prose {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #2a2620;
+  max-width: 62ch;
+  margin: 0 auto 2.5rem auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-prose p {
+  margin: 0 0 1.1rem 0;
+}
+.course-complete-prose p:last-child {
+  margin-bottom: 0;
+}
+.course-complete-prose .greek {
+  font-family: 'Gentium Plus', 'Gentium', serif;
+  font-style: normal;
+}
+
+/* Journey section — stats + Fathers encountered */
+.course-complete-journey {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-section-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  color: #6b1e2a;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 1.75rem 0;
+}
+.course-complete-dates {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  color: #2a2620;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.course-complete-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.course-complete-stat {
+  text-align: center;
+  padding: 1rem;
+}
+.course-complete-stat-value {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #6b1e2a;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+.course-complete-stat-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: #6b5d4a;
+  font-weight: 500;
+}
+.course-complete-stat-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  transition: border-color 0.2s ease;
+}
+.course-complete-stat-link:hover {
+  border-bottom-color: #D4AF37;
+}
+
+/* Fathers-encountered list: two columns (Part I / Part II) on desktop,
+   stacked on mobile. Each Father is a link to their Father card. */
+.course-complete-fathers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.course-complete-fathers-group-label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+.course-complete-fathers-group[data-part="i"] .course-complete-fathers-group-label {
+  color: #1a3a5c;
+}
+.course-complete-fathers-group[data-part="ii"] .course-complete-fathers-group-label {
+  color: #6b1e2a;
+}
+.course-complete-fathers-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.course-complete-fathers-list li {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  padding: 0.35rem 0;
+  line-height: 1.4;
+}
+.course-complete-father-link {
+  color: #2a2620;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.course-complete-father-link:hover {
+  color: #6b1e2a;
+  border-bottom-color: #D4AF37;
+}
+.course-complete-fathers-group[data-part="i"] .course-complete-father-link:hover {
+  color: #1a3a5c;
+}
+
+/* Synthesis prompt — reflection invitation, localStorage-backed textarea.
+   Reads as a page in a notebook: cream ground, gold hairline, generous
+   padding. No submit, no count, no feedback. The user writing to
+   themselves. */
+.course-complete-synthesis {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+.course-complete-synthesis-intro {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+.course-complete-synthesis-questions {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 1.5rem auto;
+  max-width: 62ch;
+  counter-reset: synthesis;
+}
+.course-complete-synthesis-questions li {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #2a2620;
+  padding: 0.75rem 0 0.75rem 2.5rem;
+  position: relative;
+  counter-increment: synthesis;
+}
+.course-complete-synthesis-questions li::before {
+  content: counter(synthesis, lower-roman) ".";
+  position: absolute;
+  left: 0.5rem;
+  top: 0.75rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  color: #6b1e2a;
+  font-weight: 500;
+  font-size: 1rem;
+  width: 1.8rem;
+  text-align: right;
+}
+.course-complete-synthesis-field {
+  display: block;
+  width: 100%;
+  max-width: 62ch;
+  margin: 0 auto;
+  min-height: 200px;
+  background: #faf6ed;
+  border: 1px solid #e8ddc8;
+  border-left: 3px solid #D4AF37;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #2a2620;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+.course-complete-synthesis-field:focus {
+  outline: none;
+  border-color: #D4AF37;
+}
+.course-complete-synthesis-status {
+  display: block;
+  max-width: 62ch;
+  margin: 0.5rem auto 0 auto;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: #6b5d4a;
+  font-weight: 500;
+  text-align: right;
+  min-height: 1.2em;
+}
+
+/* Forward paths — two button-style links, Option-C convention:
+   solid gold #D4AF37, navy text #1a3a5c, Cormorant 600, 4px radius,
+   min-height 44px, 0.75rem/1.5rem padding. Equal visual weight,
+   stacked on mobile. */
+.course-complete-forward {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  text-align: center;
+}
+.course-complete-forward-intro {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  color: #6b5d4a;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.course-complete-forward-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.course-complete-forward-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #D4AF37;
+  color: #1a3a5c;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease;
+  min-height: 44px;
+  box-sizing: border-box;
+  line-height: 1.4;
+  flex: 1 1 260px;
+  max-width: 360px;
+}
+.course-complete-forward-link:hover {
+  background: #c4a028;
+}
+.course-complete-forward-link:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Print button — subtle action, smaller than forward-path buttons.
+   Clear affordance but visually recedes. */
+.course-complete-print-action {
+  text-align: center;
+}
+.course-complete-print-button {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  background: transparent;
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.course-complete-print-button:hover {
+  background: #D4AF37;
+  color: #ffffff;
+}
+.course-complete-print-button:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Print-only keepsake caption — hidden on screen, shown on print. */
+.course-complete-print-caption {
+  display: none;
+}
+
+/* Responsive — collapse padding and typography at small widths */
+@media (max-width: 600px) {
+  .course-complete-section {
+    padding: 2rem 1.25rem;
+  }
+  .course-complete-heading {
+    font-size: 1.9rem;
+  }
+  .course-complete-prose {
+    font-size: 1.05rem;
+  }
+  .course-complete-forward-link {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .course-complete-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Print stylesheet — keepsake completion record. Hide dashboard
+   chrome and interactive affordances; preserve ceremonial content
+   with black-on-white typography, generous margins, no gradients. */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  /* Hide everything except the course-complete section */
+  body > *:not(.course-complete-section),
+  .status-section,
+  .today-focus,
+  .week-overview,
+  .phase-timeline,
+  .required-reading,
+  .study-tools-section,
+  .session-controls-section,
+  header, nav, footer {
+    display: none !important;
+  }
+  /* Within the course-complete section, hide interactive/personal content */
+  .course-complete-synthesis,
+  .course-complete-forward,
+  .course-complete-print-action {
+    display: none !important;
+  }
+  /* Strip ornamentation; let paper be paper */
+  .course-complete-section {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 1.5cm !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+  }
+  .course-complete-heading,
+  .course-complete-section-label,
+  .course-complete-stat-value,
+  .course-complete-fathers-group-label {
+    color: #000000 !important;
+  }
+  .course-complete-prose,
+  .course-complete-dates,
+  .course-complete-fathers-list li,
+  .course-complete-caption,
+  .course-complete-stat-label {
+    color: #000000 !important;
+  }
+  .course-complete-stat-link {
+    color: #000000 !important;
+    border-bottom: none !important;
+  }
+  .course-complete-father-link {
+    color: #000000 !important;
+    border-bottom: none !important;
+    text-decoration: none !important;
+  }
+  .course-complete-header {
+    border-bottom: 1px solid #000000 !important;
+  }
+  .course-complete-prose,
+  .course-complete-journey {
+    border-bottom: 1px solid #000000 !important;
+  }
+  /* Keepsake caption appears only on print */
+  .course-complete-print-caption {
+    display: block !important;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #000000;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.95rem;
+    color: #000000;
+    font-style: italic;
+  }
+  .course-complete-print-caption-title {
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+  a { color: #000000 !important; text-decoration: none !important; }
+}
+
+/* Study Tools section — tool-card grid for Father Cards / Lexicon / Bible Reader */
+.study-tools-section {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+.study-tools-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.study-tools-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #2a2620;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-variant: small-caps;
+  margin: 0 0 0.4rem 0;
+}
+.study-tools-subhead {
+  color: #6b5d4a;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+.study-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.study-tool-card {
+  background: #fffdf7;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.study-tool-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.18);
+  border-color: #8a6d1f;
+}
+.study-tool-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2a2620;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.2;
+}
+.study-tool-desc {
+  font-family: 'Gentium Plus', 'Cormorant Garamond', Georgia, serif;
+  color: #6b5d4a;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1;
+  margin: 0 0 1.5rem 0;
+}
+.study-tool-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #D4AF37;
+  color: #1a3a5c;
+  text-decoration: none;
+  border-radius: 4px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s ease;
+  align-self: center;
+  min-height: 44px;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+.study-tool-link:hover {
+  background: #c4a028;
+}
+.study-tool-link:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Secondary text link — appears below the primary gold button on the
+   Anki deck card (and any future card that needs a "learn more" affordance).
+   Navy, italicized, serif; porphyry on hover. Additive only — existing
+   three Study Tools cards do not include this element. */
+.study-tool-secondary-link {
+  align-self: center;
+  margin-top: 0.6rem;
+  color: #1a3a5c;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+.study-tool-secondary-link:hover {
+  color: #6b1e2a;
+  text-decoration: underline;
+}
+.study-tool-secondary-link:focus-visible {
+  outline: 2px solid #1a3a5c;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   SESSION CONTROLS — BUG 2 FIX
+   Byzantine palette (navy/porphyry/gold/cream), weight cap 600,
+   44px minimum touch targets on all interactive elements.
+   ============================================================ */
+.session-controls-section {
+  margin: 3rem 0 2rem 0;
+  padding: 2rem;
+  background: rgba(255, 253, 247, 0.6);
+  border: 1px solid #e8ddc8;
+  border-radius: 8px;
+}
+.session-controls-header {
+  margin-bottom: 1.5rem;
+}
+.session-controls-heading {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #1a3a5c;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.25;
+}
+.session-controls-subhead {
+  font-size: 0.95rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Primary: safe, everyday action */
+.session-controls-primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.btn-reset-week {
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+  background: #1a3a5c;
+  color: #fffdf7;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.btn-reset-week:hover {
+  background: #2a4a6c;
+}
+.btn-reset-week:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.session-controls-hint {
+  font-size: 0.9rem;
+  color: #6b5d4a;
+  font-style: italic;
+}
+
+/* Danger zone: collapsed by default, warning-forward when open */
+.session-controls-danger {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e8ddc8;
+  padding-top: 1.25rem;
+}
+.session-controls-danger summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6b2a3a;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  user-select: none;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+.session-controls-danger summary::-webkit-details-marker { display: none; }
+.session-controls-danger summary:hover {
+  background: rgba(107, 42, 58, 0.06);
+}
+.session-controls-danger summary:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.session-controls-danger .danger-marker {
+  color: #8a3a4a;
+  font-size: 1.1rem;
+  font-variant: normal;
+  letter-spacing: 0;
+}
+.session-controls-danger[open] summary {
+  margin-bottom: 0.75rem;
+}
+.danger-body {
+  padding: 1rem 1rem 0.5rem 1rem;
+  background: rgba(107, 42, 58, 0.04);
+  border-left: 3px solid #8a3a4a;
+  border-radius: 0 6px 6px 0;
+}
+.danger-warning {
+  font-size: 0.95rem;
+  color: #4a2028;
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+.danger-warning strong {
+  font-weight: 600;
+  color: #6b2a3a;
+}
+.btn-reset-all {
+  min-height: 44px;
+  padding: 0.7rem 1.4rem;
+  background: #8a3a4a;
+  color: #fffdf7;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+.btn-reset-all:hover {
+  background: #6b2a3a;
+}
+.btn-reset-all:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.danger-hint {
+  font-size: 0.85rem;
+  color: #6b5d4a;
+  font-style: italic;
+  margin-top: 0.6rem;
+}
+.danger-hint code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  background: rgba(26, 58, 92, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: #1a3a5c;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .session-controls-section { padding: 1.25rem; }
+  .session-controls-primary { flex-direction: column; align-items: stretch; }
+  .btn-reset-week, .btn-reset-all { width: 100%; }
+}
+
+/* ============================================================
+   ITEM 1 — Back-to-top button
+   Single-mechanism visibility: JS toggles .visible class; CSS owns
+   display + opacity + transition. Deliberately does NOT mix the
+   .visible class with direct style.display writes (the documented
+   Greek Lexicon sync bug pattern).
+   ============================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fffdf7;
+  border: 1px solid #c9b27a;
+  color: #D4AF37;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(42, 38, 32, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.15s ease, box-shadow 0.2s ease;
+  z-index: 900;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  border-color: #8a6d1f;
+  box-shadow: 0 4px 14px rgba(42, 38, 32, 0.18);
+  transform: translateY(-2px);
+}
+.back-to-top:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: none;
+  stroke: #D4AF37;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.back-to-top:hover svg {
+  stroke: #8a6d1f;
+}
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+@media print {
+  .back-to-top { display: none !important; }
+}
+
+/* ============================================================
+   ITEM 2 — Resource ownership segmented control (three states)
+   Three pill-buttons per primary/biblical row. Direct-set, not a
+   cycle. Active state fills; inactive states are hairline outlines.
+   ============================================================ */
+.resource-status-control {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: 0.1rem;
+  display: inline-flex;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+}
+.resource-status-pill {
+  background: transparent;
+  border: 1px solid #c9b27a;
+  color: #6b5d4a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.22rem 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.3;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.resource-status-pill:hover {
+  border-color: #8a6d1f;
+  color: #3a3228;
+}
+.resource-status-pill:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+/* Active states — filled, palette-matched */
+.resource-status-pill.active[data-status="to-order"] {
+  background: #6b1e2a;
+  border-color: #6b1e2a;
+  color: #faf6ed;
+}
+.resource-status-pill.active[data-status="plan-ahead"] {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: #c9b27a;
+  color: #8a6d1f;
+}
+.resource-status-pill.active[data-status="ordered"] {
+  background: #8a6d1f;
+  border-color: #8a6d1f;
+  color: #faf6ed;
+}
+.resource-status-pill.active[data-status="have"] {
+  background: #556b3d;
+  border-color: #556b3d;
+  color: #faf6ed;
+}
+/* Status pill variant for the row's right-side tag pill (unified pill) */
+.required-item-status--ordered {
+  background: #8a6d1f;
+  color: #faf6ed;
+}
+/* Filter chip count tint when "ordered" chip is active is inherited from
+   .required-filter-chip.active — no override needed. */
+
+/* Mobile treatment — vertical stack if horizontal row won't fit. */
+@media (max-width: 600px) {
+  .resource-status-control {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.2rem;
+    min-width: 6.5rem;
+  }
+  .resource-status-pill {
+    text-align: center;
+  }
+}
+
+/* Print glyph for the "ordered" state — in-transit indicator. */
+@media print {
+  body.print-mode-reading-list .required-item.ordered::before {
+    content: "\25D0 ";
+  }
+  body.print-mode-reading-list .required-item.ordered {
+    opacity: 1 !important;
+  }
+  /* Hide the segmented control in print; the ::before glyph is the
+     print affordance. */
+  body.print-mode-reading-list .resource-status-control {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   ITEM 4 — Day 7 rest-day advance affordance
+   Participatory rest-day completion. Pre-click caption + button
+   inside the existing .day-rest-content. Gentle palette, not
+   directive.
+   ============================================================ */
+.day-rest-advance {
+  margin-top: 0.9rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid #e8ddc8;
+  font-style: normal;
+}
+.day-rest-advance-caption {
+  color: #6b5d4a;
+  font-size: 0.88rem;
+  font-style: italic;
+  margin-bottom: 0.55rem;
+  line-height: 1.5;
+}
+.day-rest-advance-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  background: #fffdf7;
+  border: 1px solid #c9b27a;
+  color: #8a6d1f;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.day-rest-advance-button:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: #8a6d1f;
+  color: #6b5310;
+}
+.day-rest-advance-button:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+
+/* Week-complete banner — refined advance actions layout for the
+   two-option rest-aware pattern (primary "Rest through Sunday" +
+   secondary "Advance now" text link). */
+.advance-actions-secondary-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #e8ddc8;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(232, 221, 200, 0.4);
+  cursor: pointer;
+  padding: 0.15rem 0;
+  line-height: 1.4;
+  transition: color 0.15s ease, border-bottom-color 0.15s ease;
+}
+.advance-actions-secondary-link:hover {
+  color: #faf6ed;
+  border-bottom-color: #faf6ed;
+}
+.advance-actions-secondary-link:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+/* Refined primary button copy variant — outlined muted-gold to
+   signal "softer" default. The existing .btn-advance (gold fill)
+   still works if a week isn't following the rest-aware pattern. */
+.btn-advance-rest {
+  background: transparent;
+  color: #faf6ed;
+  padding: 0.875rem 2rem;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  border-radius: 6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.btn-advance-rest:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: #D4AF37;
+}
+.btn-advance-rest:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+.advance-actions-column {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <a href="patristics-tracks.html" class="back-nav">← Patristics</a>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <h1>Φρόνημα τῶν Πατέρων</h1>
+    <div class="hero-subtitle">Entering the Mind of the Fathers</div>
+    <p class="hero-description">
+      Your complete dashboard for the 40-week Orthodox Patristic Formation program. 
+      Track your daily progress, plan your weekly studies, and navigate your systematic 
+      journey through 37 Church Fathers across 7 centuries of Orthodox tradition.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Current Status Dashboard -->
+  <section class="status-dashboard">
+    <div class="status-header">
+      <div class="status-title">Current Status</div>
+      <div class="current-week" id="current-week-status">Loading…</div>
+      <div class="progress-bars">
+        <div class="progress-item">
+          <div class="progress-label">Overall Progress</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="overall-progress-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="overall-progress-text">0% Complete</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label" id="phase-progress-label">Phase Progress</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="phase-progress-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="phase-progress-text">Week — of —</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">NT Books</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="nt-books-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="nt-books-text">0 of 27 books</div>
+        </div>
+        <div class="progress-item">
+          <div class="progress-label">Psalms</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="psalms-fill" style="width: 0%"></div>
+          </div>
+          <div class="progress-text" id="psalms-text">Starting Psalter</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Today's Focus — populated by renderTodaysFocus() -->
+  <section class="today-focus">
+    <h2 class="focus-title">Today's Study Focus</h2>
+    <div class="focus-content" id="todays-focus-content">
+      <!-- Populated dynamically from current week data -->
+    </div>
+  </section>
+
+  <!-- Week Overview — populated by renderWeekOverview() -->
+  <section class="week-overview">
+    <div class="week-header">
+      <div class="week-title" id="week-title">Loading…</div>
+      <div class="week-subtitle" id="week-subtitle">—</div>
+    </div>
+    <div class="week-content">
+      <div class="days-grid" id="days-grid">
+        <!-- Day cards populated dynamically from current week data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Phase Timeline -->
+  <section class="phase-timeline">
+    <div class="timeline-header">
+      <div class="timeline-title">The Complete Arc</div>
+      <div class="timeline-subtitle">Part I: Nicene Arc (Weeks 1–28) · Part II: Post-Nicene Christological Arc (Weeks 29–40)</div>
+    </div>
+    <div class="timeline-content">
+      <div class="phases-grid" id="phases-grid">
+      </div>
+    </div>
+  </section>
+
+  <!-- Required Reading — collapsible panel with current + upcoming resources -->
+  <details class="required-reading" id="required-reading">
+    <summary>
+      <div>
+        <div class="required-reading-title">Required Reading</div>
+        <div class="required-reading-meta" id="required-reading-meta">Click to view books for this track</div>
+      </div>
+      <span class="required-reading-chevron">▼</span>
+    </summary>
+    <div class="required-reading-body" id="required-reading-body">
+      <!-- Populated by renderRequiredReading() -->
+    </div>
+  </details>
+
+  <!-- Study Tools — quick access to Father Cards, Lexicon, Bible Reader -->
+  <section class="study-tools-section">
+    <div class="study-tools-header">
+      <h2 class="study-tools-heading">Study Tools</h2>
+      <div class="study-tools-subhead">Reference resources that run alongside your weekly formation</div>
+    </div>
+    <div class="study-tools-grid">
+      <div class="study-tool-card">
+        <h3 class="study-tool-title">Father Cards</h3>
+        <p class="study-tool-desc">
+          Biographical profiles of the Church Fathers with key works, theological contributions, and study context.
+        </p>
+        <a href="father-cards-index.html" class="study-tool-link">Browse Fathers</a>
+      </div>
+      <div class="study-tool-card">
+        <h3 class="study-tool-title">Patristic Lexicon</h3>
+        <p class="study-tool-desc">
+          Essential theological vocabulary — Greek and Latin — from the patristic corpus. Each entry includes transliteration, definition, etymology, and connection to the Fathers.
+        </p>
+        <a href="greek-lexicon-index.html" class="study-tool-link">Open Lexicon</a>
+      </div>
+      <div class="study-tool-card">
+        <h3 class="study-tool-title">Biblical Companion</h3>
+        <p class="study-tool-desc">
+          Daily biblical readings coordinated with patristic study — the Psalter as continuous thread and strategic books aligned with each Father's theology.
+        </p>
+        <a href="bible-reader.html" class="study-tool-link">Open Bible Reader</a>
+      </div>
+      <div class="study-tool-card">
+        <h3 class="study-tool-title">Patristic Lexicon — Anki Deck</h3>
+        <p class="study-tool-desc">
+          A downloadable flashcard deck covering the 285 Greek and Latin terms from the Patristic Lexicon, built for Anki — a free, open-source spaced-repetition application widely used by seminarians and language learners. Optional, for those who want active daily vocabulary review alongside their reading.
+        </p>
+        <a href="patristic-lexicon.apkg" class="study-tool-link" download>Download Deck</a>
+        <a href="anki-guide.html" class="study-tool-secondary-link">Learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Session Controls — BUG 2 FIX
+       Safe, everyday action (Reset This Week) sits in primary UI.
+       Destructive action (Reset All Progress) is hidden behind a collapsed
+       <details> with warning copy and requires a second typed confirmation. -->
+  <section class="session-controls-section" aria-labelledby="session-controls-heading">
+    <div class="session-controls-header">
+      <h2 class="session-controls-heading" id="session-controls-heading">Session Controls</h2>
+      <div class="session-controls-subhead">Reset your progress for this week, or — carefully — across the whole course</div>
+    </div>
+
+    <div class="session-controls-primary">
+      <button type="button" class="btn-reset-week" id="btn-reset-week">Reset This Week</button>
+      <div class="session-controls-hint">Unchecks all tasks for Week <span id="reset-week-label">—</span>. Previous weeks are not affected.</div>
+    </div>
+
+    <details class="session-controls-danger">
+      <summary>
+        <span class="danger-marker" aria-hidden="true">⚠</span>
+        <span class="danger-summary-text">Advanced — Danger Zone</span>
+      </summary>
+      <div class="danger-body">
+        <p class="danger-warning">
+          The control below permanently deletes your entire study archive across all
+          40 weeks — every completed week, every date stamp. <strong>This cannot be undone.</strong>
+          Use only if you truly want to start the course over from the beginning.
+        </p>
+        <button type="button" class="btn-reset-all" id="btn-reset-all">Reset All Progress</button>
+        <div class="danger-hint">Requires a second confirmation, then typing <code>RESET ALL</code> exactly.</div>
+      </div>
+    </details>
+  </section>
+
+  <!-- Big Picture Overview -->
+  <section class="big-picture">
+    <h2>The Complete Journey</h2>
+    <p>
+      Forty weeks tracing the Nicene Arc and its post-Nicene completion — from apostolic witness
+      through Cappadocian Trinitarianism and Chalcedonian Christology to the Damascene synthesis.
+      One formational path through the Fathers, Scripture, Greek, and the great theological threads
+      that shaped Orthodox tradition.
+    </p>
+    <div class="big-picture-stats">
+      <div class="big-stat">
+        <span class="big-number">40</span>
+        <span class="big-label">Weeks of Formation</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">14</span>
+        <span class="big-label">Phases · Apostolic → Post-Nicene</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">22</span>
+        <span class="big-label">Fathers in the Syllabus</span>
+      </div>
+      <div class="big-stat">
+        <span class="big-number">7</span>
+        <span class="big-label">Centuries Traced (~50–750 AD)</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Shared data layer — owns WEEK_DATA, PHASE_DATA, STUDY_STATE, pure helpers.
+     Must load before the inline script below. -->
+<script src="lexicon-data.js"></script>
+<script src="study-data.js"></script>
+
+<script>
+
+// Day status: 'upcoming' | 'current' | 'completed' | 'missed' | 'rest'
+// Is every task checkbox on this day card currently checked?
+// Returns false for rest day (idx 6) and for days with zero checkboxes.
+function isDayAllChecked(dayIdx) {
+  if (dayIdx === 6) return false;
+  const card = document.getElementById(`day-${dayIdx}`);
+  if (!card) return false;
+  const cbs = card.querySelectorAll('.task-checkbox');
+  if (cbs.length === 0) return false;
+  return Array.from(cbs).every(c => c.checked);
+}
+
+// The single "current" day — first uncompleted non-rest day at-or-after today.
+// When today is completed, this advances to tomorrow (or the next uncompleted day).
+// Returns null if every remaining day in the week is already completed.
+function firstCurrentDayIdx() {
+  const todayIdx = computeTodayDayIdx();
+  for (let i = todayIdx; i <= 5; i++) {
+    if (!isDayAllChecked(i)) return i;
+  }
+  return null;
+}
+
+function getDayStatus(dayIdx) {
+  if (dayIdx === 6) return 'rest';
+  const todayIdx = computeTodayDayIdx();
+  // Completion wins regardless of calendar position — you can work ahead.
+  if (isDayAllChecked(dayIdx)) return 'completed';
+  // "Current" is the first uncompleted day at-or-after today;
+  // it shifts forward as each day gets completed.
+  if (dayIdx === firstCurrentDayIdx()) return 'current';
+  // Past, uncompleted — honest archive.
+  if (dayIdx < todayIdx) return 'missed';
+  // Future, uncompleted, not the "first current" — just upcoming.
+  return 'upcoming';
+}
+
+function computeWeekFraction() {
+  const checkboxes = document.querySelectorAll('.task-checkbox');
+  if (checkboxes.length === 0) return 0;
+  const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
+  return checked / checkboxes.length;
+}
+
+// ==================================================================
+// RENDERERS
+// ==================================================================
+
+function renderAll() {
+  renderStatusHeader();
+  renderTodaysFocus();
+  renderWeekOverview();
+  renderPhaseTimeline();
+  renderRequiredReading();
+  renderOverallProgress();
+  // Course-complete summary is the persistent post-Week-40 state.
+  // Runs last so it can hide Today's Focus + Week Overview without
+  // racing their renderers, and so it observes updated stats.
+  renderCourseCompleteSummary();
+}
+
+function renderStatusHeader() {
+  const week = STUDY_STATE.currentWeek;
+  const wd = WEEK_DATA[week];
+  const phase = wd ? getPhaseForWeek(week) : null;
+  const el = document.getElementById('current-week-status');
+  if (!el) return;
+  if (!wd || !phase) {
+    el.textContent = `Week ${week} of 40`;
+    return;
+  }
+  const todayIdx = computeTodayDayIdx();
+  el.textContent = `Week ${week} of 40 • ${getDayLabel(todayIdx)} • Phase ${phase.number}: ${phase.name}`;
+}
+
+function phaseGreekHTML(phase) {
+  if (!phase) return '';
+
+  // Use getPhaseTerms which merges PHASE_DATA[n].greek focus terms with
+  // LEXICON_ENTRIES for the phase, returning the full enriched term set.
+  // Focus terms (the curated short list anchoring primary daily study)
+  // are flagged isFocus: true; additional phase-tagged lexicon entries
+  // come back isFocus: false and render in the "+N more terms" expander.
+  const terms = (typeof getPhaseTerms === 'function') ? getPhaseTerms(phase) : [];
+  if (!terms.length) return '';
+
+  // Partition for the two-tier display: focus pills get the existing
+  // gold-accent treatment in the primary row; non-focus terms go into a
+  // collapsed <details> expander below. When moreTerms is empty — e.g.
+  // Integration phases 8 and 14 whose entire focus list is a cross-phase
+  // review and no lexicon entries are tagged to that phase directly —
+  // the expander is suppressed entirely (graceful degradation).
+  const focusTerms = terms.filter(t => t.isFocus);
+  const moreTerms  = terms.filter(t => !t.isFocus);
+
+  const phaseLabel = phase.number !== undefined
+    ? `Phase ${phase.number}: ${phase.name}`
+    : phase.name;
+
+  // Focus pills — unchanged existing treatment. Greek/Latin + English
+  // inline. Full definition appears as a native tooltip on hover
+  // (desktop) for scholarly reinforcement. Pills are clickable — they
+  // deep-link to the term's entry in the main lexicon via
+  // `lexiconAnchorFor()`. Landing highlight CSS on the lexicon page
+  // shows the user exactly where they arrived. data-language drives
+  // font styling (upright Gentium for Greek, italic Cormorant for
+  // Latin) per the Part 3 amendment.
+  const termPills = focusTerms.map(t => {
+    const greek = t.greek || '';
+    const english = t.english || t.transliteration || '';
+    const title = t.definition
+      ? t.definition.replace(/"/g, '&quot;').replace(/\s+/g, ' ')
+      : (t.transliteration || '');
+    const englishHTML = english
+      ? ` <span class="greek-term-sep">·</span> <span class="greek-term-english">${english}</span>`
+      : '';
+    const href = (typeof lexiconAnchorFor === 'function')
+      ? lexiconAnchorFor(t)
+      : 'greek-lexicon-index.html';
+    const language = (t.language || 'greek').toLowerCase();
+    return `<a href="${href}" class="greek-term" data-language="${language}" title="${title}"><span class="greek-term-greek">${greek}</span>${englishHTML}</a>`;
+  }).join('');
+
+  // Compact grid pills for the expander. Denser format than the focus
+  // pills: headword + transliteration (italic) + short English gloss,
+  // stacked vertically in a 140px-min auto-fill grid. Same
+  // lexiconAnchorFor() deep-link as focus pills, same language-aware
+  // font styling.
+  let moreHTML = '';
+  if (moreTerms.length > 0) {
+    const morePills = moreTerms.map(t => {
+      const greek = t.greek || '';
+      const trans = t.transliteration || '';
+      const english = t.english || '';
+      const href = (typeof lexiconAnchorFor === 'function')
+        ? lexiconAnchorFor(t)
+        : 'greek-lexicon-index.html';
+      const language = (t.language || 'greek').toLowerCase();
+      const title = t.definition
+        ? t.definition.replace(/"/g, '&quot;').replace(/\s+/g, ' ')
+        : (trans || english);
+      const transHTML = trans
+        ? `<div class="focus-greek-more-pill-trans">${trans}</div>`
+        : '';
+      const glossHTML = english
+        ? `<div class="focus-greek-more-pill-gloss">${english}</div>`
+        : '';
+      return `<a href="${href}" class="focus-greek-more-pill" data-language="${language}" title="${title}"><div class="focus-greek-more-pill-head">${greek}</div>${transHTML}${glossHTML}</a>`;
+    }).join('');
+
+    const moreLabel = `${moreTerms.length} more ${moreTerms.length === 1 ? 'term' : 'terms'}`;
+    moreHTML = `
+      <details class="focus-greek-more">
+        <summary class="focus-greek-more-summary">${moreLabel}</summary>
+        <div class="focus-greek-more-grid">
+          ${morePills}
+        </div>
+      </details>`;
+  }
+
+  return `
+    <div class="focus-greek">
+      <div class="focus-greek-header">
+        <h3>Phase Vocabulary — ${phaseLabel}</h3>
+        <div class="focus-greek-meta">
+          <span class="focus-greek-count">${terms.length} ${terms.length === 1 ? 'term' : 'terms'}</span>
+          <a href="greek-lexicon-index.html#phase-${phase.number}" class="focus-greek-link">View Lexicon →</a>
+        </div>
+      </div>
+      <div class="focus-greek-terms">
+        ${termPills}
+      </div>${moreHTML}
+    </div>
+  `;
+}
+
+// Resolve the Father(s) for the current study week via PHASE_DATA,
+// returning an array of { name, url } pairs. Uses the existing
+// FATHER_PAGES global for URL lookup — does not duplicate routing logic.
+// Returns [] on any failure (uninitialized STUDY_STATE, missing phase,
+// missing FATHER_PAGES entry, unknown Father name). Empty array signals
+// the caller to hide the element rather than render a broken state.
+function getCurrentWeekFathers() {
+  try {
+    if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return [];
+    const week = STUDY_STATE.currentWeek;
+    if (typeof week !== 'number' || !isFinite(week)) return [];
+    if (typeof getPhaseForWeek !== 'function') return [];
+    const phase = getPhaseForWeek(week);
+    if (!phase || !phase.fathers) return [];
+    if (typeof FATHER_PAGES === 'undefined' || !FATHER_PAGES) return [];
+
+    // phase.fathers is a human-readable string — split on commas or
+    // semicolons, trim, drop empties. Ampersand "Basil & Gregory" is
+    // also tolerated as a separator.
+    const names = String(phase.fathers)
+      .split(/\s*[,;]\s*|\s+&\s+/)
+      .map(s => s.trim())
+      .filter(Boolean);
+
+    const out = [];
+    names.forEach(name => {
+      const url = FATHER_PAGES[name];
+      if (url) out.push({ name: name, url: url });
+    });
+    return out;
+  } catch (e) {
+    return [];
+  }
+}
+
+// Render the "This Week's Father(s)" link card at the top of Today's
+// Focus. Hidden (empty string) when no resolvable Fathers exist for the
+// current week. Palette driven by Part I (weeks 1–28, navy) vs Part II
+// (weeks 29–40, porphyry) via a data-part attribute on the card.
+function weekFatherHTML() {
+  const fathers = getCurrentWeekFathers();
+  if (!fathers.length) return '';
+  if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return '';
+  const week = STUDY_STATE.currentWeek;
+  if (typeof week !== 'number' || !isFinite(week)) return '';
+
+  const part = week <= 28 ? 'i' : 'ii';
+  const isMulti = fathers.length > 1;
+  const label = isMulti ? "This Week's Fathers:" : "This Week's Father:";
+
+  // Escape minimal HTML-unsafe characters in Father names — they are
+  // drawn from a curated data file but we keep the guard anyway.
+  const esc = (s) => String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  const sep = ' <span class="week-father-link-sep">\u00b7</span> ';
+  const linkHTML = fathers.map(f =>
+    `<a class="week-father-link-name" href="${esc(f.url)}">${esc(f.name)}</a>`
+  ).join(sep);
+
+  // Single-Father: arrow follows the name directly. Multi-Father: one
+  // arrow after the full list.
+  const arrow = ' <span class="week-father-link-arrow" aria-hidden="true">\u2192</span>';
+
+  return `
+    <div class="week-father-link" data-part="${part}">
+      <span class="week-father-link-caption">Week ${week}</span>
+      <span class="week-father-link-label">${label}</span>${linkHTML}${arrow}
+    </div>
+  `;
+}
+
+// ==================================================================
+// WEEK TRANSITION BANNER — one-shot post-advance ceremonial moment.
+// ==================================================================
+// When the student confirms advance from Week N to Week N+1, the
+// advanceToNextWeek() method writes a sessionStorage signal describing
+// the transition. On the very next render, weekTransitionBannerHTML()
+// reads that signal (consuming it atomically so it shows exactly once),
+// emits an inline banner at the top of Today's Focus, and leaves the
+// rest of the dashboard untouched. The banner self-dismisses on the
+// Begin-Week button or on the first task-checkbox interaction.
+// No modal, no confetti, no streak — a quiet page-turn.
+
+function readWeekTransitionFlag() {
+  try {
+    const raw = sessionStorage.getItem('weekTransition');
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return null;
+    return parsed;
+  } catch (e) {
+    return null;
+  }
+}
+function consumeWeekTransitionFlag() {
+  try { sessionStorage.removeItem('weekTransition'); } catch (e) {}
+}
+
+// Resolve the Father(s) line for an arbitrary week via PHASE_DATA.
+// Mirrors the routing logic in getCurrentWeekFathers() but returns
+// the raw phase.fathers string rather than FATHER_PAGES-resolved
+// links — this is display copy, not navigation.
+function fatherNamesForWeek(w) {
+  try {
+    if (typeof getPhaseForWeek !== 'function') return '';
+    const ph = getPhaseForWeek(w);
+    if (!ph || !ph.fathers) return '';
+    return String(ph.fathers).trim();
+  } catch (e) { return ''; }
+}
+
+function weekTransitionBannerHTML() {
+  const flag = readWeekTransitionFlag();
+  if (!flag) return '';
+  // Consume on read — banner shows exactly once, regardless of whether
+  // the flag matches current state. A stale flag (user reverted week
+  // via some other path) is discarded silently without rendering.
+  consumeWeekTransitionFlag();
+
+  if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return '';
+  const newWeek = STUDY_STATE.currentWeek;
+  if (typeof newWeek !== 'number' || !isFinite(newWeek)) return '';
+
+  // Sanity gate: flag must describe the state we are actually rendering.
+  if (flag.courseComplete) {
+    if (newWeek !== 40) return '';
+  } else if (flag.newWeek !== newWeek) {
+    return '';
+  }
+
+  const esc = (s) => String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  const part = newWeek <= 28 ? 'i' : 'ii';
+
+  // Course-complete variant: terminal banner after advancing past Week 40.
+  if (flag.courseComplete) {
+    const week40Father = fatherNamesForWeek(40) || 'John of Damascus';
+    return `
+      <div class="week-transition-banner" data-variant="course-complete" data-part="${part}" id="week-transition-banner" role="status" aria-live="polite">
+        <div class="week-transition-body">
+          <span class="week-transition-archived">Week 40 with ${esc(week40Father)} — archived.</span>
+          <span class="week-transition-opening">You've completed the full patristic arc.</span>
+        </div>
+        <button type="button" class="week-transition-begin" id="week-transition-dismiss" aria-label="Close">
+          Close
+        </button>
+      </div>
+    `;
+  }
+
+  // Standard variant: Week N → Week N+1.
+  const completedFather = fatherNamesForWeek(flag.justCompletedWeek);
+  const newFather = fatherNamesForWeek(newWeek);
+  const archivedLine = completedFather
+    ? `Week ${flag.justCompletedWeek} with ${esc(completedFather)} — archived.`
+    : `Week ${flag.justCompletedWeek} — archived.`;
+  const openingLine = newFather
+    ? `Beginning Week ${newWeek}: ${esc(newFather)}`
+    : `Beginning Week ${newWeek}`;
+
+  return `
+    <div class="week-transition-banner" data-part="${part}" id="week-transition-banner" role="status" aria-live="polite">
+      <div class="week-transition-body">
+        <span class="week-transition-archived">${archivedLine}</span>
+        <span class="week-transition-opening">${openingLine}</span>
+      </div>
+      <button type="button" class="week-transition-begin" id="week-transition-dismiss" aria-label="Dismiss and begin Week ${newWeek}">
+        Begin Week ${newWeek}
+      </button>
+    </div>
+  `;
+}
+
+// Wire the banner's dismiss behavior. Called from StudyTaskManager.init()
+// AFTER renderAll() and attachEventListeners(), so the week-overview task
+// checkboxes exist in the DOM at this point. The banner dismisses on:
+//   - explicit Begin-Week / Close button click
+//   - first change event on any .task-checkbox (first real engagement
+//     with the new week's work)
+// The listeners are { once: true } so they self-detach on first fire.
+function wireWeekTransitionDismiss() {
+  const banner = document.getElementById('week-transition-banner');
+  if (!banner) return;
+  const remove = () => {
+    if (banner.parentNode) banner.parentNode.removeChild(banner);
+  };
+  const dismissBtn = document.getElementById('week-transition-dismiss');
+  if (dismissBtn) dismissBtn.addEventListener('click', remove, { once: true });
+  document.querySelectorAll('.task-checkbox').forEach(cb => {
+    cb.addEventListener('change', remove, { once: true });
+  });
+}
+
+// ==================================================================
+// COURSE COMPLETE SUMMARY — persistent post-Week-40 ceremonial state.
+// ==================================================================
+// Gated on STUDY_STATE.currentWeek === 40 && week40Complete === "true".
+// When the gate is true, hides .today-focus and .week-overview and
+// injects a .course-complete-section before .phase-timeline. The
+// section is rebuilt on every render so stats, dates, and the Fathers
+// list stay consistent with current data.
+//
+// VOICE: The two prose paragraphs (opening and situating-in-tradition)
+// are AI DRAFTS marked with <!-- AI DRAFT — EDIT --> comments in the
+// emitted HTML. The spec is explicit that Kevin will edit every line;
+// this scaffolding is meant to be rewritten, not preserved verbatim.
+//
+// VOICE ANCHORS (per spec):
+//   - Humility: the course is a door, not a destination
+//   - Christ-centered: the Fathers beheld Him; they are not the point
+//   - Phronema: the goal is a mind received, not a credential earned
+
+function isCourseComplete() {
+  try {
+    if (typeof STUDY_STATE === 'undefined' || !STUDY_STATE) return false;
+    if (STUDY_STATE.currentWeek !== 40) return false;
+    return localStorage.getItem('week40Complete') === 'true';
+  } catch (e) {
+    return false;
+  }
+}
+
+// Read weekStart_week1 and week40CompleteDate from localStorage and
+// format them as a dignified "Began [date] — Completed [date]" line.
+// Falls back gracefully when either date is missing — we do not fake
+// data or hide the section for want of a stamp.
+function formatJourneyDateRange() {
+  const fmt = (iso) => {
+    if (!iso) return null;
+    try {
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return null;
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch (e) { return null; }
+  };
+  let startISO = null;
+  let endISO = null;
+  try { startISO = localStorage.getItem('weekStart_week1'); } catch (e) {}
+  try { endISO = localStorage.getItem('week40CompleteDate'); } catch (e) {}
+  const start = fmt(startISO);
+  const end = fmt(endISO);
+  if (start && end) return `Began ${start} — completed ${end}.`;
+  if (end) return `Completed ${end}.`;
+  if (start) return `Began ${start}.`;
+  return '';
+}
+
+// Walk PHASE_DATA collecting unique Fathers in the order they appear,
+// split into Part I (weeks 1–28) and Part II (weeks 29–40). Each
+// entry is resolved against FATHER_PAGES for a linkable URL where
+// available; unresolved names render as plain text so nothing is
+// silently dropped. Returns { partI: [{name,url}], partII: [{name,url}] }.
+function collectAllFathers() {
+  const partI = [];
+  const partII = [];
+  const seenI = new Set();
+  const seenII = new Set();
+  try {
+    if (typeof PHASE_DATA === 'undefined' || !PHASE_DATA) return { partI, partII };
+    const keys = Object.keys(PHASE_DATA).sort((a, b) =>
+      PHASE_DATA[a].weeks[0] - PHASE_DATA[b].weeks[0]
+    );
+    keys.forEach(key => {
+      const p = PHASE_DATA[key];
+      if (!p || !p.fathers) return;
+      const firstWeek = p.weeks[0];
+      const bucket = firstWeek <= 28 ? partI : partII;
+      const seen = firstWeek <= 28 ? seenI : seenII;
+      const names = String(p.fathers)
+        .split(/\s*[,;]\s*|\s+&\s+/)
+        .map(s => s.trim())
+        .filter(Boolean);
+      names.forEach(name => {
+        if (seen.has(name)) return;
+        seen.add(name);
+        let url = null;
+        try {
+          if (typeof FATHER_PAGES !== 'undefined' && FATHER_PAGES && FATHER_PAGES[name]) {
+            url = FATHER_PAGES[name];
+          }
+        } catch (e) {}
+        bucket.push({ name, url });
+      });
+    });
+  } catch (e) {}
+  return { partI, partII };
+}
+
+// Count NT books and Psalter passes via existing study-data helpers
+// where available. Returns safe defaults when helpers are absent so
+// the stats block still renders coherent numbers.
+function readCompletionStats() {
+  let ntBooks = 0;
+  let ntTotal = 27;
+  let psalmsRead = 0;
+  let lexiconCount = 0;
+  try {
+    if (typeof countCompletedBooks === 'function') ntBooks = countCompletedBooks() | 0;
+  } catch (e) {}
+  try {
+    if (typeof NT_TOTAL_BOOKS !== 'undefined' && NT_TOTAL_BOOKS) ntTotal = NT_TOTAL_BOOKS | 0;
+  } catch (e) {}
+  try {
+    if (typeof computePsalmsRead === 'function') psalmsRead = computePsalmsRead() | 0;
+  } catch (e) {}
+  try {
+    if (typeof LEXICON_ENTRIES !== 'undefined' && Array.isArray(LEXICON_ENTRIES)) {
+      lexiconCount = LEXICON_ENTRIES.length;
+    }
+  } catch (e) {}
+  // Psalter passes: 150 Psalms per complete cycle of the Psalter.
+  const psalterPasses = psalmsRead > 0 ? (psalmsRead / 150) : 0;
+  return { ntBooks, ntTotal, psalmsRead, psalterPasses, lexiconCount };
+}
+
+// HTML-escape — shared utility for interpolating user-visible strings.
+function cc_esc(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// Build the Fathers list HTML for one part (I or II). Each Father is
+// a link when FATHER_PAGES resolves it, plain text otherwise.
+function fathersListHTML(fathers) {
+  return fathers.map(f => {
+    if (f.url) {
+      return `<li><a class="course-complete-father-link" href="${cc_esc(f.url)}">${cc_esc(f.name)}</a></li>`;
+    }
+    return `<li>${cc_esc(f.name)}</li>`;
+  }).join('');
+}
+
+// Format a psalter-passes display. "completed 1 pass" / "completed 2 passes" /
+// "partial" when < 1 full cycle.
+function formatPsalterPasses(n) {
+  if (!isFinite(n) || n <= 0) return 'partial';
+  if (n < 1) return 'partial';
+  const rounded = Math.floor(n);
+  return rounded === 1 ? '1 pass' : `${rounded} passes`;
+}
+
+// Main renderer. Idempotent — safe to call on every render pass.
+// On gate-true: hides study sections, injects (or replaces) the
+// course-complete section. On gate-false: removes any existing
+// summary and restores study-section visibility.
+function renderCourseCompleteSummary() {
+  const focusEl = document.querySelector('.today-focus');
+  const overviewEl = document.querySelector('.week-overview');
+  const existing = document.getElementById('course-complete-section');
+
+  if (!isCourseComplete()) {
+    // Tear down any prior summary; restore study sections.
+    if (existing && existing.parentNode) existing.parentNode.removeChild(existing);
+    if (focusEl) focusEl.style.display = '';
+    if (overviewEl) overviewEl.style.display = '';
+    return;
+  }
+
+  // Hide the ongoing-study sections. Use inline display:none so we
+  // don't fight any future .hidden class convention.
+  if (focusEl) focusEl.style.display = 'none';
+  if (overviewEl) overviewEl.style.display = 'none';
+
+  const { partI, partII } = collectAllFathers();
+  const stats = readCompletionStats();
+  const dateRange = formatJourneyDateRange();
+  const psalterLabel = formatPsalterPasses(stats.psalterPasses);
+  const completionDate = (() => {
+    try {
+      const iso = localStorage.getItem('week40CompleteDate');
+      if (!iso) return '';
+      const d = new Date(iso);
+      if (isNaN(d.getTime())) return '';
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+    } catch (e) { return ''; }
+  })();
+
+  const fathersBlockHTML = `
+    <div class="course-complete-fathers">
+      ${partI.length ? `
+        <div class="course-complete-fathers-group" data-part="i">
+          <h4 class="course-complete-fathers-group-label">Part I — Nicene Arc</h4>
+          <ul class="course-complete-fathers-list">${fathersListHTML(partI)}</ul>
+        </div>
+      ` : ''}
+      ${partII.length ? `
+        <div class="course-complete-fathers-group" data-part="ii">
+          <h4 class="course-complete-fathers-group-label">Part II — Post-Nicene Christological Arc</h4>
+          <ul class="course-complete-fathers-list">${fathersListHTML(partII)}</ul>
+        </div>
+      ` : ''}
+    </div>
+  `;
+
+  const statsBlockHTML = `
+    <div class="course-complete-stats">
+      <div class="course-complete-stat">
+        <span class="course-complete-stat-value">${stats.ntBooks}</span>
+        <span class="course-complete-stat-label">of ${stats.ntTotal} New Testament books</span>
+      </div>
+      <div class="course-complete-stat">
+        <span class="course-complete-stat-value">${psalterLabel.split(' ')[0]}</span>
+        <span class="course-complete-stat-label">Psalter ${psalterLabel.split(' ').slice(1).join(' ') || 'completion'}</span>
+      </div>
+      <div class="course-complete-stat">
+        <span class="course-complete-stat-value">${stats.lexiconCount}</span>
+        <span class="course-complete-stat-label">
+          <a class="course-complete-stat-link" href="greek-lexicon-index.html">patristic terms encountered</a>
+        </span>
+      </div>
+    </div>
+  `;
+
+  // Opening prose — AI DRAFT. Second-person, warm, names specific
+  // moments of the 40-week arc. Kevin will edit every line.
+  const openingProseHTML = `
+    <!-- AI DRAFT — EDIT -->
+    <div class="course-complete-prose">
+      <p>Forty weeks ago you began with Clement writing to Corinth and Ignatius walking toward the lions, and you have come now to John of Damascus gathering the whole tradition into a single ordered witness. Between those two points you sat with Athanasius while the Nicene crisis turned on the right word for the Son; with Basil, Gregory, and Gregory as they taught the Church to speak of one God in three Persons without losing either the one or the three; with Cyril and Leo as the councils hammered out what it means that the Word became flesh.</p>
+      <p>The work of the Fathers is not their own thought about Christ; it is the mind of Christ as the Church has received and handed it down — the <span class="greek">φρόνημα</span> (<em>phronema</em>) of the Body, the habit of seeing that one acquires by praying and reading and listening inside the tradition rather than about it. What you have been doing these forty weeks is learning to think with the Church, not to master a subject.</p>
+      <p>And so what you have read is a beginning. The Fathers will not be finished with you when this course ends; the door they opened you will keep walking through, at different depths, for the rest of your life.</p>
+    </div>
+  `;
+
+  // Situating-in-Tradition prose — AI DRAFT. Names the living tradition
+  // past John of Damascus; frames this course as a door.
+  const situatingProseHTML = `
+    <!-- AI DRAFT — EDIT -->
+    <div class="course-complete-prose">
+      <p>The Tradition does not stop at the Damascene. After him come Symeon the New Theologian, for whom the knowledge of God is nothing less than seeing the uncreated light; Gregory Palamas defending the Hesychasts and giving the Church its mature theology of the divine energies; the compilers and voices of the Philokalia, handing the prayer of the heart down through the centuries. And the Tradition is living still, in the monasteries of the Holy Mountain, in the parishes where you will stand next Sunday, in the bishops and theologians and elders of the Orthodox Church today.</p>
+      <p>This course has not surveyed the whole of patristic thought. It has introduced you to twenty-two voices across fourteen phases of the Church's first eight centuries — enough for a door, not a map. The Fathers are not a curriculum to finish; they are companions to return to, different ones at different seasons of your life. Read them again. Read them more slowly next time.</p>
+    </div>
+  `;
+
+  // Synthesis intro + three questions — the questions themselves are
+  // the spec's copy verbatim; the intro is AI DRAFT. Kevin may wish to
+  // revise the intro; the three questions he provided should stay.
+  const synthesisHTML = `
+    <div class="course-complete-synthesis">
+      <h3 class="course-complete-section-label">A Moment to Reflect</h3>
+      <!-- AI DRAFT — EDIT (intro line only; the three questions are Kevin's copy) -->
+      <p class="course-complete-synthesis-intro">Before you choose what comes next, a moment to reflect. Write to yourself, not to an audience — nothing you put here is seen by anyone else.</p>
+      <ol class="course-complete-synthesis-questions">
+        <li>Which Father's voice has taken up residence in how you now think?</li>
+        <li>Where has your understanding of the Church — of Christ, of yourself — changed most?</li>
+        <li>What have you not yet understood, and intend to return to?</li>
+      </ol>
+      <textarea
+        id="course-complete-synthesis-text"
+        class="course-complete-synthesis-field"
+        aria-label="Your reflection (saved locally, private to you)"
+        placeholder="Your reflection — written to yourself."
+      ></textarea>
+      <span class="course-complete-synthesis-status" id="course-complete-synthesis-status" aria-live="polite"></span>
+    </div>
+  `;
+
+  const forwardHTML = `
+    <div class="course-complete-forward">
+      <h3 class="course-complete-section-label">What Comes Next</h3>
+      <p class="course-complete-forward-intro">The Tradition continues. Where will you go next?</p>
+      <div class="course-complete-forward-actions">
+        <a class="course-complete-forward-link" href="index.html">Continue into another discipline</a>
+        <a class="course-complete-forward-link" href="patristics-tracks.html">Return to the patristic corpus at a different depth</a>
+      </div>
+    </div>
+  `;
+
+  const printActionHTML = `
+    <div class="course-complete-print-action">
+      <button type="button" class="course-complete-print-button" id="course-complete-print-btn" aria-label="Print your completion record">
+        Print your completion record
+      </button>
+    </div>
+  `;
+
+  // Print-only keepsake caption — hidden on screen, revealed by @media print.
+  const printCaptionHTML = `
+    <div class="course-complete-print-caption" aria-hidden="true">
+      <span class="course-complete-print-caption-title">Entering the Mind of the Fathers</span>
+      40-Week Course of Orthodox Patristic Formation
+      ${completionDate ? `<br>Completed ${cc_esc(completionDate)}` : ''}
+    </div>
+  `;
+
+  const sectionHTML = `
+    <section class="course-complete-section" id="course-complete-section" aria-labelledby="course-complete-heading">
+      <header class="course-complete-header">
+        <span class="course-complete-caption">Course Complete</span>
+        <h2 class="course-complete-heading" id="course-complete-heading">The forty-week journey is complete.</h2>
+        <div class="course-complete-subheading">Entering the Mind of the Fathers</div>
+      </header>
+
+      ${openingProseHTML}
+
+      <div class="course-complete-journey">
+        <h3 class="course-complete-section-label">Your Journey</h3>
+        ${dateRange ? `<div class="course-complete-dates">${cc_esc(dateRange)}</div>` : ''}
+        ${statsBlockHTML}
+        ${fathersBlockHTML}
+      </div>
+
+      ${situatingProseHTML}
+
+      ${synthesisHTML}
+
+      ${forwardHTML}
+
+      ${printActionHTML}
+
+      ${printCaptionHTML}
+    </section>
+  `;
+
+  // Inject (or replace) the summary section, anchored before the
+  // Phase Timeline so it sits naturally in the reading order.
+  if (existing && existing.parentNode) {
+    existing.outerHTML = sectionHTML;
+  } else {
+    const anchor = document.querySelector('.phase-timeline');
+    if (anchor && anchor.parentNode) {
+      anchor.insertAdjacentHTML('beforebegin', sectionHTML);
+    } else {
+      // Fallback: append to main container (this branch is defensive —
+      // the phase-timeline anchor has been present throughout the
+      // dashboard's history).
+      const main = document.querySelector('main') || document.body;
+      main.insertAdjacentHTML('beforeend', sectionHTML);
+    }
+  }
+}
+
+// Wire the synthesis textarea: load prior text from localStorage on
+// render, autosave on input (debounced 5s), also save on blur so text
+// is never lost when the user navigates away mid-draft. No submit, no
+// character count, no AI feedback — the user writing to themselves.
+function wireSynthesisTextarea() {
+  const ta = document.getElementById('course-complete-synthesis-text');
+  if (!ta) return;
+  const status = document.getElementById('course-complete-synthesis-status');
+
+  // Load prior reflection if present.
+  try {
+    const saved = localStorage.getItem('week40Synthesis');
+    if (saved !== null && saved !== undefined) ta.value = saved;
+  } catch (e) {}
+
+  let timer = null;
+  const save = () => {
+    try {
+      localStorage.setItem('week40Synthesis', ta.value);
+      if (status) {
+        status.textContent = 'Saved';
+        // Clear the status line after a few seconds so it doesn't
+        // linger as visual noise.
+        setTimeout(() => {
+          if (status.textContent === 'Saved') status.textContent = '';
+        }, 2500);
+      }
+    } catch (e) {}
+  };
+
+  ta.addEventListener('input', () => {
+    if (status) status.textContent = 'Writing…';
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      save();
+      timer = null;
+    }, 5000);
+  });
+  ta.addEventListener('blur', () => {
+    if (timer) { clearTimeout(timer); timer = null; }
+    save();
+  });
+}
+
+// Wire the print button to window.print(). The @media print stylesheet
+// handles the keepsake view; no programmatic DOM manipulation needed.
+function wireCourseCompletePrint() {
+  const btn = document.getElementById('course-complete-print-btn');
+  if (!btn) return;
+  btn.addEventListener('click', () => {
+    try { window.print(); } catch (e) {}
+  });
+}
+
+function phaseFathersHTML(phase) {
+  if (!phase || !phase.fathers) return '';
+  const label = phase.number !== undefined
+    ? `Phase ${phase.number} Fathers`
+    : 'Phase Fathers';
+  return `
+    <div class="phase-fathers-line">
+      <span class="phase-fathers-label">${label}</span>
+      <span class="phase-fathers-names">${linkifyPhaseFathers(phase.fathers)}</span>
+    </div>
+  `;
+}
+
+function renderTodaysFocus() {
+  const week = STUDY_STATE.currentWeek;
+  const wd = WEEK_DATA[week];
+  const container = document.getElementById('todays-focus-content');
+  if (!container) return;
+  if (!wd) {
+    container.innerHTML = '<div class="focus-section"><p>Week data not available.</p></div>';
+    return;
+  }
+  const phase = getPhaseForWeek(week);
+  const todayIdx = computeTodayDayIdx();
+
+  // One-shot transition banner (empty string on normal loads). Rendered
+  // above the Week Father link card at the top of Today's Focus.
+  const transitionHTML = weekTransitionBannerHTML();
+
+  if (todayIdx === 6) {
+    container.innerHTML = `
+      ${transitionHTML}
+      ${weekFatherHTML()}
+      ${phaseFathersHTML(phase)}
+      <div class="focus-grid">
+        <div class="focus-section">
+          <h3>Today: Rest &amp; Reflection</h3>
+          <p>Sunday is a rest day. Attend Divine Liturgy if possible. Allow this week's readings to settle into prayer.</p>
+        </div>
+      </div>
+      ${phaseGreekHTML(phase)}
+    `;
+    return;
+  }
+
+  if (todayIdx === 5) {
+    container.innerHTML = `
+      ${transitionHTML}
+      ${weekFatherHTML()}
+      ${phaseFathersHTML(phase)}
+      <div class="focus-grid">
+        <div class="focus-section">
+          <h3>Today: Psalms</h3>
+          <ul><li><span>${psalmRange(week, 5)}</span><span class="reading-time">15 min</span></li></ul>
+          <a href="bible-reader.html" class="action-button">Read Psalms →</a>
+        </div>
+        <div class="focus-section">
+          <h3>Today: Review &amp; Synthesis</h3>
+          <p>${wd.reviewPrompt || 'Revisit this week\'s readings. Write a synthesis note on the doctrinal threads you observed.'}</p>
+        </div>
+      </div>
+      ${phaseGreekHTML(phase)}
+    `;
+    return;
+  }
+
+  const day = wd.days[todayIdx];
+  if (!day) {
+    container.innerHTML = '<div class="focus-section"><p>Today\'s data not available.</p></div>';
+    return;
+  }
+
+  container.innerHTML = `
+    ${transitionHTML}
+    ${weekFatherHTML()}
+    ${phaseFathersHTML(phase)}
+    <div class="focus-grid">
+      <div class="focus-section">
+        <h3>Psalms</h3>
+        <ul><li><span>${psalmRange(week, todayIdx)}</span><span class="reading-time">15 min</span></li></ul>
+        <a href="bible-reader.html" class="action-button">Read Psalms →</a>
+      </div>
+      <div class="focus-section">
+        <h3>Biblical Reading</h3>
+        <ul><li><span>${day.biblical}</span><span class="reading-time">15 min</span></li></ul>
+        <a href="bible-reader.html" class="action-button">Open Bible Reader →</a>
+      </div>
+      <div class="focus-section">
+        <h3>Patristic Reading</h3>
+        <ul><li><span>${linkifyPatristic(day.patristic)}</span><span class="reading-time">15 min</span></li></ul>
+      </div>
+      <div class="focus-section">
+        <h3>Secondary Reading</h3>
+        <ul><li><span>${day.secondary}</span><span class="reading-time">15 min</span></li></ul>
+      </div>
+    </div>
+    ${phaseGreekHTML(phase)}
+  `;
+}
+
+function renderWeekOverview() {
+  const week = STUDY_STATE.currentWeek;
+  const wd = WEEK_DATA[week];
+  const weekTitleEl = document.getElementById('week-title');
+  const weekSubtitleEl = document.getElementById('week-subtitle');
+  const daysGridEl = document.getElementById('days-grid');
+  if (!wd) {
+    if (weekTitleEl) weekTitleEl.textContent = `Week ${week}`;
+    if (daysGridEl) daysGridEl.innerHTML = '<p>Week data not yet available.</p>';
+    return;
+  }
+  if (weekTitleEl) weekTitleEl.textContent = `Week ${week}: ${wd.title}`;
+  if (weekSubtitleEl) weekSubtitleEl.textContent = wd.subtitle || '';
+  if (!daysGridEl) return;
+  daysGridEl.innerHTML = '';
+  for (let i = 0; i < 7; i++) {
+    daysGridEl.appendChild(createDayCard(i, wd));
+  }
+}
+
+function createDayCard(dayIdx, weekData) {
+  const card = document.createElement('div');
+  card.id = `day-${dayIdx}`;
+
+  const statusLabels = {
+    completed: 'Completed',
+    current: 'Current',
+    missed: 'Needs Attention',
+    upcoming: 'Upcoming',
+    rest: 'Rest Day'
+  };
+
+  // D7: Rest day
+  if (dayIdx === 6) {
+    card.className = 'day-card day-rest upcoming';
+    // Week 40's Day 7 routes into course-complete; mid-course weeks get the
+    // rest-aware advance copy. The button in both cases calls attemptAdvance()
+    // on the shared manager, which honors missed-day reconciliation.
+    const wn = weekData.number;
+    const isFinalWeek = wn >= 40;
+    const buttonLabel = isFinalWeek
+      ? 'Mark course complete'
+      : `Mark rest complete and advance to Week ${wn + 1}`;
+    const captionText = isFinalWeek
+      ? 'When you are ready to close the course, mark it complete and open the summary.'
+      : 'When your rest day is complete, mark it and move into the new week.';
+    card.innerHTML = `
+      <div class="day-header">
+        <div class="day-title">${getDayLabel(dayIdx)}</div>
+        <div class="day-status rest">Rest Day</div>
+      </div>
+      <div class="day-rest-content">
+        <strong>Rest &amp; Reflection:</strong> No new material today.<br>
+        <strong>Optional:</strong> Attend Divine Liturgy. Allow this week's readings to settle.<br>
+        <strong>Preparation:</strong> Preview next week when ready.
+        <div class="day-rest-advance">
+          <div class="day-rest-advance-caption">${captionText}</div>
+          <button type="button" class="day-rest-advance-button" id="day-rest-advance-btn"
+                  aria-label="${buttonLabel}"
+                  onclick="if(window.studyTaskManager){window.studyTaskManager.attemptAdvance();}">
+            ${buttonLabel}
+          </button>
+        </div>
+      </div>
+    `;
+    return card;
+  }
+
+  // D6: Review day — 2 tasks (Psalms + Review)
+  if (dayIdx === 5) {
+    card.className = 'day-card upcoming';
+    const psalms = psalmRange(weekData.number, 5);
+    const wn = weekData.number;
+    card.innerHTML = `
+      <div class="day-header">
+        <div class="day-title">${getDayLabel(dayIdx)}</div>
+        <div class="day-status upcoming">Upcoming</div>
+      </div>
+      <div class="day-tasks">
+        <div class="task-item">
+          <label class="task-label">
+            <input type="checkbox" id="w${wn}-d5-psalms" class="task-checkbox" data-day="${dayIdx}" />
+            <span class="task-text"><strong>Psalms:</strong> ${psalms}</span>
+            <span class="task-time">15 min</span>
+          </label>
+        </div>
+        <div class="task-item">
+          <label class="task-label">
+            <input type="checkbox" id="w${wn}-d5-review" class="task-checkbox" data-day="${dayIdx}" />
+            <span class="task-text"><strong>Review:</strong> ${weekData.reviewPrompt || 'Write a synthesis note on this week\'s readings.'}</span>
+            <span class="task-time">30 min</span>
+          </label>
+        </div>
+      </div>
+      <div class="day-progress" id="progress-day-${dayIdx}">0 of 2 tasks complete</div>
+    `;
+    return card;
+  }
+
+  // D1–D5: Standard study days — 4 tasks (Psalms, Biblical, Patristic, Secondary)
+  const day = weekData.days[dayIdx] || { biblical: '—', patristic: '—', secondary: '—' };
+  const psalms = psalmRange(weekData.number, dayIdx);
+  const wn = weekData.number;
+  const tasks = [
+    { id: `w${wn}-d${dayIdx}-psalms`, track: 'Psalms', text: psalms, time: '15 min' },
+    { id: `w${wn}-d${dayIdx}-biblical`, track: 'Biblical', text: day.biblical, time: '15 min' },
+    { id: `w${wn}-d${dayIdx}-patristic`, track: 'Primary', text: linkifyPatristic(day.patristic), time: '15 min' },
+    { id: `w${wn}-d${dayIdx}-secondary`, track: 'Secondary', text: day.secondary, time: '15 min' }
+  ];
+
+  card.className = 'day-card upcoming';
+  card.innerHTML = `
+    <div class="day-header">
+      <div class="day-title">${getDayLabel(dayIdx)}</div>
+      <div class="day-status upcoming">Upcoming</div>
+    </div>
+    <div class="day-tasks">
+      ${tasks.map(t => `
+        <div class="task-item">
+          <label class="task-label">
+            <input type="checkbox" id="${t.id}" class="task-checkbox" data-day="${dayIdx}" />
+            <span class="task-text"><strong>${t.track}:</strong> ${t.text}</span>
+            <span class="task-time">${t.time}</span>
+          </label>
+        </div>
+      `).join('')}
+    </div>
+    <div class="day-progress" id="progress-day-${dayIdx}">0 of ${tasks.length} tasks complete</div>
+  `;
+  return card;
+}
+
+function renderPhaseTimeline() {
+  const grid = document.getElementById('phases-grid');
+  if (!grid) return;
+
+  const currentWeek = STUDY_STATE.currentWeek;
+  const currentPhase = getPhaseForWeek(currentWeek);
+  const currentPhaseKey = currentPhase ? String(currentPhase.number) : null;
+
+  const phaseKeys = Object.keys(PHASE_DATA).sort((a, b) => {
+    return PHASE_DATA[a].weeks[0] - PHASE_DATA[b].weeks[0];
+  });
+
+  grid.innerHTML = phaseKeys.map(key => {
+    const p = PHASE_DATA[key];
+    const weeks = p.weeks;
+    const firstWeek = weeks[0];
+    const lastWeek = weeks[weeks.length - 1];
+
+    // Part I = Weeks 1–28 (Nicene Arc, navy)
+    // Part II = Weeks 29–40 (Post-Nicene Christological Arc, porphyry)
+    const partClass = firstWeek <= 28 ? 'phase-part-i' : 'phase-part-ii';
+
+    // State: current > completed > default
+    let stateClass = '';
+    if (String(p.number) === currentPhaseKey) {
+      stateClass = 'phase-current';
+    } else if (lastWeek < currentWeek) {
+      stateClass = 'phase-completed';
+    }
+
+    const weekRange = weeks.length === 1
+      ? `Week ${firstWeek}`
+      : `Weeks ${firstWeek}\u2013${lastWeek}`;
+
+    // Archive caption: for completed phases, prefer the stored completion
+    // date of the phase's last week. Graceful fallback to "Completed"
+    // alone when no date was recorded (older archives predating the
+    // week-complete timestamp, or progress migrated from legacy storage).
+    let completedCaption = '';
+    if (lastWeek < currentWeek) {
+      let dateStr = '';
+      try {
+        const raw = localStorage.getItem(`week${lastWeek}CompleteDate`);
+        if (raw) {
+          const d = new Date(raw);
+          if (!isNaN(d.getTime())) {
+            dateStr = d.toLocaleDateString(undefined, {
+              year: 'numeric', month: 'short', day: 'numeric'
+            });
+          }
+        }
+      } catch (e) {}
+      completedCaption = dateStr ? `Completed ${dateStr}` : 'Completed';
+    }
+
+    return `
+      <div class="phase-card ${partClass} ${stateClass}">
+        <div class="phase-header">
+          <div class="phase-number">${p.number}</div>
+          <div class="phase-weeks">${weekRange}</div>
+        </div>
+        <div class="phase-title">${p.name}</div>
+        <div class="phase-details">
+          <div class="phase-row">
+            <span class="phase-label">Fathers</span><span class="phase-value">${p.fathers || '\u2014'}</span>
+          </div>
+          <div class="phase-row">
+            <span class="phase-label">Primary</span><span class="phase-value">${p.primaryText || '\u2014'}</span>
+          </div>
+          <div class="phase-row">
+            <span class="phase-label">Biblical</span><span class="phase-value">${p.biblicalTrack || '\u2014'}</span>
+          </div>
+        </div>
+        <div class="phase-completed-caption">${completedCaption}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+// Parse a resource's `phase` string like "Weeks 29–30", "Weeks 1–4", "All weeks",
+// "All weeks (~15 min/day)" into { start, end, isAll }. Returns null if unparseable.
+function parsePhaseToWeekRange(phase) {
+  if (!phase) return null;
+  if (/all\s+weeks/i.test(phase)) return { start: 1, end: 40, isAll: true };
+  // "Weeks 29–30" (em-dash) or "Weeks 1-4" (hyphen) or "Weeks 32 – 33" (spaced)
+  const rangeMatch = phase.match(/Weeks?\s+(\d+)\s*[–—-]\s*(\d+)/i);
+  if (rangeMatch) {
+    return { start: parseInt(rangeMatch[1], 10), end: parseInt(rangeMatch[2], 10), isAll: false };
+  }
+  // Single "Week 5"
+  const singleMatch = phase.match(/Weeks?\s+(\d+)/i);
+  if (singleMatch) {
+    const n = parseInt(singleMatch[1], 10);
+    return { start: n, end: n, isAll: false };
+  }
+  return null;
+}
+
+// ==================================================================
+// Required Reading — resource ownership + filter + printable list
+// ==================================================================
+
+// localStorage key for user-global resource ownership.
+// Schema (current, three-state): { [id]: 'to-order' | 'plan-ahead' | 'ordered' | 'have' }
+// Schema (legacy, boolean):      { [id]: true }  — `true` migrates to 'have'.
+// Not enrollment-scoped — you either own a book or you don't, regardless of
+// which track surfaces it.
+const RESOURCE_OWNERSHIP_KEY = 'resource_ownership';
+const RESOURCE_STATUSES = ['to-order', 'plan-ahead', 'ordered', 'have'];
+
+// In-memory filter state. Not persisted — resets on reload because users
+// typically want the full list first.
+let RESOURCE_FILTER = 'all';
+
+// Read the raw map from localStorage, migrating legacy boolean values
+// transparently. Boolean `true` -> 'have'. Boolean `false` or anything
+// unrecognized -> entry dropped (classifier will derive to-order/plan-ahead
+// from phase).
+function getOwnershipMap() {
+  let raw;
+  try {
+    raw = localStorage.getItem(RESOURCE_OWNERSHIP_KEY);
+  } catch (e) {
+    return {};
+  }
+  if (!raw) return {};
+  let parsed;
+  try { parsed = JSON.parse(raw); } catch (e) { return {}; }
+  if (!parsed || typeof parsed !== 'object') return {};
+
+  // Migrate in place. Only persist if we actually changed anything.
+  let mutated = false;
+  const out = {};
+  Object.keys(parsed).forEach(id => {
+    const v = parsed[id];
+    if (v === true) { out[id] = 'have'; mutated = true; }
+    else if (typeof v === 'string' && RESOURCE_STATUSES.indexOf(v) !== -1) { out[id] = v; }
+    else { mutated = true; /* drop false / unrecognized */ }
+  });
+  if (mutated) {
+    try { localStorage.setItem(RESOURCE_OWNERSHIP_KEY, JSON.stringify(out)); } catch (e) {}
+  }
+  return out;
+}
+
+// Persist a resource's explicit status. Passing null/undefined removes the
+// entry, letting the classifier fall back to phase-derived default.
+function setResourceStatus(id, status) {
+  if (!id) return;
+  let map;
+  try {
+    const raw = localStorage.getItem(RESOURCE_OWNERSHIP_KEY);
+    map = raw ? JSON.parse(raw) : {};
+    if (!map || typeof map !== 'object') map = {};
+  } catch (e) {
+    map = {};
+  }
+  if (status && RESOURCE_STATUSES.indexOf(status) !== -1) {
+    map[id] = status;
+  } else {
+    delete map[id];
+  }
+  try {
+    localStorage.setItem(RESOURCE_OWNERSHIP_KEY, JSON.stringify(map));
+  } catch (e) {}
+}
+
+// Back-compat alias for legacy call sites (none remaining after this patch,
+// but kept defensively in case other scripts reference it).
+function setOwnership(id, isOwned) {
+  setResourceStatus(id, isOwned ? 'have' : null);
+}
+
+// Classify a resource for pill + filter purposes. Precedence:
+// inApp (always wins) → explicit user status in map → phase-derived default
+// (to-order if phase <= currentWeek, else plan-ahead).
+function classifyResource(r, currentWeek, ownedMap) {
+  if (r.inApp) return 'in-app';
+  if (ownedMap && r.id && ownedMap[r.id]) {
+    const stored = ownedMap[r.id];
+    if (RESOURCE_STATUSES.indexOf(stored) !== -1) return stored;
+  }
+  const range = parsePhaseToWeekRange(r.phase);
+  const isCurrent = !range || range.isAll || range.start <= currentWeek;
+  return isCurrent ? 'to-order' : 'plan-ahead';
+}
+
+// Segmented-control click handler. Direct-set (not a cycle). Persists the
+// chosen status, then re-renders so pills, counts, filter chips, and row
+// classes all stay consistent.
+function setResourceOwnershipStatus(id, status) {
+  setResourceStatus(id, status);
+  renderRequiredReading();
+}
+
+// Back-compat handler for any stale checkbox references (none remaining
+// after this patch). Treats checked as 'have', unchecked as clearing.
+function toggleResourceOwnership(id, checkboxEl) {
+  setResourceStatus(id, (checkboxEl && checkboxEl.checked) ? 'have' : null);
+  renderRequiredReading();
+}
+
+// Filter chip handler — updates active chip, hides non-matching rows,
+// hides subsections/groups that end up empty, shows an empty-state message
+// when nothing matches.
+function applyResourceFilter(filterKey, btnEl) {
+  RESOURCE_FILTER = filterKey || 'all';
+  document.querySelectorAll('.required-filter-chip').forEach(c => {
+    const match = c.dataset.filter === RESOURCE_FILTER;
+    c.classList.toggle('active', match);
+    c.setAttribute('aria-selected', match ? 'true' : 'false');
+  });
+  let shownCount = 0;
+  document.querySelectorAll('.required-item[data-status]').forEach(row => {
+    const match = RESOURCE_FILTER === 'all' || row.dataset.status === RESOURCE_FILTER;
+    row.style.display = match ? '' : 'none';
+    if (match) shownCount++;
+  });
+  // Hide subsection wrappers whose rows are all filtered out
+  document.querySelectorAll('.required-subcategory').forEach(sub => {
+    const hasVisible = Array.from(sub.querySelectorAll('.required-item[data-status]'))
+      .some(r => r.style.display !== 'none');
+    sub.style.display = hasVisible ? '' : 'none';
+  });
+  // Hide group wrappers whose subcategories are all hidden
+  document.querySelectorAll('.required-group').forEach(grp => {
+    const hasVisibleSub = Array.from(grp.querySelectorAll('.required-subcategory'))
+      .some(s => s.style.display !== 'none');
+    grp.style.display = hasVisibleSub ? '' : 'none';
+  });
+  // Empty-state message
+  let emptyEl = document.getElementById('required-empty-state');
+  if (shownCount === 0 && RESOURCE_FILTER !== 'all') {
+    if (!emptyEl) {
+      emptyEl = document.createElement('div');
+      emptyEl.id = 'required-empty-state';
+      emptyEl.className = 'required-empty-state';
+      const anchor = document.querySelector('.required-filter-chips');
+      if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(emptyEl, anchor.nextSibling);
+    }
+    const msgs = {
+      'to-order': 'No books to order right now.',
+      'plan-ahead': 'No books on the Plan-Ahead list.',
+      'ordered': 'No books in transit.',
+      'have': 'No books on your shelf yet — mark each one as you acquire it.',
+      'in-app': 'No in-app resources match this filter.'
+    };
+    emptyEl.textContent = msgs[RESOURCE_FILTER] || 'No resources match this filter.';
+  } else if (emptyEl) {
+    emptyEl.remove();
+  }
+}
+
+// Print button handler — toggles body class, forces details open, prints,
+// cleans up body class on afterprint (with timeout fallback).
+function openPrintReadingList() {
+  const details = document.getElementById('required-reading');
+  if (details) details.open = true;
+  document.body.classList.add('print-mode-reading-list');
+  const cleanup = () => {
+    document.body.classList.remove('print-mode-reading-list');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  // Give the browser a tick to apply the class before invoking print.
+  setTimeout(() => window.print(), 50);
+  // Fallback cleanup in case afterprint doesn't fire (rare, some browsers).
+  setTimeout(() => document.body.classList.remove('print-mode-reading-list'), 8000);
+}
+
+// Help "?" tooltip toggle — opens a small explanatory bubble, dismissed
+// by clicking outside.
+function toggleRequiredHelp(btnEl) {
+  const wrap = btnEl && btnEl.closest('.required-help');
+  if (!wrap) return;
+  const willOpen = !wrap.classList.contains('open');
+  wrap.classList.toggle('open', willOpen);
+  if (willOpen) {
+    const dismiss = (e) => {
+      if (!wrap.contains(e.target)) {
+        wrap.classList.remove('open');
+        document.removeEventListener('click', dismiss);
+      }
+    };
+    setTimeout(() => document.addEventListener('click', dismiss), 0);
+  }
+}
+
+// Render the Required Reading collapsible panel. Resources are classified
+// against STUDY_STATE.currentWeek into "Currently Reading" (active/past phase)
+// vs "Upcoming — Plan Ahead" (future phase). Within each group, items are
+// subgrouped by category (Primary / Biblical / Secondary). Primary + biblical
+// rows carry an ownership checkbox persisted in localStorage under the key
+// `resource_ownership`; secondary rows do not. EOB is in-app (inApp: true)
+// and exempt from ownership tracking. "Recommended further reading" renders
+// at the bottom as a display-only, typography-parity subsection that does
+// not participate in the filter chips or ownership tracking.
+function renderRequiredReading() {
+  const body = document.getElementById('required-reading-body');
+  const metaEl = document.getElementById('required-reading-meta');
+  if (!body) return;
+
+  // Resolve active track. Fallback to '40-week' so the panel always renders usefully.
+  const enrollment = (typeof getEnrollment === 'function') ? getEnrollment() : null;
+  const trackKey = (enrollment && enrollment.topic === 'patristics' && enrollment.track)
+    ? enrollment.track : '40-week';
+  const track = TRACKS && TRACKS.patristics && TRACKS.patristics[trackKey];
+  if (!track || !track.requiredResources || !track.requiredResources.length) {
+    body.innerHTML = '<p class="required-reading-intro">Resource list not yet available for this track.</p>';
+    return;
+  }
+
+  const currentWeek = (typeof STUDY_STATE !== 'undefined' && STUDY_STATE && STUDY_STATE.currentWeek) ? STUDY_STATE.currentWeek : 1;
+  const ownedMap = getOwnershipMap();
+
+  // Classify every resource once. This drives pills, filter counts, and grouping.
+  const classified = track.requiredResources.map(r => {
+    const range = parsePhaseToWeekRange(r.phase);
+    const isCurrent = !range || range.isAll || range.start <= currentWeek;
+    return { r, status: classifyResource(r, currentWeek, ownedMap), isUpcoming: !isCurrent };
+  });
+
+  // Stat line counts Primary + Biblical only. Secondary + recommended get a
+  // smaller muted tally underneath the main stat.
+  const primaryBiblical = classified.filter(c => c.r.category === 'primary' || c.r.category === 'biblical');
+  const statTotal = primaryBiblical.length;
+  const statToOrder = primaryBiblical.filter(c => c.status === 'to-order').length;
+  const statPlanAhead = primaryBiblical.filter(c => c.status === 'plan-ahead').length;
+  const statOrdered = primaryBiblical.filter(c => c.status === 'ordered').length;
+  const statHaveOnly = primaryBiblical.filter(c => c.status === 'have').length;
+  const statInApp = primaryBiblical.filter(c => c.status === 'in-app').length;
+  // "On your shelf" = owned via explicit 'have' state + in-app (always accessible)
+  const statOnShelf = statHaveOnly + statInApp;
+  const secondaryTotal = classified.filter(c => c.r.category === 'secondary').length;
+  const recommendedTotal = (track.recommendedSecondary || []).length;
+
+  // Summary-line meta (compact status hint in the collapsible summary)
+  if (metaEl) {
+    const parts = [`${statTotal} resources`];
+    if (statToOrder > 0) parts.push(`${statToOrder} to order`);
+    if (statOrdered > 0) parts.push(`${statOrdered} ordered`);
+    if (statPlanAhead > 0) parts.push(`${statPlanAhead} to plan`);
+    metaEl.textContent = parts.join(' · ');
+  }
+
+  const current = classified.filter(c => !c.isUpcoming);
+  const upcoming = classified.filter(c => c.isUpcoming);
+
+  const CATEGORY_LABELS = { primary: 'Primary Texts', biblical: 'Biblical Texts', secondary: 'Secondary Reading' };
+  const CATEGORY_ORDER = ['primary', 'biblical', 'secondary'];
+
+  // Section-level callout fires only when every item in a subsection shares
+  // the same freeWeb source AND there are at least 2 items. Single-item
+  // subsections always render per-row to avoid overweight callouts.
+  const detectCallout = (items) => {
+    if (!items || items.length < 2) return null;
+    if (!items.every(c => c.r.freeWeb && c.r.freeWeb.url)) return null;
+    const first = items[0].r.freeWeb;
+    const same = items.every(c => c.r.freeWeb.name === first.name && c.r.freeWeb.url === first.url);
+    return same ? first : null;
+  };
+
+  const escAttr = (s) => String(s == null ? '' : s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+  const STATUS_LABELS = {
+    'to-order': 'To order',
+    'plan-ahead': 'Plan ahead',
+    'ordered': 'Ordered',
+    'have': 'Have',
+    'in-app': 'In-app'
+  };
+
+  // Short-form labels for the segmented control (tighter row budget).
+  const SEGMENT_LABELS = {
+    'to-order': 'To order',
+    'plan-ahead': 'Plan ahead',
+    'ordered': 'Ordered',
+    'have': 'Have'
+  };
+
+  // Render a single classified resource row.
+  const renderItem = (c, opts) => {
+    const hidePerRowFreeWeb = opts && opts.hidePerRowFreeWeb;
+    const r = c.r;
+    const status = c.status;
+    const isOwned = status === 'have';
+    const isOrdered = status === 'ordered';
+
+    // Primary + biblical rows get a three-state segmented control, except inApp items.
+    const hasStatusControl = (r.category === 'primary' || r.category === 'biblical') && !r.inApp && r.id;
+    // The first pill dynamically labels "To order" vs "Plan ahead" based on
+    // phase position — same slot, dynamic label. The user's explicit status
+    // (ordered / have) lives in the two following slots.
+    const range = parsePhaseToWeekRange(r.phase);
+    const isCurrent = !range || range.isAll || range.start <= currentWeek;
+    const firstSlotKey = isCurrent ? 'to-order' : 'plan-ahead';
+    const firstSlotLabel = SEGMENT_LABELS[firstSlotKey];
+    const segments = [
+      { key: firstSlotKey, label: firstSlotLabel },
+      { key: 'ordered',    label: SEGMENT_LABELS['ordered'] },
+      { key: 'have',       label: SEGMENT_LABELS['have'] }
+    ];
+    const statusControlHTML = hasStatusControl
+      ? `<div class="resource-status-control" role="group" aria-label="Ownership status for ${escAttr(r.title)}">
+           ${segments.map(seg => `
+             <button type="button"
+                     class="resource-status-pill${status === seg.key ? ' active' : ''}"
+                     data-status="${seg.key}"
+                     aria-pressed="${status === seg.key ? 'true' : 'false'}"
+                     onclick="setResourceOwnershipStatus('${escAttr(r.id)}', '${seg.key}')">${seg.label}</button>
+           `).join('')}
+         </div>`
+      : '';
+
+    const statusPill = `<span class="required-item-status required-item-status--${status}">${STATUS_LABELS[status]}</span>`;
+
+    const freeWebLine = (!hidePerRowFreeWeb && r.freeWeb && r.freeWeb.url)
+      ? `<div class="required-item-freeweb">Free online: <a href="${r.freeWeb.url}" target="_blank" rel="noopener noreferrer">${r.freeWeb.name} →</a></div>`
+      : '';
+
+    // In-app affordance — EOB row links to the Biblical Companion reader.
+    const inAppLink = r.inApp
+      ? `<div class="required-item-inapp-link"><a href="bible-reader.html">Open Biblical Companion →</a></div>`
+      : '';
+
+    // Row-level state classes:
+    //   .owned   → dims opacity (existing visual for "on your shelf")
+    //   .ordered → drives the print ◐ glyph (no opacity change — the book
+    //              isn't yours yet, so don't fade it on screen)
+    const rowClasses = [
+      'required-item',
+      c.isUpcoming ? 'upcoming' : '',
+      isOwned ? 'owned' : '',
+      isOrdered ? 'ordered' : ''
+    ].filter(Boolean).join(' ');
+
+    return `
+      <li class="${rowClasses}" data-status="${status}" data-id="${escAttr(r.id)}">
+        ${statusControlHTML}
+        <div class="required-item-main">
+          <div class="required-item-title">${r.title}</div>
+          ${r.author ? `<div class="required-item-author">${r.author}</div>` : ''}
+          ${(r.edition || r.details) ? `<div class="required-item-meta">${[r.edition, r.details].filter(Boolean).join(' · ')}</div>` : ''}
+          ${freeWebLine}
+          ${inAppLink}
+        </div>
+        <div class="required-item-tags">
+          ${statusPill}
+          ${r.phase ? `<span class="required-item-phase">${r.phase}</span>` : ''}
+        </div>
+      </li>
+    `;
+  };
+
+  const renderSubcategory = (cat, items) => {
+    if (!items || !items.length) return '';
+    const callout = detectCallout(items);
+    const calloutHTML = callout
+      ? `<div class="required-freeweb-callout">All titles in this section are freely available at <a href="${callout.url}" target="_blank" rel="noopener noreferrer">${callout.name} →</a></div>`
+      : '';
+    return `
+      <div class="required-subcategory required-category--${cat}">
+        <div class="required-subcategory-title">${CATEGORY_LABELS[cat]}</div>
+        ${calloutHTML}
+        <ul class="required-list">
+          ${items.map(c => renderItem(c, { hidePerRowFreeWeb: !!callout })).join('')}
+        </ul>
+      </div>
+    `;
+  };
+
+  const renderGroup = (classifiedItems, label, isUpcoming) => {
+    if (!classifiedItems.length) return '';
+    const byCat = { primary: [], biblical: [], secondary: [] };
+    classifiedItems.forEach(c => {
+      const cat = c.r.category || 'primary';
+      (byCat[cat] || byCat.primary).push(c);
+    });
+    const subsHTML = CATEGORY_ORDER.map(cat => renderSubcategory(cat, byCat[cat])).join('');
+    return `
+      <div class="required-group">
+        <div class="required-group-title${isUpcoming ? ' upcoming' : ''}">${label}</div>
+        ${subsHTML}
+      </div>
+    `;
+  };
+
+  // Recommended further reading — typography parity but display-only.
+  const renderRecommendedItem = (r) => {
+    if (typeof r === 'string') {
+      return `<li class="required-item required-item--display-only"><div class="required-item-main"><div class="required-item-title">${r}</div></div></li>`;
+    }
+    const freeWebLine = (r.freeWeb && r.freeWeb.url)
+      ? `<div class="required-item-freeweb">Free online: <a href="${r.freeWeb.url}" target="_blank" rel="noopener noreferrer">${r.freeWeb.name} →</a></div>`
+      : '';
+    return `
+      <li class="required-item required-item--display-only" data-id="${escAttr(r.id)}">
+        <div class="required-item-main">
+          <div class="required-item-title">${r.title}</div>
+          ${r.author ? `<div class="required-item-author">${r.author}</div>` : ''}
+          ${r.details ? `<div class="required-item-meta">${r.details}</div>` : ''}
+          ${freeWebLine}
+        </div>
+      </li>
+    `;
+  };
+  const recommendedHTML = (track.recommendedSecondary && track.recommendedSecondary.length)
+    ? `<div class="required-recommended-section">
+         <div class="required-recommended-title">Recommended further reading</div>
+         <div class="required-recommended-intro">Optional companion volumes for deeper study — not required, not ownership-tracked.</div>
+         <ul class="required-list">
+           ${track.recommendedSecondary.map(renderRecommendedItem).join('')}
+         </ul>
+       </div>`
+    : '';
+
+  // Stat row: primary stat line + secondary tally + help tooltip + print button.
+  const tallyBits = [];
+  if (secondaryTotal > 0) tallyBits.push(`${secondaryTotal} secondary reading title${secondaryTotal === 1 ? '' : 's'}`);
+  if (recommendedTotal > 0) tallyBits.push(`${recommendedTotal} recommended further reading`);
+  const tallyLine = tallyBits.length
+    ? `<span class="required-secondary-tally">${tallyBits.join(' · ')}</span>`
+    : '';
+
+  // Primary stat line — the "ordered" segment only appears when at least
+  // one resource is in the ordered state, to avoid visual clutter for users
+  // who never use that middle state.
+  const statLineBits = [
+    `<strong>${statTotal}</strong> resources`,
+    `<strong>${statToOrder}</strong> to order`
+  ];
+  if (statOrdered > 0) statLineBits.push(`<strong>${statOrdered}</strong> ordered`);
+  statLineBits.push(`<strong>${statOnShelf}</strong> on your shelf`);
+
+  const statLineHTML = `
+    <div class="required-stat-row">
+      <div class="required-stat-line">
+        ${statLineBits.join(' · ')}
+        ${tallyLine}
+      </div>
+      <div class="required-help">
+        <button type="button" class="required-help-toggle" onclick="toggleRequiredHelp(this)" aria-label="About this reading list">?</button>
+        <div class="required-help-content">
+          Books for your current track, grouped by type. Public-domain primary texts (Holmes, ANF, NPNF) are freely available online; scholarly editions need to be purchased. Use the three-state control on each row — <em>To order</em> / <em>Plan ahead</em>, <em>Ordered</em>, or <em>Have</em> — to track acquisition. Ownership persists on this device.
+        </div>
+      </div>
+      <button type="button" class="required-print-btn" onclick="openPrintReadingList()">Print reading list</button>
+    </div>
+  `;
+
+  // Filter chip row — 1:1 with status pill variants. Counts update on every render.
+  const chipCount = {
+    'all': primaryBiblical.length,
+    'to-order': statToOrder,
+    'plan-ahead': statPlanAhead,
+    'ordered': statOrdered,
+    'have': statHaveOnly,
+    'in-app': statInApp
+  };
+  const chipDef = [
+    { key: 'all', label: 'All' },
+    { key: 'to-order', label: 'To order' },
+    { key: 'plan-ahead', label: 'Plan ahead' },
+    { key: 'ordered', label: 'Ordered' },
+    { key: 'have', label: 'Have' },
+    { key: 'in-app', label: 'In-app' }
+  ];
+  const filterChipsHTML = `
+    <div class="required-filter-chips" role="tablist" aria-label="Filter by status">
+      ${chipDef.map(c => `
+        <button type="button" class="required-filter-chip${RESOURCE_FILTER === c.key ? ' active' : ''}" data-filter="${c.key}" onclick="applyResourceFilter('${c.key}', this)" role="tab" aria-selected="${RESOURCE_FILTER === c.key ? 'true' : 'false'}">
+          ${c.label}<span class="required-filter-chip-count">${chipCount[c.key]}</span>
+        </button>
+      `).join('')}
+    </div>
+  `;
+
+  // Print-only header + caption (hidden on screen, revealed by @media print
+  // when body has .print-mode-reading-list class).
+  const today = new Date();
+  const todayStr = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  const printHeaderHTML = `
+    <div class="required-print-header" aria-hidden="true">
+      <span class="required-print-header-title">40-Week Patristic Formation — Required Reading</span>
+      <span class="required-print-header-sub">Currently in Week ${currentWeek} · Printed ${todayStr}</span>
+    </div>
+  `;
+  const printCaptionHTML = `
+    <div class="required-print-caption" aria-hidden="true">
+      Orthodox Companion Studies · 40-Week Patristic Formation · Required Reading
+    </div>
+  `;
+
+  const currentHTML = renderGroup(current, 'Currently Reading', false);
+  const upcomingHTML = renderGroup(upcoming, 'Upcoming — Plan Ahead', true);
+
+  body.innerHTML = `
+    ${printHeaderHTML}
+    ${statLineHTML}
+    ${filterChipsHTML}
+    ${currentHTML}
+    ${upcomingHTML}
+    ${recommendedHTML}
+    ${printCaptionHTML}
+  `;
+
+  // Re-apply the user's last filter selection after the re-render (e.g., if
+  // they toggled a checkbox while "Have" was active, preserve the Have view).
+  if (RESOURCE_FILTER && RESOURCE_FILTER !== 'all') {
+    applyResourceFilter(RESOURCE_FILTER);
+  }
+}
+
+
+function renderOverallProgress() {
+  const currentWeek = STUDY_STATE.currentWeek;
+  const phase = getPhaseForWeek(currentWeek);
+  const weekFraction = computeWeekFraction();
+  const completedUnits = (currentWeek - 1) + weekFraction;
+  const overallPct = (completedUnits / 40) * 100;
+
+  const overallFill = document.getElementById('overall-progress-fill');
+  const overallText = document.getElementById('overall-progress-text');
+  if (overallFill) overallFill.style.width = `${overallPct.toFixed(1)}%`;
+  if (overallText) overallText.textContent = `${overallPct.toFixed(1)}% Complete`;
+
+  const phaseFill = document.getElementById('phase-progress-fill');
+  const phaseText = document.getElementById('phase-progress-text');
+  const phaseLabel = document.getElementById('phase-progress-label');
+  if (phase) {
+    const phaseStart = phase.weeks[0];
+    const phaseTotalWeeks = phase.weeks.length;
+    const weekWithinPhase = (currentWeek - phaseStart + weekFraction);
+    const phasePct = (weekWithinPhase / phaseTotalWeeks) * 100;
+    if (phaseFill) phaseFill.style.width = `${phasePct.toFixed(1)}%`;
+    if (phaseText) {
+      phaseText.textContent = `Week ${currentWeek - phaseStart + 1} of ${phaseTotalWeeks}`;
+    }
+    if (phaseLabel) phaseLabel.textContent = `Phase ${phase.number}: ${phase.name}`;
+  }
+
+  // NT Books tracker
+  const ntFill = document.getElementById('nt-books-fill');
+  const ntText = document.getElementById('nt-books-text');
+  const booksCount = countCompletedBooks();
+  const ntPct = (booksCount / NT_TOTAL_BOOKS) * 100;
+  if (ntFill) ntFill.style.width = `${ntPct.toFixed(1)}%`;
+  if (ntText) ntText.textContent = `${booksCount} of ${NT_TOTAL_BOOKS} books`;
+
+  // Psalms tracker
+  const psalmsFill = document.getElementById('psalms-fill');
+  const psalmsText = document.getElementById('psalms-text');
+  const psalmsTotal = computePsalmsRead();
+  const psalmsDisplay = formatPsalmsDisplay(psalmsTotal);
+  if (psalmsFill) psalmsFill.style.width = `${psalmsDisplay.fillPct.toFixed(1)}%`;
+  if (psalmsText) psalmsText.textContent = psalmsDisplay.text;
+}
+
+// ==================================================================
+// STUDY TASK MANAGER — checkbox wiring, persistence, celebration, advance
+// ==================================================================
+
+class StudyTaskManager {
+  constructor() { this.init(); }
+
+  init() {
+    STUDY_STATE.ensureWeekStart(STUDY_STATE.currentWeek);
+    renderAll();
+    this.loadProgress();
+    this.attachEventListeners();
+    this.updateAllDayStates();
+    // Wire transition-banner dismiss AFTER renderAll + attachEventListeners
+    // so the .task-checkbox nodes exist in the DOM. The banner (if any) was
+    // already rendered inside renderTodaysFocus(); this only attaches the
+    // dismiss handlers.
+    wireWeekTransitionDismiss();
+    // Course-complete summary wiring — textarea autosave + print button.
+    // Safe no-ops when the summary is not present (non-course-complete state).
+    wireSynthesisTextarea();
+    wireCourseCompletePrint();
+    if (localStorage.getItem(STUDY_STATE.completeKey) === 'true') {
+      this.showWeekCompleteCelebration();
+    }
+  }
+
+  saveProgress() {
+    const states = {};
+    document.querySelectorAll('.task-checkbox').forEach(cb => {
+      states[cb.id] = cb.checked;
+    });
+    localStorage.setItem(STUDY_STATE.progressKey, JSON.stringify(states));
+  }
+
+  loadProgress() {
+    const saved = localStorage.getItem(STUDY_STATE.progressKey);
+    if (!saved) return;
+    try {
+      const states = JSON.parse(saved);
+      Object.keys(states).forEach(id => {
+        const cb = document.getElementById(id);
+        if (cb) cb.checked = states[id];
+      });
+    } catch (e) {
+      console.error('loadProgress failed', e);
+    }
+  }
+
+  attachEventListeners() {
+    document.querySelectorAll('.task-checkbox').forEach(cb => {
+      cb.addEventListener('change', (e) => this.handleTaskChange(e));
+    });
+  }
+
+  handleTaskChange(e) {
+    const cb = e.target;
+    this.saveProgress();
+    // Refresh all 7 days: completing today shifts what "current" means for tomorrow.
+    this.updateAllDayStates();
+    this.checkWeekCompletion();
+    if (cb.checked) {
+      cb.style.transform = 'scale(1.2)';
+      setTimeout(() => cb.style.transform = 'scale(1)', 200);
+    }
+  }
+
+  // BUG 1 FIX — Pure class + pill updater for a single day card.
+  // Owns only the visual status state (CSS classes on the card, class + text
+  // on the .day-status pill). Does NOT touch progress count text or animation;
+  // those are updateDayState's concern. Kept separate so either can be called
+  // independently and neither can regress the other.
+  //
+  // Always-remove set covers every status class this function may have ever
+  // applied (including day-rest and the legacy day-complete), so the card
+  // always starts from a clean slate before the new status is applied.
+  updateDayCardStatus(dayIdx) {
+    const card = document.getElementById(`day-${dayIdx}`);
+    if (!card) return;
+    const statusDiv = card.querySelector('.day-status');
+
+    const status = getDayStatus(dayIdx);
+
+    // Map: status -> [card-classes-to-add, pill-class, pill-label]
+    const map = {
+      completed: ['completed',          'completed', 'Completed'],
+      current:   ['current',            'current',   'Current'],
+      missed:    ['day-missed',         'missed',    'Needs Attention'],
+      upcoming:  ['upcoming',           'upcoming',  'Upcoming'],
+      rest:      ['day-rest upcoming',  'rest',      'Rest Day']
+    };
+    const entry = map[status] || map.upcoming;
+    const cardClasses = entry[0];
+    const pillClass   = entry[1];
+    const pillLabel   = entry[2];
+
+    // Strip every status class this function could ever apply, then reapply.
+    card.classList.remove(
+      'completed', 'current', 'upcoming',
+      'day-missed', 'day-rest', 'day-complete'
+    );
+    cardClasses.split(' ').forEach(c => { if (c) card.classList.add(c); });
+
+    if (statusDiv) {
+      statusDiv.className = `day-status ${pillClass}`;
+      statusDiv.textContent = pillLabel;
+    }
+  }
+
+  updateDayState(dayIdx) {
+    const card = document.getElementById(`day-${dayIdx}`);
+    if (!card) return;
+    const cbs = card.querySelectorAll('.task-checkbox');
+    const progress = document.getElementById(`progress-day-${dayIdx}`);
+    if (!cbs.length && dayIdx !== 6) return;
+
+    const total = cbs.length;
+    const done = Array.from(cbs).filter(cb => cb.checked).length;
+    if (progress) {
+      progress.textContent = (done === total && total > 0) ? 'Day complete' : `${done} of ${total} tasks complete`;
+    }
+
+    // Delegate class + pill management to the dedicated updater.
+    // This is the line that was effectively missing/broken: the card's
+    // CSS class was not being recomputed when checkboxes changed.
+    this.updateDayCardStatus(dayIdx);
+
+    if (done === total && total > 0) {
+      card.style.transform = 'scale(1.02)';
+      setTimeout(() => card.style.transform = 'scale(1)', 300);
+    }
+  }
+
+  updateAllDayStates() {
+    for (let i = 0; i < 7; i++) this.updateDayState(i);
+    renderOverallProgress();
+  }
+
+  checkWeekCompletion() {
+    const all = document.querySelectorAll('.task-checkbox');
+    const total = all.length;
+    const done = Array.from(all).filter(cb => cb.checked).length;
+    if (done === total && total > 0) {
+      this.showWeekCompleteCelebration();
+    } else {
+      this.removeWeekCompleteCelebration();
+    }
+  }
+
+  showWeekCompleteCelebration() {
+    if (document.querySelector('.week-complete-banner')) return;
+    const week = STUDY_STATE.currentWeek;
+    const wd = WEEK_DATA[week];
+    if (!wd) return;
+    const weekSection = document.querySelector('.week-overview');
+    if (!weekSection) return;
+
+    const currentPhase = getPhaseForWeek(week);
+    const currentTitle = wd.subtitle || wd.title || '';
+    const currentPhaseLine = currentPhase
+      ? `Phase ${currentPhase.number}: ${currentPhase.name} · ${currentPhase.fathers}`
+      : '';
+
+    const isLast = week >= 40;
+    const nextWeek = isLast ? null : WEEK_DATA[week + 1];
+    const nextPhase = isLast ? null : getPhaseForWeek(week + 1);
+    const nextTitle = nextWeek ? (nextWeek.subtitle || nextWeek.title || `Week ${week + 1}`) : '';
+    const nextPhaseLine = nextPhase
+      ? `Phase ${nextPhase.number}: ${nextPhase.name} · ${nextPhase.fathers}`
+      : '';
+
+    // Optional reflection — use reviewPrompt if short enough to read as a pause, not a paragraph
+    const reflection = wd.reviewPrompt && wd.reviewPrompt.length < 260
+      ? `<p class="week-conclusion-reflection">${wd.reviewPrompt}</p>`
+      : '';
+
+    const nextBlock = isLast
+      ? `<div class="week-conclusion-next-label">The Course Is Complete</div>
+         <div class="week-conclusion-next-title">All 40 weeks archived</div>
+         <div class="week-conclusion-next-context">The work remains; the formation continues in parish life.</div>`
+      : `<div class="week-conclusion-next-label">Next</div>
+         <div class="week-conclusion-next-title">Week ${week + 1} · ${nextTitle}</div>
+         <div class="week-conclusion-next-context">${nextPhaseLine}</div>`;
+
+    // Advance actions — two-option rest-aware pattern for mid-course weeks:
+    //   • Primary (outlined muted-gold): "Rest through Sunday, advance later"
+    //     — dismisses the banner, user stays on current week; they'll advance
+    //     via the Day 7 rest card's button once Sunday arrives.
+    //   • Secondary (small text link): "Advance now" — runs attemptAdvance()
+    //     immediately, same path as before.
+    // Week 40 keeps a single primary action since the rest rhythm doesn't
+    // apply to course completion.
+    const advanceActionsHTML = isLast
+      ? `<div class="advance-actions">
+           <button class="btn-advance" id="btn-advance-week">Return to Course Overview</button>
+         </div>`
+      : `<div class="advance-actions-column">
+           <button class="btn-advance-rest" id="btn-rest-through-sunday" type="button">Rest through Sunday, advance later</button>
+           <button class="advance-actions-secondary-link" id="btn-advance-week" type="button">Advance now</button>
+         </div>`;
+
+    const celebration = document.createElement('div');
+    celebration.className = 'week-complete-banner';
+    celebration.innerHTML = `
+      <div class="week-conclusion-label">Week ${week} · Concluded</div>
+      <h2 class="week-conclusion-title">${currentTitle}</h2>
+      <div class="week-conclusion-context">${currentPhaseLine}</div>
+      ${reflection}
+      <hr class="week-conclusion-divider">
+      ${nextBlock}
+      ${advanceActionsHTML}
+    `;
+    weekSection.parentNode.insertBefore(celebration, weekSection);
+    celebration.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    localStorage.setItem(STUDY_STATE.completeKey, 'true');
+    localStorage.setItem(`week${week}CompleteDate`, new Date().toISOString());
+    const btn = document.getElementById('btn-advance-week');
+    if (btn) btn.addEventListener('click', () => this.attemptAdvance());
+    // "Rest through Sunday" — dismiss the banner only; user will advance
+    // via the Day 7 rest card button when their actual rest day arrives.
+    const restBtn = document.getElementById('btn-rest-through-sunday');
+    if (restBtn) restBtn.addEventListener('click', () => this.removeWeekCompleteCelebration());
+  }
+
+  removeWeekCompleteCelebration() {
+    const banner = document.querySelector('.week-complete-banner');
+    if (banner) banner.remove();
+    localStorage.removeItem(STUDY_STATE.completeKey);
+  }
+
+  attemptAdvance() {
+    const missed = [];
+    for (let i = 0; i < 6; i++) {
+      const card = document.getElementById(`day-${i}`);
+      if (!card) continue;
+      const cbs = card.querySelectorAll('.task-checkbox');
+      if (cbs.length === 0) continue;
+      const checked = Array.from(cbs).filter(c => c.checked).length;
+      if (checked < cbs.length) missed.push(i);
+    }
+    if (missed.length === 0) {
+      this.advanceToNextWeek();
+    } else {
+      this.showReconciliationDialog(missed);
+    }
+  }
+
+  showReconciliationDialog(missedDayIdxs) {
+    const overlay = document.createElement('div');
+    overlay.className = 'reconcile-overlay';
+    overlay.innerHTML = `
+      <div class="reconcile-dialog">
+        <h3>Some tasks remain unfinished</h3>
+        <p>The following days have tasks still outstanding:</p>
+        <ul class="missed-list">
+          ${missedDayIdxs.map(i => `<li>${getDayLabel(i)}</li>`).join('')}
+        </ul>
+        <p>You may return to complete them, or advance as is. The week's record is preserved either way — honest archive, not judgment.</p>
+        <div class="reconcile-actions">
+          <button class="btn-catchup">Return to this week</button>
+          <button class="btn-moveon">Advance as is</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    overlay.querySelector('.btn-catchup').addEventListener('click', () => {
+      overlay.remove();
+      const first = document.getElementById(`day-${missedDayIdxs[0]}`);
+      if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    overlay.querySelector('.btn-moveon').addEventListener('click', () => {
+      overlay.remove();
+      this.advanceToNextWeek();
+    });
+  }
+
+  advanceToNextWeek() {
+    const week = STUDY_STATE.currentWeek;
+
+    // Course-complete path: the course-complete summary section is the
+    // persistent post-Week-40 state, gated on `week40Complete === "true"`
+    // in localStorage. We preserve that flag (set by the per-week
+    // completion flow) and simply reload so the dashboard re-renders
+    // with the summary replacing Today's Focus and Week Overview. The
+    // existing week-complete celebration in Week Overview won't re-fire
+    // because .week-overview is hidden in course-complete state, so its
+    // anchor query returns null and it bails gracefully.
+    if (week >= 40) {
+      location.reload();
+      return;
+    }
+
+    // Standard mid-course advance: record the transition, increment
+    // currentWeek, and reload so every renderer picks up the new week.
+    try {
+      sessionStorage.setItem('weekTransition', JSON.stringify({
+        justCompletedWeek: week,
+        newWeek: week + 1,
+        courseComplete: false,
+        at: Date.now()
+      }));
+    } catch (e) {}
+    STUDY_STATE.currentWeek = week + 1;
+    STUDY_STATE.ensureWeekStart(week + 1);
+    location.reload();
+  }
+
+  // BUG 2 FIX — Safe, everyday reset: clears only the current week's
+  // progress keys. Other weeks' archives are preserved. Single confirm.
+  resetCurrentWeek() {
+    const week = STUDY_STATE.currentWeek;
+    if (!confirm(`Reset progress for Week ${week}? This will uncheck all tasks for this week only. Previous weeks are not affected.`)) return;
+
+    // Clear only the four keys scoped to the current week.
+    localStorage.removeItem(`studyProgress_week${week}`);
+    localStorage.removeItem(`week${week}Complete`);
+    localStorage.removeItem(`week${week}CompleteDate`);
+    localStorage.removeItem(`weekStart_week${week}`);
+
+    // Reload so the dashboard re-renders from a clean state for this week.
+    // studyCurrentWeek is preserved, so we stay on the same week.
+    location.reload();
+  }
+
+  // BUG 2 FIX — Guarded, whole-archive reset. Two-step confirmation:
+  // first a standard confirm(), then a prompt() that requires the exact
+  // string "RESET ALL" (case-sensitive). Any cancel or mismatch aborts
+  // with zero state changes. Preserves non-week localStorage keys
+  // (enrollment, preferences, anything not in the week-scoped sweep).
+  resetAllProgress() {
+    const firstOk = confirm(
+      'Reset ALL progress across all 40 weeks? This will permanently delete ' +
+      'your entire study archive, including every completed week. ' +
+      'This action cannot be undone. Continue?'
+    );
+    if (!firstOk) return;
+
+    const typed = prompt(
+      'To confirm, type exactly:  RESET ALL\n\n' +
+      '(case-sensitive; anything else will cancel)'
+    );
+    if (typed !== 'RESET ALL') {
+      alert('Reset cancelled — archive preserved.');
+      return;
+    }
+
+    // Canonical sweep — same set of keys the original resetProgress() used.
+    for (let i = 1; i <= 40; i++) {
+      localStorage.removeItem(`studyProgress_week${i}`);
+      localStorage.removeItem(`week${i}Complete`);
+      localStorage.removeItem(`week${i}CompleteDate`);
+      localStorage.removeItem(`weekStart_week${i}`);
+    }
+    localStorage.removeItem('studyCurrentWeek');
+    // Legacy keys
+    localStorage.removeItem('studyProgress');
+    localStorage.removeItem('week2Complete');
+    localStorage.removeItem('weekCompleteDate');
+
+    location.reload();
+  }
+
+  // Kept as a thin alias so any console users of window.resetStudyProgress()
+  // still hit the guarded all-weeks path rather than losing data silently.
+  resetProgress() {
+    this.resetAllProgress();
+  }
+}
+
+// ==================================================================
+// INIT
+// ==================================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Legacy migration: if old 'studyProgress' exists and no week-scoped key yet, move it.
+  const legacy = localStorage.getItem('studyProgress');
+  if (legacy && !localStorage.getItem('studyProgress_week2')) {
+    localStorage.setItem('studyProgress_week2', legacy);
+    localStorage.removeItem('studyProgress');
+  }
+  window.studyTaskManager = new StudyTaskManager();
+  // Legacy alias — points at the guarded all-weeks path, not the safe one.
+  window.resetStudyProgress = () => window.studyTaskManager.resetAllProgress();
+  // New: explicit bindings for the two split reset actions.
+  window.resetCurrentWeek   = () => window.studyTaskManager.resetCurrentWeek();
+  window.resetAllProgress   = () => window.studyTaskManager.resetAllProgress();
+
+  // BUG 2 FIX — wire Session Controls buttons and populate the week label.
+  const resetWeekBtn   = document.getElementById('btn-reset-week');
+  const resetAllBtn    = document.getElementById('btn-reset-all');
+  const resetWeekLabel = document.getElementById('reset-week-label');
+  if (resetWeekLabel && typeof STUDY_STATE !== 'undefined') {
+    resetWeekLabel.textContent = STUDY_STATE.currentWeek;
+  }
+  if (resetWeekBtn) {
+    resetWeekBtn.addEventListener('click', () => window.studyTaskManager.resetCurrentWeek());
+  }
+  if (resetAllBtn) {
+    resetAllBtn.addEventListener('click', () => window.studyTaskManager.resetAllProgress());
+  }
+});
+
+// ==================================================================
+// ITEM 1 — Back-to-top button
+// Scroll listener: passive, rAF-throttled. Single-mechanism visibility
+// (.visible class via JS; display + opacity + transition via CSS).
+// Deliberately does NOT mix with style.display writes.
+// ==================================================================
+(function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+  const THRESHOLD = 400;
+  let ticking = false;
+
+  function update() {
+    const y = window.scrollY || window.pageYOffset || 0;
+    btn.classList.toggle('visible', y > THRESHOLD);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  btn.addEventListener('click', () => {
+    // Use scrollTo with smooth behavior; falls back to instant-top on
+    // browsers without smooth-scroll support.
+    if ('scrollBehavior' in document.documentElement.style) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  });
+
+  // Initial sync in case page loads scrolled (anchor nav, refresh mid-page).
+  update();
+})();
+</script>
+
+<!-- Back-to-top button — fixed bottom-right, appears after ~400px scroll -->
+<button type="button" id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <polyline points="6 15 12 9 18 15"></polyline>
+  </svg>
+</button>
+
+</body>
+</html>
