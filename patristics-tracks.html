@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-17T19:00:00Z -->
+<!-- build: 2026-04-19T01:51:36Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -344,7 +344,7 @@ em, i { font-style: italic; }
 }
 
 .modal-section {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 .modal-section:last-child { margin-bottom: 0; }
 
@@ -359,6 +359,25 @@ em, i { font-style: italic; }
 
 .modal-section p {
   line-height: 1.7;
+}
+
+/* Inline text link inside modal prose — navy, italicized, subtle.
+   Used by the "Included Study Aids" callout to link to anki-guide.html. */
+.modal-inline-link {
+  color: #1a3a5c;
+  text-decoration: none;
+  font-style: italic;
+  border-bottom: 1px solid rgba(26, 58, 92, 0.25);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.modal-inline-link:hover {
+  color: #6b1e2a;
+  border-bottom-color: rgba(107, 30, 42, 0.45);
+}
+.modal-inline-link:focus-visible {
+  outline: 2px solid #1a3a5c;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .modal-quickfacts {
@@ -382,37 +401,157 @@ em, i { font-style: italic; }
   font-size: 0.78rem;
 }
 .modal-quickfact-value {
-  color: #3a3228;
+  color: #2a2620;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .modal-resources {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
+
+/* Category subsection wrapper (Primary Texts / Biblical Texts / Secondary Reading) */
+.modal-resource-group {
+  margin-bottom: 1.5rem;
+}
+.modal-resource-group:last-child { margin-bottom: 0; }
+.modal-resource-group-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: #6b5d4a;
+  margin: 0.25rem 0 0.55rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid #eadfca;
+}
+
 .modal-resource {
-  padding: 0.7rem 0;
+  padding: 0.85rem 0;
   border-bottom: 1px solid #e8ddc8;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .modal-resource:last-child { border-bottom: none; }
+.modal-resource-main {
+  flex: 1 1 320px;
+  min-width: 0;
+}
+.modal-resource-tags {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Typography tiers: title (primary) / author (italic secondary) / meta (tertiary) */
 .modal-resource-title {
   color: #2a2620;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.modal-resource-author {
+  color: #6b5d4a;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-top: 0.1rem;
 }
 .modal-resource-meta {
-  color: #6b5d4a;
-  font-size: 0.9rem;
-  font-style: italic;
+  color: #8a7d6a;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-top: 0.1rem;
 }
+
+/* Phase pill — small-caps muted gold, right-aligned via flex container */
 .modal-resource-phase {
   display: inline-block;
   font-size: 0.72rem;
   font-variant: small-caps;
   letter-spacing: 0.08em;
   color: #8a6d1f;
-  background: rgba(212, 175, 55, 0.1);
-  padding: 0.15rem 0.5rem;
-  border-radius: 8px;
-  margin-top: 0.25rem;
+  background: rgba(212, 175, 55, 0.12);
+  padding: 0.18rem 0.55rem;
+  border-radius: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Status pills — "To order" (porphyry) for purchase books, "Included" (navy) for EOB */
+.modal-status-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.modal-status-pill--to-order {
+  background: #6b1e2a;
+  color: #faf6ed;
+}
+.modal-status-pill--included {
+  background: #1a3a5c;
+  color: #faf6ed;
+}
+
+/* Per-row free-web line — compact muted-gold single line below meta.
+   Used when a subsection is mixed-source (items differ in source or not all have one). */
+.modal-freeweb {
+  display: block;
+  margin-top: 0.35rem;
+  color: #8a6d1f;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.modal-freeweb a {
+  color: #8a6d1f;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9b27a;
+}
+.modal-freeweb a:hover {
+  color: #6b5310;
+  border-bottom-color: #8a6d1f;
+}
+
+/* Section-level callout — fires only when every resource in a subsection
+   shares the same freeWeb source (>= 2 items). Suppresses per-row lines. */
+.modal-freeweb-callout {
+  margin: 0.35rem 0 0.85rem;
+  padding: 0.6rem 0.85rem;
+  background: rgba(212, 175, 55, 0.08);
+  border-left: 3px solid #D4AF37;
+  border-radius: 0 4px 4px 0;
+  color: #6b5310;
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.modal-freeweb-callout a {
+  color: #6b5310;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9b27a;
+  font-style: normal;
+  font-weight: 500;
+}
+.modal-freeweb-callout a:hover {
+  color: #4d3c0b;
+  border-bottom-color: #8a6d1f;
 }
 
 .modal-outcomes {
@@ -421,13 +560,6 @@ em, i { font-style: italic; }
   line-height: 1.7;
 }
 .modal-outcomes li { margin-bottom: 0.25rem; }
-
-.modal-secondary-list {
-  padding-left: 1.3rem;
-  color: #3a3228;
-  line-height: 1.65;
-  font-style: italic;
-}
 
 .modal-actions {
   display: flex;
@@ -465,6 +597,8 @@ em, i { font-style: italic; }
   .modal-body { padding: 1rem 1.25rem 1.25rem; }
   .modal-actions { padding: 1.25rem; flex-direction: column; }
   .modal-actions .track-btn { width: 100%; justify-content: center; }
+  .modal-resource { flex-direction: column; gap: 0.45rem; }
+  .modal-resource-tags { justify-content: flex-start; }
 }
 </style>
 </head>
@@ -607,20 +741,87 @@ function openLearnMore(trackKey) {
   document.getElementById('modal-tagline-el').textContent = t.tagline;
 
   const body = document.getElementById('modal-body-el');
+
+  // Track first-reference site-name expansion for the lifetime of this modal open.
+  // First occurrence of a site renders its full name with short form in parens
+  // ("Christian Classics Ethereal Library (CCEL)"), subsequent references collapse
+  // to just the short form ("CCEL") to reduce visual repetition.
+  const seenSites = new Set();
+  const freeWebLabel = (fw) => {
+    if (!fw || !fw.name) return '';
+    const first = !seenSites.has(fw.name);
+    seenSites.add(fw.name);
+    const parensMatch = fw.name.match(/^(.*?)\s*\((.+?)\)\s*$/);
+    const shortName = parensMatch ? parensMatch[2] : fw.name;
+    return first ? fw.name : shortName;
+  };
+
+  // Callout fires only when every resource in a subsection shares the same
+  // freeWeb source AND there are at least 2 items. Single-item subsections
+  // always render per-row to avoid overweight callouts for a single link.
+  const detectSubsectionCallout = (items) => {
+    if (!items || items.length < 2) return null;
+    if (!items.every(r => r.freeWeb && r.freeWeb.url)) return null;
+    const firstName = items[0].freeWeb.name;
+    const firstUrl = items[0].freeWeb.url;
+    const allSame = items.every(r => r.freeWeb.name === firstName && r.freeWeb.url === firstUrl);
+    return allSame ? { name: firstName, url: firstUrl } : null;
+  };
+
+  const renderResourceItem = (r, opts = {}) => {
+    const { hidePerRowFreeWeb = false } = opts;
+    const statusPill =
+      r.toPurchase ? '<span class="modal-status-pill modal-status-pill--to-order">To order</span>' :
+      r.inApp      ? '<span class="modal-status-pill modal-status-pill--included">Included</span>' :
+      '';
+    const freeWebLine = (!hidePerRowFreeWeb && r.freeWeb && r.freeWeb.url)
+      ? `<div class="modal-freeweb">Free online: <a href="${r.freeWeb.url}" target="_blank" rel="noopener noreferrer">${freeWebLabel(r.freeWeb)} →</a></div>`
+      : '';
+    return `
+      <li class="modal-resource">
+        <div class="modal-resource-main">
+          <div class="modal-resource-title">${r.title}</div>
+          ${r.author ? `<div class="modal-resource-author">${r.author}</div>` : ''}
+          ${(r.edition || r.details) ? `<div class="modal-resource-meta">${[r.edition, r.details].filter(Boolean).join(' · ')}</div>` : ''}
+          ${freeWebLine}
+        </div>
+        <div class="modal-resource-tags">
+          ${statusPill}
+          ${r.phase ? `<span class="modal-resource-phase">${r.phase}</span>` : ''}
+        </div>
+      </li>
+    `;
+  };
+
+  const renderCategoryGroup = (items, label) => {
+    if (!items || !items.length) return '';
+    const callout = detectSubsectionCallout(items);
+    const calloutHTML = callout
+      ? `<div class="modal-freeweb-callout">Primary texts in this section are freely available at <a href="${callout.url}" target="_blank" rel="noopener noreferrer">${freeWebLabel(callout)} →</a></div>`
+      : '';
+    const listHTML = items.map(r => renderResourceItem(r, { hidePerRowFreeWeb: !!callout })).join('');
+    return `
+      <div class="modal-resource-group">
+        <div class="modal-resource-group-title">${label}</div>
+        ${calloutHTML}
+        <ul class="modal-resources">${listHTML}</ul>
+      </div>
+    `;
+  };
+
+  const CATEGORY_LABELS = { primary: 'Primary Texts', biblical: 'Biblical Texts', secondary: 'Secondary Reading' };
+  const CATEGORY_ORDER = ['primary', 'biblical', 'secondary'];
+
   const resourcesHTML = (t.requiredResources && t.requiredResources.length)
     ? `<div class="modal-section">
          <div class="modal-section-title">Required Resources</div>
-         <ul class="modal-resources">
-           ${t.requiredResources.map(r => `
-             <li class="modal-resource">
-               <div class="modal-resource-title">${r.title}${r.author ? ` · ${r.author}` : ''}</div>
-               ${r.edition || r.details ? `<div class="modal-resource-meta">${[r.edition, r.details].filter(Boolean).join(' · ')}</div>` : ''}
-               ${r.phase ? `<span class="modal-resource-phase">${r.phase}</span>` : ''}
-             </li>
-           `).join('')}
-         </ul>
+         ${CATEGORY_ORDER.map(cat => {
+            const items = t.requiredResources.filter(r => (r.category || 'primary') === cat);
+            return renderCategoryGroup(items, CATEGORY_LABELS[cat]);
+         }).join('')}
        </div>`
     : '';
+
   const outcomesHTML = (t.outcomes && t.outcomes.length > 0 && t.outcomes[0] !== 'To be finalized')
     ? `<div class="modal-section">
          <div class="modal-section-title">What You'll Come Away With</div>
@@ -629,12 +830,42 @@ function openLearnMore(trackKey) {
          </ul>
        </div>`
     : '';
+
+  // Recommended further reading — display-only, typography parity with required,
+  // but no pills and no ownership tracking. Supports both object and legacy string entries.
+  const renderRecommendedItem = (r) => {
+    if (typeof r === 'string') {
+      return `<li class="modal-resource"><div class="modal-resource-main"><div class="modal-resource-title">${r}</div></div></li>`;
+    }
+    const freeWebLine = (r.freeWeb && r.freeWeb.url)
+      ? `<div class="modal-freeweb">Free online: <a href="${r.freeWeb.url}" target="_blank" rel="noopener noreferrer">${freeWebLabel(r.freeWeb)} →</a></div>`
+      : '';
+    return `
+      <li class="modal-resource">
+        <div class="modal-resource-main">
+          <div class="modal-resource-title">${r.title}</div>
+          ${r.author ? `<div class="modal-resource-author">${r.author}</div>` : ''}
+          ${r.details ? `<div class="modal-resource-meta">${r.details}</div>` : ''}
+          ${freeWebLine}
+        </div>
+      </li>
+    `;
+  };
   const secondaryHTML = (t.recommendedSecondary && t.recommendedSecondary.length)
     ? `<div class="modal-section">
-         <div class="modal-section-title">Recommended Secondary Reading</div>
-         <ul class="modal-secondary-list">
-           ${t.recommendedSecondary.map(s => `<li>${s}</li>`).join('')}
+         <div class="modal-section-title">Recommended further reading</div>
+         <ul class="modal-resources">
+           ${t.recommendedSecondary.map(renderRecommendedItem).join('')}
          </ul>
+       </div>`
+    : '';
+
+  // Anki deck mention — shown only for tracks that are actually enrollable.
+  // Coming-soon tracks skip this so it doesn't read as a promise we can't yet keep.
+  const studyAidsHTML = (t.status === 'available')
+    ? `<div class="modal-section">
+         <div class="modal-section-title">Included Study Aids</div>
+         <p>Subscribers also have access to a downloadable Anki deck covering all 285 patristic lexicon terms — Greek and Latin — for optional spaced-repetition study alongside the core readings. <a href="anki-guide.html" class="modal-inline-link">Learn more →</a></p>
        </div>`
     : '';
 
@@ -659,6 +890,7 @@ function openLearnMore(trackKey) {
     ${outcomesHTML}
     ${resourcesHTML}
     ${secondaryHTML}
+    ${studyAidsHTML}
   `;
 
   const actions = document.getElementById('modal-actions-el');
