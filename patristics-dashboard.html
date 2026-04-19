@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-19T02:14:23Z -->
+<!-- build: 2026-04-19T03:28:34Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -2948,6 +2948,173 @@ em, i { font-style: italic; }
   body.print-mode-reading-list .resource-status-control {
     display: none !important;
   }
+  body.print-mode-reading-list .resource-status-dropdown {
+    display: none !important;
+  }
+}
+
+/* ============================================================
+   ITEM 2b — Resource ownership as DROPDOWN (replaces segmented control)
+   Single trigger button on the left showing current state in its
+   palette color; clicking opens a small menu of three options.
+   Right-side status pill is omitted on rows with a dropdown (the
+   dropdown is the single source of truth for status).
+
+   Single-mechanism visibility: JS toggles .open class on the
+   dropdown container; CSS owns display via [hidden] + transition.
+   Matches the Greek Lexicon sync-bug avoidance pattern.
+   ============================================================ */
+.resource-status-dropdown {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: 0.1rem;
+  position: relative;
+  min-width: 7.5rem;
+}
+.resource-status-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #c9b27a;
+  color: #6b5d4a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 1.3;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.resource-status-dropdown-trigger:hover {
+  border-color: #8a6d1f;
+}
+.resource-status-dropdown-trigger:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+/* Trigger color reflects current state — palette-matched */
+.resource-status-dropdown-trigger[data-status="to-order"] {
+  background: #6b1e2a;
+  border-color: #6b1e2a;
+  color: #faf6ed;
+}
+.resource-status-dropdown-trigger[data-status="plan-ahead"] {
+  background: rgba(212, 175, 55, 0.22);
+  border-color: #c9b27a;
+  color: #8a6d1f;
+}
+.resource-status-dropdown-trigger[data-status="ordered"] {
+  background: #8a6d1f;
+  border-color: #8a6d1f;
+  color: #faf6ed;
+}
+.resource-status-dropdown-trigger[data-status="have"] {
+  background: #556b3d;
+  border-color: #556b3d;
+  color: #faf6ed;
+}
+/* Hover keeps palette color but nudges border tone */
+.resource-status-dropdown-trigger[data-status="to-order"]:hover,
+.resource-status-dropdown-trigger[data-status="ordered"]:hover,
+.resource-status-dropdown-trigger[data-status="have"]:hover {
+  filter: brightness(1.08);
+}
+
+.resource-status-dropdown-caret {
+  font-size: 0.65rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+  opacity: 0.8;
+}
+.resource-status-dropdown.open .resource-status-dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.resource-status-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  min-width: 100%;
+  background: #fffdf7;
+  border: 1px solid #c9b27a;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(42, 38, 32, 0.18);
+  z-index: 50;
+  padding: 0.2rem;
+  list-style: none;
+  margin: 0;
+}
+.resource-status-dropdown-menu[hidden] {
+  display: none;
+}
+
+.resource-status-dropdown-option {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: left;
+  color: #6b5d4a;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+.resource-status-dropdown-option:hover {
+  background: rgba(212, 175, 55, 0.12);
+  color: #3a3228;
+}
+.resource-status-dropdown-option:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: -2px;
+  background: rgba(212, 175, 55, 0.12);
+}
+/* Selected option — filled palette background so user sees current
+   state when the menu opens. Matches trigger color for continuity. */
+.resource-status-dropdown-option.selected[data-status="to-order"] {
+  background: #6b1e2a;
+  color: #faf6ed;
+}
+.resource-status-dropdown-option.selected[data-status="plan-ahead"] {
+  background: rgba(212, 175, 55, 0.22);
+  color: #8a6d1f;
+}
+.resource-status-dropdown-option.selected[data-status="ordered"] {
+  background: #8a6d1f;
+  color: #faf6ed;
+}
+.resource-status-dropdown-option.selected[data-status="have"] {
+  background: #556b3d;
+  color: #faf6ed;
+}
+
+/* Ensure the menu isn't clipped by any ancestor overflow rules
+   between the row and the details container. */
+.required-item,
+.required-subcategory,
+.required-group,
+.required-list,
+.required-reading-body {
+  overflow: visible;
+}
+
+/* Mobile — widen menu slightly so longer labels don't cramp */
+@media (max-width: 600px) {
+  .resource-status-dropdown { min-width: 7rem; }
+  .resource-status-dropdown-menu { min-width: 8rem; }
 }
 
 /* ============================================================
@@ -4469,6 +4636,72 @@ function setResourceOwnershipStatus(id, status) {
   renderRequiredReading();
 }
 
+// ==================================================================
+// Resource ownership DROPDOWN behavior
+// ==================================================================
+// The three-pill segmented control was replaced with a single dropdown
+// trigger per row. Only one dropdown can be open at a time. Dismisses
+// on outside click, on Escape, and on option selection.
+//
+// Single-mechanism visibility — JS toggles .open class on the dropdown
+// container and toggles the [hidden] attr on the menu; CSS owns the
+// display + transition. Deliberately does NOT also write to
+// menu.style.display (the Greek Lexicon sync-bug pattern).
+
+function closeAllResourceDropdowns() {
+  document.querySelectorAll('.resource-status-dropdown.open').forEach(d => {
+    d.classList.remove('open');
+    const trig = d.querySelector('.resource-status-dropdown-trigger');
+    if (trig) trig.setAttribute('aria-expanded', 'false');
+    const menu = d.querySelector('.resource-status-dropdown-menu');
+    if (menu) menu.setAttribute('hidden', '');
+  });
+  document.removeEventListener('click', handleOutsideResourceDropdownClick);
+  document.removeEventListener('keydown', handleResourceDropdownEscape);
+}
+
+function handleOutsideResourceDropdownClick(e) {
+  if (!e.target.closest || !e.target.closest('.resource-status-dropdown')) {
+    closeAllResourceDropdowns();
+  }
+}
+
+function handleResourceDropdownEscape(e) {
+  if (e.key === 'Escape') {
+    const openDropdown = document.querySelector('.resource-status-dropdown.open');
+    const trig = openDropdown && openDropdown.querySelector('.resource-status-dropdown-trigger');
+    closeAllResourceDropdowns();
+    if (trig) trig.focus();
+  }
+}
+
+function toggleResourceDropdown(triggerEl, event) {
+  if (event) event.stopPropagation();
+  const dropdown = triggerEl && triggerEl.closest('.resource-status-dropdown');
+  if (!dropdown) return;
+  const willOpen = !dropdown.classList.contains('open');
+  closeAllResourceDropdowns();
+  if (willOpen) {
+    dropdown.classList.add('open');
+    triggerEl.setAttribute('aria-expanded', 'true');
+    const menu = dropdown.querySelector('.resource-status-dropdown-menu');
+    if (menu) menu.removeAttribute('hidden');
+    // Register dismiss handlers AFTER the current click finishes bubbling,
+    // so this same click doesn't immediately close the dropdown we just opened.
+    setTimeout(() => {
+      document.addEventListener('click', handleOutsideResourceDropdownClick);
+      document.addEventListener('keydown', handleResourceDropdownEscape);
+    }, 0);
+  }
+}
+
+function selectResourceStatus(id, status, event) {
+  if (event) event.stopPropagation();
+  closeAllResourceDropdowns();
+  setResourceStatus(id, status);
+  renderRequiredReading();
+}
+
 // Back-compat handler for any stale checkbox references (none remaining
 // after this patch). Treats checked as 'have', unchecked as clearing.
 function toggleResourceOwnership(id, checkboxEl) {
@@ -4662,33 +4895,60 @@ function renderRequiredReading() {
     const isOwned = status === 'have';
     const isOrdered = status === 'ordered';
 
-    // Primary + biblical rows get a three-state segmented control, except inApp items.
+    // Primary + biblical rows get a dropdown control, except inApp items.
     const hasStatusControl = (r.category === 'primary' || r.category === 'biblical') && !r.inApp && r.id;
-    // The first pill dynamically labels "To order" vs "Plan ahead" based on
+    // The first option dynamically labels "To order" vs "Plan ahead" based on
     // phase position — same slot, dynamic label. The user's explicit status
     // (ordered / have) lives in the two following slots.
     const range = parsePhaseToWeekRange(r.phase);
     const isCurrent = !range || range.isAll || range.start <= currentWeek;
     const firstSlotKey = isCurrent ? 'to-order' : 'plan-ahead';
     const firstSlotLabel = SEGMENT_LABELS[firstSlotKey];
-    const segments = [
+    const options = [
       { key: firstSlotKey, label: firstSlotLabel },
       { key: 'ordered',    label: SEGMENT_LABELS['ordered'] },
       { key: 'have',       label: SEGMENT_LABELS['have'] }
     ];
+
+    // Dropdown trigger label reflects the row's CURRENT status, not the
+    // phase-default slot label. When status matches firstSlotKey the label
+    // is the dynamic one; otherwise it's the fixed "Ordered" / "Have" label.
+    const triggerLabel = (status === firstSlotKey) ? firstSlotLabel : SEGMENT_LABELS[status];
+    const menuId = r.id ? `resource-menu-${r.id}` : '';
+
     const statusControlHTML = hasStatusControl
-      ? `<div class="resource-status-control" role="group" aria-label="Ownership status for ${escAttr(r.title)}">
-           ${segments.map(seg => `
-             <button type="button"
-                     class="resource-status-pill${status === seg.key ? ' active' : ''}"
-                     data-status="${seg.key}"
-                     aria-pressed="${status === seg.key ? 'true' : 'false'}"
-                     onclick="setResourceOwnershipStatus('${escAttr(r.id)}', '${seg.key}')">${seg.label}</button>
-           `).join('')}
+      ? `<div class="resource-status-dropdown" data-id="${escAttr(r.id)}">
+           <button type="button"
+                   class="resource-status-dropdown-trigger"
+                   data-status="${status}"
+                   aria-haspopup="true"
+                   aria-expanded="false"
+                   aria-controls="${menuId}"
+                   aria-label="Ownership status: ${triggerLabel}. Click to change status for ${escAttr(r.title)}."
+                   onclick="toggleResourceDropdown(this, event)">
+             <span class="resource-status-dropdown-label">${triggerLabel}</span>
+             <span class="resource-status-dropdown-caret" aria-hidden="true">▾</span>
+           </button>
+           <div class="resource-status-dropdown-menu" id="${menuId}" role="menu" hidden>
+             ${options.map(opt => `
+               <button type="button"
+                       class="resource-status-dropdown-option${status === opt.key ? ' selected' : ''}"
+                       data-status="${opt.key}"
+                       role="menuitem"
+                       onclick="selectResourceStatus('${escAttr(r.id)}', '${opt.key}', event)">${opt.label}</button>
+             `).join('')}
+           </div>
          </div>`
       : '';
 
-    const statusPill = `<span class="required-item-status required-item-status--${status}">${STATUS_LABELS[status]}</span>`;
+    // Right-side status pill is SUPPRESSED on rows with a dropdown (the
+    // dropdown trigger itself already shows the current status in palette
+    // color — no need to duplicate it on the right). Kept on inApp rows
+    // (EOB) and any other rows without a dropdown, where it's still the
+    // only status indicator.
+    const statusPill = hasStatusControl
+      ? ''
+      : `<span class="required-item-status required-item-status--${status}">${STATUS_LABELS[status]}</span>`;
 
     const freeWebLine = (!hidePerRowFreeWeb && r.freeWeb && r.freeWeb.url)
       ? `<div class="required-item-freeweb">Free online: <a href="${r.freeWeb.url}" target="_blank" rel="noopener noreferrer">${r.freeWeb.name} →</a></div>`
