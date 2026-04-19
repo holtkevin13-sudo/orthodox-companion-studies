@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-18T23:43:39Z -->
+<!-- build: 2026-04-19T01:51:36Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -803,19 +803,22 @@ em, i { font-style: italic; }
 }
 .required-item-title {
   color: #2a2620;
-  font-weight: 500;
-  font-size: 1rem;
-  line-height: 1.4;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.35;
 }
 .required-item-author {
   color: #6b5d4a;
   font-style: italic;
   font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
 .required-item-meta {
   color: #8a7d6a;
-  font-size: 0.88rem;
-  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  margin-top: 0.15rem;
+  line-height: 1.4;
 }
 .required-item-tags {
   flex: 0 0 auto;
@@ -878,14 +881,466 @@ em, i { font-style: italic; }
   font-size: 0.92rem;
 }
 
+/* ==============================================================
+   Required Reading — extended redesign (2026-04-19)
+   - Header stat line replaces dense intro paragraph
+   - Filter chip row above content (All / To Order / Plan Ahead / Have / In-App)
+   - Per-row ownership checkbox persisted in localStorage key `resource_ownership`
+   - Unified status pill (.required-item-status) with four variants
+   - Per-row free-web link, collapsed to section callout when 100% of a
+     subsection shares the same source and ≥2 items
+   - Recommended further reading as a display-only subsection with
+     typography parity but no pills and no ownership tracking
+   - Printable reading list via `body.print-mode-reading-list`
+   ============================================================== */
+
+/* Stat line + help tooltip row */
+.required-stat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 0.85rem;
+}
+.required-stat-line {
+  color: #3a3228;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  flex: 1 1 auto;
+}
+.required-stat-line strong {
+  font-weight: 600;
+  color: #2a2620;
+}
+.required-secondary-tally {
+  display: block;
+  color: #8a7d6a;
+  font-size: 0.82rem;
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+.required-help {
+  position: relative;
+  flex: 0 0 auto;
+}
+.required-help-toggle {
+  background: transparent;
+  border: 1px solid #c9b27a;
+  color: #8a6d1f;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.required-help-toggle:hover { background: rgba(212, 175, 55, 0.1); color: #6b5310; }
+.required-help-toggle:focus-visible { outline: 2px solid #8a6d1f; outline-offset: 2px; }
+.required-help-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.35rem);
+  width: min(320px, 90vw);
+  background: #faf6ed;
+  border: 1px solid #e8ddc8;
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #3a3228;
+  font-style: italic;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 20;
+}
+.required-help.open .required-help-content { display: block; }
+
+/* Print button — subtle gold-outlined small-caps */
+.required-print-btn {
+  background: transparent;
+  border: 1px solid #c9b27a;
+  color: #8a6d1f;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+.required-print-btn:hover { background: rgba(212, 175, 55, 0.1); color: #6b5310; }
+.required-print-btn:focus-visible { outline: 2px solid #8a6d1f; outline-offset: 2px; }
+
+/* Filter chip row */
+.required-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #eadfca;
+}
+.required-filter-chip {
+  background: transparent;
+  border: 1px solid #e8ddc8;
+  color: #6b5d4a;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.required-filter-chip:hover {
+  background: rgba(212, 175, 55, 0.08);
+  color: #3a3228;
+  border-color: #c9b27a;
+}
+.required-filter-chip.active {
+  background: #1a3a5c;
+  color: #faf6ed;
+  border-color: #1a3a5c;
+}
+.required-filter-chip:focus-visible { outline: 2px solid #8a6d1f; outline-offset: 2px; }
+.required-filter-chip-count {
+  opacity: 0.75;
+  margin-left: 0.25rem;
+  font-size: 0.78rem;
+}
+
+/* Ownership checkbox — native checkbox restyled with Byzantine accent */
+.required-item-check {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  margin-top: 0.2rem;
+}
+.required-item-check input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1.5px solid #c9b27a;
+  border-radius: 3px;
+  background: #fffdf7;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s ease, border-color 0.15s ease;
+  vertical-align: middle;
+}
+.required-item-check input[type="checkbox"]:hover {
+  border-color: #8a6d1f;
+}
+.required-item-check input[type="checkbox"]:checked {
+  background: #556b3d;
+  border-color: #556b3d;
+}
+.required-item-check input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 0.1rem;
+  left: 0.3rem;
+  width: 0.3rem;
+  height: 0.55rem;
+  border: solid #fffdf7;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.required-item-check input[type="checkbox"]:focus-visible {
+  outline: 2px solid #8a6d1f;
+  outline-offset: 2px;
+}
+
+/* Row layout — add left checkbox rail; preserve existing main/tags flex */
+.required-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+.required-item.owned {
+  opacity: 0.6;
+}
+.required-item.owned .required-item-title {
+  text-decoration: none;
+}
+
+/* Unified status pill — four variants matching the filter chips 1:1 */
+.required-item-status {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.required-item-status--to-order {
+  background: #6b1e2a;
+  color: #faf6ed;
+}
+.required-item-status--plan-ahead {
+  background: rgba(212, 175, 55, 0.18);
+  color: #8a6d1f;
+}
+.required-item-status--have {
+  background: rgba(85, 107, 61, 0.18);
+  color: #556b3d;
+}
+.required-item-status--in-app {
+  background: #1a3a5c;
+  color: #faf6ed;
+}
+
+/* Per-row free-web link — compact muted-gold single line. No icon at this size. */
+.required-item-freeweb {
+  display: block;
+  margin-top: 0.3rem;
+  color: #8a6d1f;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.required-item-freeweb a {
+  color: #8a6d1f;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9b27a;
+}
+.required-item-freeweb a:hover {
+  color: #6b5310;
+  border-bottom-color: #8a6d1f;
+}
+
+/* Subsection-level callout — fires only when every item in a subsection
+   shares one freeWeb source AND count >= 2. Suppresses per-row lines. */
+.required-freeweb-callout {
+  margin: 0.15rem 0 0.85rem;
+  padding: 0.55rem 0.8rem;
+  background: rgba(212, 175, 55, 0.08);
+  border-left: 3px solid #D4AF37;
+  border-radius: 0 4px 4px 0;
+  color: #6b5310;
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.required-freeweb-callout a {
+  color: #6b5310;
+  text-decoration: none;
+  border-bottom: 1px dotted #c9b27a;
+  font-style: normal;
+  font-weight: 500;
+}
+.required-freeweb-callout a:hover {
+  color: #4d3c0b;
+  border-bottom-color: #8a6d1f;
+}
+
+/* Recommended further reading — display-only subsection with typography
+   parity but no checkbox, no status pill, no filter participation. */
+.required-recommended-section {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #e8ddc8;
+}
+.required-recommended-title {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #6b5d4a;
+  margin-bottom: 0.45rem;
+}
+.required-recommended-intro {
+  color: #8a7d6a;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 0.85rem;
+  line-height: 1.5;
+}
+
+/* In-App link for EOB row — renders as an "Open Biblical Companion →" affordance */
+.required-item-inapp-link {
+  display: block;
+  margin-top: 0.3rem;
+  color: #1a3a5c;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.required-item-inapp-link a {
+  color: #1a3a5c;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(26, 58, 92, 0.4);
+}
+.required-item-inapp-link a:hover {
+  border-bottom-color: #1a3a5c;
+}
+
+/* Empty-filter state (e.g., "Have" selected with nothing owned yet) */
+.required-empty-state {
+  padding: 1.25rem 0.25rem;
+  color: #8a7d6a;
+  font-style: italic;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+/* Print-only header and caption — hidden on screen, revealed by @media print
+   when body has .print-mode-reading-list class. */
+.required-print-header,
+.required-print-caption {
+  display: none;
+}
+
+/* Reading-list print mode — overrides default @media print course-complete rules
+   by piggybacking on body.print-mode-reading-list specificity. */
+@media print {
+  body.print-mode-reading-list {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  /* Hide everything except required-reading and its print-only siblings */
+  body.print-mode-reading-list header,
+  body.print-mode-reading-list nav,
+  body.print-mode-reading-list footer,
+  body.print-mode-reading-list > .container,
+  body.print-mode-reading-list .status-dashboard,
+  body.print-mode-reading-list .status-section,
+  body.print-mode-reading-list .today-focus,
+  body.print-mode-reading-list .week-overview,
+  body.print-mode-reading-list .phase-timeline,
+  body.print-mode-reading-list .study-tools-section,
+  body.print-mode-reading-list .session-controls-section,
+  body.print-mode-reading-list .course-complete-section,
+  body.print-mode-reading-list .week-navigation,
+  body.print-mode-reading-list .phase-greek-panel,
+  body.print-mode-reading-list .week-father-card {
+    display: none !important;
+  }
+  /* Force main and the required-reading details open and visible */
+  body.print-mode-reading-list main,
+  body.print-mode-reading-list .required-reading,
+  body.print-mode-reading-list .required-reading-body {
+    display: block !important;
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  /* Hide the interactive summary chrome (chevron, hover label) */
+  body.print-mode-reading-list .required-reading > summary,
+  body.print-mode-reading-list .required-reading-chevron,
+  body.print-mode-reading-list .required-filter-chips,
+  body.print-mode-reading-list .required-print-btn,
+  body.print-mode-reading-list .required-help,
+  body.print-mode-reading-list .required-stat-line,
+  body.print-mode-reading-list .required-item-check input[type="checkbox"],
+  body.print-mode-reading-list .required-category--secondary,
+  body.print-mode-reading-list .required-recommended-section,
+  body.print-mode-reading-list .required-item-status,
+  body.print-mode-reading-list .required-item-freeweb,
+  body.print-mode-reading-list .required-freeweb-callout,
+  body.print-mode-reading-list .required-item-inapp-link {
+    display: none !important;
+  }
+  /* Print-only header: course title + current week */
+  body.print-mode-reading-list .required-print-header {
+    display: block !important;
+    text-align: center;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #000000;
+    color: #000000 !important;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+  body.print-mode-reading-list .required-print-header-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-variant: small-caps;
+    letter-spacing: 0.08em;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  body.print-mode-reading-list .required-print-header-sub {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #000000 !important;
+  }
+  /* Replace interactive checkbox with a glyph on each row */
+  body.print-mode-reading-list .required-item::before {
+    content: "\2610 ";
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    color: #000000;
+  }
+  body.print-mode-reading-list .required-item.owned::before {
+    content: "\2611 ";
+  }
+  body.print-mode-reading-list .required-item.owned {
+    opacity: 1 !important;
+  }
+  body.print-mode-reading-list .required-item {
+    padding: 0.5rem 0 !important;
+    border-bottom: none !important;
+    page-break-inside: avoid;
+    color: #000000 !important;
+  }
+  body.print-mode-reading-list .required-item-title,
+  body.print-mode-reading-list .required-item-author,
+  body.print-mode-reading-list .required-item-meta,
+  body.print-mode-reading-list .required-item-phase,
+  body.print-mode-reading-list .required-group-title,
+  body.print-mode-reading-list .required-subcategory-title {
+    color: #000000 !important;
+    background: transparent !important;
+  }
+  body.print-mode-reading-list .required-item-phase {
+    border: 1px solid #999999;
+  }
+  /* Print caption at bottom */
+  body.print-mode-reading-list .required-print-caption {
+    display: block !important;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #000000;
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.88rem;
+    color: #000000;
+    font-style: italic;
+  }
+  body.print-mode-reading-list a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+}
+
 /* Mobile — single column, tighter spacing, phase pill wraps below */
 @media (max-width: 600px) {
   .required-reading summary { padding: 0.9rem 1rem; }
   .required-reading-body { padding: 0 1rem 1.25rem; }
   .required-reading-title { font-size: 1.05rem; }
   .required-reading-meta { display: none; }
-  .required-item { flex-direction: column; align-items: flex-start; gap: 0.35rem; }
-  .required-item-tags { margin-top: 0.1rem; }
+  .required-item { flex-wrap: wrap; gap: 0.55rem; }
+  .required-item-main { flex: 1 1 100%; }
+  .required-item-tags { margin-top: 0.25rem; justify-content: flex-start; }
+  .required-stat-row { gap: 0.5rem; }
+  .required-print-btn { font-size: 0.78rem; padding: 0.3rem 0.7rem; }
+  .required-filter-chips { gap: 0.3rem; }
+  .required-filter-chip { font-size: 0.78rem; padding: 0.25rem 0.6rem; }
 }
 
 /* Phase Timeline — Byzantine palette */
@@ -2083,7 +2538,7 @@ em, i { font-style: italic; }
 }
 .study-tools-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   align-items: stretch;
 }
@@ -2141,6 +2596,31 @@ em, i { font-style: italic; }
 .study-tool-link:focus-visible {
   outline: 2px solid #D4AF37;
   outline-offset: 2px;
+}
+
+/* Secondary text link — appears below the primary gold button on the
+   Anki deck card (and any future card that needs a "learn more" affordance).
+   Navy, italicized, serif; porphyry on hover. Additive only — existing
+   three Study Tools cards do not include this element. */
+.study-tool-secondary-link {
+  align-self: center;
+  margin-top: 0.6rem;
+  color: #1a3a5c;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+}
+.study-tool-secondary-link:hover {
+  color: #6b1e2a;
+  text-decoration: underline;
+}
+.study-tool-secondary-link:focus-visible {
+  outline: 2px solid #1a3a5c;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* ============================================================
@@ -2438,6 +2918,14 @@ em, i { font-style: italic; }
           Daily biblical readings coordinated with patristic study — the Psalter as continuous thread and strategic books aligned with each Father's theology.
         </p>
         <a href="bible-reader.html" class="study-tool-link">Open Bible Reader</a>
+      </div>
+      <div class="study-tool-card">
+        <h3 class="study-tool-title">Patristic Lexicon — Anki Deck</h3>
+        <p class="study-tool-desc">
+          A downloadable flashcard deck covering the 285 Greek and Latin terms from the Patristic Lexicon, built for Anki — a free, open-source spaced-repetition application widely used by seminarians and language learners. Optional, for those who want active daily vocabulary review alongside their reading.
+        </p>
+        <a href="patristic-lexicon.apkg" class="study-tool-link" download>Download Deck</a>
+        <a href="anki-guide.html" class="study-tool-secondary-link">Learn more →</a>
       </div>
     </div>
   </section>
@@ -3594,11 +4082,155 @@ function parsePhaseToWeekRange(phase) {
   return null;
 }
 
-// Render the Required Reading collapsible panel. Resources are classified against
-// STUDY_STATE.currentWeek into "Currently Reading" (active/past phase) vs "Upcoming —
-// Plan Ahead" (future phase). Within each group, items are subgrouped by category
-// (Primary / Biblical / Secondary) so 20+ items stay readable. Items flagged
-// toPurchase get a gold "Acquire" pill to call out acquisition needs.
+// ==================================================================
+// Required Reading — resource ownership + filter + printable list
+// ==================================================================
+
+// localStorage key for user-global resource ownership. Shape: { [id]: true }.
+// Not enrollment-scoped — you either own a book or you don't, regardless of
+// which track surfaces it.
+const RESOURCE_OWNERSHIP_KEY = 'resource_ownership';
+
+// In-memory filter state. Not persisted — resets on reload because users
+// typically want the full list first.
+let RESOURCE_FILTER = 'all';
+
+function getOwnershipMap() {
+  try {
+    const raw = localStorage.getItem(RESOURCE_OWNERSHIP_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function setOwnership(id, isOwned) {
+  if (!id) return;
+  let map;
+  try {
+    const raw = localStorage.getItem(RESOURCE_OWNERSHIP_KEY);
+    map = raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    map = {};
+  }
+  if (isOwned) map[id] = true;
+  else delete map[id];
+  try {
+    localStorage.setItem(RESOURCE_OWNERSHIP_KEY, JSON.stringify(map));
+  } catch (e) {}
+}
+
+// Classify a resource for pill + filter purposes. Precedence:
+// inApp (always wins) → owned → current (phase <= currentWeek) → upcoming.
+function classifyResource(r, currentWeek, ownedMap) {
+  if (r.inApp) return 'in-app';
+  if (ownedMap && r.id && ownedMap[r.id]) return 'have';
+  const range = parsePhaseToWeekRange(r.phase);
+  const isCurrent = !range || range.isAll || range.start <= currentWeek;
+  return isCurrent ? 'to-order' : 'plan-ahead';
+}
+
+// Checkbox onchange handler. Persists ownership then re-renders to update
+// stats, pills, and counts. Preserves filter state across re-render.
+function toggleResourceOwnership(id, checkboxEl) {
+  setOwnership(id, !!(checkboxEl && checkboxEl.checked));
+  renderRequiredReading();
+}
+
+// Filter chip handler — updates active chip, hides non-matching rows,
+// hides subsections/groups that end up empty, shows an empty-state message
+// when nothing matches.
+function applyResourceFilter(filterKey, btnEl) {
+  RESOURCE_FILTER = filterKey || 'all';
+  document.querySelectorAll('.required-filter-chip').forEach(c => {
+    const match = c.dataset.filter === RESOURCE_FILTER;
+    c.classList.toggle('active', match);
+    c.setAttribute('aria-selected', match ? 'true' : 'false');
+  });
+  let shownCount = 0;
+  document.querySelectorAll('.required-item[data-status]').forEach(row => {
+    const match = RESOURCE_FILTER === 'all' || row.dataset.status === RESOURCE_FILTER;
+    row.style.display = match ? '' : 'none';
+    if (match) shownCount++;
+  });
+  // Hide subsection wrappers whose rows are all filtered out
+  document.querySelectorAll('.required-subcategory').forEach(sub => {
+    const hasVisible = Array.from(sub.querySelectorAll('.required-item[data-status]'))
+      .some(r => r.style.display !== 'none');
+    sub.style.display = hasVisible ? '' : 'none';
+  });
+  // Hide group wrappers whose subcategories are all hidden
+  document.querySelectorAll('.required-group').forEach(grp => {
+    const hasVisibleSub = Array.from(grp.querySelectorAll('.required-subcategory'))
+      .some(s => s.style.display !== 'none');
+    grp.style.display = hasVisibleSub ? '' : 'none';
+  });
+  // Empty-state message
+  let emptyEl = document.getElementById('required-empty-state');
+  if (shownCount === 0 && RESOURCE_FILTER !== 'all') {
+    if (!emptyEl) {
+      emptyEl = document.createElement('div');
+      emptyEl.id = 'required-empty-state';
+      emptyEl.className = 'required-empty-state';
+      const anchor = document.querySelector('.required-filter-chips');
+      if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(emptyEl, anchor.nextSibling);
+    }
+    const msgs = {
+      'to-order': 'No books to order right now.',
+      'plan-ahead': 'No books on the Plan-Ahead list.',
+      'have': 'No books checked off yet — tick the box on each book you own.',
+      'in-app': 'No in-app resources match this filter.'
+    };
+    emptyEl.textContent = msgs[RESOURCE_FILTER] || 'No resources match this filter.';
+  } else if (emptyEl) {
+    emptyEl.remove();
+  }
+}
+
+// Print button handler — toggles body class, forces details open, prints,
+// cleans up body class on afterprint (with timeout fallback).
+function openPrintReadingList() {
+  const details = document.getElementById('required-reading');
+  if (details) details.open = true;
+  document.body.classList.add('print-mode-reading-list');
+  const cleanup = () => {
+    document.body.classList.remove('print-mode-reading-list');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  // Give the browser a tick to apply the class before invoking print.
+  setTimeout(() => window.print(), 50);
+  // Fallback cleanup in case afterprint doesn't fire (rare, some browsers).
+  setTimeout(() => document.body.classList.remove('print-mode-reading-list'), 8000);
+}
+
+// Help "?" tooltip toggle — opens a small explanatory bubble, dismissed
+// by clicking outside.
+function toggleRequiredHelp(btnEl) {
+  const wrap = btnEl && btnEl.closest('.required-help');
+  if (!wrap) return;
+  const willOpen = !wrap.classList.contains('open');
+  wrap.classList.toggle('open', willOpen);
+  if (willOpen) {
+    const dismiss = (e) => {
+      if (!wrap.contains(e.target)) {
+        wrap.classList.remove('open');
+        document.removeEventListener('click', dismiss);
+      }
+    };
+    setTimeout(() => document.addEventListener('click', dismiss), 0);
+  }
+}
+
+// Render the Required Reading collapsible panel. Resources are classified
+// against STUDY_STATE.currentWeek into "Currently Reading" (active/past phase)
+// vs "Upcoming — Plan Ahead" (future phase). Within each group, items are
+// subgrouped by category (Primary / Biblical / Secondary). Primary + biblical
+// rows carry an ownership checkbox persisted in localStorage under the key
+// `resource_ownership`; secondary rows do not. EOB is in-app (inApp: true)
+// and exempt from ownership tracking. "Recommended further reading" renders
+// at the bottom as a display-only, typography-parity subsection that does
+// not participate in the filter chips or ownership tracking.
 function renderRequiredReading() {
   const body = document.getElementById('required-reading-body');
   const metaEl = document.getElementById('required-reading-meta');
@@ -3614,107 +4246,254 @@ function renderRequiredReading() {
     return;
   }
 
-  const currentWeek = STUDY_STATE.currentWeek || 1;
-  const current = [];
-  const upcoming = [];
-  track.requiredResources.forEach(r => {
+  const currentWeek = (typeof STUDY_STATE !== 'undefined' && STUDY_STATE && STUDY_STATE.currentWeek) ? STUDY_STATE.currentWeek : 1;
+  const ownedMap = getOwnershipMap();
+
+  // Classify every resource once. This drives pills, filter counts, and grouping.
+  const classified = track.requiredResources.map(r => {
     const range = parsePhaseToWeekRange(r.phase);
-    if (!range || range.isAll || range.start <= currentWeek) current.push(r);
-    else upcoming.push(r);
+    const isCurrent = !range || range.isAll || range.start <= currentWeek;
+    return { r, status: classifyResource(r, currentWeek, ownedMap), isUpcoming: !isCurrent };
   });
 
-  // Upcoming acquisition count — only books that need purchase, not already-owned
-  const acquireCount = upcoming.filter(r => r.toPurchase).length;
+  // Stat line counts Primary + Biblical only. Secondary + recommended get a
+  // smaller muted tally underneath the main stat.
+  const primaryBiblical = classified.filter(c => c.r.category === 'primary' || c.r.category === 'biblical');
+  const statTotal = primaryBiblical.length;
+  const statToOrder = primaryBiblical.filter(c => c.status === 'to-order').length;
+  const statPlanAhead = primaryBiblical.filter(c => c.status === 'plan-ahead').length;
+  const statHaveOnly = primaryBiblical.filter(c => c.status === 'have').length;
+  const statInApp = primaryBiblical.filter(c => c.status === 'in-app').length;
+  // "On your shelf" = owned via checkbox + in-app (always accessible)
+  const statOnShelf = statHaveOnly + statInApp;
+  const secondaryTotal = classified.filter(c => c.r.category === 'secondary').length;
+  const recommendedTotal = (track.recommendedSecondary || []).length;
 
+  // Summary-line meta (compact status hint in the collapsible summary)
   if (metaEl) {
-    const total = track.requiredResources.length;
-    metaEl.textContent = acquireCount > 0
-      ? `${total} resources · ${acquireCount} to acquire`
-      : `${total} resources · ${upcoming.length} upcoming`;
+    const parts = [`${statTotal} resources`];
+    if (statToOrder > 0) parts.push(`${statToOrder} to order`);
+    if (statPlanAhead > 0) parts.push(`${statPlanAhead} to plan`);
+    metaEl.textContent = parts.join(' · ');
   }
 
-  const CATEGORY_LABELS = {
-    primary: 'Primary Texts',
-    biblical: 'Biblical Texts',
-    secondary: 'Secondary Reading'
-  };
+  const current = classified.filter(c => !c.isUpcoming);
+  const upcoming = classified.filter(c => c.isUpcoming);
+
+  const CATEGORY_LABELS = { primary: 'Primary Texts', biblical: 'Biblical Texts', secondary: 'Secondary Reading' };
   const CATEGORY_ORDER = ['primary', 'biblical', 'secondary'];
 
-  const renderItem = (r, isUpcoming) => `
-    <li class="required-item${isUpcoming ? ' upcoming' : ''}${r.toPurchase ? ' to-purchase' : ''}">
-      <div class="required-item-main">
-        <div class="required-item-title">
-          ${r.title}${r.author ? ` <span class="required-item-author">· ${r.author}</span>` : ''}
+  // Section-level callout fires only when every item in a subsection shares
+  // the same freeWeb source AND there are at least 2 items. Single-item
+  // subsections always render per-row to avoid overweight callouts.
+  const detectCallout = (items) => {
+    if (!items || items.length < 2) return null;
+    if (!items.every(c => c.r.freeWeb && c.r.freeWeb.url)) return null;
+    const first = items[0].r.freeWeb;
+    const same = items.every(c => c.r.freeWeb.name === first.name && c.r.freeWeb.url === first.url);
+    return same ? first : null;
+  };
+
+  const escAttr = (s) => String(s == null ? '' : s).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+
+  const STATUS_LABELS = {
+    'to-order': 'To order',
+    'plan-ahead': 'Plan ahead',
+    'have': 'Have',
+    'in-app': 'In-app'
+  };
+
+  // Render a single classified resource row.
+  const renderItem = (c, opts) => {
+    const hidePerRowFreeWeb = opts && opts.hidePerRowFreeWeb;
+    const r = c.r;
+    const status = c.status;
+    const isOwned = status === 'have';
+
+    // Primary + biblical rows get an ownership checkbox, except inApp items.
+    const hasCheckbox = (r.category === 'primary' || r.category === 'biblical') && !r.inApp && r.id;
+    const checkboxHTML = hasCheckbox
+      ? `<label class="required-item-check">
+           <input type="checkbox" ${isOwned ? 'checked' : ''}
+             onchange="toggleResourceOwnership('${escAttr(r.id)}', this)"
+             aria-label="I have ${escAttr(r.title)}">
+         </label>`
+      : '';
+
+    const statusPill = `<span class="required-item-status required-item-status--${status}">${STATUS_LABELS[status]}</span>`;
+
+    const freeWebLine = (!hidePerRowFreeWeb && r.freeWeb && r.freeWeb.url)
+      ? `<div class="required-item-freeweb">Free online: <a href="${r.freeWeb.url}" target="_blank" rel="noopener noreferrer">${r.freeWeb.name} →</a></div>`
+      : '';
+
+    // In-app affordance — EOB row links to the Biblical Companion reader.
+    const inAppLink = r.inApp
+      ? `<div class="required-item-inapp-link"><a href="bible-reader.html">Open Biblical Companion →</a></div>`
+      : '';
+
+    return `
+      <li class="required-item${c.isUpcoming ? ' upcoming' : ''}${isOwned ? ' owned' : ''}" data-status="${status}" data-id="${escAttr(r.id)}">
+        ${checkboxHTML}
+        <div class="required-item-main">
+          <div class="required-item-title">${r.title}</div>
+          ${r.author ? `<div class="required-item-author">${r.author}</div>` : ''}
+          ${(r.edition || r.details) ? `<div class="required-item-meta">${[r.edition, r.details].filter(Boolean).join(' · ')}</div>` : ''}
+          ${freeWebLine}
+          ${inAppLink}
         </div>
-        ${(r.edition || r.details) ? `<div class="required-item-meta">${[r.edition, r.details].filter(Boolean).join(' · ')}</div>` : ''}
+        <div class="required-item-tags">
+          ${statusPill}
+          ${r.phase ? `<span class="required-item-phase">${r.phase}</span>` : ''}
+        </div>
+      </li>
+    `;
+  };
+
+  const renderSubcategory = (cat, items) => {
+    if (!items || !items.length) return '';
+    const callout = detectCallout(items);
+    const calloutHTML = callout
+      ? `<div class="required-freeweb-callout">All titles in this section are freely available at <a href="${callout.url}" target="_blank" rel="noopener noreferrer">${callout.name} →</a></div>`
+      : '';
+    return `
+      <div class="required-subcategory required-category--${cat}">
+        <div class="required-subcategory-title">${CATEGORY_LABELS[cat]}</div>
+        ${calloutHTML}
+        <ul class="required-list">
+          ${items.map(c => renderItem(c, { hidePerRowFreeWeb: !!callout })).join('')}
+        </ul>
       </div>
-      <div class="required-item-tags">
-        ${r.toPurchase ? '<span class="required-item-acquire">To Acquire</span>' : ''}
-        ${r.phase ? `<span class="required-item-phase">${r.phase}</span>` : ''}
+    `;
+  };
+
+  const renderGroup = (classifiedItems, label, isUpcoming) => {
+    if (!classifiedItems.length) return '';
+    const byCat = { primary: [], biblical: [], secondary: [] };
+    classifiedItems.forEach(c => {
+      const cat = c.r.category || 'primary';
+      (byCat[cat] || byCat.primary).push(c);
+    });
+    const subsHTML = CATEGORY_ORDER.map(cat => renderSubcategory(cat, byCat[cat])).join('');
+    return `
+      <div class="required-group">
+        <div class="required-group-title${isUpcoming ? ' upcoming' : ''}">${label}</div>
+        ${subsHTML}
       </div>
-    </li>
+    `;
+  };
+
+  // Recommended further reading — typography parity but display-only.
+  const renderRecommendedItem = (r) => {
+    if (typeof r === 'string') {
+      return `<li class="required-item required-item--display-only"><div class="required-item-main"><div class="required-item-title">${r}</div></div></li>`;
+    }
+    const freeWebLine = (r.freeWeb && r.freeWeb.url)
+      ? `<div class="required-item-freeweb">Free online: <a href="${r.freeWeb.url}" target="_blank" rel="noopener noreferrer">${r.freeWeb.name} →</a></div>`
+      : '';
+    return `
+      <li class="required-item required-item--display-only" data-id="${escAttr(r.id)}">
+        <div class="required-item-main">
+          <div class="required-item-title">${r.title}</div>
+          ${r.author ? `<div class="required-item-author">${r.author}</div>` : ''}
+          ${r.details ? `<div class="required-item-meta">${r.details}</div>` : ''}
+          ${freeWebLine}
+        </div>
+      </li>
+    `;
+  };
+  const recommendedHTML = (track.recommendedSecondary && track.recommendedSecondary.length)
+    ? `<div class="required-recommended-section">
+         <div class="required-recommended-title">Recommended further reading</div>
+         <div class="required-recommended-intro">Optional companion volumes for deeper study — not required, not ownership-tracked.</div>
+         <ul class="required-list">
+           ${track.recommendedSecondary.map(renderRecommendedItem).join('')}
+         </ul>
+       </div>`
+    : '';
+
+  // Stat row: primary stat line + secondary tally + help tooltip + print button.
+  const tallyBits = [];
+  if (secondaryTotal > 0) tallyBits.push(`${secondaryTotal} secondary reading title${secondaryTotal === 1 ? '' : 's'}`);
+  if (recommendedTotal > 0) tallyBits.push(`${recommendedTotal} recommended further reading`);
+  const tallyLine = tallyBits.length
+    ? `<span class="required-secondary-tally">${tallyBits.join(' · ')}</span>`
+    : '';
+
+  const statLineHTML = `
+    <div class="required-stat-row">
+      <div class="required-stat-line">
+        <strong>${statTotal}</strong> resources · <strong>${statToOrder}</strong> to order · <strong>${statOnShelf}</strong> on your shelf
+        ${tallyLine}
+      </div>
+      <div class="required-help">
+        <button type="button" class="required-help-toggle" onclick="toggleRequiredHelp(this)" aria-label="About this reading list">?</button>
+        <div class="required-help-content">
+          Books for your current track, grouped by type. Public-domain primary texts (Holmes, ANF, NPNF) are freely available online; scholarly editions need to be purchased. Tick the box on each book as you acquire it — ownership persists on this device.
+        </div>
+      </div>
+      <button type="button" class="required-print-btn" onclick="openPrintReadingList()">Print reading list</button>
+    </div>
   `;
 
-  // Bucket an item list by category, preserving syllabus order within each bucket
-  const bucketByCategory = (items) => {
-    const buckets = { primary: [], biblical: [], secondary: [] };
-    items.forEach(r => {
-      const cat = r.category || 'primary';
-      (buckets[cat] || buckets.primary).push(r);
-    });
-    return buckets;
+  // Filter chip row — 1:1 with status pill variants. Counts update on every render.
+  const chipCount = {
+    'all': primaryBiblical.length,
+    'to-order': statToOrder,
+    'plan-ahead': statPlanAhead,
+    'have': statHaveOnly,
+    'in-app': statInApp
   };
-
-  const renderGroup = (items, isUpcoming) => {
-    if (!items.length) return '';
-    const buckets = bucketByCategory(items);
-    const body = CATEGORY_ORDER.map(cat => {
-      if (!buckets[cat] || !buckets[cat].length) return '';
-      return `
-        <div class="required-subcategory">
-          <div class="required-subcategory-title">${CATEGORY_LABELS[cat]}</div>
-          <ul class="required-list">
-            ${buckets[cat].map(r => renderItem(r, isUpcoming)).join('')}
-          </ul>
-        </div>
-      `;
-    }).join('');
-    return body;
-  };
-
-  const currentHTML = current.length ? `
-    <div class="required-group">
-      <div class="required-group-title">Currently Reading</div>
-      ${renderGroup(current, false)}
+  const chipDef = [
+    { key: 'all', label: 'All' },
+    { key: 'to-order', label: 'To order' },
+    { key: 'plan-ahead', label: 'Plan ahead' },
+    { key: 'have', label: 'Have' },
+    { key: 'in-app', label: 'In-app' }
+  ];
+  const filterChipsHTML = `
+    <div class="required-filter-chips" role="tablist" aria-label="Filter by status">
+      ${chipDef.map(c => `
+        <button type="button" class="required-filter-chip${RESOURCE_FILTER === c.key ? ' active' : ''}" data-filter="${c.key}" onclick="applyResourceFilter('${c.key}', this)" role="tab" aria-selected="${RESOURCE_FILTER === c.key ? 'true' : 'false'}">
+          ${c.label}<span class="required-filter-chip-count">${chipCount[c.key]}</span>
+        </button>
+      `).join('')}
     </div>
-  ` : '';
+  `;
 
-  const upcomingHTML = upcoming.length ? `
-    <div class="required-group">
-      <div class="required-group-title upcoming">Upcoming — Plan Ahead</div>
-      ${renderGroup(upcoming, true)}
+  // Print-only header + caption (hidden on screen, revealed by @media print
+  // when body has .print-mode-reading-list class).
+  const today = new Date();
+  const todayStr = today.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  const printHeaderHTML = `
+    <div class="required-print-header" aria-hidden="true">
+      <span class="required-print-header-title">40-Week Patristic Formation — Required Reading</span>
+      <span class="required-print-header-sub">Currently in Week ${currentWeek} · Printed ${todayStr}</span>
     </div>
-  ` : '';
+  `;
+  const printCaptionHTML = `
+    <div class="required-print-caption" aria-hidden="true">
+      Orthodox Companion Studies · 40-Week Patristic Formation · Required Reading
+    </div>
+  `;
 
-  const secondaryHTML = (track.recommendedSecondary && track.recommendedSecondary.length) ? `
-    <details class="secondary-toggle">
-      <summary>Further recommended reading (${track.recommendedSecondary.length})</summary>
-      <ul class="secondary-list">
-        ${track.recommendedSecondary.map(s => `<li>${s}</li>`).join('')}
-      </ul>
-    </details>
-  ` : '';
-
-  const intro = acquireCount > 0
-    ? `Books for your current track, grouped by type. ${acquireCount} volume${acquireCount === 1 ? '' : 's'} flagged <strong>To Acquire</strong> — order these before their phase arrives. Other listed works are standard already-owned collections (Holmes, ANF, NPNF) or scheduled secondary reading.`
-    : `Books for your current track, grouped by type. All remaining resources are already in your library.`;
+  const currentHTML = renderGroup(current, 'Currently Reading', false);
+  const upcomingHTML = renderGroup(upcoming, 'Upcoming — Plan Ahead', true);
 
   body.innerHTML = `
-    <p class="required-reading-intro">${intro}</p>
+    ${printHeaderHTML}
+    ${statLineHTML}
+    ${filterChipsHTML}
     ${currentHTML}
     ${upcomingHTML}
-    ${secondaryHTML}
+    ${recommendedHTML}
+    ${printCaptionHTML}
   `;
+
+  // Re-apply the user's last filter selection after the re-render (e.g., if
+  // they toggled a checkbox while "Have" was active, preserve the Have view).
+  if (RESOURCE_FILTER && RESOURCE_FILTER !== 'all') {
+    applyResourceFilter(RESOURCE_FILTER);
+  }
 }
 
 
