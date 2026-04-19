@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: 2026-04-19T03:28:34Z -->
+<!-- build: 2026-04-19T03:36:14Z -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -4829,18 +4829,18 @@ function renderRequiredReading() {
     return { r, status: classifyResource(r, currentWeek, ownedMap), isUpcoming: !isCurrent };
   });
 
-  // Stat line counts Primary + Biblical only. Secondary + recommended get a
-  // smaller muted tally underneath the main stat.
-  const primaryBiblical = classified.filter(c => c.r.category === 'primary' || c.r.category === 'biblical');
-  const statTotal = primaryBiblical.length;
-  const statToOrder = primaryBiblical.filter(c => c.status === 'to-order').length;
-  const statPlanAhead = primaryBiblical.filter(c => c.status === 'plan-ahead').length;
-  const statOrdered = primaryBiblical.filter(c => c.status === 'ordered').length;
-  const statHaveOnly = primaryBiblical.filter(c => c.status === 'have').length;
-  const statInApp = primaryBiblical.filter(c => c.status === 'in-app').length;
+  // Stat counters now include every trackable resource (primary + biblical
+  // + secondary). Rows with a dropdown all contribute to these counts so
+  // what the chips say and what the filter shows stay in sync. Recommended
+  // further reading (string entries) stays display-only and doesn't count.
+  const statTotal = classified.length;
+  const statToOrder = classified.filter(c => c.status === 'to-order').length;
+  const statPlanAhead = classified.filter(c => c.status === 'plan-ahead').length;
+  const statOrdered = classified.filter(c => c.status === 'ordered').length;
+  const statHaveOnly = classified.filter(c => c.status === 'have').length;
+  const statInApp = classified.filter(c => c.status === 'in-app').length;
   // "On your shelf" = owned via explicit 'have' state + in-app (always accessible)
   const statOnShelf = statHaveOnly + statInApp;
-  const secondaryTotal = classified.filter(c => c.r.category === 'secondary').length;
   const recommendedTotal = (track.recommendedSecondary || []).length;
 
   // Summary-line meta (compact status hint in the collapsible summary)
@@ -4895,8 +4895,11 @@ function renderRequiredReading() {
     const isOwned = status === 'have';
     const isOrdered = status === 'ordered';
 
-    // Primary + biblical rows get a dropdown control, except inApp items.
-    const hasStatusControl = (r.category === 'primary' || r.category === 'biblical') && !r.inApp && r.id;
+    // All non-inApp resources with an id get a dropdown — primary, biblical,
+    // and secondary scholarly companions. Recommended further reading (string
+    // entries in recommendedSecondary) stays display-only; those entries have
+    // no id and render via a separate path.
+    const hasStatusControl = !r.inApp && !!r.id;
     // The first option dynamically labels "To order" vs "Plan ahead" based on
     // phase position — same slot, dynamic label. The user's explicit status
     // (ordered / have) lives in the two following slots.
@@ -5050,9 +5053,9 @@ function renderRequiredReading() {
        </div>`
     : '';
 
-  // Stat row: primary stat line + secondary tally + help tooltip + print button.
+  // Stat row: primary stat line + tally for display-only recommended items
+  // + help tooltip + print button.
   const tallyBits = [];
-  if (secondaryTotal > 0) tallyBits.push(`${secondaryTotal} secondary reading title${secondaryTotal === 1 ? '' : 's'}`);
   if (recommendedTotal > 0) tallyBits.push(`${recommendedTotal} recommended further reading`);
   const tallyLine = tallyBits.length
     ? `<span class="required-secondary-tally">${tallyBits.join(' · ')}</span>`
@@ -5077,16 +5080,17 @@ function renderRequiredReading() {
       <div class="required-help">
         <button type="button" class="required-help-toggle" onclick="toggleRequiredHelp(this)" aria-label="About this reading list">?</button>
         <div class="required-help-content">
-          Books for your current track, grouped by type. Public-domain primary texts (Holmes, ANF, NPNF) are freely available online; scholarly editions need to be purchased. Use the three-state control on each row — <em>To order</em> / <em>Plan ahead</em>, <em>Ordered</em>, or <em>Have</em> — to track acquisition. Ownership persists on this device.
+          Books for your current track, grouped by type. Public-domain primary texts (Holmes, ANF, NPNF) are freely available online; scholarly editions need to be purchased. Use the dropdown on each row — <em>To order</em> / <em>Plan ahead</em>, <em>Ordered</em>, or <em>Have</em> — to track acquisition across primary, biblical, and secondary reading. Ownership persists on this device.
         </div>
       </div>
       <button type="button" class="required-print-btn" onclick="openPrintReadingList()">Print reading list</button>
     </div>
   `;
 
-  // Filter chip row — 1:1 with status pill variants. Counts update on every render.
+  // Filter chip row — 1:1 with status pill variants. Counts reflect every
+  // trackable row (primary + biblical + secondary). Updated on every render.
   const chipCount = {
-    'all': primaryBiblical.length,
+    'all': classified.length,
     'to-order': statToOrder,
     'plan-ahead': statPlanAhead,
     'ordered': statOrdered,
